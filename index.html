@@ -1,5 +1,176 @@
 <!DOCTYPE html>
-<html>
-<head><title>Love Your Senses</title></head>
-<body><h1>Coming soon</h1></body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Your Senses | Discover what your senses love</title>
+<meta name="description" content="Short, delightful quizzes that match you to the fragrances, and soon the skincare and more, made for how you actually feel.">
+
+<!-- ============================================================
+     LOVE YOUR SENSES — HOMEPAGE (HUB)
+     Deploy as: /index.html  (replaces the "Coming soon" page)
+     Quizzes live in their own folders, e.g. /scent/index.html
+     Update the footer contact + disclosure as you grow.
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#E7E3DD; --card:#F2EEE8; --ink:#2A2130; --ink-soft:#6E6574;
+    --accent:#7B4A5E; --accent-deep:#5E3547; --line:#CDC3B6; --gold:#B8A78C;
+    --radius:18px; --ease:cubic-bezier(.4,.14,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Jost',system-ui,sans-serif;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .display{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+  /* header */
+  header{padding:26px 0}
+  .bar{max-width:960px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+  .mark{font-family:'Fraunces',serif;font-weight:500;font-size:1.24rem;letter-spacing:.01em;text-decoration:none;color:var(--ink)}
+  .mark span{color:var(--accent)}
+  nav a{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;margin-left:26px;transition:color .3s var(--ease)}
+  nav a:hover{color:var(--accent)}
+  @media(max-width:520px){nav{display:none}}
+
+  /* hero */
+  .hero{text-align:center;padding:56px 0 20px}
+  .hero .eyebrow{margin-bottom:22px}
+  .hero h1{font-size:clamp(2.7rem,9vw,4.6rem);margin-bottom:20px}
+  .hero h1 em{font-style:italic;font-weight:400}
+  .hero p{color:var(--ink-soft);font-size:1.12rem;max-width:44ch;margin:0 auto 34px}
+  .btn{
+    display:inline-block;font-family:'Jost',sans-serif;font-size:.82rem;letter-spacing:.16em;
+    text-transform:uppercase;font-weight:500;cursor:pointer;text-decoration:none;
+    border:none;border-radius:100px;padding:17px 42px;background:var(--ink);color:var(--bg);
+    transition:transform .35s var(--ease),background .35s var(--ease);
+  }
+  .btn:hover{background:var(--accent-deep);transform:translateY(-2px)}
+
+  /* signature spectrum — the six scent families as a thread through the brand */
+  .spectrum{display:flex;height:6px;max-width:340px;margin:52px auto 0;border-radius:100px;overflow:hidden}
+  .spectrum i{flex:1}
+
+  /* featured quiz */
+  .featured{margin:76px 0 20px}
+  .quiz-card{
+    background:var(--card);border-radius:26px;padding:44px 40px;
+    display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;
+    box-shadow:0 30px 60px -40px rgba(42,33,48,.4);
+  }
+  .quiz-card .eyebrow{margin-bottom:16px}
+  .quiz-card h2{font-size:clamp(2rem,5vw,2.7rem);margin-bottom:14px}
+  .quiz-card p{color:var(--ink-soft);font-size:1.03rem;max-width:46ch}
+  .quiz-card .go{white-space:nowrap}
+  @media(max-width:640px){
+    .quiz-card{grid-template-columns:1fr;text-align:center;padding:38px 28px}
+    .quiz-card p{margin:0 auto}
+  }
+
+  /* upcoming */
+  .upcoming{margin:64px 0}
+  .section-head{text-align:center;margin-bottom:34px}
+  .section-head .eyebrow{display:block;margin-bottom:12px}
+  .section-head h3{font-size:clamp(1.6rem,4vw,2.1rem)}
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:640px){.tiles{grid-template-columns:1fr}}
+  .tile{
+    background:transparent;border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px 24px;text-align:center;
+  }
+  .tile .dot{width:10px;height:10px;border-radius:50%;margin:0 auto 16px;background:var(--tile,#7B4A5E);opacity:.9}
+  .tile h4{font-family:'Fraunces',serif;font-weight:500;font-size:1.3rem;margin-bottom:6px}
+  .tile span{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+
+  /* about */
+  .about{background:var(--card);border-radius:26px;padding:52px 44px;text-align:center;margin:12px 0 76px}
+  .about .eyebrow{display:block;margin-bottom:16px}
+  .about h3{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:18px}
+  .about p{color:var(--ink-soft);font-size:1.05rem;max-width:56ch;margin:0 auto}
+  @media(max-width:640px){.about{padding:40px 26px}}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:40px 0 56px}
+  .foot{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+  .foot a{color:var(--accent);text-decoration:none}
+  .foot .disc{font-size:.86rem;color:var(--ink-soft);max-width:52ch}
+  .foot .cr{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a href="/" class="mark">Love Your <span>Senses</span></a>
+    <nav>
+      <a href="#quizzes">Quizzes</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <p class="eyebrow">Sensory discovery</p>
+    <h1 class="display">Discover what your <em>senses</em> love</h1>
+    <p>Short, delightful quizzes that match you to the fragrances, and soon the skincare, sleep and more, made for how you actually feel.</p>
+    <a href="/scent" class="btn">Take the scent quiz</a>
+    <div class="spectrum" aria-hidden="true">
+      <i style="background:#B4841C"></i><i style="background:#AE5A75"></i><i style="background:#A24E2A"></i>
+      <i style="background:#46523B"></i><i style="background:#2F6E80"></i><i style="background:#8A5A32"></i>
+    </div>
+  </section>
+
+  <section class="featured wrap" id="quizzes">
+    <div class="quiz-card">
+      <div>
+        <p class="eyebrow">Featured quiz</p>
+        <h2 class="display">Your Signature Scent</h2>
+        <p>Answer six short questions and discover the fragrance family that fits you, complete with the exact notes to look for.</p>
+      </div>
+      <a href="/scent" class="btn go">Begin</a>
+    </div>
+  </section>
+
+  <section class="upcoming wrap">
+    <div class="section-head">
+      <span class="eyebrow">On the way</span>
+      <h3 class="display">More senses, more discoveries</h3>
+    </div>
+    <div class="tiles">
+      <div class="tile"><div class="dot" style="--tile:#AE5A75"></div><h4>Your Skincare Type</h4><span>Coming soon</span></div>
+      <div class="tile"><div class="dot" style="--tile:#2F6E80"></div><h4>Your Perfect Sleep</h4><span>Coming soon</span></div>
+      <div class="tile"><div class="dot" style="--tile:#8A5A32"></div><h4>Your Coffee Character</h4><span>Coming soon</span></div>
+    </div>
+  </section>
+
+  <section class="about wrap" id="about">
+    <span class="eyebrow">The idea</span>
+    <h3 class="display">Less scrolling, more knowing</h3>
+    <p>Love Your Senses helps you find the things that genuinely suit you through simple, enjoyable quizzes. Instead of endless searching, answer a few questions and get recommendations chosen for your taste. We are just getting started, with new sensory quizzes arriving through the year.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="foot wrap">
+    <a href="mailto:hello@loveyoursenses.com">hello@loveyoursenses.com</a>
+    <p class="disc">Love Your Senses may earn a small commission from products we recommend, at no extra cost to you.</p>
+    <p class="cr">© 2026 Love Your Senses</p>
+  </div>
+</footer>
+
+</body>
 </html>
