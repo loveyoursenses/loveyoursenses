@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Love Your Senses</title>
+<meta name="description" content="The idea behind Love Your Senses, and the people building it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#E7E3DD;--card:#F2EEE8;--ink:#2A2130;--ink-soft:#6E6574;--accent:#7B4A5E;--accent-deep:#5E3547;--line:#CDC3B6;--ease:cubic-bezier(.4,.14,.2,1)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--bg);color:var(--ink);font-family:'Jost',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .display{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.1;letter-spacing:-.01em}
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  .wrap{max-width:960px;margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px}
+  .site-head{padding-top:26px;padding-bottom:26px}
+  .bar{display:flex;align-items:center;justify-content:space-between}
+  .mark{font-family:'Fraunces',serif;font-weight:500;font-size:1.24rem;text-decoration:none;color:var(--ink)}
+  .mark span{color:var(--accent)}
+  nav a{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;margin-left:24px;transition:color .3s var(--ease)}
+  nav a:hover{color:var(--accent)}
+  @media(max-width:520px){nav a{margin-left:16px}}
+  .btn{display:inline-block;font-family:'Jost',sans-serif;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;text-decoration:none;border-radius:100px;padding:16px 40px;background:var(--ink);color:var(--bg);transition:transform .35s var(--ease),background .35s var(--ease)}
+  .btn:hover{background:var(--accent-deep);transform:translateY(-2px)}
+  .page-hero{padding-top:48px;padding-bottom:8px;text-align:center}
+  .page-hero .eyebrow{display:block;margin-bottom:16px}
+  .page-hero h1{font-size:clamp(2.2rem,6vw,3.2rem)}
+  .page-hero .sub{color:var(--ink-soft);margin-top:14px;max-width:48ch;margin-left:auto;margin-right:auto}
+  .content{padding-top:36px;padding-bottom:72px}
+  .prose{max-width:62ch;margin-left:auto;margin-right:auto}
+  .prose p{color:var(--ink-soft);margin-bottom:18px;font-size:1.05rem}
+  .prose a{color:var(--accent)}
+  .cta-row{text-align:center;margin-top:34px}
+  .site-foot{border-top:1px solid var(--line);padding-top:40px;padding-bottom:56px}
+  .foot{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+  .foot-nav a{color:var(--ink-soft);text-decoration:none;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;margin:0 12px;transition:color .3s var(--ease)}
+  .foot-nav a:hover{color:var(--accent)}
+  .foot .em{color:var(--accent);text-decoration:none}
+  .foot .disc{font-size:.86rem;color:var(--ink-soft);max-width:52ch}
+  .foot .cr{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="site-head"><div class="wrap"><div class="bar">
+  <a href="/" class="mark">Love Your <span>Senses</span></a>
+  <nav><a href="/">Home</a><a href="/about">About</a><a href="/contact">Contact</a></nav>
+</div></div></header>
+
+<main>
+  <section class="page-hero"><div class="wrap">
+    <span class="eyebrow">About</span>
+    <h1 class="display">About Love Your Senses</h1>
+    <p class="sub">The idea behind the quizzes, and who is behind them.</p>
+  </div></section>
+
+  <section class="content"><div class="wrap"><div class="prose">
+    <p>Love Your Senses began with a simple frustration. Finding a fragrance, or almost anything you wear or use, usually means wading through endless listings and reviews written for everyone and no one in particular. We thought there was a kinder way to do it.</p>
+    <p>So we build short, enjoyable quizzes that get to know your taste in a minute, then point you toward the things that genuinely suit you. We are starting with fragrance, where the right scent is such a personal thing, and expanding across the senses from there, into skincare, sleep, taste and more.</p>
+    <p>We are an independent site based in the United Kingdom. Every recommendation is chosen on merit, because it fits the result you get, never because of who pays the most.</p>
+    <p>When you buy through some of our links we may earn a small commission, at no extra cost to you. That is what keeps the quizzes free to take. You can read more on our <a href="/disclosure">Affiliate Disclosure</a> page.</p>
+    <p>Have an idea for a quiz, or a question for us? We would love to hear from you at <a href="mailto:hello@loveyoursenses.com">hello@loveyoursenses.com</a>.</p>
+    <div class="cta-row"><a href="/scent" class="btn">Take the scent quiz</a></div>
+  </div></div></section>
+</main>
+
+<footer class="site-foot"><div class="wrap"><div class="foot">
+  <div class="foot-nav"><a href="/about">About</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/disclosure">Affiliate Disclosure</a></div>
+  <a class="em" href="mailto:hello@loveyoursenses.com">hello@loveyoursenses.com</a>
+  <p class="disc">Love Your Senses may earn a small commission from products we recommend, at no extra cost to you.</p>
+  <p class="cr">© 2026 Love Your Senses</p>
+</div></div></footer>
+</body>
+</html>
