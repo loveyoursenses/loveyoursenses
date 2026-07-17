@@ -3,101 +3,262 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Find Your Signature Scent | Love Your Senses</title>
-<meta name="description" content="A short scent discovery. Answer six questions and find the fragrance family, and the perfumes, made for you.">
+<title>Find Your Signature Scent | Women's Perfume Quiz | Love Your Senses</title>
+<meta name="description" content="Answer six quick questions to discover your fragrance family and three women's perfumes matched to your taste, mood and style.">
+<link rel="canonical" href="https://loveyoursenses.com/womens-perfume">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Find Your Signature Scent | Love Your Senses">
+<meta property="og:description" content="Discover your fragrance family and three women's perfumes matched to your scent preferences.">
+<meta property="og:url" content="https://loveyoursenses.com/womens-perfume">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#E7E3DD; --card:#F2EEE8; --ink:#2A2130; --ink-soft:#6E6574;
-    --accent:#7B4A5E; --accent-deep:#5E3547; --line:#CDC3B6; --gold:#B8A78C;
-    --radius:18px; --ease:cubic-bezier(.4,.14,.2,1);
+    --bg:#E7E3DD;
+    --card:#F2EEE8;
+    --ink:#2A2130;
+    --ink-soft:#6E6574;
+    --accent:#7B4A5E;
+    --accent-deep:#5E3547;
+    --line:#CDC3B6;
+    --gold:#B8A78C;
+    --cream:#F7F1EC;
+    --radius:18px;
+    --ease:cubic-bezier(.4,.14,.2,1);
   }
+
   *{box-sizing:border-box;margin:0;padding:0}
-  html{-webkit-text-size-adjust:100%}
-  body{background:var(--bg);color:var(--ink);font-family:'Jost',system-ui,sans-serif;line-height:1.6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px 20px;-webkit-font-smoothing:antialiased}
-  .stage{width:100%;max-width:640px}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Jost',system-ui,sans-serif;
+    line-height:1.6;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  button,input{font:inherit}
+  button{touch-action:manipulation}
   .display{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
   .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  .wrap{width:100%;max-width:1000px;margin:0 auto;padding-left:24px;padding-right:24px}
+
+  .site-head{padding:24px 0}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .mark{font-family:'Fraunces',serif;font-weight:500;font-size:1.24rem;text-decoration:none;color:var(--ink)}
+  .mark span{color:var(--accent)}
+  .head-link{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none}
+  .head-link:hover{color:var(--accent)}
+
+  .stage{width:100%;max-width:680px;margin:0 auto;padding:36px 20px 72px}
   .screen{display:none;animation:rise .6s var(--ease) both}
   .screen.active{display:block}
   @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
-  #intro{text-align:center;padding:8px 0}
+  #intro{text-align:center;padding:14px 0 24px}
   .ring{margin:0 auto 30px;display:block}
-  #intro h1{font-size:clamp(2.5rem,9vw,3.9rem);margin-bottom:18px}
+  #intro h1{font-size:clamp(2.55rem,9vw,4rem);margin-bottom:18px}
   #intro h1 em{font-style:italic;font-weight:400}
-  .lede{color:var(--ink-soft);font-size:1.05rem;max-width:40ch;margin:0 auto 34px}
+  .lede{color:var(--ink-soft);font-size:1.06rem;max-width:43ch;margin:0 auto 34px}
   .meta{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:26px}
 
-  .btn{font-family:'Jost',sans-serif;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:17px 40px;background:var(--ink);color:var(--bg);transition:transform .35s var(--ease),background .35s var(--ease)}
+  .btn{
+    display:inline-block;
+    font-family:'Jost',sans-serif;
+    font-size:.82rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-weight:500;
+    cursor:pointer;
+    border:none;
+    border-radius:100px;
+    padding:17px 40px;
+    background:var(--ink);
+    color:var(--bg);
+    transition:transform .35s var(--ease),background .35s var(--ease);
+  }
   .btn:hover{background:var(--accent-deep);transform:translateY(-2px)}
 
   .progress-wrap{display:flex;align-items:center;gap:16px;margin-bottom:38px}
   .track{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
   .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);transition:width .5s var(--ease)}
   .count{font-size:.72rem;letter-spacing:.2em;color:var(--ink-soft);white-space:nowrap}
-  .question{font-size:clamp(1.7rem,6vw,2.4rem);margin-bottom:32px;min-height:2.2em}
+  .question{font-size:clamp(1.75rem,6vw,2.45rem);margin-bottom:32px;min-height:2.2em}
   .options{display:flex;flex-direction:column;gap:12px}
-  .option{font-family:'Jost',sans-serif;font-size:1.02rem;color:var(--ink);text-align:left;background:var(--card);border:1px solid transparent;border-radius:var(--radius);padding:19px 22px;cursor:pointer;width:100%;transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);display:flex;align-items:center;gap:14px}
-  .option:before{content:"";width:9px;height:9px;border-radius:50%;border:1.5px solid var(--line);flex:none;transition:all .3s var(--ease)}
+  .option{
+    font-family:'Jost',sans-serif;
+    font-size:1.01rem;
+    color:var(--ink);
+    text-align:left;
+    background:var(--card);
+    border:1px solid transparent;
+    border-radius:var(--radius);
+    padding:19px 22px;
+    cursor:pointer;
+    width:100%;
+    transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .option:before{
+    content:"";
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    border:1.5px solid var(--line);
+    flex:none;
+    transition:all .3s var(--ease);
+  }
   .option:hover{border-color:var(--gold);transform:translateX(4px)}
-  .option.chosen{background:var(--accent);color:#F6F1EC;border-color:var(--accent)}
-  .option.chosen:before{background:#F6F1EC;border-color:#F6F1EC}
+  .option.chosen{background:var(--accent);color:var(--cream);border-color:var(--accent)}
+  .option.chosen:before{background:var(--cream);border-color:var(--cream)}
+  .option:disabled{cursor:default}
 
-  /* result hero */
-  .result-card{background:var(--fam,#7B4A5E);color:#F7F1EC;border-radius:26px;padding:44px 32px 40px;text-align:center;box-shadow:0 30px 60px -30px rgba(42,33,48,.55)}
+  .result-card{
+    background:var(--fam,#7B4A5E);
+    color:var(--cream);
+    border-radius:26px;
+    padding:44px 32px 40px;
+    text-align:center;
+    box-shadow:0 30px 60px -30px rgba(42,33,48,.55);
+  }
   .result-card .eyebrow{color:rgba(247,241,236,.72)}
-  .result-name{font-size:clamp(2.6rem,10vw,3.6rem);margin-bottom:10px}
-  .result-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:1.2rem;opacity:.92;margin-bottom:26px}
-  .result-body{font-size:1.02rem;line-height:1.7;opacity:.94;max-width:42ch;margin:0 auto 32px}
-  .notes{border-top:1px solid rgba(247,241,236,.28);border-bottom:1px solid rgba(247,241,236,.28);padding:22px 0;text-align:left;display:flex;flex-direction:column;gap:14px}
-  .note-row{display:flex;gap:18px;align-items:baseline}
-  .note-label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;opacity:.7;width:66px;flex:none}
-  .note-val{font-family:'Fraunces',serif;font-size:1.05rem}
+  .result-name{font-size:clamp(2.55rem,10vw,3.65rem);margin-bottom:10px}
+  .result-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:1.2rem;opacity:.94;margin-bottom:24px}
+  .result-body{font-size:1.02rem;line-height:1.72;opacity:.95;max-width:44ch;margin:0 auto 30px}
+  .details{border-top:1px solid rgba(247,241,236,.28);border-bottom:1px solid rgba(247,241,236,.28);padding:22px 0;text-align:left;display:flex;flex-direction:column;gap:14px}
+  .detail-row{display:flex;gap:18px;align-items:baseline}
+  .detail-label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;opacity:.72;width:96px;flex:none}
+  .detail-val{font-family:'Fraunces',serif;font-size:1.04rem}
 
-  /* recommendations */
-  .recs{margin-top:34px}
+  .recs{margin-top:36px}
   .recs-head{text-align:center;margin-bottom:22px}
   .recs-head .eyebrow{display:block;margin-bottom:10px}
-  .recs-head h3{font-size:clamp(1.5rem,5vw,2rem)}
+  .recs-head h3{font-size:clamp(1.55rem,5vw,2.05rem)}
   .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-  @media(max-width:560px){.rec-grid{grid-template-columns:1fr 1fr}}
-  @media(max-width:400px){.rec-grid{grid-template-columns:1fr}}
-  .rec{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
-  .rec .media{aspect-ratio:1/1;width:100%;object-fit:cover;background:#fff;display:block}
-  .rec .ph{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
-  .rec .ph span{font-family:'Fraunces',serif;font-size:2rem;color:#fff;opacity:.9}
-  .rec .body{padding:15px 15px 17px;display:flex;flex-direction:column;gap:5px;flex:1}
-  .rec .brand{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
-  .rec .pname{font-family:'Fraunces',serif;font-size:1.02rem;line-height:1.2}
-  .rec .pnote{font-size:.8rem;color:var(--ink-soft);line-height:1.4}
-  .rec .view{margin-top:auto;padding-top:10px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;text-decoration:none;color:var(--accent)}
-  .rec .view.off{color:var(--ink-soft);opacity:.6}
+  .rec{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+  .rec-badge{
+    position:absolute;
+    top:12px;
+    left:12px;
+    z-index:2;
+    background:rgba(247,241,236,.94);
+    color:var(--accent-deep);
+    border-radius:100px;
+    padding:6px 10px;
+    font-size:.61rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+  .rec .media-frame{aspect-ratio:1/1;width:100%;position:relative;overflow:hidden;background:#fff}
+  .rec .media{aspect-ratio:1/1;width:100%;height:100%;object-fit:contain;padding:18px;background:#fff;display:block}
+  .rec .ph{display:flex;align-items:center;justify-content:center;padding:0}
+  .rec .media-frame .media{position:absolute;inset:0}
+  .rec .media-fallback{display:none}
+  .rec .media-fallback.show{display:flex}
+  .rec .ph span{font-family:'Fraunces',serif;font-size:2rem;color:#fff;opacity:.92}
+  .rec .body{padding:16px 15px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .rec .brand{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .rec .pname{font-family:'Fraunces',serif;font-size:1.04rem;line-height:1.22}
+  .rec .pnote{font-size:.8rem;color:var(--ink-soft);line-height:1.45}
+  .rec .offer{font-size:.76rem;color:var(--accent);font-weight:500}
+  .rec .view{
+    margin-top:auto;
+    padding-top:11px;
+    font-size:.72rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-weight:500;
+    text-decoration:none;
+    color:var(--accent);
+  }
+  .rec .view.off{color:var(--ink-soft);opacity:.58}
+  .rec .view:hover{text-decoration:underline;text-underline-offset:4px}
+
+  .affiliate-note{font-size:.78rem;color:var(--ink-soft);line-height:1.55;text-align:center;max-width:58ch;margin:18px auto 0}
+  .affiliate-note a{color:var(--accent);text-underline-offset:3px}
   .browse-all{text-align:center;margin-top:22px}
-  .btn-all{display:inline-block;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;text-decoration:none;border:1px solid var(--accent);color:var(--accent);border-radius:100px;padding:14px 34px;transition:background .3s var(--ease),color .3s var(--ease)}
-  .btn-all:hover{background:var(--accent);color:#F7F1EC}
+  .btn-all{
+    display:inline-block;
+    font-family:'Jost',sans-serif;
+    font-size:.78rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-weight:500;
+    text-decoration:none;
+    border:1px solid var(--accent);
+    color:var(--accent);
+    border-radius:100px;
+    padding:14px 34px;
+    transition:background .3s var(--ease),color .3s var(--ease);
+  }
+  .btn-all:hover{background:var(--accent);color:var(--cream)}
   .btn-all.off{opacity:.5;pointer-events:none}
 
-  .capture{background:var(--card);border-radius:var(--radius);padding:32px 28px;margin-top:26px;text-align:center}
+  .capture{background:var(--card);border-radius:var(--radius);padding:32px 28px;margin-top:28px;text-align:center}
   .capture h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;margin-bottom:8px}
-  .capture p{color:var(--ink-soft);font-size:.96rem;margin-bottom:22px;max-width:36ch;margin-inline:auto}
+  .capture p{color:var(--ink-soft);font-size:.96rem;margin:0 auto 22px;max-width:39ch}
   .field{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-  .field input{font-family:'Jost',sans-serif;font-size:1rem;flex:1;min-width:200px;padding:15px 18px;border:1px solid var(--line);border-radius:100px;background:#fff;color:var(--ink)}
+  .field input{font-family:'Jost',sans-serif;font-size:1rem;flex:1;min-width:210px;padding:15px 18px;border:1px solid var(--line);border-radius:100px;background:#fff;color:var(--ink)}
   .field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
-  .field button{font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:15px 28px;background:var(--accent);color:#F7F1EC}
+  .field button{font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:15px 28px;background:var(--accent);color:var(--cream)}
   .field button:hover{background:var(--accent-deep)}
   .capture .done{color:var(--accent);font-family:'Fraunces',serif;font-size:1.1rem;padding:6px 0}
+  .capture .form-note{font-size:.74rem;margin-top:12px;margin-bottom:0}
+
+
+  .next-quiz{border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;margin-top:18px;text-align:center}
+  .next-quiz .eyebrow{display:block;margin-bottom:9px}
+  .next-quiz h3{font-size:1.45rem;margin-bottom:8px}
+  .next-quiz p{color:var(--ink-soft);font-size:.94rem;max-width:40ch;margin:0 auto 18px}
+  .next-link{font-size:.74rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;color:var(--accent);text-underline-offset:4px}
+  .next-link:hover{color:var(--accent-deep)}
+
   .after{display:flex;gap:22px;justify-content:center;align-items:center;margin-top:26px;flex-wrap:wrap}
   .linkish{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px}
   .linkish:hover{color:var(--accent)}
 
+  .site-foot{border-top:1px solid var(--line);padding:34px 0 48px}
+  .foot{display:flex;flex-direction:column;align-items:center;gap:11px;text-align:center}
+  .foot-nav a{color:var(--ink-soft);text-decoration:none;font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;margin:0 10px}
+  .foot-nav a:hover{color:var(--accent)}
+  .foot .disc{font-size:.82rem;color:var(--ink-soft);max-width:54ch}
+  .foot .cr{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft)}
+
   :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  @media(max-width:600px){
+    .site-head{padding:20px 0}
+    .stage{padding-top:28px}
+    .rec-grid{grid-template-columns:1fr 1fr}
+    .detail-label{width:80px}
+  }
+  @media(max-width:420px){
+    .rec-grid{grid-template-columns:1fr}
+    .result-card{padding:40px 24px 36px}
+    .field{flex-direction:column}
+    .field input,.field button{width:100%}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  }
 </style>
 </head>
 <body>
+
+<header class="site-head">
+  <div class="wrap">
+    <div class="bar">
+      <a href="/" class="mark">Love Your <span>Senses</span></a>
+      <a href="/#quizzes" class="head-link">All quizzes</a>
+    </div>
+  </div>
+</header>
+
 <main class="stage">
 
   <section id="intro" class="screen active">
@@ -105,231 +266,1056 @@
       <circle cx="29" cy="29" r="27" fill="none" stroke="#B8A78C" stroke-width="1"/>
       <circle cx="29" cy="29" r="19" fill="none" stroke="#CDC3B6" stroke-width="1"/>
       <g stroke="#7B4A5E" stroke-width="1.4">
-        <line x1="29" y1="2" x2="29" y2="9"/><line x1="52.4" y1="42.5" x2="46.4" y2="39"/>
-        <line x1="5.6" y1="42.5" x2="11.6" y2="39"/><line x1="52.4" y1="15.5" x2="46.4" y2="19"/>
-        <line x1="5.6" y1="15.5" x2="11.6" y2="19"/><line x1="29" y1="56" x2="29" y2="49"/>
+        <line x1="29" y1="2" x2="29" y2="9"/>
+        <line x1="52.4" y1="42.5" x2="46.4" y2="39"/>
+        <line x1="5.6" y1="42.5" x2="11.6" y2="39"/>
+        <line x1="52.4" y1="15.5" x2="46.4" y2="19"/>
+        <line x1="5.6" y1="15.5" x2="11.6" y2="19"/>
+        <line x1="29" y1="56" x2="29" y2="49"/>
       </g>
       <circle cx="29" cy="29" r="3" fill="#7B4A5E"/>
     </svg>
     <p class="eyebrow">A short scent discovery</p>
     <h1 class="display">Find your <em>signature</em> scent</h1>
-    <p class="lede">Every person has a fragrance family that simply fits. Answer six short questions and discover yours, with three perfumes chosen to match.</p>
-    <button class="btn" id="start">Begin the discovery</button>
+    <p class="lede">Answer six quick questions to discover your fragrance family and three women's perfumes selected for your taste, mood and style.</p>
+    <button class="btn" id="start" type="button">Begin the discovery</button>
     <p class="meta">Six questions &nbsp;·&nbsp; one minute</p>
   </section>
 
   <section id="quiz" class="screen" aria-live="polite">
-    <div class="progress-wrap"><div class="track"><div class="fill" id="fill"></div></div><span class="count" id="count">01 / 06</span></div>
-    <h2 class="question display" id="question"></h2>
+    <div class="progress-wrap">
+      <div class="track" aria-hidden="true"><div class="fill" id="fill"></div></div>
+      <span class="count" id="count">01 / 06</span>
+    </div>
+    <h2 class="question display" id="question" tabindex="-1"></h2>
     <div class="options" id="options"></div>
   </section>
 
-  <section id="result" class="screen">
+  <section id="result" class="screen" aria-live="polite">
     <div class="result-card" id="resultCard">
-      <p class="eyebrow">Your signature</p>
+      <p class="eyebrow">Your scent profile</p>
       <h2 class="result-name display" id="rName"></h2>
       <p class="result-tag" id="rTag"></p>
       <p class="result-body" id="rBody"></p>
-      <div class="notes" id="rNotes"></div>
+      <div class="details" id="rDetails"></div>
     </div>
 
     <div class="recs">
       <div class="recs-head">
-        <span class="eyebrow">Chosen for you</span>
-        <h3 class="display" id="recsTitle">Three to try</h3>
+        <span class="eyebrow">Chosen for your preferences</span>
+        <h3 class="display" id="recsTitle">Three perfumes to try</h3>
       </div>
       <div class="rec-grid" id="recGrid"></div>
-      <!-- Catch-all button: links to the whole fragrance catalogue (STORE_LINK below) -->
+      <p class="affiliate-note" id="recommendationDisclosure">These recommendations use direct brand and retailer links. Love Your Senses does not currently earn commission from them. Availability and product imagery may change.</p>
       <div class="browse-all" id="browseAll"></div>
     </div>
 
-    <!-- EMAIL SLOT: replace with your MailerLite / Kit embed. Tag with window.LYS_RESULT. -->
     <div class="capture">
-      <h3>Your scent profile, saved</h3>
-      <p>Get your full profile plus seasonal edits chosen for your family.</p>
+      <h3>Save your scent profile</h3>
+      <p>Get your result, perfume shortlist and future scent discoveries by email.</p>
       <div class="field" id="emailForm">
         <input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email">
         <button id="emailBtn" type="button">Send it</button>
       </div>
+      <p class="form-note" id="formNote">Connect your email platform in the JavaScript settings before publishing.</p>
+    </div>
+
+    <div class="next-quiz">
+      <span class="eyebrow">Continue your discovery</span>
+      <h3 class="display">Explore another Love Your Senses quiz</h3>
+      <p>Browse the latest quizzes and find more products matched to your preferences and everyday rituals.</p>
+      <a class="next-link" href="/#quizzes">Explore all quizzes</a>
     </div>
 
     <div class="after">
-      <button class="linkish" id="share">Share your scent</button>
-      <button class="linkish" id="retake">Retake the quiz</button>
+      <button class="linkish" id="share" type="button">Share your result</button>
+      <button class="linkish" id="retake" type="button">Retake the quiz</button>
     </div>
   </section>
 
 </main>
 
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-nav">
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/disclosure">Affiliate Disclosure</a>
+      </div>
+      <p class="disc">Love Your Senses helps you discover products matched to your preferences through short, enjoyable quizzes.</p>
+      <p class="cr">© 2026 Love Your Senses</p>
+    </div>
+  </div>
+</footer>
+
 <script>
 /* =====================================================================
-   AFFILIATE SLOT 1 — the catch-all "Browse all perfumes" button.
-   Paste ONE affiliate link to your retailer's full fragrance catalogue
-   (e.g. The Perfume Shop's or Notino's all-fragrances page).
+   PAGE SETTINGS
+   Replace these values before publishing.
    ===================================================================== */
-const STORE_LINK = "#";
+const QUIZ_URL = "https://loveyoursenses.com/womens-perfume";
+const STORE_LINK = "";
+const STORE_LINK_IS_AFFILIATE = false;
+
+/*
+  EMAIL_FORM_ACTION:
+  Add the form action or webhook supplied by your email platform.
+  Leave blank while the signup form is not connected.
+
+  EMAIL_FIELD_NAME:
+  Most platforms use "email". Change this only when your provider requires
+  a different field name.
+*/
+const EMAIL_FORM_ACTION = "";
+const EMAIL_FIELD_NAME = "email";
 
 /* =====================================================================
-   AFFILIATE SLOT 2 — the three perfumes shown per result.
-   For each product, paste:
-     url  = your affiliate deep link to that product's page (Notino, The Perfume Shop, etc.)
-     img  = the product image URL (optional; a coloured tile shows if blank)
-   Swap brand/name/note freely. Until a url is added it shows "Link soon".
+   WOMEN'S PERFUME RECOMMENDATIONS
+
+   These are real fragrances linked directly to brand or retailer pages.
+   They are not affiliate links at present. When an affiliate partnership is
+   approved, replace the URL and change affiliate:false to affiliate:true.
+
+   base = default ranking strength within the result category
+   fit  = weighted preference signals used to personalise the final three
    ===================================================================== */
 const PRODUCTS = {
-  cit:[
-    {brand:"Dolce & Gabbana", name:"Light Blue", note:"Sun and Sicilian lemon.", url:"#", img:""},
-    {brand:"Chanel", name:"Chance Eau Fraîche", note:"Sparkling and green.", url:"#", img:""},
-    {brand:"DKNY", name:"Be Delicious", note:"Crisp green apple.", url:"#", img:""}
+  cit: [
+    {
+      merchant:"Dolce&Gabbana",
+      name:"Light Blue Eau de Toilette",
+      monogram:"LB",
+      note:"Sicilian lemon, green apple and cedar create a crisp Mediterranean citrus profile.",
+      offer:"A natural choice for bright daytime freshness.",
+      url:"https://www.harrods.com/en-gb/p/dolce-and-gabbana-light-blue-eau-de-toilette-100ml-000000000007810741",
+      img:"https://hrd-live.cdn.scayle.cloud/images/41d74395956b19f409750e8d1b80fc97.jpg?bg=ffffff&brightness=1&height=1230&quality=75&width=922",
+      affiliate:false,
+      base:12,
+      fit:{bright:9,fresh:8,day:8,citrus:9,fruity:6,airy:5,casual:5,summer:6}
+    },
+    {
+      merchant:"CHANEL",
+      name:"CHANCE EAU FRAÎCHE Eau de Parfum",
+      monogram:"CF",
+      note:"A sparkling citrus opening is balanced by jasmine and a polished woody foundation.",
+      offer:"A refined citrus option with more depth and structure.",
+      url:"https://www.chanel.com/gb/fragrance/p/136150/chance-eau-fraiche-eau-de-parfum-spray/",
+      img:"https://hrd-live.cdn.scayle.cloud/images/897bd10c2f6b6548157ac9b0b085029d.jpg?bg=ffffff&brightness=1&height=1230&quality=75&width=922",
+      affiliate:false,
+      base:11,
+      fit:{bright:7,fresh:7,elegant:8,woody:6,modern:6,versatile:8,day:5,evening:4}
+    },
+    {
+      merchant:"Jo Malone London",
+      name:"Lime Basil & Mandarin Cologne",
+      monogram:"LM",
+      note:"Mandarin is sharpened by aromatic basil and grounded with amberwood.",
+      offer:"Best for clean citrus with a green, understated edge.",
+      url:"https://www.harrods.com/en-gb/p/lime-basil-and-mandarin-cologne-000000000006174937",
+      img:"https://hrd-live.cdn.scayle.cloud/images/d259093c2cc5dfb350718cb0079396ef.jpg?bg=ffffff&brightness=1&height=1230&quality=75&width=922",
+      affiliate:false,
+      base:10,
+      fit:{citrus:8,green:9,clean:7,airy:7,woody:5,classic:6,quiet:5,day:6}
+    },
+    {
+      merchant:"Guerlain",
+      name:"Aqua Allegoria Mandarine Basilic",
+      monogram:"MB",
+      note:"Juicy mandarin, basil and green tea produce a lively citrus fragrance with a botanical feel.",
+      offer:"Best for playful brightness and a more adventurous citrus profile.",
+      url:"https://www.guerlain.com/uk/en-uk/p/aqua-allegoria-mandarine-basilic-P013019.html",
+      img:"https://hrd-live.cdn.scayle.cloud/images/0676d04ada5a95062954a2861f821c4f.jpg?bg=ffffff&brightness=1&height=1280&quality=75&width=960",
+      affiliate:false,
+      base:9,
+      fit:{bright:9,citrus:9,green:7,fruity:8,playful:7,adventurous:7,summer:7,day:7}
+    }
   ],
-  flo:[
-    {brand:"Marc Jacobs", name:"Daisy", note:"Fresh, youthful florals.", url:"#", img:""},
-    {brand:"Gucci", name:"Bloom", note:"Lush white flowers.", url:"#", img:""},
-    {brand:"Chloé", name:"Eau de Parfum", note:"Powdery rose elegance.", url:"#", img:""}
+
+  flo: [
+    {
+      merchant:"Chloé",
+      name:"Chloé Eau de Parfum",
+      monogram:"CH",
+      note:"Peony, rose petals and magnolia settle into cedar and ambergris for polished floral elegance.",
+      offer:"Best for a timeless rose-led signature.",
+      url:"https://www.chloe.com/en-gb/p/fragrances/eau-de-parfum/CHCA50133819.html",
+      img:"https://www.chloe.com/dw/image/v2/BLMX_PRD/on/demandware.static/-/Sites-chloe-master/default/dwfe15c403/images/all-images/CHCA50133819/_Vt5dsgETlCTFH4kdp0EBA_4d9401ae.jpeg?q=90&sfrm=png&sw=900",
+      affiliate:false,
+      base:12,
+      fit:{floral:9,rose:9,soft:7,elegant:9,classic:8,romantic:7,day:6,powdery:5}
+    },
+    {
+      merchant:"Jo Malone London",
+      name:"Peony & Blush Suede Cologne",
+      monogram:"PS",
+      note:"Red apple and peony are softened by jasmine, rose and a smooth suede accord.",
+      offer:"Best for playful florals with a soft tactile finish.",
+      url:"https://www.jomalone.co.uk/product/25946/27028/colognes/peony-blush-suede-cologne?size=9ml",
+      img:"https://www.jomalone.co.uk/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png",
+      affiliate:false,
+      base:11,
+      fit:{floral:9,soft:8,playful:8,fruity:6,romantic:7,day:8,modern:5,elegant:5}
+    },
+    {
+      merchant:"Gucci",
+      name:"Bloom Eau de Parfum",
+      monogram:"GB",
+      note:"Tuberose, jasmine and Rangoon creeper form a full, lush white-floral composition.",
+      offer:"Best for someone who wants flowers to take centre stage.",
+      url:"https://www.harrods.com/en-gb/p/gucci-bloom-eau-de-parfum-50ml-000000000005711650",
+      img:"https://hrd-live.cdn.scayle.cloud/images/04b751061df82fa2772b1e5ad9917a7c.jpg?bg=ffffff&brightness=1&height=1230&quality=75&width=922",
+      affiliate:false,
+      base:10,
+      fit:{floral:10,white_floral:10,rich:7,romantic:7,classic:5,dramatic:5,evening:4,soft:3}
+    },
+    {
+      merchant:"DIOR",
+      name:"Miss Dior Blooming Bouquet Eau de Toilette",
+      monogram:"MD",
+      note:"Bergamot, Damascus rose, peony and white musk create an airy, tender floral trail.",
+      offer:"Best for fresh romance and an easy daytime floral.",
+      url:"https://www.harrods.com/en-gb/p/dior-miss-dior-blooming-bouquet-eau-toilette-100ml-000000000007329615",
+      img:"https://hrd-live.cdn.scayle.cloud/images/c73333bab22d54f1ff4739221bdcbe40.jpg?bg=ffffff&brightness=1&height=1230&quality=75&width=922",
+      affiliate:false,
+      base:9,
+      fit:{floral:8,rose:7,soft:9,fresh:8,romantic:9,airy:8,day:9,elegant:6}
+    }
   ],
-  amb:[
-    {brand:"Yves Saint Laurent", name:"Black Opium", note:"Warm coffee and vanilla.", url:"#", img:""},
-    {brand:"Paco Rabanne", name:"Lady Million", note:"Bold amber and honey.", url:"#", img:""},
-    {brand:"Dior", name:"Hypnotic Poison", note:"Almond and vanilla.", url:"#", img:""}
+
+  amb: [
+    {
+      merchant:"Yves Saint Laurent",
+      name:"Libre Intense Eau de Parfum",
+      monogram:"LI",
+      note:"Lavender and orange blossom deepen into jasmine, tonka bean, vanilla and ambergris.",
+      offer:"Best for confident warmth with a modern evening character.",
+      url:"https://www.harrods.com/en-gb/p/ysl-libre-intense-eau-de-parfum-50ml-000000000006690838",
+      img:"https://hrd-live.cdn.scayle.cloud/images/58f489aad1bcfe909eaa62175aa9308c.jpg?bg=ffffff&brightness=1&height=1230&quality=75&width=922",
+      affiliate:false,
+      base:12,
+      fit:{warm:8,sensual:9,rich:9,modern:8,night:9,confident:9,aromatic:6,vanilla:6}
+    },
+    {
+      merchant:"DIOR",
+      name:"Hypnotic Poison Eau de Toilette",
+      monogram:"HP",
+      note:"Bitter almond, sambac jasmine and vanilla create a dark, enveloping amber profile.",
+      offer:"Best for dramatic sweetness and candlelit evenings.",
+      url:"https://www.harrods.com/en-gb/p/dior-hypnotic-poison-eau-de-toilette-30ml-000000000006764039",
+      img:"https://hrd-live.cdn.scayle.cloud/images/b52cf522e6b1bc5e00346e12eb51e288.jpg?bg=ffffff&brightness=1&height=1230&quality=75&width=922",
+      affiliate:false,
+      base:11,
+      fit:{warm:9,sensual:8,rich:8,night:10,dramatic:10,sweet:7,vanilla:8,cosy:5}
+    },
+    {
+      merchant:"Rabanne",
+      name:"Olympéa Eau de Parfum",
+      monogram:"OL",
+      note:"Green mandarin and jasmine meet salty vanilla, cashmere wood and ambergris.",
+      offer:"Best for sensual amber with a fresh, salty contrast.",
+      url:"https://www.harrods.com/en-gb/p/paco-rabanne-olympea-eau-de-parfum-50ml-000000000004918370",
+      img:"https://hrd-live.cdn.scayle.cloud/images/67f60164f4898282b1dcb186edef3647.jpg?bg=ffffff&brightness=1&height=1230&quality=75&width=922",
+      affiliate:false,
+      base:10,
+      fit:{sensual:9,warm:7,salty:9,sweet:6,modern:8,confident:8,fresh:4,night:6}
+    },
+    {
+      merchant:"Dolce&Gabbana",
+      name:"The One Eau de Parfum",
+      monogram:"TO",
+      note:"Mandarin and peach flow into jasmine, vanilla, amber and musk for smooth evening elegance.",
+      offer:"Best for classic warmth with a softly fruity opening.",
+      url:"https://www.harrods.com/en-gb/p/dolce-and-gabbana-the-one-eau-de-parfum-50-ml-000000000001266540",
+      img:"https://hrd-live.cdn.scayle.cloud/images/3a219f10df4ab4e5771abac5753a98a7.jpg?bg=ffffff&brightness=1&height=1230&quality=75&width=922",
+      affiliate:false,
+      base:9,
+      fit:{warm:8,elegant:9,classic:8,fruity:6,sensual:7,night:8,soft:4,versatile:5}
+    }
   ],
-  woo:[
-    {brand:"Chanel", name:"Coco Mademoiselle", note:"Woody and refined.", url:"#", img:""},
-    {brand:"Narciso Rodriguez", name:"For Her", note:"Musky and modern.", url:"#", img:""},
-    {brand:"Jo Malone", name:"Wood Sage & Sea Salt", note:"Fresh, salted woods.", url:"#", img:""}
+
+  woo: [
+    {
+      merchant:"CHANEL",
+      name:"COCO MADEMOISELLE Eau de Parfum",
+      monogram:"CM",
+      note:"A bright citrus opening leads into rose, jasmine and a composed patchouli-wood base.",
+      offer:"Best for refined woods with classic versatility.",
+      url:"https://www.harrods.com/en-gb/p/chanel-coco-mademoiselle-eau-de-parfum-50ml-000000000000505199",
+      img:"https://hrd-live.cdn.scayle.cloud/images/b08af5c1cbb7d1c51c8a56f571c9b52b.jpg?bg=ffffff&brightness=1&height=1230&quality=75&width=922",
+      affiliate:false,
+      base:12,
+      fit:{woody:8,elegant:10,classic:9,versatile:9,bright:5,confident:7,day:5,evening:6}
+    },
+    {
+      merchant:"Jo Malone London",
+      name:"Wood Sage & Sea Salt Cologne",
+      monogram:"WS",
+      note:"Ambrette, sea salt and sage create an airy mineral-wood scent with coastal clarity.",
+      offer:"Best for clean, contemporary woods that stay light.",
+      url:"https://www.harrods.com/en-gb/p/wood-sage-and-sea-salt-cologne-50ml-000000000006443186",
+      img:"https://hrd-live.cdn.scayle.cloud/images/2481d16ea59c8f57c6e66411e0ce70f7.jpg?bg=ffffff&brightness=1&height=1230&quality=75&width=922",
+      affiliate:false,
+      base:11,
+      fit:{woody:7,airy:10,clean:9,salty:8,modern:8,day:9,quiet:7,casual:6}
+    },
+    {
+      merchant:"Byredo",
+      name:"Super Cedar Eau de Parfum",
+      monogram:"SC",
+      note:"Rose petals, Virginian cedarwood, silk musk and vetiver form a clean, minimalist wood scent.",
+      offer:"Best for modern cedar and an understated unisex direction.",
+      url:"https://www.harrods.com/en-gb/p/byredo-super-cedar-eau-de-parfum-50ml-000000000005200297",
+      img:"https://hrd-live.cdn.scayle.cloud/images/d0256fe6bb978b0964ffee8b42119da6.jpg?bg=ffffff&brightness=1&height=1230&quality=75&width=922",
+      affiliate:false,
+      base:10,
+      fit:{woody:10,clean:8,modern:10,minimal:10,quiet:7,earthy:5,versatile:6,confident:5}
+    },
+    {
+      merchant:"Diptyque",
+      name:"Tam Dao Eau de Parfum",
+      monogram:"TD",
+      note:"Sandalwood and cedar are warmed by spices and amber for a calm, enveloping wood profile.",
+      offer:"Best for meditative woods and a grounded, intimate mood.",
+      url:"https://www.harrods.com/en-gb/p/diptyque-tam-dao-eau-de-parfum-000000000003602557",
+      img:"https://hrd-live.cdn.scayle.cloud/images/6a71f5e46bb36db3dc341ee58c948b78.jpg?bg=ffffff&brightness=1&height=1230&quality=75&width=922",
+      affiliate:false,
+      base:9,
+      fit:{woody:10,earthy:9,warm:7,quiet:10,grounded:10,classic:6,cosy:6,night:5}
+    }
   ],
-  oce:[
-    {brand:"Giorgio Armani", name:"Acqua di Gioia", note:"Bright aquatic freshness.", url:"#", img:""},
-    {brand:"Issey Miyake", name:"L'Eau d'Issey", note:"Clean, watery florals.", url:"#", img:""},
-    {brand:"Davidoff", name:"Cool Water Woman", note:"Crisp and breezy.", url:"#", img:""}
+
+  oce: [
+    {
+      merchant:"Giorgio Armani",
+      name:"Acqua di Gioia Eau de Parfum",
+      monogram:"AG",
+      note:"Mint and lemon open into aquatic greens, jasmine and peony over cedar and soft brown sugar.",
+      offer:"Best for green aquatic freshness with a gentle softness.",
+      url:"https://www.harrods.com/en-gb/p/armani-acqua-di-gioia-eau-de-parfum-100ml-000000000002160996",
+      img:"https://hrd-live.cdn.scayle.cloud/images/9578959cf6d999585a33a0dde7c30076.jpg?bg=ffffff&brightness=1&height=1230&quality=75&width=922",
+      affiliate:false,
+      base:12,
+      fit:{aquatic:10,fresh:10,green:8,day:9,clean:7,floral:5,soft:4,summer:8}
+    },
+    {
+      merchant:"Issey Miyake",
+      name:"L'Eau d'Issey Eau de Toilette",
+      monogram:"IS",
+      note:"Lotus, lilies and white flowers rest on clean woods in a transparent, water-inspired composition.",
+      offer:"Best for elegant aquatic florals and a timeless clean scent.",
+      url:"https://uk.isseymiyake.com/products/leau-dissey-eau-de-toilette-50ml",
+      img:"https://uk.isseymiyake.com/cdn/shop/files/IP45AZ806-s-01.jpg?v=1730286165&width=1946",
+      affiliate:false,
+      base:11,
+      fit:{aquatic:10,clean:10,airy:10,floral:7,classic:9,elegant:7,day:7,quiet:5}
+    },
+    {
+      merchant:"Davidoff",
+      name:"Cool Water Woman Eau de Toilette",
+      monogram:"CW",
+      note:"Watermelon and pineapple meet lily of the valley, blackcurrant and clean woods.",
+      offer:"Best for casual, fruity freshness with an easy coastal feel.",
+      url:"https://www.zinodavidoff.com/fragrances/cool-water-woman-eau-de-toilette-30-ml",
+      img:"https://cdn.prod.website-files.com/687defbb96d87d8b0b3754df/68caf8a3f92eb4e4dfe1ba0a_DAV_CW_W_24_EDT_30ml-1280x1280.avif",
+      affiliate:false,
+      base:10,
+      fit:{aquatic:10,fresh:9,fruity:8,casual:9,clean:7,playful:6,summer:9,day:8}
+    },
+    {
+      merchant:"Loewe",
+      name:"Agua Eau de Toilette",
+      monogram:"LA",
+      note:"Yuzu, bergamot and tangerine blend with tea, white pepper, cedar, sandalwood and musk.",
+      offer:"Best for modern clean freshness with citrus and woods.",
+      url:"https://www.harrods.com/en-gb/p/loewe-agua-eau-de-toilette-50ml-000000000006684855",
+      img:"https://hrd-live.cdn.scayle.cloud/images/60b7ac2c999707ed9ea67a972311949d.jpg?bg=ffffff&brightness=1&height=1230&quality=75&width=922",
+      affiliate:false,
+      base:9,
+      fit:{clean:10,fresh:8,citrus:8,green:7,modern:9,woody:6,quiet:6,versatile:7}
+    }
   ],
-  gou:[
-    {brand:"Lancôme", name:"La Vie Est Belle", note:"Sweet iris and praline.", url:"#", img:""},
-    {brand:"Carolina Herrera", name:"Good Girl", note:"Almond, tonka and coffee.", url:"#", img:""},
-    {brand:"Mugler", name:"Angel", note:"The iconic gourmand.", url:"#", img:""}
+
+  gou: [
+    {
+      merchant:"Lancôme",
+      name:"La Vie Est Belle Eau de Parfum",
+      monogram:"LV",
+      note:"Pear and blackberry surround iris, jasmine and orange blossom above patchouli, tonka, vanilla and praline.",
+      offer:"Best for polished sweetness with a floral heart.",
+      url:"https://www.harrods.com/en-gb/p/la-vie-est-belle-eau-de-parfum-75ml-000000000002936069",
+      img:"https://hrd-live.cdn.scayle.cloud/images/e233e76f32e35cc2bc4965d73b05a723.jpg?bg=ffffff&brightness=1&height=1230&quality=75&width=922",
+      affiliate:false,
+      base:12,
+      fit:{sweet:9,vanilla:8,praline:9,elegant:8,floral:6,cosy:7,versatile:6,fruity:5}
+    },
+    {
+      merchant:"Mugler",
+      name:"Angel Eau de Parfum",
+      monogram:"AN",
+      note:"Bergamot, caramelised cotton candy, vanilla and patchouli create a bold ambery gourmand signature.",
+      offer:"Best for adventurous sweetness and a statement-making gourmand.",
+      url:"https://www.mugler.co.uk/fragrance/women/angel/angel-eau-de-parfum/3439600056532.html",
+      img:"https://www.mugler.co.uk/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-mug-master-catalog/default/dw4ea89b1a/images/pdp/M010101003/3439600056532-angel-eau-de-parfum%E2%80%8B-50ml-refill-main.jpg?q=85&sfrm=png&sh=900&sm=cut&sw=900",
+      affiliate:false,
+      base:11,
+      fit:{sweet:10,rich:10,dramatic:10,adventurous:10,night:9,caramel:9,vanilla:8,patchouli:8}
+    },
+    {
+      merchant:"Burberry",
+      name:"Goddess Eau de Parfum",
+      monogram:"BG",
+      note:"Lavender and a trio of vanilla notes form a warm aromatic gourmand with woody depth.",
+      offer:"Best for wearable vanilla with a confident modern finish.",
+      url:"https://www.harrods.com/en-gb/p/burberry-goddess-eau-de-parfum-100ml-000000000007477141",
+      img:"https://hrd-live.cdn.scayle.cloud/images/16aada1e43a7bef457542c2d57bb1beb.jpg?bg=ffffff&brightness=1&height=1230&quality=75&width=922",
+      affiliate:false,
+      base:10,
+      fit:{vanilla:10,warm:9,soft:7,modern:8,versatile:9,cosy:8,aromatic:7,day:5}
+    },
+    {
+      merchant:"Dolce&Gabbana",
+      name:"Devotion Eau de Parfum",
+      monogram:"DV",
+      note:"Candied lemon and orange blossom settle into rich Madagascar vanilla.",
+      offer:"Best for bright gourmand sweetness with a citrus lift.",
+      url:"https://www.dolcegabbana.com/en-gb/beauty/perfumes-for-her/devotion/devotion-eau-de-parfum---VT0063VT0009V000.html",
+      img:"https://hrd-live.cdn.scayle.cloud/images/e4c6770d7682e57661365bf6b22a493a.jpg?bg=ffffff&brightness=1&height=1230&quality=75&width=922",
+      affiliate:false,
+      base:9,
+      fit:{sweet:9,vanilla:9,citrus:8,bright:7,cosy:6,romantic:6,playful:6,day:5}
+    }
   ]
 };
 
 const RESULTS = {
-  cit:{name:"Citrus Bloom", color:"#B4841C", tag:"Bright, effervescent, impossible to ignore.",
-    body:"You gravitate to scents that feel like sunlight through an open window. Zesty and full of life, your fragrances lift a room the moment you walk in.",
-    notes:{Top:"Bergamot, lemon zest", Heart:"Neroli, orange blossom", Base:"White musk"}},
-  flo:{name:"Petal Romance", color:"#AE5A75", tag:"Soft, romantic, quietly unforgettable.",
-    body:"Yours is the language of flowers. You are drawn to fragrances with heart and tenderness, the kind that leave a gentle trail and a lasting impression.",
-    notes:{Top:"Dewy peony", Heart:"Rose, jasmine", Base:"Soft musk, sandalwood"}},
-  amb:{name:"Velvet Amber", color:"#A24E2A", tag:"Warm, sensual, made for candlelight.",
-    body:"You reach for depth and warmth. Rich and a little intoxicating, your scents feel like cashmere and low light, an invitation to come closer.",
-    notes:{Top:"Pink pepper", Heart:"Amber, cinnamon", Base:"Vanilla, benzoin"}},
-  woo:{name:"Cedar & Smoke", color:"#46523B", tag:"Grounded, refined, effortlessly composed.",
-    body:"You favour fragrances with backbone. Earthy and sophisticated, your scents feel like a well-tailored coat, understated but impossible to fake.",
-    notes:{Top:"Cardamom", Heart:"Cedar, vetiver", Base:"Oakmoss, leather"}},
-  oce:{name:"Ocean Air", color:"#2F6E80", tag:"Clean, crisp, like a deep breath.",
-    body:"You love the feeling of fresh air on skin. Cool and weightless, your fragrances feel like linen drying in a sea breeze, endlessly wearable.",
-    notes:{Top:"Sea salt, mint", Heart:"Green fig", Base:"Driftwood, white musk"}},
-  gou:{name:"Sweet Indulgence", color:"#8A5A32", tag:"Cosy, moreish, utterly comforting.",
-    body:"You treat scent like a treat. Warm and wrapped in comfort, your fragrances feel like the best part of the evening, the one everyone leans in to ask about.",
-    notes:{Top:"Caramelised sugar", Heart:"Vanilla orchid", Base:"Tonka bean, praline"}}
+  cit: {
+    name:"Citrus Bloom",
+    color:"#B4841C",
+    tag:"Bright, effervescent and full of momentum.",
+    body:"You are drawn to fragrances that feel like light entering a room. Citrus, aromatic greens and crisp fruits suit your energetic style, giving you a signature that feels polished without becoming heavy.",
+    details:{
+      Family:"Citrus aromatic",
+      Character:"Bright and energetic",
+      Notes:"Lemon, bergamot, green fruit",
+      Moment:"Daytime and warm weather"
+    }
+  },
+
+  flo: {
+    name:"Petal Romance",
+    color:"#AE5A75",
+    tag:"Soft, romantic and quietly memorable.",
+    body:"Flowers are the natural centre of your scent wardrobe. Rose, peony, jasmine and white florals reflect your preference for tenderness and elegance, with enough personality to leave a graceful trail.",
+    details:{
+      Family:"Floral",
+      Character:"Romantic and elegant",
+      Notes:"Rose, peony, jasmine",
+      Moment:"Daytime and special occasions"
+    }
+  },
+
+  amb: {
+    name:"Velvet Amber",
+    color:"#A24E2A",
+    tag:"Warm, sensual and made for low light.",
+    body:"You respond to fragrance with depth, warmth and presence. Amber, vanilla, spice and rich florals suit your confident style, creating a signature that feels enveloping and distinctly evening-ready.",
+    details:{
+      Family:"Ambery",
+      Character:"Warm and sensual",
+      Notes:"Vanilla, amber, spice",
+      Moment:"Evenings and cooler seasons"
+    }
+  },
+
+  woo: {
+    name:"Cedar & Smoke",
+    color:"#46523B",
+    tag:"Grounded, refined and effortlessly composed.",
+    body:"You favour structure over obvious sweetness. Cedar, sandalwood, vetiver, moss and mineral notes reflect your calm confidence, giving you a signature that feels understated, modern and substantial.",
+    details:{
+      Family:"Woody",
+      Character:"Grounded and refined",
+      Notes:"Cedar, sandalwood, vetiver",
+      Moment:"Everyday wear and quiet evenings"
+    }
+  },
+
+  oce: {
+    name:"Ocean Air",
+    color:"#2F6E80",
+    tag:"Clean, crisp and weightlessly fresh.",
+    body:"You want fragrance to feel like space, movement and a deep breath. Aquatic notes, cool florals, green leaves and clean woods suit your preference for scents that stay fresh, easy and uncluttered.",
+    details:{
+      Family:"Aquatic fresh",
+      Character:"Clean and airy",
+      Notes:"Water notes, greens, white musk",
+      Moment:"Daytime and warmer months"
+    }
+  },
+
+  gou: {
+    name:"Sweet Indulgence",
+    color:"#8A5A32",
+    tag:"Cosy, moreish and unmistakably comforting.",
+    body:"You treat fragrance as a source of pleasure and warmth. Vanilla, praline, caramel and soft fruits fit your preference for enveloping scents that feel familiar, inviting and just a little decadent.",
+    details:{
+      Family:"Gourmand",
+      Character:"Sweet and comforting",
+      Notes:"Vanilla, praline, caramel",
+      Moment:"Evenings and cosy seasons"
+    }
+  }
 };
 
+/* =====================================================================
+   QUIZ QUESTIONS
+
+   Each answer adds weighted points to one or more result profiles.
+   Higher weights represent a stronger signal.
+   ===================================================================== */
 const QUESTIONS = [
-  {q:"Where do you most want to escape to?", a:[
-    ["A sun-drenched citrus grove","cit"],["A garden in full bloom","flo"],["A candlelit room, deep in winter","amb"],
-    ["A cabin among tall pines","woo"],["A quiet cove by the sea","oce"],["A warm kitchen, something baking","gou"]]},
-  {q:"Your ideal evening looks like...", a:[
-    ["Rooftop drinks as the sun sets","cit"],["A slow, romantic dinner","flo"],["Wine and low light with someone close","amb"],
-    ["A fireside book and no plans","woo"],["A barefoot walk along the shore","oce"],["Something sweet and a favourite film","gou"]]},
-  {q:"Pick the colour you can't resist.", a:[
-    ["Sunlit yellow","cit"],["Blush pink","flo"],["Deep burgundy","amb"],["Forest green","woo"],["Sea glass blue","oce"],["Warm caramel","gou"]]},
-  {q:"How should your scent make you feel?", a:[
-    ["Awake and alive","cit"],["Romantic and soft","flo"],["Confident and alluring","amb"],
-    ["Grounded and self-assured","woo"],["Fresh and unburdened","oce"],["Comforted and cosy","gou"]]},
-  {q:"Choose a little luxury.", a:[
-    ["An ice-cold citrus spritz","cit"],["A single stem of roses","flo"],["Silk against the skin","amb"],
-    ["A leather-bound notebook","woo"],["Crisp white cotton sheets","oce"],["Salted caramel, slowly","gou"]]},
-  {q:"Which season feels most like you?", a:[
-    ["Bright early summer","cit"],["Late spring, everything flowering","flo"],["Deep autumn evenings","amb"],
-    ["Cold, clear winter walks","woo"],["High summer by the water","oce"],["The cosy heart of the festive season","gou"]]}
+  {
+    q:"Where do you most want to escape to?",
+    a:[
+      {label:"A sun-drenched citrus grove",scores:{cit:5,oce:1},signals:["bright","fresh","citrus","day","summer"]},
+      {label:"A garden in full bloom",scores:{flo:5,cit:1},signals:["floral","romantic","soft","day"]},
+      {label:"A candlelit room, deep in winter",scores:{amb:5,gou:1},signals:["warm","sensual","night","rich","dramatic"]},
+      {label:"A cabin among tall pines",scores:{woo:5,amb:1},signals:["woody","earthy","grounded","quiet"]},
+      {label:"A quiet cove by the sea",scores:{oce:5,cit:1},signals:["aquatic","fresh","airy","clean","casual"]},
+      {label:"A warm kitchen, something baking",scores:{gou:5,amb:1},signals:["sweet","cosy","warm","vanilla","caramel"]}
+    ]
+  },
+  {
+    q:"Your ideal evening looks like...",
+    a:[
+      {label:"Rooftop drinks as the sun sets",scores:{cit:4,amb:1},signals:["bright","social","modern","sparkling","evening"]},
+      {label:"A slow, romantic dinner",scores:{flo:4,amb:1},signals:["romantic","elegant","soft","evening"]},
+      {label:"Wine and low light with someone close",scores:{amb:5},signals:["sensual","night","rich","warm"]},
+      {label:"A fireside book and no plans",scores:{woo:4,gou:1},signals:["quiet","cosy","woody","grounded"]},
+      {label:"A barefoot walk along the shore",scores:{oce:5},signals:["aquatic","airy","casual","fresh"]},
+      {label:"Something sweet and a favourite film",scores:{gou:5},signals:["sweet","cosy","relaxed","vanilla"]}
+    ]
+  },
+  {
+    q:"Pick the colour you cannot resist.",
+    a:[
+      {label:"Sunlit yellow",scores:{cit:4},signals:["bright","playful","citrus"]},
+      {label:"Blush pink",scores:{flo:4},signals:["soft","floral","romantic","powdery"]},
+      {label:"Deep burgundy",scores:{amb:4},signals:["rich","dramatic","night","confident"]},
+      {label:"Forest green",scores:{woo:4},signals:["green","woody","earthy","quiet"]},
+      {label:"Sea glass blue",scores:{oce:4},signals:["clean","aquatic","airy"]},
+      {label:"Warm caramel",scores:{gou:4},signals:["warm","sweet","caramel","cosy"]}
+    ]
+  },
+  {
+    q:"How should your scent make you feel?",
+    a:[
+      {label:"Awake and alive",scores:{cit:5,oce:1},signals:["fresh","bright","day","energetic"]},
+      {label:"Romantic and soft",scores:{flo:5},signals:["romantic","soft","floral"]},
+      {label:"Confident and alluring",scores:{amb:5},signals:["confident","sensual","night","modern"]},
+      {label:"Grounded and self-assured",scores:{woo:5},signals:["grounded","woody","classic","quiet"]},
+      {label:"Fresh and unburdened",scores:{oce:5,cit:1},signals:["fresh","clean","airy","casual"]},
+      {label:"Comforted and cosy",scores:{gou:5,amb:1},signals:["cosy","sweet","warm","soft"]}
+    ]
+  },
+  {
+    q:"Choose a little luxury.",
+    a:[
+      {label:"An ice-cold citrus spritz",scores:{cit:5},signals:["citrus","sparkling","bright","fresh"]},
+      {label:"A single stem of roses",scores:{flo:5},signals:["rose","floral","romantic","elegant"]},
+      {label:"Silk against the skin",scores:{amb:5},signals:["sensual","soft","rich","night"]},
+      {label:"A leather-bound notebook",scores:{woo:5,amb:1},signals:["classic","woody","leather","elegant"]},
+      {label:"Crisp white cotton sheets",scores:{oce:5},signals:["clean","airy","quiet","day"]},
+      {label:"Salted caramel, slowly",scores:{gou:5,amb:1},signals:["caramel","sweet","salty","indulgent"]}
+    ]
+  },
+  {
+    q:"Which season feels most like you?",
+    a:[
+      {label:"Bright early summer",scores:{cit:6,oce:1},signals:["summer","bright","day","citrus"]},
+      {label:"Late spring, everything flowering",scores:{flo:6},signals:["floral","soft","day","fresh"]},
+      {label:"Deep autumn evenings",scores:{amb:6,gou:1},signals:["warm","night","rich","sensual"]},
+      {label:"Cold, clear winter walks",scores:{woo:6,oce:1},signals:["woody","earthy","clean","quiet"]},
+      {label:"High summer by the water",scores:{oce:6,cit:1},signals:["aquatic","summer","fresh","casual"]},
+      {label:"The cosy heart of the festive season",scores:{gou:6,amb:1},signals:["cosy","sweet","warm","vanilla"]}
+    ]
+  }
 ];
 
-let step=0; const answers=[];
-const el=id=>document.getElementById(id);
-const screens={intro:el('intro'),quiz:el('quiz'),result:el('result')};
-function show(name){Object.values(screens).forEach(s=>s.classList.remove('active'));screens[name].classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
-function hexA(hex,a){const n=parseInt(hex.slice(1),16);return `rgba(${n>>16&255},${n>>8&255},${n&255},${a})`;}
+let step = 0;
+let locked = false;
+const selectedAnswers = [];
+const preferenceSignals = {};
+const totals = Object.keys(RESULTS).reduce((acc,key)=>{
+  acc[key] = 0;
+  return acc;
+},{});
 
-function render(){
-  const item=QUESTIONS[step];
-  el('question').textContent=item.q;
-  el('count').textContent=String(step+1).padStart(2,'0')+" / 06";
-  el('fill').style.width=(step/QUESTIONS.length*100)+"%";
-  const box=el('options'); box.innerHTML="";
-  item.a.forEach(([label,key])=>{
-    const b=document.createElement('button');
-    b.className="option"; b.type="button"; b.textContent=label;
-    b.addEventListener('click',()=>choose(b,key));
-    box.appendChild(b);
+const el = id => document.getElementById(id);
+const screens = {
+  intro:el("intro"),
+  quiz:el("quiz"),
+  result:el("result")
+};
+
+function show(name){
+  Object.values(screens).forEach(screen=>screen.classList.remove("active"));
+  screens[name].classList.add("active");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function hexToRgba(hex,alpha){
+  const clean = hex.replace("#","");
+  const value = parseInt(clean,16);
+  const red = value >> 16 & 255;
+  const green = value >> 8 & 255;
+  const blue = value & 255;
+  return `rgba(${red},${green},${blue},${alpha})`;
+}
+
+function escapeHtml(value){
+  return String(value)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+
+const SIGNAL_LABELS = {
+  bright:"bright freshness",
+  fresh:"freshness",
+  day:"daytime wear",
+  citrus:"citrus notes",
+  fruity:"fruity notes",
+  airy:"an airy scent",
+  casual:"easy everyday wear",
+  summer:"warm-weather scents",
+  elegant:"elegance",
+  woody:"woody notes",
+  modern:"a modern character",
+  versatile:"versatility",
+  green:"green notes",
+  clean:"clean scents",
+  classic:"classic fragrances",
+  quiet:"understated scents",
+  playful:"playful fragrances",
+  adventurous:"more adventurous scents",
+  floral:"floral notes",
+  rose:"rose notes",
+  soft:"softness",
+  romantic:"romantic fragrances",
+  powdery:"powdery notes",
+  white_floral:"white florals",
+  rich:"richer scents",
+  dramatic:"dramatic fragrances",
+  evening:"evening wear",
+  warm:"warmth",
+  sensual:"sensual fragrances",
+  night:"night-time wear",
+  confident:"a confident scent",
+  aromatic:"aromatic notes",
+  vanilla:"vanilla",
+  sweet:"sweet notes",
+  cosy:"cosy fragrances",
+  salty:"salty notes",
+  earthy:"earthy notes",
+  minimal:"minimal fragrances",
+  grounded:"grounded scents",
+  aquatic:"aquatic freshness",
+  caramel:"caramel notes",
+  social:"social occasions",
+  sparkling:"sparkling notes",
+  relaxed:"a relaxed mood",
+  energetic:"an energising scent",
+  leather:"leather notes",
+  indulgent:"indulgent sweetness",
+  praline:"praline notes",
+  patchouli:"patchouli"
+};
+
+function getProductRecommendations(key){
+  return (PRODUCTS[key] || [])
+    .map((product,originalIndex)=>{
+      const matchScore = Object.entries(product.fit || {}).reduce((score,[signal,weight])=>{
+        return score + (preferenceSignals[signal] || 0) * weight;
+      },product.base || 0);
+
+      return {...product,matchScore,originalIndex};
+    })
+    .sort((a,b)=>{
+      return b.matchScore - a.matchScore
+        || (b.base || 0) - (a.base || 0)
+        || a.originalIndex - b.originalIndex;
+    })
+    .slice(0,3);
+}
+
+function getPersonalMatch(product){
+  const matches = Object.entries(product.fit || {})
+    .filter(([signal])=>preferenceSignals[signal])
+    .map(([signal,weight])=>({
+      signal,
+      value:weight * preferenceSignals[signal]
+    }))
+    .sort((a,b)=>b.value-a.value)
+    .slice(0,2)
+    .map(item=>SIGNAL_LABELS[item.signal])
+    .filter(Boolean);
+
+  if(matches.length === 0) return product.offer || "";
+  if(matches.length === 1) return `Matches your preference for ${matches[0]}.`;
+  return `Matches your preference for ${matches[0]} and ${matches[1]}.`;
+}
+
+function getProductMonogram(product){
+  if(product.monogram) return product.monogram;
+
+  return product.name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0,2)
+    .map(word=>word.charAt(0))
+    .join("")
+    .toUpperCase();
+}
+
+function trackEvent(eventName,details={}){
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({event:eventName,...details});
+
+  if(typeof window.pintrk === "function"){
+    try{
+      window.pintrk("track","custom",{
+        event_name:eventName,
+        ...details
+      });
+    }catch(error){
+      console.warn("Pinterest tracking event was not sent.",error);
+    }
+  }
+}
+
+function renderQuestion(){
+  const item = QUESTIONS[step];
+  const totalQuestions = QUESTIONS.length;
+
+  el("question").textContent = item.q;
+  el("count").textContent = `${String(step+1).padStart(2,"0")} / ${String(totalQuestions).padStart(2,"0")}`;
+  el("fill").style.width = `${step / totalQuestions * 100}%`;
+
+  const box = el("options");
+  box.innerHTML = "";
+  locked = false;
+
+  item.a.forEach((answer,index)=>{
+    const button = document.createElement("button");
+    button.className = "option";
+    button.type = "button";
+    button.textContent = answer.label;
+    button.addEventListener("click",()=>chooseAnswer(button,answer,index));
+    box.appendChild(button);
   });
+
+  setTimeout(()=>el("question").focus({preventScroll:true}),50);
 }
-function choose(btn,key){
-  btn.classList.add('chosen'); answers[step]=key;
-  setTimeout(()=>{step++; if(step<QUESTIONS.length){render();} else{el('fill').style.width="100%";finish();}},340);
-}
-function finish(){
-  const tally={}; answers.forEach(k=>tally[k]=(tally[k]||0)+1);
-  let best=answers[0],high=0;
-  Object.keys(tally).forEach(k=>{
-    if(tally[k]>high || (tally[k]===high && answers.indexOf(k)<answers.indexOf(best))){high=tally[k];best=k;}
+
+function chooseAnswer(button,answer,index){
+  if(locked) return;
+  locked = true;
+
+  document.querySelectorAll(".option").forEach(option=>{
+    option.disabled = true;
   });
-  showResult(best);
+
+  button.classList.add("chosen");
+  selectedAnswers[step] = index;
+
+  Object.entries(answer.scores).forEach(([key,value])=>{
+    totals[key] += value;
+  });
+
+  (answer.signals || []).forEach(signal=>{
+    preferenceSignals[signal] = (preferenceSignals[signal] || 0) + 1;
+  });
+
+  trackEvent("quiz_answer",{
+    quiz:"womens_perfume",
+    question_number:step+1,
+    answer:answer.label
+  });
+
+  setTimeout(()=>{
+    step += 1;
+
+    if(step < QUESTIONS.length){
+      renderQuestion();
+    }else{
+      el("fill").style.width = "100%";
+      finishQuiz();
+    }
+  },340);
 }
+
+function finishQuiz(){
+  const orderedKeys = Object.keys(RESULTS);
+  let winningKey = orderedKeys[0];
+
+  orderedKeys.forEach(key=>{
+    if(totals[key] > totals[winningKey]){
+      winningKey = key;
+    }
+  });
+
+  const tiedKeys = orderedKeys.filter(key=>totals[key] === totals[winningKey]);
+
+  if(tiedKeys.length > 1){
+    for(let questionIndex = selectedAnswers.length - 1; questionIndex >= 0; questionIndex -= 1){
+      const answer = QUESTIONS[questionIndex].a[selectedAnswers[questionIndex]];
+      const rankedTie = tiedKeys
+        .map(key=>({key,value:answer.scores[key] || 0}))
+        .sort((a,b)=>b.value-a.value);
+
+      if(rankedTie[0].value > rankedTie[1].value){
+        winningKey = rankedTie[0].key;
+        break;
+      }
+    }
+  }
+
+  showResult(winningKey);
+}
+
 function showResult(key){
-  const r=RESULTS[key]; window.LYS_RESULT=key;
-  el('resultCard').style.setProperty('--fam',r.color);
-  el('rName').textContent=r.name;
-  el('rTag').textContent=r.tag;
-  el('rBody').textContent=r.body;
-  const n=el('rNotes'); n.innerHTML="";
-  Object.entries(r.notes).forEach(([label,val])=>{
-    const row=document.createElement('div'); row.className="note-row";
-    row.innerHTML='<span class="note-label">'+label+'</span><span class="note-val">'+val+'</span>';
-    n.appendChild(row);
+  const result = RESULTS[key];
+  window.LYS_RESULT = key;
+
+  el("resultCard").style.setProperty("--fam",result.color);
+  el("rName").textContent = result.name;
+  el("rTag").textContent = result.tag;
+  el("rBody").textContent = result.body;
+
+  const details = el("rDetails");
+  details.innerHTML = "";
+
+  Object.entries(result.details).forEach(([label,value])=>{
+    const row = document.createElement("div");
+    row.className = "detail-row";
+
+    const labelSpan = document.createElement("span");
+    labelSpan.className = "detail-label";
+    labelSpan.textContent = label;
+
+    const valueSpan = document.createElement("span");
+    valueSpan.className = "detail-val";
+    valueSpan.textContent = value;
+
+    row.append(labelSpan,valueSpan);
+    details.appendChild(row);
   });
-  // product recommendations
-  el('recsTitle').textContent="Three "+r.name+" scents to try";
-  const grid=el('recGrid'); grid.innerHTML="";
-  (PRODUCTS[key]||[]).forEach(p=>{
-    const media = p.img
-      ? '<img class="media" src="'+p.img+'" alt="'+p.brand+' '+p.name+'" loading="lazy">'
-      : '<div class="ph media" style="background:'+hexA(r.color,.85)+'"><span>'+p.brand.charAt(0)+'</span></div>';
-    const cta = (p.url && p.url!=="#")
-      ? '<a class="view" href="'+p.url+'" target="_blank" rel="noopener sponsored">View &rsaquo;</a>'
-      : '<span class="view off">Link soon</span>';
-    const card=document.createElement('div'); card.className="rec";
-    card.innerHTML=media+'<div class="body"><span class="brand">'+p.brand+'</span><span class="pname">'+p.name+'</span><span class="pnote">'+(p.note||"")+'</span>'+cta+'</div>';
+
+  el("recsTitle").textContent = "Your three best-matched perfumes";
+
+  const recommendations = getProductRecommendations(key);
+  const grid = el("recGrid");
+  grid.innerHTML = "";
+
+  recommendations.forEach((product,index)=>{
+    const card = document.createElement("article");
+    card.className = "rec";
+
+    const fallbackHtml = `<div class="ph media media-fallback" style="background:${hexToRgba(result.color,.88)}"><span>${escapeHtml(getProductMonogram(product))}</span></div>`;
+    const mediaHtml = product.img
+      ? `<div class="media-frame"><img class="media" src="${escapeHtml(product.img)}" alt="${escapeHtml(product.merchant)} ${escapeHtml(product.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${fallbackHtml}</div>`
+      : fallbackHtml;
+
+    const badgeHtml = index === 0
+      ? '<span class="rec-badge">Best match</span>'
+      : "";
+
+    const matchText = getPersonalMatch(product);
+    const offerHtml = matchText
+      ? `<span class="offer">${escapeHtml(matchText)}</span>`
+      : "";
+
+    const linkIsAffiliate = Boolean(product.affiliate);
+    const linkRel = linkIsAffiliate ? "noopener sponsored" : "noopener";
+    const ctaHtml = product.url && product.url !== "#"
+      ? `<a class="view" href="${escapeHtml(product.url)}" target="_blank" rel="${linkRel}" data-product-position="${index+1}">View perfume &rsaquo;</a>`
+      : '<span class="view off">Perfume page unavailable</span>';
+
+    card.innerHTML = `${badgeHtml}${mediaHtml}<div class="body"><span class="brand">${escapeHtml(product.merchant)}</span><span class="pname">${escapeHtml(product.name)}</span><span class="pnote">${escapeHtml(product.note)}</span>${offerHtml}${ctaHtml}</div>`;
+
+    const productImage = card.querySelector("img.media");
+    if(productImage){
+      productImage.addEventListener("error",()=>{
+        productImage.remove();
+        const fallback = card.querySelector(".media-fallback");
+        if(fallback) fallback.classList.add("show");
+      },{once:true});
+    }
+
+    const productLink = card.querySelector("a[data-product-position]");
+    if(productLink){
+      productLink.addEventListener("click",()=>{
+        trackEvent(linkIsAffiliate ? "affiliate_click" : "product_click",{
+          quiz:"womens_perfume",
+          result:key,
+          merchant:product.merchant,
+          product:product.name,
+          position:index+1,
+          affiliate:linkIsAffiliate
+        });
+      });
+    }
+
     grid.appendChild(card);
   });
-  // catch-all "browse all perfumes" button
-  const b=el('browseAll');
-  if(STORE_LINK && STORE_LINK!=="#"){
-    b.innerHTML='<a class="btn-all" href="'+STORE_LINK+'" target="_blank" rel="noopener sponsored">Browse all perfumes</a>';
-  } else {
-    b.innerHTML='<span class="btn-all off">Browse all perfumes</span>';
+
+  const disclosure = el("recommendationDisclosure");
+  const containsAffiliateLinks = recommendations.some(product=>product.affiliate);
+
+  if(containsAffiliateLinks){
+    disclosure.innerHTML = 'Some links on this page are affiliate links. Love Your Senses may earn a commission from qualifying orders at no extra cost to you. <a href="/disclosure">Read the affiliate disclosure</a>.';
+  }else{
+    disclosure.textContent = "These recommendations use direct brand and retailer links. Love Your Senses does not currently earn commission from them. Availability and product imagery may change.";
   }
-  show('result');
+
+  const browseAll = el("browseAll");
+
+  if(STORE_LINK && STORE_LINK !== "#"){
+    const storeRel = STORE_LINK_IS_AFFILIATE ? "noopener sponsored" : "noopener";
+    browseAll.innerHTML = `<a class="btn-all" href="${escapeHtml(STORE_LINK)}" target="_blank" rel="${storeRel}">Browse all women's perfumes</a>`;
+    browseAll.querySelector("a").addEventListener("click",()=>{
+      trackEvent(STORE_LINK_IS_AFFILIATE ? "affiliate_click" : "product_click",{
+        quiz:"womens_perfume",
+        result:key,
+        product:"browse_all",
+        affiliate:STORE_LINK_IS_AFFILIATE
+      });
+    });
+  }else{
+    browseAll.innerHTML = "";
+  }
+
+  trackEvent("quiz_complete",{
+    quiz:"womens_perfume",
+    result:key,
+    result_name:result.name
+  });
+
+  show("result");
 }
 
-el('emailBtn').addEventListener('click',()=>{
-  const val=el('email').value.trim();
-  if(!/.+@.+\..+/.test(val)){el('email').focus();return;}
-  el('emailForm').innerHTML='<p class="done">You are on the list.</p>';
+async function submitEmail(){
+  const emailInput = el("email");
+  const email = emailInput.value.trim();
+  const form = el("emailForm");
+  const note = el("formNote");
+
+  if(!/^\S+@\S+\.\S+$/.test(email)){
+    emailInput.focus();
+    note.textContent = "Enter a valid email address.";
+    return;
+  }
+
+  if(!EMAIL_FORM_ACTION){
+    note.textContent = "Email signup is not connected yet. Add your email platform form action in the JavaScript settings.";
+    return;
+  }
+
+  const button = el("emailBtn");
+  button.disabled = true;
+  button.textContent = "Sending";
+
+  try{
+    const payload = new URLSearchParams();
+    payload.append(EMAIL_FIELD_NAME,email);
+    payload.append("quiz_result",window.LYS_RESULT || "");
+    payload.append("source","womens_perfume_quiz");
+
+    await fetch(EMAIL_FORM_ACTION,{
+      method:"POST",
+      mode:"no-cors",
+      headers:{"Content-Type":"application/x-www-form-urlencoded"},
+      body:payload.toString()
+    });
+
+    form.innerHTML = '<p class="done">Your scent profile is on its way.</p>';
+    note.textContent = "";
+
+    trackEvent("email_signup",{
+      quiz:"womens_perfume",
+      result:window.LYS_RESULT || ""
+    });
+  }catch(error){
+    button.disabled = false;
+    button.textContent = "Send it";
+    note.textContent = "The signup did not complete. Please try again.";
+    console.error("Email signup failed.",error);
+  }
+}
+
+async function shareResult(){
+  const result = RESULTS[window.LYS_RESULT];
+  if(!result) return;
+
+  const text = `My signature scent profile is ${result.name}. Find yours:`;
+  const shareData = {
+    title:"Love Your Senses Women's Perfume Quiz",
+    text,
+    url:QUIZ_URL || location.href
+  };
+
+  if(navigator.share){
+    try{
+      await navigator.share(shareData);
+      trackEvent("share",{quiz:"womens_perfume",result:window.LYS_RESULT,method:"native"});
+    }catch(error){
+      if(error.name !== "AbortError") console.error("Share failed.",error);
+    }
+    return;
+  }
+
+  try{
+    await navigator.clipboard.writeText(`${text} ${shareData.url}`);
+    el("share").textContent = "Link copied";
+    setTimeout(()=>el("share").textContent = "Share your result",2000);
+    trackEvent("share",{quiz:"womens_perfume",result:window.LYS_RESULT,method:"clipboard"});
+  }catch(error){
+    console.error("Copy failed.",error);
+  }
+}
+
+function resetQuiz(){
+  step = 0;
+  locked = false;
+  selectedAnswers.length = 0;
+  Object.keys(preferenceSignals).forEach(key=>delete preferenceSignals[key]);
+  Object.keys(totals).forEach(key=>totals[key] = 0);
+  window.LYS_RESULT = "";
+
+  const form = el("emailForm");
+  form.innerHTML = '<input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email"><button id="emailBtn" type="button">Send it</button>';
+  el("emailBtn").addEventListener("click",submitEmail);
+  el("formNote").textContent = "Connect your email platform in the JavaScript settings before publishing.";
+
+  show("intro");
+  trackEvent("quiz_retake",{quiz:"womens_perfume"});
+}
+
+el("start").addEventListener("click",()=>{
+  show("quiz");
+  renderQuestion();
+  trackEvent("quiz_start",{quiz:"womens_perfume"});
 });
-el('share').addEventListener('click',async()=>{
-  const r=RESULTS[window.LYS_RESULT];
-  const text="My signature scent is "+r.name+". Find yours:"; const url=location.href;
-  if(navigator.share){try{await navigator.share({title:"Love Your Senses",text,url});}catch(e){}}
-  else{try{await navigator.clipboard.writeText(text+" "+url);el('share').textContent="Link copied";setTimeout(()=>el('share').textContent="Share your scent",2000);}catch(e){}}
-});
-el('start').addEventListener('click',()=>{show('quiz');render();});
-el('retake').addEventListener('click',()=>{step=0;answers.length=0;el('email').value="";show('intro');});
+
+el("emailBtn").addEventListener("click",submitEmail);
+el("share").addEventListener("click",shareResult);
+el("retake").addEventListener("click",resetQuiz);
 </script>
 </body>
 </html>
