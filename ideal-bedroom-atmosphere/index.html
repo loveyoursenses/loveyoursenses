@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Your Ideal Bedroom Atmosphere | Love Your Senses</title>
+<meta name="description" content="Answer six quick questions to discover the bedroom atmosphere, colours, textures and products matched to your personal style.">
+<link rel="canonical" href="https://loveyoursenses.com/bedroom-atmosphere">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Create Your Ideal Bedroom Atmosphere | Love Your Senses">
+<meta property="og:description" content="Discover the colours, textures and finishing touches that create your ideal bedroom atmosphere.">
+<meta property="og:url" content="https://loveyoursenses.com/bedroom-atmosphere">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#E7E3DD;
+    --card:#F2EEE8;
+    --ink:#2A2130;
+    --ink-soft:#6E6574;
+    --accent:#7B4A5E;
+    --accent-deep:#5E3547;
+    --line:#CDC3B6;
+    --gold:#B8A78C;
+    --cream:#F7F1EC;
+    --radius:18px;
+    --ease:cubic-bezier(.4,.14,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Jost',system-ui,sans-serif;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+  button,input{font:inherit}
+  button{touch-action:manipulation}
+  .display{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  .wrap{width:100%;max-width:1000px;margin:0 auto;padding-left:24px;padding-right:24px}
+  .site-head{padding:24px 0}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .mark{font-family:'Fraunces',serif;font-weight:500;font-size:1.24rem;text-decoration:none;color:var(--ink)}
+  .mark span{color:var(--accent)}
+  .head-link{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none}
+  .head-link:hover{color:var(--accent)}
+  .stage{width:100%;max-width:680px;margin:0 auto;padding:36px 20px 72px}
+  .screen{display:none;animation:rise .6s var(--ease) both}
+  .screen.active{display:block}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  #intro{text-align:center;padding:14px 0 24px}
+  .ring{margin:0 auto 30px;display:block}
+  #intro h1{font-size:clamp(2.55rem,9vw,4rem);margin-bottom:18px}
+  #intro h1 em{font-style:italic;font-weight:400}
+  .lede{color:var(--ink-soft);font-size:1.06rem;max-width:45ch;margin:0 auto 24px}
+  .wellbeing-note{font-size:.79rem;color:var(--ink-soft);line-height:1.55;max-width:56ch;margin:0 auto 30px}
+  .meta{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:26px}
+  .btn{display:inline-block;font-family:'Jost',sans-serif;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:17px 40px;background:var(--ink);color:var(--bg);transition:transform .35s var(--ease),background .35s var(--ease)}
+  .btn:hover{background:var(--accent-deep);transform:translateY(-2px)}
+  .progress-wrap{display:flex;align-items:center;gap:16px;margin-bottom:38px}
+  .track{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
+  .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);transition:width .5s var(--ease)}
+  .count{font-size:.72rem;letter-spacing:.2em;color:var(--ink-soft);white-space:nowrap}
+  .question{font-size:clamp(1.75rem,6vw,2.45rem);margin-bottom:32px;min-height:2.2em}
+  .options{display:flex;flex-direction:column;gap:12px}
+  .option{font-family:'Jost',sans-serif;font-size:1.01rem;color:var(--ink);text-align:left;background:var(--card);border:1px solid transparent;border-radius:var(--radius);padding:19px 22px;cursor:pointer;width:100%;transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);display:flex;align-items:center;gap:14px}
+  .option:before{content:"";width:9px;height:9px;border-radius:50%;border:1.5px solid var(--line);flex:none;transition:all .3s var(--ease)}
+  .option:hover{border-color:var(--gold);transform:translateX(4px)}
+  .option.chosen{background:var(--accent);color:var(--cream);border-color:var(--accent)}
+  .option.chosen:before{background:var(--cream);border-color:var(--cream)}
+  .option:disabled{cursor:default}
+  .result-card{background:var(--fam,#7B4A5E);color:var(--cream);border-radius:26px;padding:44px 32px 40px;text-align:center;box-shadow:0 30px 60px -30px rgba(42,33,48,.55)}
+  .result-card .eyebrow{color:rgba(247,241,236,.72)}
+  .result-name{font-size:clamp(2.55rem,10vw,3.65rem);margin-bottom:10px}
+  .result-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:1.2rem;opacity:.94;margin-bottom:24px}
+  .result-body{font-size:1.02rem;line-height:1.72;opacity:.95;max-width:44ch;margin:0 auto 30px}
+  .details{border-top:1px solid rgba(247,241,236,.28);border-bottom:1px solid rgba(247,241,236,.28);padding:22px 0;text-align:left;display:flex;flex-direction:column;gap:14px}
+  .detail-row{display:flex;gap:18px;align-items:baseline}
+  .detail-label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;opacity:.72;width:104px;flex:none}
+  .detail-val{font-family:'Fraunces',serif;font-size:1.04rem}
+  .recs{margin-top:36px}
+  .recs-head{text-align:center;margin-bottom:22px}
+  .recs-head .eyebrow{display:block;margin-bottom:10px}
+  .recs-head h3{font-size:clamp(1.55rem,5vw,2.05rem)}
+  .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .rec{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+  .rec-badge{position:absolute;top:12px;left:12px;z-index:2;background:rgba(247,241,236,.94);color:var(--accent-deep);border-radius:100px;padding:6px 10px;font-size:.61rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+  .rec .media-frame{aspect-ratio:1/1;width:100%;position:relative;overflow:hidden;background:#fff}
+  .rec .media{aspect-ratio:1/1;width:100%;height:100%;object-fit:contain;padding:18px;background:#fff;display:block}
+  .rec .ph{display:flex;align-items:center;justify-content:center;padding:0}
+  .rec .media-frame .media{position:absolute;inset:0}
+  .rec .media-fallback{display:none}
+  .rec .media-fallback.show{display:flex}
+  .rec .ph span{font-family:'Fraunces',serif;font-size:2rem;color:#fff;opacity:.92}
+  .rec .body{padding:16px 15px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .rec .brand{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .rec .pname{font-family:'Fraunces',serif;font-size:1.04rem;line-height:1.22}
+  .rec .pnote{font-size:.8rem;color:var(--ink-soft);line-height:1.45}
+  .rec .offer{font-size:.76rem;color:var(--accent);font-weight:500}
+  .rec .view{margin-top:auto;padding-top:11px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;text-decoration:none;color:var(--accent)}
+  .rec .view.off{color:var(--ink-soft);opacity:.58}
+  .rec .view:hover{text-decoration:underline;text-underline-offset:4px}
+  .affiliate-note{font-size:.78rem;color:var(--ink-soft);line-height:1.55;text-align:center;max-width:58ch;margin:18px auto 0}
+  .affiliate-note a{color:var(--accent);text-underline-offset:3px}
+  .browse-all{text-align:center;margin-top:22px}
+  .btn-all{display:inline-block;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;text-decoration:none;border:1px solid var(--accent);color:var(--accent);border-radius:100px;padding:14px 34px;transition:background .3s var(--ease),color .3s var(--ease)}
+  .btn-all:hover{background:var(--accent);color:var(--cream)}
+  .capture{background:var(--card);border-radius:var(--radius);padding:32px 28px;margin-top:28px;text-align:center}
+  .capture h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;margin-bottom:8px}
+  .capture p{color:var(--ink-soft);font-size:.96rem;margin:0 auto 22px;max-width:39ch}
+  .field{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .field input{font-family:'Jost',sans-serif;font-size:1rem;flex:1;min-width:210px;padding:15px 18px;border:1px solid var(--line);border-radius:100px;background:#fff;color:var(--ink)}
+  .field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+  .field button{font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:15px 28px;background:var(--accent);color:var(--cream)}
+  .field button:hover{background:var(--accent-deep)}
+  .capture .done{color:var(--accent);font-family:'Fraunces',serif;font-size:1.1rem;padding:6px 0}
+  .capture .form-note{font-size:.74rem;margin-top:12px;margin-bottom:0}
+  .next-quiz{border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;margin-top:18px;text-align:center}
+  .next-quiz .eyebrow{display:block;margin-bottom:9px}
+  .next-quiz h3{font-size:1.45rem;margin-bottom:8px}
+  .next-quiz p{color:var(--ink-soft);font-size:.94rem;max-width:40ch;margin:0 auto 18px}
+  .next-link{font-size:.74rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;color:var(--accent);text-underline-offset:4px}
+  .next-link:hover{color:var(--accent-deep)}
+  .after{display:flex;gap:22px;justify-content:center;align-items:center;margin-top:26px;flex-wrap:wrap}
+  .linkish{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px}
+  .linkish:hover{color:var(--accent)}
+  .site-foot{border-top:1px solid var(--line);padding:34px 0 48px}
+  .foot{display:flex;flex-direction:column;align-items:center;gap:11px;text-align:center}
+  .foot-nav a{color:var(--ink-soft);text-decoration:none;font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;margin:0 10px}
+  .foot-nav a:hover{color:var(--accent)}
+  .foot .disc{font-size:.82rem;color:var(--ink-soft);max-width:54ch}
+  .foot .cr{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  @media(max-width:600px){.site-head{padding:20px 0}.stage{padding-top:28px}.rec-grid{grid-template-columns:1fr 1fr}.detail-label{width:88px}}
+  @media(max-width:420px){.rec-grid{grid-template-columns:1fr}.result-card{padding:40px 24px 36px}.field{flex-direction:column}.field input,.field button{width:100%}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap"><div class="bar"><a href="/" class="mark">Love Your <span>Senses</span></a><a href="/#quizzes" class="head-link">All quizzes</a></div></div>
+</header>
+<main class="stage">
+  <section id="intro" class="screen active">
+    <svg class="ring" width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
+      <circle cx="29" cy="29" r="27" fill="none" stroke="#B8A78C" stroke-width="1"/>
+      <circle cx="29" cy="29" r="19" fill="none" stroke="#CDC3B6" stroke-width="1"/>
+      <g stroke="#7B4A5E" stroke-width="1.4"><line x1="29" y1="2" x2="29" y2="9"/><line x1="52.4" y1="42.5" x2="46.4" y2="39"/><line x1="5.6" y1="42.5" x2="11.6" y2="39"/><line x1="52.4" y1="15.5" x2="46.4" y2="19"/><line x1="5.6" y1="15.5" x2="11.6" y2="19"/><line x1="29" y1="56" x2="29" y2="49"/></g>
+      <circle cx="29" cy="29" r="3" fill="#7B4A5E"/>
+    </svg>
+    <p class="eyebrow">A short bedroom style discovery</p>
+    <h1 class="display">Create your ideal <em>bedroom</em> atmosphere</h1>
+    <p class="lede">Answer six quick questions to discover the colours, textures, lighting and finishing touches that make a bedroom feel completely yours.</p>
+    <p class="wellbeing-note">This style quiz matches products to your aesthetic and comfort preferences. Product availability, colours and imagery may change.</p>
+    <button class="btn" id="start" type="button">Begin the discovery</button>
+    <p class="meta">Six questions &nbsp;·&nbsp; one minute</p>
+  </section>
+  <section id="quiz" class="screen" aria-live="polite">
+    <div class="progress-wrap"><div class="track" aria-hidden="true"><div class="fill" id="fill"></div></div><span class="count" id="count">01 / 06</span></div>
+    <h2 class="question display" id="question" tabindex="-1"></h2>
+    <div class="options" id="options"></div>
+  </section>
+  <section id="result" class="screen" aria-live="polite">
+    <div class="result-card" id="resultCard">
+      <p class="eyebrow">Your bedroom atmosphere</p>
+      <h2 class="result-name display" id="rName"></h2>
+      <p class="result-tag" id="rTag"></p>
+      <p class="result-body" id="rBody"></p>
+      <div class="details" id="rDetails"></div>
+    </div>
+    <div class="recs">
+      <div class="recs-head"><span class="eyebrow">Chosen for your room</span><h3 class="display" id="recsTitle">Your three best-matched products</h3></div>
+      <div class="rec-grid" id="recGrid"></div>
+      <p class="affiliate-note" id="recommendationDisclosure">These recommendations use direct brand links. Love Your Senses does not currently earn commission from them. Availability and product imagery may change.</p>
+      <div class="browse-all" id="browseAll"></div>
+      <p class="wellbeing-note">These suggestions focus on visual style, texture and bedroom atmosphere. Check dimensions, colour options and care details on the product page before ordering.</p>
+    </div>
+    <div class="capture">
+      <h3>Save your bedroom atmosphere</h3>
+      <p>Get your result, product shortlist and future bedroom style discoveries by email.</p>
+      <div class="field" id="emailForm"><input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email"><button id="emailBtn" type="button">Send it</button></div>
+      <p class="form-note" id="formNote">Connect your email platform in the JavaScript settings before publishing.</p>
+    </div>
+    <div class="next-quiz"><span class="eyebrow">Complete your evening</span><h3 class="display">Now find your perfect wind-down ritual</h3><p>Match your evening habits, lighting and quiet-time products to the way you prefer to slow the pace before bed.</p><a class="next-link" href="/wind-down">Find your wind-down ritual</a></div>
+    <div class="after"><button class="linkish" id="share" type="button">Share your result</button><button class="linkish" id="retake" type="button">Retake the quiz</button></div>
+  </section>
+</main>
+<footer class="site-foot"><div class="wrap"><div class="foot"><div class="foot-nav"><a href="/about">About</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/disclosure">Affiliate Disclosure</a></div><p class="disc">Love Your Senses helps you discover products matched to your preferences through short, enjoyable quizzes.</p><p class="cr">© 2026 Love Your Senses</p></div></div></footer>
+<script>
+/* =====================================================================
+   PAGE SETTINGS
+
+   Current product links are direct, non-affiliate links. When an
+   affiliate partnership is approved, replace the product URL and image
+   with the approved assets, then change affiliate:false to affiliate:true.
+   ===================================================================== */
+const QUIZ_URL = "https://loveyoursenses.com/bedroom-atmosphere";
+const STORE_LINK = "";
+const STORE_LINK_IS_AFFILIATE = false;
+const EMAIL_FORM_ACTION = "";
+const EMAIL_FIELD_NAME = "email";
+
+const PRODUCTS = {
+  coastal:[
+    {merchant:"DUSK",name:"Amalfi 200 Thread Count Pinstripe Duvet Cover & Pillowcase Set",monogram:"AM",note:"Cream and navy pinstripes bring a clean coastal reference without making the room feel themed.",offer:"Best for a relaxed blue-and-white bed with tailored detail.",url:"https://dusk.com/products/amalfi-pinstripe-duvet-cover-set-white-navy",img:"https://dusk.com/cdn/shop/files/amalfi-200-thread-count-pinstripe-duvet-cover-pillowcase-set-creamnavy-3136631.jpg?v=1767742870&width=1946",affiliate:false,base:12,fit:{coastal:10,blue_white:10,stripes:10,tailored:6,airy:7,relaxed:8}},
+    {merchant:"Piglet in Bed",name:"Dusk Blue 100% Linen Duvet Cover",monogram:"DB",note:"Soft blue linen creates an airy, lived-in bed with natural texture and an informal finish.",offer:"Best for relaxed coastal rooms built around breathable natural fabric.",url:"https://www.pigletinbed.com/products/dusk-blue-100-linen-duvet-cover",img:"https://www.pigletinbed.com/cdn/shop/files/100_-LINEN-PLAIN-DUSK-BLUE-OVERHEAD-LIFESTYLE-14.49.13copy.jpg?v=1755614549&width=1946",affiliate:false,base:11,fit:{coastal:9,blue_white:8,linen:10,natural_texture:10,relaxed:10,airy:9}},
+    {merchant:"DUSK",name:"Iris Floral Printed Waffle Duvet Cover & Pillowcase Set",monogram:"IR",note:"Sky-blue florals and a textured waffle surface soften the coastal palette with a decorative layer.",offer:"Best for a coastal room that still feels gentle and detailed.",url:"https://dusk.com/products/iris-floral-printed-waffle-duvet-cover-pillowcase-set-blue",img:"https://dusk.com/cdn/shop/files/iris-floral-printed-waffle-duvet-cover-pillowcase-set-blue-4234052.jpg?v=1767693416&width=1946",affiliate:false,base:10,fit:{coastal:8,blue_white:9,floral:8,soft:7,pattern:8,natural_texture:6}},
+    {merchant:"DUSK",name:"Nyla Accent Chair - Blue Stripe",monogram:"NC",note:"A blue-striped accent chair adds a relaxed reading corner and a stronger piece of coastal pattern.",offer:"Best for completing the room beyond the bed itself.",url:"https://dusk.com/products/nyla-accent-chair-blue-stripe",img:"https://dusk.com/cdn/shop/files/nyla-accent-chair-blue-stripe-2563464.jpg?v=1776266830&width=1946",affiliate:false,base:9,fit:{coastal:10,stripes:9,reading_corner:10,blue_white:8,relaxed:8,wood:5}}
+  ],
+  hotel:[
+    {merchant:"DUSK",name:"Hotel Satin Stripe 200 Thread Count Duvet Cover - White",monogram:"HS",note:"White satin-stripe cotton gives the bed a crisp, familiar hotel finish with subtle sheen.",offer:"Best for a bright, polished room centred on fresh white bedding.",url:"https://dusk.com/products/hotel-satin-stripe-200-thread-count-duvet-cover-white",img:"https://dusk.com/cdn/shop/files/hotel-satin-stripe-200-thread-count-duvet-cover-white-271956.png?v=1742442249&width=1946",affiliate:false,base:12,fit:{hotel:10,white:10,crisp:10,tailored:8,polished:9,symmetry:7}},
+    {merchant:"DUSK",name:"Bloomsbury 1000 Thread Count Duvet Cover - White",monogram:"BL",note:"Premium white cotton and embroidered border detailing create a more elevated boutique-hotel bed.",offer:"Best for a luxurious, composed centrepiece with minimal colour.",url:"https://dusk.com/products/bloomsbury-duvet-cover-1000-thread-count-white",img:"https://dusk.com/cdn/shop/files/bloomsbury-double-duvet-cover-1000-tc-white-912937.jpg?v=1716367663&width=1946",affiliate:false,base:11,fit:{hotel:10,white:10,premium:10,high_thread:10,tailored:9,elegant:8}},
+    {merchant:"Panda London",name:"Bamboo Complete Bedding Set",monogram:"PB",note:"A coordinated white bamboo bedding set gives the whole bed a smooth, unified and uncluttered appearance.",offer:"Best for creating a complete polished look in one purchase.",url:"https://pandalondon.com/products/bamboo-complete-bedding-set",img:"https://pandalondon.com/cdn/shop/files/100_Bamboo_Bedding_Set_Pure_White.webp?v=1721308652&width=1500",affiliate:false,base:10,fit:{hotel:8,white:9,polished:8,coordinated:10,smooth:9,minimal:7}},
+    {merchant:"Lumie",name:"Bodyclock Spark 100",monogram:"LS",note:"A compact bedside light adds a clean, considered glow without introducing decorative clutter.",offer:"Best for a streamlined hotel-style bedside setup.",url:"https://www.lumie.com/products/bodyclock-spark-100",img:"https://www.lumie.com/cdn/shop/files/Lumie-Bodyclock-Spark100-01.png?v=1756908754&width=700",affiliate:false,base:9,fit:{hotel:7,smart_lighting:10,bedside:10,clean_lines:9,minimal:8,soft_light:7}}
+  ],
+  cottage:[
+    {merchant:"DUSK",name:"Mini Bouquet Muslin Duvet Cover Set - White/Pink",monogram:"MB",note:"Small florals and gingham-style detail give the bed a relaxed country-house character.",offer:"Best for a pretty cottage room with gentle vintage references.",url:"https://dusk.com/products/mini-bouquet-100-cotton-printed-muslin-duvet-cover-set-white-pink",img:"https://dusk.com/cdn/shop/files/mini-bouquet-100-cotton-printed-muslin-duvet-cover-set-whitepink-6477364.jpg?v=1763447975&width=1946",affiliate:false,base:12,fit:{cottage:10,floral:10,vintage:9,pattern:9,soft:8,layered:8}},
+    {merchant:"Piglet in Bed",name:"Berry Linen Blend Duvet Cover",monogram:"BR",note:"A warm berry tone and relaxed linen blend add depth while keeping the room soft and informal.",offer:"Best for a cottage palette with richer colour and natural texture.",url:"https://www.pigletinbed.com/products/berry-linen-duvet-cover",img:"https://www.pigletinbed.com/cdn/shop/files/OVERHEAD-LIFESTYLE_BERRY_copy_2.jpg?v=1755614642&width=1946",affiliate:false,base:11,fit:{cottage:9,warm:10,natural_texture:9,layered:9,relaxed:8,colour:8}},
+    {merchant:"DUSK",name:"Soft Touch Microfibre Duvet Cover Set - White",monogram:"ST",note:"A simple soft white base leaves space for quilts, patterned cushions and collected cottage-style layers.",offer:"Best for building a flexible bed from several soft layers.",url:"https://dusk.com/products/soft-touch-microfibre-duvet-cover-set-white",img:"https://dusk.com/cdn/shop/files/soft-touch-microfibre-duvet-cover-set-white-9464540.jpg?v=1759432493&width=1946",affiliate:false,base:10,fit:{cottage:7,white:7,soft:10,layered:10,cosy:9,easy_care:8}},
+    {merchant:"Anglepoise",name:"90 Mini Mini Desk Lamp - Steel Blue",monogram:"AM",note:"A compact adjustable lamp gives a bedside table or reading nook a practical, collected feel.",offer:"Best for a cottage room with a useful reading corner.",url:"https://www.anglepoise.com/product/90-mini-mini-desk-lamp-steel-blue/",img:"https://www.anglepoise.com/wp-content/uploads/2021/12/90_mini_mini_desk_lamp_steel_blue_2-WEB-2022.jpg",affiliate:false,base:9,fit:{cottage:7,reading_corner:10,focused_light:9,practical:9,colour:5,compact:8}}
+  ],
+  natural:[
+    {merchant:"Panda London",name:"Bamboo Pillowcases",monogram:"BP",note:"Plain bamboo pillowcases add smooth natural texture without interrupting a calm, restrained palette.",offer:"Best for a small material upgrade in an uncluttered room.",url:"https://pandalondon.com/products/bamboo-pillowcases",img:"https://pandalondon.com/cdn/shop/files/Pure_White_Pillowcase_Bamboo_Bedding_Two_Pillows.webp?v=1721308652&width=1000",affiliate:false,base:12,fit:{natural:10,neutral:9,organic:10,minimal:9,smooth:8,uncluttered:9}},
+    {merchant:"DUSK",name:"Pintuck Duvet Cover Set - White",monogram:"PD",note:"Subtle pintuck texture gives a white bed visual interest while preserving a quiet, minimal look.",offer:"Best for neutral rooms that rely on texture rather than pattern.",url:"https://dusk.com/products/pintuck-duvet-cover-set-white",img:"https://dusk.com/cdn/shop/files/pintuck-duvet-cover-set-white-287917.jpg?v=1730533121&width=1946",affiliate:false,base:11,fit:{natural:9,white:9,texture:10,minimal:10,uncluttered:9,soft:7}},
+    {merchant:"Tala",name:"The Muse Portable Lamp - Hackles Black",monogram:"TM",note:"A portable lamp with a simple lantern form adds warm light and a sculptural object without visual noise.",offer:"Best for flexible low lighting in a considered minimal room.",url:"https://tala.co.uk/products/the-muse-portable-lamp-in-hackles-black",img:"https://tala.co.uk/cdn/shop/products/The_Muse_Hackles_Black_On_Grey_Background_2048x2048_114f1647-6e62-49b8-8ddf-acec69d93ca0.jpg?crop=center&height=1000&v=1666957747&width=1000",affiliate:false,base:10,fit:{natural:8,soft_light:10,portable:9,minimal:9,clean_lines:8,ambient_light:7}},
+    {merchant:"Panda London",name:"Memory Foam Bamboo Pillow",monogram:"MP",note:"A simple white pillow with a bamboo cover fits a bedroom built around useful, natural-feeling essentials.",offer:"Best for a pared-back room where every item needs a clear purpose.",url:"https://pandalondon.com/products/bamboo-memory-foam-pillow",img:"https://pandalondon.com/cdn/shop/products/Panda-Memory-Foam-Bamboo-Pillow-Panda-Life-scaled-e1623788835840.jpg?v=1771199183&width=800",affiliate:false,base:9,fit:{natural:9,organic:8,practical:10,minimal:8,neutral:8,soft:7}}
+  ],
+  dark:[
+    {merchant:"DUSK",name:"Hotel Satin Stripe 200 Thread Count Duvet Cover - Navy",monogram:"HN",note:"Deep navy bedding creates immediate drama while the satin stripe keeps the finish clean and tailored.",offer:"Best for a dark scheme that still feels polished rather than heavy.",url:"https://dusk.com/products/hotel-satin-stripe-200-thread-count-duvet-cover-navy",img:"https://dusk.com/cdn/shop/files/hotel-satin-stripe-200-thread-count-duvet-cover-navy-8242645.jpg?v=1772865851&width=1946",affiliate:false,base:12,fit:{dark:10,navy:10,moody:10,tailored:9,contrast:8,dramatic:9}},
+    {merchant:"Philips Hue",name:"Hue Go Portable Table Lamp",monogram:"HG",note:"Portable colour-capable lighting lets a dark bedroom shift between low warm light and stronger accent colour.",offer:"Best for controlling the mood without adding several lamps.",url:"https://www.philips-hue.com/en-gb/p/hue-white-and-colour-ambiance-hue-go-portable-table-lamp/8719514404571",img:"https://www.proshop.nl/Images/915x900/3175035_a5544c7312d7.jpg",affiliate:false,base:11,fit:{dark:9,ambient_light:10,smart_lighting:10,dramatic:9,colour:8,modern:9}},
+    {merchant:"Manta Sleep",name:"Manta PRO Sleep Mask",monogram:"MP",note:"A structured blackout mask complements a room designed around deep colour and tightly controlled light.",offer:"Best for people who want the dark-room concept carried into every detail.",url:"https://mantasleep.uk/products/manta-sleep-mask-pro",img:"https://mantasleep.uk/cdn/shop/products/Manta-PRO-Buy-Box-1.png?v=1649084138&width=2048",affiliate:false,base:10,fit:{dark:8,blackout:10,practical:8,modern:8,clean_lines:7,contrast:6}},
+    {merchant:"Braun",name:"BC12 Analogue Alarm Clock - Black",monogram:"BC",note:"A compact black analogue clock keeps the bedside graphic, simple and free from a bright phone screen.",offer:"Best for a clean dark scheme with functional finishing details.",url:"https://cpc.farnell.com/braun/bc12b/desk-clock-black-bc12b/dp/OE07861",img:"https://uk.farnell.com/productimages/standard/en_GB/3251608-40.jpg",affiliate:false,base:9,fit:{dark:8,black:10,clean_lines:10,minimal:8,bedside:9,practical:9}}
+  ],
+  romantic:[
+    {merchant:"DUSK",name:"Celeste 300 Thread Count Floral Duvet Cover Set - Pink",monogram:"CE",note:"A detailed pink floral print gives the bed a soft focal point with a refined, decorative finish.",offer:"Best for a romantic room centred on elegant florals.",url:"https://dusk.com/products/celeste-300-thread-count-100-cotton-floral-duvet-cover-pillowcase-set-pink",img:"https://dusk.com/cdn/shop/files/celeste-300-thread-count-100-cotton-floral-duvet-cover-pillowcase-set-pink-2070657.jpg?v=1775743107&width=1946",affiliate:false,base:12,fit:{romantic:10,blush:9,floral:10,elegant:10,delicate:9,pattern:8}},
+    {merchant:"DUSK",name:"Santorini Muslin Duvet Cover & Pillowcase Set - Blush Pink",monogram:"SB",note:"Soft blush muslin creates a lighter romantic look through colour and gentle texture rather than a strong print.",offer:"Best for a romantic palette with relaxed softness.",url:"https://dusk.com/products/santorini-muslin-duvet-cover-pillowcase-set-blush-pink-copy",img:"https://dusk.com/cdn/shop/files/santorini-muslin-duvet-cover-pillowcase-set-blush-pink-765255.jpg?v=1730446887&width=1946",affiliate:false,base:11,fit:{romantic:10,blush:10,soft:10,texture:8,relaxed:8,delicate:8}},
+    {merchant:"Manta Sleep",name:"Manta SILK Sleep Mask",monogram:"MS",note:"A silk mask adds a small, polished accessory that suits a bedroom built around soft fabrics and gentle colour.",offer:"Best for extending the room's smooth, luxurious texture into the bedtime details.",url:"https://mantasleep.uk/products/manta-silk-mask",img:"https://mantasleep.uk/cdn/shop/files/SILK-Buy-Box-01.png?v=1695634643&width=2048",affiliate:false,base:10,fit:{romantic:8,silk:10,soft:9,premium:8,delicate:8,bedside:5}},
+    {merchant:"Intelligent Change",name:"The Five Minute Journal - Pink",monogram:"5J",note:"A blush journal becomes a useful decorative object for a bedside table or dressing area.",offer:"Best for a romantic room with thoughtful personal details.",url:"https://www.intelligentchange.com/products/the-five-minute-journal-pink?currency=gbp&region=uk",img:"https://www.intelligentchange.com/cdn/shop/products/4X5-1600x2000-Intelligent-Change-Five-Minute-Journal-Pink-1.jpg?v=1671124210&width=900",affiliate:false,base:9,fit:{romantic:8,blush:9,journalling:10,bedside:8,elegant:6,personal:9}}
+  ]
+};
+
+const RESULTS = {
+  coastal:{name:"Coastal Calm",color:"#547B88",tag:"Airy, relaxed and quietly fresh.",body:"Your ideal bedroom feels open, light and easy to live in. Blue-and-white colour, relaxed natural texture and restrained pattern give you the freshness of a coastal room without turning it into a theme.",details:{Palette:"Soft blue, white and sand",Texture:"Linen, cotton and woven detail",Lighting:"Bright by day, gentle at night",Finish:"Relaxed stripes and natural wood"}},
+  hotel:{name:"Boutique Hotel",color:"#665A58",tag:"Polished, composed and effortlessly luxurious.",body:"You are drawn to bedrooms that feel finished from every angle. Crisp bedding, symmetry, subtle sheen and controlled bedside details create the calm confidence of a well-designed hotel room.",details:{Palette:"White, stone and restrained accents",Texture:"Smooth cotton and satin detail",Lighting:"Balanced bedside glow",Finish:"Tailored, coordinated and uncluttered"}},
+  cottage:{name:"Cosy Cottage",color:"#85634F",tag:"Layered, welcoming and full of character.",body:"Your room should feel collected rather than perfectly matched. Soft florals, warm colour, practical lighting and layered fabrics create a bedroom that feels personal, comfortable and gently nostalgic.",details:{Palette:"Warm neutrals, berry and faded colour",Texture:"Soft layers and natural fabric",Lighting:"Reading lamps and warm pools of light",Finish:"Florals, checks and useful details"}},
+  natural:{name:"Natural Minimalist",color:"#68705B",tag:"Quiet, tactile and deliberately simple.",body:"You prefer a bedroom with breathing space. Neutral colour, useful objects, natural-feeling materials and subtle texture keep the room calm without making it feel bare or impersonal.",details:{Palette:"White, oatmeal and muted earth",Texture:"Bamboo, cotton and quiet detail",Lighting:"Warm, flexible and low",Finish:"Few objects, chosen carefully"}},
+  dark:{name:"Dark & Dramatic",color:"#343C4B",tag:"Moody, graphic and confidently atmospheric.",body:"You want the bedroom to feel distinct from the rest of the home. Deep colour, controlled lighting and sharp functional details create a cocooning room with modern drama and strong contrast.",details:{Palette:"Navy, charcoal and black",Texture:"Smooth, tailored and structured",Lighting:"Low, adjustable and atmospheric",Finish:"Clean lines with bold contrast"}},
+  romantic:{name:"Soft Romantic",color:"#9C6D7D",tag:"Gentle, elegant and beautifully considered.",body:"Your ideal bedroom is softened by colour, fabric and personal detail. Blush tones, florals, delicate texture and a few polished accessories create warmth without making the room feel overly ornate.",details:{Palette:"Blush, cream and soft berry",Texture:"Muslin, silk and fine cotton",Lighting:"Diffused and flattering",Finish:"Florals and personal bedside details"}}
+};
+
+const SIGNAL_LABELS = {
+  coastal:"a light coastal palette",blue_white:"blue-and-white colour",stripes:"clean striped pattern",airy:"an airy feeling",relaxed:"relaxed styling",linen:"natural linen",natural_texture:"natural texture",reading_corner:"a finished reading corner",
+  hotel:"hotel-style polish",white:"fresh white bedding",crisp:"a crisp finish",tailored:"tailored detail",polished:"a polished look",symmetry:"balanced symmetry",premium:"premium materials",high_thread:"high-thread-count cotton",coordinated:"a coordinated bed",smart_lighting:"controlled bedside lighting",smooth:"smooth texture",
+  cottage:"cosy cottage character",floral:"soft floral pattern",vintage:"vintage-inspired detail",pattern:"decorative pattern",soft:"soft texture",layered:"layered fabrics",warm:"warm colour",colour:"a stronger colour accent",cosy:"a cosy finish",practical:"practical details",focused_light:"focused reading light",compact:"compact pieces",easy_care:"easy-care materials",
+  natural:"natural minimalism",neutral:"a neutral palette",organic:"natural-feeling materials",minimal:"minimal styling",uncluttered:"an uncluttered room",texture:"subtle texture",soft_light:"soft low lighting",portable:"flexible portable pieces",clean_lines:"clean lines",
+  dark:"a darker atmosphere",navy:"deep navy colour",moody:"a moody palette",dramatic:"dramatic contrast",contrast:"strong contrast",ambient_light:"ambient lighting",modern:"modern styling",blackout:"tight light control",black:"black accessories",bedside:"considered bedside details",
+  romantic:"a soft romantic mood",blush:"blush colour",elegant:"elegant detail",delicate:"delicate finishes",silk:"smooth silk texture",journalling:"personal bedside rituals",personal:"personal finishing touches"
+};
+
+const QUESTIONS = [
+  {q:"How should your bedroom feel when you enter?",a:[
+    {label:"Fresh, breezy and instantly lighter",scores:{coastal:5,natural:1},signals:["coastal","airy","relaxed"]},
+    {label:"Polished, calm and perfectly put together",scores:{hotel:5},signals:["hotel","polished","tailored","symmetry"]},
+    {label:"Warm, welcoming and full of character",scores:{cottage:5,romantic:1},signals:["cottage","cosy","layered"]},
+    {label:"Quiet, simple and free from visual clutter",scores:{natural:5},signals:["natural","minimal","uncluttered"]},
+    {label:"Cocooning, distinctive and a little dramatic",scores:{dark:5},signals:["dark","moody","dramatic"]},
+    {label:"Soft, elegant and gently romantic",scores:{romantic:5},signals:["romantic","elegant","soft"]}
+  ]},
+  {q:"Which colour palette feels most like you?",a:[
+    {label:"Soft blue, white and sandy neutrals",scores:{coastal:5},signals:["blue_white","coastal","neutral"]},
+    {label:"Crisp white, stone and subtle metallic detail",scores:{hotel:5,natural:1},signals:["white","hotel","polished"]},
+    {label:"Warm cream, berry and faded heritage colour",scores:{cottage:5},signals:["warm","colour","cottage","vintage"]},
+    {label:"Oatmeal, white and muted earthy tones",scores:{natural:5},signals:["neutral","natural","uncluttered"]},
+    {label:"Navy, charcoal and strong black accents",scores:{dark:5},signals:["navy","black","contrast","dark"]},
+    {label:"Blush, cream and soft floral colour",scores:{romantic:5,cottage:1},signals:["blush","romantic","floral"]}
+  ]},
+  {q:"How would you style the bed?",a:[
+    {label:"Relaxed linen with a simple stripe or washed texture",scores:{coastal:4,natural:1},signals:["linen","stripes","relaxed","natural_texture"]},
+    {label:"Crisp white bedding with neat, symmetrical pillows",scores:{hotel:5},signals:["white","crisp","symmetry","coordinated"]},
+    {label:"Quilts, cushions and patterns layered together",scores:{cottage:5},signals:["layered","pattern","cosy","floral"]},
+    {label:"Plain bedding with one beautiful tactile detail",scores:{natural:5},signals:["minimal","texture","uncluttered","organic"]},
+    {label:"Deep-coloured bedding with sharp contrast",scores:{dark:5},signals:["navy","contrast","tailored","dramatic"]},
+    {label:"Blush fabric, delicate florals and smooth accents",scores:{romantic:5},signals:["blush","floral","delicate","silk"]}
+  ]},
+  {q:"What lighting belongs in your ideal room?",a:[
+    {label:"Plenty of daylight with a soft bedside glow",scores:{coastal:4,natural:1},signals:["airy","soft_light","bedside"]},
+    {label:"A balanced lamp on each side of the bed",scores:{hotel:5},signals:["symmetry","hotel","bedside","polished"]},
+    {label:"A practical reading lamp and several warm pools of light",scores:{cottage:5},signals:["focused_light","reading_corner","warm","practical"]},
+    {label:"One simple warm lamp that moves where needed",scores:{natural:5},signals:["soft_light","portable","minimal"]},
+    {label:"Low adjustable light with colour and strong shadows",scores:{dark:5},signals:["ambient_light","smart_lighting","dramatic","moody"]},
+    {label:"Diffused, flattering light around soft surfaces",scores:{romantic:5},signals:["soft_light","romantic","delicate"]}
+  ]},
+  {q:"Choose the finishing touch you would notice most.",a:[
+    {label:"A blue-striped chair or woven coastal detail",scores:{coastal:5},signals:["stripes","blue_white","reading_corner","coastal"]},
+    {label:"Perfectly coordinated bedding and an uncluttered bedside",scores:{hotel:5},signals:["coordinated","polished","bedside","crisp"]},
+    {label:"A floral textile, favourite book and collected cushion",scores:{cottage:5,romantic:1},signals:["floral","personal","layered","reading_corner"]},
+    {label:"A natural material with a clear practical purpose",scores:{natural:5},signals:["organic","practical","minimal","natural_texture"]},
+    {label:"A black accessory or controllable accent light",scores:{dark:5},signals:["black","ambient_light","modern","contrast"]},
+    {label:"A silk detail, blush accessory or bedside journal",scores:{romantic:5},signals:["silk","blush","journalling","personal"]}
+  ]},
+  {q:"What matters most in the finished bedroom?",a:[
+    {label:"It should feel light, relaxed and easy to refresh",scores:{coastal:6},signals:["airy","relaxed","coastal","easy_care"]},
+    {label:"Everything should look coordinated and premium",scores:{hotel:6},signals:["premium","coordinated","polished","high_thread"]},
+    {label:"It should feel personal, layered and lived in",scores:{cottage:6},signals:["personal","layered","cottage","cosy"]},
+    {label:"Every item should earn its place",scores:{natural:6},signals:["minimal","practical","uncluttered","natural"]},
+    {label:"The mood should change completely after dark",scores:{dark:6},signals:["dark","ambient_light","moody","blackout"]},
+    {label:"The room should feel gentle, pretty and considered",scores:{romantic:6},signals:["romantic","delicate","elegant","soft"]}
+  ]}
+];
+
+let step=0;
+let locked=false;
+const selectedAnswers=[];
+const preferenceSignals={};
+const totals=Object.keys(RESULTS).reduce((acc,key)=>{acc[key]=0;return acc;},{});
+const el=id=>document.getElementById(id);
+const screens={intro:el("intro"),quiz:el("quiz"),result:el("result")};
+
+function show(name){Object.values(screens).forEach(screen=>screen.classList.remove("active"));screens[name].classList.add("active");window.scrollTo({top:0,behavior:"smooth"});}
+function hexToRgba(hex,alpha){const clean=hex.replace("#","");const value=parseInt(clean,16);const red=value>>16&255;const green=value>>8&255;const blue=value&255;return `rgba(${red},${green},${blue},${alpha})`;}
+function escapeHtml(value){return String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");}
+function getProductRecommendations(key){return (PRODUCTS[key]||[]).map((product,originalIndex)=>{const matchScore=Object.entries(product.fit||{}).reduce((score,[signal,weight])=>score+(preferenceSignals[signal]||0)*weight,product.base||0);return {...product,matchScore,originalIndex};}).sort((a,b)=>b.matchScore-a.matchScore||(b.base||0)-(a.base||0)||a.originalIndex-b.originalIndex).slice(0,3);}
+function getPersonalMatch(product){const matches=Object.entries(product.fit||{}).filter(([signal])=>preferenceSignals[signal]).map(([signal,weight])=>({signal,value:weight*preferenceSignals[signal]})).sort((a,b)=>b.value-a.value).slice(0,2).map(item=>SIGNAL_LABELS[item.signal]).filter(Boolean);if(matches.length===0)return product.offer||"";if(matches.length===1)return `Matches your preference for ${matches[0]}.`;return `Matches your preference for ${matches[0]} and ${matches[1]}.`;}
+function getProductMonogram(product){if(product.monogram)return product.monogram;return product.name.split(/\s+/).filter(Boolean).slice(0,2).map(word=>word.charAt(0)).join("").toUpperCase();}
+function trackEvent(eventName,details={}){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:eventName,...details});if(typeof window.pintrk==="function"){try{window.pintrk("track","custom",{event_name:eventName,...details});}catch(error){console.warn("Pinterest tracking event was not sent.",error);}}}
+function renderQuestion(){const item=QUESTIONS[step];const totalQuestions=QUESTIONS.length;el("question").textContent=item.q;el("count").textContent=`${String(step+1).padStart(2,"0")} / ${String(totalQuestions).padStart(2,"0")}`;el("fill").style.width=`${step/totalQuestions*100}%`;const box=el("options");box.innerHTML="";locked=false;item.a.forEach((answer,index)=>{const button=document.createElement("button");button.className="option";button.type="button";button.textContent=answer.label;button.addEventListener("click",()=>chooseAnswer(button,answer,index));box.appendChild(button);});setTimeout(()=>el("question").focus({preventScroll:true}),50);}
+function chooseAnswer(button,answer,index){if(locked)return;locked=true;document.querySelectorAll(".option").forEach(option=>{option.disabled=true;});button.classList.add("chosen");selectedAnswers[step]=index;Object.entries(answer.scores).forEach(([key,value])=>{totals[key]+=value;});(answer.signals||[]).forEach(signal=>{preferenceSignals[signal]=(preferenceSignals[signal]||0)+1;});trackEvent("quiz_answer",{quiz:"bedroom_atmosphere",question_number:step+1,answer:answer.label});setTimeout(()=>{step+=1;if(step<QUESTIONS.length){renderQuestion();}else{el("fill").style.width="100%";finishQuiz();}},340);}
+function finishQuiz(){const orderedKeys=Object.keys(RESULTS);let winningKey=orderedKeys[0];orderedKeys.forEach(key=>{if(totals[key]>totals[winningKey])winningKey=key;});const tiedKeys=orderedKeys.filter(key=>totals[key]===totals[winningKey]);if(tiedKeys.length>1){for(let questionIndex=selectedAnswers.length-1;questionIndex>=0;questionIndex-=1){const answer=QUESTIONS[questionIndex].a[selectedAnswers[questionIndex]];const rankedTie=tiedKeys.map(key=>({key,value:answer.scores[key]||0})).sort((a,b)=>b.value-a.value);if(rankedTie[0].value>rankedTie[1].value){winningKey=rankedTie[0].key;break;}}}showResult(winningKey);}
+function showResult(key){const result=RESULTS[key];window.LYS_RESULT=key;el("resultCard").style.setProperty("--fam",result.color);el("rName").textContent=result.name;el("rTag").textContent=result.tag;el("rBody").textContent=result.body;const details=el("rDetails");details.innerHTML="";Object.entries(result.details).forEach(([label,value])=>{const row=document.createElement("div");row.className="detail-row";const labelSpan=document.createElement("span");labelSpan.className="detail-label";labelSpan.textContent=label;const valueSpan=document.createElement("span");valueSpan.className="detail-val";valueSpan.textContent=value;row.append(labelSpan,valueSpan);details.appendChild(row);});el("recsTitle").textContent="Your three best-matched bedroom products";const recommendations=getProductRecommendations(key);const grid=el("recGrid");grid.innerHTML="";recommendations.forEach((product,index)=>{const card=document.createElement("article");card.className="rec";const fallbackHtml=`<div class="ph media media-fallback" style="background:${hexToRgba(result.color,.88)}"><span>${escapeHtml(getProductMonogram(product))}</span></div>`;const mediaHtml=product.img?`<div class="media-frame"><img class="media" src="${escapeHtml(product.img)}" alt="${escapeHtml(product.merchant)} ${escapeHtml(product.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${fallbackHtml}</div>`:fallbackHtml;const badgeHtml=index===0?'<span class="rec-badge">Best match</span>':"";const matchText=getPersonalMatch(product);const offerHtml=matchText?`<span class="offer">${escapeHtml(matchText)}</span>`:"";const linkIsAffiliate=Boolean(product.affiliate);const linkRel=linkIsAffiliate?"noopener sponsored":"noopener";const ctaHtml=product.url&&product.url!=="#"?`<a class="view" href="${escapeHtml(product.url)}" target="_blank" rel="${linkRel}" data-product-position="${index+1}">View product &rsaquo;</a>`:'<span class="view off">Product page unavailable</span>';card.innerHTML=`${badgeHtml}${mediaHtml}<div class="body"><span class="brand">${escapeHtml(product.merchant)}</span><span class="pname">${escapeHtml(product.name)}</span><span class="pnote">${escapeHtml(product.note)}</span>${offerHtml}${ctaHtml}</div>`;const productImage=card.querySelector("img.media");if(productImage){productImage.addEventListener("error",()=>{productImage.remove();const fallback=card.querySelector(".media-fallback");if(fallback)fallback.classList.add("show");},{once:true});}const productLink=card.querySelector("a[data-product-position]");if(productLink){productLink.addEventListener("click",()=>{trackEvent(linkIsAffiliate?"affiliate_click":"product_click",{quiz:"bedroom_atmosphere",result:key,merchant:product.merchant,product:product.name,position:index+1,affiliate:linkIsAffiliate});});}grid.appendChild(card);});const disclosure=el("recommendationDisclosure");const containsAffiliateLinks=recommendations.some(product=>product.affiliate);if(containsAffiliateLinks){disclosure.innerHTML='Some links on this page are affiliate links. Love Your Senses may earn a commission from qualifying orders at no extra cost to you. <a href="/disclosure">Read the affiliate disclosure</a>.';}else{disclosure.textContent="These recommendations use direct brand or retailer links. Love Your Senses does not currently earn commission from them. Availability and product imagery may change.";}const browseAll=el("browseAll");if(STORE_LINK&&STORE_LINK!=="#"){const storeRel=STORE_LINK_IS_AFFILIATE?"noopener sponsored":"noopener";browseAll.innerHTML=`<a class="btn-all" href="${escapeHtml(STORE_LINK)}" target="_blank" rel="${storeRel}">Browse all bedroom products</a>`;browseAll.querySelector("a").addEventListener("click",()=>{trackEvent(STORE_LINK_IS_AFFILIATE?"affiliate_click":"product_click",{quiz:"bedroom_atmosphere",result:key,product:"browse_all",affiliate:STORE_LINK_IS_AFFILIATE});});}else{browseAll.innerHTML="";}trackEvent("quiz_complete",{quiz:"bedroom_atmosphere",result:key,result_name:result.name});show("result");}
+async function submitEmail(){const emailInput=el("email");const email=emailInput.value.trim();const form=el("emailForm");const note=el("formNote");if(!/^\S+@\S+\.\S+$/.test(email)){emailInput.focus();note.textContent="Enter a valid email address.";return;}if(!EMAIL_FORM_ACTION){note.textContent="Email signup is not connected yet. Add your email platform form action in the JavaScript settings.";return;}const button=el("emailBtn");button.disabled=true;button.textContent="Sending";try{const payload=new URLSearchParams();payload.append(EMAIL_FIELD_NAME,email);payload.append("quiz_result",window.LYS_RESULT||"");payload.append("source","bedroom_atmosphere_quiz");await fetch(EMAIL_FORM_ACTION,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:payload.toString()});form.innerHTML='<p class="done">Your bedroom atmosphere is on its way.</p>';note.textContent="";trackEvent("email_signup",{quiz:"bedroom_atmosphere",result:window.LYS_RESULT||""});}catch(error){button.disabled=false;button.textContent="Send it";note.textContent="The signup did not complete. Please try again.";console.error("Email signup failed.",error);}}
+async function shareResult(){const result=RESULTS[window.LYS_RESULT];if(!result)return;const text=`My ideal bedroom atmosphere is ${result.name}. Create yours:`;const shareData={title:"Love Your Senses Bedroom Atmosphere Quiz",text,url:QUIZ_URL||location.href};if(navigator.share){try{await navigator.share(shareData);trackEvent("share",{quiz:"bedroom_atmosphere",result:window.LYS_RESULT,method:"native"});}catch(error){if(error.name!=="AbortError")console.error("Share failed.",error);}return;}try{await navigator.clipboard.writeText(`${text} ${shareData.url}`);el("share").textContent="Link copied";setTimeout(()=>el("share").textContent="Share your result",2000);trackEvent("share",{quiz:"bedroom_atmosphere",result:window.LYS_RESULT,method:"clipboard"});}catch(error){console.error("Copy failed.",error);}}
+function resetQuiz(){step=0;locked=false;selectedAnswers.length=0;Object.keys(preferenceSignals).forEach(key=>delete preferenceSignals[key]);Object.keys(totals).forEach(key=>totals[key]=0);window.LYS_RESULT="";const form=el("emailForm");form.innerHTML='<input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email"><button id="emailBtn" type="button">Send it</button>';el("emailBtn").addEventListener("click",submitEmail);el("formNote").textContent="Connect your email platform in the JavaScript settings before publishing.";show("intro");trackEvent("quiz_retake",{quiz:"bedroom_atmosphere"});}
+el("start").addEventListener("click",()=>{show("quiz");renderQuestion();trackEvent("quiz_start",{quiz:"bedroom_atmosphere"});});
+el("emailBtn").addEventListener("click",submitEmail);
+el("share").addEventListener("click",shareResult);
+el("retake").addEventListener("click",resetQuiz);
+</script>
+</body>
+</html>
