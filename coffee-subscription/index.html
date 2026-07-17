@@ -155,8 +155,12 @@
     text-transform:uppercase;
     font-weight:500;
   }
-  .rec .media{aspect-ratio:1/1;width:100%;object-fit:cover;background:#fff;display:block}
-  .rec .ph{display:flex;align-items:center;justify-content:center}
+  .rec .media-frame{aspect-ratio:1/1;width:100%;position:relative;overflow:hidden;background:#fff}
+  .rec .media{aspect-ratio:1/1;width:100%;height:100%;object-fit:contain;padding:18px;background:#fff;display:block}
+  .rec .ph{display:flex;align-items:center;justify-content:center;padding:0}
+  .rec .media-frame .media{position:absolute;inset:0}
+  .rec .media-fallback{display:none}
+  .rec .media-fallback.show{display:flex}
   .rec .ph span{font-family:'Fraunces',serif;font-size:2rem;color:#fff;opacity:.92}
   .rec .body{padding:16px 15px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
   .rec .brand{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
@@ -206,6 +210,14 @@
   .field button:hover{background:var(--accent-deep)}
   .capture .done{color:var(--accent);font-family:'Fraunces',serif;font-size:1.1rem;padding:6px 0}
   .capture .form-note{font-size:.74rem;margin-top:12px;margin-bottom:0}
+
+
+  .next-quiz{border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;margin-top:18px;text-align:center}
+  .next-quiz .eyebrow{display:block;margin-bottom:9px}
+  .next-quiz h3{font-size:1.45rem;margin-bottom:8px}
+  .next-quiz p{color:var(--ink-soft);font-size:.94rem;max-width:40ch;margin:0 auto 18px}
+  .next-link{font-size:.74rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;color:var(--accent);text-underline-offset:4px}
+  .next-link:hover{color:var(--accent-deep)}
 
   .after{display:flex;gap:22px;justify-content:center;align-items:center;margin-top:26px;flex-wrap:wrap}
   .linkish{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px}
@@ -294,7 +306,7 @@
         <h3 class="display" id="recsTitle">Three subscriptions to try</h3>
       </div>
       <div class="rec-grid" id="recGrid"></div>
-      <p class="affiliate-note">Some links on this page are affiliate links. Love Your Senses may earn a commission from qualifying orders at no extra cost to you. <a href="/disclosure">Read the affiliate disclosure</a>.</p>
+      <p class="affiliate-note" id="recommendationDisclosure">These recommendations use direct coffee-roaster links. Love Your Senses does not currently earn commission from them. Availability, blends and subscription terms may change.</p>
       <div class="browse-all" id="browseAll"></div>
     </div>
 
@@ -306,6 +318,13 @@
         <button id="emailBtn" type="button">Send it</button>
       </div>
       <p class="form-note" id="formNote">Connect your email platform in the JavaScript settings before publishing.</p>
+    </div>
+
+    <div class="next-quiz">
+      <span class="eyebrow">Complete your coffee setup</span>
+      <h3 class="display">Now find the machine for your coffee</h3>
+      <p>Take the coffee machine quiz to match your drinks, routine and kitchen space with the right brewing setup.</p>
+      <a class="next-link" href="/coffee-machine">Find your coffee machine</a>
     </div>
 
     <div class="after">
@@ -337,7 +356,8 @@
    Replace these values before publishing.
    ===================================================================== */
 const QUIZ_URL = "https://loveyoursenses.com/coffee";
-const STORE_LINK = "#";
+const STORE_LINK = "";
+const STORE_LINK_IS_AFFILIATE = false;
 
 /*
   EMAIL_FORM_ACTION:
@@ -352,196 +372,319 @@ const EMAIL_FORM_ACTION = "";
 const EMAIL_FIELD_NAME = "email";
 
 /* =====================================================================
-   AFFILIATE SUBSCRIPTION SLOTS
+   COFFEE SUBSCRIPTION RECOMMENDATIONS
 
-   Replace each placeholder with an approved affiliate offer.
+   These are real products linked directly to coffee-roaster pages.
+   They are not affiliate links at present. When an affiliate partnership is
+   approved, replace the URL and change affiliate:false to affiliate:true.
 
-   merchant = retailer or coffee company
-   name     = subscription or product name
-   note     = short reason it suits this result
-   offer    = optional offer text
-   url      = affiliate deep link
-   img      = image URL, or leave blank for a coloured placeholder
-   badge    = optional badge, such as "Best match"
+   base = default ranking strength within the result category
+   fit  = weighted preference signals used to personalise the final three
    ===================================================================== */
 const PRODUCTS = {
   bright: [
     {
-      merchant:"Affiliate partner",
-      name:"Light Roast Discovery Subscription",
-      note:"Rotating single-origin coffees with citrus, berry and floral notes.",
-      offer:"Ideal for adventurous filter-coffee drinkers.",
-      url:"#",
-      img:"",
-      badge:"Best match"
+      merchant:"Origin Coffee",
+      name:"Feature Coffee Subscription",
+      monogram:"OF",
+      note:"A frequently changing speciality selection built around different origins, processes and expressive flavour profiles.",
+      offer:"Best for adventurous drinkers who want genuine discovery.",
+      url:"https://www.origincoffee.co.uk/products/coffee-subscription-feature",
+      img:"https://www.origincoffee.co.uk/cdn/shop/files/feature-2_af6cef36-6ef7-49be-b3db-38df89d3383f.jpg?v=1783500724",
+      affiliate:false,
+      base:12,
+      fit:{adventurous:7,rotating:7,discovery:7,single_origin:6,fruity:5,floral:5,light_roast:4,filter:4,education:4,whole_bean:2}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Single-Origin Coffee Club",
-      note:"A new origin each delivery with detailed tasting notes.",
-      offer:"A strong choice for learning what you love.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"RAVE Coffee",
+      name:"Roastery's Choice Discovery",
+      monogram:"RD",
+      note:"A monthly single-origin coffee chosen for unusual character, with whole-bean and multiple grind choices.",
+      offer:"Best for changing origins with flexible preparation options.",
+      url:"https://ravecoffee.co.uk/products/roasters-choice-discovery",
+      img:"https://ravecoffee.co.uk/cdn/shop/files/Discovery_800x.webp?v=1761056477",
+      affiliate:false,
+      base:11,
+      fit:{adventurous:7,rotating:6,single_origin:6,discovery:6,filter:5,aeropress:4,ground_option:4,whole_bean:3,fruity:3}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Seasonal Roaster Selection",
-      note:"Fresh, expressive coffees selected around the harvest calendar.",
-      offer:"Best for variety and discovery.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"Square Mile Coffee Roasters",
+      name:"Our Pick Filter Subscription",
+      monogram:"OP",
+      note:"A rotating filter subscription selected by the roastery for people who value clarity, seasonality and quality.",
+      offer:"Best for quality-focused filter drinkers who trust the roaster's selection.",
+      url:"https://shop.squaremilecoffee.com/products/sqm-test-filter-our-pick",
+      img:"https://shop.squaremilecoffee.com/cdn/shop/files/350_Green_Front-Our-Pick-Filter.jpg?v=1729245605&width=1445",
+      affiliate:false,
+      base:10,
+      fit:{filter:7,black:6,clarity:6,rotating:6,discovery:5,whole_bean:4,adventurous:4,single_origin:4}
+    },
+    {
+      merchant:"Grind",
+      name:"Light Blend Bean & Ground Subscription",
+      monogram:"GL",
+      note:"A lighter coffee option delivered as whole bean or ground coffee for a straightforward recurring routine.",
+      offer:"Best for brighter coffee without committing to specialist equipment.",
+      url:"https://grind.co.uk/products/bean-ground-coffee",
+      img:"https://grind.co.uk/cdn/shop/files/light_blendcard_752x.webp?v=1718034428",
+      affiliate:false,
+      base:8,
+      fit:{light_roast:7,fruity:5,filter:4,ground_option:6,whole_bean:4,convenient:3,consistent:3,flexible_delivery:3}
     }
   ],
 
   smooth: [
     {
-      merchant:"Affiliate partner",
-      name:"Everyday Balanced Subscription",
-      note:"Smooth medium roasts with caramel, biscuit and gentle fruit notes.",
-      offer:"Dependable coffee for any brewing method.",
-      url:"#",
-      img:"",
-      badge:"Best match"
+      merchant:"Square Mile Coffee Roasters",
+      name:"The Filter Blend Subscription",
+      monogram:"FB",
+      note:"A sweet, balanced and medium-bodied seasonal blend designed as an approachable all-day filter coffee.",
+      offer:"Best for a polished everyday cup with dependable balance.",
+      url:"https://shop.squaremilecoffee.com/products/the-filter-blend-1",
+      img:"https://shop.squaremilecoffee.com/cdn/shop/files/FB-43.jpg?v=1779442193&width=1445",
+      affiliate:false,
+      base:12,
+      fit:{balanced:8,everyday:7,consistent:6,filter:6,approachable:6,household:4,medium_roast:4,caramel:3}
     },
     {
-      merchant:"Affiliate partner",
-      name:"House Blend Coffee Plan",
-      note:"Consistent, rounded coffee designed for daily drinking.",
-      offer:"An easy option for households with mixed tastes.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"Origin Coffee",
+      name:"Filter Coffee Subscription",
+      monogram:"OF",
+      note:"A rotating monthly selection of balanced and approachable seasonal coffees for filter brewing.",
+      offer:"Best for gentle variety without losing everyday drinkability.",
+      url:"https://www.origincoffee.co.uk/products/filter-coffee-subscription",
+      img:"https://www.origincoffee.co.uk/cdn/shop/files/los-altos-2.jpg?v=1783505967",
+      affiliate:false,
+      base:11,
+      fit:{balanced:7,some_variety:7,approachable:7,filter:6,rotating:5,everyday:5,ground_option:4,whole_bean:3}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Roaster's Choice Subscription",
-      note:"Approachable coffees selected for sweetness and balance.",
-      offer:"Enough variety without becoming unpredictable.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"Grind",
+      name:"House Blend Bean & Ground Subscription",
+      monogram:"GH",
+      note:"A familiar house-style coffee supplied as beans or ground coffee with a simple recurring delivery setup.",
+      offer:"Best for households wanting a flexible and dependable daily coffee.",
+      url:"https://grind.co.uk/products/bean-ground-coffee",
+      img:"https://grind.co.uk/cdn/shop/files/house_blendcard_752x.webp?v=1718034418",
+      affiliate:false,
+      base:10,
+      fit:{everyday:8,consistent:8,ground_option:7,household:6,balanced:5,flexible:5,never_run_out:4,small_milk:3}
+    },
+    {
+      merchant:"RAVE Coffee",
+      name:"Discovery & Traditional Subscription",
+      monogram:"RT",
+      note:"A combined plan balancing more unusual coffees with fuller-bodied, approachable monthly selections.",
+      offer:"Best for variety that still includes familiar, easy-drinking coffee.",
+      url:"https://ravecoffee.co.uk/products/roasterys-choice-traditional-discovery",
+      img:"https://ravecoffee.co.uk/cdn/shop/products/F62A0069_800x.jpg?v=1656671808",
+      affiliate:false,
+      base:9,
+      fit:{some_variety:8,balanced:6,approachable:6,rotating:5,ground_option:5,flexible:4,household:3,discovery:3}
     }
   ],
 
   espresso: [
     {
-      merchant:"Affiliate partner",
-      name:"Espresso Roast Subscription",
-      note:"Full-bodied coffee with dark chocolate, spice and a lasting finish.",
-      offer:"Built for espresso machines and moka pots.",
-      url:"#",
-      img:"",
-      badge:"Best match"
+      merchant:"Origin Coffee",
+      name:"Rotating Espresso Coffee Subscription",
+      monogram:"OE",
+      note:"A monthly rotation through espresso-focused mainstay coffees, available as whole bean or ground for espresso and moka pots.",
+      offer:"Best for espresso drinkers who still want controlled variety.",
+      url:"https://www.origincoffee.co.uk/products/espresso-coffee-subscription",
+      img:"https://www.origincoffee.co.uk/cdn/shop/files/resolute-2_8603fb9c-a535-412f-b2a9-ff456dd7a6ab.jpg?v=1783503359",
+      affiliate:false,
+      base:12,
+      fit:{espresso:8,rotating:7,bold:6,whole_bean:5,moka:5,ground_option:4,chocolate:4,delivery:3}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Italian-Style Coffee Club",
-      note:"Rich, traditional profiles with dependable crema and intensity.",
-      offer:"A strong match for short coffee and milk drinks.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"Square Mile Coffee Roasters",
+      name:"Red Brick Espresso Subscription",
+      monogram:"RB",
+      note:"Square Mile's seasonal house espresso, built around sweetness, depth and a consistently espresso-friendly profile.",
+      offer:"Best for a dedicated espresso setup and café-style milk drinks.",
+      url:"https://shop.squaremilecoffee.com/products/red-brick",
+      img:"https://shop.squaremilecoffee.com/cdn/shop/files/REDBRICK-88.jpg?v=1779788181&width=1500",
+      affiliate:false,
+      base:11,
+      fit:{espresso:9,bold:6,chocolate:6,consistent:6,milk:5,whole_bean:5,medium_roast:4,delivery:3}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Bold Roast Selection",
-      note:"Deeply roasted coffees with cocoa, molasses and toasted nut notes.",
-      offer:"Best for people who want unmistakable strength.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"RAVE Coffee",
+      name:"Roastery's Choice Traditional",
+      monogram:"RT",
+      note:"A full-bodied monthly single-origin selection offered in whole-bean, cafetière, filter and espresso grinds.",
+      offer:"Best for traditional intensity with useful grind flexibility.",
+      url:"https://ravecoffee.co.uk/products/roasters-choice-traditional",
+      img:"https://ravecoffee.co.uk/cdn/shop/products/DSC09991_ac27dedc-d3bb-4380-902b-69cad9b1888a_800x.jpg?v=1632916352",
+      affiliate:false,
+      base:10,
+      fit:{bold:8,espresso:7,ground_option:7,chocolate:5,milk:4,consistent:4,moka:4,whole_bean:3}
+    },
+    {
+      merchant:"Grind",
+      name:"Dark Blend Bean & Ground Subscription",
+      monogram:"GD",
+      note:"A recurring bean or ground coffee plan with a darker blend option for concentrated coffee and milk-based drinks.",
+      offer:"Best for convenient delivery of a stronger, familiar roast style.",
+      url:"https://grind.co.uk/products/bean-ground-coffee",
+      img:"https://grind.co.uk/cdn/shop/files/refill_800x.webp?v=1753889314",
+      affiliate:false,
+      base:8,
+      fit:{dark_roast:8,bold:7,espresso:6,ground_option:7,moka:4,milk:4,consistent:5,never_run_out:3}
     }
   ],
 
   comfort: [
     {
-      merchant:"Affiliate partner",
-      name:"Chocolate and Caramel Coffee Plan",
-      note:"Sweet, comforting coffees with cocoa, praline and caramel notes.",
-      offer:"Perfect with milk or as a cosy afternoon cup.",
-      url:"#",
-      img:"",
-      badge:"Best match"
+      merchant:"RAVE Coffee",
+      name:"Fudge Blend Nº 5 Subscribe & Save",
+      monogram:"F5",
+      note:"A sweet, full-bodied blend centred on fudge-like richness and designed to work especially well with milk.",
+      offer:"Best for cosy lattes, cappuccinos and dessert-like coffee.",
+      url:"https://ravecoffee.co.uk/products/fudge-blend-no-5",
+      img:"https://ravecoffee.co.uk/cdn/shop/files/005_Fudge_Blend_250g_7dbfa609-50b9-4946-a1a6-edae09078a35_800x.jpg?v=1711381003",
+      affiliate:false,
+      base:12,
+      fit:{sweet:9,comfort:9,treat:8,milk:7,chocolate:6,nutty:4,ground_option:4,consistent:3}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Low-Acidity Coffee Subscription",
-      note:"Rounded, mellow coffees with nutty sweetness and a soft finish.",
-      offer:"A gentle choice for smooth everyday drinking.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"Grind",
+      name:"House Blend Bean & Ground Subscription",
+      monogram:"GH",
+      note:"A smooth house blend available as whole bean or ground coffee for a reliable and uncomplicated routine.",
+      offer:"Best for creamy everyday drinks and shared households.",
+      url:"https://grind.co.uk/products/bean-ground-coffee",
+      img:"https://grind.co.uk/cdn/shop/files/house_blendcard_752x.webp?v=1718034418",
+      affiliate:false,
+      base:10,
+      fit:{milk:8,comfort:7,everyday:7,ground_option:7,consistent:6,sweet:5,household:5,caramel:4}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Indulgent Blend Collection",
-      note:"Dessert-like flavours selected for lattes, cappuccinos and cafetières.",
-      offer:"Best for coffee that feels like a treat.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"Square Mile Coffee Roasters",
+      name:"The Filter Blend Subscription",
+      monogram:"FB",
+      note:"A balanced medium-bodied blend with a sweet, welcoming profile suited to all-day drinking.",
+      offer:"Best for comforting sweetness without an overly dark roast.",
+      url:"https://shop.squaremilecoffee.com/products/the-filter-blend-1",
+      img:"https://shop.squaremilecoffee.com/cdn/shop/files/FB-43.jpg?v=1779442193&width=1445",
+      affiliate:false,
+      base:9,
+      fit:{sweet:7,balanced:6,comfort:6,medium_roast:5,everyday:5,filter:4,cafetiere:4,approachable:4}
+    },
+    {
+      merchant:"RAVE Coffee",
+      name:"Roastery's Choice Traditional",
+      monogram:"RT",
+      note:"A full-bodied rotating coffee with flexible grind choices for cafetière, espresso and milk-based routines.",
+      offer:"Best for richer coffee while retaining monthly variety.",
+      url:"https://ravecoffee.co.uk/products/roasters-choice-traditional",
+      img:"https://ravecoffee.co.uk/cdn/shop/products/DSC09991_ac27dedc-d3bb-4380-902b-69cad9b1888a_800x.jpg?v=1632916352",
+      affiliate:false,
+      base:8,
+      fit:{comfort:6,bold:5,chocolate:6,milk:6,ground_option:7,rotating:4,cafetiere:5,nutty:3}
     }
   ],
 
   decaf: [
     {
-      merchant:"Affiliate partner",
-      name:"Speciality Decaf Subscription",
-      note:"Carefully processed decaf with the sweetness and complexity of regular coffee.",
-      offer:"A flavour-first option with less caffeine.",
-      url:"#",
-      img:"",
-      badge:"Best match"
+      merchant:"Origin Coffee",
+      name:"Decaf Coffee Subscription",
+      monogram:"OD",
+      note:"A flavour-led decaf plan designed around a balanced and approachable profile, with multiple grind choices.",
+      offer:"Best for keeping speciality coffee in a lower-caffeine routine.",
+      url:"https://www.origincoffee.co.uk/products/decaf-coffee-subscription",
+      img:"https://www.origincoffee.co.uk/cdn/shop/files/Atlas-coffee-digital-2026.webp?v=1783505064",
+      affiliate:false,
+      base:12,
+      fit:{decaf:10,lower_caffeine:9,full_flavour:8,balanced:6,ground_option:6,flexible:5,evening:5,whole_bean:3}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Half-Caf Coffee Plan",
-      note:"A balanced middle ground for reducing caffeine without losing the ritual.",
-      offer:"Useful for gradual caffeine reduction.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"RAVE Coffee",
+      name:"Swiss Water Decaf Blend Nº 11",
+      monogram:"D11",
+      note:"A subscribable Swiss Water decaf blend with chocolate, spice and malt character, available in several grinds.",
+      offer:"Best for fuller, traditional decaf flavour.",
+      url:"https://ravecoffee.co.uk/products/swiss-water-decaf-no-11",
+      img:"https://ravecoffee.co.uk/cdn/shop/files/011SwissWaterDecafBlendPDP-250gPack-BESTBUY_800x.webp?v=1779190664",
+      affiliate:false,
+      base:11,
+      fit:{decaf:10,full_flavour:9,chocolate:7,mellow:6,ground_option:7,evening:5,espresso:3,cafetiere:3}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Evening Coffee Collection",
-      note:"Smooth decaf coffees chosen for after-dinner and late-day drinking.",
-      offer:"Best for keeping coffee in your evening routine.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"Square Mile Coffee Roasters",
+      name:"Decaf Filter Subscription",
+      monogram:"SD",
+      note:"A rotating speciality decaf selected for filter brewing rather than treating decaf as an afterthought.",
+      offer:"Best for filter drinkers seeking detail and variety without caffeine.",
+      url:"https://shop.squaremilecoffee.com/products/decaf-filter-2",
+      img:"https://shop.squaremilecoffee.com/cdn/shop/files/Decaf-FIlter-15.jpg?v=1780666861&width=1445",
+      affiliate:false,
+      base:10,
+      fit:{decaf:10,filter:8,clarity:6,full_flavour:7,rotating:5,black:4,evening:4,whole_bean:3}
+    },
+    {
+      merchant:"Grind",
+      name:"Decaf Coffee Pod Subscription",
+      monogram:"GDP",
+      note:"Nespresso-compatible decaf pods supplied through a repeat-delivery format for fast, low-cleanup coffee.",
+      offer:"Best for convenient decaf and evening capsule routines.",
+      url:"https://grind.co.uk/products/decaf-nespresso-pods-bulk",
+      img:"https://grind.co.uk/cdn/shop/files/bulk_2025_3_800x.webp?v=1774521846",
+      affiliate:false,
+      base:8,
+      fit:{decaf:9,pods:9,fast:8,low_effort:8,evening:6,consistent:6,never_run_out:5,convenient:5}
     }
   ],
 
   convenient: [
     {
-      merchant:"Affiliate partner",
-      name:"Easy-Brew Coffee Subscription",
-      note:"Reliable coffee supplied in the format that fits your quickest routine.",
-      offer:"Choose pods, bags or pre-ground coffee.",
-      url:"#",
-      img:"",
-      badge:"Best match"
+      merchant:"Origin Coffee",
+      name:"Coffee Capsule Subscription",
+      monogram:"OC",
+      note:"A recurring delivery of home-compostable, Nespresso-compatible speciality capsules with adjustable quantities.",
+      offer:"Best for capsule speed with a stronger speciality-coffee focus.",
+      url:"https://www.origincoffee.co.uk/products/coffee-capsule-subscription",
+      img:"https://www.origincoffee.co.uk/cdn/shop/files/5.capsules-tin-sq_2639a28f-1548-4170-8b8b-c2480d1b2c04.webp?v=1780328574",
+      affiliate:false,
+      base:12,
+      fit:{pods:10,fast:9,low_effort:9,convenient:8,consistent:7,never_run_out:6,flexible_delivery:5,classic:2}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Coffee Pod Delivery Plan",
-      note:"Regular pod deliveries with a choice of familiar flavour profiles.",
-      offer:"Best for speed, consistency and minimal cleanup.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"Grind",
+      name:"Coffee Pod Subscription",
+      monogram:"GP",
+      note:"A flexible repeat-delivery plan for Nespresso-compatible compostable pods across a broad selection of blends.",
+      offer:"Best for choice, speed and a routine that stays fully automatic.",
+      url:"https://grind.co.uk/products/nespressopods",
+      img:"https://grind.co.uk/cdn/shop/files/pdp_pods_4_800x.webp?v=1781259440",
+      affiliate:false,
+      base:11,
+      fit:{pods:10,fast:9,low_effort:9,consistent:8,never_run_out:7,flexible_delivery:6,classic:5,convenient:5}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Pre-Ground Everyday Coffee Club",
-      note:"Fresh coffee delivered ready for your preferred brewer.",
-      offer:"A simple route to better coffee without extra equipment.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"Grind",
+      name:"Bean & Ground Coffee Subscription",
+      monogram:"GG",
+      note:"Whole-bean or pre-ground coffee supplied on repeat, with blend and preparation choices kept in one simple plan.",
+      offer:"Best for convenience without moving to capsules.",
+      url:"https://grind.co.uk/products/bean-ground-coffee",
+      img:"https://grind.co.uk/cdn/shop/files/refill_800x.webp?v=1753889314",
+      affiliate:false,
+      base:10,
+      fit:{ground_option:10,convenient:8,low_effort:7,never_run_out:7,consistent:7,flexible_delivery:6,whole_bean:4,household:4}
+    },
+    {
+      merchant:"RAVE Coffee",
+      name:"Roastery's Choice Traditional",
+      monogram:"RT",
+      note:"A recurring full-bodied coffee available pre-ground for common brewing methods as well as whole bean.",
+      offer:"Best for simple delivery with more traditional fresh coffee.",
+      url:"https://ravecoffee.co.uk/products/roasters-choice-traditional",
+      img:"https://ravecoffee.co.uk/cdn/shop/products/DSC09991_ac27dedc-d3bb-4380-902b-69cad9b1888a_800x.jpg?v=1632916352",
+      affiliate:false,
+      base:8,
+      fit:{ground_option:9,consistent:7,flexible_delivery:6,convenient:5,cafetiere:5,filter:4,espresso:4,rotating:3}
     }
   ]
 };
@@ -636,67 +779,67 @@ const QUESTIONS = [
   {
     q:"What does your ideal morning coffee look like?",
     a:[
-      {label:"A carefully brewed filter coffee with interesting tasting notes", scores:{bright:3,smooth:1}},
-      {label:"A smooth, dependable cup that always tastes good", scores:{smooth:3,comfort:1}},
-      {label:"A short, strong espresso or an intense flat white", scores:{espresso:3,comfort:1}},
-      {label:"A creamy latte with chocolate or caramel flavours", scores:{comfort:3,smooth:1}},
-      {label:"A full-flavoured decaf without the caffeine rush", scores:{decaf:4}},
-      {label:"Something fast, consistent and ready with minimal effort", scores:{convenient:4}}
+      {label:"A carefully brewed filter coffee with interesting tasting notes", scores:{bright:3,smooth:1}, signals:["filter","adventurous","black","single_origin"]},
+      {label:"A smooth, dependable cup that always tastes good", scores:{smooth:3,comfort:1}, signals:["balanced","everyday","flexible","consistent"]},
+      {label:"A short, strong espresso or an intense flat white", scores:{espresso:3,comfort:1}, signals:["espresso","bold","milk"]},
+      {label:"A creamy latte with chocolate or caramel flavours", scores:{comfort:3,smooth:1}, signals:["milk","sweet","comfort","chocolate"]},
+      {label:"A full-flavoured decaf without the caffeine rush", scores:{decaf:4}, signals:["decaf","lower_caffeine","full_flavour"]},
+      {label:"Something fast, consistent and ready with minimal effort", scores:{convenient:4}, signals:["convenient","fast","low_effort","consistent"]}
     ]
   },
   {
     q:"Which flavour description sounds best?",
     a:[
-      {label:"Citrus, berries and delicate florals", scores:{bright:4}},
-      {label:"Caramel, biscuit and gentle fruit", scores:{smooth:4}},
-      {label:"Dark chocolate, spice and smoky depth", scores:{espresso:4}},
-      {label:"Milk chocolate, praline and toasted nuts", scores:{comfort:4}},
-      {label:"Mellow, rounded and satisfying without caffeine", scores:{decaf:4}},
-      {label:"Classic coffee flavour that stays reliably familiar", scores:{convenient:3,smooth:1}}
+      {label:"Citrus, berries and delicate florals", scores:{bright:4}, signals:["fruity","floral","light_roast"]},
+      {label:"Caramel, biscuit and gentle fruit", scores:{smooth:4}, signals:["balanced","caramel","medium_roast"]},
+      {label:"Dark chocolate, spice and smoky depth", scores:{espresso:4}, signals:["bold","dark_roast","chocolate"]},
+      {label:"Milk chocolate, praline and toasted nuts", scores:{comfort:4}, signals:["sweet","chocolate","nutty","low_acid"]},
+      {label:"Mellow, rounded and satisfying without caffeine", scores:{decaf:4}, signals:["decaf","mellow","balanced"]},
+      {label:"Classic coffee flavour that stays reliably familiar", scores:{convenient:3,smooth:1}, signals:["classic","consistent","balanced"]}
     ]
   },
   {
     q:"How do you usually drink your coffee?",
     a:[
-      {label:"Black, so I can taste every detail", scores:{bright:3,smooth:1}},
-      {label:"Black or with a small dash of milk", scores:{smooth:3,bright:1}},
-      {label:"Short, strong and concentrated", scores:{espresso:4}},
-      {label:"With plenty of milk or a creamy texture", scores:{comfort:3,smooth:1}},
-      {label:"Decaf, especially later in the day", scores:{decaf:4}},
-      {label:"Whatever is quickest and easiest", scores:{convenient:4}}
+      {label:"Black, so I can taste every detail", scores:{bright:3,smooth:1}, signals:["black","clarity"]},
+      {label:"Black or with a small dash of milk", scores:{smooth:3,bright:1}, signals:["flexible","small_milk","balanced"]},
+      {label:"Short, strong and concentrated", scores:{espresso:4}, signals:["espresso","bold"]},
+      {label:"With plenty of milk or a creamy texture", scores:{comfort:3,smooth:1}, signals:["milk","sweet"]},
+      {label:"Decaf, especially later in the day", scores:{decaf:4}, signals:["decaf","evening"]},
+      {label:"Whatever is quickest and easiest", scores:{convenient:4}, signals:["fast","low_effort","convenient"]}
     ]
   },
   {
     q:"Which brewing method fits your routine?",
     a:[
-      {label:"Pour-over, V60 or AeroPress", scores:{bright:4}},
-      {label:"Cafetière or a straightforward filter machine", scores:{smooth:3,comfort:1}},
-      {label:"Espresso machine or moka pot", scores:{espresso:4}},
-      {label:"Milk frother, latte setup or cafetière", scores:{comfort:3,smooth:1}},
-      {label:"Any method, as long as decaf is available", scores:{decaf:4}},
-      {label:"Pods, coffee bags or pre-ground coffee", scores:{convenient:4}}
+      {label:"Pour-over, V60 or AeroPress", scores:{bright:4}, signals:["filter","aeropress","whole_bean"]},
+      {label:"Cafetière or a straightforward filter machine", scores:{smooth:3,comfort:1}, signals:["cafetiere","filter","ground_option"]},
+      {label:"Espresso machine or moka pot", scores:{espresso:4}, signals:["espresso","moka","whole_bean"]},
+      {label:"Milk frother, latte setup or cafetière", scores:{comfort:3,smooth:1}, signals:["milk","cafetiere","ground_option"]},
+      {label:"Any method, as long as decaf is available", scores:{decaf:4}, signals:["decaf","flexible"]},
+      {label:"Pods, coffee bags or pre-ground coffee", scores:{convenient:4}, signals:["pods","ground_option","low_effort"]}
     ]
   },
   {
     q:"How adventurous should your subscription be?",
     a:[
-      {label:"Very adventurous. I want a different origin every time", scores:{bright:4}},
-      {label:"Some variety, but always balanced and approachable", scores:{smooth:4}},
-      {label:"Keep it bold, dark and espresso-friendly", scores:{espresso:4}},
-      {label:"Keep it sweet, rich and comforting", scores:{comfort:4}},
-      {label:"Give me the best decaf or half-caf options", scores:{decaf:4}},
-      {label:"Consistency matters more than surprise", scores:{convenient:4}}
+      {label:"Very adventurous. I want a different origin every time", scores:{bright:4}, signals:["adventurous","rotating","single_origin"]},
+      {label:"Some variety, but always balanced and approachable", scores:{smooth:4}, signals:["some_variety","balanced","approachable"]},
+      {label:"Keep it bold, dark and espresso-friendly", scores:{espresso:4}, signals:["consistent","bold","espresso","dark_roast"]},
+      {label:"Keep it sweet, rich and comforting", scores:{comfort:4}, signals:["consistent","sweet","comfort"]},
+      {label:"Give me the best decaf or half-caf options", scores:{decaf:4}, signals:["decaf","half_caf","variety"]},
+      {label:"Consistency matters more than surprise", scores:{convenient:4}, signals:["consistent","low_effort"]}
     ]
   },
   {
     q:"What matters most in a coffee subscription?",
     a:[
-      {label:"Discovering new coffees and learning what I taste", scores:{bright:5}},
-      {label:"A dependable everyday coffee that suits everyone", scores:{smooth:5}},
-      {label:"Café-style intensity delivered to my door", scores:{espresso:5}},
-      {label:"A comforting cup that feels like a treat", scores:{comfort:5}},
-      {label:"Reducing caffeine without giving up good coffee", scores:{decaf:5}},
-      {label:"Saving time and never running out", scores:{convenient:5}}
+      {label:"Discovering new coffees and learning what I taste", scores:{bright:5}, signals:["discovery","education","rotating"]},
+      {label:"A dependable everyday coffee that suits everyone", scores:{smooth:5}, signals:["everyday","household","consistent"]},
+      {label:"Café-style intensity delivered to my door", scores:{espresso:5}, signals:["espresso","bold","delivery"]},
+      {label:"A comforting cup that feels like a treat", scores:{comfort:5}, signals:["sweet","treat","milk"]},
+      {label:"Reducing caffeine without giving up good coffee", scores:{decaf:5}, signals:["lower_caffeine","decaf","full_flavour"]},
+      {label:"Saving time and never running out", scores:{convenient:5}, signals:["never_run_out","fast","flexible_delivery"]}
     ]
   }
 ];
@@ -704,6 +847,7 @@ const QUESTIONS = [
 let step = 0;
 let locked = false;
 const selectedAnswers = [];
+const preferenceSignals = {};
 const totals = Object.keys(RESULTS).reduce((acc,key)=>{
   acc[key] = 0;
   return acc;
@@ -738,6 +882,107 @@ function escapeHtml(value){
     .replaceAll(">","&gt;")
     .replaceAll('"',"&quot;")
     .replaceAll("'","&#039;");
+}
+
+
+const SIGNAL_LABELS = {
+  filter:"filter brewing",
+  adventurous:"adventurous coffees",
+  black:"drinking coffee black",
+  single_origin:"single-origin coffee",
+  balanced:"balanced flavours",
+  everyday:"an everyday coffee",
+  flexible:"brewing flexibility",
+  consistent:"consistent results",
+  espresso:"espresso brewing",
+  bold:"bold flavour",
+  milk:"milk-based drinks",
+  sweet:"sweet flavours",
+  comfort:"comforting coffee",
+  chocolate:"chocolate notes",
+  decaf:"decaffeinated coffee",
+  lower_caffeine:"less caffeine",
+  full_flavour:"full flavour",
+  convenient:"convenience",
+  fast:"quick preparation",
+  low_effort:"a low-effort routine",
+  fruity:"fruit-led flavours",
+  floral:"floral notes",
+  light_roast:"lighter roasts",
+  caramel:"caramel sweetness",
+  medium_roast:"medium roasts",
+  dark_roast:"darker roasts",
+  nutty:"nutty flavours",
+  low_acid:"lower acidity",
+  mellow:"mellow coffee",
+  classic:"classic coffee flavour",
+  clarity:"clear flavour definition",
+  small_milk:"a dash of milk",
+  evening:"evening coffee",
+  aeropress:"AeroPress brewing",
+  whole_bean:"whole beans",
+  cafetiere:"cafetière brewing",
+  ground_option:"pre-ground coffee",
+  moka:"moka pot brewing",
+  pods:"coffee pods",
+  rotating:"rotating selections",
+  some_variety:"gentle variety",
+  approachable:"approachable coffees",
+  half_caf:"half-caf options",
+  variety:"more choice",
+  discovery:"coffee discovery",
+  education:"learning about coffee",
+  household:"a household-friendly plan",
+  delivery:"regular doorstep delivery",
+  treat:"a treat-like cup",
+  never_run_out:"never running out",
+  flexible_delivery:"flexible deliveries"
+};
+
+function getProductRecommendations(key){
+  return (PRODUCTS[key] || [])
+    .map((product,originalIndex)=>{
+      const matchScore = Object.entries(product.fit || {}).reduce((score,[signal,weight])=>{
+        return score + (preferenceSignals[signal] || 0) * weight;
+      },product.base || 0);
+
+      return {...product,matchScore,originalIndex};
+    })
+    .sort((a,b)=>{
+      return b.matchScore - a.matchScore
+        || (b.base || 0) - (a.base || 0)
+        || a.originalIndex - b.originalIndex;
+    })
+    .slice(0,3);
+}
+
+function getPersonalMatch(product){
+  const matches = Object.entries(product.fit || {})
+    .filter(([signal])=>preferenceSignals[signal])
+    .map(([signal,weight])=>({
+      signal,
+      value:weight * preferenceSignals[signal]
+    }))
+    .sort((a,b)=>b.value-a.value)
+    .slice(0,2)
+    .map(item=>SIGNAL_LABELS[item.signal])
+    .filter(Boolean);
+
+  if(matches.length === 0) return product.offer || "";
+  if(matches.length === 1) return `Matches your preference for ${matches[0]}.`;
+  return `Matches your preference for ${matches[0]} and ${matches[1]}.`;
+}
+
+function getProductMonogram(product){
+  if(product.monogram) return product.monogram;
+
+  return product.name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0,2)
+    .map(word=>word.charAt(0))
+    .join("")
+    .toUpperCase();
 }
 
 function trackEvent(eventName,details={}){
@@ -793,6 +1038,10 @@ function chooseAnswer(button,answer,index){
 
   Object.entries(answer.scores).forEach(([key,value])=>{
     totals[key] += value;
+  });
+
+  (answer.signals || []).forEach(signal=>{
+    preferenceSignals[signal] = (preferenceSignals[signal] || 0) + 1;
   });
 
   trackEvent("quiz_answer",{
@@ -870,42 +1119,57 @@ function showResult(key){
     details.appendChild(row);
   });
 
-  el("recsTitle").textContent = `Three subscriptions for ${result.name}`;
+  el("recsTitle").textContent = "Your three best-matched subscriptions";
 
+  const recommendations = getProductRecommendations(key);
   const grid = el("recGrid");
   grid.innerHTML = "";
 
-  (PRODUCTS[key] || []).forEach((product,index)=>{
+  recommendations.forEach((product,index)=>{
     const card = document.createElement("article");
     card.className = "rec";
 
+    const fallbackHtml = `<div class="ph media media-fallback" style="background:${hexToRgba(result.color,.88)}"><span>${escapeHtml(getProductMonogram(product))}</span></div>`;
     const mediaHtml = product.img
-      ? `<img class="media" src="${escapeHtml(product.img)}" alt="${escapeHtml(product.merchant)} ${escapeHtml(product.name)}" loading="lazy">`
-      : `<div class="ph media" style="background:${hexToRgba(result.color,.88)}"><span>${escapeHtml(product.name.charAt(0))}</span></div>`;
+      ? `<div class="media-frame"><img class="media" src="${escapeHtml(product.img)}" alt="${escapeHtml(product.merchant)} ${escapeHtml(product.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${fallbackHtml}</div>`
+      : fallbackHtml;
 
-    const badgeHtml = product.badge
-      ? `<span class="rec-badge">${escapeHtml(product.badge)}</span>`
+    const badgeHtml = index === 0
+      ? '<span class="rec-badge">Best match</span>'
       : "";
 
-    const offerHtml = product.offer
-      ? `<span class="offer">${escapeHtml(product.offer)}</span>`
+    const matchText = getPersonalMatch(product);
+    const offerHtml = matchText
+      ? `<span class="offer">${escapeHtml(matchText)}</span>`
       : "";
 
+    const linkIsAffiliate = Boolean(product.affiliate);
+    const linkRel = linkIsAffiliate ? "noopener sponsored" : "noopener";
     const ctaHtml = product.url && product.url !== "#"
-      ? `<a class="view" href="${escapeHtml(product.url)}" target="_blank" rel="noopener sponsored" data-affiliate-position="${index+1}">View subscription &rsaquo;</a>`
-      : `<span class="view off">Affiliate link coming soon</span>`;
+      ? `<a class="view" href="${escapeHtml(product.url)}" target="_blank" rel="${linkRel}" data-product-position="${index+1}">View subscription &rsaquo;</a>`
+      : '<span class="view off">Subscription page unavailable</span>';
 
     card.innerHTML = `${badgeHtml}${mediaHtml}<div class="body"><span class="brand">${escapeHtml(product.merchant)}</span><span class="pname">${escapeHtml(product.name)}</span><span class="pnote">${escapeHtml(product.note)}</span>${offerHtml}${ctaHtml}</div>`;
 
-    const affiliateLink = card.querySelector("a[data-affiliate-position]");
-    if(affiliateLink){
-      affiliateLink.addEventListener("click",()=>{
-        trackEvent("affiliate_click",{
+    const productImage = card.querySelector("img.media");
+    if(productImage){
+      productImage.addEventListener("error",()=>{
+        productImage.remove();
+        const fallback = card.querySelector(".media-fallback");
+        if(fallback) fallback.classList.add("show");
+      },{once:true});
+    }
+
+    const productLink = card.querySelector("a[data-product-position]");
+    if(productLink){
+      productLink.addEventListener("click",()=>{
+        trackEvent(linkIsAffiliate ? "affiliate_click" : "product_click",{
           quiz:"coffee_subscription",
           result:key,
           merchant:product.merchant,
           product:product.name,
-          position:index+1
+          position:index+1,
+          affiliate:linkIsAffiliate
         });
       });
     }
@@ -913,19 +1177,30 @@ function showResult(key){
     grid.appendChild(card);
   });
 
+  const disclosure = el("recommendationDisclosure");
+  const containsAffiliateLinks = recommendations.some(product=>product.affiliate);
+
+  if(containsAffiliateLinks){
+    disclosure.innerHTML = 'Some links on this page are affiliate links. Love Your Senses may earn a commission from qualifying orders at no extra cost to you. <a href="/disclosure">Read the affiliate disclosure</a>.';
+  }else{
+    disclosure.textContent = "These recommendations use direct coffee-roaster links. Love Your Senses does not currently earn commission from them. Availability, blends and subscription terms may change.";
+  }
+
   const browseAll = el("browseAll");
 
   if(STORE_LINK && STORE_LINK !== "#"){
-    browseAll.innerHTML = `<a class="btn-all" href="${escapeHtml(STORE_LINK)}" target="_blank" rel="noopener sponsored">Browse all coffee subscriptions</a>`;
+    const storeRel = STORE_LINK_IS_AFFILIATE ? "noopener sponsored" : "noopener";
+    browseAll.innerHTML = `<a class="btn-all" href="${escapeHtml(STORE_LINK)}" target="_blank" rel="${storeRel}">Browse all coffee subscriptions</a>`;
     browseAll.querySelector("a").addEventListener("click",()=>{
-      trackEvent("affiliate_click",{
+      trackEvent(STORE_LINK_IS_AFFILIATE ? "affiliate_click" : "product_click",{
         quiz:"coffee_subscription",
         result:key,
-        product:"browse_all"
+        product:"browse_all",
+        affiliate:STORE_LINK_IS_AFFILIATE
       });
     });
   }else{
-    browseAll.innerHTML = '<span class="btn-all off">Browse all coffee subscriptions</span>';
+    browseAll.innerHTML = "";
   }
 
   trackEvent("quiz_complete",{
@@ -1021,6 +1296,7 @@ function resetQuiz(){
   step = 0;
   locked = false;
   selectedAnswers.length = 0;
+  Object.keys(preferenceSignals).forEach(key=>delete preferenceSignals[key]);
   Object.keys(totals).forEach(key=>totals[key] = 0);
   window.LYS_RESULT = "";
 
