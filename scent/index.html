@@ -75,9 +75,10 @@
   .rec .pnote{font-size:.8rem;color:var(--ink-soft);line-height:1.4}
   .rec .view{margin-top:auto;padding-top:10px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;text-decoration:none;color:var(--accent)}
   .rec .view.off{color:var(--ink-soft);opacity:.6}
-  .browse{text-align:center;margin-top:20px}
-  .browse a{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px}
-  .browse a:hover{color:var(--accent)}
+  .browse-all{text-align:center;margin-top:22px}
+  .btn-all{display:inline-block;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;text-decoration:none;border:1px solid var(--accent);color:var(--accent);border-radius:100px;padding:14px 34px;transition:background .3s var(--ease),color .3s var(--ease)}
+  .btn-all:hover{background:var(--accent);color:#F7F1EC}
+  .btn-all.off{opacity:.5;pointer-events:none}
 
   .capture{background:var(--card);border-radius:var(--radius);padding:32px 28px;margin-top:26px;text-align:center}
   .capture h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;margin-bottom:8px}
@@ -138,8 +139,8 @@
         <h3 class="display" id="recsTitle">Three to try</h3>
       </div>
       <div class="rec-grid" id="recGrid"></div>
-      <!-- "Browse more" uses the category deep link in AFFILIATE_LINKS below -->
-      <p class="browse" id="browse"></p>
+      <!-- Catch-all button: links to the whole fragrance catalogue (STORE_LINK below) -->
+      <div class="browse-all" id="browseAll"></div>
     </div>
 
     <!-- EMAIL SLOT: replace with your MailerLite / Kit embed. Tag with window.LYS_RESULT. -->
@@ -162,15 +163,16 @@
 
 <script>
 /* =====================================================================
-   AFFILIATE SLOT 1 — "Browse more" category deep links (one per family)
-   Optional: a CJ deep link to that family's listing on FragranceX.
+   AFFILIATE SLOT 1 — the catch-all "Browse all perfumes" button.
+   Paste ONE affiliate link to your retailer's full fragrance catalogue
+   (e.g. The Perfume Shop's or Notino's all-fragrances page).
    ===================================================================== */
-const AFFILIATE_LINKS = { cit:"#", flo:"#", amb:"#", woo:"#", oce:"#", gou:"#" };
+const STORE_LINK = "#";
 
 /* =====================================================================
    AFFILIATE SLOT 2 — the three perfumes shown per result.
    For each product, paste:
-     url  = your CJ deep link to that FragranceX product page
+     url  = your affiliate deep link to that product's page (Notino, The Perfume Shop, etc.)
      img  = the product image URL (optional; a coloured tile shows if blank)
    Swap brand/name/note freely. Until a url is added it shows "Link soon".
    ===================================================================== */
@@ -305,10 +307,13 @@ function showResult(key){
     card.innerHTML=media+'<div class="body"><span class="brand">'+p.brand+'</span><span class="pname">'+p.name+'</span><span class="pnote">'+(p.note||"")+'</span>'+cta+'</div>';
     grid.appendChild(card);
   });
-  // browse more
-  const cat=AFFILIATE_LINKS[key], b=el('browse');
-  if(cat && cat!=="#"){b.innerHTML='<a href="'+cat+'" target="_blank" rel="noopener sponsored">Browse more '+r.name.toLowerCase()+' fragrances</a>';}
-  else{b.innerHTML="";}
+  // catch-all "browse all perfumes" button
+  const b=el('browseAll');
+  if(STORE_LINK && STORE_LINK!=="#"){
+    b.innerHTML='<a class="btn-all" href="'+STORE_LINK+'" target="_blank" rel="noopener sponsored">Browse all perfumes</a>';
+  } else {
+    b.innerHTML='<span class="btn-all off">Browse all perfumes</span>';
+  }
   show('result');
 }
 
