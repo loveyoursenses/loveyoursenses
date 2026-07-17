@@ -4,217 +4,125 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Find Your Signature Scent | Love Your Senses</title>
-<meta name="description" content="A short scent discovery. Answer six questions and find the fragrance family made for you.">
-
-<!-- ============================================================
-     LOVE YOUR SENSES — SIGNATURE SCENT QUIZ
-     Deploy as: /scent/index.html  ->  loveyoursenses.com/scent
-     Two things to fill in when ready (search for SLOT):
-       1. AFFILIATE SLOT  — your CJ / Awin links per scent family
-       2. EMAIL SLOT      — your MailerLite / Kit embed
-     ============================================================ -->
-
+<meta name="description" content="A short scent discovery. Answer six questions and find the fragrance family, and the perfumes, made for you.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
   :root{
-    --bg:#E7E3DD;          /* soft greige, cool not cream */
-    --card:#F2EEE8;        /* lifted panel */
-    --ink:#2A2130;         /* deep aubergine ink */
-    --ink-soft:#6E6574;    /* muted text */
-    --accent:#7B4A5E;      /* bordeaux rose */
-    --accent-deep:#5E3547;
-    --line:#CDC3B6;        /* taupe hairline */
-    --gold:#B8A78C;        /* champagne, used sparingly */
-    --radius:18px;
-    --ease:cubic-bezier(.4,.14,.2,1);
+    --bg:#E7E3DD; --card:#F2EEE8; --ink:#2A2130; --ink-soft:#6E6574;
+    --accent:#7B4A5E; --accent-deep:#5E3547; --line:#CDC3B6; --gold:#B8A78C;
+    --radius:18px; --ease:cubic-bezier(.4,.14,.2,1);
   }
-
   *{box-sizing:border-box;margin:0;padding:0}
   html{-webkit-text-size-adjust:100%}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Jost',system-ui,sans-serif;
-    font-weight:400;
-    line-height:1.6;
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:28px 20px;
-    overflow-x:hidden;
-  }
-
-  .stage{width:100%;max-width:600px;position:relative}
-
-  /* shared type */
+  body{background:var(--bg);color:var(--ink);font-family:'Jost',system-ui,sans-serif;line-height:1.6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px 20px;-webkit-font-smoothing:antialiased}
+  .stage{width:100%;max-width:640px}
   .display{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
-  .eyebrow{
-    font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;
-    color:var(--accent);font-weight:500;margin-bottom:22px;
-  }
-
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:500}
   .screen{display:none;animation:rise .6s var(--ease) both}
   .screen.active{display:block}
   @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
-  /* ---------- INTRO ---------- */
   #intro{text-align:center;padding:8px 0}
   .ring{margin:0 auto 30px;display:block}
   #intro h1{font-size:clamp(2.5rem,9vw,3.9rem);margin-bottom:18px}
   #intro h1 em{font-style:italic;font-weight:400}
   .lede{color:var(--ink-soft);font-size:1.05rem;max-width:40ch;margin:0 auto 34px}
-  .meta{
-    font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;
-    color:var(--ink-soft);margin-top:26px;
-  }
+  .meta{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:26px}
 
-  /* buttons */
-  .btn{
-    font-family:'Jost',sans-serif;font-size:.82rem;letter-spacing:.16em;
-    text-transform:uppercase;font-weight:500;cursor:pointer;
-    border:none;border-radius:100px;padding:17px 40px;
-    background:var(--ink);color:var(--bg);
-    transition:transform .35s var(--ease),background .35s var(--ease);
-  }
+  .btn{font-family:'Jost',sans-serif;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:17px 40px;background:var(--ink);color:var(--bg);transition:transform .35s var(--ease),background .35s var(--ease)}
   .btn:hover{background:var(--accent-deep);transform:translateY(-2px)}
-  .btn:active{transform:translateY(0)}
 
-  /* ---------- QUIZ ---------- */
   .progress-wrap{display:flex;align-items:center;gap:16px;margin-bottom:38px}
   .track{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
   .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);transition:width .5s var(--ease)}
   .count{font-size:.72rem;letter-spacing:.2em;color:var(--ink-soft);white-space:nowrap}
-
   .question{font-size:clamp(1.7rem,6vw,2.4rem);margin-bottom:32px;min-height:2.2em}
-
   .options{display:flex;flex-direction:column;gap:12px}
-  .option{
-    font-family:'Jost',sans-serif;font-size:1.02rem;color:var(--ink);
-    text-align:left;background:var(--card);border:1px solid transparent;
-    border-radius:var(--radius);padding:19px 22px;cursor:pointer;width:100%;
-    transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);
-    display:flex;align-items:center;gap:14px;
-  }
-  .option:before{
-    content:"";width:9px;height:9px;border-radius:50%;
-    border:1.5px solid var(--line);flex:none;transition:all .3s var(--ease);
-  }
+  .option{font-family:'Jost',sans-serif;font-size:1.02rem;color:var(--ink);text-align:left;background:var(--card);border:1px solid transparent;border-radius:var(--radius);padding:19px 22px;cursor:pointer;width:100%;transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);display:flex;align-items:center;gap:14px}
+  .option:before{content:"";width:9px;height:9px;border-radius:50%;border:1.5px solid var(--line);flex:none;transition:all .3s var(--ease)}
   .option:hover{border-color:var(--gold);transform:translateX(4px)}
   .option.chosen{background:var(--accent);color:#F6F1EC;border-color:var(--accent)}
   .option.chosen:before{background:#F6F1EC;border-color:#F6F1EC}
 
-  /* ---------- RESULT ---------- */
-  .result-card{
-    background:var(--fam,#7B4A5E);color:#F7F1EC;
-    border-radius:26px;padding:44px 32px 40px;text-align:center;
-    box-shadow:0 30px 60px -30px rgba(42,33,48,.55);
-  }
+  /* result hero */
+  .result-card{background:var(--fam,#7B4A5E);color:#F7F1EC;border-radius:26px;padding:44px 32px 40px;text-align:center;box-shadow:0 30px 60px -30px rgba(42,33,48,.55)}
   .result-card .eyebrow{color:rgba(247,241,236,.72)}
   .result-name{font-size:clamp(2.6rem,10vw,3.6rem);margin-bottom:10px}
   .result-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:1.2rem;opacity:.92;margin-bottom:26px}
   .result-body{font-size:1.02rem;line-height:1.7;opacity:.94;max-width:42ch;margin:0 auto 32px}
-
-  .notes{
-    border-top:1px solid rgba(247,241,236,.28);
-    border-bottom:1px solid rgba(247,241,236,.28);
-    padding:22px 0;margin-bottom:32px;text-align:left;
-    display:flex;flex-direction:column;gap:14px;
-  }
+  .notes{border-top:1px solid rgba(247,241,236,.28);border-bottom:1px solid rgba(247,241,236,.28);padding:22px 0;text-align:left;display:flex;flex-direction:column;gap:14px}
   .note-row{display:flex;gap:18px;align-items:baseline}
-  .note-label{
-    font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;
-    opacity:.7;width:66px;flex:none;
-  }
+  .note-label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;opacity:.7;width:66px;flex:none}
   .note-val{font-family:'Fraunces',serif;font-size:1.05rem}
 
-  .shop{
-    display:inline-block;font-family:'Jost',sans-serif;font-size:.82rem;
-    letter-spacing:.16em;text-transform:uppercase;font-weight:500;
-    background:#F7F1EC;color:var(--ink);text-decoration:none;
-    padding:17px 38px;border-radius:100px;
-    transition:transform .35s var(--ease),opacity .35s var(--ease);
-  }
-  .shop:hover{transform:translateY(-2px);opacity:.9}
+  /* recommendations */
+  .recs{margin-top:34px}
+  .recs-head{text-align:center;margin-bottom:22px}
+  .recs-head .eyebrow{display:block;margin-bottom:10px}
+  .recs-head h3{font-size:clamp(1.5rem,5vw,2rem)}
+  .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:560px){.rec-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:400px){.rec-grid{grid-template-columns:1fr}}
+  .rec{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+  .rec .media{aspect-ratio:1/1;width:100%;object-fit:cover;background:#fff;display:block}
+  .rec .ph{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
+  .rec .ph span{font-family:'Fraunces',serif;font-size:2rem;color:#fff;opacity:.9}
+  .rec .body{padding:15px 15px 17px;display:flex;flex-direction:column;gap:5px;flex:1}
+  .rec .brand{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .rec .pname{font-family:'Fraunces',serif;font-size:1.02rem;line-height:1.2}
+  .rec .pnote{font-size:.8rem;color:var(--ink-soft);line-height:1.4}
+  .rec .view{margin-top:auto;padding-top:10px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;text-decoration:none;color:var(--accent)}
+  .rec .view.off{color:var(--ink-soft);opacity:.6}
+  .browse{text-align:center;margin-top:20px}
+  .browse a{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px}
+  .browse a:hover{color:var(--accent)}
 
-  /* email capture */
-  .capture{
-    background:var(--card);border-radius:var(--radius);
-    padding:32px 28px;margin-top:20px;text-align:center;
-  }
+  .capture{background:var(--card);border-radius:var(--radius);padding:32px 28px;margin-top:26px;text-align:center}
   .capture h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;margin-bottom:8px}
   .capture p{color:var(--ink-soft);font-size:.96rem;margin-bottom:22px;max-width:36ch;margin-inline:auto}
   .field{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-  .field input{
-    font-family:'Jost',sans-serif;font-size:1rem;flex:1;min-width:200px;
-    padding:15px 18px;border:1px solid var(--line);border-radius:100px;
-    background:#fff;color:var(--ink);
-  }
+  .field input{font-family:'Jost',sans-serif;font-size:1rem;flex:1;min-width:200px;padding:15px 18px;border:1px solid var(--line);border-radius:100px;background:#fff;color:var(--ink)}
   .field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
-  .field button{
-    font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.14em;
-    text-transform:uppercase;font-weight:500;cursor:pointer;
-    border:none;border-radius:100px;padding:15px 28px;
-    background:var(--accent);color:#F7F1EC;transition:background .3s var(--ease);
-  }
+  .field button{font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:15px 28px;background:var(--accent);color:#F7F1EC}
   .field button:hover{background:var(--accent-deep)}
   .capture .done{color:var(--accent);font-family:'Fraunces',serif;font-size:1.1rem;padding:6px 0}
-
   .after{display:flex;gap:22px;justify-content:center;align-items:center;margin-top:26px;flex-wrap:wrap}
-  .linkish{
-    background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;
-    font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px;
-    transition:color .3s var(--ease);
-  }
+  .linkish{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px}
   .linkish:hover{color:var(--accent)}
 
   :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-
-  @media (prefers-reduced-motion:reduce){
-    *{animation:none!important;transition:none!important}
-  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <main class="stage">
 
-  <!-- ===================== INTRO ===================== -->
   <section id="intro" class="screen active">
     <svg class="ring" width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
       <circle cx="29" cy="29" r="27" fill="none" stroke="#B8A78C" stroke-width="1"/>
       <circle cx="29" cy="29" r="19" fill="none" stroke="#CDC3B6" stroke-width="1"/>
       <g stroke="#7B4A5E" stroke-width="1.4">
-        <line x1="29" y1="2" x2="29" y2="9"/>
-        <line x1="52.4" y1="42.5" x2="46.4" y2="39"/>
-        <line x1="5.6" y1="42.5" x2="11.6" y2="39"/>
-        <line x1="52.4" y1="15.5" x2="46.4" y2="19"/>
-        <line x1="5.6" y1="15.5" x2="11.6" y2="19"/>
-        <line x1="29" y1="56" x2="29" y2="49"/>
+        <line x1="29" y1="2" x2="29" y2="9"/><line x1="52.4" y1="42.5" x2="46.4" y2="39"/>
+        <line x1="5.6" y1="42.5" x2="11.6" y2="39"/><line x1="52.4" y1="15.5" x2="46.4" y2="19"/>
+        <line x1="5.6" y1="15.5" x2="11.6" y2="19"/><line x1="29" y1="56" x2="29" y2="49"/>
       </g>
       <circle cx="29" cy="29" r="3" fill="#7B4A5E"/>
     </svg>
     <p class="eyebrow">A short scent discovery</p>
     <h1 class="display">Find your <em>signature</em> scent</h1>
-    <p class="lede">Every person has a fragrance family that simply fits. Answer six short questions and discover yours.</p>
+    <p class="lede">Every person has a fragrance family that simply fits. Answer six short questions and discover yours, with three perfumes chosen to match.</p>
     <button class="btn" id="start">Begin the discovery</button>
     <p class="meta">Six questions &nbsp;·&nbsp; one minute</p>
   </section>
 
-  <!-- ===================== QUIZ ===================== -->
   <section id="quiz" class="screen" aria-live="polite">
-    <div class="progress-wrap">
-      <div class="track"><div class="fill" id="fill"></div></div>
-      <span class="count" id="count">01 / 06</span>
-    </div>
+    <div class="progress-wrap"><div class="track"><div class="fill" id="fill"></div></div><span class="count" id="count">01 / 06</span></div>
     <h2 class="question display" id="question"></h2>
     <div class="options" id="options"></div>
   </section>
 
-  <!-- ===================== RESULT ===================== -->
   <section id="result" class="screen">
     <div class="result-card" id="resultCard">
       <p class="eyebrow">Your signature</p>
@@ -222,14 +130,19 @@
       <p class="result-tag" id="rTag"></p>
       <p class="result-body" id="rBody"></p>
       <div class="notes" id="rNotes"></div>
-      <!-- AFFILIATE SLOT: this button's href is set from AFFILIATE_LINKS below -->
-      <a class="shop" id="rShop" href="#" target="_blank" rel="noopener sponsored">Shop your scent edit</a>
     </div>
 
-    <!-- EMAIL SLOT ------------------------------------------------
-         Replace the whole .field form below with your MailerLite / Kit
-         embed to capture and tag subscribers by their result.
-         The result key is available as window.LYS_RESULT for tagging. -->
+    <div class="recs">
+      <div class="recs-head">
+        <span class="eyebrow">Chosen for you</span>
+        <h3 class="display" id="recsTitle">Three to try</h3>
+      </div>
+      <div class="rec-grid" id="recGrid"></div>
+      <!-- "Browse more" uses the category deep link in AFFILIATE_LINKS below -->
+      <p class="browse" id="browse"></p>
+    </div>
+
+    <!-- EMAIL SLOT: replace with your MailerLite / Kit embed. Tag with window.LYS_RESULT. -->
     <div class="capture">
       <h3>Your scent profile, saved</h3>
       <p>Get your full profile plus seasonal edits chosen for your family.</p>
@@ -238,7 +151,6 @@
         <button id="emailBtn" type="button">Send it</button>
       </div>
     </div>
-    <!-- END EMAIL SLOT ------------------------------------------- -->
 
     <div class="after">
       <button class="linkish" id="share">Share your scent</button>
@@ -250,80 +162,98 @@
 
 <script>
 /* =====================================================================
-   AFFILIATE SLOT
-   Paste your approved CJ / Awin tracking links here, one per family.
-   Leave as "#" and the button stays inert until you add a real URL.
+   AFFILIATE SLOT 1 — "Browse more" category deep links (one per family)
+   Optional: a CJ deep link to that family's listing on FragranceX.
    ===================================================================== */
-const AFFILIATE_LINKS = {
-  cit: "#",   // Citrus Bloom
-  flo: "#",   // Petal Romance
-  amb: "#",   // Velvet Amber
-  woo: "#",   // Cedar & Smoke
-  oce: "#",   // Ocean Air
-  gou: "#"    // Sweet Indulgence
+const AFFILIATE_LINKS = { cit:"#", flo:"#", amb:"#", woo:"#", oce:"#", gou:"#" };
+
+/* =====================================================================
+   AFFILIATE SLOT 2 — the three perfumes shown per result.
+   For each product, paste:
+     url  = your CJ deep link to that FragranceX product page
+     img  = the product image URL (optional; a coloured tile shows if blank)
+   Swap brand/name/note freely. Until a url is added it shows "Link soon".
+   ===================================================================== */
+const PRODUCTS = {
+  cit:[
+    {brand:"Dolce & Gabbana", name:"Light Blue", note:"Sun and Sicilian lemon.", url:"#", img:""},
+    {brand:"Chanel", name:"Chance Eau Fraîche", note:"Sparkling and green.", url:"#", img:""},
+    {brand:"DKNY", name:"Be Delicious", note:"Crisp green apple.", url:"#", img:""}
+  ],
+  flo:[
+    {brand:"Marc Jacobs", name:"Daisy", note:"Fresh, youthful florals.", url:"#", img:""},
+    {brand:"Gucci", name:"Bloom", note:"Lush white flowers.", url:"#", img:""},
+    {brand:"Chloé", name:"Eau de Parfum", note:"Powdery rose elegance.", url:"#", img:""}
+  ],
+  amb:[
+    {brand:"Yves Saint Laurent", name:"Black Opium", note:"Warm coffee and vanilla.", url:"#", img:""},
+    {brand:"Paco Rabanne", name:"Lady Million", note:"Bold amber and honey.", url:"#", img:""},
+    {brand:"Dior", name:"Hypnotic Poison", note:"Almond and vanilla.", url:"#", img:""}
+  ],
+  woo:[
+    {brand:"Chanel", name:"Coco Mademoiselle", note:"Woody and refined.", url:"#", img:""},
+    {brand:"Narciso Rodriguez", name:"For Her", note:"Musky and modern.", url:"#", img:""},
+    {brand:"Jo Malone", name:"Wood Sage & Sea Salt", note:"Fresh, salted woods.", url:"#", img:""}
+  ],
+  oce:[
+    {brand:"Giorgio Armani", name:"Acqua di Gioia", note:"Bright aquatic freshness.", url:"#", img:""},
+    {brand:"Issey Miyake", name:"L'Eau d'Issey", note:"Clean, watery florals.", url:"#", img:""},
+    {brand:"Davidoff", name:"Cool Water Woman", note:"Crisp and breezy.", url:"#", img:""}
+  ],
+  gou:[
+    {brand:"Lancôme", name:"La Vie Est Belle", note:"Sweet iris and praline.", url:"#", img:""},
+    {brand:"Carolina Herrera", name:"Good Girl", note:"Almond, tonka and coffee.", url:"#", img:""},
+    {brand:"Mugler", name:"Angel", note:"The iconic gourmand.", url:"#", img:""}
+  ]
 };
 
-/* ---------- Results ---------- */
 const RESULTS = {
-  cit:{name:"Citrus Bloom", color:"#B4841C",
-    tag:"Bright, effervescent, impossible to ignore.",
+  cit:{name:"Citrus Bloom", color:"#B4841C", tag:"Bright, effervescent, impossible to ignore.",
     body:"You gravitate to scents that feel like sunlight through an open window. Zesty and full of life, your fragrances lift a room the moment you walk in.",
     notes:{Top:"Bergamot, lemon zest", Heart:"Neroli, orange blossom", Base:"White musk"}},
-  flo:{name:"Petal Romance", color:"#AE5A75",
-    tag:"Soft, romantic, quietly unforgettable.",
+  flo:{name:"Petal Romance", color:"#AE5A75", tag:"Soft, romantic, quietly unforgettable.",
     body:"Yours is the language of flowers. You are drawn to fragrances with heart and tenderness, the kind that leave a gentle trail and a lasting impression.",
     notes:{Top:"Dewy peony", Heart:"Rose, jasmine", Base:"Soft musk, sandalwood"}},
-  amb:{name:"Velvet Amber", color:"#A24E2A",
-    tag:"Warm, sensual, made for candlelight.",
+  amb:{name:"Velvet Amber", color:"#A24E2A", tag:"Warm, sensual, made for candlelight.",
     body:"You reach for depth and warmth. Rich and a little intoxicating, your scents feel like cashmere and low light, an invitation to come closer.",
     notes:{Top:"Pink pepper", Heart:"Amber, cinnamon", Base:"Vanilla, benzoin"}},
-  woo:{name:"Cedar & Smoke", color:"#46523B",
-    tag:"Grounded, refined, effortlessly composed.",
+  woo:{name:"Cedar & Smoke", color:"#46523B", tag:"Grounded, refined, effortlessly composed.",
     body:"You favour fragrances with backbone. Earthy and sophisticated, your scents feel like a well-tailored coat, understated but impossible to fake.",
     notes:{Top:"Cardamom", Heart:"Cedar, vetiver", Base:"Oakmoss, leather"}},
-  oce:{name:"Ocean Air", color:"#2F6E80",
-    tag:"Clean, crisp, like a deep breath.",
+  oce:{name:"Ocean Air", color:"#2F6E80", tag:"Clean, crisp, like a deep breath.",
     body:"You love the feeling of fresh air on skin. Cool and weightless, your fragrances feel like linen drying in a sea breeze, endlessly wearable.",
     notes:{Top:"Sea salt, mint", Heart:"Green fig", Base:"Driftwood, white musk"}},
-  gou:{name:"Sweet Indulgence", color:"#8A5A32",
-    tag:"Cosy, moreish, utterly comforting.",
+  gou:{name:"Sweet Indulgence", color:"#8A5A32", tag:"Cosy, moreish, utterly comforting.",
     body:"You treat scent like a treat. Warm and wrapped in comfort, your fragrances feel like the best part of the evening, the one everyone leans in to ask about.",
     notes:{Top:"Caramelised sugar", Heart:"Vanilla orchid", Base:"Tonka bean, praline"}}
 };
 
-/* ---------- Questions ---------- */
 const QUESTIONS = [
   {q:"Where do you most want to escape to?", a:[
-    ["A sun-drenched citrus grove","cit"],["A garden in full bloom","flo"],
-    ["A candlelit room, deep in winter","amb"],["A cabin among tall pines","woo"],
-    ["A quiet cove by the sea","oce"],["A warm kitchen, something baking","gou"]]},
+    ["A sun-drenched citrus grove","cit"],["A garden in full bloom","flo"],["A candlelit room, deep in winter","amb"],
+    ["A cabin among tall pines","woo"],["A quiet cove by the sea","oce"],["A warm kitchen, something baking","gou"]]},
   {q:"Your ideal evening looks like...", a:[
-    ["Rooftop drinks as the sun sets","cit"],["A slow, romantic dinner","flo"],
-    ["Wine and low light with someone close","amb"],["A fireside book and no plans","woo"],
-    ["A barefoot walk along the shore","oce"],["Something sweet and a favourite film","gou"]]},
+    ["Rooftop drinks as the sun sets","cit"],["A slow, romantic dinner","flo"],["Wine and low light with someone close","amb"],
+    ["A fireside book and no plans","woo"],["A barefoot walk along the shore","oce"],["Something sweet and a favourite film","gou"]]},
   {q:"Pick the colour you can't resist.", a:[
-    ["Sunlit yellow","cit"],["Blush pink","flo"],["Deep burgundy","amb"],
-    ["Forest green","woo"],["Sea glass blue","oce"],["Warm caramel","gou"]]},
+    ["Sunlit yellow","cit"],["Blush pink","flo"],["Deep burgundy","amb"],["Forest green","woo"],["Sea glass blue","oce"],["Warm caramel","gou"]]},
   {q:"How should your scent make you feel?", a:[
     ["Awake and alive","cit"],["Romantic and soft","flo"],["Confident and alluring","amb"],
     ["Grounded and self-assured","woo"],["Fresh and unburdened","oce"],["Comforted and cosy","gou"]]},
   {q:"Choose a little luxury.", a:[
-    ["An ice-cold citrus spritz","cit"],["A single stem of roses","flo"],
-    ["Silk against the skin","amb"],["A leather-bound notebook","woo"],
-    ["Crisp white cotton sheets","oce"],["Salted caramel, slowly","gou"]]},
+    ["An ice-cold citrus spritz","cit"],["A single stem of roses","flo"],["Silk against the skin","amb"],
+    ["A leather-bound notebook","woo"],["Crisp white cotton sheets","oce"],["Salted caramel, slowly","gou"]]},
   {q:"Which season feels most like you?", a:[
-    ["Bright early summer","cit"],["Late spring, everything flowering","flo"],
-    ["Deep autumn evenings","amb"],["Cold, clear winter walks","woo"],
-    ["High summer by the water","oce"],["The cosy heart of the festive season","gou"]]}
+    ["Bright early summer","cit"],["Late spring, everything flowering","flo"],["Deep autumn evenings","amb"],
+    ["Cold, clear winter walks","woo"],["High summer by the water","oce"],["The cosy heart of the festive season","gou"]]}
 ];
 
-/* ---------- State + elements ---------- */
 let step=0; const answers=[];
 const el=id=>document.getElementById(id);
 const screens={intro:el('intro'),quiz:el('quiz'),result:el('result')};
 function show(name){Object.values(screens).forEach(s=>s.classList.remove('active'));screens[name].classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+function hexA(hex,a){const n=parseInt(hex.slice(1),16);return `rgba(${n>>16&255},${n>>8&255},${n&255},${a})`;}
 
-/* ---------- Quiz flow ---------- */
 function render(){
   const item=QUESTIONS[step];
   el('question').textContent=item.q;
@@ -338,29 +268,19 @@ function render(){
   });
 }
 function choose(btn,key){
-  btn.classList.add('chosen');
-  answers[step]=key;
-  setTimeout(()=>{
-    step++;
-    if(step<QUESTIONS.length){render();}
-    else{el('fill').style.width="100%";finish();}
-  },340);
+  btn.classList.add('chosen'); answers[step]=key;
+  setTimeout(()=>{step++; if(step<QUESTIONS.length){render();} else{el('fill').style.width="100%";finish();}},340);
 }
-
-/* ---------- Scoring ---------- */
 function finish(){
   const tally={}; answers.forEach(k=>tally[k]=(tally[k]||0)+1);
   let best=answers[0],high=0;
   Object.keys(tally).forEach(k=>{
-    if(tally[k]>high || (tally[k]===high && answers.indexOf(k)<answers.indexOf(best))){
-      high=tally[k]; best=k;
-    }
+    if(tally[k]>high || (tally[k]===high && answers.indexOf(k)<answers.indexOf(best))){high=tally[k];best=k;}
   });
   showResult(best);
 }
 function showResult(key){
-  const r=RESULTS[key];
-  window.LYS_RESULT=key;                       // available for email tagging
+  const r=RESULTS[key]; window.LYS_RESULT=key;
   el('resultCard').style.setProperty('--fam',r.color);
   el('rName').textContent=r.name;
   el('rTag').textContent=r.tag;
@@ -368,34 +288,41 @@ function showResult(key){
   const n=el('rNotes'); n.innerHTML="";
   Object.entries(r.notes).forEach(([label,val])=>{
     const row=document.createElement('div'); row.className="note-row";
-    row.innerHTML=`<span class="note-label">${label}</span><span class="note-val">${val}</span>`;
+    row.innerHTML='<span class="note-label">'+label+'</span><span class="note-val">'+val+'</span>';
     n.appendChild(row);
   });
-  const shop=el('rShop'), url=AFFILIATE_LINKS[key];
-  if(url && url!=="#"){shop.href=url;shop.style.display="";}
-  else{shop.href="#";shop.textContent="Shop your scent edit (coming soon)";shop.style.opacity=".55";shop.style.pointerEvents="none";}
+  // product recommendations
+  el('recsTitle').textContent="Three "+r.name+" scents to try";
+  const grid=el('recGrid'); grid.innerHTML="";
+  (PRODUCTS[key]||[]).forEach(p=>{
+    const media = p.img
+      ? '<img class="media" src="'+p.img+'" alt="'+p.brand+' '+p.name+'" loading="lazy">'
+      : '<div class="ph media" style="background:'+hexA(r.color,.85)+'"><span>'+p.brand.charAt(0)+'</span></div>';
+    const cta = (p.url && p.url!=="#")
+      ? '<a class="view" href="'+p.url+'" target="_blank" rel="noopener sponsored">View &rsaquo;</a>'
+      : '<span class="view off">Link soon</span>';
+    const card=document.createElement('div'); card.className="rec";
+    card.innerHTML=media+'<div class="body"><span class="brand">'+p.brand+'</span><span class="pname">'+p.name+'</span><span class="pnote">'+(p.note||"")+'</span>'+cta+'</div>';
+    grid.appendChild(card);
+  });
+  // browse more
+  const cat=AFFILIATE_LINKS[key], b=el('browse');
+  if(cat && cat!=="#"){b.innerHTML='<a href="'+cat+'" target="_blank" rel="noopener sponsored">Browse more '+r.name.toLowerCase()+' fragrances</a>';}
+  else{b.innerHTML="";}
   show('result');
 }
 
-/* ---------- Email (placeholder until embed added) ---------- */
 el('emailBtn').addEventListener('click',()=>{
   const val=el('email').value.trim();
   if(!/.+@.+\..+/.test(val)){el('email').focus();return;}
   el('emailForm').innerHTML='<p class="done">You are on the list.</p>';
-  /* When your MailerLite/Kit embed is in place, this handler is replaced
-     by their form. Tag with window.LYS_RESULT to segment by scent family. */
 });
-
-/* ---------- Share ---------- */
 el('share').addEventListener('click',async()=>{
   const r=RESULTS[window.LYS_RESULT];
-  const text=`My signature scent is ${r.name}. Find yours:`;
-  const url=location.href;
+  const text="My signature scent is "+r.name+". Find yours:"; const url=location.href;
   if(navigator.share){try{await navigator.share({title:"Love Your Senses",text,url});}catch(e){}}
   else{try{await navigator.clipboard.writeText(text+" "+url);el('share').textContent="Link copied";setTimeout(()=>el('share').textContent="Share your scent",2000);}catch(e){}}
 });
-
-/* ---------- Controls ---------- */
 el('start').addEventListener('click',()=>{show('quiz');render();});
 el('retake').addEventListener('click',()=>{step=0;answers.length=0;el('email').value="";show('intro');});
 </script>
