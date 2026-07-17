@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Perfect Wind-Down Ritual | Love Your Senses</title>
+<meta name="description" content="Answer six quick questions to discover the evening ritual and products matched to how you prefer to slow down at the end of the day.">
+<link rel="canonical" href="https://loveyoursenses.com/wind-down">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Find Your Perfect Wind-Down Ritual | Love Your Senses">
+<meta property="og:description" content="Discover the evening ritual and products matched to your preferences, pace and atmosphere.">
+<meta property="og:url" content="https://loveyoursenses.com/wind-down">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#E7E3DD;
+    --card:#F2EEE8;
+    --ink:#2A2130;
+    --ink-soft:#6E6574;
+    --accent:#7B4A5E;
+    --accent-deep:#5E3547;
+    --line:#CDC3B6;
+    --gold:#B8A78C;
+    --cream:#F7F1EC;
+    --radius:18px;
+    --ease:cubic-bezier(.4,.14,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Jost',system-ui,sans-serif;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+  button,input{font:inherit}
+  button{touch-action:manipulation}
+  .display{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  .wrap{width:100%;max-width:1000px;margin:0 auto;padding-left:24px;padding-right:24px}
+  .site-head{padding:24px 0}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .mark{font-family:'Fraunces',serif;font-weight:500;font-size:1.24rem;text-decoration:none;color:var(--ink)}
+  .mark span{color:var(--accent)}
+  .head-link{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none}
+  .head-link:hover{color:var(--accent)}
+  .stage{width:100%;max-width:680px;margin:0 auto;padding:36px 20px 72px}
+  .screen{display:none;animation:rise .6s var(--ease) both}
+  .screen.active{display:block}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  #intro{text-align:center;padding:14px 0 24px}
+  .ring{margin:0 auto 30px;display:block}
+  #intro h1{font-size:clamp(2.55rem,9vw,4rem);margin-bottom:18px}
+  #intro h1 em{font-style:italic;font-weight:400}
+  .lede{color:var(--ink-soft);font-size:1.06rem;max-width:45ch;margin:0 auto 24px}
+  .wellbeing-note{font-size:.79rem;color:var(--ink-soft);line-height:1.55;max-width:56ch;margin:0 auto 30px}
+  .meta{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:26px}
+  .btn{display:inline-block;font-family:'Jost',sans-serif;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:17px 40px;background:var(--ink);color:var(--bg);transition:transform .35s var(--ease),background .35s var(--ease)}
+  .btn:hover{background:var(--accent-deep);transform:translateY(-2px)}
+  .progress-wrap{display:flex;align-items:center;gap:16px;margin-bottom:38px}
+  .track{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
+  .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);transition:width .5s var(--ease)}
+  .count{font-size:.72rem;letter-spacing:.2em;color:var(--ink-soft);white-space:nowrap}
+  .question{font-size:clamp(1.75rem,6vw,2.45rem);margin-bottom:32px;min-height:2.2em}
+  .options{display:flex;flex-direction:column;gap:12px}
+  .option{font-family:'Jost',sans-serif;font-size:1.01rem;color:var(--ink);text-align:left;background:var(--card);border:1px solid transparent;border-radius:var(--radius);padding:19px 22px;cursor:pointer;width:100%;transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);display:flex;align-items:center;gap:14px}
+  .option:before{content:"";width:9px;height:9px;border-radius:50%;border:1.5px solid var(--line);flex:none;transition:all .3s var(--ease)}
+  .option:hover{border-color:var(--gold);transform:translateX(4px)}
+  .option.chosen{background:var(--accent);color:var(--cream);border-color:var(--accent)}
+  .option.chosen:before{background:var(--cream);border-color:var(--cream)}
+  .option:disabled{cursor:default}
+  .result-card{background:var(--fam,#7B4A5E);color:var(--cream);border-radius:26px;padding:44px 32px 40px;text-align:center;box-shadow:0 30px 60px -30px rgba(42,33,48,.55)}
+  .result-card .eyebrow{color:rgba(247,241,236,.72)}
+  .result-name{font-size:clamp(2.55rem,10vw,3.65rem);margin-bottom:10px}
+  .result-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:1.2rem;opacity:.94;margin-bottom:24px}
+  .result-body{font-size:1.02rem;line-height:1.72;opacity:.95;max-width:44ch;margin:0 auto 30px}
+  .details{border-top:1px solid rgba(247,241,236,.28);border-bottom:1px solid rgba(247,241,236,.28);padding:22px 0;text-align:left;display:flex;flex-direction:column;gap:14px}
+  .detail-row{display:flex;gap:18px;align-items:baseline}
+  .detail-label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;opacity:.72;width:104px;flex:none}
+  .detail-val{font-family:'Fraunces',serif;font-size:1.04rem}
+  .recs{margin-top:36px}
+  .recs-head{text-align:center;margin-bottom:22px}
+  .recs-head .eyebrow{display:block;margin-bottom:10px}
+  .recs-head h3{font-size:clamp(1.55rem,5vw,2.05rem)}
+  .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .rec{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+  .rec-badge{position:absolute;top:12px;left:12px;z-index:2;background:rgba(247,241,236,.94);color:var(--accent-deep);border-radius:100px;padding:6px 10px;font-size:.61rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+  .rec .media-frame{aspect-ratio:1/1;width:100%;position:relative;overflow:hidden;background:#fff}
+  .rec .media{aspect-ratio:1/1;width:100%;height:100%;object-fit:contain;padding:18px;background:#fff;display:block}
+  .rec .ph{display:flex;align-items:center;justify-content:center;padding:0}
+  .rec .media-frame .media{position:absolute;inset:0}
+  .rec .media-fallback{display:none}
+  .rec .media-fallback.show{display:flex}
+  .rec .ph span{font-family:'Fraunces',serif;font-size:2rem;color:#fff;opacity:.92}
+  .rec .body{padding:16px 15px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .rec .brand{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .rec .pname{font-family:'Fraunces',serif;font-size:1.04rem;line-height:1.22}
+  .rec .pnote{font-size:.8rem;color:var(--ink-soft);line-height:1.45}
+  .rec .offer{font-size:.76rem;color:var(--accent);font-weight:500}
+  .rec .view{margin-top:auto;padding-top:11px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;text-decoration:none;color:var(--accent)}
+  .rec .view.off{color:var(--ink-soft);opacity:.58}
+  .rec .view:hover{text-decoration:underline;text-underline-offset:4px}
+  .affiliate-note{font-size:.78rem;color:var(--ink-soft);line-height:1.55;text-align:center;max-width:58ch;margin:18px auto 0}
+  .affiliate-note a{color:var(--accent);text-underline-offset:3px}
+  .browse-all{text-align:center;margin-top:22px}
+  .btn-all{display:inline-block;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;text-decoration:none;border:1px solid var(--accent);color:var(--accent);border-radius:100px;padding:14px 34px;transition:background .3s var(--ease),color .3s var(--ease)}
+  .btn-all:hover{background:var(--accent);color:var(--cream)}
+  .capture{background:var(--card);border-radius:var(--radius);padding:32px 28px;margin-top:28px;text-align:center}
+  .capture h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;margin-bottom:8px}
+  .capture p{color:var(--ink-soft);font-size:.96rem;margin:0 auto 22px;max-width:39ch}
+  .field{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .field input{font-family:'Jost',sans-serif;font-size:1rem;flex:1;min-width:210px;padding:15px 18px;border:1px solid var(--line);border-radius:100px;background:#fff;color:var(--ink)}
+  .field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+  .field button{font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:15px 28px;background:var(--accent);color:var(--cream)}
+  .field button:hover{background:var(--accent-deep)}
+  .capture .done{color:var(--accent);font-family:'Fraunces',serif;font-size:1.1rem;padding:6px 0}
+  .capture .form-note{font-size:.74rem;margin-top:12px;margin-bottom:0}
+  .next-quiz{border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;margin-top:18px;text-align:center}
+  .next-quiz .eyebrow{display:block;margin-bottom:9px}
+  .next-quiz h3{font-size:1.45rem;margin-bottom:8px}
+  .next-quiz p{color:var(--ink-soft);font-size:.94rem;max-width:40ch;margin:0 auto 18px}
+  .next-link{font-size:.74rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;color:var(--accent);text-underline-offset:4px}
+  .next-link:hover{color:var(--accent-deep)}
+  .after{display:flex;gap:22px;justify-content:center;align-items:center;margin-top:26px;flex-wrap:wrap}
+  .linkish{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px}
+  .linkish:hover{color:var(--accent)}
+  .site-foot{border-top:1px solid var(--line);padding:34px 0 48px}
+  .foot{display:flex;flex-direction:column;align-items:center;gap:11px;text-align:center}
+  .foot-nav a{color:var(--ink-soft);text-decoration:none;font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;margin:0 10px}
+  .foot-nav a:hover{color:var(--accent)}
+  .foot .disc{font-size:.82rem;color:var(--ink-soft);max-width:54ch}
+  .foot .cr{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  @media(max-width:600px){.site-head{padding:20px 0}.stage{padding-top:28px}.rec-grid{grid-template-columns:1fr 1fr}.detail-label{width:88px}}
+  @media(max-width:420px){.rec-grid{grid-template-columns:1fr}.result-card{padding:40px 24px 36px}.field{flex-direction:column}.field input,.field button{width:100%}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap"><div class="bar"><a href="/" class="mark">Love Your <span>Senses</span></a><a href="/#quizzes" class="head-link">All quizzes</a></div></div>
+</header>
+<main class="stage">
+  <section id="intro" class="screen active">
+    <svg class="ring" width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
+      <circle cx="29" cy="29" r="27" fill="none" stroke="#B8A78C" stroke-width="1"/>
+      <circle cx="29" cy="29" r="19" fill="none" stroke="#CDC3B6" stroke-width="1"/>
+      <g stroke="#7B4A5E" stroke-width="1.4"><line x1="29" y1="2" x2="29" y2="9"/><line x1="52.4" y1="42.5" x2="46.4" y2="39"/><line x1="5.6" y1="42.5" x2="11.6" y2="39"/><line x1="52.4" y1="15.5" x2="46.4" y2="19"/><line x1="5.6" y1="15.5" x2="11.6" y2="19"/><line x1="29" y1="56" x2="29" y2="49"/></g>
+      <circle cx="29" cy="29" r="3" fill="#7B4A5E"/>
+    </svg>
+    <p class="eyebrow">A short evening ritual discovery</p>
+    <h1 class="display">Find your perfect <em>wind-down</em> ritual</h1>
+    <p class="lede">Answer six quick questions to discover the evening ritual, atmosphere and products matched to how you prefer to slow the pace at the end of the day.</p>
+    <p class="wellbeing-note">This lifestyle quiz matches products to evening preferences. It does not provide medical advice, diagnose sleep difficulties or promise a particular sleep outcome.</p>
+    <button class="btn" id="start" type="button">Begin the discovery</button>
+    <p class="meta">Six questions &nbsp;·&nbsp; one minute</p>
+  </section>
+  <section id="quiz" class="screen" aria-live="polite">
+    <div class="progress-wrap"><div class="track" aria-hidden="true"><div class="fill" id="fill"></div></div><span class="count" id="count">01 / 06</span></div>
+    <h2 class="question display" id="question" tabindex="-1"></h2>
+    <div class="options" id="options"></div>
+  </section>
+  <section id="result" class="screen" aria-live="polite">
+    <div class="result-card" id="resultCard">
+      <p class="eyebrow">Your evening ritual profile</p>
+      <h2 class="result-name display" id="rName"></h2>
+      <p class="result-tag" id="rTag"></p>
+      <p class="result-body" id="rBody"></p>
+      <div class="details" id="rDetails"></div>
+    </div>
+    <div class="recs">
+      <div class="recs-head"><span class="eyebrow">Chosen for your ritual</span><h3 class="display" id="recsTitle">Your three best-matched products</h3></div>
+      <div class="rec-grid" id="recGrid"></div>
+      <p class="affiliate-note" id="recommendationDisclosure">These recommendations use direct brand links. Love Your Senses does not currently earn commission from them. Availability and product imagery may change.</p>
+      <div class="browse-all" id="browseAll"></div>
+      <p class="wellbeing-note">These suggestions focus on atmosphere, comfort and personal routine. They are not treatments and do not promise a particular sleep outcome.</p>
+    </div>
+    <div class="capture">
+      <h3>Save your wind-down ritual</h3>
+      <p>Get your result, product shortlist and future evening ritual discoveries by email.</p>
+      <div class="field" id="emailForm"><input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email"><button id="emailBtn" type="button">Send it</button></div>
+      <p class="form-note" id="formNote">Connect your email platform in the JavaScript settings before publishing.</p>
+    </div>
+    <div class="next-quiz"><span class="eyebrow">Complete your bedroom setup</span><h3 class="display">Now find your perfect sleep setup</h3><p>Match your bedding, bedroom atmosphere and comfort products to the way you like your room and bed to feel.</p><a class="next-link" href="/sleep">Find your sleep setup</a></div>
+    <div class="after"><button class="linkish" id="share" type="button">Share your result</button><button class="linkish" id="retake" type="button">Retake the quiz</button></div>
+  </section>
+</main>
+<footer class="site-foot"><div class="wrap"><div class="foot"><div class="foot-nav"><a href="/about">About</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/disclosure">Affiliate Disclosure</a></div><p class="disc">Love Your Senses helps you discover products matched to your preferences through short, enjoyable quizzes.</p><p class="cr">© 2026 Love Your Senses</p></div></div></footer>
+<script>
+/* =====================================================================
+   PAGE SETTINGS
+
+   Current product links are direct, non-affiliate links. When an
+   affiliate partnership is approved, replace the product URL and image
+   with the approved assets, then change affiliate:false to affiliate:true.
+   ===================================================================== */
+const QUIZ_URL = "https://loveyoursenses.com/wind-down";
+const STORE_LINK = "";
+const STORE_LINK_IS_AFFILIATE = false;
+const EMAIL_FORM_ACTION = "";
+const EMAIL_FIELD_NAME = "email";
+
+const PRODUCTS = {
+  reader:[
+    {merchant:"Rakuten Kobo",name:"Kobo Clara BW",monogram:"KC",note:"A compact glare-free eReader with adjustable front lighting for a focused reading ritual.",offer:"Best for keeping a large reading list in one small device.",url:"https://uk.kobobooks.com/products/kobo-clara-bw",img:"https://uk.kobobooks.com/cdn/shop/products/1-Spa-BW-EN-Device_Front_1080x1080_c775875b-0b4d-4867-9831-6df68d9f3347_700x700.png?v=1710271891",affiliate:false,base:12,fit:{reading:10,digital_reading:10,portable:8,focused_light:5,minimal:6,water_resistant:5}},
+    {merchant:"Lumie",name:"Task",monogram:"LT",note:"A dimmable, adjustable desk lamp gives books and hobbies a clear pool of light without filling the whole room.",offer:"Best for a dedicated reading corner or bedside table.",url:"https://www.lumie.com/products/task-steel-blue",img:"https://www.lumie.com/cdn/shop/files/lumie-task-steel-blue-00.webp?v=1755191023&width=700",affiliate:false,base:11,fit:{reading:9,focused_light:10,adjustable:8,bedside:7,structured:5,premium:5}},
+    {merchant:"Moleskine",name:"Passion Journal Books",monogram:"MB",note:"A structured journal records books, favourite passages and reading memories in one place.",offer:"Best for readers who enjoy making notes as part of the ritual.",url:"https://www.moleskine.com/en-gb/shop/notebooks/passion-notebooks/passion-journals-book-8058647620244.html",img:"https://www.moleskine.com/dw/image/v2/BFRN_PRD/on/demandware.static/-/Sites-masterCatalog_Moleskine/default/dw2e52c54a/images/large-PDP/gtin_8058647620244_01.png?sh=900",affiliate:false,base:10,fit:{reading:8,paper_books:8,journalling:6,writing:6,structured:8,screen_free:7}},
+    {merchant:"Anglepoise",name:"90 Mini Mini Desk Lamp",monogram:"AM",note:"A compact dimmable LED lamp offers flexible positioning without dominating a bedside surface.",offer:"Best for small spaces and an uncluttered reading setup.",url:"https://www.anglepoise.com/product/90-mini-mini-desk-lamp-steel-blue/",img:"https://www.anglepoise.com/wp-content/uploads/2021/12/90_mini_mini_desk_lamp_steel_blue_2-WEB-2022.jpg",affiliate:false,base:9,fit:{focused_light:10,portable:7,bedside:8,minimal:9,reading:8,adjustable:8}}
+  ],
+  bath:[
+    {merchant:"The White Company",name:"Unisex Organic Cotton Hydrocotton Hooded Robe",monogram:"HR",note:"A light, soft organic-cotton robe extends a bath or shower into a slower evening routine.",offer:"Best for a warm, enveloping finish without a very heavy feel.",url:"https://www.thewhitecompany.com/uk/Unisex-Organic-Cotton-Hydrocotton-Hooded-Robe/p/A14213",img:"https://whitecompany.scene7.com/is/image/whitecompany/A14213_15_W?wid=900&hei=900&fmt=webp",affiliate:false,base:12,fit:{bath:8,robe:10,softness:9,warmth:8,sensory:7,premium:5}},
+    {merchant:"L'Occitane",name:"Almond Milky Bath",monogram:"AB",note:"An almond-scented bath product turns warm water into a more sensory, unhurried ritual.",offer:"Best for people who want the bath itself to feel like the main event.",url:"https://uk.loccitane.com/almond-milky-bath-29BM500A20.html",img:"https://static.thcdn.com/productimg/original/14188191-1555156425077675.jpg",affiliate:false,base:11,fit:{bath:10,warm_water:10,sensory:10,fragrance:8,indulgent:8,simple:4}},
+    {merchant:"The White Company",name:"Wooden Bath Tidy",monogram:"BT",note:"A white-oak bath tray keeps a book, candle or bath essentials within easy reach.",offer:"Best for building a complete soak around reading or quiet essentials.",url:"https://www.thewhitecompany.com/uk/Wooden-Bath-Tidy/p/WSHBA",img:"https://whitecompany.scene7.com/is/image/whitecompany/WSHBA_24_W?wid=900&hei=900&fmt=webp",affiliate:false,base:10,fit:{bath:9,bath_accessory:10,reading:6,sensory:6,premium:7,structured:5}},
+    {merchant:"The White Company",name:"Rib Hydrocotton Towels",monogram:"HT",note:"Fluffy low-twist cotton towels provide a soft, generous finish after a bath or shower.",offer:"Best for upgrading the everyday part of the routine.",url:"https://www.thewhitecompany.com/uk/Rib-Hydrocotton-Towels/p/hydrocotton-towels?swatch=White",img:"https://whitecompany.scene7.com/is/image/whitecompany/Rib-Hydrocotton-Towels/HYDROTOWELS02_15_W?wid=900&hei=900&fmt=webp",affiliate:false,base:9,fit:{bath:8,softness:10,warmth:6,simple:8,easy_care:7,sensory:6}}
+  ],
+  journal:[
+    {merchant:"Manta Sleep",name:"Sleep Journal",monogram:"SJ",note:"A compact guided journal provides a structured place to review the day and prepare for tomorrow.",offer:"Best for a short, repeatable written ritual.",url:"https://mantasleep.uk/products/manta-sleep-journal",img:"https://mantasleep.uk/cdn/shop/files/preview_images/d1558ad0b7bc450d9adf1c8eaa8ed508.thumbnail.0000000000_1200x.jpg?v=1773757472",affiliate:false,base:12,fit:{journalling:10,guided:10,structured:9,screen_free:9,bedside:7,simple:7}},
+    {merchant:"Intelligent Change",name:"The Five Minute Journal",monogram:"5J",note:"An undated guided journal uses short morning and evening prompts in a compact daily format.",offer:"Best for people who prefer prompts over a blank page.",url:"https://www.intelligentchange.com/products/the-five-minute-journal-pink?currency=gbp&region=uk",img:"https://www.intelligentchange.com/cdn/shop/products/4X5-1600x2000-Intelligent-Change-Five-Minute-Journal-Pink-1.jpg?v=1671124210&width=900",affiliate:false,base:11,fit:{journalling:10,guided:10,structured:10,writing:7,short_ritual:9,premium:6}},
+    {merchant:"Moleskine",name:"Classic Notebook Hard Cover",monogram:"MN",note:"A hard-cover notebook that lies flat gives free-form writing a simple, dependable home.",offer:"Best for lists, reflections and unstructured evening pages.",url:"https://www.moleskine.com/en-gb/shop/notebooks/the-original-notebook/classic-notebook-black-9788883701146.html",img:"https://www.moleskine.com/dw/image/v2/BFRN_PRD/on/demandware.static/-/Sites-masterCatalog_Moleskine/default/images/large-PDP/gtin_9788883701146_01.png?sh=900",affiliate:false,base:10,fit:{journalling:9,freeform:10,writing:9,screen_free:8,minimal:8,portable:6}},
+    {merchant:"LAMY",name:"Safari Fountain Pen",monogram:"LS",note:"A robust fountain pen with an ergonomic grip makes handwritten reflection feel more deliberate.",offer:"Best when the writing tool is part of the pleasure.",url:"https://www.lamy.com/en-gb/p/lamy-safari-fountain-pen/54912094863704",img:"https://www.lamy.com/media/catalog/product/cache/8a7d48f4958911541b2d12dce6daadd5/l/a/lamy_safari_fountain_pen_aquasky.png",affiliate:false,base:9,fit:{writing:10,freeform:7,premium:6,screen_free:6,tactile:9,portable:8}}
+  ],
+  listener:[
+    {merchant:"SnoozeBand",name:"Deluxe Sleep Mask Headphones",monogram:"SD",note:"A soft eye mask combines thin Bluetooth speakers with built-in audio and timer controls.",offer:"Best for private podcasts, audiobooks or quiet playlists in bed.",url:"https://www.snoozeband.co.uk/products/snoozeband-deluxe-sleep-mask-with-headphones",img:"https://www.snoozeband.co.uk/cdn/shop/files/snoozeband-deluxe-sleep-mask-headphones-140452.jpg?v=1769696611&width=1500",affiliate:false,base:12,fit:{audio:10,podcasts:10,audiobooks:9,portable:7,mask:7,personal:9}},
+    {merchant:"Yogasleep",name:"Hushh Portable Sound Machine",monogram:"YH",note:"A compact rechargeable sound machine offers selectable steady background sounds for home or travel.",offer:"Best for a simple press-and-play audio backdrop.",url:"https://yogasleep.com/collections/sound-machines/products/hushh",img:"https://yogasleep.com/cdn/shop/files/Hushh_ISO_2028_001_1800x1800.jpg?v=1730143987",affiliate:false,base:11,fit:{audio:8,sound_masking:10,portable:10,simple:9,travel:8,screen_free:7}},
+    {merchant:"Loop",name:"Loop Dream Earplugs",monogram:"LD",note:"Soft reusable earplugs use a low-profile design for people who prefer less surrounding sound rather than added audio.",offer:"Best for a quieter, minimal ritual with no electronics.",url:"https://www.loopearplugs.com/products/dream?country=GB",img:"https://www.loopearplugs.com/cdn/shop/files/preview_images/b2b26980ca6c46f8bcd54e735f2fcf10.thumbnail.0000000000.jpg?v=1728488908&width=1946",affiliate:false,base:10,fit:{earplugs:10,quiet:10,minimal:9,screen_free:9,portable:8,simple:8}},
+    {merchant:"Roberts",name:"Zen Plus",monogram:"RZ",note:"A DAB+/FM and Bluetooth bedside radio combines spoken audio, music and built-in nature soundscapes.",offer:"Best for listeners who want one dedicated bedside audio device.",url:"https://www.robertsradio.com/en-gb/zen-plus",img:"https://www.robertsradio.com/sites/g/files/emiian376/files/2022-08/Text-with-Image-Zen-Plus---with-BG-1.jpg",affiliate:false,base:9,fit:{audio:10,podcasts:8,soundscapes:9,bedside:9,structured:5,screen_free:6}}
+  ],
+  comfort:[
+    {merchant:"Manta Sleep",name:"Manta SILK Sleep Mask",monogram:"MS",note:"Pure silk eye cups and an adjustable fit create a smooth, premium light-blocking accessory.",offer:"Best for making softness and tactile comfort the final cue of the evening.",url:"https://mantasleep.uk/products/manta-silk-mask",img:"https://mantasleep.uk/cdn/shop/files/SILK-Buy-Box-01.png?v=1695634643&width=2048",affiliate:false,base:12,fit:{silk:10,softness:10,premium:9,mask:9,light_control:7,tactile:8}},
+    {merchant:"Panda London",name:"100% Bamboo Pillow Cases",monogram:"PC",note:"A satin-weave bamboo pair gives the pillow a smooth, breathable and understated finish.",offer:"Best for an easy tactile upgrade used every evening.",url:"https://pandalondon.com/products/bamboo-pillowcases",img:"https://pandalondon.com/cdn/shop/files/Pure_White_Pillowcase_Bamboo_Bedding_Two_Pillows.webp?v=1721308652&width=1000",affiliate:false,base:11,fit:{softness:9,smooth:10,bamboo:10,bedding:9,premium:7,simple:8}},
+    {merchant:"DUSK",name:"Soft Touch Microfibre Duvet Cover Set",monogram:"ST",note:"Smooth microfibre bedding creates a soft, warm and easy-care surface for an early change into comfort mode.",offer:"Best for a cosy setup that does not need specialist care.",url:"https://dusk.com/products/soft-touch-microfibre-duvet-cover-set-white",img:"https://dusk.com/cdn/shop/files/soft-touch-microfibre-duvet-cover-set-white-9464540.jpg?v=1759432493&width=1946",affiliate:false,base:10,fit:{softness:10,warmth:8,bedding:10,cosy:9,easy_care:9,simple:6}},
+    {merchant:"The White Company",name:"Cashmere Bed Socks",monogram:"CS",note:"Pure cashmere bed socks add a small, tactile layer of warmth to a comfort-led evening.",offer:"Best for people whose ritual starts with changing into something soft.",url:"https://www.thewhitecompany.com/uk/Cashmere-Bed-Socks/p/A12126",img:"https://whitecompany.scene7.com/is/image/whitecompany/A12126_34_W?wid=900&hei=900&fmt=webp",affiliate:false,base:9,fit:{softness:10,warmth:10,cosy:10,tactile:9,premium:8,wearable:9}}
+  ],
+  light:[
+    {merchant:"Lumie",name:"Bodyclock Spark 100",monogram:"LS",note:"A bedside light offers gradually changing brightness, a simple clock display and adjustable evening lighting.",offer:"Best for making lower light the repeatable start of the ritual.",url:"https://www.lumie.com/products/bodyclock-spark-100",img:"https://www.lumie.com/cdn/shop/files/Lumie-Bodyclock-Spark100-01.png?v=1756908754&width=700",affiliate:false,base:12,fit:{dim_light:10,bedside:10,structured:9,screen_free:9,clock:7,simple:7}},
+    {merchant:"Philips Hue",name:"Hue Go Portable Table Lamp",monogram:"HG",note:"A portable rechargeable lamp provides dimmable white and coloured light through on-product and smart controls.",offer:"Best for moving a softer pool of light between rooms.",url:"https://www.philips-hue.com/en-gb/p/hue-white-and-colour-ambiance-hue-go-portable-table-lamp/8719514404571",img:"https://www.proshop.nl/Images/915x900/3175035_a5544c7312d7.jpg",affiliate:false,base:11,fit:{dim_light:9,portable_light:10,adjustable:10,colour:9,smart:8,atmosphere:9}},
+    {merchant:"Tala",name:"The Muse 1.0 Portable Lamp",monogram:"TM",note:"A cordless lantern-style lamp combines an integrated dimmer with extra-warm dim-to-warm light.",offer:"Best for a premium, screen-free atmosphere indoors or outside.",url:"https://tala.co.uk/products/the-muse-portable-lamp-in-hackles-black",img:"https://tala.co.uk/cdn/shop/products/The_Muse_Hackles_Black_On_Grey_Background_2048x2048_114f1647-6e62-49b8-8ddf-acec69d93ca0.jpg?crop=center&height=1000&v=1666957747&width=1000",affiliate:false,base:10,fit:{dim_light:10,portable_light:9,premium:10,screen_free:9,atmosphere:10,tactile:5}},
+    {merchant:"Braun",name:"BC12 Classic Alarm Clock",monogram:"BC",note:"A compact analogue clock uses a quiet quartz movement, luminous-tipped hands and simple snooze and light controls.",offer:"Best for keeping time and alarms separate from the phone.",url:"https://cpc.farnell.com/braun/bc12b/desk-clock-black-bc12b/dp/OE07861",img:"https://uk.farnell.com/productimages/standard/en_GB/3251608-40.jpg",affiliate:false,base:9,fit:{analogue:10,screen_free:10,minimal:10,clock:10,simple:10,bedside:8}}
+  ]
+};
+
+const RESULTS = {
+  reader:{name:"The Chapter Closer",color:"#6B5368",tag:"One more chapter, then the day is complete.",body:"You settle best through a quiet activity that holds your attention without demanding urgency. A dedicated reading corner, focused light and a book or eReader give the evening a clear boundary and a satisfying final chapter.",details:{Ritual:"Reading or recording books",Atmosphere:"Focused, quiet and softly lit",Pace:"Unhurried but absorbing",FirstUpgrade:"A reading light or eReader"}},
+  bath:{name:"The Bath Ritualist",color:"#8C655B",tag:"Warm water, soft textures and time with nowhere else to be.",body:"You prefer an evening transition that feels physical and sensory. A bath or long shower, followed by a soft robe and considered bathroom details, creates a clear change of pace before the rest of the night.",details:{Ritual:"Bathing and changing into comfort",Atmosphere:"Warm, sensory and indulgent",Pace:"Slow and immersive",FirstUpgrade:"A robe, bath product or tray"}},
+  journal:{name:"The Journal Keeper",color:"#6A684D",tag:"A few written lines make the day feel properly closed.",body:"You like to put thoughts somewhere tangible rather than carrying them into the next part of the evening. Guided prompts, lists or free-form pages give your ritual structure while keeping it personal and screen-free.",details:{Ritual:"Reflection, lists or planning",Atmosphere:"Clear, private and purposeful",Pace:"Short and structured",FirstUpgrade:"A journal or writing set"}},
+  listener:{name:"The Quiet Listener",color:"#486778",tag:"Press play, lower the volume of the day.",body:"Audio gives you the easiest bridge between activity and quiet. Whether you prefer an audiobook, gentle soundscape, podcast or less surrounding noise, your strongest ritual is one that asks you to listen rather than keep doing.",details:{Ritual:"Audio, soundscapes or quiet",Atmosphere:"Private and low-demand",Pace:"Passive and flexible",FirstUpgrade:"Headphones, a radio or sound machine"}},
+  comfort:{name:"The Comfort Curator",color:"#8B5F72",tag:"Softness is the signal that the busy part is over.",body:"Your evening shifts when the textures change. Smooth pillowcases, warm socks, soft bedding and a comfortable eye mask suit a ritual built around changing into something gentler and making the room feel physically inviting.",details:{Ritual:"Changing into soft, tactile comfort",Atmosphere:"Warm, enclosed and cosy",Pace:"Intuitive and unstructured",FirstUpgrade:"A silk accessory or soft textile"}},
+  light:{name:"The Soft-Light Minimalist",color:"#A2783E",tag:"Fewer screens, lower light and one simple cue.",body:"You prefer a clean, repeatable signal that the day is winding down. Dimming the room, moving the phone aside and relying on a dedicated lamp or analogue clock creates the uncomplicated ritual that suits you best.",details:{Ritual:"Lowering light and reducing screens",Atmosphere:"Simple, uncluttered and warm",Pace:"Consistent and minimal",FirstUpgrade:"A dimmable lamp or analogue clock"}}
+};
+
+const SIGNAL_LABELS = {
+  reading:"reading time",digital_reading:"digital reading",paper_books:"paper books",focused_light:"focused light",portable:"portable products",minimal:"a minimal setup",water_resistant:"bath-friendly flexibility",adjustable:"adjustability",bedside:"a bedside setup",structured:"a structured ritual",premium:"premium materials",journalling:"journalling",writing:"handwriting",screen_free:"fewer screens",bath:"a bath-led ritual",robe:"a soft robe",softness:"soft textures",warmth:"extra warmth",sensory:"a sensory routine",warm_water:"warm water",fragrance:"fragrance",indulgent:"a more indulgent ritual",simple:"simple controls",bath_accessory:"bath accessories",easy_care:"easy care",guided:"guided prompts",short_ritual:"a short ritual",freeform:"free-form writing",tactile:"tactile products",audio:"personal audio",podcasts:"podcasts",audiobooks:"audiobooks",mask:"an eye mask",personal:"private listening",sound_masking:"steady background sound",travel:"travel use",earplugs:"less surrounding noise",quiet:"a quieter environment",soundscapes:"soundscapes",silk:"silk texture",light_control:"light control",smooth:"smooth surfaces",bamboo:"bamboo fabric",bedding:"bedding comfort",cosy:"a cosy feel",wearable:"wearable comfort",dim_light:"lower lighting",clock:"a dedicated clock",portable_light:"portable lighting",colour:"adjustable colour",smart:"smart controls",atmosphere:"atmospheric light",analogue:"analogue controls"};
+
+const QUESTIONS = [
+  {q:"What sounds most appealing in the final half-hour of your evening?",a:[
+    {label:"Read a chapter and disappear into another world",scores:{reader:6},signals:["reading","paper_books","focused_light"]},
+    {label:"Take a long bath or shower and change into a robe",scores:{bath:6},signals:["bath","warm_water","robe","sensory"]},
+    {label:"Write down the day, tomorrow's list or a few thoughts",scores:{journal:6},signals:["journalling","writing","structured"]},
+    {label:"Listen to an audiobook, podcast or quiet background sound",scores:{listener:6},signals:["audio","podcasts","audiobooks"]},
+    {label:"Get into soft clothes and make the bed feel inviting",scores:{comfort:6},signals:["softness","warmth","bedding","wearable"]},
+    {label:"Put the phone away, lower the lights and keep things simple",scores:{light:6},signals:["screen_free","dim_light","minimal","simple"]}
+  ]},
+  {q:"Which atmosphere tells you the day is nearly done?",a:[
+    {label:"A quiet corner with one focused reading light",scores:{reader:5,light:1},signals:["reading","focused_light","bedside"]},
+    {label:"Warm steam, a familiar scent and fresh towels",scores:{bath:5,comfort:1},signals:["bath","sensory","fragrance","softness"]},
+    {label:"A clear surface, an open notebook and a good pen",scores:{journal:5,light:1},signals:["journalling","writing","minimal","screen_free"]},
+    {label:"A voice, playlist or steady sound in the background",scores:{listener:5},signals:["audio","soundscapes","sound_masking"]},
+    {label:"Soft layers, smooth fabric and warm feet",scores:{comfort:5,bath:1},signals:["softness","smooth","warmth","tactile"]},
+    {label:"An uncluttered room with warm, low light",scores:{light:5,reader:1},signals:["dim_light","minimal","atmosphere","screen_free"]}
+  ]},
+  {q:"What tends to follow you into the evening?",a:[
+    {label:"I still want something interesting to focus on",scores:{reader:4},signals:["reading","digital_reading","paper_books"]},
+    {label:"I want to wash the day off and feel physically refreshed",scores:{bath:4},signals:["bath","warm_water","sensory"]},
+    {label:"Unfinished thoughts and tomorrow's mental list",scores:{journal:4},signals:["journalling","guided","structured"]},
+    {label:"I prefer something else to fill the silence",scores:{listener:4},signals:["audio","podcasts","soundscapes"]},
+    {label:"I need a clear change into physical comfort",scores:{comfort:4},signals:["softness","wearable","cosy"]},
+    {label:"Screens and notifications keep the room feeling active",scores:{light:4},signals:["screen_free","analogue","minimal"]}
+  ]},
+  {q:"How structured should your ritual feel?",a:[
+    {label:"A familiar reading session with no fixed finish time",scores:{reader:4},signals:["reading","freeform","focused_light"]},
+    {label:"A sequence of bath, towel, robe and a slower pace",scores:{bath:4},signals:["bath","robe","structured","sensory"]},
+    {label:"A short set of prompts or a simple written checklist",scores:{journal:4},signals:["guided","short_ritual","structured","journalling"]},
+    {label:"Almost effortless: press play and listen",scores:{listener:4},signals:["audio","simple","sound_masking"]},
+    {label:"Not structured at all, just follow what feels comfortable",scores:{comfort:4},signals:["softness","cosy","tactile"]},
+    {label:"One repeatable cue, such as dimming a lamp",scores:{light:4},signals:["dim_light","simple","structured","bedside"]}
+  ]},
+  {q:"Choose your ideal little luxury.",a:[
+    {label:"A beautiful eReader, reading lamp or book journal",scores:{reader:5},signals:["digital_reading","focused_light","premium","reading"]},
+    {label:"A hooded robe, bath soak or wooden bath tray",scores:{bath:5},signals:["robe","bath_accessory","indulgent","bath"]},
+    {label:"A guided journal, fountain pen or classic notebook",scores:{journal:5},signals:["guided","writing","premium","journalling"]},
+    {label:"A soft audio headband, sound machine or bedside radio",scores:{listener:5},signals:["audio","personal","soundscapes","bedside"]},
+    {label:"Silk, bamboo, cashmere or exceptionally soft bedding",scores:{comfort:5},signals:["silk","bamboo","softness","premium"]},
+    {label:"A portable lamp or beautifully simple analogue clock",scores:{light:5},signals:["portable_light","analogue","screen_free","premium"]}
+  ]},
+  {q:"What matters most in a wind-down product?",a:[
+    {label:"It gives me a focused activity that feels separate from work",scores:{reader:7},signals:["reading","focused_light","screen_free"]},
+    {label:"It makes an ordinary evening feel more sensory and considered",scores:{bath:7},signals:["sensory","indulgent","bath"]},
+    {label:"It gives thoughts and plans somewhere clear to go",scores:{journal:7},signals:["journalling","guided","writing"]},
+    {label:"It reduces the demand to look, read or keep making decisions",scores:{listener:7},signals:["audio","simple","sound_masking"]},
+    {label:"It feels soft, warm and immediately comfortable",scores:{comfort:7},signals:["softness","warmth","cosy"]},
+    {label:"It replaces a screen with one simple, repeatable control",scores:{light:7},signals:["screen_free","simple","analogue","dim_light"]}
+  ]}
+];
+
+let step=0;
+let locked=false;
+const selectedAnswers=[];
+const preferenceSignals={};
+const totals=Object.keys(RESULTS).reduce((acc,key)=>{acc[key]=0;return acc;},{});
+const el=id=>document.getElementById(id);
+const screens={intro:el("intro"),quiz:el("quiz"),result:el("result")};
+
+function show(name){Object.values(screens).forEach(screen=>screen.classList.remove("active"));screens[name].classList.add("active");window.scrollTo({top:0,behavior:"smooth"});}
+function hexToRgba(hex,alpha){const clean=hex.replace("#","");const value=parseInt(clean,16);const red=value>>16&255;const green=value>>8&255;const blue=value&255;return `rgba(${red},${green},${blue},${alpha})`;}
+function escapeHtml(value){return String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");}
+function getProductRecommendations(key){return (PRODUCTS[key]||[]).map((product,originalIndex)=>{const matchScore=Object.entries(product.fit||{}).reduce((score,[signal,weight])=>score+(preferenceSignals[signal]||0)*weight,product.base||0);return {...product,matchScore,originalIndex};}).sort((a,b)=>b.matchScore-a.matchScore||(b.base||0)-(a.base||0)||a.originalIndex-b.originalIndex).slice(0,3);}
+function getPersonalMatch(product){const matches=Object.entries(product.fit||{}).filter(([signal])=>preferenceSignals[signal]).map(([signal,weight])=>({signal,value:weight*preferenceSignals[signal]})).sort((a,b)=>b.value-a.value).slice(0,2).map(item=>SIGNAL_LABELS[item.signal]).filter(Boolean);if(matches.length===0)return product.offer||"";if(matches.length===1)return `Matches your preference for ${matches[0]}.`;return `Matches your preference for ${matches[0]} and ${matches[1]}.`;}
+function getProductMonogram(product){if(product.monogram)return product.monogram;return product.name.split(/\s+/).filter(Boolean).slice(0,2).map(word=>word.charAt(0)).join("").toUpperCase();}
+function trackEvent(eventName,details={}){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:eventName,...details});if(typeof window.pintrk==="function"){try{window.pintrk("track","custom",{event_name:eventName,...details});}catch(error){console.warn("Pinterest tracking event was not sent.",error);}}}
+function renderQuestion(){const item=QUESTIONS[step];const totalQuestions=QUESTIONS.length;el("question").textContent=item.q;el("count").textContent=`${String(step+1).padStart(2,"0")} / ${String(totalQuestions).padStart(2,"0")}`;el("fill").style.width=`${step/totalQuestions*100}%`;const box=el("options");box.innerHTML="";locked=false;item.a.forEach((answer,index)=>{const button=document.createElement("button");button.className="option";button.type="button";button.textContent=answer.label;button.addEventListener("click",()=>chooseAnswer(button,answer,index));box.appendChild(button);});setTimeout(()=>el("question").focus({preventScroll:true}),50);}
+function chooseAnswer(button,answer,index){if(locked)return;locked=true;document.querySelectorAll(".option").forEach(option=>{option.disabled=true;});button.classList.add("chosen");selectedAnswers[step]=index;Object.entries(answer.scores).forEach(([key,value])=>{totals[key]+=value;});(answer.signals||[]).forEach(signal=>{preferenceSignals[signal]=(preferenceSignals[signal]||0)+1;});trackEvent("quiz_answer",{quiz:"wind_down_ritual",question_number:step+1,answer:answer.label});setTimeout(()=>{step+=1;if(step<QUESTIONS.length){renderQuestion();}else{el("fill").style.width="100%";finishQuiz();}},340);}
+function finishQuiz(){const orderedKeys=Object.keys(RESULTS);let winningKey=orderedKeys[0];orderedKeys.forEach(key=>{if(totals[key]>totals[winningKey])winningKey=key;});const tiedKeys=orderedKeys.filter(key=>totals[key]===totals[winningKey]);if(tiedKeys.length>1){for(let questionIndex=selectedAnswers.length-1;questionIndex>=0;questionIndex-=1){const answer=QUESTIONS[questionIndex].a[selectedAnswers[questionIndex]];const rankedTie=tiedKeys.map(key=>({key,value:answer.scores[key]||0})).sort((a,b)=>b.value-a.value);if(rankedTie[0].value>rankedTie[1].value){winningKey=rankedTie[0].key;break;}}}showResult(winningKey);}
+function showResult(key){const result=RESULTS[key];window.LYS_RESULT=key;el("resultCard").style.setProperty("--fam",result.color);el("rName").textContent=result.name;el("rTag").textContent=result.tag;el("rBody").textContent=result.body;const details=el("rDetails");details.innerHTML="";Object.entries(result.details).forEach(([label,value])=>{const row=document.createElement("div");row.className="detail-row";const labelSpan=document.createElement("span");labelSpan.className="detail-label";labelSpan.textContent=label;const valueSpan=document.createElement("span");valueSpan.className="detail-val";valueSpan.textContent=value;row.append(labelSpan,valueSpan);details.appendChild(row);});el("recsTitle").textContent="Your three best-matched wind-down products";const recommendations=getProductRecommendations(key);const grid=el("recGrid");grid.innerHTML="";recommendations.forEach((product,index)=>{const card=document.createElement("article");card.className="rec";const fallbackHtml=`<div class="ph media media-fallback" style="background:${hexToRgba(result.color,.88)}"><span>${escapeHtml(getProductMonogram(product))}</span></div>`;const mediaHtml=product.img?`<div class="media-frame"><img class="media" src="${escapeHtml(product.img)}" alt="${escapeHtml(product.merchant)} ${escapeHtml(product.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${fallbackHtml}</div>`:fallbackHtml;const badgeHtml=index===0?'<span class="rec-badge">Best match</span>':"";const matchText=getPersonalMatch(product);const offerHtml=matchText?`<span class="offer">${escapeHtml(matchText)}</span>`:"";const linkIsAffiliate=Boolean(product.affiliate);const linkRel=linkIsAffiliate?"noopener sponsored":"noopener";const ctaHtml=product.url&&product.url!=="#"?`<a class="view" href="${escapeHtml(product.url)}" target="_blank" rel="${linkRel}" data-product-position="${index+1}">View product &rsaquo;</a>`:'<span class="view off">Product page unavailable</span>';card.innerHTML=`${badgeHtml}${mediaHtml}<div class="body"><span class="brand">${escapeHtml(product.merchant)}</span><span class="pname">${escapeHtml(product.name)}</span><span class="pnote">${escapeHtml(product.note)}</span>${offerHtml}${ctaHtml}</div>`;const productImage=card.querySelector("img.media");if(productImage){productImage.addEventListener("error",()=>{productImage.remove();const fallback=card.querySelector(".media-fallback");if(fallback)fallback.classList.add("show");},{once:true});}const productLink=card.querySelector("a[data-product-position]");if(productLink){productLink.addEventListener("click",()=>{trackEvent(linkIsAffiliate?"affiliate_click":"product_click",{quiz:"wind_down_ritual",result:key,merchant:product.merchant,product:product.name,position:index+1,affiliate:linkIsAffiliate});});}grid.appendChild(card);});const disclosure=el("recommendationDisclosure");const containsAffiliateLinks=recommendations.some(product=>product.affiliate);if(containsAffiliateLinks){disclosure.innerHTML='Some links on this page are affiliate links. Love Your Senses may earn a commission from qualifying orders at no extra cost to you. <a href="/disclosure">Read the affiliate disclosure</a>.';}else{disclosure.textContent="These recommendations use direct brand or retailer links. Love Your Senses does not currently earn commission from them. Availability and product imagery may change.";}const browseAll=el("browseAll");if(STORE_LINK&&STORE_LINK!=="#"){const storeRel=STORE_LINK_IS_AFFILIATE?"noopener sponsored":"noopener";browseAll.innerHTML=`<a class="btn-all" href="${escapeHtml(STORE_LINK)}" target="_blank" rel="${storeRel}">Browse all wind-down products</a>`;browseAll.querySelector("a").addEventListener("click",()=>{trackEvent(STORE_LINK_IS_AFFILIATE?"affiliate_click":"product_click",{quiz:"wind_down_ritual",result:key,product:"browse_all",affiliate:STORE_LINK_IS_AFFILIATE});});}else{browseAll.innerHTML="";}trackEvent("quiz_complete",{quiz:"wind_down_ritual",result:key,result_name:result.name});show("result");}
+async function submitEmail(){const emailInput=el("email");const email=emailInput.value.trim();const form=el("emailForm");const note=el("formNote");if(!/^\S+@\S+\.\S+$/.test(email)){emailInput.focus();note.textContent="Enter a valid email address.";return;}if(!EMAIL_FORM_ACTION){note.textContent="Email signup is not connected yet. Add your email platform form action in the JavaScript settings.";return;}const button=el("emailBtn");button.disabled=true;button.textContent="Sending";try{const payload=new URLSearchParams();payload.append(EMAIL_FIELD_NAME,email);payload.append("quiz_result",window.LYS_RESULT||"");payload.append("source","wind_down_ritual_quiz");await fetch(EMAIL_FORM_ACTION,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:payload.toString()});form.innerHTML='<p class="done">Your wind-down ritual is on its way.</p>';note.textContent="";trackEvent("email_signup",{quiz:"wind_down_ritual",result:window.LYS_RESULT||""});}catch(error){button.disabled=false;button.textContent="Send it";note.textContent="The signup did not complete. Please try again.";console.error("Email signup failed.",error);}}
+async function shareResult(){const result=RESULTS[window.LYS_RESULT];if(!result)return;const text=`My perfect wind-down ritual is ${result.name}. Find yours:`;const shareData={title:"Love Your Senses Wind-Down Ritual Quiz",text,url:QUIZ_URL||location.href};if(navigator.share){try{await navigator.share(shareData);trackEvent("share",{quiz:"wind_down_ritual",result:window.LYS_RESULT,method:"native"});}catch(error){if(error.name!=="AbortError")console.error("Share failed.",error);}return;}try{await navigator.clipboard.writeText(`${text} ${shareData.url}`);el("share").textContent="Link copied";setTimeout(()=>el("share").textContent="Share your result",2000);trackEvent("share",{quiz:"wind_down_ritual",result:window.LYS_RESULT,method:"clipboard"});}catch(error){console.error("Copy failed.",error);}}
+function resetQuiz(){step=0;locked=false;selectedAnswers.length=0;Object.keys(preferenceSignals).forEach(key=>delete preferenceSignals[key]);Object.keys(totals).forEach(key=>totals[key]=0);window.LYS_RESULT="";const form=el("emailForm");form.innerHTML='<input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email"><button id="emailBtn" type="button">Send it</button>';el("emailBtn").addEventListener("click",submitEmail);el("formNote").textContent="Connect your email platform in the JavaScript settings before publishing.";show("intro");trackEvent("quiz_retake",{quiz:"wind_down_ritual"});}
+el("start").addEventListener("click",()=>{show("quiz");renderQuestion();trackEvent("quiz_start",{quiz:"wind_down_ritual"});});
+el("emailBtn").addEventListener("click",submitEmail);
+el("share").addEventListener("click",shareResult);
+el("retake").addEventListener("click",resetQuiz);
+</script>
+</body>
+</html>
