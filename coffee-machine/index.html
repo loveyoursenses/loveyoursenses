@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Perfect Coffee Machine | Love Your Senses</title>
+<meta name="description" content="Answer six quick questions to discover the coffee machine best suited to your favourite drinks, routine, space and level of involvement.">
+<link rel="canonical" href="https://loveyoursenses.com/coffee-machine">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Find Your Perfect Coffee Machine | Love Your Senses">
+<meta property="og:description" content="Discover the coffee machine made for your favourite drinks, daily routine and kitchen.">
+<meta property="og:url" content="https://loveyoursenses.com/coffee-machine">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#E7E3DD;
+    --card:#F2EEE8;
+    --ink:#2A2130;
+    --ink-soft:#6E6574;
+    --accent:#7B4A5E;
+    --accent-deep:#5E3547;
+    --line:#CDC3B6;
+    --gold:#B8A78C;
+    --cream:#F7F1EC;
+    --radius:18px;
+    --ease:cubic-bezier(.4,.14,.2,1);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Jost',system-ui,sans-serif;
+    line-height:1.6;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  button,input{font:inherit}
+  button{touch-action:manipulation}
+  .display{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  .wrap{width:100%;max-width:1000px;margin:0 auto;padding-left:24px;padding-right:24px}
+
+  .site-head{padding:24px 0}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .mark{font-family:'Fraunces',serif;font-weight:500;font-size:1.24rem;text-decoration:none;color:var(--ink)}
+  .mark span{color:var(--accent)}
+  .head-link{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none}
+  .head-link:hover{color:var(--accent)}
+
+  .stage{width:100%;max-width:680px;margin:0 auto;padding:36px 20px 72px}
+  .screen{display:none;animation:rise .6s var(--ease) both}
+  .screen.active{display:block}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+  #intro{text-align:center;padding:14px 0 24px}
+  .ring{margin:0 auto 30px;display:block}
+  #intro h1{font-size:clamp(2.55rem,9vw,4rem);margin-bottom:18px}
+  #intro h1 em{font-style:italic;font-weight:400}
+  .lede{color:var(--ink-soft);font-size:1.06rem;max-width:43ch;margin:0 auto 34px}
+  .meta{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:26px}
+
+  .btn{
+    display:inline-block;
+    font-family:'Jost',sans-serif;
+    font-size:.82rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-weight:500;
+    cursor:pointer;
+    border:none;
+    border-radius:100px;
+    padding:17px 40px;
+    background:var(--ink);
+    color:var(--bg);
+    transition:transform .35s var(--ease),background .35s var(--ease);
+  }
+  .btn:hover{background:var(--accent-deep);transform:translateY(-2px)}
+
+  .progress-wrap{display:flex;align-items:center;gap:16px;margin-bottom:38px}
+  .track{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
+  .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);transition:width .5s var(--ease)}
+  .count{font-size:.72rem;letter-spacing:.2em;color:var(--ink-soft);white-space:nowrap}
+  .question{font-size:clamp(1.75rem,6vw,2.45rem);margin-bottom:32px;min-height:2.2em}
+  .options{display:flex;flex-direction:column;gap:12px}
+  .option{
+    font-family:'Jost',sans-serif;
+    font-size:1.01rem;
+    color:var(--ink);
+    text-align:left;
+    background:var(--card);
+    border:1px solid transparent;
+    border-radius:var(--radius);
+    padding:19px 22px;
+    cursor:pointer;
+    width:100%;
+    transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .option:before{
+    content:"";
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    border:1.5px solid var(--line);
+    flex:none;
+    transition:all .3s var(--ease);
+  }
+  .option:hover{border-color:var(--gold);transform:translateX(4px)}
+  .option.chosen{background:var(--accent);color:var(--cream);border-color:var(--accent)}
+  .option.chosen:before{background:var(--cream);border-color:var(--cream)}
+  .option:disabled{cursor:default}
+
+  .result-card{
+    background:var(--fam,#7B4A5E);
+    color:var(--cream);
+    border-radius:26px;
+    padding:44px 32px 40px;
+    text-align:center;
+    box-shadow:0 30px 60px -30px rgba(42,33,48,.55);
+  }
+  .result-card .eyebrow{color:rgba(247,241,236,.72)}
+  .result-name{font-size:clamp(2.55rem,10vw,3.65rem);margin-bottom:10px}
+  .result-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:1.2rem;opacity:.94;margin-bottom:24px}
+  .result-body{font-size:1.02rem;line-height:1.72;opacity:.95;max-width:44ch;margin:0 auto 30px}
+  .details{border-top:1px solid rgba(247,241,236,.28);border-bottom:1px solid rgba(247,241,236,.28);padding:22px 0;text-align:left;display:flex;flex-direction:column;gap:14px}
+  .detail-row{display:flex;gap:18px;align-items:baseline}
+  .detail-label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;opacity:.72;width:92px;flex:none}
+  .detail-val{font-family:'Fraunces',serif;font-size:1.04rem}
+
+  .recs{margin-top:36px}
+  .recs-head{text-align:center;margin-bottom:22px}
+  .recs-head .eyebrow{display:block;margin-bottom:10px}
+  .recs-head h3{font-size:clamp(1.55rem,5vw,2.05rem)}
+  .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .rec{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+  .rec-badge{
+    position:absolute;
+    top:12px;
+    left:12px;
+    z-index:2;
+    background:rgba(247,241,236,.94);
+    color:var(--accent-deep);
+    border-radius:100px;
+    padding:6px 10px;
+    font-size:.61rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+  .rec .media{aspect-ratio:1/1;width:100%;object-fit:cover;background:#fff;display:block}
+  .rec .ph{display:flex;align-items:center;justify-content:center}
+  .rec .ph span{font-family:'Fraunces',serif;font-size:2rem;color:#fff;opacity:.92}
+  .rec .body{padding:16px 15px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .rec .brand{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .rec .pname{font-family:'Fraunces',serif;font-size:1.04rem;line-height:1.22}
+  .rec .pnote{font-size:.8rem;color:var(--ink-soft);line-height:1.45}
+  .rec .offer{font-size:.76rem;color:var(--accent);font-weight:500}
+  .rec .view{
+    margin-top:auto;
+    padding-top:11px;
+    font-size:.72rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-weight:500;
+    text-decoration:none;
+    color:var(--accent);
+  }
+  .rec .view.off{color:var(--ink-soft);opacity:.58}
+  .rec .view:hover{text-decoration:underline;text-underline-offset:4px}
+
+  .affiliate-note{font-size:.78rem;color:var(--ink-soft);line-height:1.55;text-align:center;max-width:58ch;margin:18px auto 0}
+  .affiliate-note a{color:var(--accent);text-underline-offset:3px}
+  .browse-all{text-align:center;margin-top:22px}
+  .btn-all{
+    display:inline-block;
+    font-family:'Jost',sans-serif;
+    font-size:.78rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-weight:500;
+    text-decoration:none;
+    border:1px solid var(--accent);
+    color:var(--accent);
+    border-radius:100px;
+    padding:14px 34px;
+    transition:background .3s var(--ease),color .3s var(--ease);
+  }
+  .btn-all:hover{background:var(--accent);color:var(--cream)}
+  .btn-all.off{opacity:.5;pointer-events:none}
+
+  .capture{background:var(--card);border-radius:var(--radius);padding:32px 28px;margin-top:28px;text-align:center}
+  .capture h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;margin-bottom:8px}
+  .capture p{color:var(--ink-soft);font-size:.96rem;margin:0 auto 22px;max-width:39ch}
+  .field{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .field input{font-family:'Jost',sans-serif;font-size:1rem;flex:1;min-width:210px;padding:15px 18px;border:1px solid var(--line);border-radius:100px;background:#fff;color:var(--ink)}
+  .field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+  .field button{font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:15px 28px;background:var(--accent);color:var(--cream)}
+  .field button:hover{background:var(--accent-deep)}
+  .capture .done{color:var(--accent);font-family:'Fraunces',serif;font-size:1.1rem;padding:6px 0}
+  .capture .form-note{font-size:.74rem;margin-top:12px;margin-bottom:0}
+
+
+  .next-quiz{border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;margin-top:18px;text-align:center}
+  .next-quiz .eyebrow{display:block;margin-bottom:9px}
+  .next-quiz h3{font-size:1.45rem;margin-bottom:8px}
+  .next-quiz p{color:var(--ink-soft);font-size:.94rem;max-width:40ch;margin:0 auto 18px}
+  .next-link{font-size:.74rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;color:var(--accent);text-underline-offset:4px}
+  .next-link:hover{color:var(--accent-deep)}
+
+  .after{display:flex;gap:22px;justify-content:center;align-items:center;margin-top:26px;flex-wrap:wrap}
+  .linkish{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px}
+  .linkish:hover{color:var(--accent)}
+
+  .site-foot{border-top:1px solid var(--line);padding:34px 0 48px}
+  .foot{display:flex;flex-direction:column;align-items:center;gap:11px;text-align:center}
+  .foot-nav a{color:var(--ink-soft);text-decoration:none;font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;margin:0 10px}
+  .foot-nav a:hover{color:var(--accent)}
+  .foot .disc{font-size:.82rem;color:var(--ink-soft);max-width:54ch}
+  .foot .cr{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft)}
+
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  @media(max-width:600px){
+    .site-head{padding:20px 0}
+    .stage{padding-top:28px}
+    .rec-grid{grid-template-columns:1fr 1fr}
+    .detail-label{width:80px}
+  }
+  @media(max-width:420px){
+    .rec-grid{grid-template-columns:1fr}
+    .result-card{padding:40px 24px 36px}
+    .field{flex-direction:column}
+    .field input,.field button{width:100%}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <div class="bar">
+      <a href="/" class="mark">Love Your <span>Senses</span></a>
+      <a href="/#quizzes" class="head-link">All quizzes</a>
+    </div>
+  </div>
+</header>
+
+<main class="stage">
+
+  <section id="intro" class="screen active">
+    <svg class="ring" width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
+      <circle cx="29" cy="29" r="27" fill="none" stroke="#B8A78C" stroke-width="1"/>
+      <circle cx="29" cy="29" r="19" fill="none" stroke="#CDC3B6" stroke-width="1"/>
+      <g stroke="#7B4A5E" stroke-width="1.4">
+        <line x1="29" y1="2" x2="29" y2="9"/>
+        <line x1="52.4" y1="42.5" x2="46.4" y2="39"/>
+        <line x1="5.6" y1="42.5" x2="11.6" y2="39"/>
+        <line x1="52.4" y1="15.5" x2="46.4" y2="19"/>
+        <line x1="5.6" y1="15.5" x2="11.6" y2="19"/>
+        <line x1="29" y1="56" x2="29" y2="49"/>
+      </g>
+      <circle cx="29" cy="29" r="3" fill="#7B4A5E"/>
+    </svg>
+    <p class="eyebrow">A short coffee machine discovery</p>
+    <h1 class="display">Find your perfect <em>coffee</em> machine</h1>
+    <p class="lede">Answer six quick questions to find the coffee machine that fits your favourite drinks, routine, kitchen space and desired level of control.</p>
+    <button class="btn" id="start" type="button">Begin the discovery</button>
+    <p class="meta">Six questions &nbsp;·&nbsp; one minute</p>
+  </section>
+
+  <section id="quiz" class="screen" aria-live="polite">
+    <div class="progress-wrap">
+      <div class="track" aria-hidden="true"><div class="fill" id="fill"></div></div>
+      <span class="count" id="count">01 / 06</span>
+    </div>
+    <h2 class="question display" id="question" tabindex="-1"></h2>
+    <div class="options" id="options"></div>
+  </section>
+
+  <section id="result" class="screen" aria-live="polite">
+    <div class="result-card" id="resultCard">
+      <p class="eyebrow">Your ideal coffee setup</p>
+      <h2 class="result-name display" id="rName"></h2>
+      <p class="result-tag" id="rTag"></p>
+      <p class="result-body" id="rBody"></p>
+      <div class="details" id="rDetails"></div>
+    </div>
+
+    <div class="recs">
+      <div class="recs-head">
+        <span class="eyebrow">Chosen for your routine</span>
+        <h3 class="display" id="recsTitle">Three machines to consider</h3>
+      </div>
+      <div class="rec-grid" id="recGrid"></div>
+      <p class="affiliate-note">Some links on this page are affiliate links. Love Your Senses may earn a commission from qualifying orders at no extra cost to you. <a href="/disclosure">Read the affiliate disclosure</a>.</p>
+      <div class="browse-all" id="browseAll"></div>
+    </div>
+
+    <div class="capture">
+      <h3>Save your machine match</h3>
+      <p>Get your result, buying checklist and future coffee discoveries by email.</p>
+      <div class="field" id="emailForm">
+        <input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email">
+        <button id="emailBtn" type="button">Send it</button>
+      </div>
+      <p class="form-note" id="formNote">Connect your email platform in the JavaScript settings before publishing.</p>
+    </div>
+
+
+    <div class="next-quiz">
+      <span class="eyebrow">Complete your coffee setup</span>
+      <h3 class="display">Now match the coffee to your machine</h3>
+      <p>Take the coffee subscription quiz to find the roast, flavour profile and delivery style that suits your new setup.</p>
+      <a class="next-link" href="/coffee">Find your coffee subscription</a>
+    </div>
+
+    <div class="after">
+      <button class="linkish" id="share" type="button">Share your result</button>
+      <button class="linkish" id="retake" type="button">Retake the quiz</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-nav">
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/disclosure">Affiliate Disclosure</a>
+      </div>
+      <p class="disc">Love Your Senses helps you discover products matched to your preferences through short, enjoyable quizzes.</p>
+      <p class="cr">© 2026 Love Your Senses</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   PAGE SETTINGS
+   Replace these values before publishing.
+   ===================================================================== */
+const QUIZ_URL = "https://loveyoursenses.com/coffee-machine";
+const STORE_LINK = "#";
+
+/*
+  EMAIL_FORM_ACTION:
+  Add the form action or webhook supplied by your email platform.
+  Leave blank while the signup form is not connected.
+
+  EMAIL_FIELD_NAME:
+  Most platforms use "email". Change this only when your provider requires
+  a different field name.
+*/
+const EMAIL_FORM_ACTION = "";
+const EMAIL_FIELD_NAME = "email";
+
+/* =====================================================================
+   AFFILIATE COFFEE MACHINE SLOTS
+
+   Replace each placeholder with an approved affiliate product.
+
+   merchant = retailer or manufacturer
+   name     = coffee machine or bundle name
+   note     = short reason it suits this result
+   offer    = optional price, discount or feature text
+   url      = affiliate deep link
+   img      = product image URL, or leave blank for a coloured placeholder
+   badge    = optional badge, such as "Best match"
+   ===================================================================== */
+const PRODUCTS = {
+  pod: [
+    {
+      merchant:"Affiliate partner",
+      name:"Compact Capsule Coffee Machine",
+      note:"Fast, consistent coffee with almost no measuring, grinding or cleanup.",
+      offer:"Best for espresso, lungo and quick daily drinks.",
+      url:"#",
+      img:"",
+      badge:"Best match"
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Premium Pod Coffee System",
+      note:"A wider drinks menu with adjustable cup sizes and stronger brewing options.",
+      offer:"A polished upgrade for pod-coffee regulars.",
+      url:"#",
+      img:"",
+      badge:""
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Capsule Machine and Milk Frother Bundle",
+      note:"Pod convenience with the option to make cappuccinos, lattes and flat whites.",
+      offer:"Best for quick milk-based drinks.",
+      url:"#",
+      img:"",
+      badge:""
+    }
+  ],
+
+  bean: [
+    {
+      merchant:"Affiliate partner",
+      name:"Automatic Bean-to-Cup Machine",
+      note:"Freshly ground coffee at the touch of a button with automatic dosing and brewing.",
+      offer:"Ideal for effortless coffee from whole beans.",
+      url:"#",
+      img:"",
+      badge:"Best match"
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"One-Touch Bean-to-Cup Machine",
+      note:"Stores drink settings and prepares espresso, americano and milk drinks automatically.",
+      offer:"A strong choice for households with mixed tastes.",
+      url:"#",
+      img:"",
+      badge:""
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Premium Bean-to-Cup Coffee Centre",
+      note:"More grind settings, drink profiles and adjustment for people who want convenience without compromise.",
+      offer:"Best for a higher-end automatic setup.",
+      url:"#",
+      img:"",
+      badge:""
+    }
+  ],
+
+  espresso: [
+    {
+      merchant:"Affiliate partner",
+      name:"Home Barista Espresso Machine",
+      note:"Manual control over grinding, dosing, extraction and milk texturing for café-style results.",
+      offer:"Ideal for learning proper espresso technique.",
+      url:"#",
+      img:"",
+      badge:"Best match"
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Espresso Machine with Built-In Grinder",
+      note:"An integrated grinder keeps the setup neater while preserving hands-on control.",
+      offer:"A practical all-in-one barista station.",
+      url:"#",
+      img:"",
+      badge:""
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Prosumer Espresso Machine",
+      note:"Stronger temperature stability and steam performance for committed home coffee enthusiasts.",
+      offer:"Best for refining technique over time.",
+      url:"#",
+      img:"",
+      badge:""
+    }
+  ],
+
+  filter: [
+    {
+      merchant:"Affiliate partner",
+      name:"Programmable Filter Coffee Machine",
+      note:"Brews several generous cups at once and starts automatically when scheduled.",
+      offer:"Ideal for busy mornings and larger households.",
+      url:"#",
+      img:"",
+      badge:"Best match"
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Thermal Carafe Coffee Brewer",
+      note:"Keeps a full batch warm without leaving it on a hot plate for hours.",
+      offer:"A strong choice for slow, repeat cups.",
+      url:"#",
+      img:"",
+      badge:""
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Speciality Batch Brewer",
+      note:"Better temperature control and even extraction for clearer, more flavourful filter coffee.",
+      offer:"Best for quality-focused batch brewing.",
+      url:"#",
+      img:"",
+      badge:""
+    }
+  ],
+
+  milk: [
+    {
+      merchant:"Affiliate partner",
+      name:"One-Touch Latte and Cappuccino Machine",
+      note:"Creates espresso and textured milk drinks through a simple automatic menu.",
+      offer:"Ideal for frequent lattes and cappuccinos.",
+      url:"#",
+      img:"",
+      badge:"Best match"
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Automatic Coffee Machine with Milk Carafe",
+      note:"A removable milk system makes creamy drinks easier to prepare and store.",
+      offer:"A family-friendly choice with simple cleanup.",
+      url:"#",
+      img:"",
+      badge:""
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Coffee Machine and Automatic Frother Bundle",
+      note:"Separates coffee brewing and milk frothing while keeping both processes straightforward.",
+      offer:"Best for flexibility across milk-based drinks.",
+      url:"#",
+      img:"",
+      badge:""
+    }
+  ],
+
+  compact: [
+    {
+      merchant:"Affiliate partner",
+      name:"Slimline Coffee Machine",
+      note:"A narrow footprint gives you proper coffee without dominating a small worktop.",
+      offer:"Ideal for flats, offices and compact kitchens.",
+      url:"#",
+      img:"",
+      badge:"Best match"
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Compact Espresso Machine",
+      note:"A small manual machine for espresso and milk drinks where every centimetre matters.",
+      offer:"A strong choice for space-conscious coffee lovers.",
+      url:"#",
+      img:"",
+      badge:""
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Mini All-in-One Coffee Maker",
+      note:"A tidy everyday machine with simple controls and minimal accessories.",
+      offer:"Best for an uncluttered coffee corner.",
+      url:"#",
+      img:"",
+      badge:""
+    }
+  ]
+};
+
+const RESULTS = {
+  pod: {
+    name:"Pod Convenience",
+    color:"#6C5367",
+    tag:"Fast, consistent and ready before the day gets busy.",
+    body:"Your ideal machine removes almost every barrier between you and a dependable cup. A capsule system suits your preference for speed, predictable results and minimal cleanup, with enough drink choices to keep the routine interesting.",
+    details:{
+      BestFor:"Speed and simplicity",
+      Drinks:"Espresso, lungo, quick milk drinks",
+      Effort:"Very low",
+      Space:"Small to medium"
+    }
+  },
+
+  bean: {
+    name:"Bean-to-Cup Luxury",
+    color:"#596043",
+    tag:"Freshly ground coffee without the home-barista workload.",
+    body:"You want the aroma and flavour of whole beans with a machine that handles the technical work. An automatic bean-to-cup setup gives you repeatable drinks, adjustable strength and a polished daily ritual with very little preparation.",
+    details:{
+      BestFor:"One-touch fresh coffee",
+      Drinks:"Espresso, americano, varied menus",
+      Effort:"Low",
+      Space:"Medium to large"
+    }
+  },
+
+  espresso: {
+    name:"Home Barista Espresso",
+    color:"#4A342E",
+    tag:"Hands-on, precise and built for learning the craft.",
+    body:"You will enjoy a machine that rewards attention and technique. A manual or semi-automatic espresso setup gives you control over extraction and milk texture, turning each drink into a skill you refine rather than a button you press.",
+    details:{
+      BestFor:"Control and café technique",
+      Drinks:"Espresso, flat white, cappuccino",
+      Effort:"High",
+      Space:"Medium"
+    }
+  },
+
+  filter: {
+    name:"Classic Filter Brewer",
+    color:"#8A623D",
+    tag:"Generous, dependable and made for more than one cup.",
+    body:"Your coffee routine is best served by a machine that prepares a full, balanced batch without constant attention. A filter brewer suits long mugs, shared mornings and anyone who prefers steady sipping to short espresso-based drinks.",
+    details:{
+      BestFor:"Multiple cups and households",
+      Drinks:"Long black filter coffee",
+      Effort:"Low",
+      Space:"Medium"
+    }
+  },
+
+  milk: {
+    name:"One-Touch Milk Specialist",
+    color:"#9A6251",
+    tag:"Creamy, comforting and designed around café favourites.",
+    body:"Milk-based drinks are the centre of your coffee routine, so the milk system matters as much as the espresso. An automatic latte or cappuccino machine will give you consistent texture, easy drink selection and less fuss than manual steaming.",
+    details:{
+      BestFor:"Lattes and cappuccinos",
+      Drinks:"Latte, cappuccino, macchiato",
+      Effort:"Low to medium",
+      Space:"Medium to large"
+    }
+  },
+
+  compact: {
+    name:"Compact Coffee Solution",
+    color:"#3E6470",
+    tag:"Space-conscious, uncluttered and still serious about coffee.",
+    body:"You need a machine that earns its place on the worktop. A slimline or compact coffee maker will protect valuable kitchen space while still delivering a satisfying daily drink and a setup that feels intentional rather than compromised.",
+    details:{
+      BestFor:"Small kitchens and offices",
+      Drinks:"Flexible everyday coffee",
+      Effort:"Low to medium",
+      Space:"Very small"
+    }
+  }
+};
+
+/* =====================================================================
+   QUIZ QUESTIONS
+
+   Each answer adds weighted points to one or more result profiles.
+   Higher weights represent a stronger signal.
+   ===================================================================== */
+const QUESTIONS = [
+  {
+    q:"Which coffee would you order most often?",
+    a:[
+      {label:"A quick espresso or lungo with no fuss", scores:{pod:4,compact:1}},
+      {label:"Freshly ground espresso or americano at one touch", scores:{bean:4}},
+      {label:"A carefully made espresso or flat white", scores:{espresso:4}},
+      {label:"A large mug of smooth filter coffee", scores:{filter:4}},
+      {label:"A latte, cappuccino or creamy macchiato", scores:{milk:4,bean:1}},
+      {label:"Good everyday coffee from the smallest possible setup", scores:{compact:4,pod:1}}
+    ]
+  },
+  {
+    q:"How involved should making coffee feel?",
+    a:[
+      {label:"Insert a capsule, press once and drink", scores:{pod:5}},
+      {label:"Press a button while the machine grinds fresh beans", scores:{bean:5}},
+      {label:"I want to grind, dose, tamp and control the shot", scores:{espresso:5}},
+      {label:"Add coffee and water, then let a full pot brew", scores:{filter:5}},
+      {label:"Choose a milk drink and let the machine prepare it", scores:{milk:5}},
+      {label:"Keep the process simple and the equipment minimal", scores:{compact:5}}
+    ]
+  },
+  {
+    q:"What matters most when the morning is busy?",
+    a:[
+      {label:"A dependable drink in under a minute", scores:{pod:4,compact:1}},
+      {label:"Freshly ground coffee without manual preparation", scores:{bean:4}},
+      {label:"I will spend extra time for better control", scores:{espresso:4}},
+      {label:"Brewing enough coffee for several cups at once", scores:{filter:4}},
+      {label:"Getting coffee and textured milk from one process", scores:{milk:4}},
+      {label:"A machine that stays tidy and out of the way", scores:{compact:4}}
+    ]
+  },
+  {
+    q:"How many drinks does the machine usually need to make?",
+    a:[
+      {label:"One or two quick cups for me", scores:{pod:3,compact:2}},
+      {label:"Several different coffees for the household", scores:{bean:4,milk:1}},
+      {label:"One carefully prepared drink at a time", scores:{espresso:4}},
+      {label:"A full carafe for repeat cups or several people", scores:{filter:5}},
+      {label:"Several milk-based drinks throughout the day", scores:{milk:5,bean:1}},
+      {label:"A small number of drinks in a compact space", scores:{compact:5}}
+    ]
+  },
+  {
+    q:"Which maintenance routine sounds acceptable?",
+    a:[
+      {label:"Empty the capsule bin and wipe the machine", scores:{pod:5}},
+      {label:"Follow automatic rinsing and empty the grounds tray", scores:{bean:5}},
+      {label:"Clean the portafilter and steam wand after use", scores:{espresso:5}},
+      {label:"Rinse a filter basket and carafe", scores:{filter:5}},
+      {label:"Clean a removable milk container or frothing system", scores:{milk:5}},
+      {label:"The fewer parts and surfaces, the better", scores:{compact:5}}
+    ]
+  },
+  {
+    q:"What is the deciding factor for your purchase?",
+    a:[
+      {label:"Maximum convenience and consistent results", scores:{pod:6}},
+      {label:"Whole-bean freshness with one-touch operation", scores:{bean:6}},
+      {label:"The strongest control over espresso quality", scores:{espresso:6}},
+      {label:"Serving generous coffee efficiently", scores:{filter:6}},
+      {label:"Effortless café-style milk drinks", scores:{milk:6}},
+      {label:"The smallest practical footprint", scores:{compact:6}}
+    ]
+  }
+];
+
+let step = 0;
+let locked = false;
+const selectedAnswers = [];
+const totals = Object.keys(RESULTS).reduce((acc,key)=>{
+  acc[key] = 0;
+  return acc;
+},{});
+
+const el = id => document.getElementById(id);
+const screens = {
+  intro:el("intro"),
+  quiz:el("quiz"),
+  result:el("result")
+};
+
+function show(name){
+  Object.values(screens).forEach(screen=>screen.classList.remove("active"));
+  screens[name].classList.add("active");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function hexToRgba(hex,alpha){
+  const clean = hex.replace("#","");
+  const value = parseInt(clean,16);
+  const red = value >> 16 & 255;
+  const green = value >> 8 & 255;
+  const blue = value & 255;
+  return `rgba(${red},${green},${blue},${alpha})`;
+}
+
+function escapeHtml(value){
+  return String(value)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+function trackEvent(eventName,details={}){
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({event:eventName,...details});
+
+  if(typeof window.pintrk === "function"){
+    try{
+      window.pintrk("track","custom",{
+        event_name:eventName,
+        ...details
+      });
+    }catch(error){
+      console.warn("Pinterest tracking event was not sent.",error);
+    }
+  }
+}
+
+function renderQuestion(){
+  const item = QUESTIONS[step];
+  const totalQuestions = QUESTIONS.length;
+
+  el("question").textContent = item.q;
+  el("count").textContent = `${String(step+1).padStart(2,"0")} / ${String(totalQuestions).padStart(2,"0")}`;
+  el("fill").style.width = `${step / totalQuestions * 100}%`;
+
+  const box = el("options");
+  box.innerHTML = "";
+  locked = false;
+
+  item.a.forEach((answer,index)=>{
+    const button = document.createElement("button");
+    button.className = "option";
+    button.type = "button";
+    button.textContent = answer.label;
+    button.addEventListener("click",()=>chooseAnswer(button,answer,index));
+    box.appendChild(button);
+  });
+
+  setTimeout(()=>el("question").focus({preventScroll:true}),50);
+}
+
+function chooseAnswer(button,answer,index){
+  if(locked) return;
+  locked = true;
+
+  document.querySelectorAll(".option").forEach(option=>{
+    option.disabled = true;
+  });
+
+  button.classList.add("chosen");
+  selectedAnswers[step] = index;
+
+  Object.entries(answer.scores).forEach(([key,value])=>{
+    totals[key] += value;
+  });
+
+  trackEvent("quiz_answer",{
+    quiz:"coffee_machine",
+    question_number:step+1,
+    answer:answer.label
+  });
+
+  setTimeout(()=>{
+    step += 1;
+
+    if(step < QUESTIONS.length){
+      renderQuestion();
+    }else{
+      el("fill").style.width = "100%";
+      finishQuiz();
+    }
+  },340);
+}
+
+function finishQuiz(){
+  const orderedKeys = Object.keys(RESULTS);
+  let winningKey = orderedKeys[0];
+
+  orderedKeys.forEach(key=>{
+    if(totals[key] > totals[winningKey]){
+      winningKey = key;
+    }
+  });
+
+  const tiedKeys = orderedKeys.filter(key=>totals[key] === totals[winningKey]);
+
+  if(tiedKeys.length > 1){
+    for(let questionIndex = selectedAnswers.length - 1; questionIndex >= 0; questionIndex -= 1){
+      const answer = QUESTIONS[questionIndex].a[selectedAnswers[questionIndex]];
+      const rankedTie = tiedKeys
+        .map(key=>({key,value:answer.scores[key] || 0}))
+        .sort((a,b)=>b.value-a.value);
+
+      if(rankedTie[0].value > rankedTie[1].value){
+        winningKey = rankedTie[0].key;
+        break;
+      }
+    }
+  }
+
+  showResult(winningKey);
+}
+
+function showResult(key){
+  const result = RESULTS[key];
+  window.LYS_RESULT = key;
+
+  el("resultCard").style.setProperty("--fam",result.color);
+  el("rName").textContent = result.name;
+  el("rTag").textContent = result.tag;
+  el("rBody").textContent = result.body;
+
+  const details = el("rDetails");
+  details.innerHTML = "";
+
+  Object.entries(result.details).forEach(([label,value])=>{
+    const row = document.createElement("div");
+    row.className = "detail-row";
+
+    const labelSpan = document.createElement("span");
+    labelSpan.className = "detail-label";
+    labelSpan.textContent = label;
+
+    const valueSpan = document.createElement("span");
+    valueSpan.className = "detail-val";
+    valueSpan.textContent = value;
+
+    row.append(labelSpan,valueSpan);
+    details.appendChild(row);
+  });
+
+  el("recsTitle").textContent = `Three machines for ${result.name}`;
+
+  const grid = el("recGrid");
+  grid.innerHTML = "";
+
+  (PRODUCTS[key] || []).forEach((product,index)=>{
+    const card = document.createElement("article");
+    card.className = "rec";
+
+    const mediaHtml = product.img
+      ? `<img class="media" src="${escapeHtml(product.img)}" alt="${escapeHtml(product.merchant)} ${escapeHtml(product.name)}" loading="lazy">`
+      : `<div class="ph media" style="background:${hexToRgba(result.color,.88)}"><span>${escapeHtml(product.name.charAt(0))}</span></div>`;
+
+    const badgeHtml = product.badge
+      ? `<span class="rec-badge">${escapeHtml(product.badge)}</span>`
+      : "";
+
+    const offerHtml = product.offer
+      ? `<span class="offer">${escapeHtml(product.offer)}</span>`
+      : "";
+
+    const ctaHtml = product.url && product.url !== "#"
+      ? `<a class="view" href="${escapeHtml(product.url)}" target="_blank" rel="noopener sponsored" data-affiliate-position="${index+1}">View machine &rsaquo;</a>`
+      : `<span class="view off">Affiliate link coming soon</span>`;
+
+    card.innerHTML = `${badgeHtml}${mediaHtml}<div class="body"><span class="brand">${escapeHtml(product.merchant)}</span><span class="pname">${escapeHtml(product.name)}</span><span class="pnote">${escapeHtml(product.note)}</span>${offerHtml}${ctaHtml}</div>`;
+
+    const affiliateLink = card.querySelector("a[data-affiliate-position]");
+    if(affiliateLink){
+      affiliateLink.addEventListener("click",()=>{
+        trackEvent("affiliate_click",{
+          quiz:"coffee_machine",
+          result:key,
+          merchant:product.merchant,
+          product:product.name,
+          position:index+1
+        });
+      });
+    }
+
+    grid.appendChild(card);
+  });
+
+  const browseAll = el("browseAll");
+
+  if(STORE_LINK && STORE_LINK !== "#"){
+    browseAll.innerHTML = `<a class="btn-all" href="${escapeHtml(STORE_LINK)}" target="_blank" rel="noopener sponsored">Browse all coffee machines</a>`;
+    browseAll.querySelector("a").addEventListener("click",()=>{
+      trackEvent("affiliate_click",{
+        quiz:"coffee_machine",
+        result:key,
+        product:"browse_all"
+      });
+    });
+  }else{
+    browseAll.innerHTML = '<span class="btn-all off">Browse all coffee machines</span>';
+  }
+
+  trackEvent("quiz_complete",{
+    quiz:"coffee_machine",
+    result:key,
+    result_name:result.name
+  });
+
+  show("result");
+}
+
+async function submitEmail(){
+  const emailInput = el("email");
+  const email = emailInput.value.trim();
+  const form = el("emailForm");
+  const note = el("formNote");
+
+  if(!/^\S+@\S+\.\S+$/.test(email)){
+    emailInput.focus();
+    note.textContent = "Enter a valid email address.";
+    return;
+  }
+
+  if(!EMAIL_FORM_ACTION){
+    note.textContent = "Email signup is not connected yet. Add your email platform form action in the JavaScript settings.";
+    return;
+  }
+
+  const button = el("emailBtn");
+  button.disabled = true;
+  button.textContent = "Sending";
+
+  try{
+    const payload = new URLSearchParams();
+    payload.append(EMAIL_FIELD_NAME,email);
+    payload.append("quiz_result",window.LYS_RESULT || "");
+    payload.append("source","coffee_machine_quiz");
+
+    await fetch(EMAIL_FORM_ACTION,{
+      method:"POST",
+      mode:"no-cors",
+      headers:{"Content-Type":"application/x-www-form-urlencoded"},
+      body:payload.toString()
+    });
+
+    form.innerHTML = '<p class="done">Your coffee machine match is on its way.</p>';
+    note.textContent = "";
+
+    trackEvent("email_signup",{
+      quiz:"coffee_machine",
+      result:window.LYS_RESULT || ""
+    });
+  }catch(error){
+    button.disabled = false;
+    button.textContent = "Send it";
+    note.textContent = "The signup did not complete. Please try again.";
+    console.error("Email signup failed.",error);
+  }
+}
+
+async function shareResult(){
+  const result = RESULTS[window.LYS_RESULT];
+  if(!result) return;
+
+  const text = `My ideal coffee setup is ${result.name}. Find your perfect coffee machine:`;
+  const shareData = {
+    title:"Love Your Senses Coffee Machine Quiz",
+    text,
+    url:QUIZ_URL || location.href
+  };
+
+  if(navigator.share){
+    try{
+      await navigator.share(shareData);
+      trackEvent("share",{quiz:"coffee_machine",result:window.LYS_RESULT,method:"native"});
+    }catch(error){
+      if(error.name !== "AbortError") console.error("Share failed.",error);
+    }
+    return;
+  }
+
+  try{
+    await navigator.clipboard.writeText(`${text} ${shareData.url}`);
+    el("share").textContent = "Link copied";
+    setTimeout(()=>el("share").textContent = "Share your result",2000);
+    trackEvent("share",{quiz:"coffee_machine",result:window.LYS_RESULT,method:"clipboard"});
+  }catch(error){
+    console.error("Copy failed.",error);
+  }
+}
+
+function resetQuiz(){
+  step = 0;
+  locked = false;
+  selectedAnswers.length = 0;
+  Object.keys(totals).forEach(key=>totals[key] = 0);
+  window.LYS_RESULT = "";
+
+  const form = el("emailForm");
+  form.innerHTML = '<input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email"><button id="emailBtn" type="button">Send it</button>';
+  el("emailBtn").addEventListener("click",submitEmail);
+  el("formNote").textContent = "Connect your email platform in the JavaScript settings before publishing.";
+
+  show("intro");
+  trackEvent("quiz_retake",{quiz:"coffee_machine"});
+}
+
+el("start").addEventListener("click",()=>{
+  show("quiz");
+  renderQuestion();
+  trackEvent("quiz_start",{quiz:"coffee_machine"});
+});
+
+el("emailBtn").addEventListener("click",submitEmail);
+el("share").addEventListener("click",shareResult);
+el("retake").addEventListener("click",resetQuiz);
+</script>
+</body>
+</html>
