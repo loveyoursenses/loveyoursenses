@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Perfect Coffee Subscription | Love Your Senses</title>
+<meta name="description" content="Answer six quick questions to discover your coffee profile and the coffee subscriptions best suited to your taste, brewing style and routine.">
+<link rel="canonical" href="https://loveyoursenses.com/coffee">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Find Your Perfect Coffee Subscription | Love Your Senses">
+<meta property="og:description" content="Discover the roast, flavours and coffee subscription made for your daily ritual.">
+<meta property="og:url" content="https://loveyoursenses.com/coffee">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#E7E3DD;
+    --card:#F2EEE8;
+    --ink:#2A2130;
+    --ink-soft:#6E6574;
+    --accent:#7B4A5E;
+    --accent-deep:#5E3547;
+    --line:#CDC3B6;
+    --gold:#B8A78C;
+    --cream:#F7F1EC;
+    --radius:18px;
+    --ease:cubic-bezier(.4,.14,.2,1);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Jost',system-ui,sans-serif;
+    line-height:1.6;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  button,input{font:inherit}
+  button{touch-action:manipulation}
+  .display{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  .wrap{width:100%;max-width:1000px;margin:0 auto;padding-left:24px;padding-right:24px}
+
+  .site-head{padding:24px 0}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .mark{font-family:'Fraunces',serif;font-weight:500;font-size:1.24rem;text-decoration:none;color:var(--ink)}
+  .mark span{color:var(--accent)}
+  .head-link{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none}
+  .head-link:hover{color:var(--accent)}
+
+  .stage{width:100%;max-width:680px;margin:0 auto;padding:36px 20px 72px}
+  .screen{display:none;animation:rise .6s var(--ease) both}
+  .screen.active{display:block}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+  #intro{text-align:center;padding:14px 0 24px}
+  .ring{margin:0 auto 30px;display:block}
+  #intro h1{font-size:clamp(2.55rem,9vw,4rem);margin-bottom:18px}
+  #intro h1 em{font-style:italic;font-weight:400}
+  .lede{color:var(--ink-soft);font-size:1.06rem;max-width:43ch;margin:0 auto 34px}
+  .meta{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:26px}
+
+  .btn{
+    display:inline-block;
+    font-family:'Jost',sans-serif;
+    font-size:.82rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-weight:500;
+    cursor:pointer;
+    border:none;
+    border-radius:100px;
+    padding:17px 40px;
+    background:var(--ink);
+    color:var(--bg);
+    transition:transform .35s var(--ease),background .35s var(--ease);
+  }
+  .btn:hover{background:var(--accent-deep);transform:translateY(-2px)}
+
+  .progress-wrap{display:flex;align-items:center;gap:16px;margin-bottom:38px}
+  .track{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
+  .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);transition:width .5s var(--ease)}
+  .count{font-size:.72rem;letter-spacing:.2em;color:var(--ink-soft);white-space:nowrap}
+  .question{font-size:clamp(1.75rem,6vw,2.45rem);margin-bottom:32px;min-height:2.2em}
+  .options{display:flex;flex-direction:column;gap:12px}
+  .option{
+    font-family:'Jost',sans-serif;
+    font-size:1.01rem;
+    color:var(--ink);
+    text-align:left;
+    background:var(--card);
+    border:1px solid transparent;
+    border-radius:var(--radius);
+    padding:19px 22px;
+    cursor:pointer;
+    width:100%;
+    transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .option:before{
+    content:"";
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    border:1.5px solid var(--line);
+    flex:none;
+    transition:all .3s var(--ease);
+  }
+  .option:hover{border-color:var(--gold);transform:translateX(4px)}
+  .option.chosen{background:var(--accent);color:var(--cream);border-color:var(--accent)}
+  .option.chosen:before{background:var(--cream);border-color:var(--cream)}
+  .option:disabled{cursor:default}
+
+  .result-card{
+    background:var(--fam,#7B4A5E);
+    color:var(--cream);
+    border-radius:26px;
+    padding:44px 32px 40px;
+    text-align:center;
+    box-shadow:0 30px 60px -30px rgba(42,33,48,.55);
+  }
+  .result-card .eyebrow{color:rgba(247,241,236,.72)}
+  .result-name{font-size:clamp(2.55rem,10vw,3.65rem);margin-bottom:10px}
+  .result-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:1.2rem;opacity:.94;margin-bottom:24px}
+  .result-body{font-size:1.02rem;line-height:1.72;opacity:.95;max-width:44ch;margin:0 auto 30px}
+  .details{border-top:1px solid rgba(247,241,236,.28);border-bottom:1px solid rgba(247,241,236,.28);padding:22px 0;text-align:left;display:flex;flex-direction:column;gap:14px}
+  .detail-row{display:flex;gap:18px;align-items:baseline}
+  .detail-label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;opacity:.72;width:92px;flex:none}
+  .detail-val{font-family:'Fraunces',serif;font-size:1.04rem}
+
+  .recs{margin-top:36px}
+  .recs-head{text-align:center;margin-bottom:22px}
+  .recs-head .eyebrow{display:block;margin-bottom:10px}
+  .recs-head h3{font-size:clamp(1.55rem,5vw,2.05rem)}
+  .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .rec{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+  .rec-badge{
+    position:absolute;
+    top:12px;
+    left:12px;
+    z-index:2;
+    background:rgba(247,241,236,.94);
+    color:var(--accent-deep);
+    border-radius:100px;
+    padding:6px 10px;
+    font-size:.61rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+  .rec .media{aspect-ratio:1/1;width:100%;object-fit:cover;background:#fff;display:block}
+  .rec .ph{display:flex;align-items:center;justify-content:center}
+  .rec .ph span{font-family:'Fraunces',serif;font-size:2rem;color:#fff;opacity:.92}
+  .rec .body{padding:16px 15px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .rec .brand{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .rec .pname{font-family:'Fraunces',serif;font-size:1.04rem;line-height:1.22}
+  .rec .pnote{font-size:.8rem;color:var(--ink-soft);line-height:1.45}
+  .rec .offer{font-size:.76rem;color:var(--accent);font-weight:500}
+  .rec .view{
+    margin-top:auto;
+    padding-top:11px;
+    font-size:.72rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-weight:500;
+    text-decoration:none;
+    color:var(--accent);
+  }
+  .rec .view.off{color:var(--ink-soft);opacity:.58}
+  .rec .view:hover{text-decoration:underline;text-underline-offset:4px}
+
+  .affiliate-note{font-size:.78rem;color:var(--ink-soft);line-height:1.55;text-align:center;max-width:58ch;margin:18px auto 0}
+  .affiliate-note a{color:var(--accent);text-underline-offset:3px}
+  .browse-all{text-align:center;margin-top:22px}
+  .btn-all{
+    display:inline-block;
+    font-family:'Jost',sans-serif;
+    font-size:.78rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-weight:500;
+    text-decoration:none;
+    border:1px solid var(--accent);
+    color:var(--accent);
+    border-radius:100px;
+    padding:14px 34px;
+    transition:background .3s var(--ease),color .3s var(--ease);
+  }
+  .btn-all:hover{background:var(--accent);color:var(--cream)}
+  .btn-all.off{opacity:.5;pointer-events:none}
+
+  .capture{background:var(--card);border-radius:var(--radius);padding:32px 28px;margin-top:28px;text-align:center}
+  .capture h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;margin-bottom:8px}
+  .capture p{color:var(--ink-soft);font-size:.96rem;margin:0 auto 22px;max-width:39ch}
+  .field{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .field input{font-family:'Jost',sans-serif;font-size:1rem;flex:1;min-width:210px;padding:15px 18px;border:1px solid var(--line);border-radius:100px;background:#fff;color:var(--ink)}
+  .field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+  .field button{font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:15px 28px;background:var(--accent);color:var(--cream)}
+  .field button:hover{background:var(--accent-deep)}
+  .capture .done{color:var(--accent);font-family:'Fraunces',serif;font-size:1.1rem;padding:6px 0}
+  .capture .form-note{font-size:.74rem;margin-top:12px;margin-bottom:0}
+
+  .after{display:flex;gap:22px;justify-content:center;align-items:center;margin-top:26px;flex-wrap:wrap}
+  .linkish{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px}
+  .linkish:hover{color:var(--accent)}
+
+  .site-foot{border-top:1px solid var(--line);padding:34px 0 48px}
+  .foot{display:flex;flex-direction:column;align-items:center;gap:11px;text-align:center}
+  .foot-nav a{color:var(--ink-soft);text-decoration:none;font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;margin:0 10px}
+  .foot-nav a:hover{color:var(--accent)}
+  .foot .disc{font-size:.82rem;color:var(--ink-soft);max-width:54ch}
+  .foot .cr{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft)}
+
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  @media(max-width:600px){
+    .site-head{padding:20px 0}
+    .stage{padding-top:28px}
+    .rec-grid{grid-template-columns:1fr 1fr}
+    .detail-label{width:80px}
+  }
+  @media(max-width:420px){
+    .rec-grid{grid-template-columns:1fr}
+    .result-card{padding:40px 24px 36px}
+    .field{flex-direction:column}
+    .field input,.field button{width:100%}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <div class="bar">
+      <a href="/" class="mark">Love Your <span>Senses</span></a>
+      <a href="/#quizzes" class="head-link">All quizzes</a>
+    </div>
+  </div>
+</header>
+
+<main class="stage">
+
+  <section id="intro" class="screen active">
+    <svg class="ring" width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
+      <circle cx="29" cy="29" r="27" fill="none" stroke="#B8A78C" stroke-width="1"/>
+      <circle cx="29" cy="29" r="19" fill="none" stroke="#CDC3B6" stroke-width="1"/>
+      <g stroke="#7B4A5E" stroke-width="1.4">
+        <line x1="29" y1="2" x2="29" y2="9"/>
+        <line x1="52.4" y1="42.5" x2="46.4" y2="39"/>
+        <line x1="5.6" y1="42.5" x2="11.6" y2="39"/>
+        <line x1="52.4" y1="15.5" x2="46.4" y2="19"/>
+        <line x1="5.6" y1="15.5" x2="11.6" y2="19"/>
+        <line x1="29" y1="56" x2="29" y2="49"/>
+      </g>
+      <circle cx="29" cy="29" r="3" fill="#7B4A5E"/>
+    </svg>
+    <p class="eyebrow">A short coffee discovery</p>
+    <h1 class="display">Find your perfect <em>coffee</em> subscription</h1>
+    <p class="lede">Answer six quick questions to discover the roast, flavours and subscription style made for your daily coffee ritual.</p>
+    <button class="btn" id="start" type="button">Begin the discovery</button>
+    <p class="meta">Six questions &nbsp;·&nbsp; one minute</p>
+  </section>
+
+  <section id="quiz" class="screen" aria-live="polite">
+    <div class="progress-wrap">
+      <div class="track" aria-hidden="true"><div class="fill" id="fill"></div></div>
+      <span class="count" id="count">01 / 06</span>
+    </div>
+    <h2 class="question display" id="question" tabindex="-1"></h2>
+    <div class="options" id="options"></div>
+  </section>
+
+  <section id="result" class="screen" aria-live="polite">
+    <div class="result-card" id="resultCard">
+      <p class="eyebrow">Your coffee profile</p>
+      <h2 class="result-name display" id="rName"></h2>
+      <p class="result-tag" id="rTag"></p>
+      <p class="result-body" id="rBody"></p>
+      <div class="details" id="rDetails"></div>
+    </div>
+
+    <div class="recs">
+      <div class="recs-head">
+        <span class="eyebrow">Chosen for your taste</span>
+        <h3 class="display" id="recsTitle">Three subscriptions to try</h3>
+      </div>
+      <div class="rec-grid" id="recGrid"></div>
+      <p class="affiliate-note">Some links on this page are affiliate links. Love Your Senses may earn a commission from qualifying orders at no extra cost to you. <a href="/disclosure">Read the affiliate disclosure</a>.</p>
+      <div class="browse-all" id="browseAll"></div>
+    </div>
+
+    <div class="capture">
+      <h3>Save your coffee profile</h3>
+      <p>Get your result, subscription ideas and future coffee discoveries by email.</p>
+      <div class="field" id="emailForm">
+        <input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email">
+        <button id="emailBtn" type="button">Send it</button>
+      </div>
+      <p class="form-note" id="formNote">Connect your email platform in the JavaScript settings before publishing.</p>
+    </div>
+
+    <div class="after">
+      <button class="linkish" id="share" type="button">Share your result</button>
+      <button class="linkish" id="retake" type="button">Retake the quiz</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-nav">
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/disclosure">Affiliate Disclosure</a>
+      </div>
+      <p class="disc">Love Your Senses helps you discover products matched to your preferences through short, enjoyable quizzes.</p>
+      <p class="cr">© 2026 Love Your Senses</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   PAGE SETTINGS
+   Replace these values before publishing.
+   ===================================================================== */
+const QUIZ_URL = "https://loveyoursenses.com/coffee";
+const STORE_LINK = "#";
+
+/*
+  EMAIL_FORM_ACTION:
+  Add the form action or webhook supplied by your email platform.
+  Leave blank while the signup form is not connected.
+
+  EMAIL_FIELD_NAME:
+  Most platforms use "email". Change this only when your provider requires
+  a different field name.
+*/
+const EMAIL_FORM_ACTION = "";
+const EMAIL_FIELD_NAME = "email";
+
+/* =====================================================================
+   AFFILIATE SUBSCRIPTION SLOTS
+
+   Replace each placeholder with an approved affiliate offer.
+
+   merchant = retailer or coffee company
+   name     = subscription or product name
+   note     = short reason it suits this result
+   offer    = optional offer text
+   url      = affiliate deep link
+   img      = image URL, or leave blank for a coloured placeholder
+   badge    = optional badge, such as "Best match"
+   ===================================================================== */
+const PRODUCTS = {
+  bright: [
+    {
+      merchant:"Affiliate partner",
+      name:"Light Roast Discovery Subscription",
+      note:"Rotating single-origin coffees with citrus, berry and floral notes.",
+      offer:"Ideal for adventurous filter-coffee drinkers.",
+      url:"#",
+      img:"",
+      badge:"Best match"
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Single-Origin Coffee Club",
+      note:"A new origin each delivery with detailed tasting notes.",
+      offer:"A strong choice for learning what you love.",
+      url:"#",
+      img:"",
+      badge:""
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Seasonal Roaster Selection",
+      note:"Fresh, expressive coffees selected around the harvest calendar.",
+      offer:"Best for variety and discovery.",
+      url:"#",
+      img:"",
+      badge:""
+    }
+  ],
+
+  smooth: [
+    {
+      merchant:"Affiliate partner",
+      name:"Everyday Balanced Subscription",
+      note:"Smooth medium roasts with caramel, biscuit and gentle fruit notes.",
+      offer:"Dependable coffee for any brewing method.",
+      url:"#",
+      img:"",
+      badge:"Best match"
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"House Blend Coffee Plan",
+      note:"Consistent, rounded coffee designed for daily drinking.",
+      offer:"An easy option for households with mixed tastes.",
+      url:"#",
+      img:"",
+      badge:""
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Roaster's Choice Subscription",
+      note:"Approachable coffees selected for sweetness and balance.",
+      offer:"Enough variety without becoming unpredictable.",
+      url:"#",
+      img:"",
+      badge:""
+    }
+  ],
+
+  espresso: [
+    {
+      merchant:"Affiliate partner",
+      name:"Espresso Roast Subscription",
+      note:"Full-bodied coffee with dark chocolate, spice and a lasting finish.",
+      offer:"Built for espresso machines and moka pots.",
+      url:"#",
+      img:"",
+      badge:"Best match"
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Italian-Style Coffee Club",
+      note:"Rich, traditional profiles with dependable crema and intensity.",
+      offer:"A strong match for short coffee and milk drinks.",
+      url:"#",
+      img:"",
+      badge:""
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Bold Roast Selection",
+      note:"Deeply roasted coffees with cocoa, molasses and toasted nut notes.",
+      offer:"Best for people who want unmistakable strength.",
+      url:"#",
+      img:"",
+      badge:""
+    }
+  ],
+
+  comfort: [
+    {
+      merchant:"Affiliate partner",
+      name:"Chocolate and Caramel Coffee Plan",
+      note:"Sweet, comforting coffees with cocoa, praline and caramel notes.",
+      offer:"Perfect with milk or as a cosy afternoon cup.",
+      url:"#",
+      img:"",
+      badge:"Best match"
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Low-Acidity Coffee Subscription",
+      note:"Rounded, mellow coffees with nutty sweetness and a soft finish.",
+      offer:"A gentle choice for smooth everyday drinking.",
+      url:"#",
+      img:"",
+      badge:""
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Indulgent Blend Collection",
+      note:"Dessert-like flavours selected for lattes, cappuccinos and cafetières.",
+      offer:"Best for coffee that feels like a treat.",
+      url:"#",
+      img:"",
+      badge:""
+    }
+  ],
+
+  decaf: [
+    {
+      merchant:"Affiliate partner",
+      name:"Speciality Decaf Subscription",
+      note:"Carefully processed decaf with the sweetness and complexity of regular coffee.",
+      offer:"A flavour-first option with less caffeine.",
+      url:"#",
+      img:"",
+      badge:"Best match"
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Half-Caf Coffee Plan",
+      note:"A balanced middle ground for reducing caffeine without losing the ritual.",
+      offer:"Useful for gradual caffeine reduction.",
+      url:"#",
+      img:"",
+      badge:""
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Evening Coffee Collection",
+      note:"Smooth decaf coffees chosen for after-dinner and late-day drinking.",
+      offer:"Best for keeping coffee in your evening routine.",
+      url:"#",
+      img:"",
+      badge:""
+    }
+  ],
+
+  convenient: [
+    {
+      merchant:"Affiliate partner",
+      name:"Easy-Brew Coffee Subscription",
+      note:"Reliable coffee supplied in the format that fits your quickest routine.",
+      offer:"Choose pods, bags or pre-ground coffee.",
+      url:"#",
+      img:"",
+      badge:"Best match"
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Coffee Pod Delivery Plan",
+      note:"Regular pod deliveries with a choice of familiar flavour profiles.",
+      offer:"Best for speed, consistency and minimal cleanup.",
+      url:"#",
+      img:"",
+      badge:""
+    },
+    {
+      merchant:"Affiliate partner",
+      name:"Pre-Ground Everyday Coffee Club",
+      note:"Fresh coffee delivered ready for your preferred brewer.",
+      offer:"A simple route to better coffee without extra equipment.",
+      url:"#",
+      img:"",
+      badge:""
+    }
+  ]
+};
+
+const RESULTS = {
+  bright: {
+    name:"The Bright Explorer",
+    color:"#A56F1C",
+    tag:"Curious, lively and always ready for a new origin.",
+    body:"Your answers point to expressive coffees with clarity and character. You are most likely to enjoy lighter roasts, changing origins and tasting notes that move from citrus and berries to florals and tea-like sweetness.",
+    details:{
+      Roast:"Light to light-medium",
+      Taste:"Citrus, berry, floral",
+      Brew:"Pour-over or AeroPress",
+      Plan:"Rotating single origins"
+    }
+  },
+
+  smooth: {
+    name:"The Smooth All-Rounder",
+    color:"#7B5C43",
+    tag:"Balanced, reliable and effortlessly easy to enjoy.",
+    body:"You want coffee that feels polished without demanding too much attention. Medium roasts, rounded sweetness and dependable blends will suit your routine across filter, cafetière, espresso and milk-based drinks.",
+    details:{
+      Roast:"Medium",
+      Taste:"Caramel, biscuit, soft fruit",
+      Brew:"Flexible across methods",
+      Plan:"Consistent house blends"
+    }
+  },
+
+  espresso: {
+    name:"The Espresso Traditionalist",
+    color:"#4B342C",
+    tag:"Bold, focused and built around a proper coffee hit.",
+    body:"You favour intensity, body and a finish that stays with you. Darker roasts and espresso-led subscriptions will give you the strength, crema and rich chocolate character you expect from a satisfying cup.",
+    details:{
+      Roast:"Medium-dark to dark",
+      Taste:"Dark chocolate, spice, molasses",
+      Brew:"Espresso machine or moka pot",
+      Plan:"Espresso-focused delivery"
+    }
+  },
+
+  comfort: {
+    name:"The Chocolate Comfort",
+    color:"#8A5A32",
+    tag:"Sweet, cosy and made for slow, comforting moments.",
+    body:"You are drawn to coffee with warmth and softness rather than sharp acidity. Look for medium roasts with chocolate, caramel, praline and nut notes, especially if milk is part of your favourite cup.",
+    details:{
+      Roast:"Medium to medium-dark",
+      Taste:"Chocolate, caramel, nuts",
+      Brew:"Cafetière, latte or cappuccino",
+      Plan:"Sweet, low-acidity blends"
+    }
+  },
+
+  decaf: {
+    name:"The Decaf Ritualist",
+    color:"#56604B",
+    tag:"All the pleasure of coffee, with less of the buzz.",
+    body:"The ritual matters to you as much as the caffeine. A high-quality decaf or half-caf subscription will keep flavour, aroma and variety in your day while giving you more control over when and how often you drink coffee.",
+    details:{
+      Roast:"Any, selected for sweetness",
+      Taste:"Balanced and full-flavoured",
+      Brew:"Your usual method",
+      Plan:"Decaf or half-caf delivery"
+    }
+  },
+
+  convenient: {
+    name:"The Effortless Regular",
+    color:"#3E6470",
+    tag:"Simple, dependable and ready when you are.",
+    body:"You want better coffee without turning every cup into a project. Subscriptions offering pods, coffee bags or correctly ground coffee will give you reliable flavour, easy delivery and a routine that stays refreshingly uncomplicated.",
+    details:{
+      Roast:"Medium and familiar",
+      Taste:"Classic, smooth, consistent",
+      Brew:"Pods, bags or pre-ground",
+      Plan:"Easy recurring delivery"
+    }
+  }
+};
+
+/* =====================================================================
+   QUIZ QUESTIONS
+
+   Each answer adds weighted points to one or more result profiles.
+   Higher weights represent a stronger signal.
+   ===================================================================== */
+const QUESTIONS = [
+  {
+    q:"What does your ideal morning coffee look like?",
+    a:[
+      {label:"A carefully brewed filter coffee with interesting tasting notes", scores:{bright:3,smooth:1}},
+      {label:"A smooth, dependable cup that always tastes good", scores:{smooth:3,comfort:1}},
+      {label:"A short, strong espresso or an intense flat white", scores:{espresso:3,comfort:1}},
+      {label:"A creamy latte with chocolate or caramel flavours", scores:{comfort:3,smooth:1}},
+      {label:"A full-flavoured decaf without the caffeine rush", scores:{decaf:4}},
+      {label:"Something fast, consistent and ready with minimal effort", scores:{convenient:4}}
+    ]
+  },
+  {
+    q:"Which flavour description sounds best?",
+    a:[
+      {label:"Citrus, berries and delicate florals", scores:{bright:4}},
+      {label:"Caramel, biscuit and gentle fruit", scores:{smooth:4}},
+      {label:"Dark chocolate, spice and smoky depth", scores:{espresso:4}},
+      {label:"Milk chocolate, praline and toasted nuts", scores:{comfort:4}},
+      {label:"Mellow, rounded and satisfying without caffeine", scores:{decaf:4}},
+      {label:"Classic coffee flavour that stays reliably familiar", scores:{convenient:3,smooth:1}}
+    ]
+  },
+  {
+    q:"How do you usually drink your coffee?",
+    a:[
+      {label:"Black, so I can taste every detail", scores:{bright:3,smooth:1}},
+      {label:"Black or with a small dash of milk", scores:{smooth:3,bright:1}},
+      {label:"Short, strong and concentrated", scores:{espresso:4}},
+      {label:"With plenty of milk or a creamy texture", scores:{comfort:3,smooth:1}},
+      {label:"Decaf, especially later in the day", scores:{decaf:4}},
+      {label:"Whatever is quickest and easiest", scores:{convenient:4}}
+    ]
+  },
+  {
+    q:"Which brewing method fits your routine?",
+    a:[
+      {label:"Pour-over, V60 or AeroPress", scores:{bright:4}},
+      {label:"Cafetière or a straightforward filter machine", scores:{smooth:3,comfort:1}},
+      {label:"Espresso machine or moka pot", scores:{espresso:4}},
+      {label:"Milk frother, latte setup or cafetière", scores:{comfort:3,smooth:1}},
+      {label:"Any method, as long as decaf is available", scores:{decaf:4}},
+      {label:"Pods, coffee bags or pre-ground coffee", scores:{convenient:4}}
+    ]
+  },
+  {
+    q:"How adventurous should your subscription be?",
+    a:[
+      {label:"Very adventurous. I want a different origin every time", scores:{bright:4}},
+      {label:"Some variety, but always balanced and approachable", scores:{smooth:4}},
+      {label:"Keep it bold, dark and espresso-friendly", scores:{espresso:4}},
+      {label:"Keep it sweet, rich and comforting", scores:{comfort:4}},
+      {label:"Give me the best decaf or half-caf options", scores:{decaf:4}},
+      {label:"Consistency matters more than surprise", scores:{convenient:4}}
+    ]
+  },
+  {
+    q:"What matters most in a coffee subscription?",
+    a:[
+      {label:"Discovering new coffees and learning what I taste", scores:{bright:5}},
+      {label:"A dependable everyday coffee that suits everyone", scores:{smooth:5}},
+      {label:"Café-style intensity delivered to my door", scores:{espresso:5}},
+      {label:"A comforting cup that feels like a treat", scores:{comfort:5}},
+      {label:"Reducing caffeine without giving up good coffee", scores:{decaf:5}},
+      {label:"Saving time and never running out", scores:{convenient:5}}
+    ]
+  }
+];
+
+let step = 0;
+let locked = false;
+const selectedAnswers = [];
+const totals = Object.keys(RESULTS).reduce((acc,key)=>{
+  acc[key] = 0;
+  return acc;
+},{});
+
+const el = id => document.getElementById(id);
+const screens = {
+  intro:el("intro"),
+  quiz:el("quiz"),
+  result:el("result")
+};
+
+function show(name){
+  Object.values(screens).forEach(screen=>screen.classList.remove("active"));
+  screens[name].classList.add("active");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function hexToRgba(hex,alpha){
+  const clean = hex.replace("#","");
+  const value = parseInt(clean,16);
+  const red = value >> 16 & 255;
+  const green = value >> 8 & 255;
+  const blue = value & 255;
+  return `rgba(${red},${green},${blue},${alpha})`;
+}
+
+function escapeHtml(value){
+  return String(value)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+function trackEvent(eventName,details={}){
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({event:eventName,...details});
+
+  if(typeof window.pintrk === "function"){
+    try{
+      window.pintrk("track","custom",{
+        event_name:eventName,
+        ...details
+      });
+    }catch(error){
+      console.warn("Pinterest tracking event was not sent.",error);
+    }
+  }
+}
+
+function renderQuestion(){
+  const item = QUESTIONS[step];
+  const totalQuestions = QUESTIONS.length;
+
+  el("question").textContent = item.q;
+  el("count").textContent = `${String(step+1).padStart(2,"0")} / ${String(totalQuestions).padStart(2,"0")}`;
+  el("fill").style.width = `${step / totalQuestions * 100}%`;
+
+  const box = el("options");
+  box.innerHTML = "";
+  locked = false;
+
+  item.a.forEach((answer,index)=>{
+    const button = document.createElement("button");
+    button.className = "option";
+    button.type = "button";
+    button.textContent = answer.label;
+    button.addEventListener("click",()=>chooseAnswer(button,answer,index));
+    box.appendChild(button);
+  });
+
+  setTimeout(()=>el("question").focus({preventScroll:true}),50);
+}
+
+function chooseAnswer(button,answer,index){
+  if(locked) return;
+  locked = true;
+
+  document.querySelectorAll(".option").forEach(option=>{
+    option.disabled = true;
+  });
+
+  button.classList.add("chosen");
+  selectedAnswers[step] = index;
+
+  Object.entries(answer.scores).forEach(([key,value])=>{
+    totals[key] += value;
+  });
+
+  trackEvent("quiz_answer",{
+    quiz:"coffee_subscription",
+    question_number:step+1,
+    answer:answer.label
+  });
+
+  setTimeout(()=>{
+    step += 1;
+
+    if(step < QUESTIONS.length){
+      renderQuestion();
+    }else{
+      el("fill").style.width = "100%";
+      finishQuiz();
+    }
+  },340);
+}
+
+function finishQuiz(){
+  const orderedKeys = Object.keys(RESULTS);
+  let winningKey = orderedKeys[0];
+
+  orderedKeys.forEach(key=>{
+    if(totals[key] > totals[winningKey]){
+      winningKey = key;
+    }
+  });
+
+  const tiedKeys = orderedKeys.filter(key=>totals[key] === totals[winningKey]);
+
+  if(tiedKeys.length > 1){
+    for(let questionIndex = selectedAnswers.length - 1; questionIndex >= 0; questionIndex -= 1){
+      const answer = QUESTIONS[questionIndex].a[selectedAnswers[questionIndex]];
+      const rankedTie = tiedKeys
+        .map(key=>({key,value:answer.scores[key] || 0}))
+        .sort((a,b)=>b.value-a.value);
+
+      if(rankedTie[0].value > rankedTie[1].value){
+        winningKey = rankedTie[0].key;
+        break;
+      }
+    }
+  }
+
+  showResult(winningKey);
+}
+
+function showResult(key){
+  const result = RESULTS[key];
+  window.LYS_RESULT = key;
+
+  el("resultCard").style.setProperty("--fam",result.color);
+  el("rName").textContent = result.name;
+  el("rTag").textContent = result.tag;
+  el("rBody").textContent = result.body;
+
+  const details = el("rDetails");
+  details.innerHTML = "";
+
+  Object.entries(result.details).forEach(([label,value])=>{
+    const row = document.createElement("div");
+    row.className = "detail-row";
+
+    const labelSpan = document.createElement("span");
+    labelSpan.className = "detail-label";
+    labelSpan.textContent = label;
+
+    const valueSpan = document.createElement("span");
+    valueSpan.className = "detail-val";
+    valueSpan.textContent = value;
+
+    row.append(labelSpan,valueSpan);
+    details.appendChild(row);
+  });
+
+  el("recsTitle").textContent = `Three subscriptions for ${result.name}`;
+
+  const grid = el("recGrid");
+  grid.innerHTML = "";
+
+  (PRODUCTS[key] || []).forEach((product,index)=>{
+    const card = document.createElement("article");
+    card.className = "rec";
+
+    const mediaHtml = product.img
+      ? `<img class="media" src="${escapeHtml(product.img)}" alt="${escapeHtml(product.merchant)} ${escapeHtml(product.name)}" loading="lazy">`
+      : `<div class="ph media" style="background:${hexToRgba(result.color,.88)}"><span>${escapeHtml(product.name.charAt(0))}</span></div>`;
+
+    const badgeHtml = product.badge
+      ? `<span class="rec-badge">${escapeHtml(product.badge)}</span>`
+      : "";
+
+    const offerHtml = product.offer
+      ? `<span class="offer">${escapeHtml(product.offer)}</span>`
+      : "";
+
+    const ctaHtml = product.url && product.url !== "#"
+      ? `<a class="view" href="${escapeHtml(product.url)}" target="_blank" rel="noopener sponsored" data-affiliate-position="${index+1}">View subscription &rsaquo;</a>`
+      : `<span class="view off">Affiliate link coming soon</span>`;
+
+    card.innerHTML = `${badgeHtml}${mediaHtml}<div class="body"><span class="brand">${escapeHtml(product.merchant)}</span><span class="pname">${escapeHtml(product.name)}</span><span class="pnote">${escapeHtml(product.note)}</span>${offerHtml}${ctaHtml}</div>`;
+
+    const affiliateLink = card.querySelector("a[data-affiliate-position]");
+    if(affiliateLink){
+      affiliateLink.addEventListener("click",()=>{
+        trackEvent("affiliate_click",{
+          quiz:"coffee_subscription",
+          result:key,
+          merchant:product.merchant,
+          product:product.name,
+          position:index+1
+        });
+      });
+    }
+
+    grid.appendChild(card);
+  });
+
+  const browseAll = el("browseAll");
+
+  if(STORE_LINK && STORE_LINK !== "#"){
+    browseAll.innerHTML = `<a class="btn-all" href="${escapeHtml(STORE_LINK)}" target="_blank" rel="noopener sponsored">Browse all coffee subscriptions</a>`;
+    browseAll.querySelector("a").addEventListener("click",()=>{
+      trackEvent("affiliate_click",{
+        quiz:"coffee_subscription",
+        result:key,
+        product:"browse_all"
+      });
+    });
+  }else{
+    browseAll.innerHTML = '<span class="btn-all off">Browse all coffee subscriptions</span>';
+  }
+
+  trackEvent("quiz_complete",{
+    quiz:"coffee_subscription",
+    result:key,
+    result_name:result.name
+  });
+
+  show("result");
+}
+
+async function submitEmail(){
+  const emailInput = el("email");
+  const email = emailInput.value.trim();
+  const form = el("emailForm");
+  const note = el("formNote");
+
+  if(!/^\S+@\S+\.\S+$/.test(email)){
+    emailInput.focus();
+    note.textContent = "Enter a valid email address.";
+    return;
+  }
+
+  if(!EMAIL_FORM_ACTION){
+    note.textContent = "Email signup is not connected yet. Add your email platform form action in the JavaScript settings.";
+    return;
+  }
+
+  const button = el("emailBtn");
+  button.disabled = true;
+  button.textContent = "Sending";
+
+  try{
+    const payload = new URLSearchParams();
+    payload.append(EMAIL_FIELD_NAME,email);
+    payload.append("quiz_result",window.LYS_RESULT || "");
+    payload.append("source","coffee_subscription_quiz");
+
+    await fetch(EMAIL_FORM_ACTION,{
+      method:"POST",
+      mode:"no-cors",
+      headers:{"Content-Type":"application/x-www-form-urlencoded"},
+      body:payload.toString()
+    });
+
+    form.innerHTML = '<p class="done">Your coffee profile is on its way.</p>';
+    note.textContent = "";
+
+    trackEvent("email_signup",{
+      quiz:"coffee_subscription",
+      result:window.LYS_RESULT || ""
+    });
+  }catch(error){
+    button.disabled = false;
+    button.textContent = "Send it";
+    note.textContent = "The signup did not complete. Please try again.";
+    console.error("Email signup failed.",error);
+  }
+}
+
+async function shareResult(){
+  const result = RESULTS[window.LYS_RESULT];
+  if(!result) return;
+
+  const text = `My coffee profile is ${result.name}. Find your perfect coffee subscription:`;
+  const shareData = {
+    title:"Love Your Senses Coffee Quiz",
+    text,
+    url:QUIZ_URL || location.href
+  };
+
+  if(navigator.share){
+    try{
+      await navigator.share(shareData);
+      trackEvent("share",{quiz:"coffee_subscription",result:window.LYS_RESULT,method:"native"});
+    }catch(error){
+      if(error.name !== "AbortError") console.error("Share failed.",error);
+    }
+    return;
+  }
+
+  try{
+    await navigator.clipboard.writeText(`${text} ${shareData.url}`);
+    el("share").textContent = "Link copied";
+    setTimeout(()=>el("share").textContent = "Share your result",2000);
+    trackEvent("share",{quiz:"coffee_subscription",result:window.LYS_RESULT,method:"clipboard"});
+  }catch(error){
+    console.error("Copy failed.",error);
+  }
+}
+
+function resetQuiz(){
+  step = 0;
+  locked = false;
+  selectedAnswers.length = 0;
+  Object.keys(totals).forEach(key=>totals[key] = 0);
+  window.LYS_RESULT = "";
+
+  const form = el("emailForm");
+  form.innerHTML = '<input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email"><button id="emailBtn" type="button">Send it</button>';
+  el("emailBtn").addEventListener("click",submitEmail);
+  el("formNote").textContent = "Connect your email platform in the JavaScript settings before publishing.";
+
+  show("intro");
+  trackEvent("quiz_retake",{quiz:"coffee_subscription"});
+}
+
+el("start").addEventListener("click",()=>{
+  show("quiz");
+  renderQuestion();
+  trackEvent("quiz_start",{quiz:"coffee_subscription"});
+});
+
+el("emailBtn").addEventListener("click",submitEmail);
+el("share").addEventListener("click",shareResult);
+el("retake").addEventListener("click",resetQuiz);
+</script>
+</body>
+</html>
