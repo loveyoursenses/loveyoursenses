@@ -155,8 +155,12 @@
     text-transform:uppercase;
     font-weight:500;
   }
-  .rec .media{aspect-ratio:1/1;width:100%;object-fit:cover;background:#fff;display:block}
-  .rec .ph{display:flex;align-items:center;justify-content:center}
+  .rec .media-frame{aspect-ratio:1/1;width:100%;position:relative;overflow:hidden;background:#fff}
+  .rec .media{aspect-ratio:1/1;width:100%;height:100%;object-fit:contain;padding:18px;background:#fff;display:block}
+  .rec .ph{display:flex;align-items:center;justify-content:center;padding:0}
+  .rec .media-frame .media{position:absolute;inset:0}
+  .rec .media-fallback{display:none}
+  .rec .media-fallback.show{display:flex}
   .rec .ph span{font-family:'Fraunces',serif;font-size:2rem;color:#fff;opacity:.92}
   .rec .body{padding:16px 15px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
   .rec .brand{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
@@ -302,7 +306,7 @@
         <h3 class="display" id="recsTitle">Three machines to consider</h3>
       </div>
       <div class="rec-grid" id="recGrid"></div>
-      <p class="affiliate-note">Some links on this page are affiliate links. Love Your Senses may earn a commission from qualifying orders at no extra cost to you. <a href="/disclosure">Read the affiliate disclosure</a>.</p>
+      <p class="affiliate-note" id="recommendationDisclosure">These recommendations use direct manufacturer links. Love Your Senses does not currently earn commission from them. Product availability and specifications may change.</p>
       <div class="browse-all" id="browseAll"></div>
     </div>
 
@@ -353,7 +357,8 @@
    Replace these values before publishing.
    ===================================================================== */
 const QUIZ_URL = "https://loveyoursenses.com/coffee-machine";
-const STORE_LINK = "#";
+const STORE_LINK = "";
+const STORE_LINK_IS_AFFILIATE = false;
 
 /*
   EMAIL_FORM_ACTION:
@@ -368,196 +373,319 @@ const EMAIL_FORM_ACTION = "";
 const EMAIL_FIELD_NAME = "email";
 
 /* =====================================================================
-   AFFILIATE COFFEE MACHINE SLOTS
+   COFFEE MACHINE RECOMMENDATIONS
 
-   Replace each placeholder with an approved affiliate product.
+   These are real products linked directly to manufacturer pages.
+   They are not affiliate links at present. When an affiliate partnership is
+   approved, replace the URL and change affiliate:false to affiliate:true.
 
-   merchant = retailer or manufacturer
-   name     = coffee machine or bundle name
-   note     = short reason it suits this result
-   offer    = optional price, discount or feature text
-   url      = affiliate deep link
-   img      = product image URL, or leave blank for a coloured placeholder
-   badge    = optional badge, such as "Best match"
+   base = default ranking strength within the result category
+   fit  = weighted preference signals used to personalise the final three
    ===================================================================== */
 const PRODUCTS = {
   pod: [
     {
-      merchant:"Affiliate partner",
-      name:"Compact Capsule Coffee Machine",
-      note:"Fast, consistent coffee with almost no measuring, grinding or cleanup.",
-      offer:"Best for espresso, lungo and quick daily drinks.",
-      url:"#",
-      img:"",
-      badge:"Best match"
+      merchant:"Nespresso",
+      name:"Essenza Mini",
+      monogram:"EM",
+      note:"An ultra-compact Original capsule machine for straightforward espresso and lungo drinks.",
+      offer:"Best for small kitchens and espresso-first routines.",
+      url:"https://www.nespresso.com/uk/en/order/machines/original/essenza-mini-c30-matt-black",
+      img:"https://www.nespresso.com/ecom/medias/sys_master/public/10481383735326/M-0445-Essenza-Mini-Nespresso-C30-Black-2000x2000.png?impolicy=product&imwidth=300",
+      affiliate:false,
+      base:8,
+      fit:{capsule:6,compact:6,espresso_short:5,fast:4,low_cleanup:4,solo:3,minimal_parts:3}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Premium Pod Coffee System",
-      note:"A wider drinks menu with adjustable cup sizes and stronger brewing options.",
-      offer:"A polished upgrade for pod-coffee regulars.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"Nespresso",
+      name:"Vertuo Pop",
+      monogram:"VP",
+      note:"A compact one-touch capsule machine with a broader choice of cup sizes for espresso and longer coffees.",
+      offer:"Best for people who switch between short and generous cups.",
+      url:"https://www.nespresso.com/uk/en/order/machines/vertuo/vertuo-pop-coconutwhite-nespresso-coffee-machine",
+      img:"https://dam.delonghi.com/300x300/assets/237196",
+      affiliate:false,
+      base:7,
+      fit:{capsule:6,long_coffee:6,one_touch:4,fast:4,compact:3,household:2}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Capsule Machine and Milk Frother Bundle",
-      note:"Pod convenience with the option to make cappuccinos, lattes and flat whites.",
-      offer:"Best for quick milk-based drinks.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"Lavazza",
+      name:"A Modo Mio Jolie Evo",
+      monogram:"JE",
+      note:"A narrow, quiet capsule machine focused on simple Italian-style espresso with minimal worktop impact.",
+      offer:"Best for a tidy, low-maintenance coffee corner.",
+      url:"https://www.lavazza.co.uk/en/coffee-machines/jolie-evo",
+      img:"https://www.lavazza.co.uk/content/dam/lavazza-athena/uk/b2c/pdp-pag-prodotto/macchine/hero-banner-machines/2-main-asset/jolie-evo/pdp/d-Jolie-BLACK-NEW-%402.png",
+      affiliate:false,
+      base:6,
+      fit:{capsule:6,compact:6,espresso_short:5,low_cleanup:4,minimal_parts:4,fast:3}
+    },
+    {
+      merchant:"Nespresso",
+      name:"Creatista Plus",
+      monogram:"CP",
+      note:"A capsule system with an automatic steam wand for customised flat whites, cappuccinos and latte art.",
+      offer:"Best for pod convenience with serious milk-drink flexibility.",
+      url:"https://www.nespresso.com/uk/en/order/machines/original/creatista-plus-sage-coffee-machine",
+      img:"https://assets-dam.foodthinkers.com/ZKCA55LU/at/jjs3pzc76n46tthj2zppw3/SNE800BTR_EUK_1300px.png?format=png",
+      affiliate:false,
+      base:5,
+      fit:{capsule:5,milk_drinks:7,auto_milk:6,flavour_control:4,fast:4,household:3}
     }
   ],
 
   bean: [
     {
-      merchant:"Affiliate partner",
-      name:"Automatic Bean-to-Cup Machine",
-      note:"Freshly ground coffee at the touch of a button with automatic dosing and brewing.",
-      offer:"Ideal for effortless coffee from whole beans.",
-      url:"#",
-      img:"",
-      badge:"Best match"
+      merchant:"De'Longhi",
+      name:"Magnifica Start",
+      monogram:"MS",
+      note:"A practical entry into bean-to-cup coffee with freshly ground drinks and simple automatic controls.",
+      offer:"Best for dependable fresh coffee without a complicated menu.",
+      url:"https://www.delonghi.com/en-gb/c/coffee/coffee-machines/automatic-coffee-makers/magnifica/magnifica-start",
+      img:"https://dam.delonghi.com/300x300/assets/244873",
+      affiliate:false,
+      base:8,
+      fit:{fresh_beans:6,one_touch:6,low_cleanup:4,household:3,espresso_short:4,auto_rinse:4}
     },
     {
-      merchant:"Affiliate partner",
-      name:"One-Touch Bean-to-Cup Machine",
-      note:"Stores drink settings and prepares espresso, americano and milk drinks automatically.",
-      offer:"A strong choice for households with mixed tastes.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"Philips",
+      name:"5400 Series LatteGo",
+      monogram:"54",
+      note:"A fully automatic machine with twelve drink styles, user profiles and a two-part milk system designed for easy cleaning.",
+      offer:"Best for households that want varied one-touch coffee and milk drinks.",
+      url:"https://www.philips.co.uk/c-e/ho/coffee/fully-automatic-espresso-machines/5400-series-lattego.html",
+      img:"https://m.media-amazon.com/images/I/41Q423jiIrL._SL500_._SS450_.jpg",
+      affiliate:false,
+      base:7,
+      fit:{fresh_beans:6,one_touch:6,milk_drinks:6,auto_milk:7,household:5,low_cleanup:5}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Premium Bean-to-Cup Coffee Centre",
-      note:"More grind settings, drink profiles and adjustment for people who want convenience without compromise.",
-      offer:"Best for a higher-end automatic setup.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"De'Longhi",
+      name:"Rivelia",
+      monogram:"RV",
+      note:"A compact automatic machine with interchangeable bean hoppers, custom drink settings and multiple user profiles.",
+      offer:"Best for exploring different beans in a smaller bean-to-cup format.",
+      url:"https://www.delonghi.com/en-gb/p/rivelia-rivelia-automatic-coffee-maker-exam440.55.w/EXAM440.55.W.html",
+      img:"https://dam.delonghi.com/300x300/assets/268697",
+      affiliate:false,
+      base:6,
+      fit:{fresh_beans:6,one_touch:6,compact:5,flavour_control:5,household:4,milk_drinks:4}
+    },
+    {
+      merchant:"De'Longhi",
+      name:"Eletta Explore",
+      monogram:"EE",
+      note:"A premium bean-to-cup machine built around a large menu of hot, cold and milk-based drinks.",
+      offer:"Best for a high-variety household coffee station.",
+      url:"https://www.delonghi.com/en-gb/c/coffee/coffee-machines/automatic-coffee-makers/eletta-explore",
+      img:"https://dam.delonghi.com/300x300/assets/257458",
+      affiliate:false,
+      base:5,
+      fit:{fresh_beans:6,one_touch:6,milk_drinks:7,auto_milk:7,household:5,long_coffee:4,fast:3}
     }
   ],
 
   espresso: [
     {
-      merchant:"Affiliate partner",
-      name:"Home Barista Espresso Machine",
-      note:"Manual control over grinding, dosing, extraction and milk texturing for café-style results.",
-      offer:"Ideal for learning proper espresso technique.",
-      url:"#",
-      img:"",
-      badge:"Best match"
+      merchant:"Sage",
+      name:"the Bambino®",
+      monogram:"BB",
+      note:"A fast-heating compact espresso machine with a capable steam wand and a small worktop footprint.",
+      offer:"Best for hands-on espresso where space and speed matter.",
+      url:"https://www.sageappliances.com/en-gb/product/bes450",
+      img:"https://breville-production-aem-assets.s3.us-west-2.amazonaws.com/BES450/SES450_CAROUSEL1_EMEA_NEW.png",
+      affiliate:false,
+      base:7,
+      fit:{compact:7,manual_control:5,milk_drinks:5,fast:6,solo:4,minimal_parts:3}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Espresso Machine with Built-In Grinder",
-      note:"An integrated grinder keeps the setup neater while preserving hands-on control.",
-      offer:"A practical all-in-one barista station.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"De'Longhi",
+      name:"Dedica Style",
+      monogram:"DS",
+      note:"A slim 15 cm manual espresso machine for espresso, cappuccino and other milk drinks in narrow spaces.",
+      offer:"Best for a traditional setup on a restricted worktop.",
+      url:"https://www.delonghi.com/en-gb/p/dedica-manual-espresso-makers-dedica-style-manual-coffee-maker-ec685.bk/EC685.BK%2BEX%3A4.html",
+      img:"https://dam.delonghi.com/300x300/assets/223687",
+      affiliate:false,
+      base:6,
+      fit:{compact:7,manual_control:4,milk_drinks:4,fast:4,solo:4,low_cleanup:2}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Prosumer Espresso Machine",
-      note:"Stronger temperature stability and steam performance for committed home coffee enthusiasts.",
-      offer:"Best for refining technique over time.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"Sage",
+      name:"the Barista Express™",
+      monogram:"BE",
+      note:"An integrated-grinder espresso machine for manual dosing, extraction and milk texturing in one station.",
+      offer:"Best for learning the full home-barista workflow.",
+      url:"https://www.sageappliances.com/en-gb/product/bes875",
+      img:"https://breville-production-aem-assets.s3.us-west-2.amazonaws.com/BES875/BES875EUK_CAROUSEL1.png",
+      affiliate:false,
+      base:7,
+      fit:{integrated_grinder:7,manual_control:7,flavour_control:6,milk_drinks:5,household:2}
+    },
+    {
+      merchant:"Sage",
+      name:"the Barista Express™ Impress",
+      monogram:"BI",
+      note:"A grinder-equipped espresso machine with intelligent dosing and assisted tamping to reduce guesswork and mess.",
+      offer:"Best for barista involvement with helpful guidance.",
+      url:"https://www.sageappliances.com/en-gb/product/bes876",
+      img:"https://assets-dam.foodthinkers.com/ZKCA55LU/at/bp9vf8qnb2zvx78kq2xpqrt/SES876_BSS_EMEA_Product_Profile_45_Right_04_CMYK_v1.psd?format=png&height=1300&width=1300",
+      affiliate:false,
+      base:6,
+      fit:{integrated_grinder:7,manual_control:6,flavour_control:5,low_cleanup:4,fast:4,milk_drinks:5}
     }
   ],
 
   filter: [
     {
-      merchant:"Affiliate partner",
-      name:"Programmable Filter Coffee Machine",
-      note:"Brews several generous cups at once and starts automatically when scheduled.",
-      offer:"Ideal for busy mornings and larger households.",
-      url:"#",
-      img:"",
-      badge:"Best match"
+      merchant:"Melitta",
+      name:"Look® V Timer",
+      monogram:"LT",
+      note:"A programmable ten-cup filter machine with adjustable aroma strength and a removable water tank.",
+      offer:"Best for coffee waiting when the household wakes up.",
+      url:"https://www.melitta.co.uk/filter-coffee-machines/look-v-timer/black",
+      img:"https://www.melitta.de/media/560x560/25/b6/15/1726053798/kaffeemaschine-melitta-look-timer-filterkaffeemaschine-schwarz-v-melitta-melitta-look-6766591-.png?ts=1782916095",
+      affiliate:false,
+      base:8,
+      fit:{batch:7,programmable:7,household:6,low_cleanup:5,long_coffee:6}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Thermal Carafe Coffee Brewer",
-      note:"Keeps a full batch warm without leaving it on a hot plate for hours.",
-      offer:"A strong choice for slow, repeat cups.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"Moccamaster",
+      name:"KBG Select",
+      monogram:"KS",
+      note:"A straightforward premium filter brewer designed for either a half or full pot with consistent brewing performance.",
+      offer:"Best for quality-focused batch coffee without complex controls.",
+      url:"https://www.moccamaster.eu/coffeemachines/kbg-select",
+      img:"https://www.moccamaster.eu/pub/media/catalog/product/cache/6ece2194e8d4bbdb946ff306e30c8c42/i/d/id1-kbgselectbrushed1000px_2.jpg",
+      affiliate:false,
+      base:7,
+      fit:{batch:7,long_coffee:7,flavour_control:5,household:5,low_cleanup:4}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Speciality Batch Brewer",
-      note:"Better temperature control and even extraction for clearer, more flavourful filter coffee.",
-      offer:"Best for quality-focused batch brewing.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"Sage",
+      name:"Precision Brewer® Thermal",
+      monogram:"PB",
+      note:"A 1.7 litre thermal-carafe brewer with adjustable temperature, flow rate and several automatic brew modes.",
+      offer:"Best for enthusiasts who want control over filter extraction.",
+      url:"https://www.sageappliances.com/en-gb/product/bdc450",
+      img:"https://assets-dam.foodthinkers.com/ZKCA55LU/at/g376p9hcxn5ptqz6fg7mfhj/SDC450_BSS_EMEA_Product_Front_View_01_RGB_v1.png?format=png&height=1300&width=1300",
+      affiliate:false,
+      base:6,
+      fit:{batch:7,flavour_control:7,programmable:5,thermal_carafe:7,household:5,long_coffee:6}
+    },
+    {
+      merchant:"Melitta",
+      name:"AromaFresh Pro",
+      monogram:"AP",
+      note:"A filter machine with an integrated ceramic grinder, adjustable strength and two programmable timers.",
+      offer:"Best for freshly ground batch coffee from one appliance.",
+      url:"https://www.melitta.co.uk/filter-coffee-machines/aromafresh-pro",
+      img:"https://www.melitta.de/media/560x560/2b/f8/48/1716310847/kaffeemaschine-melitta-aromafresh-pro--6776786-1.png?ts=1762250444",
+      affiliate:false,
+      base:6,
+      fit:{batch:7,integrated_grinder:7,fresh_beans:7,programmable:6,household:5,long_coffee:6}
     }
   ],
 
   milk: [
     {
-      merchant:"Affiliate partner",
-      name:"One-Touch Latte and Cappuccino Machine",
-      note:"Creates espresso and textured milk drinks through a simple automatic menu.",
-      offer:"Ideal for frequent lattes and cappuccinos.",
-      url:"#",
-      img:"",
-      badge:"Best match"
+      merchant:"Philips",
+      name:"5400 Series LatteGo",
+      monogram:"54",
+      note:"A fully automatic fresh-bean machine with twelve drinks and a simple two-part automatic milk system.",
+      offer:"Best for easy cleaning and varied family drink choices.",
+      url:"https://www.philips.co.uk/c-e/ho/coffee/fully-automatic-espresso-machines/5400-series-lattego.html",
+      img:"https://m.media-amazon.com/images/I/41Q423jiIrL._SL500_._SS450_.jpg",
+      affiliate:false,
+      base:8,
+      fit:{milk_drinks:7,auto_milk:7,one_touch:7,low_cleanup:6,household:5,fresh_beans:5}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Automatic Coffee Machine with Milk Carafe",
-      note:"A removable milk system makes creamy drinks easier to prepare and store.",
-      offer:"A family-friendly choice with simple cleanup.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"De'Longhi",
+      name:"Eletta Explore",
+      monogram:"EE",
+      note:"A high-variety automatic machine for hot and cold coffee, milk foam and larger drinks at one touch.",
+      offer:"Best for a household that wants the broadest drink menu.",
+      url:"https://www.delonghi.com/en-gb/c/coffee/coffee-machines/automatic-coffee-makers/eletta-explore",
+      img:"https://dam.delonghi.com/300x300/assets/257458",
+      affiliate:false,
+      base:7,
+      fit:{milk_drinks:7,auto_milk:7,one_touch:7,household:6,long_coffee:6,fresh_beans:5}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Coffee Machine and Automatic Frother Bundle",
-      note:"Separates coffee brewing and milk frothing while keeping both processes straightforward.",
-      offer:"Best for flexibility across milk-based drinks.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"Nespresso",
+      name:"Creatista Plus",
+      monogram:"CP",
+      note:"A capsule machine with an automatic steam wand, multiple milk temperatures and adjustable texture settings.",
+      offer:"Best for fast milk drinks with more texture control.",
+      url:"https://www.nespresso.com/uk/en/order/machines/original/creatista-plus-sage-coffee-machine",
+      img:"https://assets-dam.foodthinkers.com/ZKCA55LU/at/jjs3pzc76n46tthj2zppw3/SNE800BTR_EUK_1300px.png?format=png",
+      affiliate:false,
+      base:6,
+      fit:{milk_drinks:7,auto_milk:6,capsule:6,fast:6,flavour_control:4,compact:3}
+    },
+    {
+      merchant:"Sage",
+      name:"the Bambino® Plus",
+      monogram:"BP",
+      note:"A compact espresso machine with fast heat-up and automatic milk texturing while retaining a hands-on portafilter.",
+      offer:"Best for smaller kitchens and people who still want espresso involvement.",
+      url:"https://www.sageappliances.com/en-gb/product/bes500",
+      img:"https://assets-dam.foodthinkers.com/ZKCA55LU/as/hbmrxc8873hskw64jjt8zhb/SES500_BSS_EMEA_Product_Profile_45_Right_02_RGB_v2?height=1300&width=1300",
+      affiliate:false,
+      base:6,
+      fit:{milk_drinks:7,auto_milk:5,manual_control:4,compact:6,fast:7,solo:4}
     }
   ],
 
   compact: [
     {
-      merchant:"Affiliate partner",
-      name:"Slimline Coffee Machine",
-      note:"A narrow footprint gives you proper coffee without dominating a small worktop.",
-      offer:"Ideal for flats, offices and compact kitchens.",
-      url:"#",
-      img:"",
-      badge:"Best match"
+      merchant:"Nespresso",
+      name:"Essenza Mini",
+      monogram:"EM",
+      note:"One of the smallest straightforward capsule machines for quick espresso and lungo drinks.",
+      offer:"Best for the smallest low-effort setup.",
+      url:"https://www.nespresso.com/uk/en/order/machines/original/essenza-mini-c30-matt-black",
+      img:"https://www.nespresso.com/ecom/medias/sys_master/public/10481383735326/M-0445-Essenza-Mini-Nespresso-C30-Black-2000x2000.png?impolicy=product&imwidth=300",
+      affiliate:false,
+      base:8,
+      fit:{compact:8,capsule:6,fast:5,low_cleanup:5,minimal_parts:5,solo:5}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Compact Espresso Machine",
-      note:"A small manual machine for espresso and milk drinks where every centimetre matters.",
-      offer:"A strong choice for space-conscious coffee lovers.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"Lavazza",
+      name:"A Modo Mio Jolie Evo",
+      monogram:"JE",
+      note:"A narrow and quiet capsule machine with a 12.4 cm width and very simple daily operation.",
+      offer:"Best for a colourful, uncomplicated espresso corner.",
+      url:"https://www.lavazza.co.uk/en/coffee-machines/jolie-evo",
+      img:"https://www.lavazza.co.uk/content/dam/lavazza-athena/uk/b2c/pdp-pag-prodotto/macchine/hero-banner-machines/2-main-asset/jolie-evo/pdp/d-Jolie-BLACK-NEW-%402.png",
+      affiliate:false,
+      base:7,
+      fit:{compact:8,capsule:6,fast:4,low_cleanup:5,minimal_parts:6,solo:5}
     },
     {
-      merchant:"Affiliate partner",
-      name:"Mini All-in-One Coffee Maker",
-      note:"A tidy everyday machine with simple controls and minimal accessories.",
-      offer:"Best for an uncluttered coffee corner.",
-      url:"#",
-      img:"",
-      badge:""
+      merchant:"De'Longhi",
+      name:"Dedica Style",
+      monogram:"DS",
+      note:"A 15 cm wide manual espresso machine that still includes a steam wand for cappuccinos and lattes.",
+      offer:"Best for compact manual espresso and milk drinks.",
+      url:"https://www.delonghi.com/en-gb/p/dedica-manual-espresso-makers-dedica-style-manual-coffee-maker-ec685.bk/EC685.BK%2BEX%3A4.html",
+      img:"https://dam.delonghi.com/300x300/assets/223687",
+      affiliate:false,
+      base:7,
+      fit:{compact:8,manual_control:5,milk_drinks:4,fast:4,solo:5}
+    },
+    {
+      merchant:"Sage",
+      name:"the Bambino®",
+      monogram:"BB",
+      note:"A compact manual espresso machine with three-second heat-up and a steam wand for microfoam milk.",
+      offer:"Best for higher espresso performance in a small footprint.",
+      url:"https://www.sageappliances.com/en-gb/product/bes450",
+      img:"https://breville-production-aem-assets.s3.us-west-2.amazonaws.com/BES450/SES450_CAROUSEL1_EMEA_NEW.png",
+      affiliate:false,
+      base:6,
+      fit:{compact:7,manual_control:6,milk_drinks:5,fast:7,solo:5,flavour_control:4}
     }
   ]
 };
@@ -652,67 +780,67 @@ const QUESTIONS = [
   {
     q:"Which coffee would you order most often?",
     a:[
-      {label:"A quick espresso or lungo with no fuss", scores:{pod:4,compact:1}},
-      {label:"Freshly ground espresso or americano at one touch", scores:{bean:4}},
-      {label:"A carefully made espresso or flat white", scores:{espresso:4}},
-      {label:"A large mug of smooth filter coffee", scores:{filter:4}},
-      {label:"A latte, cappuccino or creamy macchiato", scores:{milk:4,bean:1}},
-      {label:"Good everyday coffee from the smallest possible setup", scores:{compact:4,pod:1}}
+      {label:"A quick espresso or lungo with no fuss", scores:{pod:4,compact:1}, signals:["capsule","espresso_short","fast"]},
+      {label:"Freshly ground espresso or americano at one touch", scores:{bean:4}, signals:["fresh_beans","one_touch","espresso_short"]},
+      {label:"A carefully made espresso or flat white", scores:{espresso:4}, signals:["manual_control","flavour_control","espresso_short","milk_drinks"]},
+      {label:"A large mug of smooth filter coffee", scores:{filter:4}, signals:["long_coffee","batch"]},
+      {label:"A latte, cappuccino or creamy macchiato", scores:{milk:4,bean:1}, signals:["milk_drinks","auto_milk"]},
+      {label:"Good everyday coffee from the smallest possible setup", scores:{compact:4,pod:1}, signals:["compact","minimal_parts","fast","solo"]}
     ]
   },
   {
     q:"How involved should making coffee feel?",
     a:[
-      {label:"Insert a capsule, press once and drink", scores:{pod:5}},
-      {label:"Press a button while the machine grinds fresh beans", scores:{bean:5}},
-      {label:"I want to grind, dose, tamp and control the shot", scores:{espresso:5}},
-      {label:"Add coffee and water, then let a full pot brew", scores:{filter:5}},
-      {label:"Choose a milk drink and let the machine prepare it", scores:{milk:5}},
-      {label:"Keep the process simple and the equipment minimal", scores:{compact:5}}
+      {label:"Insert a capsule, press once and drink", scores:{pod:5}, signals:["capsule","one_touch","low_cleanup","fast"]},
+      {label:"Press a button while the machine grinds fresh beans", scores:{bean:5}, signals:["fresh_beans","one_touch","integrated_grinder","low_cleanup"]},
+      {label:"I want to grind, dose, tamp and control the shot", scores:{espresso:5}, signals:["manual_control","flavour_control","integrated_grinder"]},
+      {label:"Add coffee and water, then let a full pot brew", scores:{filter:5}, signals:["batch","low_cleanup","minimal_parts"]},
+      {label:"Choose a milk drink and let the machine prepare it", scores:{milk:5}, signals:["auto_milk","one_touch","milk_drinks"]},
+      {label:"Keep the process simple and the equipment minimal", scores:{compact:5}, signals:["compact","minimal_parts","low_cleanup"]}
     ]
   },
   {
     q:"What matters most when the morning is busy?",
     a:[
-      {label:"A dependable drink in under a minute", scores:{pod:4,compact:1}},
-      {label:"Freshly ground coffee without manual preparation", scores:{bean:4}},
-      {label:"I will spend extra time for better control", scores:{espresso:4}},
-      {label:"Brewing enough coffee for several cups at once", scores:{filter:4}},
-      {label:"Getting coffee and textured milk from one process", scores:{milk:4}},
-      {label:"A machine that stays tidy and out of the way", scores:{compact:4}}
+      {label:"A dependable drink in under a minute", scores:{pod:4,compact:1}, signals:["fast","capsule","one_touch"]},
+      {label:"Freshly ground coffee without manual preparation", scores:{bean:4}, signals:["fresh_beans","one_touch","fast"]},
+      {label:"I will spend extra time for better control", scores:{espresso:4}, signals:["manual_control","flavour_control"]},
+      {label:"Brewing enough coffee for several cups at once", scores:{filter:4}, signals:["batch","programmable","household"]},
+      {label:"Getting coffee and textured milk from one process", scores:{milk:4}, signals:["auto_milk","one_touch","fast","milk_drinks"]},
+      {label:"A machine that stays tidy and out of the way", scores:{compact:4}, signals:["compact","minimal_parts","low_cleanup"]}
     ]
   },
   {
     q:"How many drinks does the machine usually need to make?",
     a:[
-      {label:"One or two quick cups for me", scores:{pod:3,compact:2}},
-      {label:"Several different coffees for the household", scores:{bean:4,milk:1}},
-      {label:"One carefully prepared drink at a time", scores:{espresso:4}},
-      {label:"A full carafe for repeat cups or several people", scores:{filter:5}},
-      {label:"Several milk-based drinks throughout the day", scores:{milk:5,bean:1}},
-      {label:"A small number of drinks in a compact space", scores:{compact:5}}
+      {label:"One or two quick cups for me", scores:{pod:3,compact:2}, signals:["solo","fast","capsule"]},
+      {label:"Several different coffees for the household", scores:{bean:4,milk:1}, signals:["household","fresh_beans","one_touch"]},
+      {label:"One carefully prepared drink at a time", scores:{espresso:4}, signals:["solo","manual_control","flavour_control"]},
+      {label:"A full carafe for repeat cups or several people", scores:{filter:5}, signals:["batch","household","long_coffee"]},
+      {label:"Several milk-based drinks throughout the day", scores:{milk:5,bean:1}, signals:["household","milk_drinks","auto_milk"]},
+      {label:"A small number of drinks in a compact space", scores:{compact:5}, signals:["solo","compact","minimal_parts"]}
     ]
   },
   {
     q:"Which maintenance routine sounds acceptable?",
     a:[
-      {label:"Empty the capsule bin and wipe the machine", scores:{pod:5}},
-      {label:"Follow automatic rinsing and empty the grounds tray", scores:{bean:5}},
-      {label:"Clean the portafilter and steam wand after use", scores:{espresso:5}},
-      {label:"Rinse a filter basket and carafe", scores:{filter:5}},
-      {label:"Clean a removable milk container or frothing system", scores:{milk:5}},
-      {label:"The fewer parts and surfaces, the better", scores:{compact:5}}
+      {label:"Empty the capsule bin and wipe the machine", scores:{pod:5}, signals:["capsule","low_cleanup","minimal_parts"]},
+      {label:"Follow automatic rinsing and empty the grounds tray", scores:{bean:5}, signals:["low_cleanup","auto_rinse","fresh_beans"]},
+      {label:"Clean the portafilter and steam wand after use", scores:{espresso:5}, signals:["manual_control","manual_clean","flavour_control"]},
+      {label:"Rinse a filter basket and carafe", scores:{filter:5}, signals:["low_cleanup","batch","minimal_parts"]},
+      {label:"Clean a removable milk container or frothing system", scores:{milk:5}, signals:["auto_milk","milk_clean","low_cleanup"]},
+      {label:"The fewer parts and surfaces, the better", scores:{compact:5}, signals:["minimal_parts","low_cleanup","compact"]}
     ]
   },
   {
     q:"What is the deciding factor for your purchase?",
     a:[
-      {label:"Maximum convenience and consistent results", scores:{pod:6}},
-      {label:"Whole-bean freshness with one-touch operation", scores:{bean:6}},
-      {label:"The strongest control over espresso quality", scores:{espresso:6}},
-      {label:"Serving generous coffee efficiently", scores:{filter:6}},
-      {label:"Effortless café-style milk drinks", scores:{milk:6}},
-      {label:"The smallest practical footprint", scores:{compact:6}}
+      {label:"Maximum convenience and consistent results", scores:{pod:6}, signals:["capsule","one_touch","low_cleanup","fast"]},
+      {label:"Whole-bean freshness with one-touch operation", scores:{bean:6}, signals:["fresh_beans","one_touch","integrated_grinder"]},
+      {label:"The strongest control over espresso quality", scores:{espresso:6}, signals:["manual_control","flavour_control"]},
+      {label:"Serving generous coffee efficiently", scores:{filter:6}, signals:["batch","long_coffee","household"]},
+      {label:"Effortless café-style milk drinks", scores:{milk:6}, signals:["milk_drinks","auto_milk","one_touch"]},
+      {label:"The smallest practical footprint", scores:{compact:6}, signals:["compact","minimal_parts","low_cleanup"]}
     ]
   }
 ];
@@ -720,6 +848,7 @@ const QUESTIONS = [
 let step = 0;
 let locked = false;
 const selectedAnswers = [];
+const preferenceSignals = {};
 const totals = Object.keys(RESULTS).reduce((acc,key)=>{
   acc[key] = 0;
   return acc;
@@ -754,6 +883,78 @@ function escapeHtml(value){
     .replaceAll(">","&gt;")
     .replaceAll('"',"&quot;")
     .replaceAll("'","&#039;");
+}
+
+
+const SIGNAL_LABELS = {
+  capsule:"capsule convenience",
+  espresso_short:"espresso and lungo drinks",
+  fresh_beans:"freshly ground beans",
+  one_touch:"one-touch operation",
+  manual_control:"hands-on control",
+  flavour_control:"adjustable brewing control",
+  long_coffee:"longer coffees",
+  batch:"several cups at once",
+  milk_drinks:"milk-based drinks",
+  auto_milk:"automatic milk texturing",
+  compact:"a small worktop footprint",
+  minimal_parts:"minimal equipment",
+  fast:"quick preparation",
+  low_cleanup:"easy cleaning",
+  solo:"one or two daily drinks",
+  household:"a shared household",
+  integrated_grinder:"an integrated grinder",
+  programmable:"scheduled brewing",
+  thermal_carafe:"longer heat retention",
+  auto_rinse:"automatic rinsing",
+  manual_clean:"a traditional cleaning routine",
+  milk_clean:"a removable milk system"
+};
+
+function getProductRecommendations(key){
+  return (PRODUCTS[key] || [])
+    .map((product,originalIndex)=>{
+      const matchScore = Object.entries(product.fit || {}).reduce((score,[signal,weight])=>{
+        return score + (preferenceSignals[signal] || 0) * weight;
+      },product.base || 0);
+
+      return {...product,matchScore,originalIndex};
+    })
+    .sort((a,b)=>{
+      return b.matchScore - a.matchScore
+        || (b.base || 0) - (a.base || 0)
+        || a.originalIndex - b.originalIndex;
+    })
+    .slice(0,3);
+}
+
+function getPersonalMatch(product){
+  const matches = Object.entries(product.fit || {})
+    .filter(([signal])=>preferenceSignals[signal])
+    .map(([signal,weight])=>({
+      signal,
+      value:weight * preferenceSignals[signal]
+    }))
+    .sort((a,b)=>b.value-a.value)
+    .slice(0,2)
+    .map(item=>SIGNAL_LABELS[item.signal])
+    .filter(Boolean);
+
+  if(matches.length === 0) return product.offer || "";
+  if(matches.length === 1) return `Matches your preference for ${matches[0]}.`;
+  return `Matches your preference for ${matches[0]} and ${matches[1]}.`;
+}
+
+function getProductMonogram(product){
+  if(product.monogram) return product.monogram;
+
+  return product.name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0,2)
+    .map(word=>word.charAt(0))
+    .join("")
+    .toUpperCase();
 }
 
 function trackEvent(eventName,details={}){
@@ -809,6 +1010,10 @@ function chooseAnswer(button,answer,index){
 
   Object.entries(answer.scores).forEach(([key,value])=>{
     totals[key] += value;
+  });
+
+  (answer.signals || []).forEach(signal=>{
+    preferenceSignals[signal] = (preferenceSignals[signal] || 0) + 1;
   });
 
   trackEvent("quiz_answer",{
@@ -886,42 +1091,57 @@ function showResult(key){
     details.appendChild(row);
   });
 
-  el("recsTitle").textContent = `Three machines for ${result.name}`;
+  el("recsTitle").textContent = "Your three best-matched machines";
 
+  const recommendations = getProductRecommendations(key);
   const grid = el("recGrid");
   grid.innerHTML = "";
 
-  (PRODUCTS[key] || []).forEach((product,index)=>{
+  recommendations.forEach((product,index)=>{
     const card = document.createElement("article");
     card.className = "rec";
 
+    const fallbackHtml = `<div class="ph media media-fallback" style="background:${hexToRgba(result.color,.88)}"><span>${escapeHtml(getProductMonogram(product))}</span></div>`;
     const mediaHtml = product.img
-      ? `<img class="media" src="${escapeHtml(product.img)}" alt="${escapeHtml(product.merchant)} ${escapeHtml(product.name)}" loading="lazy">`
-      : `<div class="ph media" style="background:${hexToRgba(result.color,.88)}"><span>${escapeHtml(product.name.charAt(0))}</span></div>`;
+      ? `<div class="media-frame"><img class="media" src="${escapeHtml(product.img)}" alt="${escapeHtml(product.merchant)} ${escapeHtml(product.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${fallbackHtml}</div>`
+      : fallbackHtml;
 
-    const badgeHtml = product.badge
-      ? `<span class="rec-badge">${escapeHtml(product.badge)}</span>`
+    const badgeHtml = index === 0
+      ? '<span class="rec-badge">Best match</span>'
       : "";
 
-    const offerHtml = product.offer
-      ? `<span class="offer">${escapeHtml(product.offer)}</span>`
+    const matchText = getPersonalMatch(product);
+    const offerHtml = matchText
+      ? `<span class="offer">${escapeHtml(matchText)}</span>`
       : "";
 
+    const linkIsAffiliate = Boolean(product.affiliate);
+    const linkRel = linkIsAffiliate ? "noopener sponsored" : "noopener";
     const ctaHtml = product.url && product.url !== "#"
-      ? `<a class="view" href="${escapeHtml(product.url)}" target="_blank" rel="noopener sponsored" data-affiliate-position="${index+1}">View machine &rsaquo;</a>`
-      : `<span class="view off">Affiliate link coming soon</span>`;
+      ? `<a class="view" href="${escapeHtml(product.url)}" target="_blank" rel="${linkRel}" data-product-position="${index+1}">View product &rsaquo;</a>`
+      : '<span class="view off">Product page unavailable</span>';
 
     card.innerHTML = `${badgeHtml}${mediaHtml}<div class="body"><span class="brand">${escapeHtml(product.merchant)}</span><span class="pname">${escapeHtml(product.name)}</span><span class="pnote">${escapeHtml(product.note)}</span>${offerHtml}${ctaHtml}</div>`;
 
-    const affiliateLink = card.querySelector("a[data-affiliate-position]");
-    if(affiliateLink){
-      affiliateLink.addEventListener("click",()=>{
-        trackEvent("affiliate_click",{
+    const productImage = card.querySelector("img.media");
+    if(productImage){
+      productImage.addEventListener("error",()=>{
+        productImage.remove();
+        const fallback = card.querySelector(".media-fallback");
+        if(fallback) fallback.classList.add("show");
+      },{once:true});
+    }
+
+    const productLink = card.querySelector("a[data-product-position]");
+    if(productLink){
+      productLink.addEventListener("click",()=>{
+        trackEvent(linkIsAffiliate ? "affiliate_click" : "product_click",{
           quiz:"coffee_machine",
           result:key,
           merchant:product.merchant,
           product:product.name,
-          position:index+1
+          position:index+1,
+          affiliate:linkIsAffiliate
         });
       });
     }
@@ -929,19 +1149,30 @@ function showResult(key){
     grid.appendChild(card);
   });
 
+  const disclosure = el("recommendationDisclosure");
+  const containsAffiliateLinks = recommendations.some(product=>product.affiliate);
+
+  if(containsAffiliateLinks){
+    disclosure.innerHTML = 'Some links on this page are affiliate links. Love Your Senses may earn a commission from qualifying orders at no extra cost to you. <a href="/disclosure">Read the affiliate disclosure</a>.';
+  }else{
+    disclosure.textContent = "These recommendations use direct manufacturer links. Love Your Senses does not currently earn commission from them. Product availability and specifications may change.";
+  }
+
   const browseAll = el("browseAll");
 
   if(STORE_LINK && STORE_LINK !== "#"){
-    browseAll.innerHTML = `<a class="btn-all" href="${escapeHtml(STORE_LINK)}" target="_blank" rel="noopener sponsored">Browse all coffee machines</a>`;
+    const storeRel = STORE_LINK_IS_AFFILIATE ? "noopener sponsored" : "noopener";
+    browseAll.innerHTML = `<a class="btn-all" href="${escapeHtml(STORE_LINK)}" target="_blank" rel="${storeRel}">Browse all coffee machines</a>`;
     browseAll.querySelector("a").addEventListener("click",()=>{
-      trackEvent("affiliate_click",{
+      trackEvent(STORE_LINK_IS_AFFILIATE ? "affiliate_click" : "product_click",{
         quiz:"coffee_machine",
         result:key,
-        product:"browse_all"
+        product:"browse_all",
+        affiliate:STORE_LINK_IS_AFFILIATE
       });
     });
   }else{
-    browseAll.innerHTML = '<span class="btn-all off">Browse all coffee machines</span>';
+    browseAll.innerHTML = "";
   }
 
   trackEvent("quiz_complete",{
@@ -1037,6 +1268,7 @@ function resetQuiz(){
   step = 0;
   locked = false;
   selectedAnswers.length = 0;
+  Object.keys(preferenceSignals).forEach(signal=>delete preferenceSignals[signal]);
   Object.keys(totals).forEach(key=>totals[key] = 0);
   window.LYS_RESULT = "";
 
