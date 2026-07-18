@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Love Your Senses | Personalised Product Discovery Quizzes</title>
-<meta name="description" content="Take short, enjoyable quizzes that match you with fragrance, coffee, sleep, bedroom and skincare products suited to your preferences.">
+<meta name="description" content="Take short, enjoyable quizzes for home fragrance, sleep, beauty, self-care, food, drink, audio and gifts, with recommendations shaped around your preferences.">
 <link rel="canonical" href="https://loveyoursenses.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Love Your Senses | Personalised Product Discovery Quizzes">
@@ -635,25 +635,14 @@
 </head>
 <body>
 
-<header class="site-head">
-  <div class="wrap">
-    <div class="bar">
-      <a href="/" class="mark" aria-label="Love Your Senses home">Love Your <span>Senses</span></a>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#quiz-library">Quizzes</a>
-        <a href="/about/">About</a>
-        <a href="/contact/">Contact</a>
-      </nav>
-    </div>
-  </div>
-</header>
+<!-- HEADER_INCLUDE -->
 
 <main>
   <section class="hero">
     <div class="wrap">
       <span class="eyebrow">Personalised product discovery</span>
       <h1 class="display">Find what fits your <em>taste</em>, space and routine</h1>
-      <p class="hero-copy">Take a short quiz and receive recommendations shaped around your preferences. Explore scent, coffee, sleep, bedroom and skincare discoveries without endless searching.</p>
+      <p class="hero-copy">Take a short quiz and receive recommendations shaped around your preferences. Explore home fragrance, sleep, beauty, self-care, food, drink, audio and gifting discoveries without endless searching.</p>
       <div class="hero-actions">
         <a href="#quiz-library" class="btn">Explore all quizzes</a>
         <a href="/about/" class="btn secondary">How it works</a>
@@ -661,7 +650,7 @@
 
       <div class="hero-meta" aria-label="Website quiz statistics">
         <div class="stat">
-          <strong id="quizCount">8</strong>
+          <strong id="quizCount">19</strong>
           <span>Live quizzes</span>
         </div>
         <div class="stat">
@@ -708,7 +697,7 @@
       </div>
 
       <div class="results-bar" aria-live="polite">
-        <span id="resultsText"><strong>8</strong> quizzes available</span>
+        <span id="resultsText"><strong>19</strong> quizzes available</span>
         <span>Six questions each</span>
       </div>
 
@@ -758,26 +747,7 @@
   </section>
 </main>
 
-<footer class="site-foot">
-  <div class="wrap">
-    <div class="foot">
-      <div class="foot-brand">
-        <a href="/" class="mark">Love Your <span>Senses</span></a>
-        <p>Short product discovery quizzes matched to your tastes, routines and preferences.</p>
-      </div>
-      <nav class="foot-links" aria-label="Footer navigation">
-        <a href="/about/">About</a>
-        <a href="/contact/">Contact</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="/disclosure/">Affiliate Disclosure</a>
-      </nav>
-      <div class="foot-bottom">
-        <span>© 2026 Love Your Senses</span>
-        <a href="mailto:hello@loveyoursenses.com">hello@loveyoursenses.com</a>
-      </div>
-    </div>
-  </div>
-</footer>
+<!-- FOOTER_INCLUDE -->
 
 <script>
 /* =====================================================================
@@ -794,127 +764,265 @@
    ===================================================================== */
 const QUIZZES = [
   {
-    id:"scent-woman",
-    title:"Women's Signature Scent",
-    category:"Scent",
-    categoryKey:"scent",
-    description:"Discover the fragrance family and perfumes that suit her style, mood and scent preferences.",
-    href:"/scent-woman-quiz/",
-    accent:"#AE5A75",
+    id:"home-fragrance",
+    title:"Perfect Home Fragrance",
+    category:"Home Fragrance",
+    categoryKey:"home-fragrance",
+    description:"Compare scent families and formats to discover whether candles, diffusers or room sprays suit your space best.",
+    href:"/home-fragrance-quiz/",
+    accent:"#7B4A5E",
     badge:"Popular",
     status:"live",
-    searchTerms:"women perfume fragrance floral amber citrus woody aquatic gourmand"
+    searchTerms:"home fragrance candle diffuser room spray scent"
   },
   {
-    id:"scent-men",
-    title:"Men's Signature Scent",
-    category:"Scent",
-    categoryKey:"scent",
-    description:"Match his personality and preferences to a fragrance family and three scents selected for him.",
-    href:"/scent-men-quiz/",
-    accent:"#3E5560",
-    badge:"",
+    id:"perfect-scented-candle",
+    title:"Perfect Scented Candle",
+    category:"Home Fragrance",
+    categoryKey:"home-fragrance",
+    description:"Match scent family, room size, burn style, vessel appearance and budget to your ideal candle.",
+    href:"/perfect-scented-candle-quiz/",
+    accent:"#935934",
+    badge:"New",
     status:"live",
-    searchTerms:"men perfume cologne fragrance citrus aromatic amber woody aquatic gourmand"
+    searchTerms:"scented candle wick burn scent fragrance room"
   },
   {
-    id:"coffee-machine",
-    title:"Perfect Coffee Machine",
-    category:"Coffee",
-    categoryKey:"coffee",
-    description:"Find the machine that fits your favourite drinks, available space and preferred level of involvement.",
-    href:"/coffee-machine-quiz/",
-    accent:"#6E4A36",
-    badge:"",
+    id:"perfect-reed-diffuser",
+    title:"Perfect Reed Diffuser",
+    category:"Home Fragrance",
+    categoryKey:"home-fragrance",
+    description:"Choose a continuous scent matched to your room, desired strength, refill habits, vessel style and spend.",
+    href:"/perfect-reed-diffuser-quiz/",
+    accent:"#56634D",
+    badge:"New",
     status:"live",
-    searchTerms:"coffee machine espresso pod bean to cup filter milk compact"
+    searchTerms:"reed diffuser fragrance oil reeds room scent"
   },
   {
-    id:"coffee-subscription",
-    title:"Perfect Coffee Subscription",
-    category:"Coffee",
-    categoryKey:"coffee",
-    description:"Discover the roast, flavour profile and delivery style that suits your everyday coffee ritual.",
-    href:"/coffee-subscription-quiz/",
-    accent:"#96704E",
-    badge:"",
+    id:"perfect-room-spray",
+    title:"Perfect Room Spray",
+    category:"Home Fragrance",
+    categoryKey:"home-fragrance",
+    description:"Discover the fragrance strength, spray style and scent profile that fits how you refresh your rooms.",
+    href:"/perfect-room-spray-quiz/",
+    accent:"#4F7881",
+    badge:"New",
     status:"live",
-    searchTerms:"coffee subscription beans roast espresso filter decaf delivery"
+    searchTerms:"room spray mist fragrance instant scent home"
   },
   {
     id:"perfect-sleep",
     title:"Perfect Sleep Setup",
     category:"Sleep",
     categoryKey:"sleep",
-    description:"Build a bedroom setup around your comfort, temperature, light, noise and bedding preferences.",
+    description:"Match temperature, bedding, light, sound and routine preferences to a more supportive sleep environment.",
     href:"/perfect-sleep-quiz/",
-    accent:"#456B78",
+    accent:"#59647C",
     badge:"Popular",
     status:"live",
-    searchTerms:"sleep bedding pillow duvet cooling cosy blackout quiet support"
+    searchTerms:"sleep setup bedding temperature light sound routine"
   },
   {
     id:"wind-down",
     title:"Perfect Wind-Down Ritual",
     category:"Sleep",
     categoryKey:"sleep",
-    description:"Find the evening ritual and products that fit how you prefer to slow down before bed.",
+    description:"Build an evening routine around your preferred pace, sensory cues, habits and relaxation style.",
     href:"/perfect-wind-down-ritual-quiz/",
-    accent:"#85617A",
+    accent:"#785B72",
     badge:"",
     status:"live",
-    searchTerms:"wind down bedtime ritual reading bath journal audio lighting comfort"
+    searchTerms:"wind down ritual evening relaxation bedtime routine"
   },
   {
     id:"bedroom-atmosphere",
     title:"Ideal Bedroom Atmosphere",
     category:"Sleep",
     categoryKey:"sleep",
-    description:"Shape a bedroom mood around your favourite colours, textures, lighting and interior style.",
+    description:"Discover the lighting, texture, sound and scent combination that makes your bedroom feel right.",
     href:"/ideal-bedroom-atmosphere-quiz/",
-    accent:"#657259",
-    badge:"New",
+    accent:"#6E687C",
+    badge:"",
     status:"live",
-    searchTerms:"bedroom atmosphere interiors bedding lighting coastal hotel cottage minimalist dramatic romantic"
+    searchTerms:"bedroom atmosphere lighting colour scent sound sleep"
+  },
+  {
+    id:"perfect-pillow",
+    title:"Perfect Pillow",
+    category:"Sleep",
+    categoryKey:"sleep",
+    description:"Match sleep position, firmness, support, filling and temperature preferences to a suitable pillow type.",
+    href:"/perfect-pillow-quiz/",
+    accent:"#8A7568",
+    badge:"",
+    status:"live",
+    searchTerms:"pillow side back front sleeper firmness filling neck"
+  },
+  {
+    id:"scent-woman",
+    title:"Perfect Women’s Perfume",
+    category:"Beauty & Self-Care",
+    categoryKey:"beauty",
+    description:"Match fragrance family, projection, occasion and style to a personalised perfume profile.",
+    href:"/scent-woman-quiz/",
+    accent:"#A3657C",
+    badge:"Popular",
+    status:"live",
+    searchTerms:"women perfume fragrance scent floral woody fresh"
+  },
+  {
+    id:"scent-men",
+    title:"Perfect Men’s Fragrance",
+    category:"Beauty & Self-Care",
+    categoryKey:"beauty",
+    description:"Discover a fragrance direction matched to your preferred notes, strength, season and occasion.",
+    href:"/scent-men-quiz/",
+    accent:"#53677A",
+    badge:"",
+    status:"live",
+    searchTerms:"men perfume fragrance aftershave scent woody fresh"
   },
   {
     id:"skincare-style",
     title:"Skincare Minimalist or Maximalist?",
-    category:"Skincare",
-    categoryKey:"skincare",
-    description:"Discover whether your ideal routine is pared back, carefully curated or a complete skincare ritual.",
+    category:"Beauty & Self-Care",
+    categoryKey:"beauty",
+    description:"Find the routine complexity, product texture and skincare rhythm that best matches your habits.",
     href:"/skincare-minimalist-maximalist-quiz/",
-    accent:"#B7867B",
-    badge:"New",
+    accent:"#8C7768",
+    badge:"",
     status:"live",
-    searchTerms:"skincare minimalist maximalist cleanser moisturiser serum routine beauty"
+    searchTerms:"skincare minimalist maximalist routine serum cleanser moisturiser"
+  },
+  {
+    id:"body-care-routine",
+    title:"Perfect Body-Care Routine",
+    category:"Beauty & Self-Care",
+    categoryKey:"beauty",
+    description:"Match texture, frequency, sensory preferences and skin goals to a body-care ritual you will enjoy.",
+    href:"/body-care-routine-quiz/",
+    accent:"#9A6E66",
+    badge:"",
+    status:"live",
+    searchTerms:"body care routine lotion scrub bath shower skin"
+  },
+  {
+    id:"haircare-ritual",
+    title:"Perfect Haircare Ritual",
+    category:"Beauty & Self-Care",
+    categoryKey:"beauty",
+    description:"Discover a wash, treatment and styling routine matched to your hair type, time and priorities.",
+    href:"/haircare-ritual-quiz/",
+    accent:"#6A725F",
+    badge:"",
+    status:"live",
+    searchTerms:"haircare ritual shampoo conditioner mask styling hair type"
+  },
+  {
+    id:"coffee-machine",
+    title:"Perfect Coffee Machine",
+    category:"Food & Drink",
+    categoryKey:"food-drink",
+    description:"Match drink style, convenience, kitchen space and budget to the right coffee-machine format.",
+    href:"/coffee-machine-quiz/",
+    accent:"#755640",
+    badge:"",
+    status:"live",
+    searchTerms:"coffee machine espresso pod bean filter milk"
+  },
+  {
+    id:"coffee-subscription",
+    title:"Perfect Coffee Subscription",
+    category:"Food & Drink",
+    categoryKey:"food-drink",
+    description:"Choose a roast, grind, delivery rhythm and discovery style matched to the way you drink coffee.",
+    href:"/coffee-subscription-quiz/",
+    accent:"#8B654B",
+    badge:"",
+    status:"live",
+    searchTerms:"coffee subscription beans roast grind delivery decaf"
+  },
+  {
+    id:"perfect-tea",
+    title:"Perfect Tea",
+    category:"Food & Drink",
+    categoryKey:"food-drink",
+    description:"Match flavour, caffeine, brewing style and moment of day to a tea profile that suits you.",
+    href:"/perfect-tea-quiz/",
+    accent:"#6C7658",
+    badge:"",
+    status:"live",
+    searchTerms:"tea black green herbal chai loose leaf bags"
+  },
+  {
+    id:"perfect-headphones",
+    title:"Perfect Headphones",
+    category:"Audio & Gifts",
+    categoryKey:"sound-gifts",
+    description:"Match fit, listening environment, noise control, battery and sound priorities to your ideal headphones.",
+    href:"/perfect-headphones-quiz/",
+    accent:"#4E6074",
+    badge:"",
+    status:"live",
+    searchTerms:"headphones wireless noise cancelling over ear earbuds audio"
+  },
+  {
+    id:"perfect-bluetooth-speaker",
+    title:"Perfect Bluetooth Speaker",
+    category:"Audio & Gifts",
+    categoryKey:"sound-gifts",
+    description:"Choose a speaker matched to portability, room size, listening habits, durability and budget.",
+    href:"/perfect-bluetooth-speaker-quiz/",
+    accent:"#596B67",
+    badge:"",
+    status:"live",
+    searchTerms:"bluetooth speaker portable waterproof home outdoor audio"
+  },
+  {
+    id:"sensory-gift",
+    title:"Perfect Sensory Gift",
+    category:"Audio & Gifts",
+    categoryKey:"sound-gifts",
+    description:"Match the recipient, occasion, sense, mood and budget to a more thoughtful gift direction.",
+    href:"/sensory-gift-quiz/",
+    accent:"#8D5D70",
+    badge:"",
+    status:"live",
+    searchTerms:"sensory gift present scent sound touch taste relaxation"
   }
 ];
 
 const COLLECTIONS = [
   {
-    key:"scent",
-    name:"Scent",
-    description:"Perfume and fragrance discoveries shaped around personality, notes and occasion.",
-    accent:"#AE5A75"
-  },
-  {
-    key:"coffee",
-    name:"Coffee",
-    description:"Machines, beans and subscriptions matched to your drinks, routine and brewing style.",
-    accent:"#8A623D"
+    key:"home-fragrance",
+    name:"Home Fragrance",
+    description:"Candles, diffusers and room scents matched to your rooms, preferred strength and atmosphere.",
+    accent:"#7B4A5E"
   },
   {
     key:"sleep",
-    name:"Sleep & Bedroom",
-    description:"Comfort, atmosphere and wind-down choices designed around your preferred environment.",
-    accent:"#2F6E80"
+    name:"Sleep",
+    description:"Comfort, atmosphere and wind-down choices designed around your preferred sleep environment.",
+    accent:"#59647C"
   },
   {
-    key:"skincare",
-    name:"Skincare",
-    description:"Cosmetic routine discoveries based on texture, simplicity and personal preferences.",
-    accent:"#B7867B"
+    key:"beauty",
+    name:"Beauty & Self-Care",
+    description:"Fragrance, skincare, body-care and haircare discoveries shaped around your routines.",
+    accent:"#A3657C"
+  },
+  {
+    key:"food-drink",
+    name:"Food & Drink",
+    description:"Coffee and tea choices matched to your tastes, equipment, routine and budget.",
+    accent:"#755640"
+  },
+  {
+    key:"sound-gifts",
+    name:"Audio & Gifts",
+    description:"Listening products and thoughtful gifts selected around practical and sensory preferences.",
+    accent:"#4E6074"
   }
 ];
 
