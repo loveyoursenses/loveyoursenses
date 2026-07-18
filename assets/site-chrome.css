@@ -1,0 +1,51 @@
+/* Shared Love Your Senses site header and footer. */
+.lys-header,
+.lys-footer{
+  --lys-bg:var(--bg,#E7E3DD);
+  --lys-card:var(--card,#F2EEE8);
+  --lys-cream:var(--cream,#F7F1EC);
+  --lys-ink:var(--ink,#2A2130);
+  --lys-soft:var(--ink-soft,#6E6574);
+  --lys-accent:var(--accent,#7B4A5E);
+  --lys-line:var(--line,#CDC3B6);
+  color:var(--lys-ink);
+  font-family:'Jost',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+.lys-header{position:relative;z-index:50;padding:24px 0;background:transparent}
+.lys-header__inner,
+.lys-footer__inner{width:100%;max-width:1160px;margin:0 auto;padding-left:24px;padding-right:24px}
+.lys-header__inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.lys-header__mark,
+.lys-footer__mark{color:var(--lys-ink);font-family:'Fraunces',Georgia,serif;font-size:1.24rem;font-weight:500;line-height:1.2;text-decoration:none;white-space:nowrap}
+.lys-header__mark span,
+.lys-footer__mark span{color:var(--lys-accent)}
+.lys-header__nav{display:flex;align-items:center;gap:24px}
+.lys-header__nav a,
+.lys-footer__nav a{color:var(--lys-soft);font-size:.73rem;font-weight:500;letter-spacing:.15em;text-decoration:none;text-transform:uppercase}
+.lys-header__nav a:hover,
+.lys-header__nav a[aria-current="page"],
+.lys-footer__nav a:hover{color:var(--lys-accent)}
+.lys-footer{margin-top:0;padding:38px 0 48px;border-top:1px solid var(--lys-line);background:transparent}
+.lys-footer__top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:start}
+.lys-footer__brand p{max-width:480px;margin:10px 0 0;color:var(--lys-soft);font-size:.84rem;line-height:1.6}
+.lys-footer__nav{display:flex;justify-content:flex-end;gap:18px;flex-wrap:wrap}
+.lys-footer__bottom{display:flex;justify-content:space-between;gap:22px;margin-top:24px;padding-top:22px;border-top:1px solid var(--lys-line);color:var(--lys-soft);font-size:.72rem}
+.lys-footer__bottom a{color:var(--lys-accent);text-decoration:none}
+.lys-footer__bottom a:hover{text-decoration:underline;text-underline-offset:3px}
+.lys-header a:focus-visible,
+.lys-footer a:focus-visible{outline:2px solid var(--lys-accent);outline-offset:3px}
+@media(max-width:700px){
+  .lys-header{padding:20px 0}
+  .lys-header__inner,.lys-footer__inner{padding-left:18px;padding-right:18px}
+  .lys-header__nav{gap:14px}
+  .lys-header__nav a{font-size:.66rem}
+  .lys-footer__top{grid-template-columns:1fr}
+  .lys-footer__nav{justify-content:flex-start}
+}
+@media(max-width:420px){
+  .lys-header__mark{font-size:1.08rem}
+  .lys-header__nav{gap:10px}
+  .lys-header__nav a{font-size:.61rem;letter-spacing:.11em}
+  .lys-footer__bottom{align-items:flex-start;flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){.lys-header *,.lys-footer *{scroll-behavior:auto!important;transition:none!important}}

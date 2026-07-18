@@ -1,0 +1,53 @@
+Love Your Senses Shared Layout Validation Report
+================================================
+
+Result: PASS
+Checks passed: 31 of 31
+
+Scope:
+- Shared build-time header and footer across every HTML page
+- Homepage navigation and 19-quiz library update
+- Build output, internal links and JavaScript syntax
+
+[PASS] 29 source HTML pages found | 29
+[PASS] 29 built HTML pages generated | 29
+[PASS] All source pages use the shared header marker
+[PASS] All source pages use the shared footer marker
+[PASS] Legacy site header markup removed
+[PASS] All built pages contain exactly one shared header
+[PASS] All built pages contain exactly one shared footer
+[PASS] No include markers remain in built HTML
+[PASS] Shared stylesheet is present
+[PASS] Shared stylesheet is linked once on every page
+[PASS] Build script passes JavaScript syntax validation
+[PASS] Correct active navigation on index.html | Home
+[PASS] Correct active navigation on quiz/index.html | Quizzes
+[PASS] Correct active navigation on perfect-scented-candle-quiz/index.html | Quizzes
+[PASS] Correct active navigation on blog/index.html | Blog
+[PASS] Correct active navigation on blog/candles-vs-diffusers/index.html | Blog
+[PASS] Homepage Quizzes navigation points to /quiz/ | {'Home': '/', 'Quizzes': '/quiz/', 'Blog': '/blog/'}
+[PASS] Homepage Blog navigation points to /blog/ | {'Home': '/', 'Quizzes': '/quiz/', 'Blog': '/blog/'}
+[PASS] Homepage library contains exactly 19 quiz records
+[PASS] Homepage library contains five collections
+[PASS] Homepage includes the scented candle quiz
+[PASS] Homepage includes the reed diffuser quiz
+[PASS] Homepage includes the room spray quiz
+[PASS] Homepage starting statistic shows 19 quizzes
+[PASS] All internal absolute links resolve to built files
+[PASS] All inline JavaScript passes syntax validation | 21 scripts checked
+[PASS] Every built page retains a document title
+[PASS] Every built page contains a main element
+[PASS] Shared header is responsive in the shared CSS
+[PASS] Shared header includes keyboard focus styling
+[PASS] Shared styles include reduced-motion handling
+
+Cloudflare Pages settings:
+- Build command: npm run build
+- Build output directory: dist
+- Root directory: leave blank
+
+Shared files:
+- _includes/header.html
+- _includes/footer.html
+- assets/site-chrome.css
+- scripts/build.js

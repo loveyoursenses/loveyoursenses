@@ -1,16 +1,33 @@
-## Hi there 👋
+# Love Your Senses
 
-<!--
-**loveyoursenses/loveyoursenses** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Static Love Your Senses website with a shared build-time header and footer.
 
-Here are some ideas to get you started:
+## Edit the navigation once
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Update these shared files:
+
+- `_includes/header.html`
+- `_includes/footer.html`
+- `assets/site-chrome.css`
+
+Every source HTML page contains `<!-- HEADER_INCLUDE -->` and `<!-- FOOTER_INCLUDE -->`. The build script replaces those markers with the shared components.
+
+## Build locally
+
+```bash
+npm run build
+```
+
+The complete deployable website is generated in `dist/`.
+
+## Cloudflare Pages settings
+
+- **Build command:** `npm run build`
+- **Build output directory:** `dist`
+- **Root directory:** leave blank
+
+The build uses Node.js only and has no third-party dependencies.
+
+## Adding a new page
+
+Create the page in its normal folder, include both markers inside `<body>`, and commit it. The next Cloudflare build injects the shared header and footer automatically.

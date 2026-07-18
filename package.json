@@ -1,0 +1,12 @@
+{
+  "name": "love-your-senses-static-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Build-time shared header and footer injection for Love Your Senses.",
+  "scripts": {
+    "build": "node scripts/build.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
