@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Perfect Essential Oil Blend | Love Your Senses</title>
+<meta name="description" content="Answer ten questions to discover the essential-oil blend, aroma family and products that best match your intended ritual, diffuser format and budget.">
+<link rel="canonical" href="https://loveyoursenses.com/perfect-essential-oil-blend-quiz/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Find Your Perfect Essential Oil Blend | Love Your Senses">
+<meta property="og:description" content="Match aroma family, intended ritual, diffuser format, experience and budget to a personalised essential-oil shortlist.">
+<meta property="og:url" content="https://loveyoursenses.com/perfect-essential-oil-blend-quiz/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#E7E3DD;
+    --card:#F2EEE8;
+    --ink:#2A2130;
+    --ink-soft:#6E6574;
+    --accent:#7B4A5E;
+    --accent-deep:#5E3547;
+    --line:#CDC3B6;
+    --gold:#B8A78C;
+    --cream:#F7F1EC;
+    --radius:18px;
+    --ease:cubic-bezier(.4,.14,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Jost',system-ui,sans-serif;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+  button,input{font:inherit}
+  .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+  button{touch-action:manipulation}
+  .display{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  .wrap{width:100%;max-width:1000px;margin:0 auto;padding-left:24px;padding-right:24px}
+  .site-head{padding:24px 0}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .mark{font-family:'Fraunces',serif;font-weight:500;font-size:1.24rem;text-decoration:none;color:var(--ink)}
+  .mark span{color:var(--accent)}
+  .head-link{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none}
+  .head-link:hover{color:var(--accent)}
+  .stage{width:100%;max-width:680px;margin:0 auto;padding:36px 20px 72px}
+  .screen{display:none;animation:rise .6s var(--ease) both}
+  .screen.active{display:block}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  #intro{text-align:center;padding:14px 0 24px}
+  .ring{margin:0 auto 30px;display:block}
+  #intro h1{font-size:clamp(2.55rem,9vw,4rem);margin-bottom:18px}
+  #intro h1 em{font-style:italic;font-weight:400}
+  .lede{color:var(--ink-soft);font-size:1.06rem;max-width:45ch;margin:0 auto 24px}
+  .wellbeing-note{font-size:.79rem;color:var(--ink-soft);line-height:1.55;max-width:56ch;margin:0 auto 30px}
+  .meta{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:26px}
+  .btn{display:inline-block;font-family:'Jost',sans-serif;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:17px 40px;background:var(--ink);color:var(--bg);transition:transform .35s var(--ease),background .35s var(--ease)}
+  .btn:hover{background:var(--accent-deep);transform:translateY(-2px)}
+  .progress-wrap{display:flex;align-items:center;gap:16px;margin-bottom:38px}
+  .track{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
+  .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);transition:width .5s var(--ease)}
+  .count{font-size:.72rem;letter-spacing:.2em;color:var(--ink-soft);white-space:nowrap}
+  .question{font-size:clamp(1.75rem,6vw,2.45rem);margin-bottom:32px;min-height:2.2em}
+  .options{display:flex;flex-direction:column;gap:12px}
+  .option{font-family:'Jost',sans-serif;font-size:1.01rem;color:var(--ink);text-align:left;background:var(--card);border:1px solid transparent;border-radius:var(--radius);padding:19px 22px;cursor:pointer;width:100%;transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);display:flex;align-items:center;gap:14px}
+  .option:before{content:"";width:9px;height:9px;border-radius:50%;border:1.5px solid var(--line);flex:none;transition:all .3s var(--ease)}
+  .option:hover{border-color:var(--gold);transform:translateX(4px)}
+  .option.chosen{background:var(--accent);color:var(--cream);border-color:var(--accent)}
+  .option.chosen:before{background:var(--cream);border-color:var(--cream)}
+  .option:disabled{cursor:default}
+  .result-card{background:var(--fam,#7B4A5E);color:var(--cream);border-radius:26px;padding:44px 32px 40px;text-align:center;box-shadow:0 30px 60px -30px rgba(42,33,48,.55)}
+  .result-card .eyebrow{color:rgba(247,241,236,.72)}
+  .result-name{font-size:clamp(2.55rem,10vw,3.65rem);margin-bottom:10px}
+  .result-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:1.2rem;opacity:.94;margin-bottom:24px}
+  .result-body{font-size:1.02rem;line-height:1.72;opacity:.95;max-width:44ch;margin:0 auto 30px}
+  .details{border-top:1px solid rgba(247,241,236,.28);border-bottom:1px solid rgba(247,241,236,.28);padding:22px 0;text-align:left;display:flex;flex-direction:column;gap:14px}
+  .detail-row{display:flex;gap:18px;align-items:baseline}
+  .detail-label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;opacity:.72;width:104px;flex:none}
+  .detail-val{font-family:'Fraunces',serif;font-size:1.04rem}
+  .recs{margin-top:36px}
+  .recs-head{text-align:center;margin-bottom:22px}
+  .recs-head .eyebrow{display:block;margin-bottom:10px}
+  .recs-head h3{font-size:clamp(1.55rem,5vw,2.05rem)}
+  .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .rec{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+  .rec-badge{display:inline-flex;align-self:flex-start;background:var(--cream);color:var(--accent-deep);border:1px solid var(--line);border-radius:100px;padding:6px 10px;margin-bottom:4px;font-size:.61rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+  
+  
+  
+  
+  
+  
+  
+  
+  .rec .body{padding:16px 15px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .rec .brand{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .rec .pname{font-family:'Fraunces',serif;font-size:1.04rem;line-height:1.22}
+  .rec .pnote{font-size:.8rem;color:var(--ink-soft);line-height:1.45}
+  .rec .offer{font-size:.76rem;color:var(--accent);font-weight:500}
+  .rec .view{margin-top:auto;padding-top:11px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;text-decoration:none;color:var(--accent)}
+  .rec .view.off{color:var(--ink-soft);opacity:.58}
+  .rec .view:hover{text-decoration:underline;text-underline-offset:4px}
+  .affiliate-note{font-size:.78rem;color:var(--ink-soft);line-height:1.55;text-align:center;max-width:58ch;margin:18px auto 0}
+  .affiliate-note a{color:var(--accent);text-underline-offset:3px}
+  .browse-all{text-align:center;margin-top:22px}
+  .btn-all{display:inline-block;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;text-decoration:none;border:1px solid var(--accent);color:var(--accent);border-radius:100px;padding:14px 34px;transition:background .3s var(--ease),color .3s var(--ease)}
+  .btn-all:hover{background:var(--accent);color:var(--cream)}
+  .capture{background:var(--card);border-radius:var(--radius);padding:32px 28px;margin-top:28px;text-align:center}
+  .capture h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;margin-bottom:8px}
+  .capture p{color:var(--ink-soft);font-size:.96rem;margin:0 auto 22px;max-width:39ch}
+  .field{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .field input{font-family:'Jost',sans-serif;font-size:1rem;flex:1;min-width:210px;padding:15px 18px;border:1px solid var(--line);border-radius:100px;background:#fff;color:var(--ink)}
+  .field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+  .field button{font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:15px 28px;background:var(--accent);color:var(--cream)}
+  .field button:hover{background:var(--accent-deep)}
+  .capture .done{color:var(--accent);font-family:'Fraunces',serif;font-size:1.1rem;padding:6px 0}
+  .capture .form-note{font-size:.74rem;margin-top:12px;margin-bottom:0}
+  .next-quiz{border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;margin-top:18px;text-align:center}
+  .next-quiz .eyebrow{display:block;margin-bottom:9px}
+  .next-quiz h3{font-size:1.45rem;margin-bottom:8px}
+  .next-quiz p{color:var(--ink-soft);font-size:.94rem;max-width:40ch;margin:0 auto 18px}
+  .next-link{font-size:.74rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;color:var(--accent);text-underline-offset:4px}
+  .next-link:hover{color:var(--accent-deep)}
+  .after{display:flex;gap:22px;justify-content:center;align-items:center;margin-top:26px;flex-wrap:wrap}
+  .linkish{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px}
+  .linkish:hover{color:var(--accent)}
+  .site-foot{border-top:1px solid var(--line);padding:34px 0 48px}
+  .foot{display:flex;flex-direction:column;align-items:center;gap:11px;text-align:center}
+  .foot-nav a{color:var(--ink-soft);text-decoration:none;font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;margin:0 10px}
+  .foot-nav a:hover{color:var(--accent)}
+  .foot .disc{font-size:.82rem;color:var(--ink-soft);max-width:54ch}
+  .foot .cr{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  @media(max-width:600px){.site-head{padding:20px 0}.stage{padding-top:28px}.rec-grid{grid-template-columns:1fr 1fr}.detail-label{width:88px}}
+  @media(max-width:420px){.rec-grid{grid-template-columns:1fr}.result-card{padding:40px 24px 36px}.field{flex-direction:column}.field input,.field button{width:100%}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<!-- HEADER_INCLUDE -->
+
+<main class="stage">
+  <section id="intro" class="screen active">
+    <svg class="ring" width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
+      <circle cx="29" cy="29" r="27" fill="none" stroke="#B8A78C" stroke-width="1"/>
+      <circle cx="29" cy="29" r="19" fill="none" stroke="#CDC3B6" stroke-width="1"/>
+      <g stroke="#7B4A5E" stroke-width="1.4">
+        <line x1="29" y1="2" x2="29" y2="9"/>
+        <line x1="52.4" y1="42.5" x2="46.4" y2="39"/>
+        <line x1="5.6" y1="42.5" x2="11.6" y2="39"/>
+        <line x1="52.4" y1="15.5" x2="46.4" y2="19"/>
+        <line x1="5.6" y1="15.5" x2="11.6" y2="19"/>
+        <line x1="29" y1="56" x2="29" y2="49"/>
+      </g>
+      <circle cx="29" cy="29" r="3" fill="#7B4A5E"/>
+    </svg>
+    <p class="eyebrow">An essential-oil blend discovery</p>
+    <h1 class="display">Find your perfect <em>essential oil blend</em></h1>
+    <p class="lede">Answer ten questions about aroma, intended ritual, room, strength, diffuser format, experience and budget to find your blend profile and three products to consider.</p>
+    <p class="wellbeing-note">Essential oils are concentrated fragrance materials, not medical treatment. Follow the exact brand and diffuser instructions, never ingest them or apply them undiluted to skin, use good ventilation, and keep bottles away from eyes, flames, heat, children and pets.</p>
+    <button class="btn" id="start" type="button">Begin the discovery</button>
+    <p class="meta">10 questions &nbsp;·&nbsp; about two minutes</p>
+  </section>
+
+  <section id="quiz" class="screen" aria-live="polite">
+    <div class="progress-wrap">
+      <div class="track" aria-hidden="true"><div class="fill" id="fill"></div></div>
+      <span class="count" id="count">01 / 10</span>
+    </div>
+    <h2 class="question display" id="question" tabindex="-1"></h2>
+    <div class="options" id="options" role="group" aria-labelledby="question"></div>
+  </section>
+
+  <section id="result" class="screen" aria-live="polite">
+    <div class="result-card" id="resultCard">
+      <p class="eyebrow">Your essential-oil profile</p>
+      <h2 class="result-name display" id="rName"></h2>
+      <p class="result-tag" id="rTag"></p>
+      <p class="result-body" id="rBody"></p>
+      <div class="details" id="rDetails"></div>
+    </div>
+
+    <div class="recs">
+      <div class="recs-head">
+        <span class="eyebrow">Chosen from all ten answers</span>
+        <h3 class="display" id="recsTitle">Your three best-matched essential-oil blends</h3>
+      </div>
+      <div class="rec-grid" id="recGrid"></div>
+      <p class="affiliate-note" id="recommendationDisclosure">These recommendations use direct brand links. Love Your Senses does not currently earn commission from them. Product availability may change.</p>
+      <div class="browse-all" id="browseAll"></div>
+      <p class="wellbeing-note"><strong>Essential-oil safety:</strong> For external aromatic use only. Never ingest essential oils or apply them undiluted to skin. Follow the product’s drop limits, dilution guidance and diffuser compatibility; keep bottles away from eyes, flames, heat, children and pets; ventilate the room and allow pets to leave it. Stop use if discomfort or sensitivity occurs. Seek qualified medical advice before use during pregnancy or breastfeeding, or alongside asthma, skin conditions or medication.</p>
+    </div>
+
+    <div class="capture">
+      <h3>Save your essential-oil shortlist</h3>
+      <p>Get your result, scent priorities and future fragrance discoveries by email.</p>
+      <div class="field" id="emailForm">
+        <label class="sr-only" for="email">Your email address</label>
+        <input type="email" id="email" name="email" placeholder="Your email" aria-describedby="formNote" autocomplete="email" inputmode="email">
+        <button id="emailBtn" type="button">Send it</button>
+      </div>
+      <p class="form-note" id="formNote">Connect your email platform in the JavaScript settings before publishing.</p>
+    </div>
+
+    <div class="next-quiz">
+      <span class="eyebrow">Continue the aromatherapy discovery</span>
+      <h3 class="display">Find your perfect electric diffuser</h3>
+      <p>Match room size, mist style, run time, noise level and maintenance preferences to the right diffuser format. Recommended length: 10 questions.</p>
+      <a class="next-link" href="/quiz/">Explore all quizzes</a>
+    </div>
+
+    <div class="after">
+      <button class="linkish" id="share" type="button">Share your result</button>
+      <button class="linkish" id="retake" type="button">Retake the quiz</button>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER_INCLUDE -->
+
+<script>
+/* Product links are direct and non-affiliate. Replace URLs and images with approved affiliate assets when partnerships are active, then change affiliate:false to affiliate:true. */
+const QUIZ_URL = "https://loveyoursenses.com/perfect-essential-oil-blend-quiz/";
+const STORE_LINK = "";
+const STORE_LINK_IS_AFFILIATE = false;
+const EMAIL_FORM_ACTION = "";
+const EMAIL_FIELD_NAME = "email";
+
+const PRODUCTS = {
+  "sleep": [
+    {
+      "merchant": "NEOM",
+      "name": "Perfect Night's Sleep Essential Oil Blend 10ml",
+      "monogram": "NS",
+      "note": "Lavender, chamomile and patchouli create a soft herbal blend for a slower bedtime atmosphere.",
+      "offer": "Best overall for a polished bedroom ritual and a familiar, gift-ready sleep scent.",
+      "url": "https://neomwellbeing.com/collections/scent-to-sleep/products/perfect-night-sleep-essential-oil-blend-10ml",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://neomwellbeing.com/collections/scent-to-sleep/products/perfect-night-sleep-essential-oil-blend-10ml",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "sleep": 10,
+        "lavender": 10,
+        "herbal": 9,
+        "bedtime": 10,
+        "bedroom": 10,
+        "moderate": 9,
+        "medium_room": 8,
+        "water_diffuser": 10,
+        "beginner": 9,
+        "giftable": 10,
+        "personal": 8,
+        "mid_budget": 10,
+        "lower_mid": 6
+      }
+    },
+    {
+      "merchant": "Tisserand Aromatherapy",
+      "name": "Sleep Better Diffuser Oil",
+      "monogram": "SB",
+      "note": "Lavender, sandalwood and jasmine form a gentle floral-woody blend designed for evening diffusion.",
+      "offer": "Best value match for straightforward diffuser use and a calm, familiar night-time aroma.",
+      "url": "https://www.tisserand.com/products/sleep-better-diffuser-oil",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.tisserand.com/products/sleep-better-diffuser-oil",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "sleep": 10,
+        "lavender": 10,
+        "woody": 8,
+        "floral": 7,
+        "bedtime": 10,
+        "bedroom": 10,
+        "subtle": 8,
+        "moderate": 8,
+        "small_room": 9,
+        "medium_room": 8,
+        "water_diffuser": 10,
+        "burner": 9,
+        "beginner": 10,
+        "personal": 9,
+        "value": 10,
+        "lower_mid": 5
+      }
+    },
+    {
+      "merchant": "Aromatherapy Associates",
+      "name": "Deep Relax Pure Essential Oil Blend",
+      "monogram": "DR",
+      "note": "Vetiver, camomile and sandalwood give this premium blend an earthy, woody and deeply aromatic character.",
+      "offer": "Best premium choice for waterless atomisers and a more substantial, sophisticated evening scent.",
+      "url": "https://www.aromatherapyassociates.com/products/deep-relax-pure-essential-oil-blend",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.aromatherapyassociates.com/products/deep-relax-pure-essential-oil-blend",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "sleep": 10,
+        "woody": 10,
+        "earthy": 10,
+        "chamomile": 9,
+        "bedtime": 10,
+        "bedroom": 9,
+        "strong": 9,
+        "medium_room": 8,
+        "large_room": 9,
+        "waterless": 10,
+        "enthusiast": 10,
+        "giftable": 10,
+        "premium": 10,
+        "lower_mid": 6
+      }
+    },
+    {
+      "merchant": "Nikura",
+      "name": "Sweet Dreams Essential Oil Blend",
+      "monogram": "SD",
+      "note": "Lavender, cedarwood, lemon verbena and ylang ylang combine floral softness with a lightly fresh woody base.",
+      "offer": "Best affordable multipurpose option for diffusers, burners and carefully diluted personal rituals.",
+      "url": "https://nikura.com/products/sweet-dreams-blend",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://nikura.com/products/sweet-dreams-blend",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "sleep": 10,
+        "lavender": 9,
+        "woody": 8,
+        "floral": 7,
+        "citrus": 6,
+        "bedtime": 10,
+        "bedroom": 9,
+        "subtle": 8,
+        "moderate": 8,
+        "small_room": 9,
+        "medium_room": 7,
+        "water_diffuser": 9,
+        "burner": 10,
+        "multipurpose": 10,
+        "beginner": 9,
+        "personal": 10,
+        "value": 10,
+        "lower_mid": 5
+      }
+    }
+  ],
+  "calm": [
+    {
+      "merchant": "NEOM",
+      "name": "Real Luxury Essential Oil Blend 10ml",
+      "monogram": "RL",
+      "note": "Lavender, jasmine and sandalwood create a warm floral-woody blend for slower evenings and quiet pauses.",
+      "offer": "Best overall for a spa-like home ritual with an elegant scent and gift-ready presentation.",
+      "url": "https://neomwellbeing.com/products/real-luxury-essential-oil-blend-10ml",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://neomwellbeing.com/products/real-luxury-essential-oil-blend-10ml",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "calm": 10,
+        "lavender": 9,
+        "floral": 9,
+        "woody": 8,
+        "evening": 10,
+        "living_room": 9,
+        "bedroom": 8,
+        "moderate": 9,
+        "medium_room": 9,
+        "water_diffuser": 10,
+        "beginner": 9,
+        "giftable": 10,
+        "personal": 8,
+        "mid_budget": 10,
+        "lower_mid": 6
+      }
+    },
+    {
+      "merchant": "Tisserand Aromatherapy",
+      "name": "Real Calm Diffuser Oil",
+      "monogram": "RC",
+      "note": "Lavender, bergamot and patchouli balance soft herbal calm with citrus brightness and earthy depth.",
+      "offer": "Best value choice for everyday diffusion when you prefer calm without a very sleepy scent.",
+      "url": "https://www.tisserand.com/products/real-calm-diffuser-oil/",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.tisserand.com/products/real-calm-diffuser-oil/",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "calm": 10,
+        "lavender": 9,
+        "citrus": 7,
+        "earthy": 8,
+        "evening": 9,
+        "living_room": 8,
+        "bedroom": 8,
+        "subtle": 8,
+        "moderate": 8,
+        "small_room": 9,
+        "medium_room": 8,
+        "water_diffuser": 10,
+        "burner": 9,
+        "beginner": 10,
+        "personal": 10,
+        "value": 10,
+        "lower_mid": 5
+      }
+    },
+    {
+      "merchant": "Aromatherapy Associates",
+      "name": "De-Stress Pure Essential Oil Blend",
+      "monogram": "DS",
+      "note": "Frankincense, wild camomile and petitgrain create a resinous, sweet and herbaceous aromatic blend.",
+      "offer": "Best premium match for busy workdays, screen breaks and a calmer home-office atmosphere.",
+      "url": "https://www.aromatherapyassociates.com/products/de-stress-pure-essential-oil-blend",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.aromatherapyassociates.com/products/de-stress-pure-essential-oil-blend",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "calm": 10,
+        "resinous": 10,
+        "herbal": 9,
+        "chamomile": 8,
+        "workday": 9,
+        "office": 10,
+        "living_room": 7,
+        "strong": 8,
+        "medium_room": 8,
+        "large_room": 8,
+        "waterless": 10,
+        "enthusiast": 10,
+        "giftable": 9,
+        "premium": 10,
+        "lower_mid": 6
+      }
+    },
+    {
+      "merchant": "Nikura",
+      "name": "Calm Essential Oil Blend",
+      "monogram": "NC",
+      "note": "Bergamot, French lavender and ylang ylang give this multipurpose blend a soft citrus-floral profile.",
+      "offer": "Best affordable choice for diffuser, burner, bath or diluted massage rituals at home.",
+      "url": "https://nikura.com/products/calm-blend",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://nikura.com/products/calm-blend",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "calm": 10,
+        "citrus": 7,
+        "lavender": 9,
+        "floral": 9,
+        "evening": 9,
+        "bedroom": 8,
+        "living_room": 8,
+        "subtle": 8,
+        "moderate": 8,
+        "small_room": 8,
+        "medium_room": 8,
+        "water_diffuser": 9,
+        "burner": 10,
+        "multipurpose": 10,
+        "beginner": 9,
+        "personal": 10,
+        "value": 10,
+        "lower_mid": 5
+      }
+    }
+  ],
+  "uplift": [
+    {
+      "merchant": "NEOM",
+      "name": "Happiness Essential Oil Blend 10ml",
+      "monogram": "HB",
+      "note": "Neroli, mimosa and lemon create a bright floral-citrus blend with a polished, sunny character.",
+      "offer": "Best overall for mornings, hosting and an uplifting scent that also feels gift-worthy.",
+      "url": "https://neomwellbeing.com/products/happiness-essential-oil-blend-10ml",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://neomwellbeing.com/products/happiness-essential-oil-blend-10ml",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "uplift": 10,
+        "citrus": 9,
+        "floral": 9,
+        "morning": 10,
+        "living_room": 9,
+        "kitchen": 7,
+        "moderate": 9,
+        "medium_room": 9,
+        "water_diffuser": 10,
+        "beginner": 9,
+        "giftable": 10,
+        "personal": 8,
+        "mid_budget": 10,
+        "lower_mid": 6
+      }
+    },
+    {
+      "merchant": "Tisserand Aromatherapy",
+      "name": "Happy Vibes Diffuser Oil",
+      "monogram": "HV",
+      "note": "Lemon tea tree, bergamot and nutmeg bring sparkling citrus, clean aromatics and gentle spice.",
+      "offer": "Best value match for a lively daytime diffuser blend with more character than plain citrus.",
+      "url": "https://www.tisserand.com/products/happy-vibes-diffuser-oil",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.tisserand.com/products/happy-vibes-diffuser-oil",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "uplift": 10,
+        "citrus": 10,
+        "herbal": 8,
+        "spice": 7,
+        "morning": 10,
+        "office": 8,
+        "kitchen": 8,
+        "moderate": 9,
+        "small_room": 9,
+        "medium_room": 8,
+        "water_diffuser": 10,
+        "burner": 9,
+        "beginner": 10,
+        "personal": 10,
+        "value": 10,
+        "lower_mid": 5
+      }
+    },
+    {
+      "merchant": "Aromatherapy Associates",
+      "name": "Revive Pure Essential Oil Blend",
+      "monogram": "RV",
+      "note": "Pink grapefruit, juniper berry and rosemary form a citrusy, resinous and woody premium blend.",
+      "offer": "Best premium choice for a confident morning ritual or a larger home-working space.",
+      "url": "https://www.aromatherapyassociates.com/products/revive-pure-essential-oil-blend",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.aromatherapyassociates.com/products/revive-pure-essential-oil-blend",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "uplift": 10,
+        "citrus": 10,
+        "resinous": 8,
+        "woody": 7,
+        "herbal": 8,
+        "morning": 10,
+        "office": 10,
+        "living_room": 8,
+        "strong": 9,
+        "medium_room": 8,
+        "large_room": 9,
+        "waterless": 10,
+        "enthusiast": 10,
+        "giftable": 9,
+        "premium": 10,
+        "lower_mid": 6
+      }
+    },
+    {
+      "merchant": "Nikura",
+      "name": "Uplifting Essential Oil Blend",
+      "monogram": "UB",
+      "note": "Bergamot, black pepper and lime create a zesty citrus blend with a dry, lightly spicy edge.",
+      "offer": "Best affordable multipurpose match for brightening a workspace, kitchen or morning routine.",
+      "url": "https://nikura.com/products/uplifting-essential-oil-blend",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://nikura.com/products/uplifting-essential-oil-blend",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "uplift": 10,
+        "citrus": 10,
+        "spice": 9,
+        "morning": 10,
+        "office": 9,
+        "kitchen": 9,
+        "moderate": 9,
+        "small_room": 8,
+        "medium_room": 8,
+        "water_diffuser": 9,
+        "burner": 10,
+        "multipurpose": 10,
+        "familiar": 9,
+        "personal": 10,
+        "value": 10,
+        "lower_mid": 5
+      }
+    }
+  ],
+  "focus": [
+    {
+      "merchant": "NEOM",
+      "name": "Focus The Mind Essential Oil Blend 10ml",
+      "monogram": "FM",
+      "note": "Pine, eucalyptus and cedarwood give this green, woody blend a cool and purposeful character.",
+      "offer": "Best overall for home offices and study sessions when you prefer forest-like freshness.",
+      "url": "https://neomwellbeing.com/products/focus-the-mind-essential-oil-blend-10ml",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://neomwellbeing.com/products/focus-the-mind-essential-oil-blend-10ml",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "focus": 10,
+        "green": 10,
+        "woody": 9,
+        "eucalyptus": 9,
+        "workday": 10,
+        "office": 10,
+        "moderate": 9,
+        "medium_room": 9,
+        "water_diffuser": 10,
+        "beginner": 9,
+        "giftable": 9,
+        "personal": 9,
+        "mid_budget": 10,
+        "lower_mid": 6
+      }
+    },
+    {
+      "merchant": "Tisserand Aromatherapy",
+      "name": "Mind Clear Diffuser Oil",
+      "monogram": "MC",
+      "note": "Peppermint, lavender and lemon combine cooling freshness with a clean herbal-citrus finish.",
+      "offer": "Best value choice for desks and smaller workspaces where a crisp aroma suits short sessions.",
+      "url": "https://www.tisserand.com/products/mind-clear-diffuser-oil",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.tisserand.com/products/mind-clear-diffuser-oil",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "focus": 10,
+        "mint": 10,
+        "lavender": 7,
+        "citrus": 8,
+        "workday": 10,
+        "office": 10,
+        "subtle": 8,
+        "moderate": 9,
+        "small_room": 10,
+        "medium_room": 7,
+        "water_diffuser": 10,
+        "burner": 9,
+        "beginner": 10,
+        "personal": 10,
+        "value": 10,
+        "lower_mid": 5
+      }
+    },
+    {
+      "merchant": "Aromatherapy Associates",
+      "name": "Forest Therapy Pure Essential Oil Blend",
+      "monogram": "FT",
+      "note": "Ho wood, cypress and black pepper create a green woody scent with an aromatic, lightly spicy finish.",
+      "offer": "Best premium choice for waterless diffusion and a sophisticated woodland atmosphere in larger spaces.",
+      "url": "https://www.aromatherapyassociates.com/products/forest-therapy-pure-essential-oil-blend",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.aromatherapyassociates.com/products/forest-therapy-pure-essential-oil-blend",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "focus": 10,
+        "green": 10,
+        "woody": 10,
+        "spice": 8,
+        "workday": 9,
+        "office": 8,
+        "living_room": 9,
+        "strong": 9,
+        "medium_room": 8,
+        "large_room": 10,
+        "waterless": 10,
+        "enthusiast": 10,
+        "giftable": 10,
+        "premium": 10,
+        "lower_mid": 6
+      }
+    },
+    {
+      "merchant": "Nikura",
+      "name": "Clarity Essential Oil Blend",
+      "monogram": "CL",
+      "note": "Juniper berry, eucalyptus and peppermint produce a cool, green and sharply refreshing aromatic blend.",
+      "offer": "Best affordable multipurpose option for focused mornings, study spaces and active routines.",
+      "url": "https://nikura.com/products/clarity-essential-oil-blend",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://nikura.com/products/clarity-essential-oil-blend",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "focus": 10,
+        "green": 9,
+        "mint": 10,
+        "eucalyptus": 10,
+        "workday": 10,
+        "office": 10,
+        "strong": 8,
+        "small_room": 8,
+        "medium_room": 9,
+        "water_diffuser": 9,
+        "burner": 10,
+        "multipurpose": 10,
+        "familiar": 9,
+        "personal": 10,
+        "value": 10,
+        "lower_mid": 5
+      }
+    }
+  ],
+  "refresh": [
+    {
+      "merchant": "NEOM",
+      "name": "Feel Refreshed Essential Oil Blend 10ml",
+      "monogram": "FR",
+      "note": "Sicilian lemon and fresh basil create a clear citrus-herbal aroma for daytime room resets.",
+      "offer": "Best overall for kitchens, morning routines and a clean scent with polished presentation.",
+      "url": "https://neomwellbeing.com/products/feel-refreshed-energy-essential-oil-blend-10ml",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://neomwellbeing.com/products/feel-refreshed-energy-essential-oil-blend-10ml",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "refresh": 10,
+        "citrus": 10,
+        "herbal": 9,
+        "morning": 10,
+        "kitchen": 10,
+        "bathroom": 8,
+        "moderate": 9,
+        "medium_room": 9,
+        "water_diffuser": 10,
+        "beginner": 9,
+        "giftable": 9,
+        "personal": 9,
+        "mid_budget": 10,
+        "lower_mid": 6
+      }
+    },
+    {
+      "merchant": "Tisserand Aromatherapy",
+      "name": "Energy Boost Diffuser Oil",
+      "monogram": "EB",
+      "note": "Orange, lime and grapefruit deliver a direct, juicy citrus blend with a bright everyday feel.",
+      "offer": "Best value match for kitchens and compact spaces when pure citrus is the main priority.",
+      "url": "https://www.tisserand.com/products/energy-boost-diffuser-oil",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.tisserand.com/products/energy-boost-diffuser-oil",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "refresh": 10,
+        "citrus": 10,
+        "morning": 10,
+        "kitchen": 10,
+        "bathroom": 7,
+        "moderate": 9,
+        "small_room": 10,
+        "medium_room": 7,
+        "water_diffuser": 10,
+        "burner": 9,
+        "beginner": 10,
+        "personal": 10,
+        "value": 10,
+        "lower_mid": 5
+      }
+    },
+    {
+      "merchant": "Aromatherapy Associates",
+      "name": "Support Breathe Pure Essential Oil Blend",
+      "monogram": "BR",
+      "note": "Eucalyptus, pine and tea tree give this premium blend a cool, green and strongly aromatic profile.",
+      "offer": "Best premium choice for a clear, botanical atmosphere through a compatible waterless atomiser.",
+      "url": "https://www.aromatherapyassociates.com/products/breathe-pure-essential-oil-blend",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.aromatherapyassociates.com/products/breathe-pure-essential-oil-blend",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "refresh": 10,
+        "eucalyptus": 10,
+        "green": 10,
+        "woody": 7,
+        "morning": 8,
+        "bathroom": 9,
+        "living_room": 7,
+        "strong": 10,
+        "medium_room": 8,
+        "large_room": 9,
+        "waterless": 10,
+        "enthusiast": 10,
+        "giftable": 9,
+        "premium": 10,
+        "lower_mid": 6
+      }
+    },
+    {
+      "merchant": "Nikura",
+      "name": "Citrus Relief Essential Oil Blend",
+      "monogram": "CR",
+      "note": "Bitter orange, grapefruit, lime and cypress pair bright citrus with a dry green-woody base.",
+      "offer": "Best affordable multipurpose choice for frequent diffuser or burner use across active rooms.",
+      "url": "https://nikura.com/products/nikura-citrus-relief-blend",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://nikura.com/products/nikura-citrus-relief-blend",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "refresh": 10,
+        "citrus": 10,
+        "green": 8,
+        "woody": 7,
+        "morning": 10,
+        "kitchen": 9,
+        "bathroom": 8,
+        "moderate": 9,
+        "small_room": 8,
+        "medium_room": 9,
+        "water_diffuser": 9,
+        "burner": 10,
+        "multipurpose": 10,
+        "familiar": 9,
+        "personal": 10,
+        "value": 10,
+        "lower_mid": 5
+      }
+    }
+  ],
+  "balance": [
+    {
+      "merchant": "NEOM",
+      "name": "It's All Rosy Essential Oil Blend 10ml",
+      "monogram": "AR",
+      "note": "Rose, geranium and orange form a softly rounded floral blend with a light citrus lift.",
+      "offer": "Best overall for an elegant personal ritual or a polished floral gift.",
+      "url": "https://neomwellbeing.com/products/rosy-essential-oil-blend-10ml",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://neomwellbeing.com/products/rosy-essential-oil-blend-10ml",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "balance": 10,
+        "floral": 10,
+        "rose": 10,
+        "citrus": 7,
+        "afternoon": 9,
+        "bedroom": 8,
+        "living_room": 9,
+        "moderate": 9,
+        "medium_room": 9,
+        "water_diffuser": 10,
+        "beginner": 9,
+        "giftable": 10,
+        "personal": 9,
+        "mid_budget": 10,
+        "lower_mid": 6
+      }
+    },
+    {
+      "merchant": "Tisserand Aromatherapy",
+      "name": "Restore Balance Diffuser Oil",
+      "monogram": "RB",
+      "note": "Rose, geranium and clary sage create a floral-herbal blend with a soft, composed character.",
+      "offer": "Best value choice for regular diffuser use when florals and herbs matter equally.",
+      "url": "https://www.tisserand.com/home-fragrance/restore-balance-diffuser-oil/",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.tisserand.com/home-fragrance/restore-balance-diffuser-oil/",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "balance": 10,
+        "floral": 10,
+        "rose": 9,
+        "herbal": 9,
+        "afternoon": 9,
+        "bedroom": 8,
+        "living_room": 8,
+        "subtle": 8,
+        "moderate": 8,
+        "small_room": 9,
+        "medium_room": 8,
+        "water_diffuser": 10,
+        "burner": 9,
+        "beginner": 10,
+        "personal": 10,
+        "value": 10,
+        "lower_mid": 5
+      }
+    },
+    {
+      "merchant": "Aromatherapy Associates",
+      "name": "Calm Confidence Pure Essential Oil Blend",
+      "monogram": "CC",
+      "note": "Blue tansy, sandalwood and jasmine create a fruity-floral aroma with a warm, grounding base.",
+      "offer": "Best premium match for a refined floral-woody scent and compatible waterless atomiser use.",
+      "url": "https://www.aromatherapyassociates.com/products/calm-confidence-pure-essential-oil-blend",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.aromatherapyassociates.com/products/calm-confidence-pure-essential-oil-blend",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "balance": 10,
+        "floral": 10,
+        "woody": 9,
+        "afternoon": 10,
+        "office": 7,
+        "living_room": 9,
+        "strong": 8,
+        "medium_room": 8,
+        "large_room": 8,
+        "waterless": 10,
+        "enthusiast": 10,
+        "giftable": 10,
+        "premium": 10,
+        "lower_mid": 6
+      }
+    },
+    {
+      "merchant": "Nikura",
+      "name": "Floral Relief Essential Oil Blend",
+      "monogram": "FL",
+      "note": "Clary sage, geranium, lavender and neroli make a full floral-herbal blend for multipurpose use.",
+      "offer": "Best affordable choice for diffuser, burner, bath or carefully diluted massage rituals.",
+      "url": "https://nikura.com/products/floral-relief-blend-aromatherapy",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://nikura.com/products/floral-relief-blend-aromatherapy",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "balance": 10,
+        "floral": 10,
+        "herbal": 9,
+        "lavender": 8,
+        "afternoon": 9,
+        "bedroom": 9,
+        "living_room": 7,
+        "moderate": 9,
+        "small_room": 8,
+        "medium_room": 8,
+        "water_diffuser": 9,
+        "burner": 10,
+        "multipurpose": 10,
+        "familiar": 9,
+        "personal": 10,
+        "value": 10,
+        "lower_mid": 5
+      }
+    }
+  ]
+};
+
+const RESULTS = {
+  "sleep": {
+    "name": "Lavender Night",
+    "color": "#6B6682",
+    "tag": "Soft, herbal and made for slower evenings.",
+    "body": "You want an essential-oil blend to mark the transition into rest. Lavender, camomile, sandalwood and gentle woods suit your routine, with the final product shaped by your diffuser type, room size, preferred strength and budget.",
+    "details": {
+      "Aroma direction": "Lavender, camomile and soft woods",
+      "Best moment": "Bedtime and evening wind-down",
+      "Ideal rooms": "Bedroom and quiet reading space",
+      "Suggested strength": "Soft to moderate"
+    }
+  },
+  "calm": {
+    "name": "Quiet Grounding",
+    "color": "#766477",
+    "tag": "Warm, composed and quietly restorative.",
+    "body": "You prefer a blend that makes the room feel less busy and more settled. Lavender, bergamot, jasmine, sandalwood and resinous herbs create the calm, spa-like character you enjoy without turning every ritual into bedtime.",
+    "details": {
+      "Aroma direction": "Floral herbs, woods and soft citrus",
+      "Best moment": "Evening transitions and quiet pauses",
+      "Ideal rooms": "Lounge, bedroom and home office",
+      "Suggested strength": "Subtle to moderate"
+    }
+  },
+  "uplift": {
+    "name": "Citrus Lift",
+    "color": "#A7772E",
+    "tag": "Bright, optimistic and full of daylight.",
+    "body": "You use aroma to give the day a cleaner, more positive start. Lemon, bergamot, grapefruit, neroli and aromatic spice will suit mornings, social spaces and work sessions where a lively atmosphere matters.",
+    "details": {
+      "Aroma direction": "Citrus, neroli and light spice",
+      "Best moment": "Morning and daytime",
+      "Ideal rooms": "Kitchen, lounge and workspace",
+      "Suggested strength": "Moderate to noticeable"
+    }
+  },
+  "focus": {
+    "name": "Clear Focus",
+    "color": "#4F6F68",
+    "tag": "Green, crisp and purposefully aromatic.",
+    "body": "You are drawn to blends that feel clear, botanical and structured. Peppermint, eucalyptus, pine, cypress and cedarwood fit your preference, especially around desks, study areas and active daytime routines.",
+    "details": {
+      "Aroma direction": "Mint, eucalyptus and woodland notes",
+      "Best moment": "Work, study and planning",
+      "Ideal rooms": "Office, study and creative space",
+      "Suggested strength": "Moderate to strong"
+    }
+  },
+  "refresh": {
+    "name": "Fresh Reset",
+    "color": "#4F7881",
+    "tag": "Zesty, clean and instantly revitalising.",
+    "body": "You want an essential-oil blend to make the atmosphere feel newly opened and refreshed. Lemon, lime, orange, basil, eucalyptus and pine are your strongest directions for kitchens, bathrooms and energetic mornings.",
+    "details": {
+      "Aroma direction": "Citrus, basil and cool greens",
+      "Best moment": "Morning and quick room resets",
+      "Ideal rooms": "Kitchen, bathroom and hallway",
+      "Suggested strength": "Moderate to strong"
+    }
+  },
+  "balance": {
+    "name": "Floral Balance",
+    "color": "#9A647A",
+    "tag": "Petal-soft, centred and elegantly composed.",
+    "body": "You prefer a floral blend with more depth than a simple bouquet. Rose, geranium, jasmine, clary sage and neroli give you a rounded aroma that works across afternoon pauses, dressing routines and thoughtful gifts.",
+    "details": {
+      "Aroma direction": "Rose, geranium and floral herbs",
+      "Best moment": "Afternoon and personal rituals",
+      "Ideal rooms": "Bedroom, lounge and dressing space",
+      "Suggested strength": "Soft to moderate"
+    }
+  }
+};
+
+const SIGNAL_LABELS = {
+  "sleep": "a night-time ritual",
+  "calm": "a calmer atmosphere",
+  "uplift": "an uplifting mood",
+  "focus": "clearer work-time fragrance",
+  "refresh": "a fresh room reset",
+  "balance": "a balanced floral ritual",
+  "lavender": "lavender",
+  "chamomile": "camomile",
+  "herbal": "herbal notes",
+  "woody": "woody depth",
+  "earthy": "earthy notes",
+  "floral": "floral fragrance",
+  "citrus": "bright citrus",
+  "resinous": "resinous notes",
+  "spice": "light spice",
+  "green": "green botanicals",
+  "mint": "mint",
+  "eucalyptus": "eucalyptus",
+  "rose": "rose",
+  "morning": "morning use",
+  "workday": "workday use",
+  "afternoon": "an afternoon ritual",
+  "evening": "evening use",
+  "bedtime": "bedtime use",
+  "bedroom": "bedroom use",
+  "living_room": "living-room use",
+  "office": "office use",
+  "kitchen": "kitchen use",
+  "bathroom": "bathroom use",
+  "subtle": "a softer aroma",
+  "moderate": "a moderate aroma",
+  "strong": "a stronger aroma",
+  "small_room": "a smaller room",
+  "medium_room": "a medium room",
+  "large_room": "a larger room",
+  "water_diffuser": "a water-based diffuser",
+  "burner": "an oil burner",
+  "waterless": "a waterless atomiser",
+  "multipurpose": "multipurpose use",
+  "beginner": "beginner-friendly use",
+  "familiar": "some essential-oil experience",
+  "enthusiast": "enthusiast-level use",
+  "personal": "personal use",
+  "giftable": "gift-ready presentation",
+  "value": "an under-£15 budget",
+  "lower_mid": "a £15 to £24 budget",
+  "mid_budget": "a £25 to £30 budget",
+  "premium": "a £31-plus budget"
+};
+
+const QUESTIONS = [
+  {
+    "q": "What do you want the blend to change first?",
+    "a": [
+      {
+        "label": "Create a gentler bedtime atmosphere",
+        "scores": {
+          "sleep": 6
+        },
+        "signals": [
+          "sleep",
+          "bedtime"
+        ]
+      },
+      {
+        "label": "Make the room feel calmer and less busy",
+        "scores": {
+          "calm": 6
+        },
+        "signals": [
+          "calm",
+          "evening"
+        ]
+      },
+      {
+        "label": "Lift the mood and brighten the day",
+        "scores": {
+          "uplift": 6
+        },
+        "signals": [
+          "uplift",
+          "morning"
+        ]
+      },
+      {
+        "label": "Support a clear, purposeful workspace",
+        "scores": {
+          "focus": 6
+        },
+        "signals": [
+          "focus",
+          "workday"
+        ]
+      },
+      {
+        "label": "Refresh the air and reset the space",
+        "scores": {
+          "refresh": 6
+        },
+        "signals": [
+          "refresh",
+          "morning"
+        ]
+      },
+      {
+        "label": "Create a centred, floral personal ritual",
+        "scores": {
+          "balance": 6
+        },
+        "signals": [
+          "balance",
+          "afternoon"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Which aroma family draws you in first?",
+    "a": [
+      {
+        "label": "Lavender, camomile and soft woods",
+        "scores": {
+          "sleep": 6
+        },
+        "signals": [
+          "lavender",
+          "chamomile",
+          "woody"
+        ]
+      },
+      {
+        "label": "Lavender, jasmine, bergamot and sandalwood",
+        "scores": {
+          "calm": 6
+        },
+        "signals": [
+          "lavender",
+          "floral",
+          "citrus",
+          "woody"
+        ]
+      },
+      {
+        "label": "Lemon, grapefruit, neroli and gentle spice",
+        "scores": {
+          "uplift": 6
+        },
+        "signals": [
+          "citrus",
+          "floral",
+          "spice"
+        ]
+      },
+      {
+        "label": "Peppermint, eucalyptus, pine and cedar",
+        "scores": {
+          "focus": 6
+        },
+        "signals": [
+          "mint",
+          "eucalyptus",
+          "green",
+          "woody"
+        ]
+      },
+      {
+        "label": "Lime, orange, basil and crisp green notes",
+        "scores": {
+          "refresh": 6
+        },
+        "signals": [
+          "citrus",
+          "herbal",
+          "green"
+        ]
+      },
+      {
+        "label": "Rose, geranium, jasmine and clary sage",
+        "scores": {
+          "balance": 6
+        },
+        "signals": [
+          "rose",
+          "floral",
+          "herbal"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "When will you use it most often?",
+    "a": [
+      {
+        "label": "As the final cue before sleep",
+        "scores": {
+          "sleep": 5
+        },
+        "signals": [
+          "bedtime",
+          "sleep"
+        ]
+      },
+      {
+        "label": "After demanding days or during quiet pauses",
+        "scores": {
+          "calm": 5
+        },
+        "signals": [
+          "evening",
+          "calm"
+        ]
+      },
+      {
+        "label": "At the start of the day or before guests arrive",
+        "scores": {
+          "uplift": 5
+        },
+        "signals": [
+          "morning",
+          "uplift"
+        ]
+      },
+      {
+        "label": "While working, studying or planning",
+        "scores": {
+          "focus": 5
+        },
+        "signals": [
+          "workday",
+          "focus"
+        ]
+      },
+      {
+        "label": "After cleaning or during an active morning",
+        "scores": {
+          "refresh": 5
+        },
+        "signals": [
+          "morning",
+          "refresh"
+        ]
+      },
+      {
+        "label": "During an afternoon reset or self-care ritual",
+        "scores": {
+          "balance": 5
+        },
+        "signals": [
+          "afternoon",
+          "balance"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Where should the blend work hardest?",
+    "a": [
+      {
+        "label": "Bedroom or quiet reading corner",
+        "scores": {
+          "sleep": 5
+        },
+        "signals": [
+          "bedroom",
+          "sleep"
+        ]
+      },
+      {
+        "label": "Lounge, bedroom or home sanctuary",
+        "scores": {
+          "calm": 5
+        },
+        "signals": [
+          "living_room",
+          "bedroom",
+          "calm"
+        ]
+      },
+      {
+        "label": "Kitchen, lounge or social space",
+        "scores": {
+          "uplift": 5
+        },
+        "signals": [
+          "kitchen",
+          "living_room",
+          "uplift"
+        ]
+      },
+      {
+        "label": "Office, desk or study area",
+        "scores": {
+          "focus": 5
+        },
+        "signals": [
+          "office",
+          "focus"
+        ]
+      },
+      {
+        "label": "Kitchen, bathroom or hallway",
+        "scores": {
+          "refresh": 5
+        },
+        "signals": [
+          "kitchen",
+          "bathroom",
+          "refresh"
+        ]
+      },
+      {
+        "label": "Bedroom, dressing area or lounge",
+        "scores": {
+          "balance": 5
+        },
+        "signals": [
+          "bedroom",
+          "living_room",
+          "balance"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How noticeable should the aroma be?",
+    "a": [
+      {
+        "label": "Soft and close to the background",
+        "scores": {},
+        "signals": [
+          "subtle"
+        ]
+      },
+      {
+        "label": "Clear without dominating the room",
+        "scores": {},
+        "signals": [
+          "moderate"
+        ]
+      },
+      {
+        "label": "Strong enough to change the atmosphere",
+        "scores": {},
+        "signals": [
+          "strong"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What size space will you scent most often?",
+    "a": [
+      {
+        "label": "A small bedroom, bathroom or desk area",
+        "scores": {},
+        "signals": [
+          "small_room"
+        ]
+      },
+      {
+        "label": "A medium bedroom, kitchen or lounge",
+        "scores": {},
+        "signals": [
+          "medium_room"
+        ]
+      },
+      {
+        "label": "A large lounge or open-plan space",
+        "scores": {},
+        "signals": [
+          "large_room"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How do you plan to use the blend?",
+    "a": [
+      {
+        "label": "In an ultrasonic water diffuser",
+        "scores": {},
+        "signals": [
+          "water_diffuser"
+        ]
+      },
+      {
+        "label": "In an oil burner, following its instructions",
+        "scores": {},
+        "signals": [
+          "burner"
+        ]
+      },
+      {
+        "label": "In a compatible waterless atomiser",
+        "scores": {},
+        "signals": [
+          "waterless"
+        ]
+      },
+      {
+        "label": "Across diffuser, bath or carefully diluted body rituals",
+        "scores": {},
+        "signals": [
+          "multipurpose"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How experienced are you with essential oils?",
+    "a": [
+      {
+        "label": "I want a straightforward beginner-friendly option",
+        "scores": {},
+        "signals": [
+          "beginner"
+        ]
+      },
+      {
+        "label": "I know the basics and check dilution instructions",
+        "scores": {},
+        "signals": [
+          "familiar"
+        ]
+      },
+      {
+        "label": "I already use specialist blends and atomisers",
+        "scores": {},
+        "signals": [
+          "enthusiast"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Who is this blend mainly for?",
+    "a": [
+      {
+        "label": "For my own everyday rituals",
+        "scores": {},
+        "signals": [
+          "personal"
+        ]
+      },
+      {
+        "label": "As a thoughtful wellbeing gift",
+        "scores": {},
+        "signals": [
+          "giftable"
+        ]
+      },
+      {
+        "label": "Either, so presentation and versatility both matter",
+        "scores": {},
+        "signals": [
+          "personal",
+          "giftable"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What is your approximate budget for one blend?",
+    "a": [
+      {
+        "label": "Under £15",
+        "scores": {},
+        "signals": [
+          "value"
+        ]
+      },
+      {
+        "label": "£15 to £24",
+        "scores": {},
+        "signals": [
+          "lower_mid"
+        ]
+      },
+      {
+        "label": "£25 to £30",
+        "scores": {},
+        "signals": [
+          "mid_budget"
+        ]
+      },
+      {
+        "label": "£31 or more",
+        "scores": {},
+        "signals": [
+          "premium"
+        ]
+      }
+    ]
+  }
+];
+
+let step=0;
+let locked=false;
+const selectedAnswers=[];
+const preferenceSignals={};
+const totals=Object.keys(RESULTS).reduce((acc,key)=>{acc[key]=0;return acc;},{});
+const el=id=>document.getElementById(id);
+const screens={intro:el("intro"),quiz:el("quiz"),result:el("result")};
+const prefersReducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function show(name){Object.values(screens).forEach(screen=>screen.classList.remove("active"));screens[name].classList.add("active");window.scrollTo({top:0,behavior:prefersReducedMotion?"auto":"smooth"});}
+function escapeHtml(value){return String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");}
+function getProductRecommendations(key){return (PRODUCTS[key]||[]).map((product,originalIndex)=>{const matchScore=Object.entries(product.fit||{}).reduce((score,[signal,weight])=>score+(preferenceSignals[signal]||0)*weight,product.base||0);return {...product,matchScore,originalIndex};}).sort((a,b)=>b.matchScore-a.matchScore||(b.base||0)-(a.base||0)||a.originalIndex-b.originalIndex).slice(0,3);}
+function getPersonalMatch(product){const matches=Object.entries(product.fit||{}).filter(([signal])=>preferenceSignals[signal]).map(([signal,weight])=>({signal,value:weight*preferenceSignals[signal]})).sort((a,b)=>b.value-a.value).slice(0,2).map(item=>SIGNAL_LABELS[item.signal]).filter(Boolean);if(matches.length===0)return product.offer||"";if(matches.length===1)return `Matches your preference for ${matches[0]}.`;return `Matches your preference for ${matches[0]} and ${matches[1]}.`;}
+function trackEvent(eventName,details={}){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:eventName,...details});if(typeof window.pintrk==="function"){try{window.pintrk("track","custom",{event_name:eventName,...details});}catch(error){console.warn("Pinterest tracking event was not sent.",error);}}}
+function renderQuestion(){const item=QUESTIONS[step];const totalQuestions=QUESTIONS.length;el("question").textContent=item.q;el("count").textContent=`${String(step+1).padStart(2,"0")} / ${String(totalQuestions).padStart(2,"0")}`;el("fill").style.width=`${step/totalQuestions*100}%`;const box=el("options");box.innerHTML="";locked=false;item.a.forEach((answer,index)=>{const button=document.createElement("button");button.className="option";button.type="button";button.textContent=answer.label;button.addEventListener("click",()=>chooseAnswer(button,answer,index));box.appendChild(button);});setTimeout(()=>el("question").focus({preventScroll:true}),50);}
+function chooseAnswer(button,answer,index){if(locked)return;locked=true;document.querySelectorAll(".option").forEach(option=>{option.disabled=true;});button.classList.add("chosen");selectedAnswers[step]=index;Object.entries(answer.scores).forEach(([key,value])=>{totals[key]+=value;});(answer.signals||[]).forEach(signal=>{preferenceSignals[signal]=(preferenceSignals[signal]||0)+1;});trackEvent("quiz_answer",{quiz:"perfect_essential_oil_blend",question_number:step+1,answer:answer.label});setTimeout(()=>{step+=1;if(step<QUESTIONS.length){renderQuestion();}else{el("fill").style.width="100%";finishQuiz();}},340);}
+function finishQuiz(){const orderedKeys=Object.keys(RESULTS);let winningKey=orderedKeys[0];orderedKeys.forEach(key=>{if(totals[key]>totals[winningKey])winningKey=key;});const tiedKeys=orderedKeys.filter(key=>totals[key]===totals[winningKey]);if(tiedKeys.length>1){const priorityOrder=[0,...Array.from({length:selectedAnswers.length-1},(_,index)=>selectedAnswers.length-1-index)];for(const questionIndex of priorityOrder){const answer=QUESTIONS[questionIndex].a[selectedAnswers[questionIndex]];const rankedTie=tiedKeys.map(key=>({key,value:answer.scores[key]||0,routeIndex:orderedKeys.indexOf(key)})).sort((a,b)=>b.value-a.value||a.routeIndex-b.routeIndex);if(rankedTie[0].value>rankedTie[1].value){winningKey=rankedTie[0].key;break;}}}showResult(winningKey);}
+function showResult(key){const result=RESULTS[key];window.LYS_RESULT=key;el("resultCard").style.setProperty("--fam",result.color);el("rName").textContent=result.name;el("rTag").textContent=result.tag;el("rBody").textContent=result.body;const details=el("rDetails");details.innerHTML="";Object.entries(result.details).forEach(([label,value])=>{const row=document.createElement("div");row.className="detail-row";const labelSpan=document.createElement("span");labelSpan.className="detail-label";labelSpan.textContent=label;const valueSpan=document.createElement("span");valueSpan.className="detail-val";valueSpan.textContent=value;row.append(labelSpan,valueSpan);details.appendChild(row);});el("recsTitle").textContent="Your three best-matched essential-oil blends";const recommendations=getProductRecommendations(key);const grid=el("recGrid");grid.innerHTML="";recommendations.forEach((product,index)=>{const card=document.createElement("article");card.className="rec";const badgeHtml=index===0?'<span class="rec-badge">Best match</span>':"";const matchText=getPersonalMatch(product);const offerHtml=matchText?`<span class="offer">${escapeHtml(matchText)}</span>`:"";const linkIsAffiliate=Boolean(product.affiliate);const linkRel=linkIsAffiliate?"noopener sponsored":"noopener";const ctaHtml=product.url&&product.url!=="#"?`<a class="view" href="${escapeHtml(product.url)}" target="_blank" rel="${linkRel}" data-product-position="${index+1}">View product &rsaquo;</a>`:'<span class="view off">Product page unavailable</span>';card.innerHTML=`<div class="body">${badgeHtml}<span class="brand">${escapeHtml(product.merchant)}</span><span class="pname">${escapeHtml(product.name)}</span><span class="pnote">${escapeHtml(product.note)}</span>${offerHtml}${ctaHtml}</div>`;const productLink=card.querySelector("a[data-product-position]");if(productLink){productLink.addEventListener("click",()=>{const trackingDetails={quiz:"perfect_essential_oil_blend",result:key,merchant:product.merchant,product:product.name,position:index+1,affiliate:linkIsAffiliate};trackEvent("product_click",trackingDetails);if(linkIsAffiliate)trackEvent("affiliate_click",trackingDetails);});}grid.appendChild(card);});const disclosure=el("recommendationDisclosure");const containsAffiliateLinks=recommendations.some(product=>product.affiliate);if(containsAffiliateLinks){disclosure.innerHTML='Some links on this page are affiliate links. Love Your Senses may earn a commission from qualifying orders at no extra cost to you. <a href="/disclosure">Read the affiliate disclosure</a>.';}else{disclosure.textContent="These recommendations use direct brand links. Love Your Senses does not currently earn commission from them. Product availability may change.";}const browseAll=el("browseAll");if(STORE_LINK&&STORE_LINK!=="#"){const storeRel=STORE_LINK_IS_AFFILIATE?"noopener sponsored":"noopener";browseAll.innerHTML=`<a class="btn-all" href="${escapeHtml(STORE_LINK)}" target="_blank" rel="${storeRel}">Browse all essential-oil blends</a>`;browseAll.querySelector("a").addEventListener("click",()=>{const trackingDetails={quiz:"perfect_essential_oil_blend",result:key,product:"browse_all",affiliate:STORE_LINK_IS_AFFILIATE};trackEvent("product_click",trackingDetails);if(STORE_LINK_IS_AFFILIATE)trackEvent("affiliate_click",trackingDetails);});}else{browseAll.innerHTML="";}trackEvent("quiz_complete",{quiz:"perfect_essential_oil_blend",result:key,result_name:result.name});show("result");}
+async function submitEmail(){const emailInput=el("email");const email=emailInput.value.trim();const form=el("emailForm");const note=el("formNote");if(!/^\S+@\S+\.\S+$/.test(email)){emailInput.focus();note.textContent="Enter a valid email address.";return;}if(!EMAIL_FORM_ACTION){note.textContent="Email signup is not connected yet. Add your email platform form action in the JavaScript settings.";return;}const button=el("emailBtn");button.disabled=true;button.textContent="Sending";try{const payload=new URLSearchParams();payload.append(EMAIL_FIELD_NAME,email);payload.append("quiz_result",window.LYS_RESULT||"");payload.append("source","perfect_essential_oil_blend_quiz");await fetch(EMAIL_FORM_ACTION,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:payload.toString()});form.innerHTML='<p class="done">Your essential-oil shortlist is on its way.</p>';note.textContent="";trackEvent("email_signup",{quiz:"perfect_essential_oil_blend",result:window.LYS_RESULT||""});}catch(error){button.disabled=false;button.textContent="Send it";note.textContent="The signup did not complete. Please try again.";console.error("Email signup failed.",error);}}
+async function shareResult(){const result=RESULTS[window.LYS_RESULT];if(!result)return;const text=`My essential-oil blend profile is ${result.name}. Find yours:`;const shareData={title:"Find Your Perfect Essential Oil Blend | Love Your Senses",text,url:QUIZ_URL||location.href};if(navigator.share){try{await navigator.share(shareData);trackEvent("share",{quiz:"perfect_essential_oil_blend",result:window.LYS_RESULT,method:"native"});}catch(error){if(error.name!=="AbortError")console.error("Share failed.",error);}return;}try{await navigator.clipboard.writeText(`${text} ${shareData.url}`);el("share").textContent="Link copied";setTimeout(()=>el("share").textContent="Share your result",2000);trackEvent("share",{quiz:"perfect_essential_oil_blend",result:window.LYS_RESULT,method:"clipboard"});}catch(error){console.error("Copy failed.",error);}}
+function resetQuiz(){step=0;locked=false;selectedAnswers.length=0;Object.keys(preferenceSignals).forEach(key=>delete preferenceSignals[key]);Object.keys(totals).forEach(key=>totals[key]=0);window.LYS_RESULT="";const form=el("emailForm");form.innerHTML='<label class="sr-only" for="email">Your email address</label><input type="email" id="email" name="email" placeholder="Your email" aria-describedby="formNote" autocomplete="email" inputmode="email"><button id="emailBtn" type="button">Send it</button>';el("emailBtn").addEventListener("click",submitEmail);el("email").addEventListener("keydown",event=>{if(event.key==="Enter"){event.preventDefault();submitEmail();}});el("formNote").textContent="Connect your email platform in the JavaScript settings before publishing.";show("intro");trackEvent("quiz_retake",{quiz:"perfect_essential_oil_blend"});}
+el("start").addEventListener("click",()=>{show("quiz");renderQuestion();trackEvent("quiz_start",{quiz:"perfect_essential_oil_blend"});});
+el("emailBtn").addEventListener("click",submitEmail);
+el("email").addEventListener("keydown",event=>{if(event.key==="Enter"){event.preventDefault();submitEmail();}});
+el("share").addEventListener("click",shareResult);
+el("retake").addEventListener("click",resetQuiz);
+
+
+
+
+
+
+
+window.LYS_TEST={
+  PRODUCTS,
+  RESULTS,
+  QUESTIONS,
+  getProductRecommendations,
+  showResult,
+  resetSignals(){Object.keys(preferenceSignals).forEach(key=>delete preferenceSignals[key]);},
+  setSignals(signals){this.resetSignals();Object.entries(signals||{}).forEach(([key,value])=>{preferenceSignals[key]=value;});}
+};
+
+</script>
+</body>
+</html>

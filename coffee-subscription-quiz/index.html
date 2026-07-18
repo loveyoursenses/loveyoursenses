@@ -141,27 +141,14 @@
   .recs-head h3{font-size:clamp(1.55rem,5vw,2.05rem)}
   .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .rec{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative}
-  .rec-badge{
-    position:absolute;
-    top:12px;
-    left:12px;
-    z-index:2;
-    background:rgba(247,241,236,.94);
-    color:var(--accent-deep);
-    border-radius:100px;
-    padding:6px 10px;
-    font-size:.61rem;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    font-weight:500;
-  }
-  .rec .media-frame{aspect-ratio:1/1;width:100%;position:relative;overflow:hidden;background:#fff}
-  .rec .media{aspect-ratio:1/1;width:100%;height:100%;object-fit:contain;padding:18px;background:#fff;display:block}
-  .rec .ph{display:flex;align-items:center;justify-content:center;padding:0}
-  .rec .media-frame .media{position:absolute;inset:0}
-  .rec .media-fallback{display:none}
-  .rec .media-fallback.show{display:flex}
-  .rec .ph span{font-family:'Fraunces',serif;font-size:2rem;color:#fff;opacity:.92}
+  .rec-badge{display:inline-flex;align-self:flex-start;background:var(--cream);color:var(--accent-deep);border:1px solid var(--line);border-radius:100px;padding:6px 10px;margin-bottom:4px;font-size:.61rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+  
+  
+  
+  
+  
+  
+  
   .rec .body{padding:16px 15px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
   .rec .brand{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
   .rec .pname{font-family:'Fraunces',serif;font-size:1.04rem;line-height:1.22}
@@ -846,14 +833,6 @@ function show(name){
   window.scrollTo({top:0,behavior:"smooth"});
 }
 
-function hexToRgba(hex,alpha){
-  const clean = hex.replace("#","");
-  const value = parseInt(clean,16);
-  const red = value >> 16 & 255;
-  const green = value >> 8 & 255;
-  const blue = value & 255;
-  return `rgba(${red},${green},${blue},${alpha})`;
-}
 
 function escapeHtml(value){
   return String(value)
@@ -953,17 +932,6 @@ function getPersonalMatch(product){
   return `Matches your preference for ${matches[0]} and ${matches[1]}.`;
 }
 
-function getProductMonogram(product){
-  if(product.monogram) return product.monogram;
-
-  return product.name
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0,2)
-    .map(word=>word.charAt(0))
-    .join("")
-    .toUpperCase();
-}
 
 function trackEvent(eventName,details={}){
   window.dataLayer = window.dataLayer || [];
@@ -1109,11 +1077,6 @@ function showResult(key){
     const card = document.createElement("article");
     card.className = "rec";
 
-    const fallbackHtml = `<div class="ph media media-fallback" style="background:${hexToRgba(result.color,.88)}"><span>${escapeHtml(getProductMonogram(product))}</span></div>`;
-    const mediaHtml = product.img
-      ? `<div class="media-frame"><img class="media" src="${escapeHtml(product.img)}" alt="${escapeHtml(product.merchant)} ${escapeHtml(product.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${fallbackHtml}</div>`
-      : fallbackHtml;
-
     const badgeHtml = index === 0
       ? '<span class="rec-badge">Best match</span>'
       : "";
@@ -1129,16 +1092,7 @@ function showResult(key){
       ? `<a class="view" href="${escapeHtml(product.url)}" target="_blank" rel="${linkRel}" data-product-position="${index+1}">View subscription &rsaquo;</a>`
       : '<span class="view off">Subscription page unavailable</span>';
 
-    card.innerHTML = `${badgeHtml}${mediaHtml}<div class="body"><span class="brand">${escapeHtml(product.merchant)}</span><span class="pname">${escapeHtml(product.name)}</span><span class="pnote">${escapeHtml(product.note)}</span>${offerHtml}${ctaHtml}</div>`;
-
-    const productImage = card.querySelector("img.media");
-    if(productImage){
-      productImage.addEventListener("error",()=>{
-        productImage.remove();
-        const fallback = card.querySelector(".media-fallback");
-        if(fallback) fallback.classList.add("show");
-      },{once:true});
-    }
+    card.innerHTML = `<div class="body">${badgeHtml}<span class="brand">${escapeHtml(product.merchant)}</span><span class="pname">${escapeHtml(product.name)}</span><span class="pnote">${escapeHtml(product.note)}</span>${offerHtml}${ctaHtml}</div>`;
 
     const productLink = card.querySelector("a[data-product-position]");
     if(productLink){
