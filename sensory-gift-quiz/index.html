@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Perfect Sensory Gift | Love Your Senses</title>
+<meta name="description" content="Answer eleven questions to discover the scent, taste, touch, sound or home-atmosphere gift that best matches the recipient and occasion.">
+<link rel="canonical" href="https://loveyoursenses.com/sensory-gift-quiz/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Find Your Perfect Sensory Gift | Love Your Senses">
+<meta property="og:description" content="Match the recipient to a sensory gift selected around their personality, habits, occasion and favourite experiences.">
+<meta property="og:url" content="https://loveyoursenses.com/sensory-gift-quiz/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#E7E3DD;
+    --card:#F2EEE8;
+    --ink:#2A2130;
+    --ink-soft:#6E6574;
+    --accent:#7B4A5E;
+    --accent-deep:#5E3547;
+    --line:#CDC3B6;
+    --gold:#B8A78C;
+    --cream:#F7F1EC;
+    --radius:18px;
+    --ease:cubic-bezier(.4,.14,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Jost',system-ui,sans-serif;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+  button,input{font:inherit}
+  button{touch-action:manipulation}
+  .display{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  .wrap{width:100%;max-width:1000px;margin:0 auto;padding-left:24px;padding-right:24px}
+  .site-head{padding:24px 0}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .mark{font-family:'Fraunces',serif;font-weight:500;font-size:1.24rem;text-decoration:none;color:var(--ink)}
+  .mark span{color:var(--accent)}
+  .head-link{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none}
+  .head-link:hover{color:var(--accent)}
+  .stage{width:100%;max-width:680px;margin:0 auto;padding:36px 20px 72px}
+  .screen{display:none;animation:rise .6s var(--ease) both}
+  .screen.active{display:block}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  #intro{text-align:center;padding:14px 0 24px}
+  .ring{margin:0 auto 30px;display:block}
+  #intro h1{font-size:clamp(2.55rem,9vw,4rem);margin-bottom:18px}
+  #intro h1 em{font-style:italic;font-weight:400}
+  .lede{color:var(--ink-soft);font-size:1.06rem;max-width:45ch;margin:0 auto 24px}
+  .wellbeing-note{font-size:.79rem;color:var(--ink-soft);line-height:1.55;max-width:56ch;margin:0 auto 30px}
+  .meta{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:26px}
+  .btn{display:inline-block;font-family:'Jost',sans-serif;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:17px 40px;background:var(--ink);color:var(--bg);transition:transform .35s var(--ease),background .35s var(--ease)}
+  .btn:hover{background:var(--accent-deep);transform:translateY(-2px)}
+  .progress-wrap{display:flex;align-items:center;gap:16px;margin-bottom:38px}
+  .track{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
+  .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);transition:width .5s var(--ease)}
+  .count{font-size:.72rem;letter-spacing:.2em;color:var(--ink-soft);white-space:nowrap}
+  .question{font-size:clamp(1.75rem,6vw,2.45rem);margin-bottom:32px;min-height:2.2em}
+  .options{display:flex;flex-direction:column;gap:12px}
+  .option{font-family:'Jost',sans-serif;font-size:1.01rem;color:var(--ink);text-align:left;background:var(--card);border:1px solid transparent;border-radius:var(--radius);padding:19px 22px;cursor:pointer;width:100%;transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);display:flex;align-items:center;gap:14px}
+  .option:before{content:"";width:9px;height:9px;border-radius:50%;border:1.5px solid var(--line);flex:none;transition:all .3s var(--ease)}
+  .option:hover{border-color:var(--gold);transform:translateX(4px)}
+  .option.chosen{background:var(--accent);color:var(--cream);border-color:var(--accent)}
+  .option.chosen:before{background:var(--cream);border-color:var(--cream)}
+  .option:disabled{cursor:default}
+  .result-card{background:var(--fam,#7B4A5E);color:var(--cream);border-radius:26px;padding:44px 32px 40px;text-align:center;box-shadow:0 30px 60px -30px rgba(42,33,48,.55)}
+  .result-card .eyebrow{color:rgba(247,241,236,.72)}
+  .result-name{font-size:clamp(2.55rem,10vw,3.65rem);margin-bottom:10px}
+  .result-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:1.2rem;opacity:.94;margin-bottom:24px}
+  .result-body{font-size:1.02rem;line-height:1.72;opacity:.95;max-width:44ch;margin:0 auto 30px}
+  .details{border-top:1px solid rgba(247,241,236,.28);border-bottom:1px solid rgba(247,241,236,.28);padding:22px 0;text-align:left;display:flex;flex-direction:column;gap:14px}
+  .detail-row{display:flex;gap:18px;align-items:baseline}
+  .detail-label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;opacity:.72;width:104px;flex:none}
+  .detail-val{font-family:'Fraunces',serif;font-size:1.04rem}
+  .recs{margin-top:36px}
+  .recs-head{text-align:center;margin-bottom:22px}
+  .recs-head .eyebrow{display:block;margin-bottom:10px}
+  .recs-head h3{font-size:clamp(1.55rem,5vw,2.05rem)}
+  .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .rec{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+  .rec-badge{position:absolute;top:12px;left:12px;z-index:2;background:rgba(247,241,236,.94);color:var(--accent-deep);border-radius:100px;padding:6px 10px;font-size:.61rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+  .rec .media-frame{aspect-ratio:1/1;width:100%;position:relative;overflow:hidden;background:#fff}
+  .rec .media{aspect-ratio:1/1;width:100%;height:100%;object-fit:cover;padding:0;background:#fff;display:block}
+  .rec .ph{display:flex;align-items:center;justify-content:center;padding:0}
+  .rec .media-frame .media{position:absolute;inset:0}
+  .rec .media-fallback{display:none}
+  .rec .media-fallback.show{display:flex}
+  .rec .ph span{font-family:'Fraunces',serif;font-size:2rem;color:#fff;opacity:.92}
+  .rec .body{padding:16px 15px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .rec .brand{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .rec .pname{font-family:'Fraunces',serif;font-size:1.04rem;line-height:1.22}
+  .rec .pnote{font-size:.8rem;color:var(--ink-soft);line-height:1.45}
+  .rec .offer{font-size:.76rem;color:var(--accent);font-weight:500}
+  .rec .view{margin-top:auto;padding-top:11px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;text-decoration:none;color:var(--accent)}
+  .rec .view.off{color:var(--ink-soft);opacity:.58}
+  .rec .view:hover{text-decoration:underline;text-underline-offset:4px}
+  .affiliate-note{font-size:.78rem;color:var(--ink-soft);line-height:1.55;text-align:center;max-width:58ch;margin:18px auto 0}
+  .affiliate-note a{color:var(--accent);text-underline-offset:3px}
+  .browse-all{text-align:center;margin-top:22px}
+  .btn-all{display:inline-block;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;text-decoration:none;border:1px solid var(--accent);color:var(--accent);border-radius:100px;padding:14px 34px;transition:background .3s var(--ease),color .3s var(--ease)}
+  .btn-all:hover{background:var(--accent);color:var(--cream)}
+  .capture{background:var(--card);border-radius:var(--radius);padding:32px 28px;margin-top:28px;text-align:center}
+  .capture h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;margin-bottom:8px}
+  .capture p{color:var(--ink-soft);font-size:.96rem;margin:0 auto 22px;max-width:39ch}
+  .field{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .field input{font-family:'Jost',sans-serif;font-size:1rem;flex:1;min-width:210px;padding:15px 18px;border:1px solid var(--line);border-radius:100px;background:#fff;color:var(--ink)}
+  .field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+  .field button{font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:15px 28px;background:var(--accent);color:var(--cream)}
+  .field button:hover{background:var(--accent-deep)}
+  .capture .done{color:var(--accent);font-family:'Fraunces',serif;font-size:1.1rem;padding:6px 0}
+  .capture .form-note{font-size:.74rem;margin-top:12px;margin-bottom:0}
+  .next-quiz{border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;margin-top:18px;text-align:center}
+  .next-quiz .eyebrow{display:block;margin-bottom:9px}
+  .next-quiz h3{font-size:1.45rem;margin-bottom:8px}
+  .next-quiz p{color:var(--ink-soft);font-size:.94rem;max-width:40ch;margin:0 auto 18px}
+  .next-link{font-size:.74rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;color:var(--accent);text-underline-offset:4px}
+  .next-link:hover{color:var(--accent-deep)}
+  .after{display:flex;gap:22px;justify-content:center;align-items:center;margin-top:26px;flex-wrap:wrap}
+  .linkish{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px}
+  .linkish:hover{color:var(--accent)}
+  .site-foot{border-top:1px solid var(--line);padding:34px 0 48px}
+  .foot{display:flex;flex-direction:column;align-items:center;gap:11px;text-align:center}
+  .foot-nav a{color:var(--ink-soft);text-decoration:none;font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;margin:0 10px}
+  .foot-nav a:hover{color:var(--accent)}
+  .foot .disc{font-size:.82rem;color:var(--ink-soft);max-width:54ch}
+  .foot .cr{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  @media(max-width:600px){.site-head{padding:20px 0}.stage{padding-top:28px}.rec-grid{grid-template-columns:1fr 1fr}.detail-label{width:88px}}
+  @media(max-width:420px){.rec-grid{grid-template-columns:1fr}.result-card{padding:40px 24px 36px}.field{flex-direction:column}.field input,.field button{width:100%}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <div class="bar">
+      <a href="/" class="mark">Love Your <span>Senses</span></a>
+      <a href="/#quiz-library" class="head-link">All quizzes</a>
+    </div>
+  </div>
+</header>
+
+<main class="stage">
+  <section id="intro" class="screen active">
+    <svg class="ring" width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
+      <circle cx="29" cy="29" r="27" fill="none" stroke="#B8A78C" stroke-width="1"/>
+      <circle cx="29" cy="29" r="19" fill="none" stroke="#CDC3B6" stroke-width="1"/>
+      <g stroke="#7B4A5E" stroke-width="1.4">
+        <line x1="29" y1="2" x2="29" y2="9"/>
+        <line x1="52.4" y1="42.5" x2="46.4" y2="39"/>
+        <line x1="5.6" y1="42.5" x2="11.6" y2="39"/>
+        <line x1="52.4" y1="15.5" x2="46.4" y2="19"/>
+        <line x1="5.6" y1="15.5" x2="11.6" y2="19"/>
+        <line x1="29" y1="56" x2="29" y2="49"/>
+      </g>
+      <circle cx="29" cy="29" r="3" fill="#7B4A5E"/>
+    </svg>
+    <p class="eyebrow">A five-senses gift discovery</p>
+    <h1 class="display">Find your perfect <em>sensory gift</em></h1>
+    <p class="lede">Answer eleven questions about the recipient, occasion, favourite senses, budget and presentation to find a gift direction and three products to consider.</p>
+    <p class="wellbeing-note">Check ingredients, allergens, dimensions, compatibility, delivery details and recipient sensitivities before ordering food, fragrance, body-care or technology gifts.</p>
+    <button class="btn" id="start" type="button">Begin the discovery</button>
+    <p class="meta">11 questions &nbsp;·&nbsp; about three minutes</p>
+  </section>
+
+  <section id="quiz" class="screen" aria-live="polite">
+    <div class="progress-wrap">
+      <div class="track" aria-hidden="true"><div class="fill" id="fill"></div></div>
+      <span class="count" id="count">01 / 11</span>
+    </div>
+    <h2 class="question display" id="question" tabindex="-1"></h2>
+    <div class="options" id="options"></div>
+  </section>
+
+  <section id="result" class="screen" aria-live="polite">
+    <div class="result-card" id="resultCard">
+      <p class="eyebrow">Your sensory gift direction</p>
+      <h2 class="result-name display" id="rName"></h2>
+      <p class="result-tag" id="rTag"></p>
+      <p class="result-body" id="rBody"></p>
+      <div class="details" id="rDetails"></div>
+    </div>
+
+    <div class="recs">
+      <div class="recs-head">
+        <span class="eyebrow">Chosen from all eleven answers</span>
+        <h3 class="display" id="recsTitle">Your three best-matched sensory gifts</h3>
+      </div>
+      <div class="rec-grid" id="recGrid"></div>
+      <p class="affiliate-note" id="recommendationDisclosure">These recommendations use direct brand or retailer links. Love Your Senses does not currently earn commission from them. Product availability and temporary imagery may change.</p>
+      <div class="browse-all" id="browseAll"></div>
+      <p class="wellbeing-note">Review current product specifications and returns policies before purchase. Fragrance, flavour, fit and comfort remain personal.</p>
+    </div>
+
+    <div class="capture">
+      <h3>Save your gift shortlist</h3>
+      <p>Get your result, buying priorities and future sensory gift discoveries by email.</p>
+      <div class="field" id="emailForm">
+        <input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email">
+        <button id="emailBtn" type="button">Send it</button>
+      </div>
+      <p class="form-note" id="formNote">Connect your email platform in the JavaScript settings before publishing.</p>
+    </div>
+
+    <div class="next-quiz">
+      <span class="eyebrow">Continue the scent discovery</span>
+      <h3 class="display">Find your perfect home fragrance</h3>
+      <p>Match scent family, room, strength and format to a personalised home-fragrance shortlist.</p>
+      <a class="next-link" href="/home-fragrance-quiz/">Take the home fragrance quiz</a>
+    </div>
+
+    <div class="after">
+      <button class="linkish" id="share" type="button">Share your result</button>
+      <button class="linkish" id="retake" type="button">Retake the quiz</button>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-nav">
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/disclosure/">Affiliate Disclosure</a>
+      </div>
+      <p class="disc">Love Your Senses helps you discover products matched to your preferences through short, enjoyable quizzes.</p>
+      <p class="cr">© 2026 Love Your Senses</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Product links are direct and non-affiliate. Replace URLs and images with approved affiliate assets when partnerships are active, then change affiliate:false to affiliate:true. */
+const QUIZ_URL = "https://loveyoursenses.com/sensory-gift-quiz/";
+const STORE_LINK = "";
+const STORE_LINK_IS_AFFILIATE = false;
+const EMAIL_FORM_ACTION = "";
+const EMAIL_FIELD_NAME = "email";
+
+const PRODUCTS = {
+  "scent": [
+    {
+      "merchant": "Diptyque",
+      "name": "Set of 3 Small Candles",
+      "monogram": "D3",
+      "note": "A pre-composed trio featuring Roses, Figuier and Baies in small candle sizes.",
+      "offer": "Best overall for a fragrance lover who enjoys discovering several recognisable scent styles.",
+      "url": "https://www.diptyqueparis.com/en_uk/p/gifts/set-of-mini-candles-berries-fig-tree-roses-1.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.diptyqueparis.com/en_uk/p/gifts/set-of-mini-candles-berries-fig-tree-roses-1.html",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "scent": 10,
+        "discovery": 10,
+        "luxury": 9,
+        "candles": 10,
+        "statement": 8,
+        "recipient_knows_scent": 6
+      }
+    },
+    {
+      "merchant": "The White Company",
+      "name": "The Votive Candle Set",
+      "monogram": "WV",
+      "note": "Four gift-boxed votive candles spanning fruity, floral and citrus-led seasonal scents.",
+      "offer": "Best mid-range choice when variety matters more than one large fragrance product.",
+      "url": "https://www.thewhitecompany.com/uk/The-Votive-Candle-Set/p/A07245",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.thewhitecompany.com/uk/The-Votive-Candle-Set/p/A07245",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "scent": 10,
+        "discovery": 10,
+        "candles": 10,
+        "mid_budget": 9,
+        "compact": 8,
+        "gift_ready": 9
+      }
+    },
+    {
+      "merchant": "The White Company",
+      "name": "Seychelles Mini Home Scenting Gift Set",
+      "monogram": "WS",
+      "note": "A coordinated votive candle, mini diffuser and mini home spray in the Seychelles scent.",
+      "offer": "Best for someone who enjoys trying several home-scenting formats in one gift.",
+      "url": "https://www.thewhitecompany.com/uk/Seychelles-Mini-Home-Scenting-Gift-Set/p/A12095",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.thewhitecompany.com/uk/Seychelles-Mini-Home-Scenting-Gift-Set/p/A12095",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "scent": 10,
+        "home": 7,
+        "formats": 10,
+        "mid_budget": 9,
+        "compact": 8,
+        "gift_ready": 9
+      }
+    },
+    {
+      "merchant": "Diptyque",
+      "name": "Compose Your Fragrance Gift Set",
+      "monogram": "DF",
+      "note": "A configurable fragrance gift allowing a five-scent eau de toilette or fragrance selection.",
+      "offer": "Best premium choice when the recipient enjoys personal fragrance and exploration.",
+      "url": "https://www.diptyqueparis.com/en_uk/c/compose-your-gift-sets.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.diptyqueparis.com/en_uk/c/compose-your-gift-sets.html",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "scent": 10,
+        "personal": 10,
+        "discovery": 10,
+        "luxury": 10,
+        "customisable": 10,
+        "statement": 8
+      }
+    }
+  ],
+  "taste": [
+    {
+      "merchant": "Bird & Blend",
+      "name": "40 Tea Bag Essential Collection",
+      "monogram": "B4",
+      "note": "Forty individually wrapped tea bags across ten black, green, rooibos, fruit and herbal blends.",
+      "offer": "Best overall for a tea drinker who enjoys variety throughout the day.",
+      "url": "https://www.birdandblendtea.com/products/40-tea-bag-essential-collection",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.birdandblendtea.com/products/40-tea-bag-essential-collection",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "taste": 10,
+        "tea": 10,
+        "discovery": 10,
+        "variety": 10,
+        "gift_ready": 9,
+        "shareable": 8,
+        "mid_budget": 8
+      }
+    },
+    {
+      "merchant": "Bird & Blend",
+      "name": "Loose Leaf Tea Starter Kit",
+      "monogram": "BL",
+      "note": "A choice of loose-leaf teas paired with a brewing tool and measuring spoon.",
+      "offer": "Best for someone who enjoys learning a new ritual rather than receiving tea alone.",
+      "url": "https://www.birdandblendtea.com/products/starter-kit-loose-leaf-tea",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.birdandblendtea.com/products/starter-kit-loose-leaf-tea",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "taste": 10,
+        "tea": 10,
+        "ritual": 10,
+        "practical": 9,
+        "customisable": 8,
+        "mid_budget": 9
+      }
+    },
+    {
+      "merchant": "Bird & Blend",
+      "name": "Magical Matcha Selection Box",
+      "monogram": "BM",
+      "note": "Twelve miniature matcha blends with preparation guidance and drink recipes.",
+      "offer": "Best for a curious matcha drinker or someone who enjoys flavour-led tasting experiences.",
+      "url": "https://www.birdandblendtea.com/products/matcha-selection-box",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.birdandblendtea.com/products/matcha-selection-box",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "taste": 10,
+        "matcha": 10,
+        "discovery": 10,
+        "variety": 9,
+        "playful": 9,
+        "gift_ready": 8
+      }
+    },
+    {
+      "merchant": "Bird & Blend",
+      "name": "Tea & Biscuits Gift Cube",
+      "monogram": "BB",
+      "note": "A compact tea-bag selection inspired by familiar biscuit flavours.",
+      "offer": "Best small gift for a playful tea drinker with a sweet tooth.",
+      "url": "https://www.birdandblendtea.com/products/tea-and-biscuit-tea-bag-selection-gift-box",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.birdandblendtea.com/products/tea-and-biscuit-tea-bag-selection-gift-box",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "taste": 10,
+        "tea": 8,
+        "sweet": 10,
+        "compact": 10,
+        "low_budget": 10,
+        "playful": 10
+      }
+    }
+  ],
+  "cosy": [
+    {
+      "merchant": "The White Company",
+      "name": "The Unwind Gift Box",
+      "monogram": "WU",
+      "note": "A gift-boxed pairing of cashmere bed socks and a ceramic mug.",
+      "offer": "Best overall for an immediately usable cosy evening gift.",
+      "url": "https://www.thewhitecompany.com/uk/bundle/The-Unwind-Gift-Box/p/the-unwind-gift-box",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.thewhitecompany.com/uk/bundle/The-Unwind-Gift-Box/p/the-unwind-gift-box",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "touch": 10,
+        "cosy": 10,
+        "gift_ready": 10,
+        "mid_budget": 9,
+        "practical": 8,
+        "evening": 10
+      }
+    },
+    {
+      "merchant": "The White Company",
+      "name": "Cashmere Bed Socks",
+      "monogram": "WC",
+      "note": "Pure-cashmere bed socks in a choice of soft neutral and pastel shades.",
+      "offer": "Best compact tactile gift when softness matters more than gift-box size.",
+      "url": "https://www.thewhitecompany.com/uk/Cashmere-Bed-Socks/p/A12126",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.thewhitecompany.com/uk/Cashmere-Bed-Socks/p/A12126",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "touch": 10,
+        "cosy": 10,
+        "compact": 9,
+        "mid_budget": 8,
+        "personal": 7,
+        "softness": 10
+      }
+    },
+    {
+      "merchant": "The White Company",
+      "name": "Luxury Wool Cashmere Throw",
+      "monogram": "WT",
+      "note": "A lightweight Italian-made wool-and-cashmere throw with a brushed finish.",
+      "offer": "Best premium comfort gift for a sofa, reading chair or bedroom.",
+      "url": "https://www.thewhitecompany.com/uk/Luxury-Wool-Cashmere-Throw/p/luxury-wool-cashmere-throw",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.thewhitecompany.com/uk/Luxury-Wool-Cashmere-Throw/p/luxury-wool-cashmere-throw",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "touch": 10,
+        "cosy": 10,
+        "home": 7,
+        "luxury": 9,
+        "statement": 8,
+        "softness": 9
+      }
+    },
+    {
+      "merchant": "John Lewis",
+      "name": "Unisex Egyptian Cotton Bath Robe",
+      "monogram": "JR",
+      "note": "A machine-washable towelling robe designed for post-bath comfort.",
+      "offer": "Best practical choice for someone who values useful, repeatable comfort.",
+      "url": "https://www.johnlewis.com/john-lewis-unisex-egyptian-cotton-bath-robe/dove-grey/p114124549",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.johnlewis.com/john-lewis-unisex-egyptian-cotton-bath-robe/dove-grey/p114124549",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "touch": 10,
+        "cosy": 8,
+        "bath": 6,
+        "practical": 10,
+        "mid_budget": 7,
+        "softness": 8
+      }
+    }
+  ],
+  "bath": [
+    {
+      "merchant": "The White Company",
+      "name": "Seychelles Bath & Body Gift Set",
+      "monogram": "WB",
+      "note": "A gift-boxed bath and shower gel with matching body lotion in an amber-vanilla scent.",
+      "offer": "Best overall for a straightforward scented body-care gift.",
+      "url": "https://www.thewhitecompany.com/uk/Seychelles-Bath-and-Body-Gift-Set/p/SYDBB",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.thewhitecompany.com/uk/Seychelles-Bath-and-Body-Gift-Set/p/SYDBB",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "bath": 10,
+        "body": 10,
+        "scent": 8,
+        "gift_ready": 10,
+        "mid_budget": 9,
+        "simple": 8
+      }
+    },
+    {
+      "merchant": "Rituals",
+      "name": "The Ritual of Hammam Gift Set S",
+      "monogram": "RH",
+      "note": "A pre-wrapped set containing shower gel, body cream, massage oil and hand wash.",
+      "offer": "Best for an at-home spa direction with several tactile body-care steps.",
+      "url": "https://www.rituals.com/en-gb/the-ritual-of-hammam---small-gift-set-2025-1120154.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.rituals.com/en-gb/the-ritual-of-hammam---small-gift-set-2025-1120154.html",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "bath": 10,
+        "body": 10,
+        "ritual": 10,
+        "gift_ready": 10,
+        "mid_budget": 8,
+        "spa": 10
+      }
+    },
+    {
+      "merchant": "Rituals",
+      "name": "The Ritual of Mehr Gift Set M",
+      "monogram": "RM",
+      "note": "A medium set with shower gel, body cream, body scrub and scented candle.",
+      "offer": "Best for a fuller ritual combining body care, texture and home scent.",
+      "url": "https://www.rituals.com/en-gb/the-ritual-of-mehr---medium-gift-set-2025-1121226.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.rituals.com/en-gb/the-ritual-of-mehr---medium-gift-set-2025-1121226.html",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "bath": 10,
+        "body": 10,
+        "ritual": 10,
+        "scent": 7,
+        "candles": 6,
+        "statement": 8,
+        "gift_ready": 10
+      }
+    },
+    {
+      "merchant": "The White Company",
+      "name": "The Bath & Body Deluxe Gift Box",
+      "monogram": "WD",
+      "note": "A bath-and-body set paired with a stoneware bottle arch and gift packaging.",
+      "offer": "Best for a new-home or design-conscious recipient who likes useful bathroom display pieces.",
+      "url": "https://www.thewhitecompany.com/uk/bundle/The-Bath-and-Body-Deluxe-Gift-Box/p/the-bath-and-body-deluxe-gift-box",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.thewhitecompany.com/uk/bundle/The-Bath-and-Body-Deluxe-Gift-Box/p/the-bath-and-body-deluxe-gift-box",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "bath": 9,
+        "body": 9,
+        "home": 8,
+        "design": 10,
+        "gift_ready": 10,
+        "statement": 7,
+        "practical": 8
+      }
+    }
+  ],
+  "sound": [
+    {
+      "merchant": "Sony",
+      "name": "WH-CH520 Wireless Headphones",
+      "monogram": "SH",
+      "note": "Lightweight on-ear Bluetooth headphones with app-based sound personalisation.",
+      "offer": "Best overall for everyday personal listening, commuting and calls.",
+      "url": "https://www.sony.co.uk/headphones/products/wh-ch520",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.sony.co.uk/headphones/products/wh-ch520",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "sound": 10,
+        "personal": 10,
+        "headphones": 10,
+        "practical": 10,
+        "mid_budget": 9,
+        "portable": 9
+      }
+    },
+    {
+      "merchant": "Marshall",
+      "name": "Willen II Portable Speaker",
+      "monogram": "MW",
+      "note": "A compact water- and dust-resistant Bluetooth speaker with a fastening strap.",
+      "offer": "Best for an active listener who wants a design-led speaker for travel and shared music.",
+      "url": "https://www.marshall.com/gb/en/product/willen-ii",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.marshall.com/gb/en/product/willen-ii",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "sound": 10,
+        "speaker": 10,
+        "portable": 10,
+        "shared": 8,
+        "design": 9,
+        "mid_budget": 8
+      }
+    },
+    {
+      "merchant": "Roberts Radio",
+      "name": "Revival Petite 2",
+      "monogram": "RP",
+      "note": "A palm-sized DAB, FM and Bluetooth radio with a retro Revival design.",
+      "offer": "Best for a radio listener or design-conscious recipient who will use it around the home.",
+      "url": "https://www.robertsradio.com/en-gb/revival-petite-2",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.robertsradio.com/en-gb/revival-petite-2",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "sound": 10,
+        "radio": 10,
+        "home": 8,
+        "design": 10,
+        "portable": 7,
+        "statement": 8
+      }
+    },
+    {
+      "merchant": "Sony",
+      "name": "SRS-XB100 Portable Wireless Speaker",
+      "monogram": "SX",
+      "note": "A compact Bluetooth speaker with a carrying strap and long portable battery life.",
+      "offer": "Best value for casual music, outdoor use and straightforward wireless listening.",
+      "url": "https://www.sony.co.uk/wireless-speakers/products/srs-xb100?locale=en_GB",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.sony.co.uk/wireless-speakers/products/srs-xb100?locale=en_GB",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "sound": 10,
+        "speaker": 10,
+        "portable": 10,
+        "practical": 9,
+        "low_budget": 8,
+        "shared": 7
+      }
+    }
+  ],
+  "home": [
+    {
+      "merchant": "The White Company",
+      "name": "Seychelles Home Scenting Gift Set",
+      "monogram": "WH",
+      "note": "A coordinated home-fragrance set combining a candle, diffuser and home spray.",
+      "offer": "Best overall for creating one polished scent atmosphere across a room.",
+      "url": "https://www.thewhitecompany.com/uk/Seychelles-Home-Scenting-Gift-Set/p/SYDLH",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.thewhitecompany.com/uk/Seychelles-Home-Scenting-Gift-Set/p/SYDLH",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "home": 10,
+        "scent": 10,
+        "formats": 10,
+        "gift_ready": 10,
+        "design": 8,
+        "statement": 8
+      }
+    },
+    {
+      "merchant": "Rituals",
+      "name": "Private Collection Premium Home Gift Set",
+      "monogram": "RH",
+      "note": "A large home-fragrance gift combining candle, home perfume, fragrance sticks and extras.",
+      "offer": "Best statement gift for a recipient who enjoys layered fragrance and presentation.",
+      "url": "https://www.rituals.com/en-gb/home-gift-set-ecom-2025-1120227.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.rituals.com/en-gb/home-gift-set-ecom-2025-1120227.html",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "home": 10,
+        "scent": 10,
+        "luxury": 9,
+        "statement": 10,
+        "formats": 10,
+        "gift_ready": 10
+      }
+    },
+    {
+      "merchant": "The White Company",
+      "name": "Pure Cashmere Throw",
+      "monogram": "PC",
+      "note": "A lightweight Italian-made cashmere throw designed as a long-lasting bedroom or living-room gift.",
+      "offer": "Best premium tactile centrepiece for someone who values interior texture and understated luxury.",
+      "url": "https://www.thewhitecompany.com/uk/Pure-Cashmere-Throw/p/cashmere-throw",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.thewhitecompany.com/uk/Pure-Cashmere-Throw/p/cashmere-throw",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "home": 10,
+        "touch": 9,
+        "design": 9,
+        "luxury": 10,
+        "statement": 10,
+        "softness": 10
+      }
+    },
+    {
+      "merchant": "The White Company",
+      "name": "Luxury Wool Cashmere Herringbone Throw",
+      "monogram": "HT",
+      "note": "A wool-and-cashmere herringbone throw intended for beds, sofas and reading spaces.",
+      "offer": "Best for a design-conscious homebody who prefers tactile atmosphere over fragrance alone.",
+      "url": "https://www.thewhitecompany.com/uk/Luxury-Wool-Cashmere-Herringbone-Throw/p/lux-wool-cashmere-herringbone-throw",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.thewhitecompany.com/uk/Luxury-Wool-Cashmere-Herringbone-Throw/p/lux-wool-cashmere-herringbone-throw",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "home": 10,
+        "touch": 9,
+        "design": 10,
+        "cosy": 8,
+        "statement": 8,
+        "softness": 8
+      }
+    }
+  ]
+};
+
+const RESULTS = {
+  "scent": {
+    "name": "The Scent Explorer",
+    "color": "#A55E76",
+    "tag": "A fragrant discovery chosen to create memories.",
+    "body": "Scent is the clearest route to a memorable gift for this person. Candle collections, personal-fragrance discovery and mixed home-scent formats will feel personal while still giving the recipient room to explore.",
+    "details": {
+      "Primary sense": "Smell",
+      "Gift character": "Discovery-led",
+      "Best formats": "Candles and fragrance sets",
+      "Ideal impression": "Personal and memorable"
+    }
+  },
+  "taste": {
+    "name": "The Taste Adventurer",
+    "color": "#8A6242",
+    "tag": "A flavour journey made for opening, brewing and sharing.",
+    "body": "This recipient will enjoy a gift that becomes an experience through taste. Tea collections, matcha selections and brewing kits offer variety, conversation and repeat enjoyment without requiring you to guess one exact flavour.",
+    "details": {
+      "Primary sense": "Taste",
+      "Gift character": "Tasting and discovery",
+      "Best formats": "Tea collections and kits",
+      "Ideal impression": "Curious and shareable"
+    }
+  },
+  "cosy": {
+    "name": "The Cosy Comfort",
+    "color": "#718076",
+    "tag": "Soft, tactile and designed for time at home.",
+    "body": "Comfort matters more than novelty for this recipient. Cashmere, soft throws, robes and evening accessories will make the gift feel useful, generous and easy to enjoy repeatedly.",
+    "details": {
+      "Primary sense": "Touch",
+      "Gift character": "Comfort-led",
+      "Best formats": "Soft home and lounge pieces",
+      "Ideal impression": "Warm and thoughtful"
+    }
+  },
+  "bath": {
+    "name": "The Bath Ritual",
+    "color": "#4E7880",
+    "tag": "A complete moment of fragrance, texture and care.",
+    "body": "This person will appreciate a gift that creates a deliberate pause. Bath-and-body sets combine scent and touch in a clear ritual, making them strong choices for birthdays, thank-yous and self-care occasions.",
+    "details": {
+      "Primary senses": "Smell and touch",
+      "Gift character": "Ritual-led",
+      "Best formats": "Bath and body sets",
+      "Ideal impression": "Restorative and indulgent"
+    }
+  },
+  "sound": {
+    "name": "The Sound Lover",
+    "color": "#526277",
+    "tag": "Music, podcasts and listening made more personal.",
+    "body": "The strongest gift will improve how this person listens. Portable speakers, headphones and design-led radios create everyday value while still feeling exciting to unwrap.",
+    "details": {
+      "Primary sense": "Sound",
+      "Gift character": "Useful technology",
+      "Best formats": "Headphones, speakers and radio",
+      "Ideal impression": "Personal and practical"
+    }
+  },
+  "home": {
+    "name": "The Home Atmosphere",
+    "color": "#7D5D50",
+    "tag": "A beautiful object that changes the feeling of a room.",
+    "body": "This recipient enjoys the way a room looks, smells and feels. Home-scenting sets and tactile interior pieces will help them create atmosphere while still looking considered when displayed.",
+    "details": {
+      "Primary senses": "Sight, smell and touch",
+      "Gift character": "Home-focused",
+      "Best formats": "Home scent and tactile décor",
+      "Ideal impression": "Stylish and atmospheric"
+    }
+  }
+};
+
+const SIGNAL_LABELS = {
+  "scent": "fragrance",
+  "taste": "taste experiences",
+  "touch": "tactile comfort",
+  "sound": "personal listening",
+  "home": "home atmosphere",
+  "bath": "bath rituals",
+  "body": "body-care products",
+  "tea": "tea",
+  "matcha": "matcha",
+  "sweet": "sweeter flavours",
+  "candles": "candles",
+  "formats": "several product formats",
+  "personal": "a personal gift",
+  "shared": "something shareable",
+  "speaker": "a portable speaker",
+  "headphones": "headphones",
+  "radio": "radio listening",
+  "portable": "portability",
+  "cosy": "cosy comfort",
+  "softness": "soft materials",
+  "design": "design-led products",
+  "ritual": "a complete ritual",
+  "spa": "an at-home spa feel",
+  "practical": "a practical gift",
+  "simple": "a straightforward gift",
+  "discovery": "variety and discovery",
+  "variety": "a broad selection",
+  "customisable": "personalisation",
+  "gift_ready": "gift-ready presentation",
+  "compact": "a compact gift",
+  "statement": "a statement gift",
+  "playful": "a playful gift",
+  "luxury": "a luxury presentation",
+  "low_budget": "a lower budget",
+  "mid_budget": "a mid-range budget",
+  "evening": "quiet evenings",
+  "recipient_knows_scent": "a recipient confident with fragrance"
+};
+
+const QUESTIONS = [
+  {
+    "q": "Which description fits the recipient best?",
+    "a": [
+      {
+        "label": "They always notice perfume, candles and fragrance",
+        "scores": {
+          "scent": 5
+        },
+        "signals": [
+          "scent",
+          "recipient_knows_scent",
+          "discovery"
+        ]
+      },
+      {
+        "label": "They love tea, flavours and trying new drinks",
+        "scores": {
+          "taste": 5
+        },
+        "signals": [
+          "taste",
+          "tea",
+          "variety"
+        ]
+      },
+      {
+        "label": "They are happiest under a blanket with something soft",
+        "scores": {
+          "cosy": 5
+        },
+        "signals": [
+          "touch",
+          "cosy",
+          "softness"
+        ]
+      },
+      {
+        "label": "They protect their bath, shower or self-care time",
+        "scores": {
+          "bath": 5
+        },
+        "signals": [
+          "bath",
+          "body",
+          "ritual"
+        ]
+      },
+      {
+        "label": "They are nearly always listening to music, radio or podcasts",
+        "scores": {
+          "sound": 5
+        },
+        "signals": [
+          "sound",
+          "personal"
+        ]
+      },
+      {
+        "label": "They care deeply about how their home looks and feels",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "home",
+          "design"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Which sense should the gift delight most?",
+    "a": [
+      {
+        "label": "Smell",
+        "scores": {
+          "scent": 5
+        },
+        "signals": [
+          "scent"
+        ]
+      },
+      {
+        "label": "Taste",
+        "scores": {
+          "taste": 5
+        },
+        "signals": [
+          "taste"
+        ]
+      },
+      {
+        "label": "Touch",
+        "scores": {
+          "cosy": 5
+        },
+        "signals": [
+          "touch",
+          "softness"
+        ]
+      },
+      {
+        "label": "Smell and touch together",
+        "scores": {
+          "bath": 5
+        },
+        "signals": [
+          "scent",
+          "touch",
+          "bath"
+        ]
+      },
+      {
+        "label": "Sound",
+        "scores": {
+          "sound": 5
+        },
+        "signals": [
+          "sound"
+        ]
+      },
+      {
+        "label": "Sight, scent and atmosphere together",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "home",
+          "design",
+          "scent"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What is the occasion?",
+    "a": [
+      {
+        "label": "A birthday where I want something personal",
+        "scores": {
+          "scent": 5
+        },
+        "signals": [
+          "personal",
+          "gift_ready"
+        ]
+      },
+      {
+        "label": "A thank-you, host gift or shared celebration",
+        "scores": {
+          "taste": 5
+        },
+        "signals": [
+          "shared",
+          "gift_ready"
+        ]
+      },
+      {
+        "label": "A caring gesture or quiet pick-me-up",
+        "scores": {
+          "cosy": 5
+        },
+        "signals": [
+          "cosy",
+          "personal"
+        ]
+      },
+      {
+        "label": "A self-care occasion or thoughtful treat",
+        "scores": {
+          "bath": 5
+        },
+        "signals": [
+          "bath",
+          "ritual"
+        ]
+      },
+      {
+        "label": "A milestone or useful upgrade",
+        "scores": {
+          "sound": 5
+        },
+        "signals": [
+          "practical",
+          "statement"
+        ]
+      },
+      {
+        "label": "A new home, wedding or interior-focused occasion",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "home",
+          "statement",
+          "gift_ready"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What should opening the gift feel like?",
+    "a": [
+      {
+        "label": "A fragrance journey with several discoveries",
+        "scores": {
+          "scent": 5
+        },
+        "signals": [
+          "discovery",
+          "scent",
+          "variety"
+        ]
+      },
+      {
+        "label": "A tasting experience to work through",
+        "scores": {
+          "taste": 5
+        },
+        "signals": [
+          "discovery",
+          "taste",
+          "variety"
+        ]
+      },
+      {
+        "label": "An immediate invitation to get comfortable",
+        "scores": {
+          "cosy": 5
+        },
+        "signals": [
+          "cosy",
+          "touch",
+          "softness"
+        ]
+      },
+      {
+        "label": "A complete ritual in one box",
+        "scores": {
+          "bath": 5
+        },
+        "signals": [
+          "ritual",
+          "bath",
+          "gift_ready"
+        ]
+      },
+      {
+        "label": "A useful upgrade they will start using immediately",
+        "scores": {
+          "sound": 5
+        },
+        "signals": [
+          "practical",
+          "sound"
+        ]
+      },
+      {
+        "label": "A beautiful object or set for the room",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "design",
+          "home",
+          "statement"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How experimental should the gift be?",
+    "a": [
+      {
+        "label": "Very. Several scents are better than one safe choice",
+        "scores": {
+          "scent": 5
+        },
+        "signals": [
+          "discovery",
+          "variety",
+          "customisable"
+        ]
+      },
+      {
+        "label": "A broad tasting selection is ideal",
+        "scores": {
+          "taste": 5
+        },
+        "signals": [
+          "discovery",
+          "variety",
+          "taste"
+        ]
+      },
+      {
+        "label": "Keep it familiar, soft and comforting",
+        "scores": {
+          "cosy": 5
+        },
+        "signals": [
+          "cosy",
+          "simple",
+          "softness"
+        ]
+      },
+      {
+        "label": "A known ritual with a polished presentation",
+        "scores": {
+          "bath": 5
+        },
+        "signals": [
+          "ritual",
+          "gift_ready"
+        ]
+      },
+      {
+        "label": "Choose dependable technology over novelty",
+        "scores": {
+          "sound": 5
+        },
+        "signals": [
+          "practical",
+          "sound"
+        ]
+      },
+      {
+        "label": "A statement piece or layered home set is welcome",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "statement",
+          "home",
+          "design"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Where will they enjoy it most?",
+    "a": [
+      {
+        "label": "Across personal fragrance and home-scent moments",
+        "scores": {
+          "scent": 5
+        },
+        "signals": [
+          "scent",
+          "personal",
+          "home"
+        ]
+      },
+      {
+        "label": "At the table or during tea breaks",
+        "scores": {
+          "taste": 5
+        },
+        "signals": [
+          "taste",
+          "tea",
+          "shared"
+        ]
+      },
+      {
+        "label": "In bed, on the sofa or during a quiet evening",
+        "scores": {
+          "cosy": 5
+        },
+        "signals": [
+          "cosy",
+          "evening",
+          "touch"
+        ]
+      },
+      {
+        "label": "In the bathroom during a slower routine",
+        "scores": {
+          "bath": 5
+        },
+        "signals": [
+          "bath",
+          "ritual",
+          "spa"
+        ]
+      },
+      {
+        "label": "Commuting, travelling or moving around the house",
+        "scores": {
+          "sound": 5
+        },
+        "signals": [
+          "sound",
+          "portable",
+          "personal"
+        ]
+      },
+      {
+        "label": "Displayed in the living room or bedroom",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "home",
+          "design",
+          "statement"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Should the gift feel practical or indulgent?",
+    "a": [
+      {
+        "label": "Indulgent, with room for fragrance discovery",
+        "scores": {
+          "scent": 5
+        },
+        "signals": [
+          "luxury",
+          "discovery",
+          "scent"
+        ]
+      },
+      {
+        "label": "Practical enough to consume, special enough to gift",
+        "scores": {
+          "taste": 5
+        },
+        "signals": [
+          "practical",
+          "gift_ready",
+          "taste"
+        ]
+      },
+      {
+        "label": "Practical comfort they will use repeatedly",
+        "scores": {
+          "cosy": 5
+        },
+        "signals": [
+          "practical",
+          "cosy",
+          "touch"
+        ]
+      },
+      {
+        "label": "Unashamedly indulgent",
+        "scores": {
+          "bath": 5
+        },
+        "signals": [
+          "luxury",
+          "ritual",
+          "bath"
+        ]
+      },
+      {
+        "label": "Useful first, exciting second",
+        "scores": {
+          "sound": 5
+        },
+        "signals": [
+          "practical",
+          "sound"
+        ]
+      },
+      {
+        "label": "Decorative and atmospheric",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "design",
+          "home",
+          "statement"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What size of gift feels right?",
+    "a": [
+      {
+        "label": "A compact discovery set",
+        "scores": {
+          "scent": 5
+        },
+        "signals": [
+          "compact",
+          "discovery",
+          "scent"
+        ]
+      },
+      {
+        "label": "A box with several things to taste",
+        "scores": {
+          "taste": 5
+        },
+        "signals": [
+          "variety",
+          "gift_ready",
+          "taste"
+        ]
+      },
+      {
+        "label": "One substantial comfort item or a small cosy pairing",
+        "scores": {
+          "cosy": 5
+        },
+        "signals": [
+          "touch",
+          "cosy",
+          "statement"
+        ]
+      },
+      {
+        "label": "A multi-product set",
+        "scores": {
+          "bath": 5
+        },
+        "signals": [
+          "ritual",
+          "gift_ready",
+          "bath"
+        ]
+      },
+      {
+        "label": "One useful device",
+        "scores": {
+          "sound": 5
+        },
+        "signals": [
+          "practical",
+          "sound"
+        ]
+      },
+      {
+        "label": "A presentation-ready home set or interior piece",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "home",
+          "gift_ready",
+          "statement"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Which spending direction feels comfortable?",
+    "a": [
+      {
+        "label": "Mid to premium for fragrance and presentation",
+        "scores": {
+          "scent": 5
+        },
+        "signals": [
+          "mid_budget",
+          "luxury",
+          "scent"
+        ]
+      },
+      {
+        "label": "Low to mid-range for a generous tasting gift",
+        "scores": {
+          "taste": 5
+        },
+        "signals": [
+          "low_budget",
+          "mid_budget",
+          "taste"
+        ]
+      },
+      {
+        "label": "Mid-range, or premium for exceptional softness",
+        "scores": {
+          "cosy": 5
+        },
+        "signals": [
+          "mid_budget",
+          "luxury",
+          "softness"
+        ]
+      },
+      {
+        "label": "Mid-range for a complete bath-and-body set",
+        "scores": {
+          "bath": 5
+        },
+        "signals": [
+          "mid_budget",
+          "gift_ready",
+          "bath"
+        ]
+      },
+      {
+        "label": "Mid to premium for technology they will use often",
+        "scores": {
+          "sound": 5
+        },
+        "signals": [
+          "mid_budget",
+          "luxury",
+          "practical"
+        ]
+      },
+      {
+        "label": "Premium enough to look special in the room",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "luxury",
+          "statement",
+          "design"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How important is gift-ready presentation?",
+    "a": [
+      {
+        "label": "Very important. Fragrance should feel beautifully boxed",
+        "scores": {
+          "scent": 5
+        },
+        "signals": [
+          "gift_ready",
+          "luxury",
+          "scent"
+        ]
+      },
+      {
+        "label": "Important, especially for a tasting collection",
+        "scores": {
+          "taste": 5
+        },
+        "signals": [
+          "gift_ready",
+          "variety",
+          "taste"
+        ]
+      },
+      {
+        "label": "Less important than how soft and useful it feels",
+        "scores": {
+          "cosy": 5
+        },
+        "signals": [
+          "softness",
+          "practical",
+          "touch"
+        ]
+      },
+      {
+        "label": "Essential. The set should already feel like a ritual",
+        "scores": {
+          "bath": 5
+        },
+        "signals": [
+          "gift_ready",
+          "ritual",
+          "bath"
+        ]
+      },
+      {
+        "label": "Secondary to features and usability",
+        "scores": {
+          "sound": 5
+        },
+        "signals": [
+          "practical",
+          "sound"
+        ]
+      },
+      {
+        "label": "Essential. It should look considered before it is opened",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "gift_ready",
+          "design",
+          "home"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What matters most in the final recommendation?",
+    "a": [
+      {
+        "label": "A memorable scent experience",
+        "scores": {
+          "scent": 5
+        },
+        "signals": [
+          "scent",
+          "discovery",
+          "personal"
+        ]
+      },
+      {
+        "label": "A flavour experience with genuine variety",
+        "scores": {
+          "taste": 5
+        },
+        "signals": [
+          "taste",
+          "variety",
+          "discovery"
+        ]
+      },
+      {
+        "label": "Comfort and tactile quality",
+        "scores": {
+          "cosy": 5
+        },
+        "signals": [
+          "touch",
+          "cosy",
+          "softness"
+        ]
+      },
+      {
+        "label": "A complete bath or body ritual",
+        "scores": {
+          "bath": 5
+        },
+        "signals": [
+          "bath",
+          "body",
+          "ritual"
+        ]
+      },
+      {
+        "label": "A listening product they will genuinely use",
+        "scores": {
+          "sound": 5
+        },
+        "signals": [
+          "sound",
+          "practical",
+          "personal"
+        ]
+      },
+      {
+        "label": "A beautiful gift that changes the room",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "home",
+          "design",
+          "statement"
+        ]
+      }
+    ]
+  }
+];
+
+let step=0;
+let locked=false;
+const selectedAnswers=[];
+const preferenceSignals={};
+const totals=Object.keys(RESULTS).reduce((acc,key)=>{acc[key]=0;return acc;},{});
+const el=id=>document.getElementById(id);
+const screens={intro:el("intro"),quiz:el("quiz"),result:el("result")};
+
+function show(name){Object.values(screens).forEach(screen=>screen.classList.remove("active"));screens[name].classList.add("active");window.scrollTo({top:0,behavior:"smooth"});}
+function hexToRgba(hex,alpha){const clean=hex.replace("#","");const value=parseInt(clean,16);const red=value>>16&255;const green=value>>8&255;const blue=value&255;return `rgba(${red},${green},${blue},${alpha})`;}
+function escapeHtml(value){return String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");}
+function getProductRecommendations(key){return (PRODUCTS[key]||[]).map((product,originalIndex)=>{const matchScore=Object.entries(product.fit||{}).reduce((score,[signal,weight])=>score+(preferenceSignals[signal]||0)*weight,product.base||0);return {...product,matchScore,originalIndex};}).sort((a,b)=>b.matchScore-a.matchScore||(b.base||0)-(a.base||0)||a.originalIndex-b.originalIndex).slice(0,3);}
+function getPersonalMatch(product){const matches=Object.entries(product.fit||{}).filter(([signal])=>preferenceSignals[signal]).map(([signal,weight])=>({signal,value:weight*preferenceSignals[signal]})).sort((a,b)=>b.value-a.value).slice(0,2).map(item=>SIGNAL_LABELS[item.signal]).filter(Boolean);if(matches.length===0)return product.offer||"";if(matches.length===1)return `Matches your preference for ${matches[0]}.`;return `Matches your preference for ${matches[0]} and ${matches[1]}.`;}
+function getProductMonogram(product){if(product.monogram)return product.monogram;return product.name.split(/\s+/).filter(Boolean).slice(0,2).map(word=>word.charAt(0)).join("").toUpperCase();}
+function trackEvent(eventName,details={}){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:eventName,...details});if(typeof window.pintrk==="function"){try{window.pintrk("track","custom",{event_name:eventName,...details});}catch(error){console.warn("Pinterest tracking event was not sent.",error);}}}
+function renderQuestion(){const item=QUESTIONS[step];const totalQuestions=QUESTIONS.length;el("question").textContent=item.q;el("count").textContent=`${String(step+1).padStart(2,"0")} / ${String(totalQuestions).padStart(2,"0")}`;el("fill").style.width=`${step/totalQuestions*100}%`;const box=el("options");box.innerHTML="";locked=false;item.a.forEach((answer,index)=>{const button=document.createElement("button");button.className="option";button.type="button";button.textContent=answer.label;button.addEventListener("click",()=>chooseAnswer(button,answer,index));box.appendChild(button);});setTimeout(()=>el("question").focus({preventScroll:true}),50);}
+function chooseAnswer(button,answer,index){if(locked)return;locked=true;document.querySelectorAll(".option").forEach(option=>{option.disabled=true;});button.classList.add("chosen");selectedAnswers[step]=index;Object.entries(answer.scores).forEach(([key,value])=>{totals[key]+=value;});(answer.signals||[]).forEach(signal=>{preferenceSignals[signal]=(preferenceSignals[signal]||0)+1;});trackEvent("quiz_answer",{quiz:"sensory_gift",question_number:step+1,answer:answer.label});setTimeout(()=>{step+=1;if(step<QUESTIONS.length){renderQuestion();}else{el("fill").style.width="100%";finishQuiz();}},340);}
+function finishQuiz(){const orderedKeys=Object.keys(RESULTS);let winningKey=orderedKeys[0];orderedKeys.forEach(key=>{if(totals[key]>totals[winningKey])winningKey=key;});const tiedKeys=orderedKeys.filter(key=>totals[key]===totals[winningKey]);if(tiedKeys.length>1){for(let questionIndex=selectedAnswers.length-1;questionIndex>=0;questionIndex-=1){const answer=QUESTIONS[questionIndex].a[selectedAnswers[questionIndex]];const rankedTie=tiedKeys.map(key=>({key,value:answer.scores[key]||0})).sort((a,b)=>b.value-a.value);if(rankedTie[0].value>rankedTie[1].value){winningKey=rankedTie[0].key;break;}}}showResult(winningKey);}
+function showResult(key){const result=RESULTS[key];window.LYS_RESULT=key;el("resultCard").style.setProperty("--fam",result.color);el("rName").textContent=result.name;el("rTag").textContent=result.tag;el("rBody").textContent=result.body;const details=el("rDetails");details.innerHTML="";Object.entries(result.details).forEach(([label,value])=>{const row=document.createElement("div");row.className="detail-row";const labelSpan=document.createElement("span");labelSpan.className="detail-label";labelSpan.textContent=label;const valueSpan=document.createElement("span");valueSpan.className="detail-val";valueSpan.textContent=value;row.append(labelSpan,valueSpan);details.appendChild(row);});el("recsTitle").textContent="Your three best-matched sensory gifts";const recommendations=getProductRecommendations(key);const grid=el("recGrid");grid.innerHTML="";recommendations.forEach((product,index)=>{const card=document.createElement("article");card.className="rec";const fallbackHtml=`<div class="ph media media-fallback" style="background:${hexToRgba(result.color,.88)}"><span>${escapeHtml(getProductMonogram(product))}</span></div>`;const mediaHtml=product.img?`<div class="media-frame"><img class="media" src="${escapeHtml(product.img)}" alt="${escapeHtml(product.merchant)} ${escapeHtml(product.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${fallbackHtml}</div>`:fallbackHtml;const badgeHtml=index===0?'<span class="rec-badge">Best match</span>':"";const matchText=getPersonalMatch(product);const offerHtml=matchText?`<span class="offer">${escapeHtml(matchText)}</span>`:"";const linkIsAffiliate=Boolean(product.affiliate);const linkRel=linkIsAffiliate?"noopener sponsored":"noopener";const ctaHtml=product.url&&product.url!=="#"?`<a class="view" href="${escapeHtml(product.url)}" target="_blank" rel="${linkRel}" data-product-position="${index+1}">View product &rsaquo;</a>`:'<span class="view off">Product page unavailable</span>';card.innerHTML=`${badgeHtml}${mediaHtml}<div class="body"><span class="brand">${escapeHtml(product.merchant)}</span><span class="pname">${escapeHtml(product.name)}</span><span class="pnote">${escapeHtml(product.note)}</span>${offerHtml}${ctaHtml}</div>`;const productImage=card.querySelector("img.media");if(productImage){productImage.addEventListener("error",()=>{productImage.remove();const fallback=card.querySelector(".media-fallback");if(fallback)fallback.classList.add("show");},{once:true});}const productLink=card.querySelector("a[data-product-position]");if(productLink){productLink.addEventListener("click",()=>{trackEvent(linkIsAffiliate?"affiliate_click":"product_click",{quiz:"sensory_gift",result:key,merchant:product.merchant,product:product.name,position:index+1,affiliate:linkIsAffiliate});});}grid.appendChild(card);});const disclosure=el("recommendationDisclosure");const containsAffiliateLinks=recommendations.some(product=>product.affiliate);if(containsAffiliateLinks){disclosure.innerHTML='Some links on this page are affiliate links. Love Your Senses may earn a commission from qualifying orders at no extra cost to you. <a href="/disclosure">Read the affiliate disclosure</a>.';}else{disclosure.textContent="These recommendations use direct brand or retailer links. Love Your Senses does not currently earn commission from them. Product availability and temporary imagery may change.";}const browseAll=el("browseAll");if(STORE_LINK&&STORE_LINK!=="#"){const storeRel=STORE_LINK_IS_AFFILIATE?"noopener sponsored":"noopener";browseAll.innerHTML=`<a class="btn-all" href="${escapeHtml(STORE_LINK)}" target="_blank" rel="${storeRel}">Browse all sensory gifts</a>`;browseAll.querySelector("a").addEventListener("click",()=>{trackEvent(STORE_LINK_IS_AFFILIATE?"affiliate_click":"product_click",{quiz:"sensory_gift",result:key,product:"browse_all",affiliate:STORE_LINK_IS_AFFILIATE});});}else{browseAll.innerHTML="";}trackEvent("quiz_complete",{quiz:"sensory_gift",result:key,result_name:result.name});show("result");}
+async function submitEmail(){const emailInput=el("email");const email=emailInput.value.trim();const form=el("emailForm");const note=el("formNote");if(!/^\S+@\S+\.\S+$/.test(email)){emailInput.focus();note.textContent="Enter a valid email address.";return;}if(!EMAIL_FORM_ACTION){note.textContent="Email signup is not connected yet. Add your email platform form action in the JavaScript settings.";return;}const button=el("emailBtn");button.disabled=true;button.textContent="Sending";try{const payload=new URLSearchParams();payload.append(EMAIL_FIELD_NAME,email);payload.append("quiz_result",window.LYS_RESULT||"");payload.append("source","sensory_gift_quiz");await fetch(EMAIL_FORM_ACTION,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:payload.toString()});form.innerHTML='<p class="done">Your sensory gift shortlist is on its way.</p>';note.textContent="";trackEvent("email_signup",{quiz:"sensory_gift",result:window.LYS_RESULT||""});}catch(error){button.disabled=false;button.textContent="Send it";note.textContent="The signup did not complete. Please try again.";console.error("Email signup failed.",error);}}
+async function shareResult(){const result=RESULTS[window.LYS_RESULT];if(!result)return;const text=`My sensory gift direction is ${result.name}. Find yours:`;const shareData={title:"Find Your Perfect Sensory Gift | Love Your Senses",text,url:QUIZ_URL||location.href};if(navigator.share){try{await navigator.share(shareData);trackEvent("share",{quiz:"sensory_gift",result:window.LYS_RESULT,method:"native"});}catch(error){if(error.name!=="AbortError")console.error("Share failed.",error);}return;}try{await navigator.clipboard.writeText(`${text} ${shareData.url}`);el("share").textContent="Link copied";setTimeout(()=>el("share").textContent="Share your result",2000);trackEvent("share",{quiz:"sensory_gift",result:window.LYS_RESULT,method:"clipboard"});}catch(error){console.error("Copy failed.",error);}}
+function resetQuiz(){step=0;locked=false;selectedAnswers.length=0;Object.keys(preferenceSignals).forEach(key=>delete preferenceSignals[key]);Object.keys(totals).forEach(key=>totals[key]=0);window.LYS_RESULT="";const form=el("emailForm");form.innerHTML='<input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email"><button id="emailBtn" type="button">Send it</button>';el("emailBtn").addEventListener("click",submitEmail);el("formNote").textContent="Connect your email platform in the JavaScript settings before publishing.";show("intro");trackEvent("quiz_retake",{quiz:"sensory_gift"});}
+el("start").addEventListener("click",()=>{show("quiz");renderQuestion();trackEvent("quiz_start",{quiz:"sensory_gift"});});
+el("emailBtn").addEventListener("click",submitEmail);
+el("share").addEventListener("click",shareResult);
+el("retake").addEventListener("click",resetQuiz);
+
+
+
+
+
+</script>
+</body>
+</html>
