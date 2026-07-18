@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Perfect Headphones | Love Your Senses</title>
+<meta name="description" content="Answer twelve questions to discover the headphones, earbuds or open-ear design that best match your listening environment, fit and budget.">
+<link rel="canonical" href="https://loveyoursenses.com/perfect-headphones-quiz/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Find Your Perfect Headphones | Love Your Senses">
+<meta property="og:description" content="Match noise cancellation, comfort, fit, activity, sound preferences and budget to a personalised headphone shortlist.">
+<meta property="og:url" content="https://loveyoursenses.com/perfect-headphones-quiz/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#E7E3DD;
+    --card:#F2EEE8;
+    --ink:#2A2130;
+    --ink-soft:#6E6574;
+    --accent:#7B4A5E;
+    --accent-deep:#5E3547;
+    --line:#CDC3B6;
+    --gold:#B8A78C;
+    --cream:#F7F1EC;
+    --radius:18px;
+    --ease:cubic-bezier(.4,.14,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Jost',system-ui,sans-serif;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+  button,input{font:inherit}
+  button{touch-action:manipulation}
+  .display{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  .wrap{width:100%;max-width:1000px;margin:0 auto;padding-left:24px;padding-right:24px}
+  .site-head{padding:24px 0}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .mark{font-family:'Fraunces',serif;font-weight:500;font-size:1.24rem;text-decoration:none;color:var(--ink)}
+  .mark span{color:var(--accent)}
+  .head-link{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none}
+  .head-link:hover{color:var(--accent)}
+  .stage{width:100%;max-width:680px;margin:0 auto;padding:36px 20px 72px}
+  .screen{display:none;animation:rise .6s var(--ease) both}
+  .screen.active{display:block}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  #intro{text-align:center;padding:14px 0 24px}
+  .ring{margin:0 auto 30px;display:block}
+  #intro h1{font-size:clamp(2.55rem,9vw,4rem);margin-bottom:18px}
+  #intro h1 em{font-style:italic;font-weight:400}
+  .lede{color:var(--ink-soft);font-size:1.06rem;max-width:45ch;margin:0 auto 24px}
+  .wellbeing-note{font-size:.79rem;color:var(--ink-soft);line-height:1.55;max-width:56ch;margin:0 auto 30px}
+  .meta{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:26px}
+  .btn{display:inline-block;font-family:'Jost',sans-serif;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:17px 40px;background:var(--ink);color:var(--bg);transition:transform .35s var(--ease),background .35s var(--ease)}
+  .btn:hover{background:var(--accent-deep);transform:translateY(-2px)}
+  .progress-wrap{display:flex;align-items:center;gap:16px;margin-bottom:38px}
+  .track{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
+  .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);transition:width .5s var(--ease)}
+  .count{font-size:.72rem;letter-spacing:.2em;color:var(--ink-soft);white-space:nowrap}
+  .question{font-size:clamp(1.75rem,6vw,2.45rem);margin-bottom:32px;min-height:2.2em}
+  .options{display:flex;flex-direction:column;gap:12px}
+  .option{font-family:'Jost',sans-serif;font-size:1.01rem;color:var(--ink);text-align:left;background:var(--card);border:1px solid transparent;border-radius:var(--radius);padding:19px 22px;cursor:pointer;width:100%;transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);display:flex;align-items:center;gap:14px}
+  .option:before{content:"";width:9px;height:9px;border-radius:50%;border:1.5px solid var(--line);flex:none;transition:all .3s var(--ease)}
+  .option:hover{border-color:var(--gold);transform:translateX(4px)}
+  .option.chosen{background:var(--accent);color:var(--cream);border-color:var(--accent)}
+  .option.chosen:before{background:var(--cream);border-color:var(--cream)}
+  .option:disabled{cursor:default}
+  .result-card{background:var(--fam,#7B4A5E);color:var(--cream);border-radius:26px;padding:44px 32px 40px;text-align:center;box-shadow:0 30px 60px -30px rgba(42,33,48,.55)}
+  .result-card .eyebrow{color:rgba(247,241,236,.72)}
+  .result-name{font-size:clamp(2.55rem,10vw,3.65rem);margin-bottom:10px}
+  .result-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:1.2rem;opacity:.94;margin-bottom:24px}
+  .result-body{font-size:1.02rem;line-height:1.72;opacity:.95;max-width:44ch;margin:0 auto 30px}
+  .details{border-top:1px solid rgba(247,241,236,.28);border-bottom:1px solid rgba(247,241,236,.28);padding:22px 0;text-align:left;display:flex;flex-direction:column;gap:14px}
+  .detail-row{display:flex;gap:18px;align-items:baseline}
+  .detail-label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;opacity:.72;width:104px;flex:none}
+  .detail-val{font-family:'Fraunces',serif;font-size:1.04rem}
+  .recs{margin-top:36px}
+  .recs-head{text-align:center;margin-bottom:22px}
+  .recs-head .eyebrow{display:block;margin-bottom:10px}
+  .recs-head h3{font-size:clamp(1.55rem,5vw,2.05rem)}
+  .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .rec{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+  .rec-badge{position:absolute;top:12px;left:12px;z-index:2;background:rgba(247,241,236,.94);color:var(--accent-deep);border-radius:100px;padding:6px 10px;font-size:.61rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+  .rec .media-frame{aspect-ratio:1/1;width:100%;position:relative;overflow:hidden;background:#fff}
+  .rec .media{aspect-ratio:1/1;width:100%;height:100%;object-fit:cover;padding:0;background:#fff;display:block}
+  .rec .ph{display:flex;align-items:center;justify-content:center;padding:0}
+  .rec .media-frame .media{position:absolute;inset:0}
+  .rec .media-fallback{display:none}
+  .rec .media-fallback.show{display:flex}
+  .rec .ph span{font-family:'Fraunces',serif;font-size:2rem;color:#fff;opacity:.92}
+  .rec .body{padding:16px 15px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .rec .brand{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .rec .pname{font-family:'Fraunces',serif;font-size:1.04rem;line-height:1.22}
+  .rec .pnote{font-size:.8rem;color:var(--ink-soft);line-height:1.45}
+  .rec .offer{font-size:.76rem;color:var(--accent);font-weight:500}
+  .rec .view{margin-top:auto;padding-top:11px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;text-decoration:none;color:var(--accent)}
+  .rec .view.off{color:var(--ink-soft);opacity:.58}
+  .rec .view:hover{text-decoration:underline;text-underline-offset:4px}
+  .affiliate-note{font-size:.78rem;color:var(--ink-soft);line-height:1.55;text-align:center;max-width:58ch;margin:18px auto 0}
+  .affiliate-note a{color:var(--accent);text-underline-offset:3px}
+  .browse-all{text-align:center;margin-top:22px}
+  .btn-all{display:inline-block;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;text-decoration:none;border:1px solid var(--accent);color:var(--accent);border-radius:100px;padding:14px 34px;transition:background .3s var(--ease),color .3s var(--ease)}
+  .btn-all:hover{background:var(--accent);color:var(--cream)}
+  .capture{background:var(--card);border-radius:var(--radius);padding:32px 28px;margin-top:28px;text-align:center}
+  .capture h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;margin-bottom:8px}
+  .capture p{color:var(--ink-soft);font-size:.96rem;margin:0 auto 22px;max-width:39ch}
+  .field{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .field input{font-family:'Jost',sans-serif;font-size:1rem;flex:1;min-width:210px;padding:15px 18px;border:1px solid var(--line);border-radius:100px;background:#fff;color:var(--ink)}
+  .field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+  .field button{font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:15px 28px;background:var(--accent);color:var(--cream)}
+  .field button:hover{background:var(--accent-deep)}
+  .capture .done{color:var(--accent);font-family:'Fraunces',serif;font-size:1.1rem;padding:6px 0}
+  .capture .form-note{font-size:.74rem;margin-top:12px;margin-bottom:0}
+  .next-quiz{border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;margin-top:18px;text-align:center}
+  .next-quiz .eyebrow{display:block;margin-bottom:9px}
+  .next-quiz h3{font-size:1.45rem;margin-bottom:8px}
+  .next-quiz p{color:var(--ink-soft);font-size:.94rem;max-width:40ch;margin:0 auto 18px}
+  .next-link{font-size:.74rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;color:var(--accent);text-underline-offset:4px}
+  .next-link:hover{color:var(--accent-deep)}
+  .after{display:flex;gap:22px;justify-content:center;align-items:center;margin-top:26px;flex-wrap:wrap}
+  .linkish{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px}
+  .linkish:hover{color:var(--accent)}
+  .site-foot{border-top:1px solid var(--line);padding:34px 0 48px}
+  .foot{display:flex;flex-direction:column;align-items:center;gap:11px;text-align:center}
+  .foot-nav a{color:var(--ink-soft);text-decoration:none;font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;margin:0 10px}
+  .foot-nav a:hover{color:var(--accent)}
+  .foot .disc{font-size:.82rem;color:var(--ink-soft);max-width:54ch}
+  .foot .cr{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  @media(max-width:600px){.site-head{padding:20px 0}.stage{padding-top:28px}.rec-grid{grid-template-columns:1fr 1fr}.detail-label{width:88px}}
+  @media(max-width:420px){.rec-grid{grid-template-columns:1fr}.result-card{padding:40px 24px 36px}.field{flex-direction:column}.field input,.field button{width:100%}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <div class="bar">
+      <a href="/" class="mark">Love Your <span>Senses</span></a>
+      <a href="/#quiz-library" class="head-link">All quizzes</a>
+    </div>
+  </div>
+</header>
+
+<main class="stage">
+  <section id="intro" class="screen active">
+    <svg class="ring" width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
+      <circle cx="29" cy="29" r="27" fill="none" stroke="#B8A78C" stroke-width="1"/>
+      <circle cx="29" cy="29" r="19" fill="none" stroke="#CDC3B6" stroke-width="1"/>
+      <g stroke="#7B4A5E" stroke-width="1.4">
+        <line x1="29" y1="2" x2="29" y2="9"/>
+        <line x1="52.4" y1="42.5" x2="46.4" y2="39"/>
+        <line x1="5.6" y1="42.5" x2="11.6" y2="39"/>
+        <line x1="52.4" y1="15.5" x2="46.4" y2="19"/>
+        <line x1="5.6" y1="15.5" x2="11.6" y2="19"/>
+        <line x1="29" y1="56" x2="29" y2="49"/>
+      </g>
+      <circle cx="29" cy="29" r="3" fill="#7B4A5E"/>
+    </svg>
+    <p class="eyebrow">A personal sound discovery</p>
+    <h1 class="display">Find your perfect <em>headphones</em></h1>
+    <p class="lede">Answer twelve questions about fit, noise, movement, calls, sound and budget to find your listening profile and three products to consider.</p>
+    <p class="wellbeing-note">Listen at a comfortable volume, take breaks during extended sessions and follow each manufacturer's fit, charging and water-resistance instructions. Use suitable awareness around roads and moving traffic.</p>
+    <button class="btn" id="start" type="button">Begin the discovery</button>
+    <p class="meta">12 questions &nbsp;·&nbsp; about three minutes</p>
+  </section>
+
+  <section id="quiz" class="screen" aria-live="polite">
+    <div class="progress-wrap">
+      <div class="track" aria-hidden="true"><div class="fill" id="fill"></div></div>
+      <span class="count" id="count">01 / 12</span>
+    </div>
+    <h2 class="question display" id="question" tabindex="-1"></h2>
+    <div class="options" id="options"></div>
+  </section>
+
+  <section id="result" class="screen" aria-live="polite">
+    <div class="result-card" id="resultCard">
+      <p class="eyebrow">Your listening profile</p>
+      <h2 class="result-name display" id="rName"></h2>
+      <p class="result-tag" id="rTag"></p>
+      <p class="result-body" id="rBody"></p>
+      <div class="details" id="rDetails"></div>
+    </div>
+
+    <div class="recs">
+      <div class="recs-head">
+        <span class="eyebrow">Chosen from all twelve answers</span>
+        <h3 class="display" id="recsTitle">Your three best-matched headphones</h3>
+      </div>
+      <div class="rec-grid" id="recGrid"></div>
+      <p class="affiliate-note" id="recommendationDisclosure">These recommendations use direct manufacturer links. Love Your Senses does not currently earn commission from them. Product availability and temporary imagery may change.</p>
+      <div class="browse-all" id="browseAll"></div>
+      <p class="wellbeing-note">Review current compatibility, codecs, microphone support, water resistance, included cables and returns terms before ordering. Fit and sound remain personal.</p>
+    </div>
+
+    <div class="capture">
+      <h3>Save your headphone shortlist</h3>
+      <p>Get your result, buying priorities and future sound discoveries by email.</p>
+      <div class="field" id="emailForm">
+        <input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email">
+        <button id="emailBtn" type="button">Send it</button>
+      </div>
+      <p class="form-note" id="formNote">Connect your email platform in the JavaScript settings before publishing.</p>
+    </div>
+
+    <div class="next-quiz">
+      <span class="eyebrow">Continue the sound discovery</span>
+      <h3 class="display">Find your perfect wind-down ritual</h3>
+      <p>Match reading, listening, bathing, journalling and atmosphere products to your ideal evening routine.</p>
+      <a class="next-link" href="/perfect-wind-down-ritual-quiz/">Take the wind-down quiz</a>
+    </div>
+
+    <div class="after">
+      <button class="linkish" id="share" type="button">Share your result</button>
+      <button class="linkish" id="retake" type="button">Retake the quiz</button>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-nav">
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/disclosure/">Affiliate Disclosure</a>
+      </div>
+      <p class="disc">Love Your Senses helps you discover products matched to your preferences through short, enjoyable quizzes.</p>
+      <p class="cr">© 2026 Love Your Senses</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Product links are direct and non-affiliate. Replace URLs and images with approved affiliate assets when partnerships are active, then change affiliate:false to affiliate:true. */
+const QUIZ_URL = "https://loveyoursenses.com/perfect-headphones-quiz/";
+const STORE_LINK = "";
+const STORE_LINK_IS_AFFILIATE = false;
+const EMAIL_FORM_ACTION = "";
+const EMAIL_FIELD_NAME = "email";
+
+const PRODUCTS = {
+  "travel": [
+    {
+      "merchant": "Sony",
+      "name": "WH-1000XM6",
+      "monogram": "SX",
+      "note": "Flagship over-ear wireless headphones built around advanced noise cancellation, foldability and clear calls.",
+      "offer": "Best overall for flights, trains and focused work when strong noise control is the main priority.",
+      "url": "https://www.sony.co.uk/headphones/products/wh-1000xm6",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.sony.co.uk/headphones/products/wh-1000xm6",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "travel": 10,
+        "anc": 10,
+        "over_ear": 10,
+        "folding": 9,
+        "calls": 9,
+        "wireless": 9,
+        "premium": 8
+      }
+    },
+    {
+      "merchant": "Bose",
+      "name": "QuietComfort Ultra Headphones (2nd Gen)",
+      "monogram": "BQ",
+      "note": "Premium over-ear headphones with Bose's strongest noise cancellation, immersive audio and plush cushioning.",
+      "offer": "Best for travellers who place equal weight on quiet, comfort and a premium finish.",
+      "url": "https://www.bose.co.uk/p/headphones/bose-quietcomfort-ultra-headphones-2nd-gen/QCUH2-HEADPHONEARN.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.bose.co.uk/p/headphones/bose-quietcomfort-ultra-headphones-2nd-gen/QCUH2-HEADPHONEARN.html",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "travel": 10,
+        "anc": 10,
+        "over_ear": 10,
+        "comfort": 10,
+        "premium": 10,
+        "immersive": 9
+      }
+    },
+    {
+      "merchant": "Sennheiser",
+      "name": "MOMENTUM 5 Wireless",
+      "monogram": "M5",
+      "note": "Premium wireless over-ears combining adaptive noise cancellation, detailed sound and extended battery life.",
+      "offer": "Best for long journeys when sound quality and battery matter as much as noise cancellation.",
+      "url": "https://uk.sennheiser-hearing.com/collections/all-headphones/products/momentum-5-wireless",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.sennheiser-hearing.com/collections/all-headphones/products/momentum-5-wireless",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "travel": 9,
+        "anc": 9,
+        "over_ear": 10,
+        "battery": 10,
+        "detail": 10,
+        "wireless": 9,
+        "premium": 8
+      }
+    },
+    {
+      "merchant": "Apple",
+      "name": "AirPods Max 2",
+      "monogram": "AM",
+      "note": "Apple's premium over-ear headphones with active noise cancellation, Adaptive Audio and spatial listening features.",
+      "offer": "Best for an Apple-centred setup where seamless device integration and immersive media are priorities.",
+      "url": "https://www.apple.com/uk/airpods-max/",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.apple.com/uk/airpods-max/",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "travel": 8,
+        "anc": 9,
+        "over_ear": 10,
+        "apple": 10,
+        "immersive": 10,
+        "premium": 10,
+        "comfort": 7
+      }
+    }
+  ],
+  "everyday": [
+    {
+      "merchant": "Sony",
+      "name": "WF-1000XM6",
+      "monogram": "WF",
+      "note": "Premium compact wireless earbuds with noise cancellation and app-based sound personalisation.",
+      "offer": "Best overall for pocketable everyday listening with strong noise control and broad device compatibility.",
+      "url": "https://www.sony.co.uk/headphones/products/wf-1000xm6",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.sony.co.uk/headphones/products/wf-1000xm6",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "earbuds": 10,
+        "pocket": 10,
+        "anc": 10,
+        "wireless": 10,
+        "android": 8,
+        "calls": 8,
+        "premium": 8
+      }
+    },
+    {
+      "merchant": "Apple",
+      "name": "AirPods Pro 3",
+      "monogram": "AP",
+      "note": "In-ear AirPods with active noise cancellation, Transparency and deep Apple-device integration.",
+      "offer": "Best for iPhone users who want compact noise cancellation, calls and everyday convenience.",
+      "url": "https://www.apple.com/uk/airpods-pro/",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.apple.com/uk/airpods-pro/",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "earbuds": 10,
+        "pocket": 10,
+        "anc": 10,
+        "apple": 10,
+        "calls": 9,
+        "exercise": 7,
+        "premium": 8
+      }
+    },
+    {
+      "merchant": "Sennheiser",
+      "name": "MOMENTUM True Wireless 4",
+      "monogram": "MT",
+      "note": "Premium true-wireless earbuds focused on detailed sound, adaptive noise cancellation and personalisation.",
+      "offer": "Best for an everyday earbud buyer who puts sound quality above ecosystem-specific features.",
+      "url": "https://uk.sennheiser-hearing.com/products/momentum-true-wireless-4",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.sennheiser-hearing.com/products/momentum-true-wireless-4",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "earbuds": 10,
+        "pocket": 10,
+        "anc": 8,
+        "detail": 10,
+        "wireless": 10,
+        "android": 7,
+        "premium": 8
+      }
+    },
+    {
+      "merchant": "Apple",
+      "name": "AirPods 4 with Active Noise Cancellation",
+      "monogram": "A4",
+      "note": "Open-fit AirPods with noise control for people who dislike silicone ear tips.",
+      "offer": "Best for Apple users who want a lighter, less sealed earbud feel for daily use.",
+      "url": "https://www.apple.com/uk/airpods-4/",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.apple.com/uk/airpods-4/",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "earbuds": 9,
+        "pocket": 10,
+        "open_fit": 10,
+        "apple": 10,
+        "anc": 6,
+        "comfort": 8,
+        "calls": 8
+      }
+    }
+  ],
+  "active": [
+    {
+      "merchant": "Beats",
+      "name": "Powerbeats Pro 2",
+      "monogram": "PB",
+      "note": "Secure-fit workout earbuds with ear hooks, noise control and sweat-resistant construction.",
+      "offer": "Best overall for intense training when stability and physical controls matter.",
+      "url": "https://www.beatsbydre.com/uk/earbuds/powerbeats-pro-2",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.beatsbydre.com/uk/earbuds/powerbeats-pro-2",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "exercise": 10,
+        "secure": 10,
+        "earbuds": 9,
+        "anc": 8,
+        "sweat": 10,
+        "apple": 7,
+        "android": 6
+      }
+    },
+    {
+      "merchant": "Shokz",
+      "name": "OpenRun Pro 2",
+      "monogram": "OR",
+      "note": "Open-ear sports headphones with a wraparound band that keeps environmental sound audible.",
+      "offer": "Best for outdoor running and cycling where awareness is more important than isolation.",
+      "url": "https://uk.shokz.com/products/openrun-pro2",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.shokz.com/products/openrun-pro2",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "exercise": 10,
+        "open_ear": 10,
+        "awareness": 10,
+        "secure": 10,
+        "sweat": 9,
+        "outdoor": 10
+      }
+    },
+    {
+      "merchant": "Sennheiser",
+      "name": "SPORT True Wireless",
+      "monogram": "ST",
+      "note": "Sports earbuds with secure fins and interchangeable open or closed acoustic adapters.",
+      "offer": "Best for someone who wants to choose between greater awareness and a more sealed workout fit.",
+      "url": "https://uk.sennheiser-hearing.com/collections/headphones/products/sport-true-wireless",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.sennheiser-hearing.com/collections/headphones/products/sport-true-wireless",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "exercise": 10,
+        "secure": 9,
+        "earbuds": 9,
+        "awareness": 7,
+        "sweat": 9,
+        "custom_fit": 9
+      }
+    },
+    {
+      "merchant": "Bose",
+      "name": "Ultra Open Earbuds",
+      "monogram": "BO",
+      "note": "Cuff-style open earbuds that leave the ear canal uncovered and maintain awareness.",
+      "offer": "Best for lighter exercise, walking and all-day movement when open comfort is the priority.",
+      "url": "https://www.bose.co.uk/p/earbuds/bose-ultra-open-earbuds/ULT-HEADPHONEOPN.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.bose.co.uk/p/earbuds/bose-ultra-open-earbuds/ULT-HEADPHONEOPN.html",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "exercise": 7,
+        "open_ear": 10,
+        "awareness": 10,
+        "comfort": 10,
+        "sweat": 7,
+        "wireless": 9
+      }
+    }
+  ],
+  "comfort": [
+    {
+      "merchant": "Bose",
+      "name": "QuietComfort Headphones",
+      "monogram": "QC",
+      "note": "Over-ear wireless headphones combining plush cushions, adjustable noise control and straightforward physical controls.",
+      "offer": "Best overall for long listening sessions where soft over-ear comfort matters most.",
+      "url": "https://www.bose.co.uk/p/headphones/quietcomfort-acoustic-noise-cancelling-headphones/QC-HEADPHONEARN.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.bose.co.uk/p/headphones/quietcomfort-acoustic-noise-cancelling-headphones/QC-HEADPHONEARN.html",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "comfort": 10,
+        "over_ear": 10,
+        "anc": 9,
+        "wireless": 9,
+        "simple": 8,
+        "calls": 7
+      }
+    },
+    {
+      "merchant": "Sony",
+      "name": "WH-CH720N",
+      "monogram": "CH",
+      "note": "Lightweight over-ear noise-cancelling headphones with multipoint connection and long battery life.",
+      "offer": "Best value for all-day over-ear wear without choosing a flagship model.",
+      "url": "https://www.sony.co.uk/headphones/products/wh-ch720n",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.sony.co.uk/headphones/products/wh-ch720n",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "comfort": 10,
+        "lightweight": 10,
+        "over_ear": 10,
+        "anc": 8,
+        "battery": 9,
+        "value": 8,
+        "calls": 8
+      }
+    },
+    {
+      "merchant": "Sennheiser",
+      "name": "ACCENTUM Plus Wireless",
+      "monogram": "AC",
+      "note": "Comfort-focused over-ear headphones with adaptive noise cancellation, personalisation and extended battery life.",
+      "offer": "Best for commuting and office use when comfort, battery and custom sound all matter.",
+      "url": "https://uk.sennheiser-hearing.com/collections/sennheiser/products/accentum-plus-wireless",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.sennheiser-hearing.com/collections/sennheiser/products/accentum-plus-wireless",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "comfort": 9,
+        "over_ear": 10,
+        "anc": 9,
+        "battery": 10,
+        "detail": 7,
+        "mid_budget": 9
+      }
+    },
+    {
+      "merchant": "Sennheiser",
+      "name": "ACCENTUM Open",
+      "monogram": "AO",
+      "note": "Lightweight open-fit wireless earbuds that avoid sealing the ear canal.",
+      "offer": "Best for people who find conventional in-ear tips uncomfortable or overly isolating.",
+      "url": "https://uk.sennheiser-hearing.com/products/accentum-open",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.sennheiser-hearing.com/products/accentum-open",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "comfort": 10,
+        "open_fit": 10,
+        "awareness": 9,
+        "earbuds": 8,
+        "simple": 10,
+        "value": 8
+      }
+    }
+  ],
+  "detail": [
+    {
+      "merchant": "Sennheiser",
+      "name": "MOMENTUM 5 Wireless",
+      "monogram": "M5",
+      "note": "Wireless over-ear headphones designed around detailed sound, modern codecs and noise cancellation.",
+      "offer": "Best overall when high-quality wireless listening must also remain practical for travel and calls.",
+      "url": "https://uk.sennheiser-hearing.com/collections/all-headphones/products/momentum-5-wireless",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.sennheiser-hearing.com/collections/all-headphones/products/momentum-5-wireless",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "detail": 10,
+        "wireless": 10,
+        "over_ear": 10,
+        "anc": 8,
+        "battery": 10,
+        "premium": 8
+      }
+    },
+    {
+      "merchant": "Bowers & Wilkins",
+      "name": "Px7 S3",
+      "monogram": "PX",
+      "note": "Premium wireless noise-cancelling over-ears with aptX Lossless support and a refined material finish.",
+      "offer": "Best for someone who wants detailed wireless sound with strong design and build quality.",
+      "url": "https://www.bowerswilkins.com/en-gb/product/over-ear-headphones/px7-s3/FP45330P.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.bowerswilkins.com/en-gb/product/over-ear-headphones/px7-s3/FP45330P.html",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "detail": 10,
+        "wireless": 10,
+        "over_ear": 10,
+        "design": 10,
+        "anc": 8,
+        "premium": 10
+      }
+    },
+    {
+      "merchant": "Sennheiser",
+      "name": "HD 560S",
+      "monogram": "H5",
+      "note": "Open-back wired headphones developed for natural, analytical home listening.",
+      "offer": "Best value for detailed wired listening at a desk or in a quiet room.",
+      "url": "https://uk.sennheiser-hearing.com/products/hd-560s",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.sennheiser-hearing.com/products/hd-560s",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "detail": 10,
+        "wired": 10,
+        "open_back": 10,
+        "home": 10,
+        "value": 8,
+        "over_ear": 9
+      }
+    },
+    {
+      "merchant": "Sennheiser",
+      "name": "HD 600",
+      "monogram": "H6",
+      "note": "Reference open-back wired headphones intended for dedicated hi-fi listening.",
+      "offer": "Best premium wired choice for a quiet home setup where neutrality and clarity matter most.",
+      "url": "https://uk.sennheiser-hearing.com/products/hd-600",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.sennheiser-hearing.com/products/hd-600",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "detail": 10,
+        "wired": 10,
+        "open_back": 10,
+        "home": 10,
+        "premium": 10,
+        "over_ear": 9
+      }
+    }
+  ],
+  "value": [
+    {
+      "merchant": "Sony",
+      "name": "WH-CH520",
+      "monogram": "C5",
+      "note": "Lightweight wireless on-ear headphones with multipoint pairing and extended battery life.",
+      "offer": "Best overall for simple everyday wireless listening at a lower spend.",
+      "url": "https://www.sony.co.uk/headphones/products/wh-ch520",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.sony.co.uk/headphones/products/wh-ch520",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "value": 10,
+        "simple": 10,
+        "wireless": 10,
+        "on_ear": 10,
+        "battery": 10,
+        "calls": 7
+      }
+    },
+    {
+      "merchant": "Sony",
+      "name": "WF-C710N",
+      "monogram": "C7",
+      "note": "Compact wireless earbuds with noise cancellation, ambient sound and a charging case.",
+      "offer": "Best for lower-cost true-wireless listening when noise cancellation is still important.",
+      "url": "https://www.sony.co.uk/headphones/products/wf-c710n",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.sony.co.uk/headphones/products/wf-c710n",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "value": 10,
+        "earbuds": 10,
+        "pocket": 10,
+        "anc": 8,
+        "wireless": 10,
+        "calls": 7
+      }
+    },
+    {
+      "merchant": "Sennheiser",
+      "name": "ACCENTUM Open",
+      "monogram": "AO",
+      "note": "Simple open-fit wireless earbuds with multipoint connection and no sealed ear tip.",
+      "offer": "Best for easy, aware listening and a lightweight fit at a practical price.",
+      "url": "https://uk.sennheiser-hearing.com/products/accentum-open",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.sennheiser-hearing.com/products/accentum-open",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "value": 9,
+        "simple": 10,
+        "open_fit": 10,
+        "awareness": 9,
+        "wireless": 9,
+        "comfort": 9
+      }
+    },
+    {
+      "merchant": "Sennheiser",
+      "name": "CX 80S",
+      "monogram": "CX",
+      "note": "Straightforward wired in-ear headphones with an inline remote and microphone.",
+      "offer": "Best for the lowest-cost route when charging and Bluetooth features are unnecessary.",
+      "url": "https://uk.sennheiser-hearing.com/products/cx-80s",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.sennheiser-hearing.com/products/cx-80s",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "value": 10,
+        "simple": 10,
+        "wired": 10,
+        "earbuds": 7,
+        "calls": 6,
+        "compact": 10
+      }
+    }
+  ]
+};
+
+const RESULTS = {
+  "travel": {
+    "name": "Travel Quiet",
+    "color": "#4F6372",
+    "tag": "Immersive, controlled and built to soften busy surroundings.",
+    "body": "You need headphones that create a dependable listening bubble on transport, in shared spaces or during focused work. Premium over-ear noise cancellation, comfortable cushions and strong call performance should lead your shortlist.",
+    "details": {
+      "Best format": "Noise-cancelling over-ear",
+      "Main priority": "Quiet and immersion",
+      "Typical use": "Flights, trains and focused work",
+      "Worth comparing": "Comfort, case size and calls"
+    }
+  },
+  "everyday": {
+    "name": "Pocket Everyday",
+    "color": "#69708A",
+    "tag": "Compact, capable and always within reach.",
+    "body": "You want powerful everyday features without carrying a full-size headset. Premium wireless earbuds, dependable calls and pocketable charging belong at the centre of your decision.",
+    "details": {
+      "Best format": "True-wireless earbuds",
+      "Main priority": "Convenience",
+      "Typical use": "Commuting, errands and calls",
+      "Worth comparing": "Fit, ecosystem and noise control"
+    }
+  },
+  "active": {
+    "name": "Active & Aware",
+    "color": "#657855",
+    "tag": "Secure, movement-ready and tuned to the world around you.",
+    "body": "Your headphones need to stay in place while you move. Secure hooks, fins or open-ear bands should take priority, with sweat resistance and environmental awareness chosen around where you exercise.",
+    "details": {
+      "Best format": "Secure earbuds or open-ear",
+      "Main priority": "Stability and awareness",
+      "Typical use": "Running, gym and outdoor activity",
+      "Worth comparing": "Fit system and water rating"
+    }
+  },
+  "comfort": {
+    "name": "All-Day Comfort",
+    "color": "#7B6A77",
+    "tag": "Light, wearable and designed for long sessions.",
+    "body": "Fit fatigue matters more to you than maximum isolation or the smallest possible case. Lightweight over-ears and open-fit earbuds should lead the shortlist, with clamp, ear-tip pressure and overall weight considered carefully.",
+    "details": {
+      "Best format": "Light over-ear or open-fit",
+      "Main priority": "Long-wear comfort",
+      "Typical use": "Work, home and all-day audio",
+      "Worth comparing": "Weight, clamp and ear pressure"
+    }
+  },
+  "detail": {
+    "name": "Sound Detail",
+    "color": "#6C564A",
+    "tag": "Nuanced, revealing and chosen for the music itself.",
+    "body": "You listen closely and want headphones that reveal texture, space and separation. Premium wireless models offer flexibility, while open-back wired headphones become especially compelling for quiet home listening.",
+    "details": {
+      "Best format": "Premium wireless or open-back wired",
+      "Main priority": "Clarity and detail",
+      "Typical use": "Focused music listening",
+      "Worth comparing": "Source, codecs and open-back leakage"
+    }
+  },
+  "value": {
+    "name": "Simple Value",
+    "color": "#55746E",
+    "tag": "Straightforward, useful and free from unnecessary extras.",
+    "body": "You want reliable listening without paying for features you will rarely use. Practical wireless on-ears, mid-range earbuds and simple wired options will give you the clearest value.",
+    "details": {
+      "Best format": "Practical wireless or wired",
+      "Main priority": "Useful features for the spend",
+      "Typical use": "Everyday casual listening",
+      "Worth comparing": "Fit, battery and included controls"
+    }
+  }
+};
+
+const SIGNAL_LABELS = {
+  "travel": "travel use",
+  "anc": "noise cancellation",
+  "over_ear": "an over-ear fit",
+  "folding": "a foldable design",
+  "calls": "clear calls",
+  "wireless": "wireless listening",
+  "premium": "premium construction",
+  "comfort": "long-wear comfort",
+  "immersive": "immersive audio",
+  "battery": "long battery life",
+  "detail": "sound detail",
+  "apple": "Apple integration",
+  "android": "broad Android compatibility",
+  "earbuds": "true-wireless earbuds",
+  "pocket": "a pocketable case",
+  "open_fit": "an open-fit earbud",
+  "exercise": "exercise use",
+  "secure": "a secure fit",
+  "sweat": "sweat resistance",
+  "open_ear": "an open-ear design",
+  "awareness": "environmental awareness",
+  "outdoor": "outdoor listening",
+  "custom_fit": "fit adjustment",
+  "lightweight": "a lightweight design",
+  "simple": "simple operation",
+  "mid_budget": "a mid-range budget",
+  "open_back": "open-back sound",
+  "home": "quiet home listening",
+  "wired": "wired listening",
+  "design": "premium design",
+  "value": "value for money",
+  "on_ear": "an on-ear fit",
+  "compact": "compact equipment"
+};
+
+const QUESTIONS = [
+  {
+    "q": "Where will you use headphones most often?",
+    "a": [
+      {
+        "label": "Flights, trains and noisy shared spaces",
+        "scores": {
+          "travel": 5
+        },
+        "signals": [
+          "travel",
+          "anc"
+        ]
+      },
+      {
+        "label": "Commuting, errands and everyday pockets",
+        "scores": {
+          "everyday": 5
+        },
+        "signals": [
+          "earbuds",
+          "pocket",
+          "wireless"
+        ]
+      },
+      {
+        "label": "Running, training or outdoor movement",
+        "scores": {
+          "active": 5
+        },
+        "signals": [
+          "exercise",
+          "secure",
+          "sweat"
+        ]
+      },
+      {
+        "label": "At a desk or around home for many hours",
+        "scores": {
+          "comfort": 5
+        },
+        "signals": [
+          "comfort",
+          "lightweight"
+        ]
+      },
+      {
+        "label": "In a quiet room for focused music listening",
+        "scores": {
+          "detail": 5
+        },
+        "signals": [
+          "detail",
+          "home"
+        ]
+      },
+      {
+        "label": "Casual daily listening without many extras",
+        "scores": {
+          "value": 5
+        },
+        "signals": [
+          "value",
+          "simple"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Which wearing style appeals most?",
+    "a": [
+      {
+        "label": "Full-size over-ear headphones",
+        "scores": {
+          "travel": 5
+        },
+        "signals": [
+          "over_ear",
+          "anc",
+          "travel"
+        ]
+      },
+      {
+        "label": "Compact in-ear wireless earbuds",
+        "scores": {
+          "everyday": 5
+        },
+        "signals": [
+          "earbuds",
+          "pocket"
+        ]
+      },
+      {
+        "label": "Ear hooks, fins or an open-ear sports band",
+        "scores": {
+          "active": 5
+        },
+        "signals": [
+          "secure",
+          "open_ear",
+          "exercise"
+        ]
+      },
+      {
+        "label": "The lightest fit, including open earbuds",
+        "scores": {
+          "comfort": 5
+        },
+        "signals": [
+          "comfort",
+          "lightweight",
+          "open_fit"
+        ]
+      },
+      {
+        "label": "Over-ear, including wired open-back models",
+        "scores": {
+          "detail": 5
+        },
+        "signals": [
+          "over_ear",
+          "open_back",
+          "detail"
+        ]
+      },
+      {
+        "label": "Whichever format gives the clearest value",
+        "scores": {
+          "value": 5
+        },
+        "signals": [
+          "value",
+          "simple"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How much outside noise do you want to remove?",
+    "a": [
+      {
+        "label": "As much as possible",
+        "scores": {
+          "travel": 5
+        },
+        "signals": [
+          "anc",
+          "travel",
+          "immersive"
+        ]
+      },
+      {
+        "label": "A strong amount, but in a compact earbud",
+        "scores": {
+          "everyday": 5
+        },
+        "signals": [
+          "anc",
+          "earbuds",
+          "pocket"
+        ]
+      },
+      {
+        "label": "Very little when I am moving outdoors",
+        "scores": {
+          "active": 5
+        },
+        "signals": [
+          "awareness",
+          "open_ear",
+          "outdoor"
+        ]
+      },
+      {
+        "label": "Moderate control without a heavy sealed feeling",
+        "scores": {
+          "comfort": 5
+        },
+        "signals": [
+          "comfort",
+          "open_fit"
+        ]
+      },
+      {
+        "label": "Noise control matters less than sound quality",
+        "scores": {
+          "detail": 5
+        },
+        "signals": [
+          "detail",
+          "open_back"
+        ]
+      },
+      {
+        "label": "Only when it is available at a sensible price",
+        "scores": {
+          "value": 5
+        },
+        "signals": [
+          "value",
+          "anc"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How important is hearing what is happening around you?",
+    "a": [
+      {
+        "label": "Occasionally, but I mainly want isolation",
+        "scores": {
+          "travel": 5
+        },
+        "signals": [
+          "anc",
+          "travel"
+        ]
+      },
+      {
+        "label": "Useful during short conversations and crossings",
+        "scores": {
+          "everyday": 5
+        },
+        "signals": [
+          "earbuds",
+          "wireless"
+        ]
+      },
+      {
+        "label": "Essential during outdoor activity",
+        "scores": {
+          "active": 5
+        },
+        "signals": [
+          "awareness",
+          "open_ear",
+          "outdoor"
+        ]
+      },
+      {
+        "label": "Very important because sealed earbuds feel tiring",
+        "scores": {
+          "comfort": 5
+        },
+        "signals": [
+          "awareness",
+          "open_fit",
+          "comfort"
+        ]
+      },
+      {
+        "label": "Not important in my quiet listening space",
+        "scores": {
+          "detail": 5
+        },
+        "signals": [
+          "home",
+          "detail"
+        ]
+      },
+      {
+        "label": "Useful, but I do not need sophisticated modes",
+        "scores": {
+          "value": 5
+        },
+        "signals": [
+          "simple",
+          "value"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What usually causes fit discomfort?",
+    "a": [
+      {
+        "label": "Poor over-ear padding during long journeys",
+        "scores": {
+          "travel": 5
+        },
+        "signals": [
+          "comfort",
+          "over_ear",
+          "travel"
+        ]
+      },
+      {
+        "label": "Ear tips that do not seal securely",
+        "scores": {
+          "everyday": 5
+        },
+        "signals": [
+          "earbuds",
+          "custom_fit"
+        ]
+      },
+      {
+        "label": "Earbuds moving during exercise",
+        "scores": {
+          "active": 5
+        },
+        "signals": [
+          "secure",
+          "exercise"
+        ]
+      },
+      {
+        "label": "Clamp, weight or pressure inside the ear canal",
+        "scores": {
+          "comfort": 5
+        },
+        "signals": [
+          "comfort",
+          "lightweight",
+          "open_fit"
+        ]
+      },
+      {
+        "label": "Comfort is secondary to accurate sound",
+        "scores": {
+          "detail": 5
+        },
+        "signals": [
+          "detail",
+          "over_ear"
+        ]
+      },
+      {
+        "label": "I mainly need a simple fit at a lower price",
+        "scores": {
+          "value": 5
+        },
+        "signals": [
+          "value",
+          "simple"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How active will you be while wearing them?",
+    "a": [
+      {
+        "label": "Mostly seated during travel or work",
+        "scores": {
+          "travel": 5
+        },
+        "signals": [
+          "travel",
+          "anc"
+        ]
+      },
+      {
+        "label": "Walking and moving through a normal day",
+        "scores": {
+          "everyday": 5
+        },
+        "signals": [
+          "pocket",
+          "wireless"
+        ]
+      },
+      {
+        "label": "Running, gym sessions or faster movement",
+        "scores": {
+          "active": 5
+        },
+        "signals": [
+          "exercise",
+          "secure",
+          "sweat"
+        ]
+      },
+      {
+        "label": "Light movement, but worn for many hours",
+        "scores": {
+          "comfort": 5
+        },
+        "signals": [
+          "comfort",
+          "lightweight"
+        ]
+      },
+      {
+        "label": "Almost completely still in a listening chair or at a desk",
+        "scores": {
+          "detail": 5
+        },
+        "signals": [
+          "home",
+          "detail",
+          "wired"
+        ]
+      },
+      {
+        "label": "Normal casual use",
+        "scores": {
+          "value": 5
+        },
+        "signals": [
+          "simple",
+          "value"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What sound character matters most?",
+    "a": [
+      {
+        "label": "Immersive sound that works well in noisy places",
+        "scores": {
+          "travel": 5
+        },
+        "signals": [
+          "immersive",
+          "anc"
+        ]
+      },
+      {
+        "label": "Balanced sound across music, podcasts and calls",
+        "scores": {
+          "everyday": 5
+        },
+        "signals": [
+          "earbuds",
+          "calls"
+        ]
+      },
+      {
+        "label": "Energetic sound that keeps me moving",
+        "scores": {
+          "active": 5
+        },
+        "signals": [
+          "exercise",
+          "secure"
+        ]
+      },
+      {
+        "label": "Easy listening without fatigue",
+        "scores": {
+          "comfort": 5
+        },
+        "signals": [
+          "comfort",
+          "lightweight"
+        ]
+      },
+      {
+        "label": "Clarity, separation and small musical details",
+        "scores": {
+          "detail": 5
+        },
+        "signals": [
+          "detail",
+          "open_back"
+        ]
+      },
+      {
+        "label": "Enjoyable sound without paying for audiophile extras",
+        "scores": {
+          "value": 5
+        },
+        "signals": [
+          "value",
+          "simple"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How often will you use the microphone?",
+    "a": [
+      {
+        "label": "Frequently for travel and work calls",
+        "scores": {
+          "travel": 5
+        },
+        "signals": [
+          "calls",
+          "travel"
+        ]
+      },
+      {
+        "label": "Often for quick calls and voice messages",
+        "scores": {
+          "everyday": 5
+        },
+        "signals": [
+          "calls",
+          "earbuds"
+        ]
+      },
+      {
+        "label": "Occasionally while walking or exercising",
+        "scores": {
+          "active": 5
+        },
+        "signals": [
+          "calls",
+          "outdoor"
+        ]
+      },
+      {
+        "label": "For long meetings where comfort matters",
+        "scores": {
+          "comfort": 5
+        },
+        "signals": [
+          "calls",
+          "comfort"
+        ]
+      },
+      {
+        "label": "Rarely, because music listening comes first",
+        "scores": {
+          "detail": 5
+        },
+        "signals": [
+          "detail",
+          "home"
+        ]
+      },
+      {
+        "label": "Occasionally, with basic call quality being enough",
+        "scores": {
+          "value": 5
+        },
+        "signals": [
+          "calls",
+          "simple"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How much equipment are you willing to carry?",
+    "a": [
+      {
+        "label": "A folding headset and protective case",
+        "scores": {
+          "travel": 5
+        },
+        "signals": [
+          "folding",
+          "over_ear",
+          "travel"
+        ]
+      },
+      {
+        "label": "Only earbuds and a pocket charging case",
+        "scores": {
+          "everyday": 5
+        },
+        "signals": [
+          "pocket",
+          "earbuds"
+        ]
+      },
+      {
+        "label": "A secure sports set that stays ready in my bag",
+        "scores": {
+          "active": 5
+        },
+        "signals": [
+          "secure",
+          "exercise"
+        ]
+      },
+      {
+        "label": "Something light enough to forget I am wearing",
+        "scores": {
+          "comfort": 5
+        },
+        "signals": [
+          "lightweight",
+          "comfort"
+        ]
+      },
+      {
+        "label": "A cable, amplifier or larger case is acceptable",
+        "scores": {
+          "detail": 5
+        },
+        "signals": [
+          "wired",
+          "detail",
+          "home"
+        ]
+      },
+      {
+        "label": "As little as possible",
+        "scores": {
+          "value": 5
+        },
+        "signals": [
+          "compact",
+          "simple",
+          "value"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How important is battery life?",
+    "a": [
+      {
+        "label": "Very important for long journeys",
+        "scores": {
+          "travel": 5
+        },
+        "signals": [
+          "battery",
+          "travel"
+        ]
+      },
+      {
+        "label": "Important, but the charging case makes it manageable",
+        "scores": {
+          "everyday": 5
+        },
+        "signals": [
+          "battery",
+          "pocket"
+        ]
+      },
+      {
+        "label": "It needs to cover several workouts",
+        "scores": {
+          "active": 5
+        },
+        "signals": [
+          "battery",
+          "exercise"
+        ]
+      },
+      {
+        "label": "Important for all-day work and home use",
+        "scores": {
+          "comfort": 5
+        },
+        "signals": [
+          "battery",
+          "comfort"
+        ]
+      },
+      {
+        "label": "Less important if I choose wired headphones",
+        "scores": {
+          "detail": 5
+        },
+        "signals": [
+          "wired",
+          "detail"
+        ]
+      },
+      {
+        "label": "Long battery is valuable when it comes at a low price",
+        "scores": {
+          "value": 5
+        },
+        "signals": [
+          "battery",
+          "value"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Which device setup describes you best?",
+    "a": [
+      {
+        "label": "Several devices, so flexible Bluetooth matters",
+        "scores": {
+          "travel": 5
+        },
+        "signals": [
+          "wireless",
+          "calls"
+        ]
+      },
+      {
+        "label": "A phone-led setup with compact wireless audio",
+        "scores": {
+          "everyday": 5
+        },
+        "signals": [
+          "wireless",
+          "pocket",
+          "earbuds"
+        ]
+      },
+      {
+        "label": "A phone or watch used during workouts",
+        "scores": {
+          "active": 5
+        },
+        "signals": [
+          "wireless",
+          "exercise"
+        ]
+      },
+      {
+        "label": "A laptop and phone used throughout the day",
+        "scores": {
+          "comfort": 5
+        },
+        "signals": [
+          "wireless",
+          "calls",
+          "comfort"
+        ]
+      },
+      {
+        "label": "A hi-fi, audio interface or dedicated source",
+        "scores": {
+          "detail": 5
+        },
+        "signals": [
+          "wired",
+          "detail",
+          "home"
+        ]
+      },
+      {
+        "label": "Any ordinary phone or laptop with simple controls",
+        "scores": {
+          "value": 5
+        },
+        "signals": [
+          "simple",
+          "value"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What matters most in the final recommendation?",
+    "a": [
+      {
+        "label": "The strongest quiet and travel performance",
+        "scores": {
+          "travel": 5
+        },
+        "signals": [
+          "travel",
+          "anc",
+          "over_ear"
+        ]
+      },
+      {
+        "label": "Pocketable earbuds that handle almost everything",
+        "scores": {
+          "everyday": 5
+        },
+        "signals": [
+          "earbuds",
+          "pocket",
+          "wireless"
+        ]
+      },
+      {
+        "label": "A secure fit and useful awareness while moving",
+        "scores": {
+          "active": 5
+        },
+        "signals": [
+          "secure",
+          "awareness",
+          "exercise"
+        ]
+      },
+      {
+        "label": "The least tiring fit for long listening",
+        "scores": {
+          "comfort": 5
+        },
+        "signals": [
+          "comfort",
+          "lightweight",
+          "open_fit"
+        ]
+      },
+      {
+        "label": "The most revealing sound for the money",
+        "scores": {
+          "detail": 5
+        },
+        "signals": [
+          "detail",
+          "wired",
+          "open_back"
+        ]
+      },
+      {
+        "label": "Reliable basics at a sensible spend",
+        "scores": {
+          "value": 5
+        },
+        "signals": [
+          "value",
+          "simple"
+        ]
+      }
+    ]
+  }
+];
+
+let step=0;
+let locked=false;
+const selectedAnswers=[];
+const preferenceSignals={};
+const totals=Object.keys(RESULTS).reduce((acc,key)=>{acc[key]=0;return acc;},{});
+const el=id=>document.getElementById(id);
+const screens={intro:el("intro"),quiz:el("quiz"),result:el("result")};
+
+function show(name){Object.values(screens).forEach(screen=>screen.classList.remove("active"));screens[name].classList.add("active");window.scrollTo({top:0,behavior:"smooth"});}
+function hexToRgba(hex,alpha){const clean=hex.replace("#","");const value=parseInt(clean,16);const red=value>>16&255;const green=value>>8&255;const blue=value&255;return `rgba(${red},${green},${blue},${alpha})`;}
+function escapeHtml(value){return String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");}
+function getProductRecommendations(key){return (PRODUCTS[key]||[]).map((product,originalIndex)=>{const matchScore=Object.entries(product.fit||{}).reduce((score,[signal,weight])=>score+(preferenceSignals[signal]||0)*weight,product.base||0);return {...product,matchScore,originalIndex};}).sort((a,b)=>b.matchScore-a.matchScore||(b.base||0)-(a.base||0)||a.originalIndex-b.originalIndex).slice(0,3);}
+function getPersonalMatch(product){const matches=Object.entries(product.fit||{}).filter(([signal])=>preferenceSignals[signal]).map(([signal,weight])=>({signal,value:weight*preferenceSignals[signal]})).sort((a,b)=>b.value-a.value).slice(0,2).map(item=>SIGNAL_LABELS[item.signal]).filter(Boolean);if(matches.length===0)return product.offer||"";if(matches.length===1)return `Matches your preference for ${matches[0]}.`;return `Matches your preference for ${matches[0]} and ${matches[1]}.`;}
+function getProductMonogram(product){if(product.monogram)return product.monogram;return product.name.split(/\s+/).filter(Boolean).slice(0,2).map(word=>word.charAt(0)).join("").toUpperCase();}
+function trackEvent(eventName,details={}){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:eventName,...details});if(typeof window.pintrk==="function"){try{window.pintrk("track","custom",{event_name:eventName,...details});}catch(error){console.warn("Pinterest tracking event was not sent.",error);}}}
+function renderQuestion(){const item=QUESTIONS[step];const totalQuestions=QUESTIONS.length;el("question").textContent=item.q;el("count").textContent=`${String(step+1).padStart(2,"0")} / ${String(totalQuestions).padStart(2,"0")}`;el("fill").style.width=`${step/totalQuestions*100}%`;const box=el("options");box.innerHTML="";locked=false;item.a.forEach((answer,index)=>{const button=document.createElement("button");button.className="option";button.type="button";button.textContent=answer.label;button.addEventListener("click",()=>chooseAnswer(button,answer,index));box.appendChild(button);});setTimeout(()=>el("question").focus({preventScroll:true}),50);}
+function chooseAnswer(button,answer,index){if(locked)return;locked=true;document.querySelectorAll(".option").forEach(option=>{option.disabled=true;});button.classList.add("chosen");selectedAnswers[step]=index;Object.entries(answer.scores).forEach(([key,value])=>{totals[key]+=value;});(answer.signals||[]).forEach(signal=>{preferenceSignals[signal]=(preferenceSignals[signal]||0)+1;});trackEvent("quiz_answer",{quiz:"perfect_headphones",question_number:step+1,answer:answer.label});setTimeout(()=>{step+=1;if(step<QUESTIONS.length){renderQuestion();}else{el("fill").style.width="100%";finishQuiz();}},340);}
+function finishQuiz(){const orderedKeys=Object.keys(RESULTS);let winningKey=orderedKeys[0];orderedKeys.forEach(key=>{if(totals[key]>totals[winningKey])winningKey=key;});const tiedKeys=orderedKeys.filter(key=>totals[key]===totals[winningKey]);if(tiedKeys.length>1){for(let questionIndex=selectedAnswers.length-1;questionIndex>=0;questionIndex-=1){const answer=QUESTIONS[questionIndex].a[selectedAnswers[questionIndex]];const rankedTie=tiedKeys.map(key=>({key,value:answer.scores[key]||0})).sort((a,b)=>b.value-a.value);if(rankedTie[0].value>rankedTie[1].value){winningKey=rankedTie[0].key;break;}}}showResult(winningKey);}
+function showResult(key){const result=RESULTS[key];window.LYS_RESULT=key;el("resultCard").style.setProperty("--fam",result.color);el("rName").textContent=result.name;el("rTag").textContent=result.tag;el("rBody").textContent=result.body;const details=el("rDetails");details.innerHTML="";Object.entries(result.details).forEach(([label,value])=>{const row=document.createElement("div");row.className="detail-row";const labelSpan=document.createElement("span");labelSpan.className="detail-label";labelSpan.textContent=label;const valueSpan=document.createElement("span");valueSpan.className="detail-val";valueSpan.textContent=value;row.append(labelSpan,valueSpan);details.appendChild(row);});el("recsTitle").textContent="Your three best-matched headphones";const recommendations=getProductRecommendations(key);const grid=el("recGrid");grid.innerHTML="";recommendations.forEach((product,index)=>{const card=document.createElement("article");card.className="rec";const fallbackHtml=`<div class="ph media media-fallback" style="background:${hexToRgba(result.color,.88)}"><span>${escapeHtml(getProductMonogram(product))}</span></div>`;const mediaHtml=product.img?`<div class="media-frame"><img class="media" src="${escapeHtml(product.img)}" alt="${escapeHtml(product.merchant)} ${escapeHtml(product.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${fallbackHtml}</div>`:fallbackHtml;const badgeHtml=index===0?'<span class="rec-badge">Best match</span>':"";const matchText=getPersonalMatch(product);const offerHtml=matchText?`<span class="offer">${escapeHtml(matchText)}</span>`:"";const linkIsAffiliate=Boolean(product.affiliate);const linkRel=linkIsAffiliate?"noopener sponsored":"noopener";const ctaHtml=product.url&&product.url!=="#"?`<a class="view" href="${escapeHtml(product.url)}" target="_blank" rel="${linkRel}" data-product-position="${index+1}">View product &rsaquo;</a>`:'<span class="view off">Product page unavailable</span>';card.innerHTML=`${badgeHtml}${mediaHtml}<div class="body"><span class="brand">${escapeHtml(product.merchant)}</span><span class="pname">${escapeHtml(product.name)}</span><span class="pnote">${escapeHtml(product.note)}</span>${offerHtml}${ctaHtml}</div>`;const productImage=card.querySelector("img.media");if(productImage){productImage.addEventListener("error",()=>{productImage.remove();const fallback=card.querySelector(".media-fallback");if(fallback)fallback.classList.add("show");},{once:true});}const productLink=card.querySelector("a[data-product-position]");if(productLink){productLink.addEventListener("click",()=>{trackEvent(linkIsAffiliate?"affiliate_click":"product_click",{quiz:"perfect_headphones",result:key,merchant:product.merchant,product:product.name,position:index+1,affiliate:linkIsAffiliate});});}grid.appendChild(card);});const disclosure=el("recommendationDisclosure");const containsAffiliateLinks=recommendations.some(product=>product.affiliate);if(containsAffiliateLinks){disclosure.innerHTML='Some links on this page are affiliate links. Love Your Senses may earn a commission from qualifying orders at no extra cost to you. <a href="/disclosure">Read the affiliate disclosure</a>.';}else{disclosure.textContent="These recommendations use direct manufacturer links. Love Your Senses does not currently earn commission from them. Product availability and temporary imagery may change.";}const browseAll=el("browseAll");if(STORE_LINK&&STORE_LINK!=="#"){const storeRel=STORE_LINK_IS_AFFILIATE?"noopener sponsored":"noopener";browseAll.innerHTML=`<a class="btn-all" href="${escapeHtml(STORE_LINK)}" target="_blank" rel="${storeRel}">Browse all headphones</a>`;browseAll.querySelector("a").addEventListener("click",()=>{trackEvent(STORE_LINK_IS_AFFILIATE?"affiliate_click":"product_click",{quiz:"perfect_headphones",result:key,product:"browse_all",affiliate:STORE_LINK_IS_AFFILIATE});});}else{browseAll.innerHTML="";}trackEvent("quiz_complete",{quiz:"perfect_headphones",result:key,result_name:result.name});show("result");}
+async function submitEmail(){const emailInput=el("email");const email=emailInput.value.trim();const form=el("emailForm");const note=el("formNote");if(!/^\S+@\S+\.\S+$/.test(email)){emailInput.focus();note.textContent="Enter a valid email address.";return;}if(!EMAIL_FORM_ACTION){note.textContent="Email signup is not connected yet. Add your email platform form action in the JavaScript settings.";return;}const button=el("emailBtn");button.disabled=true;button.textContent="Sending";try{const payload=new URLSearchParams();payload.append(EMAIL_FIELD_NAME,email);payload.append("quiz_result",window.LYS_RESULT||"");payload.append("source","perfect_headphones_quiz");await fetch(EMAIL_FORM_ACTION,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:payload.toString()});form.innerHTML='<p class="done">Your headphone shortlist is on its way.</p>';note.textContent="";trackEvent("email_signup",{quiz:"perfect_headphones",result:window.LYS_RESULT||""});}catch(error){button.disabled=false;button.textContent="Send it";note.textContent="The signup did not complete. Please try again.";console.error("Email signup failed.",error);}}
+async function shareResult(){const result=RESULTS[window.LYS_RESULT];if(!result)return;const text=`My headphone profile is ${result.name}. Find yours:`;const shareData={title:"Find Your Perfect Headphones | Love Your Senses",text,url:QUIZ_URL||location.href};if(navigator.share){try{await navigator.share(shareData);trackEvent("share",{quiz:"perfect_headphones",result:window.LYS_RESULT,method:"native"});}catch(error){if(error.name!=="AbortError")console.error("Share failed.",error);}return;}try{await navigator.clipboard.writeText(`${text} ${shareData.url}`);el("share").textContent="Link copied";setTimeout(()=>el("share").textContent="Share your result",2000);trackEvent("share",{quiz:"perfect_headphones",result:window.LYS_RESULT,method:"clipboard"});}catch(error){console.error("Copy failed.",error);}}
+function resetQuiz(){step=0;locked=false;selectedAnswers.length=0;Object.keys(preferenceSignals).forEach(key=>delete preferenceSignals[key]);Object.keys(totals).forEach(key=>totals[key]=0);window.LYS_RESULT="";const form=el("emailForm");form.innerHTML='<input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email"><button id="emailBtn" type="button">Send it</button>';el("emailBtn").addEventListener("click",submitEmail);el("formNote").textContent="Connect your email platform in the JavaScript settings before publishing.";show("intro");trackEvent("quiz_retake",{quiz:"perfect_headphones"});}
+el("start").addEventListener("click",()=>{show("quiz");renderQuestion();trackEvent("quiz_start",{quiz:"perfect_headphones"});});
+el("emailBtn").addEventListener("click",submitEmail);
+el("share").addEventListener("click",shareResult);
+el("retake").addEventListener("click",resetQuiz);
+
+
+
+
+
+
+</script>
+</body>
+</html>
