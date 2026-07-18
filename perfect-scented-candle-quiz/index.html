@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Perfect Scented Candle | Love Your Senses</title>
+<meta name="description" content="Answer ten questions to discover the candle scent family, size and products that best match your rooms, mood and fragrance preferences.">
+<link rel="canonical" href="https://loveyoursenses.com/perfect-scented-candle-quiz/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Find Your Perfect Scented Candle | Love Your Senses">
+<meta property="og:description" content="Match scent family, room, strength, candle style and budget to a personalised scented-candle shortlist.">
+<meta property="og:url" content="https://loveyoursenses.com/perfect-scented-candle-quiz/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#E7E3DD;
+    --card:#F2EEE8;
+    --ink:#2A2130;
+    --ink-soft:#6E6574;
+    --accent:#7B4A5E;
+    --accent-deep:#5E3547;
+    --line:#CDC3B6;
+    --gold:#B8A78C;
+    --cream:#F7F1EC;
+    --radius:18px;
+    --ease:cubic-bezier(.4,.14,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Jost',system-ui,sans-serif;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+  button,input{font:inherit}
+  button{touch-action:manipulation}
+  .display{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  .wrap{width:100%;max-width:1000px;margin:0 auto;padding-left:24px;padding-right:24px}
+  .site-head{padding:24px 0}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .mark{font-family:'Fraunces',serif;font-weight:500;font-size:1.24rem;text-decoration:none;color:var(--ink)}
+  .mark span{color:var(--accent)}
+  .head-link{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none}
+  .head-link:hover{color:var(--accent)}
+  .stage{width:100%;max-width:680px;margin:0 auto;padding:36px 20px 72px}
+  .screen{display:none;animation:rise .6s var(--ease) both}
+  .screen.active{display:block}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  #intro{text-align:center;padding:14px 0 24px}
+  .ring{margin:0 auto 30px;display:block}
+  #intro h1{font-size:clamp(2.55rem,9vw,4rem);margin-bottom:18px}
+  #intro h1 em{font-style:italic;font-weight:400}
+  .lede{color:var(--ink-soft);font-size:1.06rem;max-width:45ch;margin:0 auto 24px}
+  .wellbeing-note{font-size:.79rem;color:var(--ink-soft);line-height:1.55;max-width:56ch;margin:0 auto 30px}
+  .meta{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:26px}
+  .btn{display:inline-block;font-family:'Jost',sans-serif;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:17px 40px;background:var(--ink);color:var(--bg);transition:transform .35s var(--ease),background .35s var(--ease)}
+  .btn:hover{background:var(--accent-deep);transform:translateY(-2px)}
+  .progress-wrap{display:flex;align-items:center;gap:16px;margin-bottom:38px}
+  .track{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
+  .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);transition:width .5s var(--ease)}
+  .count{font-size:.72rem;letter-spacing:.2em;color:var(--ink-soft);white-space:nowrap}
+  .question{font-size:clamp(1.75rem,6vw,2.45rem);margin-bottom:32px;min-height:2.2em}
+  .options{display:flex;flex-direction:column;gap:12px}
+  .option{font-family:'Jost',sans-serif;font-size:1.01rem;color:var(--ink);text-align:left;background:var(--card);border:1px solid transparent;border-radius:var(--radius);padding:19px 22px;cursor:pointer;width:100%;transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);display:flex;align-items:center;gap:14px}
+  .option:before{content:"";width:9px;height:9px;border-radius:50%;border:1.5px solid var(--line);flex:none;transition:all .3s var(--ease)}
+  .option:hover{border-color:var(--gold);transform:translateX(4px)}
+  .option.chosen{background:var(--accent);color:var(--cream);border-color:var(--accent)}
+  .option.chosen:before{background:var(--cream);border-color:var(--cream)}
+  .option:disabled{cursor:default}
+  .result-card{background:var(--fam,#7B4A5E);color:var(--cream);border-radius:26px;padding:44px 32px 40px;text-align:center;box-shadow:0 30px 60px -30px rgba(42,33,48,.55)}
+  .result-card .eyebrow{color:rgba(247,241,236,.72)}
+  .result-name{font-size:clamp(2.55rem,10vw,3.65rem);margin-bottom:10px}
+  .result-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:1.2rem;opacity:.94;margin-bottom:24px}
+  .result-body{font-size:1.02rem;line-height:1.72;opacity:.95;max-width:44ch;margin:0 auto 30px}
+  .details{border-top:1px solid rgba(247,241,236,.28);border-bottom:1px solid rgba(247,241,236,.28);padding:22px 0;text-align:left;display:flex;flex-direction:column;gap:14px}
+  .detail-row{display:flex;gap:18px;align-items:baseline}
+  .detail-label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;opacity:.72;width:104px;flex:none}
+  .detail-val{font-family:'Fraunces',serif;font-size:1.04rem}
+  .recs{margin-top:36px}
+  .recs-head{text-align:center;margin-bottom:22px}
+  .recs-head .eyebrow{display:block;margin-bottom:10px}
+  .recs-head h3{font-size:clamp(1.55rem,5vw,2.05rem)}
+  .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .rec{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+  .rec-badge{position:absolute;top:12px;left:12px;z-index:2;background:rgba(247,241,236,.94);color:var(--accent-deep);border-radius:100px;padding:6px 10px;font-size:.61rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+  .rec .media-frame{aspect-ratio:1/1;width:100%;position:relative;overflow:hidden;background:#fff}
+  .rec .media{aspect-ratio:1/1;width:100%;height:100%;object-fit:cover;padding:0;background:#fff;display:block}
+  .rec .ph{display:flex;align-items:center;justify-content:center;padding:0}
+  .rec .media-frame .media{position:absolute;inset:0}
+  .rec .media-fallback{display:none}
+  .rec .media-fallback.show{display:flex}
+  .rec .ph span{font-family:'Fraunces',serif;font-size:2rem;color:#fff;opacity:.92}
+  .rec .body{padding:16px 15px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .rec .brand{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .rec .pname{font-family:'Fraunces',serif;font-size:1.04rem;line-height:1.22}
+  .rec .pnote{font-size:.8rem;color:var(--ink-soft);line-height:1.45}
+  .rec .offer{font-size:.76rem;color:var(--accent);font-weight:500}
+  .rec .view{margin-top:auto;padding-top:11px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;text-decoration:none;color:var(--accent)}
+  .rec .view.off{color:var(--ink-soft);opacity:.58}
+  .rec .view:hover{text-decoration:underline;text-underline-offset:4px}
+  .affiliate-note{font-size:.78rem;color:var(--ink-soft);line-height:1.55;text-align:center;max-width:58ch;margin:18px auto 0}
+  .affiliate-note a{color:var(--accent);text-underline-offset:3px}
+  .browse-all{text-align:center;margin-top:22px}
+  .btn-all{display:inline-block;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;text-decoration:none;border:1px solid var(--accent);color:var(--accent);border-radius:100px;padding:14px 34px;transition:background .3s var(--ease),color .3s var(--ease)}
+  .btn-all:hover{background:var(--accent);color:var(--cream)}
+  .capture{background:var(--card);border-radius:var(--radius);padding:32px 28px;margin-top:28px;text-align:center}
+  .capture h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;margin-bottom:8px}
+  .capture p{color:var(--ink-soft);font-size:.96rem;margin:0 auto 22px;max-width:39ch}
+  .field{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .field input{font-family:'Jost',sans-serif;font-size:1rem;flex:1;min-width:210px;padding:15px 18px;border:1px solid var(--line);border-radius:100px;background:#fff;color:var(--ink)}
+  .field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+  .field button{font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:15px 28px;background:var(--accent);color:var(--cream)}
+  .field button:hover{background:var(--accent-deep)}
+  .capture .done{color:var(--accent);font-family:'Fraunces',serif;font-size:1.1rem;padding:6px 0}
+  .capture .form-note{font-size:.74rem;margin-top:12px;margin-bottom:0}
+  .next-quiz{border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;margin-top:18px;text-align:center}
+  .next-quiz .eyebrow{display:block;margin-bottom:9px}
+  .next-quiz h3{font-size:1.45rem;margin-bottom:8px}
+  .next-quiz p{color:var(--ink-soft);font-size:.94rem;max-width:40ch;margin:0 auto 18px}
+  .next-link{font-size:.74rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;color:var(--accent);text-underline-offset:4px}
+  .next-link:hover{color:var(--accent-deep)}
+  .after{display:flex;gap:22px;justify-content:center;align-items:center;margin-top:26px;flex-wrap:wrap}
+  .linkish{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px}
+  .linkish:hover{color:var(--accent)}
+  .site-foot{border-top:1px solid var(--line);padding:34px 0 48px}
+  .foot{display:flex;flex-direction:column;align-items:center;gap:11px;text-align:center}
+  .foot-nav a{color:var(--ink-soft);text-decoration:none;font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;margin:0 10px}
+  .foot-nav a:hover{color:var(--accent)}
+  .foot .disc{font-size:.82rem;color:var(--ink-soft);max-width:54ch}
+  .foot .cr{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  @media(max-width:600px){.site-head{padding:20px 0}.stage{padding-top:28px}.rec-grid{grid-template-columns:1fr 1fr}.detail-label{width:88px}}
+  @media(max-width:420px){.rec-grid{grid-template-columns:1fr}.result-card{padding:40px 24px 36px}.field{flex-direction:column}.field input,.field button{width:100%}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <div class="bar">
+      <a href="/" class="mark">Love Your <span>Senses</span></a>
+      <a href="/#quiz-library" class="head-link">All quizzes</a>
+    </div>
+  </div>
+</header>
+
+<main class="stage">
+  <section id="intro" class="screen active">
+    <svg class="ring" width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
+      <circle cx="29" cy="29" r="27" fill="none" stroke="#B8A78C" stroke-width="1"/>
+      <circle cx="29" cy="29" r="19" fill="none" stroke="#CDC3B6" stroke-width="1"/>
+      <g stroke="#7B4A5E" stroke-width="1.4">
+        <line x1="29" y1="2" x2="29" y2="9"/>
+        <line x1="52.4" y1="42.5" x2="46.4" y2="39"/>
+        <line x1="5.6" y1="42.5" x2="11.6" y2="39"/>
+        <line x1="52.4" y1="15.5" x2="46.4" y2="19"/>
+        <line x1="5.6" y1="15.5" x2="11.6" y2="19"/>
+        <line x1="29" y1="56" x2="29" y2="49"/>
+      </g>
+      <circle cx="29" cy="29" r="3" fill="#7B4A5E"/>
+    </svg>
+    <p class="eyebrow">A candle scent discovery</p>
+    <h1 class="display">Find your perfect <em>scented candle</em></h1>
+    <p class="lede">Answer ten questions about notes, room, scent strength, candle style and budget to find your candle profile and three products to consider.</p>
+    <p class="wellbeing-note">Fragrance is personal. Check ingredients and safety instructions supplied by each brand, and never leave a burning candle unattended or within reach of children or pets.</p>
+    <button class="btn" id="start" type="button">Begin the discovery</button>
+    <p class="meta">10 questions &nbsp;·&nbsp; about two minutes</p>
+  </section>
+
+  <section id="quiz" class="screen" aria-live="polite">
+    <div class="progress-wrap">
+      <div class="track" aria-hidden="true"><div class="fill" id="fill"></div></div>
+      <span class="count" id="count">01 / 10</span>
+    </div>
+    <h2 class="question display" id="question" tabindex="-1"></h2>
+    <div class="options" id="options"></div>
+  </section>
+
+  <section id="result" class="screen" aria-live="polite">
+    <div class="result-card" id="resultCard">
+      <p class="eyebrow">Your candle profile</p>
+      <h2 class="result-name display" id="rName"></h2>
+      <p class="result-tag" id="rTag"></p>
+      <p class="result-body" id="rBody"></p>
+      <div class="details" id="rDetails"></div>
+    </div>
+
+    <div class="recs">
+      <div class="recs-head">
+        <span class="eyebrow">Chosen from all ten answers</span>
+        <h3 class="display" id="recsTitle">Your three best-matched scented candles</h3>
+      </div>
+      <div class="rec-grid" id="recGrid"></div>
+      <p class="affiliate-note" id="recommendationDisclosure">These recommendations use direct brand links. Love Your Senses does not currently earn commission from them. Product availability and temporary imagery may change.</p>
+      <div class="browse-all" id="browseAll"></div>
+      <p class="wellbeing-note">Before ordering, review the current candle size, estimated burn time, ingredients, allergen information, wick-care instructions and room suitability on the brand page.</p>
+    </div>
+
+    <div class="capture">
+      <h3>Save your candle shortlist</h3>
+      <p>Get your result, scent priorities and future fragrance discoveries by email.</p>
+      <div class="field" id="emailForm">
+        <input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email">
+        <button id="emailBtn" type="button">Send it</button>
+      </div>
+      <p class="form-note" id="formNote">Connect your email platform in the JavaScript settings before publishing.</p>
+    </div>
+
+    <div class="next-quiz">
+      <span class="eyebrow">Continue the scent discovery</span>
+      <h3 class="display">Find your perfect home fragrance</h3>
+      <p>Compare candles with diffusers and room sprays by matching scent family, room and preferred fragrance format.</p>
+      <a class="next-link" href="/home-fragrance-quiz/">Take the home fragrance quiz</a>
+    </div>
+
+    <div class="after">
+      <button class="linkish" id="share" type="button">Share your result</button>
+      <button class="linkish" id="retake" type="button">Retake the quiz</button>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-nav">
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/disclosure/">Affiliate Disclosure</a>
+      </div>
+      <p class="disc">Love Your Senses helps you discover products matched to your preferences through short, enjoyable quizzes.</p>
+      <p class="cr">© 2026 Love Your Senses</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Product links are direct and non-affiliate. Replace URLs and images with approved affiliate assets when partnerships are active, then change affiliate:false to affiliate:true. */
+const QUIZ_URL = "https://loveyoursenses.com/perfect-scented-candle-quiz/";
+const STORE_LINK = "";
+const STORE_LINK_IS_AFFILIATE = false;
+const EMAIL_FORM_ACTION = "";
+const EMAIL_FIELD_NAME = "email";
+
+const PRODUCTS = {
+  "fresh": [
+    {
+      "merchant": "The White Company",
+      "name": "Sea Salt Signature Candle",
+      "monogram": "SS",
+      "note": "A crisp candle built around sea salt, vetivert, oakmoss and cedarwood.",
+      "offer": "Best overall for an airy coastal room and a clean, unobtrusive scent direction.",
+      "url": "https://www.thewhitecompany.com/uk/Sea-Salt-Signature-Candle/p/SCDCD",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.thewhitecompany.com/uk/Sea-Salt-Signature-Candle/p/SCDCD",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "fresh": 10,
+        "aquatic": 10,
+        "subtle": 8,
+        "small_room": 7,
+        "daytime": 8,
+        "mid_budget": 9
+      }
+    },
+    {
+      "merchant": "The White Company",
+      "name": "Wild Mint Candle",
+      "monogram": "WM",
+      "note": "A two-wick candle combining peppermint, spearmint and white tea.",
+      "offer": "Best for kitchens, bathrooms and anyone who wants a distinctly herbal freshness.",
+      "url": "https://www.thewhitecompany.com/uk/Wild-Mint-Candle/p/A14754",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.thewhitecompany.com/uk/Wild-Mint-Candle/p/A14754",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "fresh": 10,
+        "mint": 10,
+        "green": 9,
+        "kitchen": 9,
+        "daytime": 9,
+        "two_wick": 8
+      }
+    },
+    {
+      "merchant": "NEOM",
+      "name": "Perfect Night's Sleep Scented Candle (3 Wick)",
+      "monogram": "NS",
+      "note": "A three-wick lavender, chamomile and patchouli candle made for a softer evening ritual.",
+      "offer": "Best for a bedroom-focused candle with aromatic herbs and a larger scent throw.",
+      "url": "https://neomwellbeing.com/products/perfect-night-sleep-luxury-scented-candle",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://neomwellbeing.com/products/perfect-night-sleep-luxury-scented-candle",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "fresh": 7,
+        "lavender": 10,
+        "bedroom": 10,
+        "evening": 10,
+        "three_wick": 10,
+        "large_room": 7,
+        "premium": 7
+      }
+    },
+    {
+      "merchant": "Diptyque",
+      "name": "Figuier Classic Candle",
+      "monogram": "DF",
+      "note": "A green fig-tree candle that captures leaves, wood and Mediterranean fruit.",
+      "offer": "Best premium choice for fresh fragrance with more botanical depth than a marine scent.",
+      "url": "https://www.diptyqueparis.com/en_uk/p/figuier-fig-tree-classic-candle-fi2.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.diptyqueparis.com/en_uk/p/figuier-fig-tree-classic-candle-fi2.html",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "fresh": 8,
+        "green": 10,
+        "fig": 10,
+        "premium": 10,
+        "subtle": 6,
+        "living_room": 7
+      }
+    }
+  ],
+  "citrus": [
+    {
+      "merchant": "The White Company",
+      "name": "Lime & Bay Signature Candle",
+      "monogram": "LB",
+      "note": "A lively blend of lime, pink grapefruit, orange blossom and bay leaf.",
+      "offer": "Best overall for a bright, everyday citrus candle at a mid-range spend.",
+      "url": "https://www.thewhitecompany.com/uk/Lime-and-Bay-Signature-Candle/p/LBDCN",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.thewhitecompany.com/uk/Lime-and-Bay-Signature-Candle/p/LBDCN",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "citrus": 10,
+        "lime": 10,
+        "green": 8,
+        "daytime": 10,
+        "kitchen": 8,
+        "mid_budget": 9
+      }
+    },
+    {
+      "merchant": "NEOM",
+      "name": "Feel Refreshed Scented Candle (3 Wick)",
+      "monogram": "FR",
+      "note": "A larger candle centred on Sicilian lemon, fresh basil and aromatic essential oils.",
+      "offer": "Best for a noticeable citrus-herbal scent in an open-plan or larger room.",
+      "url": "https://neomwellbeing.com/products/feel-refreshed-luxury-scented-candle",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://neomwellbeing.com/products/feel-refreshed-luxury-scented-candle",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "citrus": 10,
+        "lemon": 10,
+        "green": 9,
+        "three_wick": 10,
+        "large_room": 10,
+        "strong": 8,
+        "premium": 7
+      }
+    },
+    {
+      "merchant": "Jo Malone London",
+      "name": "Lime Basil & Mandarin Scented Candle",
+      "monogram": "JM",
+      "note": "A polished citrus candle with zesty lime, peppery basil and aromatic herbs.",
+      "offer": "Best premium choice for a refined citrus signature that works from kitchen to lounge.",
+      "url": "https://www.jomalone.co.uk/product/25969/9953/home-collection/lime-basil-mandarin-scented-candle",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.jomalone.co.uk/product/25969/9953/home-collection/lime-basil-mandarin-scented-candle",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "citrus": 10,
+        "lime": 10,
+        "green": 9,
+        "premium": 10,
+        "living_room": 8,
+        "giftable": 9
+      }
+    },
+    {
+      "merchant": "Rituals",
+      "name": "The Ritual of Mehr Scented Candle",
+      "monogram": "RM",
+      "note": "A sweet-orange candle with cedarwood, nutmeg and warming spice.",
+      "offer": "Best for citrus that feels warmer and more rounded than a sharp lemon scent.",
+      "url": "https://www.rituals.com/en-gb/the-ritual-of-mehr-scented-candle-290g-1118307.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.rituals.com/en-gb/the-ritual-of-mehr-scented-candle-290g-1118307.html",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "citrus": 9,
+        "orange": 10,
+        "spice": 7,
+        "woody": 6,
+        "mid_budget": 9,
+        "evening": 6
+      }
+    }
+  ],
+  "floral": [
+    {
+      "merchant": "Rituals",
+      "name": "Sweet Jasmine Scented Candle",
+      "monogram": "SJ",
+      "note": "A floral candle pairing jasmine and blackcurrant with a warm amber background.",
+      "offer": "Best overall for a romantic floral profile with enough warmth for evening use.",
+      "url": "https://www.rituals.com/en-gb/sweet-jasmine-scented-candle-360g-1122025.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.rituals.com/en-gb/sweet-jasmine-scented-candle-360g-1122025.html",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "floral": 10,
+        "jasmine": 10,
+        "amber": 6,
+        "evening": 8,
+        "large_room": 7,
+        "mid_budget": 9
+      }
+    },
+    {
+      "merchant": "Jo Malone London",
+      "name": "Peony & Blush Suede Scented Candle",
+      "monogram": "PB",
+      "note": "A polished peony candle with red apple, rose and a soft suede base.",
+      "offer": "Best premium choice for an elegant floral vessel and a gift-ready presentation.",
+      "url": "https://www.jomalone.co.uk/product/25969/27607/home-collection/peony-blush-suede-scented-candle?size=200g",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.jomalone.co.uk/product/25969/27607/home-collection/peony-blush-suede-scented-candle?size=200g",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "floral": 10,
+        "peony": 10,
+        "rose": 8,
+        "premium": 10,
+        "giftable": 10,
+        "living_room": 8
+      }
+    },
+    {
+      "merchant": "Diptyque",
+      "name": "Roses Classic Candle",
+      "monogram": "DR",
+      "note": "A rose candle inspired by fresh blooms and dewy petals.",
+      "offer": "Best for someone who wants a clear, recognisable rose rather than a mixed bouquet.",
+      "url": "https://www.diptyqueparis.com/en_uk/p/roses-classic-candle-ro3.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.diptyqueparis.com/en_uk/p/roses-classic-candle-ro3.html",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "floral": 10,
+        "rose": 10,
+        "premium": 10,
+        "subtle": 7,
+        "bedroom": 8,
+        "giftable": 8
+      }
+    },
+    {
+      "merchant": "NEOM",
+      "name": "Complete Bliss Scented Candle (3 Wick)",
+      "monogram": "CB",
+      "note": "A three-wick blend of Moroccan rose, lime and black pepper.",
+      "offer": "Best for a larger floral candle with freshness and a lightly spicy edge.",
+      "url": "https://neomwellbeing.com/products/complete-bliss-luxury-scented-candle",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://neomwellbeing.com/products/complete-bliss-luxury-scented-candle",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "floral": 10,
+        "rose": 9,
+        "citrus": 5,
+        "spice": 6,
+        "three_wick": 10,
+        "large_room": 9,
+        "premium": 7
+      }
+    }
+  ],
+  "woody": [
+    {
+      "merchant": "Diptyque",
+      "name": "Feu de Bois Classic Candle",
+      "monogram": "FB",
+      "note": "A smoky wood-fire candle inspired by logs crackling in a hearth.",
+      "offer": "Best overall for the clearest fireside effect and a distinctive premium scent.",
+      "url": "https://www.diptyqueparis.com/en_uk/p/feu-de-bois-wood-fire-classic-candle-fb2.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.diptyqueparis.com/en_uk/p/feu-de-bois-wood-fire-classic-candle-fb2.html",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "woody": 10,
+        "smoky": 10,
+        "strong": 9,
+        "evening": 10,
+        "premium": 10,
+        "living_room": 9
+      }
+    },
+    {
+      "merchant": "The White Company",
+      "name": "Fireside Luxury Signature Candle",
+      "monogram": "WF",
+      "note": "A warm candle combining smoked woods, birch, patchouli, clove, amber and vanilla.",
+      "offer": "Best mid-range choice for a cosy woody scent with a softer, rounded base.",
+      "url": "https://www.thewhitecompany.com/uk/Fireside-Luxury-Signature-Candle/p/A16687",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.thewhitecompany.com/uk/Fireside-Luxury-Signature-Candle/p/A16687",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "woody": 10,
+        "smoky": 9,
+        "amber": 7,
+        "vanilla": 5,
+        "evening": 10,
+        "mid_budget": 9
+      }
+    },
+    {
+      "merchant": "Rituals",
+      "name": "Mystic Cedar Scented Candle",
+      "monogram": "MC",
+      "note": "A cedar-led candle with labdanum, incense, clove and patchouli.",
+      "offer": "Best for a darker woody profile with spice and resin rather than open smoke.",
+      "url": "https://www.rituals.com/en-gb/mystic-cedar-scented-candle-360g-1119740.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.rituals.com/en-gb/mystic-cedar-scented-candle-360g-1119740.html",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "woody": 10,
+        "cedar": 10,
+        "incense": 10,
+        "spice": 8,
+        "strong": 8,
+        "large_room": 7
+      }
+    },
+    {
+      "merchant": "Jo Malone London",
+      "name": "Cypress & Grapevine Scented Candle",
+      "monogram": "CG",
+      "note": "A fresh woody candle with cypress, grapevine and amber.",
+      "offer": "Best premium choice for a cleaner, greener wood scent with evening warmth.",
+      "url": "https://www.jomalone.co.uk/product/25969/132428/home-collection/cypress-grapevine-scented-candle",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.jomalone.co.uk/product/25969/132428/home-collection/cypress-grapevine-scented-candle",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "woody": 10,
+        "green": 8,
+        "amber": 6,
+        "premium": 10,
+        "living_room": 9,
+        "giftable": 8
+      }
+    }
+  ],
+  "amber": [
+    {
+      "merchant": "Rituals",
+      "name": "Precious Amber Scented Candle",
+      "monogram": "PA",
+      "note": "A warm amber candle with cardamom, cinnamon, patchouli and vetiver.",
+      "offer": "Best overall for a rich evening candle with a clearly spicy amber direction.",
+      "url": "https://www.rituals.com/en-gb/precious-amber-scented-candle-360g-1122021.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.rituals.com/en-gb/precious-amber-scented-candle-360g-1122021.html",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "amber": 10,
+        "spice": 10,
+        "strong": 9,
+        "evening": 10,
+        "large_room": 8,
+        "mid_budget": 9
+      }
+    },
+    {
+      "merchant": "Diptyque",
+      "name": "Ambre Classic Candle",
+      "monogram": "DA",
+      "note": "A premium amber candle with balmy, spicy and woody facets.",
+      "offer": "Best for a classic, resinous amber scent in a compact luxury format.",
+      "url": "https://www.diptyqueparis.com/en_uk/p/ambre-amber-classic-candle-ab1.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.diptyqueparis.com/en_uk/p/ambre-amber-classic-candle-ab1.html",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "amber": 10,
+        "resin": 10,
+        "spice": 8,
+        "woody": 7,
+        "premium": 10,
+        "evening": 9
+      }
+    },
+    {
+      "merchant": "Jo Malone London",
+      "name": "Pomegranate Noir Scented Candle",
+      "monogram": "PN",
+      "note": "A warm pomegranate candle enriched with patchouli and guaiacwood.",
+      "offer": "Best for an amber-style evening mood with fruit, woods and a polished presentation.",
+      "url": "https://www.jomalone.co.uk/product/25969/10082/home-collection/pomegranate-noir-scented-candle",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.jomalone.co.uk/product/25969/10082/home-collection/pomegranate-noir-scented-candle",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "amber": 8,
+        "fruit": 10,
+        "woody": 8,
+        "strong": 8,
+        "premium": 10,
+        "giftable": 9
+      }
+    },
+    {
+      "merchant": "The White Company",
+      "name": "Pomegranate Signature Candle",
+      "monogram": "WP",
+      "note": "A pomegranate and mandarin candle warmed by patchouli and amber.",
+      "offer": "Best mid-range match for fruity amber that feels rich without becoming very smoky.",
+      "url": "https://www.thewhitecompany.com/uk/Pomegranate-Signature-Candle/p/PMDCN",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.thewhitecompany.com/uk/Pomegranate-Signature-Candle/p/PMDCN",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "amber": 9,
+        "fruit": 10,
+        "orange": 6,
+        "mid_budget": 10,
+        "evening": 8,
+        "subtle": 6
+      }
+    }
+  ],
+  "gourmand": [
+    {
+      "merchant": "Diptyque",
+      "name": "Vanille Classic Candle",
+      "monogram": "DV",
+      "note": "A deep vanilla candle focused on the darker, spicy character of the vanilla pod.",
+      "offer": "Best overall for sophisticated sweetness rather than a simple sugary vanilla.",
+      "url": "https://www.diptyqueparis.com/en_uk/p/vanille-vanilla-classic-candle-va2.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.diptyqueparis.com/en_uk/p/vanille-vanilla-classic-candle-va2.html",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "gourmand": 10,
+        "vanilla": 10,
+        "spice": 6,
+        "premium": 10,
+        "evening": 9,
+        "strong": 7
+      }
+    },
+    {
+      "merchant": "Diptyque",
+      "name": "Café Classic Candle",
+      "monogram": "DC",
+      "note": "A coffee-roastery candle built around freshly ground beans and warm roasted aroma.",
+      "offer": "Best for a distinctive gourmand scent that avoids bakery-style sweetness.",
+      "url": "https://www.diptyqueparis.com/en_uk/p/home/scented-candles/classic-scented-candles/cafe-coffee-classic-candle-cafe190.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.diptyqueparis.com/en_uk/p/home/scented-candles/classic-scented-candles/cafe-coffee-classic-candle-cafe190.html",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "gourmand": 10,
+        "coffee": 10,
+        "roasted": 10,
+        "premium": 10,
+        "kitchen": 8,
+        "strong": 9
+      }
+    },
+    {
+      "merchant": "Rituals",
+      "name": "Suede Vanilla Scented Candle",
+      "monogram": "SV",
+      "note": "A large three-wick candle with sage, suede and comforting vanilla.",
+      "offer": "Best for a larger room when warm vanilla and visual candle presence both matter.",
+      "url": "https://www.rituals.com/en-gb/suede-vanilla-scented-candle-1000g-1122022.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.rituals.com/en-gb/suede-vanilla-scented-candle-1000g-1122022.html",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "gourmand": 10,
+        "vanilla": 10,
+        "three_wick": 10,
+        "large_room": 10,
+        "strong": 8,
+        "premium": 7
+      }
+    },
+    {
+      "merchant": "The White Company",
+      "name": "Seychelles Signature Candle",
+      "monogram": "SC",
+      "note": "A softer gourmand blend of bergamot, coconut, jasmine, amber and buttery vanilla.",
+      "offer": "Best mid-range choice for creamy sweetness with a lighter, more tropical finish.",
+      "url": "https://www.thewhitecompany.com/uk/Seychelles-Signature-Candle/p/SYDCN",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.thewhitecompany.com/uk/Seychelles-Signature-Candle/p/SYDCN",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "gourmand": 9,
+        "vanilla": 9,
+        "coconut": 10,
+        "amber": 6,
+        "mid_budget": 10,
+        "subtle": 7
+      }
+    }
+  ]
+};
+
+const RESULTS = {
+  "fresh": {
+    "name": "Fresh & Airy",
+    "color": "#4F7881",
+    "tag": "Clean, open and quietly restorative.",
+    "body": "You prefer candles that make a room feel freshly aired rather than heavily perfumed. Sea salt, mint, green leaves and gentle aromatic herbs will suit you, especially in bedrooms, bathrooms and smaller spaces.",
+    "details": {
+      "Scent direction": "Marine, herbal and green",
+      "Best rooms": "Bathroom, bedroom and hallway",
+      "Ideal strength": "Soft to moderate",
+      "Best format": "Single wick or restrained multi-wick"
+    }
+  },
+  "citrus": {
+    "name": "Citrus & Green",
+    "color": "#A97928",
+    "tag": "Bright, energetic and full of lift.",
+    "body": "You want a candle to wake up the room. Lemon, lime, orange, basil and aromatic leaves will give you the fresh energy you enjoy, particularly in kitchens, workspaces and daytime living areas.",
+    "details": {
+      "Scent direction": "Citrus and aromatic herbs",
+      "Best rooms": "Kitchen, office and hallway",
+      "Ideal strength": "Moderate to strong",
+      "Best format": "Single wick or three wick"
+    }
+  },
+  "floral": {
+    "name": "Floral Sanctuary",
+    "color": "#A3657C",
+    "tag": "Petal-soft, graceful and made to be noticed.",
+    "body": "Flowers are central to the atmosphere you want. Rose, jasmine and peony candles will create a romantic, polished room mood, with the final choice shaped by whether you prefer dewy freshness or a warmer floral trail.",
+    "details": {
+      "Scent direction": "Rose, jasmine and peony",
+      "Best rooms": "Bedroom, lounge and dressing room",
+      "Ideal strength": "Soft to full",
+      "Best format": "Classic or three wick"
+    }
+  },
+  "woody": {
+    "name": "Woodland Glow",
+    "color": "#56634D",
+    "tag": "Grounded, smoky and quietly sophisticated.",
+    "body": "You are drawn to timber, smoke, incense and resin. Woody candles will give your room a grounded evening character, from a literal fireside effect to cleaner cypress and cedar profiles.",
+    "details": {
+      "Scent direction": "Cedar, smoke and incense",
+      "Best rooms": "Study, lounge and dining room",
+      "Ideal strength": "Moderate to strong",
+      "Best format": "Classic or larger statement candle"
+    }
+  },
+  "amber": {
+    "name": "Amber Evening",
+    "color": "#935934",
+    "tag": "Golden, enveloping and designed for after dark.",
+    "body": "Your ideal candle combines warmth, spice and a polished evening presence. Amber, patchouli, cinnamon and dark fruit will create the rich atmosphere you want without relying entirely on dessert-like sweetness.",
+    "details": {
+      "Scent direction": "Amber, spice and dark fruit",
+      "Best rooms": "Lounge, dining room and bedroom",
+      "Ideal strength": "Moderate to rich",
+      "Best format": "Classic or multi-wick"
+    }
+  },
+  "gourmand": {
+    "name": "Sweet Comfort",
+    "color": "#7C583E",
+    "tag": "Cosy, indulgent and instantly inviting.",
+    "body": "You enjoy candles with edible or creamy associations. Vanilla, coffee, coconut and roasted notes will turn a room into a comforting retreat, particularly during slower evenings and colder seasons.",
+    "details": {
+      "Scent direction": "Vanilla, coffee and creamy notes",
+      "Best rooms": "Kitchen, lounge and snug",
+      "Ideal strength": "Moderate to strong",
+      "Best format": "Classic or large multi-wick"
+    }
+  }
+};
+
+const SIGNAL_LABELS = {
+  "fresh": "fresh, airy fragrance",
+  "aquatic": "coastal notes",
+  "mint": "mint",
+  "green": "green aromatics",
+  "lavender": "lavender",
+  "fig": "green fig",
+  "citrus": "bright citrus",
+  "lime": "lime",
+  "lemon": "lemon",
+  "orange": "orange",
+  "floral": "floral fragrance",
+  "jasmine": "jasmine",
+  "peony": "peony",
+  "rose": "rose",
+  "woody": "woody depth",
+  "smoky": "smoke",
+  "cedar": "cedar",
+  "incense": "incense",
+  "amber": "warm amber",
+  "resin": "resin",
+  "spice": "spice",
+  "fruit": "dark fruit",
+  "gourmand": "gourmand sweetness",
+  "vanilla": "vanilla",
+  "coffee": "coffee",
+  "roasted": "roasted notes",
+  "coconut": "coconut",
+  "subtle": "a softer scent level",
+  "strong": "a stronger scent throw",
+  "small_room": "a smaller room",
+  "large_room": "a larger room",
+  "bedroom": "bedroom use",
+  "kitchen": "kitchen use",
+  "living_room": "living-room use",
+  "daytime": "daytime burning",
+  "evening": "evening atmosphere",
+  "two_wick": "a two-wick candle",
+  "three_wick": "a three-wick candle",
+  "mid_budget": "a mid-range budget",
+  "premium": "a premium candle",
+  "giftable": "gift-ready presentation"
+};
+
+const QUESTIONS = [
+  {
+    "q": "What should the room feel like when the candle is lit?",
+    "a": [
+      {
+        "label": "Clean, open and freshly aired",
+        "scores": {
+          "fresh": 5
+        },
+        "signals": [
+          "fresh",
+          "subtle"
+        ]
+      },
+      {
+        "label": "Bright, lively and energised",
+        "scores": {
+          "citrus": 5
+        },
+        "signals": [
+          "citrus",
+          "daytime"
+        ]
+      },
+      {
+        "label": "Romantic, graceful and welcoming",
+        "scores": {
+          "floral": 5
+        },
+        "signals": [
+          "floral",
+          "subtle"
+        ]
+      },
+      {
+        "label": "Grounded, calm and cocooning",
+        "scores": {
+          "woody": 5
+        },
+        "signals": [
+          "woody",
+          "evening"
+        ]
+      },
+      {
+        "label": "Warm, golden and atmospheric",
+        "scores": {
+          "amber": 5
+        },
+        "signals": [
+          "amber",
+          "evening"
+        ]
+      },
+      {
+        "label": "Cosy, delicious and comforting",
+        "scores": {
+          "gourmand": 5
+        },
+        "signals": [
+          "gourmand",
+          "evening"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Which scent notes appeal first?",
+    "a": [
+      {
+        "label": "Sea salt, mint and green leaves",
+        "scores": {
+          "fresh": 5
+        },
+        "signals": [
+          "aquatic",
+          "mint",
+          "green",
+          "fresh"
+        ]
+      },
+      {
+        "label": "Lemon, lime, orange and basil",
+        "scores": {
+          "citrus": 5
+        },
+        "signals": [
+          "citrus",
+          "lemon",
+          "lime",
+          "orange",
+          "green"
+        ]
+      },
+      {
+        "label": "Rose, jasmine and peony",
+        "scores": {
+          "floral": 5
+        },
+        "signals": [
+          "floral",
+          "rose",
+          "jasmine",
+          "peony"
+        ]
+      },
+      {
+        "label": "Cedar, smoke and incense",
+        "scores": {
+          "woody": 5
+        },
+        "signals": [
+          "woody",
+          "cedar",
+          "smoky",
+          "incense"
+        ]
+      },
+      {
+        "label": "Amber, spice and dark fruit",
+        "scores": {
+          "amber": 5
+        },
+        "signals": [
+          "amber",
+          "spice",
+          "fruit"
+        ]
+      },
+      {
+        "label": "Vanilla, coffee and coconut",
+        "scores": {
+          "gourmand": 5
+        },
+        "signals": [
+          "gourmand",
+          "vanilla",
+          "coffee",
+          "coconut"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Which room will you scent most often?",
+    "a": [
+      {
+        "label": "Bathroom, bedroom or hallway",
+        "scores": {
+          "fresh": 5
+        },
+        "signals": [
+          "bedroom",
+          "small_room",
+          "fresh"
+        ]
+      },
+      {
+        "label": "Kitchen, office or breakfast area",
+        "scores": {
+          "citrus": 5
+        },
+        "signals": [
+          "kitchen",
+          "daytime",
+          "citrus"
+        ]
+      },
+      {
+        "label": "Bedroom, dressing room or lounge",
+        "scores": {
+          "floral": 5
+        },
+        "signals": [
+          "bedroom",
+          "living_room",
+          "floral"
+        ]
+      },
+      {
+        "label": "Study, lounge or dining room",
+        "scores": {
+          "woody": 5
+        },
+        "signals": [
+          "living_room",
+          "evening",
+          "woody"
+        ]
+      },
+      {
+        "label": "Dining room, lounge or evening bedroom",
+        "scores": {
+          "amber": 5
+        },
+        "signals": [
+          "living_room",
+          "bedroom",
+          "evening"
+        ]
+      },
+      {
+        "label": "Kitchen, snug or film-night room",
+        "scores": {
+          "gourmand": 5
+        },
+        "signals": [
+          "kitchen",
+          "living_room",
+          "evening"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How large is the space?",
+    "a": [
+      {
+        "label": "Small, and I want the scent to stay gentle",
+        "scores": {
+          "fresh": 5
+        },
+        "signals": [
+          "small_room",
+          "subtle"
+        ]
+      },
+      {
+        "label": "Small to medium with a clear burst of freshness",
+        "scores": {
+          "citrus": 5
+        },
+        "signals": [
+          "small_room",
+          "citrus"
+        ]
+      },
+      {
+        "label": "Medium, with a soft floral trail",
+        "scores": {
+          "floral": 5
+        },
+        "signals": [
+          "floral",
+          "subtle"
+        ]
+      },
+      {
+        "label": "Medium to large, with enough depth to carry",
+        "scores": {
+          "woody": 5
+        },
+        "signals": [
+          "large_room",
+          "strong",
+          "woody"
+        ]
+      },
+      {
+        "label": "Large enough for a richer evening scent",
+        "scores": {
+          "amber": 5
+        },
+        "signals": [
+          "large_room",
+          "strong",
+          "amber"
+        ]
+      },
+      {
+        "label": "Medium to large, where sweetness can spread",
+        "scores": {
+          "gourmand": 5
+        },
+        "signals": [
+          "large_room",
+          "strong",
+          "gourmand"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How noticeable should the candle be?",
+    "a": [
+      {
+        "label": "Soft and clean in the background",
+        "scores": {
+          "fresh": 5
+        },
+        "signals": [
+          "subtle",
+          "fresh"
+        ]
+      },
+      {
+        "label": "Clearly bright without feeling heavy",
+        "scores": {
+          "citrus": 5
+        },
+        "signals": [
+          "citrus",
+          "strong"
+        ]
+      },
+      {
+        "label": "A recognisable floral trail",
+        "scores": {
+          "floral": 5
+        },
+        "signals": [
+          "floral",
+          "strong"
+        ]
+      },
+      {
+        "label": "Deep enough to change the atmosphere",
+        "scores": {
+          "woody": 5
+        },
+        "signals": [
+          "woody",
+          "strong"
+        ]
+      },
+      {
+        "label": "Rich and unmistakably present",
+        "scores": {
+          "amber": 5
+        },
+        "signals": [
+          "amber",
+          "strong"
+        ]
+      },
+      {
+        "label": "Full, warm and instantly recognisable",
+        "scores": {
+          "gourmand": 5
+        },
+        "signals": [
+          "gourmand",
+          "strong"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "When will you burn it most?",
+    "a": [
+      {
+        "label": "After cleaning or while winding down gently",
+        "scores": {
+          "fresh": 5
+        },
+        "signals": [
+          "fresh",
+          "bedroom"
+        ]
+      },
+      {
+        "label": "During mornings, work or cooking",
+        "scores": {
+          "citrus": 5
+        },
+        "signals": [
+          "daytime",
+          "kitchen",
+          "citrus"
+        ]
+      },
+      {
+        "label": "While getting ready or entertaining",
+        "scores": {
+          "floral": 5
+        },
+        "signals": [
+          "floral",
+          "living_room"
+        ]
+      },
+      {
+        "label": "While reading or settling into the evening",
+        "scores": {
+          "woody": 5
+        },
+        "signals": [
+          "woody",
+          "evening"
+        ]
+      },
+      {
+        "label": "For dinner, guests or low-light evenings",
+        "scores": {
+          "amber": 5
+        },
+        "signals": [
+          "amber",
+          "evening"
+        ]
+      },
+      {
+        "label": "For weekends, films and slower nights",
+        "scores": {
+          "gourmand": 5
+        },
+        "signals": [
+          "gourmand",
+          "evening"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Which candle format appeals most?",
+    "a": [
+      {
+        "label": "A restrained single wick or fresh two wick",
+        "scores": {
+          "fresh": 5
+        },
+        "signals": [
+          "subtle",
+          "two_wick"
+        ]
+      },
+      {
+        "label": "A classic candle or brighter three wick",
+        "scores": {
+          "citrus": 5
+        },
+        "signals": [
+          "citrus",
+          "three_wick"
+        ]
+      },
+      {
+        "label": "A beautiful classic vessel or floral three wick",
+        "scores": {
+          "floral": 5
+        },
+        "signals": [
+          "giftable",
+          "three_wick"
+        ]
+      },
+      {
+        "label": "A substantial candle with visual depth",
+        "scores": {
+          "woody": 5
+        },
+        "signals": [
+          "woody",
+          "large_room"
+        ]
+      },
+      {
+        "label": "A polished classic or multi-wick statement",
+        "scores": {
+          "amber": 5
+        },
+        "signals": [
+          "amber",
+          "three_wick",
+          "giftable"
+        ]
+      },
+      {
+        "label": "A larger candle that becomes part of the treat",
+        "scores": {
+          "gourmand": 5
+        },
+        "signals": [
+          "gourmand",
+          "three_wick",
+          "large_room"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Which season matches your ideal candle?",
+    "a": [
+      {
+        "label": "A breezy spring morning",
+        "scores": {
+          "fresh": 5
+        },
+        "signals": [
+          "fresh",
+          "green"
+        ]
+      },
+      {
+        "label": "A bright Mediterranean summer",
+        "scores": {
+          "citrus": 5
+        },
+        "signals": [
+          "citrus",
+          "lemon",
+          "lime"
+        ]
+      },
+      {
+        "label": "A garden in late spring",
+        "scores": {
+          "floral": 5
+        },
+        "signals": [
+          "floral",
+          "rose",
+          "peony"
+        ]
+      },
+      {
+        "label": "A cold walk through woodland",
+        "scores": {
+          "woody": 5
+        },
+        "signals": [
+          "woody",
+          "smoky"
+        ]
+      },
+      {
+        "label": "A golden autumn evening",
+        "scores": {
+          "amber": 5
+        },
+        "signals": [
+          "amber",
+          "spice"
+        ]
+      },
+      {
+        "label": "The cosy centre of winter",
+        "scores": {
+          "gourmand": 5
+        },
+        "signals": [
+          "gourmand",
+          "vanilla"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How should the candle look in the room?",
+    "a": [
+      {
+        "label": "Clean and minimal",
+        "scores": {
+          "fresh": 5
+        },
+        "signals": [
+          "subtle",
+          "fresh"
+        ]
+      },
+      {
+        "label": "Bright and contemporary",
+        "scores": {
+          "citrus": 5
+        },
+        "signals": [
+          "citrus",
+          "daytime"
+        ]
+      },
+      {
+        "label": "Elegant and gift-like",
+        "scores": {
+          "floral": 5
+        },
+        "signals": [
+          "giftable",
+          "premium",
+          "floral"
+        ]
+      },
+      {
+        "label": "Dark, natural or architectural",
+        "scores": {
+          "woody": 5
+        },
+        "signals": [
+          "woody",
+          "premium"
+        ]
+      },
+      {
+        "label": "Rich, polished and made for display",
+        "scores": {
+          "amber": 5
+        },
+        "signals": [
+          "amber",
+          "giftable",
+          "premium"
+        ]
+      },
+      {
+        "label": "Warm, indulgent and comforting",
+        "scores": {
+          "gourmand": 5
+        },
+        "signals": [
+          "gourmand",
+          "giftable"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What matters most in the final purchase?",
+    "a": [
+      {
+        "label": "A fresh scent I can use often",
+        "scores": {
+          "fresh": 5
+        },
+        "signals": [
+          "fresh",
+          "subtle",
+          "mid_budget"
+        ]
+      },
+      {
+        "label": "An immediate citrus lift",
+        "scores": {
+          "citrus": 5
+        },
+        "signals": [
+          "citrus",
+          "strong"
+        ]
+      },
+      {
+        "label": "A beautiful floral signature",
+        "scores": {
+          "floral": 5
+        },
+        "signals": [
+          "floral",
+          "giftable"
+        ]
+      },
+      {
+        "label": "Distinctive woody depth",
+        "scores": {
+          "woody": 5
+        },
+        "signals": [
+          "woody",
+          "smoky",
+          "premium"
+        ]
+      },
+      {
+        "label": "Warmth and evening presence",
+        "scores": {
+          "amber": 5
+        },
+        "signals": [
+          "amber",
+          "strong",
+          "evening"
+        ]
+      },
+      {
+        "label": "A comforting scent that feels like a treat",
+        "scores": {
+          "gourmand": 5
+        },
+        "signals": [
+          "gourmand",
+          "vanilla",
+          "premium"
+        ]
+      }
+    ]
+  }
+];
+
+let step=0;
+let locked=false;
+const selectedAnswers=[];
+const preferenceSignals={};
+const totals=Object.keys(RESULTS).reduce((acc,key)=>{acc[key]=0;return acc;},{});
+const el=id=>document.getElementById(id);
+const screens={intro:el("intro"),quiz:el("quiz"),result:el("result")};
+
+function show(name){Object.values(screens).forEach(screen=>screen.classList.remove("active"));screens[name].classList.add("active");window.scrollTo({top:0,behavior:"smooth"});}
+function hexToRgba(hex,alpha){const clean=hex.replace("#","");const value=parseInt(clean,16);const red=value>>16&255;const green=value>>8&255;const blue=value&255;return `rgba(${red},${green},${blue},${alpha})`;}
+function escapeHtml(value){return String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");}
+function getProductRecommendations(key){return (PRODUCTS[key]||[]).map((product,originalIndex)=>{const matchScore=Object.entries(product.fit||{}).reduce((score,[signal,weight])=>score+(preferenceSignals[signal]||0)*weight,product.base||0);return {...product,matchScore,originalIndex};}).sort((a,b)=>b.matchScore-a.matchScore||(b.base||0)-(a.base||0)||a.originalIndex-b.originalIndex).slice(0,3);}
+function getPersonalMatch(product){const matches=Object.entries(product.fit||{}).filter(([signal])=>preferenceSignals[signal]).map(([signal,weight])=>({signal,value:weight*preferenceSignals[signal]})).sort((a,b)=>b.value-a.value).slice(0,2).map(item=>SIGNAL_LABELS[item.signal]).filter(Boolean);if(matches.length===0)return product.offer||"";if(matches.length===1)return `Matches your preference for ${matches[0]}.`;return `Matches your preference for ${matches[0]} and ${matches[1]}.`;}
+function getProductMonogram(product){if(product.monogram)return product.monogram;return product.name.split(/\s+/).filter(Boolean).slice(0,2).map(word=>word.charAt(0)).join("").toUpperCase();}
+function trackEvent(eventName,details={}){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:eventName,...details});if(typeof window.pintrk==="function"){try{window.pintrk("track","custom",{event_name:eventName,...details});}catch(error){console.warn("Pinterest tracking event was not sent.",error);}}}
+function renderQuestion(){const item=QUESTIONS[step];const totalQuestions=QUESTIONS.length;el("question").textContent=item.q;el("count").textContent=`${String(step+1).padStart(2,"0")} / ${String(totalQuestions).padStart(2,"0")}`;el("fill").style.width=`${step/totalQuestions*100}%`;const box=el("options");box.innerHTML="";locked=false;item.a.forEach((answer,index)=>{const button=document.createElement("button");button.className="option";button.type="button";button.textContent=answer.label;button.addEventListener("click",()=>chooseAnswer(button,answer,index));box.appendChild(button);});setTimeout(()=>el("question").focus({preventScroll:true}),50);}
+function chooseAnswer(button,answer,index){if(locked)return;locked=true;document.querySelectorAll(".option").forEach(option=>{option.disabled=true;});button.classList.add("chosen");selectedAnswers[step]=index;Object.entries(answer.scores).forEach(([key,value])=>{totals[key]+=value;});(answer.signals||[]).forEach(signal=>{preferenceSignals[signal]=(preferenceSignals[signal]||0)+1;});trackEvent("quiz_answer",{quiz:"perfect_scented_candle",question_number:step+1,answer:answer.label});setTimeout(()=>{step+=1;if(step<QUESTIONS.length){renderQuestion();}else{el("fill").style.width="100%";finishQuiz();}},340);}
+function finishQuiz(){const orderedKeys=Object.keys(RESULTS);let winningKey=orderedKeys[0];orderedKeys.forEach(key=>{if(totals[key]>totals[winningKey])winningKey=key;});const tiedKeys=orderedKeys.filter(key=>totals[key]===totals[winningKey]);if(tiedKeys.length>1){for(let questionIndex=selectedAnswers.length-1;questionIndex>=0;questionIndex-=1){const answer=QUESTIONS[questionIndex].a[selectedAnswers[questionIndex]];const rankedTie=tiedKeys.map(key=>({key,value:answer.scores[key]||0})).sort((a,b)=>b.value-a.value);if(rankedTie[0].value>rankedTie[1].value){winningKey=rankedTie[0].key;break;}}}showResult(winningKey);}
+function showResult(key){const result=RESULTS[key];window.LYS_RESULT=key;el("resultCard").style.setProperty("--fam",result.color);el("rName").textContent=result.name;el("rTag").textContent=result.tag;el("rBody").textContent=result.body;const details=el("rDetails");details.innerHTML="";Object.entries(result.details).forEach(([label,value])=>{const row=document.createElement("div");row.className="detail-row";const labelSpan=document.createElement("span");labelSpan.className="detail-label";labelSpan.textContent=label;const valueSpan=document.createElement("span");valueSpan.className="detail-val";valueSpan.textContent=value;row.append(labelSpan,valueSpan);details.appendChild(row);});el("recsTitle").textContent="Your three best-matched scented candles";const recommendations=getProductRecommendations(key);const grid=el("recGrid");grid.innerHTML="";recommendations.forEach((product,index)=>{const card=document.createElement("article");card.className="rec";const fallbackHtml=`<div class="ph media media-fallback" style="background:${hexToRgba(result.color,.88)}"><span>${escapeHtml(getProductMonogram(product))}</span></div>`;const mediaHtml=product.img?`<div class="media-frame"><img class="media" src="${escapeHtml(product.img)}" alt="${escapeHtml(product.merchant)} ${escapeHtml(product.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${fallbackHtml}</div>`:fallbackHtml;const badgeHtml=index===0?'<span class="rec-badge">Best match</span>':"";const matchText=getPersonalMatch(product);const offerHtml=matchText?`<span class="offer">${escapeHtml(matchText)}</span>`:"";const linkIsAffiliate=Boolean(product.affiliate);const linkRel=linkIsAffiliate?"noopener sponsored":"noopener";const ctaHtml=product.url&&product.url!=="#"?`<a class="view" href="${escapeHtml(product.url)}" target="_blank" rel="${linkRel}" data-product-position="${index+1}">View product &rsaquo;</a>`:'<span class="view off">Product page unavailable</span>';card.innerHTML=`${badgeHtml}${mediaHtml}<div class="body"><span class="brand">${escapeHtml(product.merchant)}</span><span class="pname">${escapeHtml(product.name)}</span><span class="pnote">${escapeHtml(product.note)}</span>${offerHtml}${ctaHtml}</div>`;const productImage=card.querySelector("img.media");if(productImage){productImage.addEventListener("error",()=>{productImage.remove();const fallback=card.querySelector(".media-fallback");if(fallback)fallback.classList.add("show");},{once:true});}const productLink=card.querySelector("a[data-product-position]");if(productLink){productLink.addEventListener("click",()=>{trackEvent(linkIsAffiliate?"affiliate_click":"product_click",{quiz:"perfect_scented_candle",result:key,merchant:product.merchant,product:product.name,position:index+1,affiliate:linkIsAffiliate});});}grid.appendChild(card);});const disclosure=el("recommendationDisclosure");const containsAffiliateLinks=recommendations.some(product=>product.affiliate);if(containsAffiliateLinks){disclosure.innerHTML='Some links on this page are affiliate links. Love Your Senses may earn a commission from qualifying orders at no extra cost to you. <a href="/disclosure">Read the affiliate disclosure</a>.';}else{disclosure.textContent="These recommendations use direct brand links. Love Your Senses does not currently earn commission from them. Product availability and temporary imagery may change.";}const browseAll=el("browseAll");if(STORE_LINK&&STORE_LINK!=="#"){const storeRel=STORE_LINK_IS_AFFILIATE?"noopener sponsored":"noopener";browseAll.innerHTML=`<a class="btn-all" href="${escapeHtml(STORE_LINK)}" target="_blank" rel="${storeRel}">Browse all scented candles</a>`;browseAll.querySelector("a").addEventListener("click",()=>{trackEvent(STORE_LINK_IS_AFFILIATE?"affiliate_click":"product_click",{quiz:"perfect_scented_candle",result:key,product:"browse_all",affiliate:STORE_LINK_IS_AFFILIATE});});}else{browseAll.innerHTML="";}trackEvent("quiz_complete",{quiz:"perfect_scented_candle",result:key,result_name:result.name});show("result");}
+async function submitEmail(){const emailInput=el("email");const email=emailInput.value.trim();const form=el("emailForm");const note=el("formNote");if(!/^\S+@\S+\.\S+$/.test(email)){emailInput.focus();note.textContent="Enter a valid email address.";return;}if(!EMAIL_FORM_ACTION){note.textContent="Email signup is not connected yet. Add your email platform form action in the JavaScript settings.";return;}const button=el("emailBtn");button.disabled=true;button.textContent="Sending";try{const payload=new URLSearchParams();payload.append(EMAIL_FIELD_NAME,email);payload.append("quiz_result",window.LYS_RESULT||"");payload.append("source","perfect_scented_candle_quiz");await fetch(EMAIL_FORM_ACTION,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:payload.toString()});form.innerHTML='<p class="done">Your candle shortlist is on its way.</p>';note.textContent="";trackEvent("email_signup",{quiz:"perfect_scented_candle",result:window.LYS_RESULT||""});}catch(error){button.disabled=false;button.textContent="Send it";note.textContent="The signup did not complete. Please try again.";console.error("Email signup failed.",error);}}
+async function shareResult(){const result=RESULTS[window.LYS_RESULT];if(!result)return;const text=`My scented candle profile is ${result.name}. Find yours:`;const shareData={title:"Find Your Perfect Scented Candle | Love Your Senses",text,url:QUIZ_URL||location.href};if(navigator.share){try{await navigator.share(shareData);trackEvent("share",{quiz:"perfect_scented_candle",result:window.LYS_RESULT,method:"native"});}catch(error){if(error.name!=="AbortError")console.error("Share failed.",error);}return;}try{await navigator.clipboard.writeText(`${text} ${shareData.url}`);el("share").textContent="Link copied";setTimeout(()=>el("share").textContent="Share your result",2000);trackEvent("share",{quiz:"perfect_scented_candle",result:window.LYS_RESULT,method:"clipboard"});}catch(error){console.error("Copy failed.",error);}}
+function resetQuiz(){step=0;locked=false;selectedAnswers.length=0;Object.keys(preferenceSignals).forEach(key=>delete preferenceSignals[key]);Object.keys(totals).forEach(key=>totals[key]=0);window.LYS_RESULT="";const form=el("emailForm");form.innerHTML='<input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email"><button id="emailBtn" type="button">Send it</button>';el("emailBtn").addEventListener("click",submitEmail);el("formNote").textContent="Connect your email platform in the JavaScript settings before publishing.";show("intro");trackEvent("quiz_retake",{quiz:"perfect_scented_candle"});}
+el("start").addEventListener("click",()=>{show("quiz");renderQuestion();trackEvent("quiz_start",{quiz:"perfect_scented_candle"});});
+el("emailBtn").addEventListener("click",submitEmail);
+el("share").addEventListener("click",shareResult);
+el("retake").addEventListener("click",resetQuiz);
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
