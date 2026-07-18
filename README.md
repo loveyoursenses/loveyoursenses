@@ -30,4 +30,4 @@ The build uses Node.js only and has no third-party dependencies.
 
 ## Adding a new page
 
-Create the page in its normal folder, include both markers inside `<body>`, and commit it. The next Cloudflare build injects the shared header and footer automatically.
+Create the page in its normal folder, include both markers inside `<body>`, and commit it. The next Cloudflare build injects the shared header and footer automatically. 
