@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Perfect Reed Diffuser | Love Your Senses</title>
+<meta name="description" content="Answer ten questions to discover the reed diffuser scent family, size and products that best match your room, fragrance preferences and budget.">
+<link rel="canonical" href="https://loveyoursenses.com/perfect-reed-diffuser-quiz/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Find Your Perfect Reed Diffuser | Love Your Senses">
+<meta property="og:description" content="Match scent family, room, strength, diffuser style and budget to a personalised reed-diffuser shortlist.">
+<meta property="og:url" content="https://loveyoursenses.com/perfect-reed-diffuser-quiz/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#E7E3DD;
+    --card:#F2EEE8;
+    --ink:#2A2130;
+    --ink-soft:#6E6574;
+    --accent:#7B4A5E;
+    --accent-deep:#5E3547;
+    --line:#CDC3B6;
+    --gold:#B8A78C;
+    --cream:#F7F1EC;
+    --radius:18px;
+    --ease:cubic-bezier(.4,.14,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Jost',system-ui,sans-serif;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+  button,input{font:inherit}
+  .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+  button{touch-action:manipulation}
+  .display{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  .wrap{width:100%;max-width:1000px;margin:0 auto;padding-left:24px;padding-right:24px}
+  .site-head{padding:24px 0}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .mark{font-family:'Fraunces',serif;font-weight:500;font-size:1.24rem;text-decoration:none;color:var(--ink)}
+  .mark span{color:var(--accent)}
+  .head-link{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none}
+  .head-link:hover{color:var(--accent)}
+  .stage{width:100%;max-width:680px;margin:0 auto;padding:36px 20px 72px}
+  .screen{display:none;animation:rise .6s var(--ease) both}
+  .screen.active{display:block}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  #intro{text-align:center;padding:14px 0 24px}
+  .ring{margin:0 auto 30px;display:block}
+  #intro h1{font-size:clamp(2.55rem,9vw,4rem);margin-bottom:18px}
+  #intro h1 em{font-style:italic;font-weight:400}
+  .lede{color:var(--ink-soft);font-size:1.06rem;max-width:45ch;margin:0 auto 24px}
+  .wellbeing-note{font-size:.79rem;color:var(--ink-soft);line-height:1.55;max-width:56ch;margin:0 auto 30px}
+  .meta{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:26px}
+  .btn{display:inline-block;font-family:'Jost',sans-serif;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:17px 40px;background:var(--ink);color:var(--bg);transition:transform .35s var(--ease),background .35s var(--ease)}
+  .btn:hover{background:var(--accent-deep);transform:translateY(-2px)}
+  .progress-wrap{display:flex;align-items:center;gap:16px;margin-bottom:38px}
+  .track{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
+  .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);transition:width .5s var(--ease)}
+  .count{font-size:.72rem;letter-spacing:.2em;color:var(--ink-soft);white-space:nowrap}
+  .question{font-size:clamp(1.75rem,6vw,2.45rem);margin-bottom:32px;min-height:2.2em}
+  .options{display:flex;flex-direction:column;gap:12px}
+  .option{font-family:'Jost',sans-serif;font-size:1.01rem;color:var(--ink);text-align:left;background:var(--card);border:1px solid transparent;border-radius:var(--radius);padding:19px 22px;cursor:pointer;width:100%;transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);display:flex;align-items:center;gap:14px}
+  .option:before{content:"";width:9px;height:9px;border-radius:50%;border:1.5px solid var(--line);flex:none;transition:all .3s var(--ease)}
+  .option:hover{border-color:var(--gold);transform:translateX(4px)}
+  .option.chosen{background:var(--accent);color:var(--cream);border-color:var(--accent)}
+  .option.chosen:before{background:var(--cream);border-color:var(--cream)}
+  .option:disabled{cursor:default}
+  .result-card{background:var(--fam,#7B4A5E);color:var(--cream);border-radius:26px;padding:44px 32px 40px;text-align:center;box-shadow:0 30px 60px -30px rgba(42,33,48,.55)}
+  .result-card .eyebrow{color:rgba(247,241,236,.72)}
+  .result-name{font-size:clamp(2.55rem,10vw,3.65rem);margin-bottom:10px}
+  .result-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:1.2rem;opacity:.94;margin-bottom:24px}
+  .result-body{font-size:1.02rem;line-height:1.72;opacity:.95;max-width:44ch;margin:0 auto 30px}
+  .details{border-top:1px solid rgba(247,241,236,.28);border-bottom:1px solid rgba(247,241,236,.28);padding:22px 0;text-align:left;display:flex;flex-direction:column;gap:14px}
+  .detail-row{display:flex;gap:18px;align-items:baseline}
+  .detail-label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;opacity:.72;width:104px;flex:none}
+  .detail-val{font-family:'Fraunces',serif;font-size:1.04rem}
+  .recs{margin-top:36px}
+  .recs-head{text-align:center;margin-bottom:22px}
+  .recs-head .eyebrow{display:block;margin-bottom:10px}
+  .recs-head h3{font-size:clamp(1.55rem,5vw,2.05rem)}
+  .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .rec{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+  .rec-badge{position:absolute;top:12px;left:12px;z-index:2;background:rgba(247,241,236,.94);color:var(--accent-deep);border-radius:100px;padding:6px 10px;font-size:.61rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+  .rec .media-frame{aspect-ratio:1/1;width:100%;position:relative;overflow:hidden;background:#fff}
+  .rec .media{aspect-ratio:1/1;width:100%;height:100%;object-fit:cover;padding:0;background:#fff;display:block}
+  .rec .ph{display:flex;align-items:center;justify-content:center;padding:0}
+  .rec .media-frame .media{position:absolute;inset:0}
+  .rec .media-frame img.media{z-index:1}
+  .rec .media-fallback{display:flex;z-index:0}
+  .rec .media-fallback.show{display:flex}
+  .rec .ph span{font-family:'Fraunces',serif;font-size:2rem;color:#fff;opacity:.92}
+  .rec .body{padding:16px 15px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .rec .brand{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .rec .pname{font-family:'Fraunces',serif;font-size:1.04rem;line-height:1.22}
+  .rec .pnote{font-size:.8rem;color:var(--ink-soft);line-height:1.45}
+  .rec .offer{font-size:.76rem;color:var(--accent);font-weight:500}
+  .rec .view{margin-top:auto;padding-top:11px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;text-decoration:none;color:var(--accent)}
+  .rec .view.off{color:var(--ink-soft);opacity:.58}
+  .rec .view:hover{text-decoration:underline;text-underline-offset:4px}
+  .affiliate-note{font-size:.78rem;color:var(--ink-soft);line-height:1.55;text-align:center;max-width:58ch;margin:18px auto 0}
+  .affiliate-note a{color:var(--accent);text-underline-offset:3px}
+  .browse-all{text-align:center;margin-top:22px}
+  .btn-all{display:inline-block;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;text-decoration:none;border:1px solid var(--accent);color:var(--accent);border-radius:100px;padding:14px 34px;transition:background .3s var(--ease),color .3s var(--ease)}
+  .btn-all:hover{background:var(--accent);color:var(--cream)}
+  .capture{background:var(--card);border-radius:var(--radius);padding:32px 28px;margin-top:28px;text-align:center}
+  .capture h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;margin-bottom:8px}
+  .capture p{color:var(--ink-soft);font-size:.96rem;margin:0 auto 22px;max-width:39ch}
+  .field{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .field input{font-family:'Jost',sans-serif;font-size:1rem;flex:1;min-width:210px;padding:15px 18px;border:1px solid var(--line);border-radius:100px;background:#fff;color:var(--ink)}
+  .field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+  .field button{font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:15px 28px;background:var(--accent);color:var(--cream)}
+  .field button:hover{background:var(--accent-deep)}
+  .capture .done{color:var(--accent);font-family:'Fraunces',serif;font-size:1.1rem;padding:6px 0}
+  .capture .form-note{font-size:.74rem;margin-top:12px;margin-bottom:0}
+  .next-quiz{border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;margin-top:18px;text-align:center}
+  .next-quiz .eyebrow{display:block;margin-bottom:9px}
+  .next-quiz h3{font-size:1.45rem;margin-bottom:8px}
+  .next-quiz p{color:var(--ink-soft);font-size:.94rem;max-width:40ch;margin:0 auto 18px}
+  .next-link{font-size:.74rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;color:var(--accent);text-underline-offset:4px}
+  .next-link:hover{color:var(--accent-deep)}
+  .after{display:flex;gap:22px;justify-content:center;align-items:center;margin-top:26px;flex-wrap:wrap}
+  .linkish{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px}
+  .linkish:hover{color:var(--accent)}
+  .site-foot{border-top:1px solid var(--line);padding:34px 0 48px}
+  .foot{display:flex;flex-direction:column;align-items:center;gap:11px;text-align:center}
+  .foot-nav a{color:var(--ink-soft);text-decoration:none;font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;margin:0 10px}
+  .foot-nav a:hover{color:var(--accent)}
+  .foot .disc{font-size:.82rem;color:var(--ink-soft);max-width:54ch}
+  .foot .cr{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  @media(max-width:600px){.site-head{padding:20px 0}.stage{padding-top:28px}.rec-grid{grid-template-columns:1fr 1fr}.detail-label{width:88px}}
+  @media(max-width:420px){.rec-grid{grid-template-columns:1fr}.result-card{padding:40px 24px 36px}.field{flex-direction:column}.field input,.field button{width:100%}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <div class="bar">
+      <a href="/" class="mark">Love Your <span>Senses</span></a>
+      <a href="/#quiz-library" class="head-link">All quizzes</a>
+    </div>
+  </div>
+</header>
+
+<main class="stage">
+  <section id="intro" class="screen active">
+    <svg class="ring" width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
+      <circle cx="29" cy="29" r="27" fill="none" stroke="#B8A78C" stroke-width="1"/>
+      <circle cx="29" cy="29" r="19" fill="none" stroke="#CDC3B6" stroke-width="1"/>
+      <g stroke="#7B4A5E" stroke-width="1.4">
+        <line x1="29" y1="2" x2="29" y2="9"/>
+        <line x1="52.4" y1="42.5" x2="46.4" y2="39"/>
+        <line x1="5.6" y1="42.5" x2="11.6" y2="39"/>
+        <line x1="52.4" y1="15.5" x2="46.4" y2="19"/>
+        <line x1="5.6" y1="15.5" x2="11.6" y2="19"/>
+        <line x1="29" y1="56" x2="29" y2="49"/>
+      </g>
+      <circle cx="29" cy="29" r="3" fill="#7B4A5E"/>
+    </svg>
+    <p class="eyebrow">A reed diffuser discovery</p>
+    <h1 class="display">Find your perfect <em>reed diffuser</em></h1>
+    <p class="lede">Answer ten questions about scent, room, strength, longevity, vessel style and budget to find your diffuser profile and three products to consider.</p>
+    <p class="wellbeing-note">Fragrance is personal. Follow the brand instructions, keep diffuser liquid and reeds away from children and pets, protect finished surfaces, ventilate the room, and stop use if fragrance causes discomfort or sensitivity.</p>
+    <button class="btn" id="start" type="button">Begin the discovery</button>
+    <p class="meta">10 questions &nbsp;·&nbsp; about two minutes</p>
+  </section>
+
+  <section id="quiz" class="screen" aria-live="polite">
+    <div class="progress-wrap">
+      <div class="track" aria-hidden="true"><div class="fill" id="fill"></div></div>
+      <span class="count" id="count">01 / 10</span>
+    </div>
+    <h2 class="question display" id="question" tabindex="-1"></h2>
+    <div class="options" id="options"></div>
+  </section>
+
+  <section id="result" class="screen" aria-live="polite">
+    <div class="result-card" id="resultCard">
+      <p class="eyebrow">Your diffuser profile</p>
+      <h2 class="result-name display" id="rName"></h2>
+      <p class="result-tag" id="rTag"></p>
+      <p class="result-body" id="rBody"></p>
+      <div class="details" id="rDetails"></div>
+    </div>
+
+    <div class="recs">
+      <div class="recs-head">
+        <span class="eyebrow">Chosen from all ten answers</span>
+        <h3 class="display" id="recsTitle">Your three best-matched reed diffusers</h3>
+      </div>
+      <div class="rec-grid" id="recGrid"></div>
+      <p class="affiliate-note" id="recommendationDisclosure">These recommendations use direct brand links. Love Your Senses does not currently earn commission from them. Product availability and temporary imagery may change.</p>
+      <div class="browse-all" id="browseAll"></div>
+      <p class="wellbeing-note"><strong>Reed diffuser safety:</strong> Keep diffuser liquid and reeds away from children and pets, never ingest the liquid or light the reeds, keep the vessel away from flames and heat, place it on a stable protected surface, wipe spills immediately, avoid contact with eyes, skin, fabrics and finished surfaces, ventilate the room, and stop use if fragrance causes irritation or sensitivity.</p>
+    </div>
+
+    <div class="capture">
+      <h3>Save your diffuser shortlist</h3>
+      <p>Get your result, scent priorities and future fragrance discoveries by email.</p>
+      <div class="field" id="emailForm">
+        <label class="sr-only" for="email">Your email address</label>
+        <input type="email" id="email" name="email" placeholder="Your email" aria-describedby="formNote" autocomplete="email" inputmode="email">
+        <button id="emailBtn" type="button">Send it</button>
+      </div>
+      <p class="form-note" id="formNote">Connect your email platform in the JavaScript settings before publishing.</p>
+    </div>
+
+    <div class="next-quiz">
+      <span class="eyebrow">Continue the home-fragrance discovery</span>
+      <h3 class="display">Find your perfect room spray</h3>
+      <p>Match scent family, room, spray strength and usage style to a room fragrance you control on demand. Recommended length: 10 questions.</p>
+      <a class="next-link" href="/perfect-room-spray-quiz/">Take the room spray quiz</a>
+    </div>
+
+    <div class="after">
+      <button class="linkish" id="share" type="button">Share your result</button>
+      <button class="linkish" id="retake" type="button">Retake the quiz</button>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-nav">
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/disclosure/">Affiliate Disclosure</a>
+      </div>
+      <p class="disc">Love Your Senses helps you discover products matched to your preferences through short, enjoyable quizzes.</p>
+      <p class="cr">© 2026 Love Your Senses</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Product links are direct and non-affiliate. Replace URLs and images with approved affiliate assets when partnerships are active, then change affiliate:false to affiliate:true. */
+const QUIZ_URL = "https://loveyoursenses.com/perfect-reed-diffuser-quiz/";
+const STORE_LINK = "";
+const STORE_LINK_IS_AFFILIATE = false;
+const EMAIL_FORM_ACTION = "";
+const EMAIL_FIELD_NAME = "email";
+
+const PRODUCTS = {
+  "fresh": [
+    {
+      "merchant": "The White Company",
+      "name": "Sea Salt Diffuser",
+      "monogram": "SS",
+      "note": "A clean coastal blend of sea salt, vetivert, oakmoss and cedarwood.",
+      "offer": "Best overall for an airy everyday diffuser with understated coastal character.",
+      "url": "https://www.thewhitecompany.com/uk/Sea-Salt-Diffuser/p/SCDDF",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.thewhitecompany.com/uk/Sea-Salt-Diffuser/p/SCDDF",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "fresh": 10,
+        "aquatic": 10,
+        "subtle": 8,
+        "small_room": 7,
+        "bathroom": 9,
+        "hallway": 8,
+        "minimal": 9,
+        "mid_budget": 9,
+        "long_duration": 7,
+        "personal": 7
+      }
+    },
+    {
+      "merchant": "NEOM",
+      "name": "Perfect Night's Sleep Reed Diffuser",
+      "monogram": "NS",
+      "note": "A refillable lavender, chamomile and patchouli diffuser designed for a softer bedroom atmosphere.",
+      "offer": "Best for bedrooms, an upper-mid-range budget and a reusable vessel with adjustable strength.",
+      "url": "https://neomwellbeing.com/products/perfect-nights-sleep-reed-diffuser",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://neomwellbeing.com/products/perfect-nights-sleep-reed-diffuser",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "fresh": 7,
+        "herbal": 8,
+        "lavender": 10,
+        "subtle": 8,
+        "bedroom": 10,
+        "regular_flip": 8,
+        "adjustable_strength": 9,
+        "refillable": 10,
+        "upper_mid": 10,
+        "mid_duration": 10
+      }
+    },
+    {
+      "merchant": "Rituals",
+      "name": "The Ritual of Hammam Fragrance Sticks",
+      "monogram": "RH",
+      "note": "An aromatic eucalyptus and rosemary diffuser with a clean spa-like direction.",
+      "offer": "Best for a refreshing bathroom ritual and a fragrance designed to last for months.",
+      "url": "https://www.rituals.com/en-gb/the-ritual-of-hammam-fragrance-sticks-250ml-1120423.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.rituals.com/en-gb/the-ritual-of-hammam-fragrance-sticks-250ml-1120423.html",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "fresh": 10,
+        "herbal": 10,
+        "green": 8,
+        "bathroom": 10,
+        "medium_room": 8,
+        "large_room": 5,
+        "long_duration": 10,
+        "mid_budget": 9,
+        "value": 7,
+        "short_duration": 5,
+        "personal": 8,
+        "low_maintenance": 7,
+        "refillable": 6
+      }
+    },
+    {
+      "merchant": "Jo Malone London",
+      "name": "Wood Sage & Sea Salt Diffuser",
+      "monogram": "WS",
+      "note": "A premium sea-salt diffuser softened by mineral notes and aromatic sage.",
+      "offer": "Best premium choice for a polished coastal scent and elegant neutral presentation.",
+      "url": "https://www.jomalone.co.uk/product/25969/126086/home-collection/wood-sage-sea-salt-diffuser",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.jomalone.co.uk/product/25969/126086/home-collection/wood-sage-sea-salt-diffuser",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "fresh": 9,
+        "aquatic": 10,
+        "herbal": 8,
+        "moderate": 8,
+        "large_room": 6,
+        "living_room": 8,
+        "premium": 10,
+        "giftable": 10,
+        "elegant": 9,
+        "long_duration": 10,
+        "refillable": 8
+      }
+    }
+  ],
+  "citrus": [
+    {
+      "merchant": "The White Company",
+      "name": "Lime & Bay Diffuser",
+      "monogram": "LB",
+      "note": "A bright blend of lime, pink grapefruit, orange blossom and aromatic bay.",
+      "offer": "Best overall for an uplifting citrus diffuser at a versatile mid-range spend.",
+      "url": "https://www.thewhitecompany.com/uk/Lime-and-Bay-Diffuser/p/A12293",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.thewhitecompany.com/uk/Lime-and-Bay-Diffuser/p/A12293",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "citrus": 10,
+        "lime": 10,
+        "green": 8,
+        "moderate": 8,
+        "kitchen": 9,
+        "office": 8,
+        "minimal": 8,
+        "mid_budget": 10,
+        "personal": 8
+      }
+    },
+    {
+      "merchant": "Rituals",
+      "name": "The Ritual of Mehr Fragrance Sticks",
+      "monogram": "RM",
+      "note": "A sweet-orange diffuser warmed with cedarwood and a lightly spicy undertone.",
+      "offer": "Best for citrus that feels rounded, sunny and suitable for medium-sized rooms.",
+      "url": "https://www.rituals.com/en-gb/the-ritual-of-mehr-fragrance-sticks-250ml-1121234.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.rituals.com/en-gb/the-ritual-of-mehr-fragrance-sticks-250ml-1121234.html",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "citrus": 10,
+        "orange": 10,
+        "spice": 6,
+        "woody": 5,
+        "medium_room": 9,
+        "long_duration": 10,
+        "mid_budget": 9,
+        "value": 7,
+        "short_duration": 5,
+        "low_maintenance": 8,
+        "refillable": 8
+      }
+    },
+    {
+      "merchant": "NEOM",
+      "name": "Feel Refreshed Reed Diffuser",
+      "monogram": "FR",
+      "note": "A lemon and basil diffuser with an energetic aromatic profile and adjustable reeds.",
+      "offer": "Best for workspaces and kitchens when freshness and a clear scent presence matter.",
+      "url": "https://neomwellbeing.com/products/feel-refreshed-reed-diffuser",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://neomwellbeing.com/products/feel-refreshed-reed-diffuser",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "citrus": 10,
+        "lemon": 10,
+        "green": 9,
+        "strong": 8,
+        "large_room": 8,
+        "office": 10,
+        "kitchen": 9,
+        "adjustable_strength": 9,
+        "refillable": 10,
+        "upper_mid": 9,
+        "mid_duration": 10
+      }
+    },
+    {
+      "merchant": "Jo Malone London",
+      "name": "Lime Basil & Mandarin Diffuser",
+      "monogram": "JM",
+      "note": "A refined lime and mandarin diffuser sharpened by peppery basil and herbs.",
+      "offer": "Best premium choice for a recognisable citrus signature and gift-ready glass vessel.",
+      "url": "https://www.jomalone.co.uk/product/25969/22262/home-collection/lime-basil-mandarin-diffuser",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.jomalone.co.uk/product/25969/22262/home-collection/lime-basil-mandarin-diffuser",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "citrus": 10,
+        "lime": 10,
+        "orange": 8,
+        "green": 9,
+        "living_room": 8,
+        "premium": 10,
+        "giftable": 10,
+        "elegant": 9,
+        "long_duration": 10
+      }
+    }
+  ],
+  "floral": [
+    {
+      "merchant": "The White Company",
+      "name": "Flowers Diffuser",
+      "monogram": "FL",
+      "note": "A graceful floral blend of jasmine, rose and neroli in a clean neutral vessel.",
+      "offer": "Best overall for a soft floral signature that works well in bedrooms and dressing spaces.",
+      "url": "https://www.thewhitecompany.com/uk/Flowers-Diffuser/p/FLDDF",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.thewhitecompany.com/uk/Flowers-Diffuser/p/FLDDF",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "floral": 10,
+        "jasmine": 9,
+        "rose": 9,
+        "subtle": 8,
+        "bedroom": 10,
+        "minimal": 8,
+        "mid_budget": 10,
+        "personal": 8
+      }
+    },
+    {
+      "merchant": "NEOM",
+      "name": "Complete Bliss Reed Diffuser",
+      "monogram": "CB",
+      "note": "A fresh rose diffuser layered with lime and black pepper for added lift.",
+      "offer": "Best for floral fragrance with brighter citrus energy and adjustable scent strength.",
+      "url": "https://neomwellbeing.com/products/complete-bliss-reed-diffuser",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://neomwellbeing.com/products/complete-bliss-reed-diffuser",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "floral": 10,
+        "rose": 10,
+        "citrus": 5,
+        "spice": 5,
+        "moderate": 8,
+        "bedroom": 8,
+        "adjustable_strength": 10,
+        "refillable": 10,
+        "upper_mid": 8,
+        "value": 10,
+        "short_duration": 8,
+        "mid_duration": 10
+      }
+    },
+    {
+      "merchant": "Rituals",
+      "name": "Sweet Jasmine Fragrance Sticks",
+      "monogram": "SJ",
+      "note": "A large jasmine diffuser with blackcurrant and warm amber facets.",
+      "offer": "Best for a fuller floral presence, larger rooms and an extended fragrance life.",
+      "url": "https://www.rituals.com/en-gb/sweet-jasmine-fragrance-sticks-1122380.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.rituals.com/en-gb/sweet-jasmine-fragrance-sticks-1122380.html",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "floral": 10,
+        "jasmine": 10,
+        "amber": 5,
+        "strong": 8,
+        "large_room": 10,
+        "max_duration": 10,
+        "upper_mid": 9,
+        "decorative": 8,
+        "giftable": 8
+      }
+    },
+    {
+      "merchant": "Jo Malone London",
+      "name": "Peony & Blush Suede Diffuser",
+      "monogram": "PB",
+      "note": "An elegant peony diffuser with red apple, rose and a soft suede base.",
+      "offer": "Best premium floral gift for a polished room and a refined decorative finish.",
+      "url": "https://www.jomalone.co.uk/product/25969/68566/home-collection/peony-blush-suede-diffuser",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.jomalone.co.uk/product/25969/68566/home-collection/peony-blush-suede-diffuser",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "floral": 10,
+        "peony": 10,
+        "rose": 8,
+        "bedroom": 8,
+        "living_room": 8,
+        "premium": 10,
+        "giftable": 10,
+        "elegant": 10,
+        "long_duration": 10
+      }
+    }
+  ],
+  "woody": [
+    {
+      "merchant": "Skandinavisk",
+      "name": "SKOG 200ml Scent Diffuser",
+      "monogram": "SK",
+      "note": "A Nordic forest diffuser with pine needles, fir cones, birch sap and woodland flowers.",
+      "offer": "Best overall for a natural evergreen atmosphere and a clean Scandinavian vessel.",
+      "url": "https://www.skandinavisk.com/skog-scent-diffuser-2.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.skandinavisk.com/skog-scent-diffuser-2.html",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "woody": 10,
+        "pine": 10,
+        "green": 8,
+        "medium_room": 8,
+        "natural": 10,
+        "upper_mid": 9,
+        "long_duration": 10,
+        "personal": 8
+      }
+    },
+    {
+      "merchant": "Rituals",
+      "name": "Mystic Cedar Fragrance Sticks",
+      "monogram": "MC",
+      "note": "A large cedar diffuser enriched with labdanum, incense, clove and patchouli.",
+      "offer": "Best for darker resinous woods, larger rooms and a long-lasting statement scent.",
+      "url": "https://www.rituals.com/en-gb/mystic-cedar-fragrance-sticks-450ml-1119738.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.rituals.com/en-gb/mystic-cedar-fragrance-sticks-450ml-1119738.html",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "woody": 10,
+        "cedar": 10,
+        "incense": 10,
+        "spice": 8,
+        "strong": 9,
+        "large_room": 10,
+        "max_duration": 10,
+        "dark_vessel": 8,
+        "upper_mid": 9
+      }
+    },
+    {
+      "merchant": "Molton Brown",
+      "name": "Re-charge Black Pepper Aroma Reeds",
+      "monogram": "BP",
+      "note": "A spicy woody diffuser with black pepper, ginger and earthy vetiver.",
+      "offer": "Best for a study or living room when bold spice and architectural presence appeal.",
+      "url": "https://www.sephora.co.uk/p/molton-brown-re-charge-black-pepper-aroma-reeds",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.sephora.co.uk/p/molton-brown-re-charge-black-pepper-aroma-reeds",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "woody": 9,
+        "pepper": 10,
+        "spice": 9,
+        "strong": 9,
+        "office": 9,
+        "living_room": 9,
+        "dark_vessel": 9,
+        "upper_mid": 9,
+        "long_duration": 10,
+        "giftable": 7
+      }
+    },
+    {
+      "merchant": "Stoneglow",
+      "name": "Luna Sandalwood & Patchouli Reed Diffuser",
+      "monogram": "SP",
+      "note": "A value-led woody diffuser blending sandalwood and patchouli in a contemporary vessel.",
+      "offer": "Best for a lower budget, medium rooms and a smoother wood scent without heavy smoke.",
+      "url": "https://www.johnlewis.com/stoneglow-luna-sandalwood-patchouli-reed-diffuser-120ml/p113986239",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.johnlewis.com/stoneglow-luna-sandalwood-patchouli-reed-diffuser-120ml/p113986239",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "woody": 10,
+        "sandalwood": 10,
+        "moderate": 8,
+        "medium_room": 9,
+        "minimal": 7,
+        "value": 10,
+        "short_duration": 8,
+        "mid_duration": 10,
+        "personal": 8
+      }
+    }
+  ],
+  "amber": [
+    {
+      "merchant": "The White Company",
+      "name": "Pomegranate Diffuser",
+      "monogram": "PM",
+      "note": "A warm pomegranate and mandarin diffuser grounded by patchouli and amber.",
+      "offer": "Best overall for accessible fruity amber and an elegant everyday room scent.",
+      "url": "https://www.thewhitecompany.com/uk/Pomegranate-Diffuser/p/PMDDF",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.thewhitecompany.com/uk/Pomegranate-Diffuser/p/PMDDF",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "amber": 10,
+        "fruit": 10,
+        "orange": 6,
+        "moderate": 8,
+        "living_room": 9,
+        "dining_room": 8,
+        "mid_budget": 10,
+        "value": 8,
+        "short_duration": 6,
+        "elegant": 8,
+        "personal": 8
+      }
+    },
+    {
+      "merchant": "NEOM",
+      "name": "Real Luxury Reed Diffuser",
+      "monogram": "RL",
+      "note": "A relaxing blend of lavender, jasmine and sandalwood with a warm, smooth base.",
+      "offer": "Best for bedrooms and calm evening spaces where softness matters more than spice.",
+      "url": "https://neomwellbeing.com/products/real-luxury-reed-diffuser",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://neomwellbeing.com/products/real-luxury-reed-diffuser",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "amber": 8,
+        "sandalwood": 10,
+        "floral": 5,
+        "subtle": 8,
+        "bedroom": 10,
+        "evening": 10,
+        "adjustable_strength": 9,
+        "refillable": 10,
+        "upper_mid": 9,
+        "mid_duration": 10
+      }
+    },
+    {
+      "merchant": "Rituals",
+      "name": "Precious Amber Fragrance Sticks",
+      "monogram": "PA",
+      "note": "A large amber diffuser with cardamom, cinnamon, patchouli and vetiver.",
+      "offer": "Best for rich evening fragrance, open rooms and extended scent performance.",
+      "url": "https://www.rituals.com/en-gb/precious-amber-fragrance-sticks-1122376.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.rituals.com/en-gb/precious-amber-fragrance-sticks-1122376.html",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "amber": 10,
+        "spice": 10,
+        "strong": 10,
+        "large_room": 10,
+        "evening": 10,
+        "max_duration": 10,
+        "upper_mid": 9,
+        "decorative": 8,
+        "giftable": 8
+      }
+    },
+    {
+      "merchant": "Jo Malone London",
+      "name": "Pomegranate Noir Diffuser",
+      "monogram": "PN",
+      "note": "A premium dark-fruit diffuser enriched with patchouli and guaiacwood.",
+      "offer": "Best luxury gift for a dramatic evening atmosphere and polished presentation.",
+      "url": "https://www.jomalone.co.uk/product/25969/22263/home-collection/pomegranate-noir-diffuser",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.jomalone.co.uk/product/25969/22263/home-collection/pomegranate-noir-diffuser",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "amber": 9,
+        "fruit": 10,
+        "woody": 7,
+        "strong": 8,
+        "living_room": 9,
+        "dining_room": 9,
+        "premium": 10,
+        "giftable": 10,
+        "elegant": 10,
+        "long_duration": 10
+      }
+    }
+  ],
+  "gourmand": [
+    {
+      "merchant": "The White Company",
+      "name": "Seychelles Diffuser",
+      "monogram": "SY",
+      "note": "A creamy blend of bergamot, coconut, jasmine, amber and vanilla.",
+      "offer": "Best overall for soft tropical sweetness at a versatile mid-range price.",
+      "url": "https://www.thewhitecompany.com/uk/Seychelles-Diffuser/p/SYDDF",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.thewhitecompany.com/uk/Seychelles-Diffuser/p/SYDDF",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "gourmand": 10,
+        "vanilla": 9,
+        "coconut": 10,
+        "amber": 5,
+        "moderate": 8,
+        "bedroom": 7,
+        "living_room": 8,
+        "mid_budget": 10,
+        "mid_duration": 8,
+        "personal": 9
+      }
+    },
+    {
+      "merchant": "Rituals",
+      "name": "The Ritual of Yozakura Fragrance Sticks",
+      "monogram": "YZ",
+      "note": "A floral-gourmand diffuser with white flowers, cherry, vanilla and tonka bean.",
+      "offer": "Best for a sweet decorative scent with a balanced floral edge and long life.",
+      "url": "https://www.rituals.com/en-gb/the-ritual-of-yozakura-fragrance-sticks-250ml-1120285.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.rituals.com/en-gb/the-ritual-of-yozakura-fragrance-sticks-250ml-1120285.html",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "gourmand": 10,
+        "vanilla": 9,
+        "tonka": 10,
+        "floral": 5,
+        "medium_room": 8,
+        "long_duration": 10,
+        "mid_budget": 9,
+        "value": 8,
+        "short_duration": 6,
+        "decorative": 9,
+        "giftable": 8,
+        "refillable": 8
+      }
+    },
+    {
+      "merchant": "Skandinavisk",
+      "name": "HYGGE 200ml Scent Diffuser",
+      "monogram": "HY",
+      "note": "A comforting Nordic blend of black tea, mint, dried apple and cinnamon.",
+      "offer": "Best for cosy rooms when warm tea and spice appeal more than creamy vanilla.",
+      "url": "https://www.skandinavisk.com/hygge-scent-diffuser-2.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.skandinavisk.com/hygge-scent-diffuser-2.html",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "gourmand": 9,
+        "tea": 10,
+        "cinnamon": 10,
+        "spice": 8,
+        "moderate": 8,
+        "living_room": 9,
+        "natural": 9,
+        "upper_mid": 9,
+        "long_duration": 10,
+        "personal": 8
+      }
+    },
+    {
+      "merchant": "Rituals",
+      "name": "Suede Vanilla Fragrance Sticks",
+      "monogram": "SV",
+      "note": "A large diffuser combining sage, soft suede and comforting vanilla.",
+      "offer": "Best for a larger room, premium gifting and a full warm vanilla presence.",
+      "url": "https://www.rituals.com/en-gb/suede-vanilla-fragrance-sticks-1115623.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.rituals.com/en-gb/suede-vanilla-fragrance-sticks-1115623.html",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "gourmand": 10,
+        "vanilla": 10,
+        "herbal": 5,
+        "strong": 9,
+        "large_room": 10,
+        "max_duration": 10,
+        "upper_mid": 9,
+        "giftable": 10,
+        "decorative": 9
+      }
+    }
+  ]
+};
+
+const RESULTS = {
+  "fresh": {
+    "name": "Coastal Linen",
+    "color": "#4F7881",
+    "tag": "Clean, open and quietly restorative.",
+    "body": "You prefer a diffuser that makes the room feel freshly aired rather than heavily perfumed. Sea salt, mint, eucalyptus and soft green notes suit your calm, uncluttered approach to home fragrance.",
+    "details": {
+      "Scent direction": "Sea salt, mint and aromatic greens",
+      "Best rooms": "Bathroom, hallway and bedroom",
+      "Ideal strength": "Soft to moderate",
+      "Diffuser style": "Minimal vessel with adjustable reeds"
+    }
+  },
+  "citrus": {
+    "name": "Citrus Conservatory",
+    "color": "#A97928",
+    "tag": "Bright, energetic and full of lift.",
+    "body": "You want continuous fragrance that gives the room immediate energy. Lemon, lime, orange and leafy herbs suit kitchens, offices and daytime living spaces without becoming overly sweet.",
+    "details": {
+      "Scent direction": "Lemon, lime, orange and basil",
+      "Best rooms": "Kitchen, office and hallway",
+      "Ideal strength": "Moderate to clear",
+      "Diffuser style": "Fresh contemporary glass"
+    }
+  },
+  "floral": {
+    "name": "Floral Sanctuary",
+    "color": "#A3657C",
+    "tag": "Petal-soft, graceful and polished.",
+    "body": "Flowers are central to the atmosphere you enjoy. Rose, jasmine and peony diffusers create an elegant room signature, with options ranging from soft bedroom florals to fuller decorative statements.",
+    "details": {
+      "Scent direction": "Rose, jasmine and peony",
+      "Best rooms": "Bedroom, dressing room and lounge",
+      "Ideal strength": "Soft to full",
+      "Diffuser style": "Elegant and gift-ready"
+    }
+  },
+  "woody": {
+    "name": "Woodland Retreat",
+    "color": "#56634D",
+    "tag": "Grounded, architectural and quietly sophisticated.",
+    "body": "You are drawn to cedar, pine, incense and peppery woods. A woody diffuser gives studies and living rooms lasting depth without relying on sweetness or overt floral notes.",
+    "details": {
+      "Scent direction": "Cedar, forest greens and incense",
+      "Best rooms": "Study, lounge and dining room",
+      "Ideal strength": "Moderate to strong",
+      "Diffuser style": "Natural or dark statement vessel"
+    }
+  },
+  "amber": {
+    "name": "Amber Evening",
+    "color": "#935934",
+    "tag": "Golden, enveloping and made for after dark.",
+    "body": "Your ideal diffuser combines warmth, spice and a polished evening presence. Amber, dark fruit, sandalwood and patchouli create the rich atmosphere you prefer for lounges, bedrooms and dining spaces.",
+    "details": {
+      "Scent direction": "Amber, spice and dark fruit",
+      "Best rooms": "Lounge, dining room and bedroom",
+      "Ideal strength": "Moderate to rich",
+      "Diffuser style": "Polished decorative glass"
+    }
+  },
+  "gourmand": {
+    "name": "Vanilla Comfort",
+    "color": "#7C583E",
+    "tag": "Cosy, indulgent and instantly inviting.",
+    "body": "You enjoy diffusers with creamy, edible or softly spiced associations. Vanilla, coconut, tonka, tea and cinnamon turn the room into a comforting retreat without requiring a flame.",
+    "details": {
+      "Scent direction": "Vanilla, coconut, tea and warm spice",
+      "Best rooms": "Lounge, bedroom and snug",
+      "Ideal strength": "Moderate to full",
+      "Diffuser style": "Warm decorative vessel"
+    }
+  }
+};
+
+const SIGNAL_LABELS = {
+  "fresh": "fresh, airy fragrance",
+  "aquatic": "coastal notes",
+  "mint": "mint",
+  "lavender": "lavender",
+  "herbal": "aromatic herbs",
+  "green": "green notes",
+  "citrus": "bright citrus",
+  "lime": "lime",
+  "lemon": "lemon",
+  "orange": "orange",
+  "floral": "floral fragrance",
+  "jasmine": "jasmine",
+  "rose": "rose",
+  "peony": "peony",
+  "woody": "woody depth",
+  "pine": "forest notes",
+  "cedar": "cedar",
+  "incense": "incense",
+  "pepper": "peppery spice",
+  "amber": "warm amber",
+  "fruit": "dark fruit",
+  "spice": "spice",
+  "sandalwood": "sandalwood",
+  "gourmand": "gourmand warmth",
+  "vanilla": "vanilla",
+  "coconut": "coconut",
+  "tonka": "tonka bean",
+  "tea": "tea notes",
+  "cinnamon": "cinnamon",
+  "bathroom": "bathroom use",
+  "hallway": "hallway use",
+  "kitchen": "kitchen use",
+  "office": "workspace use",
+  "bedroom": "bedroom use",
+  "living_room": "living-room use",
+  "dining_room": "dining-room use",
+  "small_room": "a compact room",
+  "medium_room": "a medium-sized room",
+  "large_room": "a larger open space",
+  "multi_room": "use across several rooms",
+  "subtle": "a softer scent level",
+  "moderate": "a balanced scent strength",
+  "strong": "a stronger scent presence",
+  "adjustable_strength": "adjustable fragrance strength",
+  "spring": "a light spring atmosphere",
+  "summer": "a bright summer atmosphere",
+  "autumn": "an autumnal atmosphere",
+  "winter": "a cosy winter atmosphere",
+  "daytime": "daytime freshness",
+  "evening": "an evening mood",
+  "low_maintenance": "low-maintenance diffusion",
+  "regular_flip": "regular reed turning",
+  "refillable": "a refillable format",
+  "minimal": "a minimal vessel",
+  "elegant": "elegant glass",
+  "dark_vessel": "a darker vessel",
+  "decorative": "decorative presentation",
+  "natural": "a natural design",
+  "giftable": "gift-ready presentation",
+  "short_duration": "a shorter trial period",
+  "mid_duration": "around ten to twelve weeks",
+  "long_duration": "three to four months of fragrance",
+  "max_duration": "maximum longevity",
+  "personal": "personal everyday use",
+  "value": "a value-led budget",
+  "mid_budget": "a £30 to £45 budget",
+  "upper_mid": "a £46 to £60 budget",
+  "premium": "a premium budget"
+};
+
+const QUESTIONS = [
+  {
+    "q": "Which scent family appeals most?",
+    "a": [
+      {
+        "label": "Sea salt, mint and clean green notes",
+        "scores": {
+          "fresh": 8
+        },
+        "signals": [
+          "fresh",
+          "aquatic",
+          "mint",
+          "green"
+        ]
+      },
+      {
+        "label": "Lemon, lime, orange and aromatic herbs",
+        "scores": {
+          "citrus": 8
+        },
+        "signals": [
+          "citrus",
+          "lemon",
+          "lime",
+          "orange",
+          "green"
+        ]
+      },
+      {
+        "label": "Rose, jasmine and peony",
+        "scores": {
+          "floral": 8
+        },
+        "signals": [
+          "floral",
+          "rose",
+          "jasmine",
+          "peony"
+        ]
+      },
+      {
+        "label": "Cedar, pine, incense and pepper",
+        "scores": {
+          "woody": 8
+        },
+        "signals": [
+          "woody",
+          "cedar",
+          "pine",
+          "incense",
+          "pepper"
+        ]
+      },
+      {
+        "label": "Amber, sandalwood, spice and dark fruit",
+        "scores": {
+          "amber": 8
+        },
+        "signals": [
+          "amber",
+          "sandalwood",
+          "spice",
+          "fruit"
+        ]
+      },
+      {
+        "label": "Vanilla, coconut, tonka and warm spice",
+        "scores": {
+          "gourmand": 8
+        },
+        "signals": [
+          "gourmand",
+          "vanilla",
+          "coconut",
+          "tonka",
+          "cinnamon"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Which room will the diffuser scent most often?",
+    "a": [
+      {
+        "label": "Bathroom or entrance hallway",
+        "scores": {
+          "fresh": 3,
+          "citrus": 2
+        },
+        "signals": [
+          "bathroom",
+          "hallway",
+          "fresh"
+        ]
+      },
+      {
+        "label": "Kitchen or home office",
+        "scores": {
+          "citrus": 4,
+          "fresh": 1,
+          "gourmand": 1
+        },
+        "signals": [
+          "kitchen",
+          "office",
+          "daytime"
+        ]
+      },
+      {
+        "label": "Bedroom or dressing room",
+        "scores": {
+          "floral": 4,
+          "fresh": 2,
+          "amber": 1
+        },
+        "signals": [
+          "bedroom",
+          "subtle"
+        ]
+      },
+      {
+        "label": "Living room or open lounge",
+        "scores": {
+          "woody": 2,
+          "amber": 2,
+          "floral": 2,
+          "gourmand": 2,
+          "citrus": 1,
+          "fresh": 1
+        },
+        "signals": [
+          "living_room",
+          "medium_room"
+        ]
+      },
+      {
+        "label": "Dining room, snug or evening space",
+        "scores": {
+          "amber": 3,
+          "woody": 3,
+          "gourmand": 3,
+          "floral": 1
+        },
+        "signals": [
+          "dining_room",
+          "evening"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How large is the space?",
+    "a": [
+      {
+        "label": "Compact, such as a cloakroom or bedside area",
+        "scores": {
+          "fresh": 2,
+          "floral": 2
+        },
+        "signals": [
+          "small_room",
+          "subtle"
+        ]
+      },
+      {
+        "label": "Medium, such as a bedroom or standard lounge",
+        "scores": {
+          "fresh": 1,
+          "citrus": 1,
+          "floral": 1,
+          "woody": 1,
+          "amber": 1,
+          "gourmand": 1
+        },
+        "signals": [
+          "medium_room",
+          "moderate"
+        ]
+      },
+      {
+        "label": "Large or open-plan",
+        "scores": {
+          "citrus": 2,
+          "woody": 2,
+          "amber": 2,
+          "gourmand": 2
+        },
+        "signals": [
+          "large_room",
+          "strong"
+        ]
+      },
+      {
+        "label": "I will move or repeat it across several rooms",
+        "scores": {
+          "fresh": 1,
+          "citrus": 1,
+          "floral": 1,
+          "woody": 1,
+          "amber": 1,
+          "gourmand": 1
+        },
+        "signals": [
+          "multi_room",
+          "refillable",
+          "low_maintenance"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How noticeable should the fragrance be?",
+    "a": [
+      {
+        "label": "Barely there and quietly fresh",
+        "scores": {
+          "fresh": 2,
+          "floral": 1
+        },
+        "signals": [
+          "subtle"
+        ]
+      },
+      {
+        "label": "Gentle but easy to notice nearby",
+        "scores": {
+          "fresh": 1,
+          "citrus": 1,
+          "floral": 2,
+          "amber": 1
+        },
+        "signals": [
+          "moderate"
+        ]
+      },
+      {
+        "label": "Clear enough to shape the whole room",
+        "scores": {
+          "citrus": 2,
+          "woody": 2,
+          "amber": 2,
+          "gourmand": 2
+        },
+        "signals": [
+          "strong"
+        ]
+      },
+      {
+        "label": "Adjustable, depending on the day",
+        "scores": {
+          "fresh": 1,
+          "citrus": 1,
+          "floral": 1,
+          "woody": 1,
+          "amber": 1,
+          "gourmand": 1
+        },
+        "signals": [
+          "adjustable_strength",
+          "regular_flip"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Which season or atmosphere feels right?",
+    "a": [
+      {
+        "label": "A freshly aired spring morning",
+        "scores": {
+          "fresh": 5
+        },
+        "signals": [
+          "fresh",
+          "spring",
+          "daytime",
+          "green"
+        ]
+      },
+      {
+        "label": "A bright Mediterranean summer",
+        "scores": {
+          "citrus": 5
+        },
+        "signals": [
+          "citrus",
+          "summer",
+          "daytime",
+          "lemon",
+          "lime"
+        ]
+      },
+      {
+        "label": "A garden in full bloom",
+        "scores": {
+          "floral": 5
+        },
+        "signals": [
+          "floral",
+          "spring",
+          "rose",
+          "jasmine"
+        ]
+      },
+      {
+        "label": "A cool walk through woodland",
+        "scores": {
+          "woody": 5
+        },
+        "signals": [
+          "woody",
+          "autumn",
+          "pine",
+          "cedar"
+        ]
+      },
+      {
+        "label": "A golden evening in early autumn",
+        "scores": {
+          "amber": 5
+        },
+        "signals": [
+          "amber",
+          "autumn",
+          "evening",
+          "spice"
+        ]
+      },
+      {
+        "label": "A warm, comforting winter retreat",
+        "scores": {
+          "gourmand": 5
+        },
+        "signals": [
+          "gourmand",
+          "winter",
+          "evening",
+          "vanilla"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How do you want to manage the reeds?",
+    "a": [
+      {
+        "label": "Set it up and leave it alone",
+        "scores": {},
+        "signals": [
+          "low_maintenance"
+        ]
+      },
+      {
+        "label": "Turn the reeds weekly for a fresh boost",
+        "scores": {},
+        "signals": [
+          "regular_flip",
+          "strong"
+        ]
+      },
+      {
+        "label": "Add or remove reeds to control strength",
+        "scores": {},
+        "signals": [
+          "adjustable_strength"
+        ]
+      },
+      {
+        "label": "Use refills and keep the vessel long term",
+        "scores": {},
+        "signals": [
+          "refillable",
+          "personal"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How should the vessel look?",
+    "a": [
+      {
+        "label": "Clean, clear and minimal",
+        "scores": {
+          "fresh": 2,
+          "citrus": 1
+        },
+        "signals": [
+          "minimal"
+        ]
+      },
+      {
+        "label": "Elegant glass with a polished label",
+        "scores": {
+          "floral": 2,
+          "amber": 2
+        },
+        "signals": [
+          "elegant"
+        ]
+      },
+      {
+        "label": "Dark, natural or architectural",
+        "scores": {
+          "woody": 3,
+          "amber": 1
+        },
+        "signals": [
+          "dark_vessel",
+          "natural"
+        ]
+      },
+      {
+        "label": "Warm, decorative and part of the room",
+        "scores": {
+          "gourmand": 2,
+          "floral": 1,
+          "amber": 1
+        },
+        "signals": [
+          "decorative"
+        ]
+      },
+      {
+        "label": "Gift-ready presentation matters most",
+        "scores": {
+          "floral": 1,
+          "amber": 1,
+          "gourmand": 1,
+          "woody": 1
+        },
+        "signals": [
+          "giftable",
+          "elegant"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How long should one diffuser last?",
+    "a": [
+      {
+        "label": "Around six to eight weeks is enough",
+        "scores": {},
+        "signals": [
+          "short_duration",
+          "value"
+        ]
+      },
+      {
+        "label": "Around ten to twelve weeks",
+        "scores": {},
+        "signals": [
+          "mid_duration"
+        ]
+      },
+      {
+        "label": "Three to four months",
+        "scores": {},
+        "signals": [
+          "long_duration",
+          "low_maintenance"
+        ]
+      },
+      {
+        "label": "As long as possible, ideally five months",
+        "scores": {},
+        "signals": [
+          "max_duration",
+          "large_room"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Is this mainly a gift or for your own home?",
+    "a": [
+      {
+        "label": "For my own everyday use",
+        "scores": {
+          "fresh": 1,
+          "citrus": 1,
+          "gourmand": 1
+        },
+        "signals": [
+          "personal",
+          "low_maintenance"
+        ]
+      },
+      {
+        "label": "For my own statement room",
+        "scores": {
+          "woody": 1,
+          "amber": 1,
+          "floral": 1
+        },
+        "signals": [
+          "personal",
+          "decorative",
+          "strong"
+        ]
+      },
+      {
+        "label": "A thoughtful but easy-to-like gift",
+        "scores": {
+          "fresh": 1,
+          "citrus": 1,
+          "floral": 1
+        },
+        "signals": [
+          "giftable",
+          "moderate"
+        ]
+      },
+      {
+        "label": "A premium or special-occasion gift",
+        "scores": {
+          "floral": 1,
+          "woody": 1,
+          "amber": 1,
+          "gourmand": 1
+        },
+        "signals": [
+          "giftable",
+          "premium",
+          "elegant"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What is your approximate budget?",
+    "a": [
+      {
+        "label": "Under £30",
+        "scores": {},
+        "signals": [
+          "value"
+        ]
+      },
+      {
+        "label": "£30 to £45",
+        "scores": {},
+        "signals": [
+          "mid_budget"
+        ]
+      },
+      {
+        "label": "£46 to £60",
+        "scores": {},
+        "signals": [
+          "upper_mid"
+        ]
+      },
+      {
+        "label": "£61 or more",
+        "scores": {},
+        "signals": [
+          "premium",
+          "giftable"
+        ]
+      }
+    ]
+  }
+];
+
+let step=0;
+let locked=false;
+const selectedAnswers=[];
+const preferenceSignals={};
+const totals=Object.keys(RESULTS).reduce((acc,key)=>{acc[key]=0;return acc;},{});
+const el=id=>document.getElementById(id);
+const screens={intro:el("intro"),quiz:el("quiz"),result:el("result")};
+const prefersReducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function show(name){Object.values(screens).forEach(screen=>screen.classList.remove("active"));screens[name].classList.add("active");window.scrollTo({top:0,behavior:prefersReducedMotion?"auto":"smooth"});}
+function hexToRgba(hex,alpha){const clean=hex.replace("#","");const value=parseInt(clean,16);const red=value>>16&255;const green=value>>8&255;const blue=value&255;return `rgba(${red},${green},${blue},${alpha})`;}
+function escapeHtml(value){return String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");}
+function getProductRecommendations(key){return (PRODUCTS[key]||[]).map((product,originalIndex)=>{const matchScore=Object.entries(product.fit||{}).reduce((score,[signal,weight])=>score+(preferenceSignals[signal]||0)*weight,product.base||0);return {...product,matchScore,originalIndex};}).sort((a,b)=>b.matchScore-a.matchScore||(b.base||0)-(a.base||0)||a.originalIndex-b.originalIndex).slice(0,3);}
+function getPersonalMatch(product){const matches=Object.entries(product.fit||{}).filter(([signal])=>preferenceSignals[signal]).map(([signal,weight])=>({signal,value:weight*preferenceSignals[signal]})).sort((a,b)=>b.value-a.value).slice(0,2).map(item=>SIGNAL_LABELS[item.signal]).filter(Boolean);if(matches.length===0)return product.offer||"";if(matches.length===1)return `Matches your preference for ${matches[0]}.`;return `Matches your preference for ${matches[0]} and ${matches[1]}.`;}
+function getProductMonogram(product){if(product.monogram)return product.monogram;return product.name.split(/\s+/).filter(Boolean).slice(0,2).map(word=>word.charAt(0)).join("").toUpperCase();}
+function trackEvent(eventName,details={}){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:eventName,...details});if(typeof window.pintrk==="function"){try{window.pintrk("track","custom",{event_name:eventName,...details});}catch(error){console.warn("Pinterest tracking event was not sent.",error);}}}
+function renderQuestion(){const item=QUESTIONS[step];const totalQuestions=QUESTIONS.length;el("question").textContent=item.q;el("count").textContent=`${String(step+1).padStart(2,"0")} / ${String(totalQuestions).padStart(2,"0")}`;el("fill").style.width=`${step/totalQuestions*100}%`;const box=el("options");box.innerHTML="";locked=false;item.a.forEach((answer,index)=>{const button=document.createElement("button");button.className="option";button.type="button";button.textContent=answer.label;button.addEventListener("click",()=>chooseAnswer(button,answer,index));box.appendChild(button);});setTimeout(()=>el("question").focus({preventScroll:true}),50);}
+function chooseAnswer(button,answer,index){if(locked)return;locked=true;document.querySelectorAll(".option").forEach(option=>{option.disabled=true;});button.classList.add("chosen");selectedAnswers[step]=index;Object.entries(answer.scores).forEach(([key,value])=>{totals[key]+=value;});(answer.signals||[]).forEach(signal=>{preferenceSignals[signal]=(preferenceSignals[signal]||0)+1;});trackEvent("quiz_answer",{quiz:"perfect_reed_diffuser",question_number:step+1,answer:answer.label});setTimeout(()=>{step+=1;if(step<QUESTIONS.length){renderQuestion();}else{el("fill").style.width="100%";finishQuiz();}},340);}
+function finishQuiz(){const orderedKeys=Object.keys(RESULTS);let winningKey=orderedKeys[0];orderedKeys.forEach(key=>{if(totals[key]>totals[winningKey])winningKey=key;});const tiedKeys=orderedKeys.filter(key=>totals[key]===totals[winningKey]);if(tiedKeys.length>1){const priorityOrder=[0,...Array.from({length:selectedAnswers.length-1},(_,index)=>selectedAnswers.length-1-index)];for(const questionIndex of priorityOrder){const answer=QUESTIONS[questionIndex].a[selectedAnswers[questionIndex]];const rankedTie=tiedKeys.map(key=>({key,value:answer.scores[key]||0,routeIndex:orderedKeys.indexOf(key)})).sort((a,b)=>b.value-a.value||a.routeIndex-b.routeIndex);if(rankedTie[0].value>rankedTie[1].value){winningKey=rankedTie[0].key;break;}}}showResult(winningKey);}
+function showResult(key){const result=RESULTS[key];window.LYS_RESULT=key;el("resultCard").style.setProperty("--fam",result.color);el("rName").textContent=result.name;el("rTag").textContent=result.tag;el("rBody").textContent=result.body;const details=el("rDetails");details.innerHTML="";Object.entries(result.details).forEach(([label,value])=>{const row=document.createElement("div");row.className="detail-row";const labelSpan=document.createElement("span");labelSpan.className="detail-label";labelSpan.textContent=label;const valueSpan=document.createElement("span");valueSpan.className="detail-val";valueSpan.textContent=value;row.append(labelSpan,valueSpan);details.appendChild(row);});el("recsTitle").textContent="Your three best-matched reed diffusers";const recommendations=getProductRecommendations(key);const grid=el("recGrid");grid.innerHTML="";recommendations.forEach((product,index)=>{const card=document.createElement("article");card.className="rec";const fallbackHtml=`<div class="ph media media-fallback" style="background:${hexToRgba(result.color,.88)}"><span>${escapeHtml(getProductMonogram(product))}</span></div>`;const mediaHtml=product.img?`<div class="media-frame"><img class="media" src="${escapeHtml(product.img)}" alt="${escapeHtml(product.merchant)} ${escapeHtml(product.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${fallbackHtml}</div>`:fallbackHtml;const badgeHtml=index===0?'<span class="rec-badge">Best match</span>':"";const matchText=getPersonalMatch(product);const offerHtml=matchText?`<span class="offer">${escapeHtml(matchText)}</span>`:"";const linkIsAffiliate=Boolean(product.affiliate);const linkRel=linkIsAffiliate?"noopener sponsored":"noopener";const ctaHtml=product.url&&product.url!=="#"?`<a class="view" href="${escapeHtml(product.url)}" target="_blank" rel="${linkRel}" data-product-position="${index+1}">View product &rsaquo;</a>`:'<span class="view off">Product page unavailable</span>';card.innerHTML=`${badgeHtml}${mediaHtml}<div class="body"><span class="brand">${escapeHtml(product.merchant)}</span><span class="pname">${escapeHtml(product.name)}</span><span class="pnote">${escapeHtml(product.note)}</span>${offerHtml}${ctaHtml}</div>`;const productImage=card.querySelector("img.media");if(productImage){productImage.addEventListener("error",()=>{productImage.remove();const fallback=card.querySelector(".media-fallback");if(fallback)fallback.classList.add("show");},{once:true});}const productLink=card.querySelector("a[data-product-position]");if(productLink){productLink.addEventListener("click",()=>{const trackingDetails={quiz:"perfect_reed_diffuser",result:key,merchant:product.merchant,product:product.name,position:index+1,affiliate:linkIsAffiliate};trackEvent("product_click",trackingDetails);if(linkIsAffiliate)trackEvent("affiliate_click",trackingDetails);});}grid.appendChild(card);});const disclosure=el("recommendationDisclosure");const containsAffiliateLinks=recommendations.some(product=>product.affiliate);if(containsAffiliateLinks){disclosure.innerHTML='Some links on this page are affiliate links. Love Your Senses may earn a commission from qualifying orders at no extra cost to you. <a href="/disclosure">Read the affiliate disclosure</a>.';}else{disclosure.textContent="These recommendations use direct brand links. Love Your Senses does not currently earn commission from them. Product availability and temporary imagery may change.";}const browseAll=el("browseAll");if(STORE_LINK&&STORE_LINK!=="#"){const storeRel=STORE_LINK_IS_AFFILIATE?"noopener sponsored":"noopener";browseAll.innerHTML=`<a class="btn-all" href="${escapeHtml(STORE_LINK)}" target="_blank" rel="${storeRel}">Browse all reed diffusers</a>`;browseAll.querySelector("a").addEventListener("click",()=>{const trackingDetails={quiz:"perfect_reed_diffuser",result:key,product:"browse_all",affiliate:STORE_LINK_IS_AFFILIATE};trackEvent("product_click",trackingDetails);if(STORE_LINK_IS_AFFILIATE)trackEvent("affiliate_click",trackingDetails);});}else{browseAll.innerHTML="";}trackEvent("quiz_complete",{quiz:"perfect_reed_diffuser",result:key,result_name:result.name});show("result");}
+async function submitEmail(){const emailInput=el("email");const email=emailInput.value.trim();const form=el("emailForm");const note=el("formNote");if(!/^\S+@\S+\.\S+$/.test(email)){emailInput.focus();note.textContent="Enter a valid email address.";return;}if(!EMAIL_FORM_ACTION){note.textContent="Email signup is not connected yet. Add your email platform form action in the JavaScript settings.";return;}const button=el("emailBtn");button.disabled=true;button.textContent="Sending";try{const payload=new URLSearchParams();payload.append(EMAIL_FIELD_NAME,email);payload.append("quiz_result",window.LYS_RESULT||"");payload.append("source","perfect_reed_diffuser_quiz");await fetch(EMAIL_FORM_ACTION,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:payload.toString()});form.innerHTML='<p class="done">Your diffuser shortlist is on its way.</p>';note.textContent="";trackEvent("email_signup",{quiz:"perfect_reed_diffuser",result:window.LYS_RESULT||""});}catch(error){button.disabled=false;button.textContent="Send it";note.textContent="The signup did not complete. Please try again.";console.error("Email signup failed.",error);}}
+async function shareResult(){const result=RESULTS[window.LYS_RESULT];if(!result)return;const text=`My reed diffuser profile is ${result.name}. Find yours:`;const shareData={title:"Find Your Perfect Reed Diffuser | Love Your Senses",text,url:QUIZ_URL||location.href};if(navigator.share){try{await navigator.share(shareData);trackEvent("share",{quiz:"perfect_reed_diffuser",result:window.LYS_RESULT,method:"native"});}catch(error){if(error.name!=="AbortError")console.error("Share failed.",error);}return;}try{await navigator.clipboard.writeText(`${text} ${shareData.url}`);el("share").textContent="Link copied";setTimeout(()=>el("share").textContent="Share your result",2000);trackEvent("share",{quiz:"perfect_reed_diffuser",result:window.LYS_RESULT,method:"clipboard"});}catch(error){console.error("Copy failed.",error);}}
+function resetQuiz(){step=0;locked=false;selectedAnswers.length=0;Object.keys(preferenceSignals).forEach(key=>delete preferenceSignals[key]);Object.keys(totals).forEach(key=>totals[key]=0);window.LYS_RESULT="";const form=el("emailForm");form.innerHTML='<label class="sr-only" for="email">Your email address</label><input type="email" id="email" name="email" placeholder="Your email" aria-describedby="formNote" autocomplete="email" inputmode="email"><button id="emailBtn" type="button">Send it</button>';el("emailBtn").addEventListener("click",submitEmail);el("email").addEventListener("keydown",event=>{if(event.key==="Enter"){event.preventDefault();submitEmail();}});el("formNote").textContent="Connect your email platform in the JavaScript settings before publishing.";show("intro");trackEvent("quiz_retake",{quiz:"perfect_reed_diffuser"});}
+el("start").addEventListener("click",()=>{show("quiz");renderQuestion();trackEvent("quiz_start",{quiz:"perfect_reed_diffuser"});});
+el("emailBtn").addEventListener("click",submitEmail);
+el("email").addEventListener("keydown",event=>{if(event.key==="Enter"){event.preventDefault();submitEmail();}});
+el("share").addEventListener("click",shareResult);
+el("retake").addEventListener("click",resetQuiz);
+
+
+
+
+
+
+
+window.LYS_TEST={
+  PRODUCTS,
+  RESULTS,
+  QUESTIONS,
+  getProductRecommendations,
+  showResult,
+  resetSignals(){Object.keys(preferenceSignals).forEach(key=>delete preferenceSignals[key]);},
+  setSignals(signals){this.resetSignals();Object.entries(signals||{}).forEach(([key,value])=>{preferenceSignals[key]=value;});}
+};
+
+</script>
+</body>
+</html>
