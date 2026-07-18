@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Perfect Bluetooth Speaker | Love Your Senses</title>
+<meta name="description" content="Answer eleven questions to discover the portable, outdoor, home, party or multi-room Bluetooth speaker that best matches your space and listening style.">
+<link rel="canonical" href="https://loveyoursenses.com/perfect-bluetooth-speaker-quiz/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Find Your Perfect Bluetooth Speaker | Love Your Senses">
+<meta property="og:description" content="Match room size, portability, battery, waterproofing, smart features and budget to a personalised Bluetooth speaker shortlist.">
+<meta property="og:url" content="https://loveyoursenses.com/perfect-bluetooth-speaker-quiz/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#E7E3DD;
+    --card:#F2EEE8;
+    --ink:#2A2130;
+    --ink-soft:#6E6574;
+    --accent:#7B4A5E;
+    --accent-deep:#5E3547;
+    --line:#CDC3B6;
+    --gold:#B8A78C;
+    --cream:#F7F1EC;
+    --radius:18px;
+    --ease:cubic-bezier(.4,.14,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Jost',system-ui,sans-serif;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+  button,input{font:inherit}
+  button{touch-action:manipulation}
+  .display{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  .wrap{width:100%;max-width:1000px;margin:0 auto;padding-left:24px;padding-right:24px}
+  .site-head{padding:24px 0}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .mark{font-family:'Fraunces',serif;font-weight:500;font-size:1.24rem;text-decoration:none;color:var(--ink)}
+  .mark span{color:var(--accent)}
+  .head-link{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none}
+  .head-link:hover{color:var(--accent)}
+  .stage{width:100%;max-width:680px;margin:0 auto;padding:36px 20px 72px}
+  .screen{display:none;animation:rise .6s var(--ease) both}
+  .screen.active{display:block}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  #intro{text-align:center;padding:14px 0 24px}
+  .ring{margin:0 auto 30px;display:block}
+  #intro h1{font-size:clamp(2.55rem,9vw,4rem);margin-bottom:18px}
+  #intro h1 em{font-style:italic;font-weight:400}
+  .lede{color:var(--ink-soft);font-size:1.06rem;max-width:45ch;margin:0 auto 24px}
+  .wellbeing-note{font-size:.79rem;color:var(--ink-soft);line-height:1.55;max-width:56ch;margin:0 auto 30px}
+  .meta{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:26px}
+  .btn{display:inline-block;font-family:'Jost',sans-serif;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:17px 40px;background:var(--ink);color:var(--bg);transition:transform .35s var(--ease),background .35s var(--ease)}
+  .btn:hover{background:var(--accent-deep);transform:translateY(-2px)}
+  .progress-wrap{display:flex;align-items:center;gap:16px;margin-bottom:38px}
+  .track{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
+  .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);transition:width .5s var(--ease)}
+  .count{font-size:.72rem;letter-spacing:.2em;color:var(--ink-soft);white-space:nowrap}
+  .question{font-size:clamp(1.75rem,6vw,2.45rem);margin-bottom:32px;min-height:2.2em}
+  .options{display:flex;flex-direction:column;gap:12px}
+  .option{font-family:'Jost',sans-serif;font-size:1.01rem;color:var(--ink);text-align:left;background:var(--card);border:1px solid transparent;border-radius:var(--radius);padding:19px 22px;cursor:pointer;width:100%;transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);display:flex;align-items:center;gap:14px}
+  .option:before{content:"";width:9px;height:9px;border-radius:50%;border:1.5px solid var(--line);flex:none;transition:all .3s var(--ease)}
+  .option:hover{border-color:var(--gold);transform:translateX(4px)}
+  .option.chosen{background:var(--accent);color:var(--cream);border-color:var(--accent)}
+  .option.chosen:before{background:var(--cream);border-color:var(--cream)}
+  .option:disabled{cursor:default}
+  .result-card{background:var(--fam,#7B4A5E);color:var(--cream);border-radius:26px;padding:44px 32px 40px;text-align:center;box-shadow:0 30px 60px -30px rgba(42,33,48,.55)}
+  .result-card .eyebrow{color:rgba(247,241,236,.72)}
+  .result-name{font-size:clamp(2.55rem,10vw,3.65rem);margin-bottom:10px}
+  .result-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:1.2rem;opacity:.94;margin-bottom:24px}
+  .result-body{font-size:1.02rem;line-height:1.72;opacity:.95;max-width:44ch;margin:0 auto 30px}
+  .details{border-top:1px solid rgba(247,241,236,.28);border-bottom:1px solid rgba(247,241,236,.28);padding:22px 0;text-align:left;display:flex;flex-direction:column;gap:14px}
+  .detail-row{display:flex;gap:18px;align-items:baseline}
+  .detail-label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;opacity:.72;width:104px;flex:none}
+  .detail-val{font-family:'Fraunces',serif;font-size:1.04rem}
+  .recs{margin-top:36px}
+  .recs-head{text-align:center;margin-bottom:22px}
+  .recs-head .eyebrow{display:block;margin-bottom:10px}
+  .recs-head h3{font-size:clamp(1.55rem,5vw,2.05rem)}
+  .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .rec{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+  .rec-badge{position:absolute;top:12px;left:12px;z-index:2;background:rgba(247,241,236,.94);color:var(--accent-deep);border-radius:100px;padding:6px 10px;font-size:.61rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+  .rec .media-frame{aspect-ratio:1/1;width:100%;position:relative;overflow:hidden;background:#fff}
+  .rec .media{aspect-ratio:1/1;width:100%;height:100%;object-fit:cover;padding:0;background:#fff;display:block}
+  .rec .ph{display:flex;align-items:center;justify-content:center;padding:0}
+  .rec .media-frame .media{position:absolute;inset:0}
+  .rec .media-fallback{display:none}
+  .rec .media-fallback.show{display:flex}
+  .rec .ph span{font-family:'Fraunces',serif;font-size:2rem;color:#fff;opacity:.92}
+  .rec .body{padding:16px 15px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .rec .brand{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .rec .pname{font-family:'Fraunces',serif;font-size:1.04rem;line-height:1.22}
+  .rec .pnote{font-size:.8rem;color:var(--ink-soft);line-height:1.45}
+  .rec .offer{font-size:.76rem;color:var(--accent);font-weight:500}
+  .rec .view{margin-top:auto;padding-top:11px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;text-decoration:none;color:var(--accent)}
+  .rec .view.off{color:var(--ink-soft);opacity:.58}
+  .rec .view:hover{text-decoration:underline;text-underline-offset:4px}
+  .affiliate-note{font-size:.78rem;color:var(--ink-soft);line-height:1.55;text-align:center;max-width:58ch;margin:18px auto 0}
+  .affiliate-note a{color:var(--accent);text-underline-offset:3px}
+  .browse-all{text-align:center;margin-top:22px}
+  .btn-all{display:inline-block;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;text-decoration:none;border:1px solid var(--accent);color:var(--accent);border-radius:100px;padding:14px 34px;transition:background .3s var(--ease),color .3s var(--ease)}
+  .btn-all:hover{background:var(--accent);color:var(--cream)}
+  .capture{background:var(--card);border-radius:var(--radius);padding:32px 28px;margin-top:28px;text-align:center}
+  .capture h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;margin-bottom:8px}
+  .capture p{color:var(--ink-soft);font-size:.96rem;margin:0 auto 22px;max-width:39ch}
+  .field{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .field input{font-family:'Jost',sans-serif;font-size:1rem;flex:1;min-width:210px;padding:15px 18px;border:1px solid var(--line);border-radius:100px;background:#fff;color:var(--ink)}
+  .field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+  .field button{font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:15px 28px;background:var(--accent);color:var(--cream)}
+  .field button:hover{background:var(--accent-deep)}
+  .capture .done{color:var(--accent);font-family:'Fraunces',serif;font-size:1.1rem;padding:6px 0}
+  .capture .form-note{font-size:.74rem;margin-top:12px;margin-bottom:0}
+  .next-quiz{border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;margin-top:18px;text-align:center}
+  .next-quiz .eyebrow{display:block;margin-bottom:9px}
+  .next-quiz h3{font-size:1.45rem;margin-bottom:8px}
+  .next-quiz p{color:var(--ink-soft);font-size:.94rem;max-width:40ch;margin:0 auto 18px}
+  .next-link{font-size:.74rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;color:var(--accent);text-underline-offset:4px}
+  .next-link:hover{color:var(--accent-deep)}
+  .after{display:flex;gap:22px;justify-content:center;align-items:center;margin-top:26px;flex-wrap:wrap}
+  .linkish{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px}
+  .linkish:hover{color:var(--accent)}
+  .site-foot{border-top:1px solid var(--line);padding:34px 0 48px}
+  .foot{display:flex;flex-direction:column;align-items:center;gap:11px;text-align:center}
+  .foot-nav a{color:var(--ink-soft);text-decoration:none;font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;margin:0 10px}
+  .foot-nav a:hover{color:var(--accent)}
+  .foot .disc{font-size:.82rem;color:var(--ink-soft);max-width:54ch}
+  .foot .cr{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  @media(max-width:600px){.site-head{padding:20px 0}.stage{padding-top:28px}.rec-grid{grid-template-columns:1fr 1fr}.detail-label{width:88px}}
+  @media(max-width:420px){.rec-grid{grid-template-columns:1fr}.result-card{padding:40px 24px 36px}.field{flex-direction:column}.field input,.field button{width:100%}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <div class="bar">
+      <a href="/" class="mark">Love Your <span>Senses</span></a>
+      <a href="/#quiz-library" class="head-link">All quizzes</a>
+    </div>
+  </div>
+</header>
+
+<main class="stage">
+  <section id="intro" class="screen active">
+    <svg class="ring" width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
+      <circle cx="29" cy="29" r="27" fill="none" stroke="#B8A78C" stroke-width="1"/>
+      <circle cx="29" cy="29" r="19" fill="none" stroke="#CDC3B6" stroke-width="1"/>
+      <g stroke="#7B4A5E" stroke-width="1.4">
+        <line x1="29" y1="2" x2="29" y2="9"/>
+        <line x1="52.4" y1="42.5" x2="46.4" y2="39"/>
+        <line x1="5.6" y1="42.5" x2="11.6" y2="39"/>
+        <line x1="52.4" y1="15.5" x2="46.4" y2="19"/>
+        <line x1="5.6" y1="15.5" x2="11.6" y2="19"/>
+        <line x1="29" y1="56" x2="29" y2="49"/>
+      </g>
+      <circle cx="29" cy="29" r="3" fill="#7B4A5E"/>
+    </svg>
+    <p class="eyebrow">A room and sound discovery</p>
+    <h1 class="display">Find your perfect <em>Bluetooth speaker</em></h1>
+    <p class="lede">Answer eleven questions about room size, portability, battery, durability, smart features and budget to find your speaker profile and three products to consider.</p>
+    <p class="wellbeing-note">Listen at a comfortable volume, follow the manufacturer's charging and water-resistance instructions, and avoid placing speakers where they create trip, heat or moisture hazards.</p>
+    <button class="btn" id="start" type="button">Begin the discovery</button>
+    <p class="meta">11 questions &nbsp;·&nbsp; about three minutes</p>
+  </section>
+
+  <section id="quiz" class="screen" aria-live="polite">
+    <div class="progress-wrap">
+      <div class="track" aria-hidden="true"><div class="fill" id="fill"></div></div>
+      <span class="count" id="count">01 / 11</span>
+    </div>
+    <h2 class="question display" id="question" tabindex="-1"></h2>
+    <div class="options" id="options"></div>
+  </section>
+
+  <section id="result" class="screen" aria-live="polite">
+    <div class="result-card" id="resultCard">
+      <p class="eyebrow">Your speaker profile</p>
+      <h2 class="result-name display" id="rName"></h2>
+      <p class="result-tag" id="rTag"></p>
+      <p class="result-body" id="rBody"></p>
+      <div class="details" id="rDetails"></div>
+    </div>
+
+    <div class="recs">
+      <div class="recs-head">
+        <span class="eyebrow">Chosen from all eleven answers</span>
+        <h3 class="display" id="recsTitle">Your three best-matched Bluetooth speakers</h3>
+      </div>
+      <div class="rec-grid" id="recGrid"></div>
+      <p class="affiliate-note" id="recommendationDisclosure">These recommendations use direct manufacturer links. Love Your Senses does not currently earn commission from them. Product availability and temporary imagery may change.</p>
+      <div class="browse-all" id="browseAll"></div>
+      <p class="wellbeing-note">Review current dimensions, weight, battery estimates, IP rating, compatible apps, audio inputs and multi-speaker requirements before ordering.</p>
+    </div>
+
+    <div class="capture">
+      <h3>Save your speaker shortlist</h3>
+      <p>Get your result, buying priorities and future sound discoveries by email.</p>
+      <div class="field" id="emailForm">
+        <input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email">
+        <button id="emailBtn" type="button">Send it</button>
+      </div>
+      <p class="form-note" id="formNote">Connect your email platform in the JavaScript settings before publishing.</p>
+    </div>
+
+    <div class="next-quiz">
+      <span class="eyebrow">Continue the sound discovery</span>
+      <h3 class="display">Find your perfect headphones</h3>
+      <p>Match fit, noise cancellation, comfort and sound priorities to a personalised headphone shortlist.</p>
+      <a class="next-link" href="/perfect-headphones-quiz/">Take the headphones quiz</a>
+    </div>
+
+    <div class="after">
+      <button class="linkish" id="share" type="button">Share your result</button>
+      <button class="linkish" id="retake" type="button">Retake the quiz</button>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-nav">
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/disclosure/">Affiliate Disclosure</a>
+      </div>
+      <p class="disc">Love Your Senses helps you discover products matched to your preferences through short, enjoyable quizzes.</p>
+      <p class="cr">© 2026 Love Your Senses</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Product links are direct and non-affiliate. Replace URLs and images with approved affiliate assets when partnerships are active, then change affiliate:false to affiliate:true. */
+const QUIZ_URL = "https://loveyoursenses.com/perfect-bluetooth-speaker-quiz/";
+const STORE_LINK = "";
+const STORE_LINK_IS_AFFILIATE = false;
+const EMAIL_FORM_ACTION = "";
+const EMAIL_FIELD_NAME = "email";
+
+const PRODUCTS = {
+  "pocket": [
+    {
+      "merchant": "Sony",
+      "name": "SRS-XB100",
+      "monogram": "XB",
+      "note": "A compact cylindrical speaker with a carrying strap, built-in microphone and stereo-pair option.",
+      "offer": "Best overall for a very small speaker that is easy to clip onto a bag or move between rooms.",
+      "url": "https://www.sony.co.uk/wireless-speakers/products/srs-xb100",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.sony.co.uk/wireless-speakers/products/srs-xb100",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "pocket": 10,
+        "compact": 10,
+        "lightweight": 10,
+        "calls": 9,
+        "stereo_pair": 7,
+        "value": 9,
+        "battery": 8
+      }
+    },
+    {
+      "merchant": "Marshall",
+      "name": "Willen II",
+      "monogram": "WI",
+      "note": "A small strap-equipped portable speaker with hands-free calling and a rugged IP67 design.",
+      "offer": "Best for a pocketable speaker with stronger design character and outdoor durability.",
+      "url": "https://www.marshall.com/gb/en/product/willen-ii",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.marshall.com/gb/en/product/willen-ii",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "pocket": 10,
+        "compact": 10,
+        "rugged": 9,
+        "ip67": 10,
+        "calls": 9,
+        "design": 9,
+        "battery": 8
+      }
+    },
+    {
+      "merchant": "JBL",
+      "name": "Flip 7",
+      "monogram": "F7",
+      "note": "A compact portable speaker with a replaceable carry accessory system, Auracast linking and rugged construction.",
+      "offer": "Best for someone who wants a small speaker with fuller output and multi-speaker expansion.",
+      "url": "https://uk.jbl.com/FLIP-7.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.jbl.com/FLIP-7.html",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "pocket": 9,
+        "compact": 9,
+        "rugged": 10,
+        "ip68": 10,
+        "multi_speaker": 9,
+        "battery": 8,
+        "outdoor": 8
+      }
+    },
+    {
+      "merchant": "Sonos",
+      "name": "Roam 2",
+      "monogram": "R2",
+      "note": "An ultra-portable speaker that uses Bluetooth away from home and joins a Sonos Wi-Fi system indoors.",
+      "offer": "Best for a small travel speaker that also belongs in a connected multi-room home.",
+      "url": "https://www.sonos.com/en-gb/shop/roam-2",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.sonos.com/en-gb/shop/roam-2",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "pocket": 9,
+        "compact": 9,
+        "smart": 9,
+        "wifi": 10,
+        "multiroom": 10,
+        "outdoor": 8,
+        "premium": 7
+      }
+    }
+  ],
+  "outdoor": [
+    {
+      "merchant": "Marshall",
+      "name": "Emberton III",
+      "monogram": "E3",
+      "note": "A rugged portable speaker with multidirectional sound, long battery life and IP67 protection.",
+      "offer": "Best overall for day trips, camping and gardens when battery life and durability matter equally.",
+      "url": "https://www.marshall.com/gb/en/product/emberton-iii",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.marshall.com/gb/en/product/emberton-iii",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "outdoor": 10,
+        "rugged": 10,
+        "ip67": 10,
+        "battery": 10,
+        "portable": 9,
+        "design": 8,
+        "calls": 7
+      }
+    },
+    {
+      "merchant": "JBL",
+      "name": "Charge 6",
+      "monogram": "C6",
+      "note": "A durable portable speaker that combines strong output with phone-charging capability.",
+      "offer": "Best for outdoor days when the speaker also needs to act as a power bank.",
+      "url": "https://uk.jbl.com/CHARGE-6.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.jbl.com/CHARGE-6.html",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "outdoor": 10,
+        "rugged": 10,
+        "waterproof": 10,
+        "battery": 9,
+        "powerbank": 10,
+        "portable": 8,
+        "multi_speaker": 8
+      }
+    },
+    {
+      "merchant": "Sony",
+      "name": "ULT FIELD 3",
+      "monogram": "U3",
+      "note": "A shoulder-strap portable speaker with bass emphasis, multi-speaker linking and outdoor-ready construction.",
+      "offer": "Best for carrying stronger bass to picnics, parks and larger outdoor spaces.",
+      "url": "https://www.sony.co.uk/wireless-speakers/products/ult-field-3",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.sony.co.uk/wireless-speakers/products/ult-field-3",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "outdoor": 10,
+        "portable": 9,
+        "bass": 10,
+        "strap": 10,
+        "multi_speaker": 9,
+        "battery": 9,
+        "calls": 7
+      }
+    },
+    {
+      "merchant": "Bose",
+      "name": "SoundLink Flex Portable Speaker (2nd Gen)",
+      "monogram": "BF",
+      "note": "A packable IP67 speaker with automatic sound adjustment for different positions and stereo pairing.",
+      "offer": "Best for smaller outdoor gatherings where portability and balanced sound take priority.",
+      "url": "https://www.bose.co.uk/p/speakers/bose-soundlink-flex-portable-speaker-2nd-gen/SLFLXII-SPEAKERWIRELESS.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.bose.co.uk/p/speakers/bose-soundlink-flex-portable-speaker-2nd-gen/SLFLXII-SPEAKERWIRELESS.html",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "outdoor": 10,
+        "portable": 10,
+        "ip67": 10,
+        "stereo_pair": 9,
+        "calls": 8,
+        "compact": 8,
+        "premium": 6
+      }
+    }
+  ],
+  "home": [
+    {
+      "merchant": "Marshall",
+      "name": "Acton IV",
+      "monogram": "A4",
+      "note": "A mains-powered stereo home speaker with tactile tone controls, analogue inputs and Auracast support.",
+      "offer": "Best overall for a small-to-medium room where design, physical controls and room-filling sound matter.",
+      "url": "https://www.marshall.com/gb/en/product/acton-iv",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.marshall.com/gb/en/product/acton-iv",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "home": 10,
+        "room_fill": 9,
+        "mains": 10,
+        "stereo": 10,
+        "design": 10,
+        "analogue": 9,
+        "multi_speaker": 8
+      }
+    },
+    {
+      "merchant": "Sonos",
+      "name": "Era 100",
+      "monogram": "E1",
+      "note": "A compact Wi-Fi and Bluetooth home speaker designed for rich room sound and multi-room expansion.",
+      "offer": "Best for a living room, kitchen or bedroom that may become part of a wider Sonos system.",
+      "url": "https://www.sonos.com/en-gb/shop/era-100",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.sonos.com/en-gb/shop/era-100",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "home": 10,
+        "room_fill": 9,
+        "smart": 10,
+        "wifi": 10,
+        "multiroom": 10,
+        "stereo_pair": 9,
+        "compact": 6
+      }
+    },
+    {
+      "merchant": "Marshall",
+      "name": "Stanmore IV",
+      "monogram": "S4",
+      "note": "A larger Marshall home speaker range for shoppers who want more scale than the compact Acton line.",
+      "offer": "Best for a medium or larger room where visual presence and stronger output are priorities.",
+      "url": "https://www.marshall.com/gb/en/speakers/bluetooth/home",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.marshall.com/gb/en/speakers/bluetooth/home",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "home": 10,
+        "room_fill": 10,
+        "mains": 10,
+        "design": 10,
+        "bass": 9,
+        "analogue": 8,
+        "premium": 7
+      }
+    },
+    {
+      "merchant": "Sonos",
+      "name": "Move 2",
+      "monogram": "M2",
+      "note": "A substantial portable smart speaker that works over Wi-Fi at home and Bluetooth away from its charging base.",
+      "offer": "Best for someone who wants one high-quality speaker to move between indoor and outdoor spaces.",
+      "url": "https://www.sonos.com/en-gb/shop/move-2",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.sonos.com/en-gb/shop/move-2",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "home": 9,
+        "outdoor": 7,
+        "smart": 10,
+        "wifi": 10,
+        "multiroom": 10,
+        "portable": 7,
+        "premium": 8
+      }
+    }
+  ],
+  "party": [
+    {
+      "merchant": "JBL",
+      "name": "PartyBox Club 120",
+      "monogram": "PC",
+      "note": "A portable party speaker with light effects, microphone and guitar inputs, app control and multi-speaker linking.",
+      "offer": "Best overall for birthdays, karaoke and medium-size gatherings that need dedicated party features.",
+      "url": "https://uk.jbl.com/PARTYBOX-CLUB-120.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.jbl.com/PARTYBOX-CLUB-120.html",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "party": 10,
+        "loud": 9,
+        "lights": 10,
+        "karaoke": 10,
+        "battery": 8,
+        "multi_speaker": 9,
+        "portable": 6
+      }
+    },
+    {
+      "merchant": "Sony",
+      "name": "ULT TOWER 9",
+      "monogram": "T9",
+      "note": "A battery-powered tower speaker with 360-degree party sound, lighting, wheels and karaoke inputs.",
+      "offer": "Best for large gatherings where very strong bass, mobility and entertainment inputs matter.",
+      "url": "https://www.sony.co.uk/wireless-speakers/products/ult-tower-9",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.sony.co.uk/wireless-speakers/products/ult-tower-9",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "party": 10,
+        "loud": 10,
+        "bass": 10,
+        "lights": 10,
+        "karaoke": 10,
+        "battery": 9,
+        "wheels": 10
+      }
+    },
+    {
+      "merchant": "Marshall",
+      "name": "Bromley 450",
+      "monogram": "B4",
+      "note": "A large battery-powered party speaker with extended playtime and the visual character of Marshall's stage equipment.",
+      "offer": "Best for a design-led party setup that needs substantial output and long battery life.",
+      "url": "https://www.marshall.com/gb/en/product/bromley-450",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.marshall.com/gb/en/product/bromley-450",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "party": 10,
+        "loud": 10,
+        "battery": 10,
+        "design": 10,
+        "portable": 5,
+        "premium": 8,
+        "bass": 9
+      }
+    },
+    {
+      "merchant": "JBL",
+      "name": "PartyBox Ultimate",
+      "monogram": "PU",
+      "note": "A very large mains-powered party speaker with powerful output, lighting and dedicated event features.",
+      "offer": "Best premium choice for the biggest indoor parties where portability is secondary to scale.",
+      "url": "https://uk.jbl.com/PARTYBOX-ULTIMATE.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.jbl.com/PARTYBOX-ULTIMATE.html",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "party": 10,
+        "loud": 10,
+        "lights": 10,
+        "karaoke": 9,
+        "mains": 10,
+        "premium": 10,
+        "bass": 10
+      }
+    }
+  ],
+  "smart": [
+    {
+      "merchant": "Sonos",
+      "name": "Era 100",
+      "monogram": "E1",
+      "note": "A compact smart speaker with Wi-Fi, Bluetooth, voice control options and multi-room support.",
+      "offer": "Best overall for starting a flexible multi-room music system in one room.",
+      "url": "https://www.sonos.com/en-gb/shop/era-100",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.sonos.com/en-gb/shop/era-100",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "smart": 10,
+        "wifi": 10,
+        "multiroom": 10,
+        "home": 10,
+        "voice": 9,
+        "stereo_pair": 9,
+        "mid_budget": 8
+      }
+    },
+    {
+      "merchant": "Sonos",
+      "name": "Era 300",
+      "monogram": "E3",
+      "note": "A spatial-audio home speaker designed for immersive music and integration with a larger Sonos system.",
+      "offer": "Best premium choice for spatial audio, wider room coverage and more immersive listening.",
+      "url": "https://www.sonos.com/en-gb/shop/era-300",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.sonos.com/en-gb/shop/era-300",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "smart": 10,
+        "wifi": 10,
+        "multiroom": 10,
+        "spatial": 10,
+        "home": 10,
+        "premium": 9,
+        "room_fill": 9
+      }
+    },
+    {
+      "merchant": "Sonos",
+      "name": "Move 2",
+      "monogram": "M2",
+      "note": "A portable Wi-Fi and Bluetooth speaker that remains part of a home system while moving between rooms and outdoors.",
+      "offer": "Best for extending a smart home system into the garden without buying a separate speaker.",
+      "url": "https://www.sonos.com/en-gb/shop/move-2",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.sonos.com/en-gb/shop/move-2",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "smart": 10,
+        "wifi": 10,
+        "multiroom": 10,
+        "portable": 8,
+        "outdoor": 7,
+        "battery": 9,
+        "premium": 8
+      }
+    },
+    {
+      "merchant": "Sonos",
+      "name": "Roam 2",
+      "monogram": "R2",
+      "note": "A small waterproof Bluetooth speaker that also connects to a Sonos Wi-Fi system at home.",
+      "offer": "Best compact addition for carrying multi-room listening beyond the house.",
+      "url": "https://www.sonos.com/en-gb/shop/roam-2",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.sonos.com/en-gb/shop/roam-2",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "smart": 9,
+        "wifi": 10,
+        "multiroom": 10,
+        "compact": 10,
+        "portable": 10,
+        "outdoor": 8,
+        "value": 6
+      }
+    }
+  ],
+  "premium": [
+    {
+      "merchant": "Bose",
+      "name": "SoundLink Max Portable Speaker",
+      "monogram": "BM",
+      "note": "A substantial portable speaker with stereo sound, deep bass, IP67 protection and phone-charging capability.",
+      "offer": "Best overall for premium portable sound with strong bass and straightforward outdoor durability.",
+      "url": "https://www.bose.co.uk/p/speakers/bose-soundlink-max-portable-speaker/SLMAX-SPEAKERWIRELESS.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.bose.co.uk/p/speakers/bose-soundlink-max-portable-speaker/SLMAX-SPEAKERWIRELESS.html",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "premium": 10,
+        "detail": 9,
+        "bass": 10,
+        "portable": 8,
+        "ip67": 10,
+        "battery": 9,
+        "powerbank": 9,
+        "stereo": 9
+      }
+    },
+    {
+      "merchant": "Marshall",
+      "name": "Middleton II",
+      "monogram": "MI",
+      "note": "A larger portable Marshall speaker focused on multidirectional sound, durability and strong battery performance.",
+      "offer": "Best for premium portable listening with design character and room-filling scale.",
+      "url": "https://www.marshall.com/gb/en/product/middleton-ii",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.marshall.com/gb/en/product/middleton-ii",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "premium": 10,
+        "detail": 8,
+        "portable": 8,
+        "outdoor": 8,
+        "battery": 10,
+        "design": 10,
+        "room_fill": 9
+      }
+    },
+    {
+      "merchant": "Marshall",
+      "name": "Kilburn III",
+      "monogram": "K3",
+      "note": "A carry-handle portable speaker with extended battery life, analogue tone controls and larger-scale sound.",
+      "offer": "Best for listeners who want a substantial portable speaker with manual bass and treble adjustment.",
+      "url": "https://www.marshall.com/gb/en/product/kilburn-iii",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.marshall.com/gb/en/product/kilburn-iii",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "premium": 10,
+        "detail": 8,
+        "portable": 7,
+        "battery": 10,
+        "design": 10,
+        "analogue": 10,
+        "room_fill": 9
+      }
+    },
+    {
+      "merchant": "Sonos",
+      "name": "Move 2",
+      "monogram": "M2",
+      "note": "A premium portable smart speaker combining stereo sound, Wi-Fi multi-room features and Bluetooth.",
+      "offer": "Best for premium sound when connected-home features are as important as portability.",
+      "url": "https://www.sonos.com/en-gb/shop/move-2",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.sonos.com/en-gb/shop/move-2",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "premium": 10,
+        "detail": 9,
+        "smart": 10,
+        "wifi": 10,
+        "multiroom": 10,
+        "portable": 7,
+        "stereo": 9
+      }
+    }
+  ]
+};
+
+const RESULTS = {
+  "pocket": {
+    "name": "Pocket Companion",
+    "color": "#526F7B",
+    "tag": "Small, simple and ready to move.",
+    "body": "You want music wherever you go without carrying a substantial speaker. Compact size, easy straps or loops and straightforward Bluetooth matter more than maximum room-filling output.",
+    "details": {
+      "Best size": "Very compact",
+      "Main priority": "Portability",
+      "Typical use": "Travel, desks and small rooms",
+      "Worth comparing": "Weight, strap and call support"
+    }
+  },
+  "outdoor": {
+    "name": "Outdoor Explorer",
+    "color": "#64775C",
+    "tag": "Rugged, long-lasting and prepared for changing weather.",
+    "body": "Your speaker needs to survive gardens, beaches, camping and day trips. Water and dust resistance, dependable battery life and practical carrying features should lead your shortlist.",
+    "details": {
+      "Best size": "Compact to medium portable",
+      "Main priority": "Durability",
+      "Typical use": "Garden, beach and camping",
+      "Worth comparing": "IP rating, battery and carrying"
+    }
+  },
+  "home": {
+    "name": "Room-Filling Home",
+    "color": "#786052",
+    "tag": "Stationary, substantial and designed to belong in the room.",
+    "body": "You want a speaker that becomes part of the room rather than living in a bag. Mains power, stereo presentation, physical controls and enough scale for the space matter more than weather resistance.",
+    "details": {
+      "Best size": "Compact or medium home speaker",
+      "Main priority": "Room coverage",
+      "Typical use": "Kitchen, lounge or bedroom",
+      "Worth comparing": "Room size, inputs and placement"
+    }
+  },
+  "party": {
+    "name": "Party Power",
+    "color": "#8A4F5D",
+    "tag": "Loud, energetic and built to involve the whole room.",
+    "body": "Your speaker is an event tool as much as a listening product. High output, bass, lights, microphone inputs and multi-speaker connection should carry more weight than discreet size.",
+    "details": {
+      "Best size": "Large party speaker",
+      "Main priority": "Volume and atmosphere",
+      "Typical use": "Parties, karaoke and events",
+      "Worth comparing": "Power, battery, wheels and inputs"
+    }
+  },
+  "smart": {
+    "name": "Connected Home",
+    "color": "#665E7C",
+    "tag": "Multi-room, flexible and ready to grow.",
+    "body": "You want the speaker to join a wider home system. Wi-Fi streaming, multi-room grouping, stereo pairing and voice or app control are more valuable to you than a completely self-contained Bluetooth-only design.",
+    "details": {
+      "Best size": "System-led",
+      "Main priority": "Wi-Fi and multi-room",
+      "Typical use": "Whole-home listening",
+      "Worth comparing": "Ecosystem, voice and expansion"
+    }
+  },
+  "premium": {
+    "name": "Premium Portable Sound",
+    "color": "#5E5962",
+    "tag": "Substantial, refined and chosen for sound as well as mobility.",
+    "body": "You are willing to carry and spend more for fuller sound, stronger bass and a more polished design. Larger portable speakers with premium construction, long battery life and either smart or physical sound controls suit you best.",
+    "details": {
+      "Best size": "Medium to large portable",
+      "Main priority": "Sound quality",
+      "Typical use": "Home, garden and gatherings",
+      "Worth comparing": "Weight, battery and sound controls"
+    }
+  }
+};
+
+const SIGNAL_LABELS = {
+  "pocket": "pocketable size",
+  "compact": "compact dimensions",
+  "lightweight": "low weight",
+  "calls": "hands-free calls",
+  "stereo_pair": "stereo pairing",
+  "value": "value for money",
+  "battery": "long battery life",
+  "rugged": "rugged construction",
+  "ip67": "IP67 protection",
+  "ip68": "IP68 protection",
+  "waterproof": "water resistance",
+  "outdoor": "outdoor use",
+  "portable": "portability",
+  "strap": "a carrying strap",
+  "powerbank": "phone charging",
+  "home": "home listening",
+  "room_fill": "room-filling sound",
+  "mains": "mains power",
+  "stereo": "stereo sound",
+  "design": "display-worthy design",
+  "analogue": "physical or analogue controls",
+  "party": "party use",
+  "loud": "high output",
+  "lights": "party lighting",
+  "karaoke": "microphone or karaoke inputs",
+  "wheels": "wheels and handles",
+  "bass": "strong bass",
+  "smart": "smart-speaker features",
+  "wifi": "Wi-Fi streaming",
+  "multiroom": "multi-room audio",
+  "voice": "voice control",
+  "spatial": "spatial audio",
+  "premium": "premium construction",
+  "detail": "sound detail",
+  "multi_speaker": "multi-speaker linking",
+  "mid_budget": "a mid-range budget"
+};
+
+const QUESTIONS = [
+  {
+    "q": "Where will you use the speaker most often?",
+    "a": [
+      {
+        "label": "On a desk, bedside table or in a travel bag",
+        "scores": {
+          "pocket": 5
+        },
+        "signals": [
+          "pocket",
+          "compact",
+          "lightweight"
+        ]
+      },
+      {
+        "label": "In the garden, at the beach or while camping",
+        "scores": {
+          "outdoor": 5
+        },
+        "signals": [
+          "outdoor",
+          "rugged",
+          "waterproof"
+        ]
+      },
+      {
+        "label": "In one main room at home",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "home",
+          "room_fill",
+          "mains"
+        ]
+      },
+      {
+        "label": "At parties, birthdays or karaoke nights",
+        "scores": {
+          "party": 5
+        },
+        "signals": [
+          "party",
+          "loud",
+          "karaoke"
+        ]
+      },
+      {
+        "label": "Across several rooms in a connected home",
+        "scores": {
+          "smart": 5
+        },
+        "signals": [
+          "smart",
+          "wifi",
+          "multiroom"
+        ]
+      },
+      {
+        "label": "Between home, garden and gatherings where sound quality matters",
+        "scores": {
+          "premium": 5
+        },
+        "signals": [
+          "premium",
+          "detail",
+          "portable"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How large an area should it comfortably fill?",
+    "a": [
+      {
+        "label": "One person or a very small room",
+        "scores": {
+          "pocket": 5
+        },
+        "signals": [
+          "pocket",
+          "compact"
+        ]
+      },
+      {
+        "label": "A garden table, tent or small outdoor group",
+        "scores": {
+          "outdoor": 5
+        },
+        "signals": [
+          "outdoor",
+          "portable"
+        ]
+      },
+      {
+        "label": "A kitchen, bedroom or medium lounge",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "home",
+          "room_fill"
+        ]
+      },
+      {
+        "label": "A large room, hall or busy gathering",
+        "scores": {
+          "party": 5
+        },
+        "signals": [
+          "party",
+          "loud"
+        ]
+      },
+      {
+        "label": "Several rooms through grouped speakers",
+        "scores": {
+          "smart": 5
+        },
+        "signals": [
+          "multiroom",
+          "wifi"
+        ]
+      },
+      {
+        "label": "A medium room or outdoor gathering with fuller sound",
+        "scores": {
+          "premium": 5
+        },
+        "signals": [
+          "premium",
+          "room_fill",
+          "detail"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How portable must it be?",
+    "a": [
+      {
+        "label": "Small enough to carry every day",
+        "scores": {
+          "pocket": 5
+        },
+        "signals": [
+          "pocket",
+          "compact",
+          "lightweight"
+        ]
+      },
+      {
+        "label": "Easy to carry in a backpack or by a strap",
+        "scores": {
+          "outdoor": 5
+        },
+        "signals": [
+          "portable",
+          "strap",
+          "outdoor"
+        ]
+      },
+      {
+        "label": "It will normally stay plugged in",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "home",
+          "mains"
+        ]
+      },
+      {
+        "label": "Movable with a large handle or wheels",
+        "scores": {
+          "party": 5
+        },
+        "signals": [
+          "party",
+          "wheels"
+        ]
+      },
+      {
+        "label": "Some speakers can stay put while one moves around",
+        "scores": {
+          "smart": 5
+        },
+        "signals": [
+          "multiroom",
+          "portable"
+        ]
+      },
+      {
+        "label": "I accept extra weight for better sound",
+        "scores": {
+          "premium": 5
+        },
+        "signals": [
+          "premium",
+          "detail",
+          "portable"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How important is water and dust resistance?",
+    "a": [
+      {
+        "label": "Useful, but compact size matters more",
+        "scores": {
+          "pocket": 5
+        },
+        "signals": [
+          "compact",
+          "value"
+        ]
+      },
+      {
+        "label": "Essential",
+        "scores": {
+          "outdoor": 5
+        },
+        "signals": [
+          "rugged",
+          "waterproof",
+          "ip67"
+        ]
+      },
+      {
+        "label": "Not important for an indoor speaker",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "home",
+          "mains"
+        ]
+      },
+      {
+        "label": "Splash resistance is useful at parties",
+        "scores": {
+          "party": 5
+        },
+        "signals": [
+          "party",
+          "waterproof"
+        ]
+      },
+      {
+        "label": "Useful for any portable part of the system",
+        "scores": {
+          "smart": 5
+        },
+        "signals": [
+          "smart",
+          "portable",
+          "outdoor"
+        ]
+      },
+      {
+        "label": "Important because it may move between indoors and outside",
+        "scores": {
+          "premium": 5
+        },
+        "signals": [
+          "premium",
+          "waterproof",
+          "portable"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How long should the battery last?",
+    "a": [
+      {
+        "label": "Enough for a normal day",
+        "scores": {
+          "pocket": 5
+        },
+        "signals": [
+          "battery",
+          "compact"
+        ]
+      },
+      {
+        "label": "All day or through a weekend trip",
+        "scores": {
+          "outdoor": 5
+        },
+        "signals": [
+          "battery",
+          "outdoor"
+        ]
+      },
+      {
+        "label": "Battery is unnecessary because it will use mains power",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "mains",
+          "home"
+        ]
+      },
+      {
+        "label": "Long enough for an event, with replaceable or extended power preferred",
+        "scores": {
+          "party": 5
+        },
+        "signals": [
+          "party",
+          "battery"
+        ]
+      },
+      {
+        "label": "Long enough to move around the house and garden",
+        "scores": {
+          "smart": 5
+        },
+        "signals": [
+          "smart",
+          "battery",
+          "portable"
+        ]
+      },
+      {
+        "label": "Very long battery life is worth the extra weight",
+        "scores": {
+          "premium": 5
+        },
+        "signals": [
+          "premium",
+          "battery"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Which sound direction appeals most?",
+    "a": [
+      {
+        "label": "Clear sound from the smallest practical box",
+        "scores": {
+          "pocket": 5
+        },
+        "signals": [
+          "compact",
+          "value"
+        ]
+      },
+      {
+        "label": "Strong sound that remains useful outdoors",
+        "scores": {
+          "outdoor": 5
+        },
+        "signals": [
+          "outdoor",
+          "rugged",
+          "bass"
+        ]
+      },
+      {
+        "label": "Balanced stereo sound across the room",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "stereo",
+          "room_fill",
+          "home"
+        ]
+      },
+      {
+        "label": "Big bass and high volume",
+        "scores": {
+          "party": 5
+        },
+        "signals": [
+          "bass",
+          "loud",
+          "party"
+        ]
+      },
+      {
+        "label": "Consistent sound across a multi-room system",
+        "scores": {
+          "smart": 5
+        },
+        "signals": [
+          "multiroom",
+          "wifi",
+          "smart"
+        ]
+      },
+      {
+        "label": "Fuller, more refined sound with stronger low end",
+        "scores": {
+          "premium": 5
+        },
+        "signals": [
+          "detail",
+          "bass",
+          "premium"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Which extra feature would you use most?",
+    "a": [
+      {
+        "label": "A microphone for occasional calls",
+        "scores": {
+          "pocket": 5
+        },
+        "signals": [
+          "calls",
+          "compact"
+        ]
+      },
+      {
+        "label": "Phone charging or a practical carrying strap",
+        "scores": {
+          "outdoor": 5
+        },
+        "signals": [
+          "powerbank",
+          "strap",
+          "outdoor"
+        ]
+      },
+      {
+        "label": "Physical bass, treble or source controls",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "analogue",
+          "home"
+        ]
+      },
+      {
+        "label": "Lights, microphones or guitar inputs",
+        "scores": {
+          "party": 5
+        },
+        "signals": [
+          "lights",
+          "karaoke",
+          "party"
+        ]
+      },
+      {
+        "label": "Voice control and app-based room grouping",
+        "scores": {
+          "smart": 5
+        },
+        "signals": [
+          "voice",
+          "multiroom",
+          "smart"
+        ]
+      },
+      {
+        "label": "Sound customisation, stereo pairing or premium codecs",
+        "scores": {
+          "premium": 5
+        },
+        "signals": [
+          "detail",
+          "stereo_pair",
+          "premium"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Will you ever connect more than one speaker?",
+    "a": [
+      {
+        "label": "Possibly a simple stereo pair",
+        "scores": {
+          "pocket": 5
+        },
+        "signals": [
+          "stereo_pair",
+          "compact"
+        ]
+      },
+      {
+        "label": "Yes, for wider sound outdoors",
+        "scores": {
+          "outdoor": 5
+        },
+        "signals": [
+          "multi_speaker",
+          "outdoor"
+        ]
+      },
+      {
+        "label": "Possibly two matching speakers in one room",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "stereo_pair",
+          "home"
+        ]
+      },
+      {
+        "label": "Yes, to make large parties louder",
+        "scores": {
+          "party": 5
+        },
+        "signals": [
+          "multi_speaker",
+          "party",
+          "loud"
+        ]
+      },
+      {
+        "label": "Definitely, across several rooms",
+        "scores": {
+          "smart": 5
+        },
+        "signals": [
+          "multiroom",
+          "wifi",
+          "smart"
+        ]
+      },
+      {
+        "label": "Perhaps, but one excellent speaker comes first",
+        "scores": {
+          "premium": 5
+        },
+        "signals": [
+          "premium",
+          "detail"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How should the speaker look in your space?",
+    "a": [
+      {
+        "label": "Small and unobtrusive",
+        "scores": {
+          "pocket": 5
+        },
+        "signals": [
+          "compact",
+          "lightweight"
+        ]
+      },
+      {
+        "label": "Practical and ready to be knocked about",
+        "scores": {
+          "outdoor": 5
+        },
+        "signals": [
+          "rugged",
+          "outdoor"
+        ]
+      },
+      {
+        "label": "Like a considered piece of the room",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "design",
+          "home"
+        ]
+      },
+      {
+        "label": "Bold, energetic and visibly part of the event",
+        "scores": {
+          "party": 5
+        },
+        "signals": [
+          "lights",
+          "party"
+        ]
+      },
+      {
+        "label": "Consistent with a clean connected-home system",
+        "scores": {
+          "smart": 5
+        },
+        "signals": [
+          "smart",
+          "multiroom"
+        ]
+      },
+      {
+        "label": "Premium, tactile and worth displaying",
+        "scores": {
+          "premium": 5
+        },
+        "signals": [
+          "premium",
+          "design"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Which spending direction feels comfortable?",
+    "a": [
+      {
+        "label": "Lower to mid-range for compact convenience",
+        "scores": {
+          "pocket": 5
+        },
+        "signals": [
+          "value",
+          "compact"
+        ]
+      },
+      {
+        "label": "Mid-range for durability and battery",
+        "scores": {
+          "outdoor": 5
+        },
+        "signals": [
+          "outdoor",
+          "battery"
+        ]
+      },
+      {
+        "label": "Mid to premium for a permanent home speaker",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "home",
+          "premium"
+        ]
+      },
+      {
+        "label": "Higher spend for enough scale and party features",
+        "scores": {
+          "party": 5
+        },
+        "signals": [
+          "party",
+          "premium",
+          "loud"
+        ]
+      },
+      {
+        "label": "A system budget that can grow over time",
+        "scores": {
+          "smart": 5
+        },
+        "signals": [
+          "smart",
+          "multiroom",
+          "mid_budget"
+        ]
+      },
+      {
+        "label": "Premium, provided the sound and construction justify it",
+        "scores": {
+          "premium": 5
+        },
+        "signals": [
+          "premium",
+          "detail"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What matters most in the final recommendation?",
+    "a": [
+      {
+        "label": "The smallest useful speaker",
+        "scores": {
+          "pocket": 5
+        },
+        "signals": [
+          "pocket",
+          "compact",
+          "lightweight"
+        ]
+      },
+      {
+        "label": "Durability and battery for outdoor use",
+        "scores": {
+          "outdoor": 5
+        },
+        "signals": [
+          "outdoor",
+          "rugged",
+          "battery"
+        ]
+      },
+      {
+        "label": "Room-filling sound and home-friendly design",
+        "scores": {
+          "home": 5
+        },
+        "signals": [
+          "home",
+          "room_fill",
+          "design"
+        ]
+      },
+      {
+        "label": "Maximum party atmosphere and output",
+        "scores": {
+          "party": 5
+        },
+        "signals": [
+          "party",
+          "loud",
+          "lights"
+        ]
+      },
+      {
+        "label": "Wi-Fi, multi-room and future expansion",
+        "scores": {
+          "smart": 5
+        },
+        "signals": [
+          "smart",
+          "wifi",
+          "multiroom"
+        ]
+      },
+      {
+        "label": "The best sound I can still carry",
+        "scores": {
+          "premium": 5
+        },
+        "signals": [
+          "premium",
+          "detail",
+          "portable"
+        ]
+      }
+    ]
+  }
+];
+
+let step=0;
+let locked=false;
+const selectedAnswers=[];
+const preferenceSignals={};
+const totals=Object.keys(RESULTS).reduce((acc,key)=>{acc[key]=0;return acc;},{});
+const el=id=>document.getElementById(id);
+const screens={intro:el("intro"),quiz:el("quiz"),result:el("result")};
+
+function show(name){Object.values(screens).forEach(screen=>screen.classList.remove("active"));screens[name].classList.add("active");window.scrollTo({top:0,behavior:"smooth"});}
+function hexToRgba(hex,alpha){const clean=hex.replace("#","");const value=parseInt(clean,16);const red=value>>16&255;const green=value>>8&255;const blue=value&255;return `rgba(${red},${green},${blue},${alpha})`;}
+function escapeHtml(value){return String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");}
+function getProductRecommendations(key){return (PRODUCTS[key]||[]).map((product,originalIndex)=>{const matchScore=Object.entries(product.fit||{}).reduce((score,[signal,weight])=>score+(preferenceSignals[signal]||0)*weight,product.base||0);return {...product,matchScore,originalIndex};}).sort((a,b)=>b.matchScore-a.matchScore||(b.base||0)-(a.base||0)||a.originalIndex-b.originalIndex).slice(0,3);}
+function getPersonalMatch(product){const matches=Object.entries(product.fit||{}).filter(([signal])=>preferenceSignals[signal]).map(([signal,weight])=>({signal,value:weight*preferenceSignals[signal]})).sort((a,b)=>b.value-a.value).slice(0,2).map(item=>SIGNAL_LABELS[item.signal]).filter(Boolean);if(matches.length===0)return product.offer||"";if(matches.length===1)return `Matches your preference for ${matches[0]}.`;return `Matches your preference for ${matches[0]} and ${matches[1]}.`;}
+function getProductMonogram(product){if(product.monogram)return product.monogram;return product.name.split(/\s+/).filter(Boolean).slice(0,2).map(word=>word.charAt(0)).join("").toUpperCase();}
+function trackEvent(eventName,details={}){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:eventName,...details});if(typeof window.pintrk==="function"){try{window.pintrk("track","custom",{event_name:eventName,...details});}catch(error){console.warn("Pinterest tracking event was not sent.",error);}}}
+function renderQuestion(){const item=QUESTIONS[step];const totalQuestions=QUESTIONS.length;el("question").textContent=item.q;el("count").textContent=`${String(step+1).padStart(2,"0")} / ${String(totalQuestions).padStart(2,"0")}`;el("fill").style.width=`${step/totalQuestions*100}%`;const box=el("options");box.innerHTML="";locked=false;item.a.forEach((answer,index)=>{const button=document.createElement("button");button.className="option";button.type="button";button.textContent=answer.label;button.addEventListener("click",()=>chooseAnswer(button,answer,index));box.appendChild(button);});setTimeout(()=>el("question").focus({preventScroll:true}),50);}
+function chooseAnswer(button,answer,index){if(locked)return;locked=true;document.querySelectorAll(".option").forEach(option=>{option.disabled=true;});button.classList.add("chosen");selectedAnswers[step]=index;Object.entries(answer.scores).forEach(([key,value])=>{totals[key]+=value;});(answer.signals||[]).forEach(signal=>{preferenceSignals[signal]=(preferenceSignals[signal]||0)+1;});trackEvent("quiz_answer",{quiz:"perfect_bluetooth_speaker",question_number:step+1,answer:answer.label});setTimeout(()=>{step+=1;if(step<QUESTIONS.length){renderQuestion();}else{el("fill").style.width="100%";finishQuiz();}},340);}
+function finishQuiz(){const orderedKeys=Object.keys(RESULTS);let winningKey=orderedKeys[0];orderedKeys.forEach(key=>{if(totals[key]>totals[winningKey])winningKey=key;});const tiedKeys=orderedKeys.filter(key=>totals[key]===totals[winningKey]);if(tiedKeys.length>1){for(let questionIndex=selectedAnswers.length-1;questionIndex>=0;questionIndex-=1){const answer=QUESTIONS[questionIndex].a[selectedAnswers[questionIndex]];const rankedTie=tiedKeys.map(key=>({key,value:answer.scores[key]||0})).sort((a,b)=>b.value-a.value);if(rankedTie[0].value>rankedTie[1].value){winningKey=rankedTie[0].key;break;}}}showResult(winningKey);}
+function showResult(key){const result=RESULTS[key];window.LYS_RESULT=key;el("resultCard").style.setProperty("--fam",result.color);el("rName").textContent=result.name;el("rTag").textContent=result.tag;el("rBody").textContent=result.body;const details=el("rDetails");details.innerHTML="";Object.entries(result.details).forEach(([label,value])=>{const row=document.createElement("div");row.className="detail-row";const labelSpan=document.createElement("span");labelSpan.className="detail-label";labelSpan.textContent=label;const valueSpan=document.createElement("span");valueSpan.className="detail-val";valueSpan.textContent=value;row.append(labelSpan,valueSpan);details.appendChild(row);});el("recsTitle").textContent="Your three best-matched Bluetooth speakers";const recommendations=getProductRecommendations(key);const grid=el("recGrid");grid.innerHTML="";recommendations.forEach((product,index)=>{const card=document.createElement("article");card.className="rec";const fallbackHtml=`<div class="ph media media-fallback" style="background:${hexToRgba(result.color,.88)}"><span>${escapeHtml(getProductMonogram(product))}</span></div>`;const mediaHtml=product.img?`<div class="media-frame"><img class="media" src="${escapeHtml(product.img)}" alt="${escapeHtml(product.merchant)} ${escapeHtml(product.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${fallbackHtml}</div>`:fallbackHtml;const badgeHtml=index===0?'<span class="rec-badge">Best match</span>':"";const matchText=getPersonalMatch(product);const offerHtml=matchText?`<span class="offer">${escapeHtml(matchText)}</span>`:"";const linkIsAffiliate=Boolean(product.affiliate);const linkRel=linkIsAffiliate?"noopener sponsored":"noopener";const ctaHtml=product.url&&product.url!=="#"?`<a class="view" href="${escapeHtml(product.url)}" target="_blank" rel="${linkRel}" data-product-position="${index+1}">View product &rsaquo;</a>`:'<span class="view off">Product page unavailable</span>';card.innerHTML=`${badgeHtml}${mediaHtml}<div class="body"><span class="brand">${escapeHtml(product.merchant)}</span><span class="pname">${escapeHtml(product.name)}</span><span class="pnote">${escapeHtml(product.note)}</span>${offerHtml}${ctaHtml}</div>`;const productImage=card.querySelector("img.media");if(productImage){productImage.addEventListener("error",()=>{productImage.remove();const fallback=card.querySelector(".media-fallback");if(fallback)fallback.classList.add("show");},{once:true});}const productLink=card.querySelector("a[data-product-position]");if(productLink){productLink.addEventListener("click",()=>{trackEvent(linkIsAffiliate?"affiliate_click":"product_click",{quiz:"perfect_bluetooth_speaker",result:key,merchant:product.merchant,product:product.name,position:index+1,affiliate:linkIsAffiliate});});}grid.appendChild(card);});const disclosure=el("recommendationDisclosure");const containsAffiliateLinks=recommendations.some(product=>product.affiliate);if(containsAffiliateLinks){disclosure.innerHTML='Some links on this page are affiliate links. Love Your Senses may earn a commission from qualifying orders at no extra cost to you. <a href="/disclosure">Read the affiliate disclosure</a>.';}else{disclosure.textContent="These recommendations use direct manufacturer links. Love Your Senses does not currently earn commission from them. Product availability and temporary imagery may change.";}const browseAll=el("browseAll");if(STORE_LINK&&STORE_LINK!=="#"){const storeRel=STORE_LINK_IS_AFFILIATE?"noopener sponsored":"noopener";browseAll.innerHTML=`<a class="btn-all" href="${escapeHtml(STORE_LINK)}" target="_blank" rel="${storeRel}">Browse all Bluetooth speakers</a>`;browseAll.querySelector("a").addEventListener("click",()=>{trackEvent(STORE_LINK_IS_AFFILIATE?"affiliate_click":"product_click",{quiz:"perfect_bluetooth_speaker",result:key,product:"browse_all",affiliate:STORE_LINK_IS_AFFILIATE});});}else{browseAll.innerHTML="";}trackEvent("quiz_complete",{quiz:"perfect_bluetooth_speaker",result:key,result_name:result.name});show("result");}
+async function submitEmail(){const emailInput=el("email");const email=emailInput.value.trim();const form=el("emailForm");const note=el("formNote");if(!/^\S+@\S+\.\S+$/.test(email)){emailInput.focus();note.textContent="Enter a valid email address.";return;}if(!EMAIL_FORM_ACTION){note.textContent="Email signup is not connected yet. Add your email platform form action in the JavaScript settings.";return;}const button=el("emailBtn");button.disabled=true;button.textContent="Sending";try{const payload=new URLSearchParams();payload.append(EMAIL_FIELD_NAME,email);payload.append("quiz_result",window.LYS_RESULT||"");payload.append("source","perfect_bluetooth_speaker_quiz");await fetch(EMAIL_FORM_ACTION,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:payload.toString()});form.innerHTML='<p class="done">Your Bluetooth speaker shortlist is on its way.</p>';note.textContent="";trackEvent("email_signup",{quiz:"perfect_bluetooth_speaker",result:window.LYS_RESULT||""});}catch(error){button.disabled=false;button.textContent="Send it";note.textContent="The signup did not complete. Please try again.";console.error("Email signup failed.",error);}}
+async function shareResult(){const result=RESULTS[window.LYS_RESULT];if(!result)return;const text=`My Bluetooth speaker profile is ${result.name}. Find yours:`;const shareData={title:"Find Your Perfect Bluetooth Speaker | Love Your Senses",text,url:QUIZ_URL||location.href};if(navigator.share){try{await navigator.share(shareData);trackEvent("share",{quiz:"perfect_bluetooth_speaker",result:window.LYS_RESULT,method:"native"});}catch(error){if(error.name!=="AbortError")console.error("Share failed.",error);}return;}try{await navigator.clipboard.writeText(`${text} ${shareData.url}`);el("share").textContent="Link copied";setTimeout(()=>el("share").textContent="Share your result",2000);trackEvent("share",{quiz:"perfect_bluetooth_speaker",result:window.LYS_RESULT,method:"clipboard"});}catch(error){console.error("Copy failed.",error);}}
+function resetQuiz(){step=0;locked=false;selectedAnswers.length=0;Object.keys(preferenceSignals).forEach(key=>delete preferenceSignals[key]);Object.keys(totals).forEach(key=>totals[key]=0);window.LYS_RESULT="";const form=el("emailForm");form.innerHTML='<input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email"><button id="emailBtn" type="button">Send it</button>';el("emailBtn").addEventListener("click",submitEmail);el("formNote").textContent="Connect your email platform in the JavaScript settings before publishing.";show("intro");trackEvent("quiz_retake",{quiz:"perfect_bluetooth_speaker"});}
+el("start").addEventListener("click",()=>{show("quiz");renderQuestion();trackEvent("quiz_start",{quiz:"perfect_bluetooth_speaker"});});
+el("emailBtn").addEventListener("click",submitEmail);
+el("share").addEventListener("click",shareResult);
+el("retake").addEventListener("click",resetQuiz);
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
