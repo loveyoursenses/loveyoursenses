@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Perfect Haircare Ritual | Love Your Senses</title>
+<meta name="description" content="Answer eleven questions to discover the haircare ritual, textures and products that best match your pattern, styling preferences and routine.">
+<link rel="canonical" href="https://loveyoursenses.com/haircare-ritual-quiz/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Find Your Perfect Haircare Ritual | Love Your Senses">
+<meta property="og:description" content="Discover whether your ideal hair ritual is lightweight, smoothing, curl-focused, moisture-rich, colour-conscious or simple.">
+<meta property="og:url" content="https://loveyoursenses.com/haircare-ritual-quiz/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#E7E3DD;
+    --card:#F2EEE8;
+    --ink:#2A2130;
+    --ink-soft:#6E6574;
+    --accent:#7B4A5E;
+    --accent-deep:#5E3547;
+    --line:#CDC3B6;
+    --gold:#B8A78C;
+    --cream:#F7F1EC;
+    --radius:18px;
+    --ease:cubic-bezier(.4,.14,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Jost',system-ui,sans-serif;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+  button,input{font:inherit}
+  button{touch-action:manipulation}
+  .display{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  .wrap{width:100%;max-width:1000px;margin:0 auto;padding-left:24px;padding-right:24px}
+  .site-head{padding:24px 0}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .mark{font-family:'Fraunces',serif;font-weight:500;font-size:1.24rem;text-decoration:none;color:var(--ink)}
+  .mark span{color:var(--accent)}
+  .head-link{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none}
+  .head-link:hover{color:var(--accent)}
+  .stage{width:100%;max-width:680px;margin:0 auto;padding:36px 20px 72px}
+  .screen{display:none;animation:rise .6s var(--ease) both}
+  .screen.active{display:block}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  #intro{text-align:center;padding:14px 0 24px}
+  .ring{margin:0 auto 30px;display:block}
+  #intro h1{font-size:clamp(2.55rem,9vw,4rem);margin-bottom:18px}
+  #intro h1 em{font-style:italic;font-weight:400}
+  .lede{color:var(--ink-soft);font-size:1.06rem;max-width:45ch;margin:0 auto 24px}
+  .wellbeing-note{font-size:.79rem;color:var(--ink-soft);line-height:1.55;max-width:56ch;margin:0 auto 30px}
+  .meta{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:26px}
+  .btn{display:inline-block;font-family:'Jost',sans-serif;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:17px 40px;background:var(--ink);color:var(--bg);transition:transform .35s var(--ease),background .35s var(--ease)}
+  .btn:hover{background:var(--accent-deep);transform:translateY(-2px)}
+  .progress-wrap{display:flex;align-items:center;gap:16px;margin-bottom:38px}
+  .track{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
+  .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);transition:width .5s var(--ease)}
+  .count{font-size:.72rem;letter-spacing:.2em;color:var(--ink-soft);white-space:nowrap}
+  .question{font-size:clamp(1.75rem,6vw,2.45rem);margin-bottom:32px;min-height:2.2em}
+  .options{display:flex;flex-direction:column;gap:12px}
+  .option{font-family:'Jost',sans-serif;font-size:1.01rem;color:var(--ink);text-align:left;background:var(--card);border:1px solid transparent;border-radius:var(--radius);padding:19px 22px;cursor:pointer;width:100%;transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);display:flex;align-items:center;gap:14px}
+  .option:before{content:"";width:9px;height:9px;border-radius:50%;border:1.5px solid var(--line);flex:none;transition:all .3s var(--ease)}
+  .option:hover{border-color:var(--gold);transform:translateX(4px)}
+  .option.chosen{background:var(--accent);color:var(--cream);border-color:var(--accent)}
+  .option.chosen:before{background:var(--cream);border-color:var(--cream)}
+  .option:disabled{cursor:default}
+  .result-card{background:var(--fam,#7B4A5E);color:var(--cream);border-radius:26px;padding:44px 32px 40px;text-align:center;box-shadow:0 30px 60px -30px rgba(42,33,48,.55)}
+  .result-card .eyebrow{color:rgba(247,241,236,.72)}
+  .result-name{font-size:clamp(2.55rem,10vw,3.65rem);margin-bottom:10px}
+  .result-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:1.2rem;opacity:.94;margin-bottom:24px}
+  .result-body{font-size:1.02rem;line-height:1.72;opacity:.95;max-width:44ch;margin:0 auto 30px}
+  .details{border-top:1px solid rgba(247,241,236,.28);border-bottom:1px solid rgba(247,241,236,.28);padding:22px 0;text-align:left;display:flex;flex-direction:column;gap:14px}
+  .detail-row{display:flex;gap:18px;align-items:baseline}
+  .detail-label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;opacity:.72;width:104px;flex:none}
+  .detail-val{font-family:'Fraunces',serif;font-size:1.04rem}
+  .recs{margin-top:36px}
+  .recs-head{text-align:center;margin-bottom:22px}
+  .recs-head .eyebrow{display:block;margin-bottom:10px}
+  .recs-head h3{font-size:clamp(1.55rem,5vw,2.05rem)}
+  .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .rec{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+  .rec-badge{position:absolute;top:12px;left:12px;z-index:2;background:rgba(247,241,236,.94);color:var(--accent-deep);border-radius:100px;padding:6px 10px;font-size:.61rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+  .rec .media-frame{aspect-ratio:1/1;width:100%;position:relative;overflow:hidden;background:#fff}
+  .rec .media{aspect-ratio:1/1;width:100%;height:100%;object-fit:cover;padding:0;background:#fff;display:block}
+  .rec .ph{display:flex;align-items:center;justify-content:center;padding:0}
+  .rec .media-frame .media{position:absolute;inset:0}
+  .rec .media-fallback{display:none}
+  .rec .media-fallback.show{display:flex}
+  .rec .ph span{font-family:'Fraunces',serif;font-size:2rem;color:#fff;opacity:.92}
+  .rec .body{padding:16px 15px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .rec .brand{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .rec .pname{font-family:'Fraunces',serif;font-size:1.04rem;line-height:1.22}
+  .rec .pnote{font-size:.8rem;color:var(--ink-soft);line-height:1.45}
+  .rec .offer{font-size:.76rem;color:var(--accent);font-weight:500}
+  .rec .view{margin-top:auto;padding-top:11px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;text-decoration:none;color:var(--accent)}
+  .rec .view.off{color:var(--ink-soft);opacity:.58}
+  .rec .view:hover{text-decoration:underline;text-underline-offset:4px}
+  .affiliate-note{font-size:.78rem;color:var(--ink-soft);line-height:1.55;text-align:center;max-width:58ch;margin:18px auto 0}
+  .affiliate-note a{color:var(--accent);text-underline-offset:3px}
+  .browse-all{text-align:center;margin-top:22px}
+  .btn-all{display:inline-block;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;text-decoration:none;border:1px solid var(--accent);color:var(--accent);border-radius:100px;padding:14px 34px;transition:background .3s var(--ease),color .3s var(--ease)}
+  .btn-all:hover{background:var(--accent);color:var(--cream)}
+  .capture{background:var(--card);border-radius:var(--radius);padding:32px 28px;margin-top:28px;text-align:center}
+  .capture h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;margin-bottom:8px}
+  .capture p{color:var(--ink-soft);font-size:.96rem;margin:0 auto 22px;max-width:39ch}
+  .field{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .field input{font-family:'Jost',sans-serif;font-size:1rem;flex:1;min-width:210px;padding:15px 18px;border:1px solid var(--line);border-radius:100px;background:#fff;color:var(--ink)}
+  .field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+  .field button{font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:15px 28px;background:var(--accent);color:var(--cream)}
+  .field button:hover{background:var(--accent-deep)}
+  .capture .done{color:var(--accent);font-family:'Fraunces',serif;font-size:1.1rem;padding:6px 0}
+  .capture .form-note{font-size:.74rem;margin-top:12px;margin-bottom:0}
+  .next-quiz{border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;margin-top:18px;text-align:center}
+  .next-quiz .eyebrow{display:block;margin-bottom:9px}
+  .next-quiz h3{font-size:1.45rem;margin-bottom:8px}
+  .next-quiz p{color:var(--ink-soft);font-size:.94rem;max-width:40ch;margin:0 auto 18px}
+  .next-link{font-size:.74rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;color:var(--accent);text-underline-offset:4px}
+  .next-link:hover{color:var(--accent-deep)}
+  .after{display:flex;gap:22px;justify-content:center;align-items:center;margin-top:26px;flex-wrap:wrap}
+  .linkish{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px}
+  .linkish:hover{color:var(--accent)}
+  .site-foot{border-top:1px solid var(--line);padding:34px 0 48px}
+  .foot{display:flex;flex-direction:column;align-items:center;gap:11px;text-align:center}
+  .foot-nav a{color:var(--ink-soft);text-decoration:none;font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;margin:0 10px}
+  .foot-nav a:hover{color:var(--accent)}
+  .foot .disc{font-size:.82rem;color:var(--ink-soft);max-width:54ch}
+  .foot .cr{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  @media(max-width:600px){.site-head{padding:20px 0}.stage{padding-top:28px}.rec-grid{grid-template-columns:1fr 1fr}.detail-label{width:88px}}
+  @media(max-width:420px){.rec-grid{grid-template-columns:1fr}.result-card{padding:40px 24px 36px}.field{flex-direction:column}.field input,.field button{width:100%}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <div class="bar">
+      <a href="/" class="mark">Love Your <span>Senses</span></a>
+      <a href="/#quiz-library" class="head-link">All quizzes</a>
+    </div>
+  </div>
+</header>
+
+<main class="stage">
+  <section id="intro" class="screen active">
+    <svg class="ring" width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
+      <circle cx="29" cy="29" r="27" fill="none" stroke="#B8A78C" stroke-width="1"/>
+      <circle cx="29" cy="29" r="19" fill="none" stroke="#CDC3B6" stroke-width="1"/>
+      <g stroke="#7B4A5E" stroke-width="1.4">
+        <line x1="29" y1="2" x2="29" y2="9"/>
+        <line x1="52.4" y1="42.5" x2="46.4" y2="39"/>
+        <line x1="5.6" y1="42.5" x2="11.6" y2="39"/>
+        <line x1="52.4" y1="15.5" x2="46.4" y2="19"/>
+        <line x1="5.6" y1="15.5" x2="11.6" y2="19"/>
+        <line x1="29" y1="56" x2="29" y2="49"/>
+      </g>
+      <circle cx="29" cy="29" r="3" fill="#7B4A5E"/>
+    </svg>
+    <p class="eyebrow">A hair texture and ritual discovery</p>
+    <h1 class="display">Find your perfect <em>haircare ritual</em></h1>
+    <p class="lede">Answer eleven questions about pattern, finish, styling, fragrance and routine length to find your haircare profile and three products to consider.</p>
+    <p class="wellbeing-note">This quiz offers cosmetic suggestions based on appearance and routine preferences. It does not diagnose scalp conditions, hair loss or medical concerns. Patch test where appropriate and follow current brand instructions.</p>
+    <button class="btn" id="start" type="button">Begin the discovery</button>
+    <p class="meta">11 questions &nbsp;·&nbsp; about three minutes</p>
+  </section>
+
+  <section id="quiz" class="screen" aria-live="polite">
+    <div class="progress-wrap">
+      <div class="track" aria-hidden="true"><div class="fill" id="fill"></div></div>
+      <span class="count" id="count">01 / 11</span>
+    </div>
+    <h2 class="question display" id="question" tabindex="-1"></h2>
+    <div class="options" id="options"></div>
+  </section>
+
+  <section id="result" class="screen" aria-live="polite">
+    <div class="result-card" id="resultCard">
+      <p class="eyebrow">Your haircare profile</p>
+      <h2 class="result-name display" id="rName"></h2>
+      <p class="result-tag" id="rTag"></p>
+      <p class="result-body" id="rBody"></p>
+      <div class="details" id="rDetails"></div>
+    </div>
+
+    <div class="recs">
+      <div class="recs-head">
+        <span class="eyebrow">Chosen from all eleven answers</span>
+        <h3 class="display" id="recsTitle">Your three best-matched haircare products</h3>
+      </div>
+      <div class="rec-grid" id="recGrid"></div>
+      <p class="affiliate-note" id="recommendationDisclosure">These recommendations use direct brand links. Love Your Senses does not currently earn commission from them. Product availability and temporary imagery may change.</p>
+      <div class="browse-all" id="browseAll"></div>
+      <p class="wellbeing-note">Review the current ingredients, directions and suitability information on each brand page before purchase, particularly for coloured, chemically treated or fragrance-sensitive routines.</p>
+    </div>
+
+    <div class="capture">
+      <h3>Save your haircare shortlist</h3>
+      <p>Get your result, routine priorities and future touch-and-scent discoveries by email.</p>
+      <div class="field" id="emailForm">
+        <input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email">
+        <button id="emailBtn" type="button">Send it</button>
+      </div>
+      <p class="form-note" id="formNote">Connect your email platform in the JavaScript settings before publishing.</p>
+    </div>
+
+    <div class="next-quiz">
+      <span class="eyebrow">Continue the body ritual</span>
+      <h3 class="display">Find your perfect body-care routine</h3>
+      <p>Match product texture, scent and routine pace to a complete body-care profile.</p>
+      <a class="next-link" href="/body-care-routine-quiz/">Take the body-care quiz</a>
+    </div>
+
+    <div class="after">
+      <button class="linkish" id="share" type="button">Share your result</button>
+      <button class="linkish" id="retake" type="button">Retake the quiz</button>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-nav">
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/disclosure/">Affiliate Disclosure</a>
+      </div>
+      <p class="disc">Love Your Senses helps you discover products matched to your preferences through short, enjoyable quizzes.</p>
+      <p class="cr">© 2026 Love Your Senses</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Product links are direct and non-affiliate. Replace URLs and images with approved affiliate assets when partnerships are active, then change affiliate:false to affiliate:true. */
+const QUIZ_URL = "https://loveyoursenses.com/haircare-ritual-quiz/";
+const STORE_LINK = "";
+const STORE_LINK_IS_AFFILIATE = false;
+const EMAIL_FORM_ACTION = "";
+const EMAIL_FIELD_NAME = "email";
+
+const PRODUCTS = {
+  "volume": [
+    {
+      "merchant": "OLAPLEX",
+      "name": "Nº.4FINE Bond Maintenance Shampoo",
+      "monogram": "O4",
+      "note": "An ultra-light shampoo developed for fine hair and volume-focused wash routines.",
+      "offer": "Best overall for fine strands that need cleansing without a heavy-feeling finish.",
+      "url": "https://uk.olaplex.com/products/n-4fine-bond-maintenance-shampoo-uk",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.olaplex.com/products/n-4fine-bond-maintenance-shampoo-uk",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "fine": 10,
+        "volume": 10,
+        "lightweight": 10,
+        "wash": 8,
+        "treated": 5,
+        "premium": 6
+      }
+    },
+    {
+      "merchant": "OLAPLEX",
+      "name": "Nº.5FINE Bond Maintenance Conditioner",
+      "monogram": "O5",
+      "note": "A lightweight rinse-out conditioner created for fine hair and easy detangling.",
+      "offer": "Best for adding a conditioning step while keeping the routine focused on movement and lift.",
+      "url": "https://uk.olaplex.com/products/n-5fine-bond-maintenance-conditioner-uk",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.olaplex.com/products/n-5fine-bond-maintenance-conditioner-uk",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "fine": 10,
+        "volume": 9,
+        "lightweight": 10,
+        "condition": 9,
+        "treated": 5,
+        "premium": 6
+      }
+    },
+    {
+      "merchant": "Color Wow",
+      "name": "Raise the Root Thicken and Lift Spray",
+      "monogram": "RR",
+      "note": "A targeted root spray for lift without choosing a heavy cream or wax.",
+      "offer": "Best styling match for blow-dried volume and a more lifted root area.",
+      "url": "https://uk.colorwowhair.com/products/raise-the-root",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.colorwowhair.com/products/raise-the-root",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "volume": 10,
+        "fine": 9,
+        "root_lift": 10,
+        "heat": 8,
+        "styling": 9,
+        "mid_budget": 7
+      }
+    },
+    {
+      "merchant": "Curlsmith",
+      "name": "Weightless Air Dry Cream",
+      "monogram": "WA",
+      "note": "A light leave-in cream designed to absorb without a heavy residue.",
+      "offer": "Best for fine or wavy hair that is air-dried and needs softness without losing movement.",
+      "url": "https://uk.curlsmith.com/products/weightless-air-dry-cream",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.curlsmith.com/products/weightless-air-dry-cream",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "lightweight": 10,
+        "air_dry": 10,
+        "fine": 8,
+        "wavy": 8,
+        "leave_in": 9,
+        "low_steps": 7
+      }
+    }
+  ],
+  "smooth": [
+    {
+      "merchant": "Color Wow",
+      "name": "Dream Coat Supernatural Spray",
+      "monogram": "DC",
+      "note": "A heat-activated styling spray used during a tension blow-dry for a sleek finish.",
+      "offer": "Best overall for shoppers whose main goal is a smoother, polished blow-dry.",
+      "url": "https://uk.colorwowhair.com/products/dream-coat-anti-frizz-treatment",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.colorwowhair.com/products/dream-coat-anti-frizz-treatment",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "smooth": 10,
+        "frizz": 10,
+        "heat": 10,
+        "blow_dry": 10,
+        "lightweight": 7,
+        "premium": 6
+      }
+    },
+    {
+      "merchant": "OLAPLEX",
+      "name": "Nº.6 Bond Smoother",
+      "monogram": "O6",
+      "note": "A leave-in styling cream for softer, smoother blow-dried or air-dried styles.",
+      "offer": "Best for adding one concentrated finishing cream to a polish-focused routine.",
+      "url": "https://uk.olaplex.com/products/olaplex-n-6-bond-smoother-uk",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.olaplex.com/products/olaplex-n-6-bond-smoother-uk",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "smooth": 10,
+        "frizz": 9,
+        "leave_in": 9,
+        "heat": 8,
+        "air_dry": 6,
+        "rich": 5
+      }
+    },
+    {
+      "merchant": "Color Wow",
+      "name": "Money Masque",
+      "monogram": "MM",
+      "note": "A rinse-out conditioning mask intended as an occasional treatment step.",
+      "offer": "Best for a weekly smoothing ritual when softness and a glossy finish matter.",
+      "url": "https://uk.colorwowhair.com/products/chris-appleton-money-masque",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.colorwowhair.com/products/chris-appleton-money-masque",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "smooth": 9,
+        "treatment": 10,
+        "ritual": 8,
+        "moisture": 7,
+        "heat": 5,
+        "premium": 7
+      }
+    },
+    {
+      "merchant": "Curlsmith",
+      "name": "Essential Moisture Conditioner",
+      "monogram": "EC",
+      "note": "A lightweight creamy conditioner for regular wash days and easy detangling.",
+      "offer": "Best for consistent conditioning without making the routine highly elaborate.",
+      "url": "https://uk.curlsmith.com/products/essential-moisture-conditioner",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.curlsmith.com/products/essential-moisture-conditioner",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "smooth": 8,
+        "condition": 10,
+        "lightweight": 7,
+        "moisture": 7,
+        "wavy": 5,
+        "curly": 5
+      }
+    }
+  ],
+  "curls": [
+    {
+      "merchant": "Curlsmith",
+      "name": "Curl Quenching Conditioning Wash",
+      "monogram": "CQ",
+      "note": "A conditioning cleanser designed for wavy, curly and coily textures.",
+      "offer": "Best cleansing match for medium-to-coarse curls that prefer a creamy wash step.",
+      "url": "https://uk.curlsmith.com/products/co-wash",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.curlsmith.com/products/co-wash",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "curly": 10,
+        "coily": 10,
+        "wavy": 7,
+        "wash": 9,
+        "moisture": 8,
+        "rich": 7
+      }
+    },
+    {
+      "merchant": "Curlsmith",
+      "name": "Hydro Style Flexi Jelly",
+      "monogram": "HJ",
+      "note": "A lightweight medium-hold jelly for definition without choosing a heavy gel.",
+      "offer": "Best styling match for fine-to-medium curls that want flexible definition and movement.",
+      "url": "https://uk.curlsmith.com/collections/curly-hair-products/products/hydro-style-flexi-jelly",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.curlsmith.com/collections/curly-hair-products/products/hydro-style-flexi-jelly",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "curly": 10,
+        "wavy": 10,
+        "definition": 10,
+        "hold": 9,
+        "lightweight": 9,
+        "air_dry": 7
+      }
+    },
+    {
+      "merchant": "Curlsmith",
+      "name": "Weightless Air Dry Cream",
+      "monogram": "WA",
+      "note": "A versatile leave-in cream for softness before gel, jelly or air drying.",
+      "offer": "Best for a layerable curl routine where the first styling step should remain light.",
+      "url": "https://uk.curlsmith.com/products/weightless-air-dry-cream",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.curlsmith.com/products/weightless-air-dry-cream",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "curly": 9,
+        "wavy": 10,
+        "leave_in": 10,
+        "air_dry": 10,
+        "lightweight": 8,
+        "definition": 6
+      }
+    },
+    {
+      "merchant": "Color Wow",
+      "name": "Dream Coat for Curly Hair",
+      "monogram": "CC",
+      "note": "A one-step spray for wavy and curly hair that can be air-dried or diffused.",
+      "offer": "Best for someone who wants a shorter curl routine with one principal styling product.",
+      "url": "https://uk.colorwowhair.com/products/dream-coat-curly-hair",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.colorwowhair.com/products/dream-coat-curly-hair",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "curly": 10,
+        "wavy": 10,
+        "definition": 8,
+        "air_dry": 9,
+        "diffuse": 9,
+        "low_steps": 9
+      }
+    }
+  ],
+  "moisture": [
+    {
+      "merchant": "Curlsmith",
+      "name": "Double Cream Deep Quencher",
+      "monogram": "DQ",
+      "note": "A thick deep conditioner created for very dry-feeling, medium-to-coarse textures.",
+      "offer": "Best overall for a rich weekly conditioning step and a deliberately slower ritual.",
+      "url": "https://uk.curlsmith.com/collections/moisture-recipes/products/double-cream-deep-quencher",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.curlsmith.com/collections/moisture-recipes/products/double-cream-deep-quencher",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "moisture": 10,
+        "rich": 10,
+        "treatment": 10,
+        "coarse": 9,
+        "curly": 7,
+        "ritual": 9
+      }
+    },
+    {
+      "merchant": "Color Wow",
+      "name": "Money Masque",
+      "monogram": "MM",
+      "note": "A conditioning mask for all hair types with a short or extended leave-on time.",
+      "offer": "Best premium treatment for someone who wants richness without building the whole routine around curls.",
+      "url": "https://uk.colorwowhair.com/products/chris-appleton-money-masque",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.colorwowhair.com/products/chris-appleton-money-masque",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "moisture": 10,
+        "treatment": 10,
+        "ritual": 8,
+        "smooth": 7,
+        "premium": 8,
+        "heat": 5
+      }
+    },
+    {
+      "merchant": "Curlsmith",
+      "name": "Essential Moisture Conditioner",
+      "monogram": "EC",
+      "note": "A regular rinse-out conditioner with a lighter creamy texture than a deep mask.",
+      "offer": "Best everyday partner for a moisture profile that still wants manageable wash days.",
+      "url": "https://uk.curlsmith.com/products/essential-moisture-conditioner",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.curlsmith.com/products/essential-moisture-conditioner",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "moisture": 9,
+        "condition": 10,
+        "lightweight": 6,
+        "curly": 6,
+        "wavy": 5,
+        "wash": 7
+      }
+    },
+    {
+      "merchant": "OLAPLEX",
+      "name": "Nº.3 Hair Perfector",
+      "monogram": "O3",
+      "note": "A concentrated pre-shampoo treatment used before the cleansing and conditioning steps.",
+      "offer": "Best for adding one focused treatment to a routine shaped around styled or treated lengths.",
+      "url": "https://uk.olaplex.com/products/olaplex-n-3-hair-perfector-uk",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.olaplex.com/products/olaplex-n-3-hair-perfector-uk",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "treatment": 10,
+        "treated": 9,
+        "heat": 7,
+        "colour": 7,
+        "ritual": 7,
+        "premium": 6
+      }
+    }
+  ],
+  "colour": [
+    {
+      "merchant": "Color Wow",
+      "name": "Color Security Shampoo",
+      "monogram": "CS",
+      "note": "A sulphate-free shampoo positioned around colour-treated hair and residue-free cleansing.",
+      "offer": "Best overall for making colour-conscious cleansing the centre of the wash routine.",
+      "url": "https://uk.colorwowhair.com/products/shampoo-color-security",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.colorwowhair.com/products/shampoo-color-security",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "colour": 10,
+        "treated": 10,
+        "wash": 10,
+        "lightweight": 8,
+        "simple": 6,
+        "mid_budget": 7
+      }
+    },
+    {
+      "merchant": "Color Wow",
+      "name": "Color Security Conditioner for Fine to Normal Hair",
+      "monogram": "CF",
+      "note": "A lightweight conditioner for fine-to-normal hair with colour-conscious positioning.",
+      "offer": "Best for coloured fine hair that needs conditioning without a particularly rich texture.",
+      "url": "https://uk.colorwowhair.com/products/conditioner-color-security-conditioner-fine-to-normal",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.colorwowhair.com/products/conditioner-color-security-conditioner-fine-to-normal",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "colour": 10,
+        "treated": 10,
+        "fine": 9,
+        "lightweight": 9,
+        "condition": 10,
+        "heat": 7
+      }
+    },
+    {
+      "merchant": "OLAPLEX",
+      "name": "Nº.3 Hair Perfector",
+      "monogram": "O3",
+      "note": "A pre-shampoo treatment suitable for chemically treated hair and used before the main wash.",
+      "offer": "Best for colour-treated routines that include a separate weekly treatment step.",
+      "url": "https://uk.olaplex.com/products/olaplex-n-3-hair-perfector-uk",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.olaplex.com/products/olaplex-n-3-hair-perfector-uk",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "colour": 9,
+        "treated": 10,
+        "treatment": 10,
+        "ritual": 8,
+        "heat": 6,
+        "premium": 7
+      }
+    },
+    {
+      "merchant": "Color Wow",
+      "name": "Dream Coat Supernatural Spray",
+      "monogram": "DC",
+      "note": "A heat-activated finishing spray for a sleek blow-dry and glossy-looking finish.",
+      "offer": "Best for coloured hair where the desired result is polished, smooth and blow-dried.",
+      "url": "https://uk.colorwowhair.com/products/dream-coat-anti-frizz-treatment",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.colorwowhair.com/products/dream-coat-anti-frizz-treatment",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "colour": 7,
+        "treated": 7,
+        "smooth": 10,
+        "heat": 10,
+        "blow_dry": 10,
+        "lightweight": 7
+      }
+    }
+  ],
+  "simple": [
+    {
+      "merchant": "Curlsmith",
+      "name": "Fragrance-Free Shampoo",
+      "monogram": "FS",
+      "note": "A fragrance-free shampoo designed for regular wash days across curl and texture types.",
+      "offer": "Best overall for someone who wants a straightforward wash step with no added fragrance.",
+      "url": "https://uk.curlsmith.com/products/fragrance-free-shampoo",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.curlsmith.com/products/fragrance-free-shampoo",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "simple": 10,
+        "fragrance_free": 10,
+        "wash": 10,
+        "low_steps": 9,
+        "curly": 5,
+        "wavy": 5
+      }
+    },
+    {
+      "merchant": "Curlsmith",
+      "name": "Fragrance-Free Conditioner",
+      "monogram": "FC",
+      "note": "A fragrance-free rinse-out conditioner with a light silky texture.",
+      "offer": "Best companion conditioner for a low-scent, two-product wash routine.",
+      "url": "https://uk.curlsmith.com/products/fragrance-free-conditioner",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.curlsmith.com/products/fragrance-free-conditioner",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "simple": 10,
+        "fragrance_free": 10,
+        "condition": 10,
+        "low_steps": 9,
+        "lightweight": 7
+      }
+    },
+    {
+      "merchant": "Curlsmith",
+      "name": "Fragrance-Free Leave-In",
+      "monogram": "FL",
+      "note": "A light fragrance-free leave-in cream for smoothing and softness after washing.",
+      "offer": "Best optional third step when a basic wash pair is not quite enough.",
+      "url": "https://uk.curlsmith.com/products/fragrance-free-leave-in",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.curlsmith.com/products/fragrance-free-leave-in",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "simple": 9,
+        "fragrance_free": 10,
+        "leave_in": 10,
+        "low_steps": 8,
+        "air_dry": 7,
+        "lightweight": 8
+      }
+    },
+    {
+      "merchant": "Color Wow",
+      "name": "Color Security Shampoo",
+      "monogram": "CS",
+      "note": "A direct cleansing step that is positioned for all hair types as well as colour-treated hair.",
+      "offer": "Best alternative for a simple routine when fragrance-free is not the main priority.",
+      "url": "https://uk.colorwowhair.com/products/shampoo-color-security",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.colorwowhair.com/products/shampoo-color-security",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "simple": 9,
+        "wash": 10,
+        "low_steps": 9,
+        "lightweight": 8,
+        "colour": 5,
+        "mid_budget": 7
+      }
+    }
+  ]
+};
+
+const RESULTS = {
+  "volume": {
+    "name": "Lightweight Volume",
+    "color": "#A57958",
+    "tag": "Airy, touchable and never overloaded.",
+    "body": "You want movement and lift without coating the hair in several rich products. Fine-hair cleansing, lightweight conditioning and one targeted styling step will keep the ritual focused on body, bounce and an easy finish.",
+    "details": {
+      "Primary goal": "Volume and movement",
+      "Textures": "Lightweight liquids and creams",
+      "Routine shape": "Wash, condition, targeted styler",
+      "Watch for": "Over-layering rich products"
+    }
+  },
+  "smooth": {
+    "name": "Smooth & Polished",
+    "color": "#705A6B",
+    "tag": "Sleek, controlled and finished with shine.",
+    "body": "Your ideal ritual is built around a smoother, more polished finish. Consistent conditioning, heat-aware styling and one focused smoothing product will suit the appearance and tactile feel you prefer.",
+    "details": {
+      "Primary goal": "Smoothness and polish",
+      "Textures": "Conditioner, mask and finishing cream",
+      "Routine shape": "Condition and style",
+      "Watch for": "Products that do not suit your styling method"
+    }
+  },
+  "curls": {
+    "name": "Curl Definition",
+    "color": "#8A5E47",
+    "tag": "Defined, flexible and shaped around texture.",
+    "body": "Your natural wave, curl or coil pattern should guide the routine. Moisture-aware cleansing, leave-in conditioning and the right level of hold will let you build definition while adjusting weight and finish to your texture.",
+    "details": {
+      "Primary goal": "Definition and shape",
+      "Textures": "Layerable cream, jelly or spray",
+      "Routine shape": "Cleanse, condition, define",
+      "Watch for": "Too much weight or unsuitable hold"
+    }
+  },
+  "moisture": {
+    "name": "Deep Moisture",
+    "color": "#79654F",
+    "tag": "Rich, softening and made for a slower ritual.",
+    "body": "You prefer richer textures and a more deliberate conditioning routine. Deep conditioners, masks and focused pre-wash treatments will suit the softness, slip and sensory ritual you want from wash day.",
+    "details": {
+      "Primary goal": "A richer conditioned feel",
+      "Textures": "Masks and creamy conditioners",
+      "Routine shape": "Treatment-led",
+      "Watch for": "Using more richness than the hair enjoys"
+    }
+  },
+  "colour": {
+    "name": "Colour-Care Ritual",
+    "color": "#9B5D75",
+    "tag": "Considered, polished and designed around treated hair.",
+    "body": "You want the routine to account for coloured, highlighted or chemically treated hair while keeping the finish polished. Colour-conscious cleansing, conditioning and one targeted treatment or styling step form the strongest shortlist.",
+    "details": {
+      "Primary goal": "Colour-conscious maintenance",
+      "Textures": "Balanced and targeted",
+      "Routine shape": "Wash, condition, one treatment",
+      "Watch for": "Ignoring current brand instructions"
+    }
+  },
+  "simple": {
+    "name": "Fresh & Simple",
+    "color": "#55766D",
+    "tag": "Uncomplicated, reliable and easy to repeat.",
+    "body": "You want haircare to work without becoming a project. A straightforward shampoo and conditioner, plus one optional leave-in product, will give you a routine that remains consistent and easy to maintain.",
+    "details": {
+      "Primary goal": "Everyday manageability",
+      "Textures": "Light and uncomplicated",
+      "Routine shape": "Two essentials, one optional step",
+      "Watch for": "Unnecessary product layering"
+    }
+  }
+};
+
+const SIGNAL_LABELS = {
+  "fine": "fine strands",
+  "wavy": "wavy texture",
+  "curly": "curly texture",
+  "coily": "coily texture",
+  "coarse": "coarser strands",
+  "volume": "volume and movement",
+  "root_lift": "root lift",
+  "lightweight": "lightweight products",
+  "smooth": "a smoother finish",
+  "frizz": "frizz-conscious styling",
+  "definition": "curl definition",
+  "hold": "flexible hold",
+  "moisture": "a moisture-led routine",
+  "rich": "richer textures",
+  "colour": "colour-conscious care",
+  "treated": "treated hair",
+  "heat": "heat styling",
+  "blow_dry": "blow-drying",
+  "diffuse": "diffusing",
+  "air_dry": "air drying",
+  "wash": "a focused cleansing step",
+  "condition": "consistent conditioning",
+  "leave_in": "a leave-in step",
+  "treatment": "a separate treatment",
+  "styling": "targeted styling",
+  "ritual": "a fuller wash-day ritual",
+  "low_steps": "fewer routine steps",
+  "simple": "a simple routine",
+  "fragrance_free": "fragrance-free products",
+  "mid_budget": "a mid-range budget",
+  "premium": "premium haircare"
+};
+
+const QUESTIONS = [
+  {
+    "q": "Which description is closest to your natural pattern?",
+    "a": [
+      {
+        "label": "Straight or softly wavy, and easily weighed down",
+        "scores": {
+          "volume": 5
+        },
+        "signals": [
+          "fine",
+          "wavy",
+          "lightweight"
+        ]
+      },
+      {
+        "label": "Straight or wavy, with smoothness as the priority",
+        "scores": {
+          "smooth": 5
+        },
+        "signals": [
+          "smooth",
+          "wavy"
+        ]
+      },
+      {
+        "label": "Wavy, curly or coily, with a visible pattern",
+        "scores": {
+          "curls": 5
+        },
+        "signals": [
+          "wavy",
+          "curly",
+          "coily"
+        ]
+      },
+      {
+        "label": "Any pattern, but the lengths prefer richer conditioning",
+        "scores": {
+          "moisture": 5
+        },
+        "signals": [
+          "moisture",
+          "rich",
+          "coarse"
+        ]
+      },
+      {
+        "label": "Coloured, highlighted or chemically treated",
+        "scores": {
+          "colour": 5
+        },
+        "signals": [
+          "colour",
+          "treated"
+        ]
+      },
+      {
+        "label": "I mainly want an easy everyday routine",
+        "scores": {
+          "simple": 5
+        },
+        "signals": [
+          "simple",
+          "low_steps"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How would you describe individual strand thickness?",
+    "a": [
+      {
+        "label": "Fine",
+        "scores": {
+          "volume": 5
+        },
+        "signals": [
+          "fine",
+          "lightweight",
+          "volume"
+        ]
+      },
+      {
+        "label": "Medium, with a tendency to become puffy",
+        "scores": {
+          "smooth": 5
+        },
+        "signals": [
+          "smooth",
+          "frizz"
+        ]
+      },
+      {
+        "label": "Medium to coarse with wave, curl or coil",
+        "scores": {
+          "curls": 5
+        },
+        "signals": [
+          "wavy",
+          "curly",
+          "coily",
+          "coarse"
+        ]
+      },
+      {
+        "label": "Coarse or dry-feeling through the lengths",
+        "scores": {
+          "moisture": 5
+        },
+        "signals": [
+          "coarse",
+          "moisture",
+          "rich"
+        ]
+      },
+      {
+        "label": "The treatment history matters more than thickness",
+        "scores": {
+          "colour": 5
+        },
+        "signals": [
+          "treated",
+          "colour"
+        ]
+      },
+      {
+        "label": "I am unsure and prefer versatile basics",
+        "scores": {
+          "simple": 5
+        },
+        "signals": [
+          "simple",
+          "low_steps"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What finish are you trying to create most often?",
+    "a": [
+      {
+        "label": "More lift and movement",
+        "scores": {
+          "volume": 5
+        },
+        "signals": [
+          "volume",
+          "root_lift",
+          "lightweight"
+        ]
+      },
+      {
+        "label": "Smoother, sleeker and more polished",
+        "scores": {
+          "smooth": 5
+        },
+        "signals": [
+          "smooth",
+          "frizz"
+        ]
+      },
+      {
+        "label": "Defined texture with flexible hold",
+        "scores": {
+          "curls": 5
+        },
+        "signals": [
+          "definition",
+          "hold",
+          "curly"
+        ]
+      },
+      {
+        "label": "Softness, slip and a richer feel",
+        "scores": {
+          "moisture": 5
+        },
+        "signals": [
+          "moisture",
+          "rich"
+        ]
+      },
+      {
+        "label": "A polished finish that accounts for treated hair",
+        "scores": {
+          "colour": 5
+        },
+        "signals": [
+          "colour",
+          "treated",
+          "smooth"
+        ]
+      },
+      {
+        "label": "Clean, manageable hair with little styling",
+        "scores": {
+          "simple": 5
+        },
+        "signals": [
+          "simple",
+          "low_steps"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How does your hair usually feel by wash day?",
+    "a": [
+      {
+        "label": "Flat or weighed down",
+        "scores": {
+          "volume": 5
+        },
+        "signals": [
+          "volume",
+          "lightweight",
+          "fine"
+        ]
+      },
+      {
+        "label": "Puffy, frizzy or difficult to smooth",
+        "scores": {
+          "smooth": 5
+        },
+        "signals": [
+          "smooth",
+          "frizz"
+        ]
+      },
+      {
+        "label": "The pattern needs refreshing and reshaping",
+        "scores": {
+          "curls": 5
+        },
+        "signals": [
+          "definition",
+          "curly",
+          "wavy"
+        ]
+      },
+      {
+        "label": "Dry-feeling through the mid-lengths and ends",
+        "scores": {
+          "moisture": 5
+        },
+        "signals": [
+          "moisture",
+          "rich"
+        ]
+      },
+      {
+        "label": "Ready for a careful wash after colour or styling",
+        "scores": {
+          "colour": 5
+        },
+        "signals": [
+          "treated",
+          "colour",
+          "wash"
+        ]
+      },
+      {
+        "label": "Mostly normal, and I want to keep it straightforward",
+        "scores": {
+          "simple": 5
+        },
+        "signals": [
+          "simple",
+          "wash"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How often do you wash your hair?",
+    "a": [
+      {
+        "label": "Frequently, so products need to stay light",
+        "scores": {
+          "volume": 5
+        },
+        "signals": [
+          "wash",
+          "lightweight",
+          "fine"
+        ]
+      },
+      {
+        "label": "Every few days with consistent conditioning",
+        "scores": {
+          "smooth": 5
+        },
+        "signals": [
+          "condition",
+          "smooth"
+        ]
+      },
+      {
+        "label": "According to my pattern rather than a strict schedule",
+        "scores": {
+          "curls": 5
+        },
+        "signals": [
+          "curly",
+          "wavy",
+          "wash"
+        ]
+      },
+      {
+        "label": "Less often, with a deeper conditioning step",
+        "scores": {
+          "moisture": 5
+        },
+        "signals": [
+          "treatment",
+          "rich",
+          "ritual"
+        ]
+      },
+      {
+        "label": "On a planned schedule around treated hair",
+        "scores": {
+          "colour": 5
+        },
+        "signals": [
+          "colour",
+          "treated"
+        ]
+      },
+      {
+        "label": "Whenever needed, using the same simple pair",
+        "scores": {
+          "simple": 5
+        },
+        "signals": [
+          "simple",
+          "low_steps",
+          "wash"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How do you usually style it?",
+    "a": [
+      {
+        "label": "A quick blow-dry for lift",
+        "scores": {
+          "volume": 5
+        },
+        "signals": [
+          "volume",
+          "root_lift",
+          "heat",
+          "blow_dry"
+        ]
+      },
+      {
+        "label": "Blow-dry or heat styling for a smooth finish",
+        "scores": {
+          "smooth": 5
+        },
+        "signals": [
+          "heat",
+          "blow_dry",
+          "smooth"
+        ]
+      },
+      {
+        "label": "Air-dry or diffuse with cream, gel or spray",
+        "scores": {
+          "curls": 5
+        },
+        "signals": [
+          "air_dry",
+          "diffuse",
+          "definition",
+          "hold"
+        ]
+      },
+      {
+        "label": "Minimal styling after a richer conditioning ritual",
+        "scores": {
+          "moisture": 5
+        },
+        "signals": [
+          "moisture",
+          "ritual",
+          "air_dry"
+        ]
+      },
+      {
+        "label": "Heat or styling tools, with treated hair in mind",
+        "scores": {
+          "colour": 5
+        },
+        "signals": [
+          "heat",
+          "treated",
+          "colour"
+        ]
+      },
+      {
+        "label": "Air-dry or do the minimum",
+        "scores": {
+          "simple": 5
+        },
+        "signals": [
+          "air_dry",
+          "low_steps",
+          "simple"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How important is fragrance in the routine?",
+    "a": [
+      {
+        "label": "I like freshness, but nothing heavy",
+        "scores": {
+          "volume": 5
+        },
+        "signals": [
+          "lightweight"
+        ]
+      },
+      {
+        "label": "A polished salon-like scent is welcome",
+        "scores": {
+          "smooth": 5
+        },
+        "signals": [
+          "smooth",
+          "ritual"
+        ]
+      },
+      {
+        "label": "Texture performance matters more than scent",
+        "scores": {
+          "curls": 5
+        },
+        "signals": [
+          "definition",
+          "hold"
+        ]
+      },
+      {
+        "label": "I enjoy a rich sensory treatment",
+        "scores": {
+          "moisture": 5
+        },
+        "signals": [
+          "ritual",
+          "rich"
+        ]
+      },
+      {
+        "label": "I will prioritise colour-conscious products",
+        "scores": {
+          "colour": 5
+        },
+        "signals": [
+          "colour",
+          "treated"
+        ]
+      },
+      {
+        "label": "Fragrance-free or lower-scent options appeal",
+        "scores": {
+          "simple": 5
+        },
+        "signals": [
+          "fragrance_free",
+          "simple"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How many steps should the complete routine include?",
+    "a": [
+      {
+        "label": "Three light steps at most",
+        "scores": {
+          "volume": 5
+        },
+        "signals": [
+          "low_steps",
+          "lightweight",
+          "volume"
+        ]
+      },
+      {
+        "label": "Wash, condition and one finishing step",
+        "scores": {
+          "smooth": 5
+        },
+        "signals": [
+          "condition",
+          "smooth",
+          "leave_in"
+        ]
+      },
+      {
+        "label": "Several layerable steps for definition",
+        "scores": {
+          "curls": 5
+        },
+        "signals": [
+          "definition",
+          "hold",
+          "leave_in",
+          "ritual"
+        ]
+      },
+      {
+        "label": "A full treatment ritual when needed",
+        "scores": {
+          "moisture": 5
+        },
+        "signals": [
+          "ritual",
+          "treatment",
+          "rich"
+        ]
+      },
+      {
+        "label": "A consistent routine with targeted extras",
+        "scores": {
+          "colour": 5
+        },
+        "signals": [
+          "colour",
+          "treatment",
+          "treated"
+        ]
+      },
+      {
+        "label": "Two essentials and one optional product",
+        "scores": {
+          "simple": 5
+        },
+        "signals": [
+          "low_steps",
+          "simple"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Which product texture sounds most appealing?",
+    "a": [
+      {
+        "label": "Light spray, gel or weightless cream",
+        "scores": {
+          "volume": 5
+        },
+        "signals": [
+          "lightweight",
+          "volume",
+          "styling"
+        ]
+      },
+      {
+        "label": "Smooth conditioner and controlled styling cream",
+        "scores": {
+          "smooth": 5
+        },
+        "signals": [
+          "smooth",
+          "condition",
+          "leave_in"
+        ]
+      },
+      {
+        "label": "Leave-in cream followed by jelly, gel or spray",
+        "scores": {
+          "curls": 5
+        },
+        "signals": [
+          "leave_in",
+          "definition",
+          "hold"
+        ]
+      },
+      {
+        "label": "Rich mask or deep conditioner",
+        "scores": {
+          "moisture": 5
+        },
+        "signals": [
+          "rich",
+          "treatment",
+          "moisture"
+        ]
+      },
+      {
+        "label": "Balanced shampoo, conditioner and pre-wash treatment",
+        "scores": {
+          "colour": 5
+        },
+        "signals": [
+          "wash",
+          "condition",
+          "treatment",
+          "colour"
+        ]
+      },
+      {
+        "label": "Straightforward shampoo and conditioner",
+        "scores": {
+          "simple": 5
+        },
+        "signals": [
+          "simple",
+          "wash",
+          "condition"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What would make you reject a product?",
+    "a": [
+      {
+        "label": "It makes fine hair feel heavy",
+        "scores": {
+          "volume": 5
+        },
+        "signals": [
+          "fine",
+          "lightweight",
+          "volume"
+        ]
+      },
+      {
+        "label": "It leaves the finish puffy or uncontrolled",
+        "scores": {
+          "smooth": 5
+        },
+        "signals": [
+          "smooth",
+          "frizz"
+        ]
+      },
+      {
+        "label": "It removes definition or feels too stiff",
+        "scores": {
+          "curls": 5
+        },
+        "signals": [
+          "definition",
+          "hold"
+        ]
+      },
+      {
+        "label": "It feels too light for the conditioning ritual I want",
+        "scores": {
+          "moisture": 5
+        },
+        "signals": [
+          "rich",
+          "moisture"
+        ]
+      },
+      {
+        "label": "It does not suit coloured or chemically treated hair",
+        "scores": {
+          "colour": 5
+        },
+        "signals": [
+          "colour",
+          "treated"
+        ]
+      },
+      {
+        "label": "It adds unnecessary steps or too much fragrance",
+        "scores": {
+          "simple": 5
+        },
+        "signals": [
+          "low_steps",
+          "simple",
+          "fragrance_free"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What matters most in the final recommendation?",
+    "a": [
+      {
+        "label": "Volume without weight",
+        "scores": {
+          "volume": 5
+        },
+        "signals": [
+          "volume",
+          "lightweight",
+          "fine"
+        ]
+      },
+      {
+        "label": "A smoother, polished finish",
+        "scores": {
+          "smooth": 5
+        },
+        "signals": [
+          "smooth",
+          "frizz"
+        ]
+      },
+      {
+        "label": "Definition that works with my natural pattern",
+        "scores": {
+          "curls": 5
+        },
+        "signals": [
+          "definition",
+          "curly",
+          "wavy",
+          "coily"
+        ]
+      },
+      {
+        "label": "A richer conditioning ritual",
+        "scores": {
+          "moisture": 5
+        },
+        "signals": [
+          "moisture",
+          "rich",
+          "treatment"
+        ]
+      },
+      {
+        "label": "A considered routine for treated hair",
+        "scores": {
+          "colour": 5
+        },
+        "signals": [
+          "colour",
+          "treated"
+        ]
+      },
+      {
+        "label": "A routine I will repeat without thinking",
+        "scores": {
+          "simple": 5
+        },
+        "signals": [
+          "simple",
+          "low_steps"
+        ]
+      }
+    ]
+  }
+];
+
+let step=0;
+let locked=false;
+const selectedAnswers=[];
+const preferenceSignals={};
+const totals=Object.keys(RESULTS).reduce((acc,key)=>{acc[key]=0;return acc;},{});
+const el=id=>document.getElementById(id);
+const screens={intro:el("intro"),quiz:el("quiz"),result:el("result")};
+
+function show(name){Object.values(screens).forEach(screen=>screen.classList.remove("active"));screens[name].classList.add("active");window.scrollTo({top:0,behavior:"smooth"});}
+function hexToRgba(hex,alpha){const clean=hex.replace("#","");const value=parseInt(clean,16);const red=value>>16&255;const green=value>>8&255;const blue=value&255;return `rgba(${red},${green},${blue},${alpha})`;}
+function escapeHtml(value){return String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");}
+function getProductRecommendations(key){return (PRODUCTS[key]||[]).map((product,originalIndex)=>{const matchScore=Object.entries(product.fit||{}).reduce((score,[signal,weight])=>score+(preferenceSignals[signal]||0)*weight,product.base||0);return {...product,matchScore,originalIndex};}).sort((a,b)=>b.matchScore-a.matchScore||(b.base||0)-(a.base||0)||a.originalIndex-b.originalIndex).slice(0,3);}
+function getPersonalMatch(product){const matches=Object.entries(product.fit||{}).filter(([signal])=>preferenceSignals[signal]).map(([signal,weight])=>({signal,value:weight*preferenceSignals[signal]})).sort((a,b)=>b.value-a.value).slice(0,2).map(item=>SIGNAL_LABELS[item.signal]).filter(Boolean);if(matches.length===0)return product.offer||"";if(matches.length===1)return `Matches your preference for ${matches[0]}.`;return `Matches your preference for ${matches[0]} and ${matches[1]}.`;}
+function getProductMonogram(product){if(product.monogram)return product.monogram;return product.name.split(/\s+/).filter(Boolean).slice(0,2).map(word=>word.charAt(0)).join("").toUpperCase();}
+function trackEvent(eventName,details={}){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:eventName,...details});if(typeof window.pintrk==="function"){try{window.pintrk("track","custom",{event_name:eventName,...details});}catch(error){console.warn("Pinterest tracking event was not sent.",error);}}}
+function renderQuestion(){const item=QUESTIONS[step];const totalQuestions=QUESTIONS.length;el("question").textContent=item.q;el("count").textContent=`${String(step+1).padStart(2,"0")} / ${String(totalQuestions).padStart(2,"0")}`;el("fill").style.width=`${step/totalQuestions*100}%`;const box=el("options");box.innerHTML="";locked=false;item.a.forEach((answer,index)=>{const button=document.createElement("button");button.className="option";button.type="button";button.textContent=answer.label;button.addEventListener("click",()=>chooseAnswer(button,answer,index));box.appendChild(button);});setTimeout(()=>el("question").focus({preventScroll:true}),50);}
+function chooseAnswer(button,answer,index){if(locked)return;locked=true;document.querySelectorAll(".option").forEach(option=>{option.disabled=true;});button.classList.add("chosen");selectedAnswers[step]=index;Object.entries(answer.scores).forEach(([key,value])=>{totals[key]+=value;});(answer.signals||[]).forEach(signal=>{preferenceSignals[signal]=(preferenceSignals[signal]||0)+1;});trackEvent("quiz_answer",{quiz:"haircare_ritual",question_number:step+1,answer:answer.label});setTimeout(()=>{step+=1;if(step<QUESTIONS.length){renderQuestion();}else{el("fill").style.width="100%";finishQuiz();}},340);}
+function finishQuiz(){const orderedKeys=Object.keys(RESULTS);let winningKey=orderedKeys[0];orderedKeys.forEach(key=>{if(totals[key]>totals[winningKey])winningKey=key;});const tiedKeys=orderedKeys.filter(key=>totals[key]===totals[winningKey]);if(tiedKeys.length>1){for(let questionIndex=selectedAnswers.length-1;questionIndex>=0;questionIndex-=1){const answer=QUESTIONS[questionIndex].a[selectedAnswers[questionIndex]];const rankedTie=tiedKeys.map(key=>({key,value:answer.scores[key]||0})).sort((a,b)=>b.value-a.value);if(rankedTie[0].value>rankedTie[1].value){winningKey=rankedTie[0].key;break;}}}showResult(winningKey);}
+function showResult(key){const result=RESULTS[key];window.LYS_RESULT=key;el("resultCard").style.setProperty("--fam",result.color);el("rName").textContent=result.name;el("rTag").textContent=result.tag;el("rBody").textContent=result.body;const details=el("rDetails");details.innerHTML="";Object.entries(result.details).forEach(([label,value])=>{const row=document.createElement("div");row.className="detail-row";const labelSpan=document.createElement("span");labelSpan.className="detail-label";labelSpan.textContent=label;const valueSpan=document.createElement("span");valueSpan.className="detail-val";valueSpan.textContent=value;row.append(labelSpan,valueSpan);details.appendChild(row);});el("recsTitle").textContent="Your three best-matched haircare products";const recommendations=getProductRecommendations(key);const grid=el("recGrid");grid.innerHTML="";recommendations.forEach((product,index)=>{const card=document.createElement("article");card.className="rec";const fallbackHtml=`<div class="ph media media-fallback" style="background:${hexToRgba(result.color,.88)}"><span>${escapeHtml(getProductMonogram(product))}</span></div>`;const mediaHtml=product.img?`<div class="media-frame"><img class="media" src="${escapeHtml(product.img)}" alt="${escapeHtml(product.merchant)} ${escapeHtml(product.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${fallbackHtml}</div>`:fallbackHtml;const badgeHtml=index===0?'<span class="rec-badge">Best match</span>':"";const matchText=getPersonalMatch(product);const offerHtml=matchText?`<span class="offer">${escapeHtml(matchText)}</span>`:"";const linkIsAffiliate=Boolean(product.affiliate);const linkRel=linkIsAffiliate?"noopener sponsored":"noopener";const ctaHtml=product.url&&product.url!=="#"?`<a class="view" href="${escapeHtml(product.url)}" target="_blank" rel="${linkRel}" data-product-position="${index+1}">View product &rsaquo;</a>`:'<span class="view off">Product page unavailable</span>';card.innerHTML=`${badgeHtml}${mediaHtml}<div class="body"><span class="brand">${escapeHtml(product.merchant)}</span><span class="pname">${escapeHtml(product.name)}</span><span class="pnote">${escapeHtml(product.note)}</span>${offerHtml}${ctaHtml}</div>`;const productImage=card.querySelector("img.media");if(productImage){productImage.addEventListener("error",()=>{productImage.remove();const fallback=card.querySelector(".media-fallback");if(fallback)fallback.classList.add("show");},{once:true});}const productLink=card.querySelector("a[data-product-position]");if(productLink){productLink.addEventListener("click",()=>{trackEvent(linkIsAffiliate?"affiliate_click":"product_click",{quiz:"haircare_ritual",result:key,merchant:product.merchant,product:product.name,position:index+1,affiliate:linkIsAffiliate});});}grid.appendChild(card);});const disclosure=el("recommendationDisclosure");const containsAffiliateLinks=recommendations.some(product=>product.affiliate);if(containsAffiliateLinks){disclosure.innerHTML='Some links on this page are affiliate links. Love Your Senses may earn a commission from qualifying orders at no extra cost to you. <a href="/disclosure">Read the affiliate disclosure</a>.';}else{disclosure.textContent="These recommendations use direct brand links. Love Your Senses does not currently earn commission from them. Product availability and temporary imagery may change.";}const browseAll=el("browseAll");if(STORE_LINK&&STORE_LINK!=="#"){const storeRel=STORE_LINK_IS_AFFILIATE?"noopener sponsored":"noopener";browseAll.innerHTML=`<a class="btn-all" href="${escapeHtml(STORE_LINK)}" target="_blank" rel="${storeRel}">Browse all haircare</a>`;browseAll.querySelector("a").addEventListener("click",()=>{trackEvent(STORE_LINK_IS_AFFILIATE?"affiliate_click":"product_click",{quiz:"haircare_ritual",result:key,product:"browse_all",affiliate:STORE_LINK_IS_AFFILIATE});});}else{browseAll.innerHTML="";}trackEvent("quiz_complete",{quiz:"haircare_ritual",result:key,result_name:result.name});show("result");}
+async function submitEmail(){const emailInput=el("email");const email=emailInput.value.trim();const form=el("emailForm");const note=el("formNote");if(!/^\S+@\S+\.\S+$/.test(email)){emailInput.focus();note.textContent="Enter a valid email address.";return;}if(!EMAIL_FORM_ACTION){note.textContent="Email signup is not connected yet. Add your email platform form action in the JavaScript settings.";return;}const button=el("emailBtn");button.disabled=true;button.textContent="Sending";try{const payload=new URLSearchParams();payload.append(EMAIL_FIELD_NAME,email);payload.append("quiz_result",window.LYS_RESULT||"");payload.append("source","haircare_ritual_quiz");await fetch(EMAIL_FORM_ACTION,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:payload.toString()});form.innerHTML='<p class="done">Your haircare shortlist is on its way.</p>';note.textContent="";trackEvent("email_signup",{quiz:"haircare_ritual",result:window.LYS_RESULT||""});}catch(error){button.disabled=false;button.textContent="Send it";note.textContent="The signup did not complete. Please try again.";console.error("Email signup failed.",error);}}
+async function shareResult(){const result=RESULTS[window.LYS_RESULT];if(!result)return;const text=`My haircare ritual is ${result.name}. Find yours:`;const shareData={title:"Find Your Perfect Haircare Ritual | Love Your Senses",text,url:QUIZ_URL||location.href};if(navigator.share){try{await navigator.share(shareData);trackEvent("share",{quiz:"haircare_ritual",result:window.LYS_RESULT,method:"native"});}catch(error){if(error.name!=="AbortError")console.error("Share failed.",error);}return;}try{await navigator.clipboard.writeText(`${text} ${shareData.url}`);el("share").textContent="Link copied";setTimeout(()=>el("share").textContent="Share your result",2000);trackEvent("share",{quiz:"haircare_ritual",result:window.LYS_RESULT,method:"clipboard"});}catch(error){console.error("Copy failed.",error);}}
+function resetQuiz(){step=0;locked=false;selectedAnswers.length=0;Object.keys(preferenceSignals).forEach(key=>delete preferenceSignals[key]);Object.keys(totals).forEach(key=>totals[key]=0);window.LYS_RESULT="";const form=el("emailForm");form.innerHTML='<input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email"><button id="emailBtn" type="button">Send it</button>';el("emailBtn").addEventListener("click",submitEmail);el("formNote").textContent="Connect your email platform in the JavaScript settings before publishing.";show("intro");trackEvent("quiz_retake",{quiz:"haircare_ritual"});}
+el("start").addEventListener("click",()=>{show("quiz");renderQuestion();trackEvent("quiz_start",{quiz:"haircare_ritual"});});
+el("emailBtn").addEventListener("click",submitEmail);
+el("share").addEventListener("click",shareResult);
+el("retake").addEventListener("click",resetQuiz);
+
+
+
+
+</script>
+</body>
+</html>
