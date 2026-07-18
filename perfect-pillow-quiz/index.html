@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Perfect Pillow | Love Your Senses</title>
+<meta name="description" content="Answer twelve questions to discover the pillow height, firmness, fill and products that best match your sleeping and comfort preferences.">
+<link rel="canonical" href="https://loveyoursenses.com/perfect-pillow-quiz/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Find Your Perfect Pillow | Love Your Senses">
+<meta property="og:description" content="Match your sleeping position, preferred loft, firmness, temperature and fill to a personalised pillow shortlist.">
+<meta property="og:url" content="https://loveyoursenses.com/perfect-pillow-quiz/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#E7E3DD;
+    --card:#F2EEE8;
+    --ink:#2A2130;
+    --ink-soft:#6E6574;
+    --accent:#7B4A5E;
+    --accent-deep:#5E3547;
+    --line:#CDC3B6;
+    --gold:#B8A78C;
+    --cream:#F7F1EC;
+    --radius:18px;
+    --ease:cubic-bezier(.4,.14,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Jost',system-ui,sans-serif;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+  button,input{font:inherit}
+  button{touch-action:manipulation}
+  .display{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  .wrap{width:100%;max-width:1000px;margin:0 auto;padding-left:24px;padding-right:24px}
+  .site-head{padding:24px 0}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .mark{font-family:'Fraunces',serif;font-weight:500;font-size:1.24rem;text-decoration:none;color:var(--ink)}
+  .mark span{color:var(--accent)}
+  .head-link{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none}
+  .head-link:hover{color:var(--accent)}
+  .stage{width:100%;max-width:680px;margin:0 auto;padding:36px 20px 72px}
+  .screen{display:none;animation:rise .6s var(--ease) both}
+  .screen.active{display:block}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  #intro{text-align:center;padding:14px 0 24px}
+  .ring{margin:0 auto 30px;display:block}
+  #intro h1{font-size:clamp(2.55rem,9vw,4rem);margin-bottom:18px}
+  #intro h1 em{font-style:italic;font-weight:400}
+  .lede{color:var(--ink-soft);font-size:1.06rem;max-width:45ch;margin:0 auto 24px}
+  .wellbeing-note{font-size:.79rem;color:var(--ink-soft);line-height:1.55;max-width:56ch;margin:0 auto 30px}
+  .meta{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:26px}
+  .btn{display:inline-block;font-family:'Jost',sans-serif;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:17px 40px;background:var(--ink);color:var(--bg);transition:transform .35s var(--ease),background .35s var(--ease)}
+  .btn:hover{background:var(--accent-deep);transform:translateY(-2px)}
+  .progress-wrap{display:flex;align-items:center;gap:16px;margin-bottom:38px}
+  .track{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
+  .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);transition:width .5s var(--ease)}
+  .count{font-size:.72rem;letter-spacing:.2em;color:var(--ink-soft);white-space:nowrap}
+  .question{font-size:clamp(1.75rem,6vw,2.45rem);margin-bottom:32px;min-height:2.2em}
+  .options{display:flex;flex-direction:column;gap:12px}
+  .option{font-family:'Jost',sans-serif;font-size:1.01rem;color:var(--ink);text-align:left;background:var(--card);border:1px solid transparent;border-radius:var(--radius);padding:19px 22px;cursor:pointer;width:100%;transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);display:flex;align-items:center;gap:14px}
+  .option:before{content:"";width:9px;height:9px;border-radius:50%;border:1.5px solid var(--line);flex:none;transition:all .3s var(--ease)}
+  .option:hover{border-color:var(--gold);transform:translateX(4px)}
+  .option.chosen{background:var(--accent);color:var(--cream);border-color:var(--accent)}
+  .option.chosen:before{background:var(--cream);border-color:var(--cream)}
+  .option:disabled{cursor:default}
+  .result-card{background:var(--fam,#7B4A5E);color:var(--cream);border-radius:26px;padding:44px 32px 40px;text-align:center;box-shadow:0 30px 60px -30px rgba(42,33,48,.55)}
+  .result-card .eyebrow{color:rgba(247,241,236,.72)}
+  .result-name{font-size:clamp(2.55rem,10vw,3.65rem);margin-bottom:10px}
+  .result-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:1.2rem;opacity:.94;margin-bottom:24px}
+  .result-body{font-size:1.02rem;line-height:1.72;opacity:.95;max-width:44ch;margin:0 auto 30px}
+  .details{border-top:1px solid rgba(247,241,236,.28);border-bottom:1px solid rgba(247,241,236,.28);padding:22px 0;text-align:left;display:flex;flex-direction:column;gap:14px}
+  .detail-row{display:flex;gap:18px;align-items:baseline}
+  .detail-label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;opacity:.72;width:104px;flex:none}
+  .detail-val{font-family:'Fraunces',serif;font-size:1.04rem}
+  .recs{margin-top:36px}
+  .recs-head{text-align:center;margin-bottom:22px}
+  .recs-head .eyebrow{display:block;margin-bottom:10px}
+  .recs-head h3{font-size:clamp(1.55rem,5vw,2.05rem)}
+  .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .rec{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+  .rec-badge{position:absolute;top:12px;left:12px;z-index:2;background:rgba(247,241,236,.94);color:var(--accent-deep);border-radius:100px;padding:6px 10px;font-size:.61rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+  .rec .media-frame{aspect-ratio:1/1;width:100%;position:relative;overflow:hidden;background:#fff}
+  .rec .media{aspect-ratio:1/1;width:100%;height:100%;object-fit:cover;padding:0;background:#fff;display:block}
+  .rec .ph{display:flex;align-items:center;justify-content:center;padding:0}
+  .rec .media-frame .media{position:absolute;inset:0}
+  .rec .media-fallback{display:none}
+  .rec .media-fallback.show{display:flex}
+  .rec .ph span{font-family:'Fraunces',serif;font-size:2rem;color:#fff;opacity:.92}
+  .rec .body{padding:16px 15px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .rec .brand{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .rec .pname{font-family:'Fraunces',serif;font-size:1.04rem;line-height:1.22}
+  .rec .pnote{font-size:.8rem;color:var(--ink-soft);line-height:1.45}
+  .rec .offer{font-size:.76rem;color:var(--accent);font-weight:500}
+  .rec .view{margin-top:auto;padding-top:11px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;text-decoration:none;color:var(--accent)}
+  .rec .view.off{color:var(--ink-soft);opacity:.58}
+  .rec .view:hover{text-decoration:underline;text-underline-offset:4px}
+  .affiliate-note{font-size:.78rem;color:var(--ink-soft);line-height:1.55;text-align:center;max-width:58ch;margin:18px auto 0}
+  .affiliate-note a{color:var(--accent);text-underline-offset:3px}
+  .browse-all{text-align:center;margin-top:22px}
+  .btn-all{display:inline-block;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;text-decoration:none;border:1px solid var(--accent);color:var(--accent);border-radius:100px;padding:14px 34px;transition:background .3s var(--ease),color .3s var(--ease)}
+  .btn-all:hover{background:var(--accent);color:var(--cream)}
+  .capture{background:var(--card);border-radius:var(--radius);padding:32px 28px;margin-top:28px;text-align:center}
+  .capture h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;margin-bottom:8px}
+  .capture p{color:var(--ink-soft);font-size:.96rem;margin:0 auto 22px;max-width:39ch}
+  .field{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .field input{font-family:'Jost',sans-serif;font-size:1rem;flex:1;min-width:210px;padding:15px 18px;border:1px solid var(--line);border-radius:100px;background:#fff;color:var(--ink)}
+  .field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+  .field button{font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:15px 28px;background:var(--accent);color:var(--cream)}
+  .field button:hover{background:var(--accent-deep)}
+  .capture .done{color:var(--accent);font-family:'Fraunces',serif;font-size:1.1rem;padding:6px 0}
+  .capture .form-note{font-size:.74rem;margin-top:12px;margin-bottom:0}
+  .next-quiz{border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;margin-top:18px;text-align:center}
+  .next-quiz .eyebrow{display:block;margin-bottom:9px}
+  .next-quiz h3{font-size:1.45rem;margin-bottom:8px}
+  .next-quiz p{color:var(--ink-soft);font-size:.94rem;max-width:40ch;margin:0 auto 18px}
+  .next-link{font-size:.74rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;color:var(--accent);text-underline-offset:4px}
+  .next-link:hover{color:var(--accent-deep)}
+  .after{display:flex;gap:22px;justify-content:center;align-items:center;margin-top:26px;flex-wrap:wrap}
+  .linkish{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px}
+  .linkish:hover{color:var(--accent)}
+  .site-foot{border-top:1px solid var(--line);padding:34px 0 48px}
+  .foot{display:flex;flex-direction:column;align-items:center;gap:11px;text-align:center}
+  .foot-nav a{color:var(--ink-soft);text-decoration:none;font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;margin:0 10px}
+  .foot-nav a:hover{color:var(--accent)}
+  .foot .disc{font-size:.82rem;color:var(--ink-soft);max-width:54ch}
+  .foot .cr{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  @media(max-width:600px){.site-head{padding:20px 0}.stage{padding-top:28px}.rec-grid{grid-template-columns:1fr 1fr}.detail-label{width:88px}}
+  @media(max-width:420px){.rec-grid{grid-template-columns:1fr}.result-card{padding:40px 24px 36px}.field{flex-direction:column}.field input,.field button{width:100%}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <div class="bar">
+      <a href="/" class="mark">Love Your <span>Senses</span></a>
+      <a href="/#quiz-library" class="head-link">All quizzes</a>
+    </div>
+  </div>
+</header>
+
+<main class="stage">
+  <section id="intro" class="screen active">
+    <svg class="ring" width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
+      <circle cx="29" cy="29" r="27" fill="none" stroke="#B8A78C" stroke-width="1"/>
+      <circle cx="29" cy="29" r="19" fill="none" stroke="#CDC3B6" stroke-width="1"/>
+      <g stroke="#7B4A5E" stroke-width="1.4">
+        <line x1="29" y1="2" x2="29" y2="9"/>
+        <line x1="52.4" y1="42.5" x2="46.4" y2="39"/>
+        <line x1="5.6" y1="42.5" x2="11.6" y2="39"/>
+        <line x1="52.4" y1="15.5" x2="46.4" y2="19"/>
+        <line x1="5.6" y1="15.5" x2="11.6" y2="19"/>
+        <line x1="29" y1="56" x2="29" y2="49"/>
+      </g>
+      <circle cx="29" cy="29" r="3" fill="#7B4A5E"/>
+    </svg>
+    <p class="eyebrow">A pillow comfort discovery</p>
+    <h1 class="display">Find your perfect <em>pillow</em></h1>
+    <p class="lede">Answer twelve questions about position, height, firmness, temperature, fill and care to find your pillow profile and three products to consider.</p>
+    <p class="wellbeing-note">This quiz matches comfort preferences only. It does not diagnose pain, sleep conditions or medical needs. Seek professional advice for persistent discomfort.</p>
+    <button class="btn" id="start" type="button">Begin the discovery</button>
+    <p class="meta">12 questions &nbsp;·&nbsp; about three minutes</p>
+  </section>
+
+  <section id="quiz" class="screen" aria-live="polite">
+    <div class="progress-wrap">
+      <div class="track" aria-hidden="true"><div class="fill" id="fill"></div></div>
+      <span class="count" id="count">01 / 12</span>
+    </div>
+    <h2 class="question display" id="question" tabindex="-1"></h2>
+    <div class="options" id="options"></div>
+  </section>
+
+  <section id="result" class="screen" aria-live="polite">
+    <div class="result-card" id="resultCard">
+      <p class="eyebrow">Your pillow profile</p>
+      <h2 class="result-name display" id="rName"></h2>
+      <p class="result-tag" id="rTag"></p>
+      <p class="result-body" id="rBody"></p>
+      <div class="details" id="rDetails"></div>
+    </div>
+
+    <div class="recs">
+      <div class="recs-head">
+        <span class="eyebrow">Chosen from all twelve answers</span>
+        <h3 class="display" id="recsTitle">Your three best-matched pillows</h3>
+      </div>
+      <div class="rec-grid" id="recGrid"></div>
+      <p class="affiliate-note" id="recommendationDisclosure">These recommendations use direct brand or retailer links. Love Your Senses does not currently earn commission from them. Product availability and temporary imagery may change.</p>
+      <div class="browse-all" id="browseAll"></div>
+      <p class="wellbeing-note">Check each product's dimensions, firmness, care instructions, returns policy and trial terms before ordering. Pillow comfort remains highly individual.</p>
+    </div>
+
+    <div class="capture">
+      <h3>Save your pillow shortlist</h3>
+      <p>Get your result, buying priorities and future sleep discoveries by email.</p>
+      <div class="field" id="emailForm">
+        <input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email">
+        <button id="emailBtn" type="button">Send it</button>
+      </div>
+      <p class="form-note" id="formNote">Connect your email platform in the JavaScript settings before publishing.</p>
+    </div>
+
+    <div class="next-quiz">
+      <span class="eyebrow">Complete the bedroom</span>
+      <h3 class="display">Find your perfect sleep setup</h3>
+      <p>Match bedding, temperature, light and sound products to your preferred bedroom environment.</p>
+      <a class="next-link" href="/perfect-sleep-quiz/">Take the sleep setup quiz</a>
+    </div>
+
+    <div class="after">
+      <button class="linkish" id="share" type="button">Share your result</button>
+      <button class="linkish" id="retake" type="button">Retake the quiz</button>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-nav">
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/disclosure/">Affiliate Disclosure</a>
+      </div>
+      <p class="disc">Love Your Senses helps you discover products matched to your preferences through short, enjoyable quizzes.</p>
+      <p class="cr">© 2026 Love Your Senses</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Product links are direct and non-affiliate. Replace URLs and images with approved affiliate assets when partnerships are active, then change affiliate:false to affiliate:true. */
+const QUIZ_URL = "https://loveyoursenses.com/perfect-pillow-quiz/";
+const STORE_LINK = "";
+const STORE_LINK_IS_AFFILIATE = false;
+const EMAIL_FORM_ACTION = "";
+const EMAIL_FIELD_NAME = "email";
+
+const PRODUCTS = {
+  "side": [
+    {
+      "merchant": "TEMPUR",
+      "name": "Original SmartCool Pillow",
+      "monogram": "TO",
+      "note": "A contoured medium-firm pillow available in several heights for back and side sleepers.",
+      "offer": "Best for side sleepers who want a shaped, stable foam pillow and a cool-touch cover.",
+      "url": "https://uk.tempur.com/pillows/tempur-ergonomic-pillows-UKORIGINALSC.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.tempur.com/pillows/tempur-ergonomic-pillows-UKORIGINALSC.html",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "side": 10,
+        "firm": 9,
+        "high_loft": 7,
+        "contoured": 10,
+        "cooling": 7,
+        "premium": 8
+      }
+    },
+    {
+      "merchant": "Simba",
+      "name": "CustomFlex Pillow",
+      "monogram": "SC",
+      "note": "Three interchangeable inner layers create a firmer, customisable pillow.",
+      "offer": "Best for broader shoulders or anyone who wants firmer side-sleeper height with adjustment.",
+      "url": "https://simbasleep.com/products/simba-customflex-pillow",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://simbasleep.com/products/simba-customflex-pillow",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "side": 9,
+        "firm": 10,
+        "adjustable": 9,
+        "high_loft": 8,
+        "cooling": 6,
+        "washable": 6
+      }
+    },
+    {
+      "merchant": "Dunelm",
+      "name": "Memory Foam Side Sleeper Contour Pillow",
+      "monogram": "DM",
+      "note": "A firm memory-foam contour pillow shaped for side-sleeper support.",
+      "offer": "Best value for shoppers who want a structured contour without a premium spend.",
+      "url": "https://www.dunelm.com/product/value-memory-foam-contour-firm-support-pillow-1000002727",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.dunelm.com/product/value-memory-foam-contour-firm-support-pillow-1000002727",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "side": 10,
+        "firm": 9,
+        "contoured": 9,
+        "foam": 8,
+        "value": 10
+      }
+    },
+    {
+      "merchant": "Soak&Sleep",
+      "name": "Hungarian Goose Down Side Sleeper Pillow",
+      "monogram": "SG",
+      "note": "A down pillow offered in deeper support levels for side and back sleeping.",
+      "offer": "Best for someone who wants side-sleeper loft with a softer natural outer layer.",
+      "url": "https://www.soakandsleep.com/collections/side-sleeper-pillows",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.soakandsleep.com/collections/side-sleeper-pillows",
+      "affiliate": false,
+      "base": 9,
+      "fit": {
+        "side": 9,
+        "natural": 10,
+        "high_loft": 8,
+        "plumpable": 8,
+        "premium": 7
+      }
+    }
+  ],
+  "back": [
+    {
+      "merchant": "TEMPUR",
+      "name": "Symphony Pillow",
+      "monogram": "TS",
+      "note": "A dual-sided shaped pillow with one side designed around back sleeping and the other around side sleeping.",
+      "offer": "Best for back sleepers who want medium foam support with some positional flexibility.",
+      "url": "https://uk.tempur.com/pillows/browse-by-collection/shaped-pillows-UKSYMPHONY.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.tempur.com/pillows/browse-by-collection/shaped-pillows-UKSYMPHONY.html",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "back": 10,
+        "medium_loft": 9,
+        "foam": 9,
+        "contoured": 8,
+        "combination": 6,
+        "premium": 7
+      }
+    },
+    {
+      "merchant": "Panda London",
+      "name": "Memory Foam Bamboo Pillow",
+      "monogram": "PM",
+      "note": "A medium-firm memory-foam pillow with a removable bamboo-blend cover.",
+      "offer": "Best for a classic rectangular pillow with a steady, conforming feel.",
+      "url": "https://pandalondon.com/products/bamboo-memory-foam-pillow",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://pandalondon.com/products/bamboo-memory-foam-pillow",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "back": 9,
+        "medium_loft": 9,
+        "foam": 10,
+        "bamboo": 9,
+        "firm": 7,
+        "mid_budget": 8
+      }
+    },
+    {
+      "merchant": "Dunelm",
+      "name": "Gel Fusion Memory Foam Back Sleeper Pillow",
+      "monogram": "DG",
+      "note": "A medium-support memory-foam pillow with a removable gel pad and airflow-focused design.",
+      "offer": "Best value for back sleepers who also pay close attention to temperature.",
+      "url": "https://www.dunelm.com/product/gel-fusion-memory-foam-pillow-1000059811",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.dunelm.com/product/gel-fusion-memory-foam-pillow-1000059811",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "back": 10,
+        "medium_loft": 9,
+        "foam": 9,
+        "cooling": 9,
+        "value": 8
+      }
+    },
+    {
+      "merchant": "Soak&Sleep",
+      "name": "New Zealand Wool Pillow",
+      "monogram": "SW",
+      "note": "A shallow medium-firm wool pillow with a naturally springy feel.",
+      "offer": "Best for back sleepers who prefer natural fill and a denser, breathable pillow.",
+      "url": "https://www.soakandsleep.com/products/new-zealand-wool-pillow",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.soakandsleep.com/products/new-zealand-wool-pillow",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "back": 9,
+        "medium_loft": 8,
+        "natural": 10,
+        "wool": 10,
+        "cooling": 6,
+        "firm": 6
+      }
+    }
+  ],
+  "front": [
+    {
+      "merchant": "TEMPUR",
+      "name": "Ombracio SmartCool Pillow",
+      "monogram": "OM",
+      "note": "A four-notched, gently sloping pillow designed particularly for front sleepers and pillow huggers.",
+      "offer": "Best premium choice for a front sleeper who likes a shaped, huggable design.",
+      "url": "https://uk.tempur.com/pillows-UKOMBRACIO.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.tempur.com/pillows-UKOMBRACIO.html",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "front": 10,
+        "low_loft": 8,
+        "huggable": 10,
+        "cooling": 8,
+        "foam": 8,
+        "premium": 10
+      }
+    },
+    {
+      "merchant": "TEMPUR",
+      "name": "Prima SmartCool Pillow",
+      "monogram": "TP",
+      "note": "A low-profile rectangular pillow with a medium feel and cool-touch removable cover.",
+      "offer": "Best for a simple low pillow with a more structured foam feel.",
+      "url": "https://uk.tempur.com/pillows/browse-by-collection/classic-pillows-UKPRIMASC.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.tempur.com/pillows/browse-by-collection/classic-pillows-UKPRIMASC.html",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "front": 9,
+        "low_loft": 10,
+        "cooling": 9,
+        "foam": 9,
+        "medium_loft": 3,
+        "premium": 6
+      }
+    },
+    {
+      "merchant": "John Lewis",
+      "name": "Natural Duck Down Pillow, Soft",
+      "monogram": "JD",
+      "note": "A soft three-chamber duck-down pillow with a breathable cotton cover.",
+      "offer": "Best for front sleepers who want a flatter, natural pillow that remains gently supportive.",
+      "url": "https://www.johnlewis.com/john-lewis-natural-duck-down-pillow-soft/p112020216",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.johnlewis.com/john-lewis-natural-duck-down-pillow-soft/p112020216",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "front": 10,
+        "low_loft": 9,
+        "soft": 10,
+        "natural": 10,
+        "plumpable": 7,
+        "value": 7
+      }
+    },
+    {
+      "merchant": "Soak&Sleep",
+      "name": "60% Duck Down Pillow, Soft",
+      "monogram": "SD",
+      "note": "A soft, flatter-profile duck-down pillow balanced with feather support.",
+      "offer": "Best for a traditional front-sleeper feel with soft sink and natural loft.",
+      "url": "https://www.soakandsleep.com/products/duck-feather-down-pillow",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.soakandsleep.com/products/duck-feather-down-pillow",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "front": 10,
+        "low_loft": 9,
+        "soft": 10,
+        "natural": 10,
+        "plumpable": 8,
+        "mid_budget": 6
+      }
+    }
+  ],
+  "adjustable": [
+    {
+      "merchant": "Simba",
+      "name": "Hybrid Pillow",
+      "monogram": "SH",
+      "note": "A pillow with removable foam cubes for changing both height and firmness.",
+      "offer": "Best overall for people who change position or never feel certain about one fixed loft.",
+      "url": "https://simbasleep.com/products/simba-hybrid-pillow",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://simbasleep.com/products/simba-hybrid-pillow",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "adjustable": 10,
+        "combination": 10,
+        "medium_loft": 7,
+        "high_loft": 7,
+        "cooling": 7,
+        "washable": 5
+      }
+    },
+    {
+      "merchant": "Simba",
+      "name": "CustomFlex Pillow",
+      "monogram": "SC",
+      "note": "Interchangeable fibre and FlexSpring layers provide a firmer route to adjustment.",
+      "offer": "Best for combination sleepers who want personalised height with a more stable feel.",
+      "url": "https://simbasleep.com/products/simba-customflex-pillow",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://simbasleep.com/products/simba-customflex-pillow",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "adjustable": 10,
+        "combination": 9,
+        "firm": 9,
+        "high_loft": 8,
+        "cooling": 6
+      }
+    },
+    {
+      "merchant": "TEMPUR",
+      "name": "Cloud SmartCool Pillow",
+      "monogram": "TC",
+      "note": "A traditional rectangular pillow filled with shapeable TEMPUR micro-cushions in soft or medium feel.",
+      "offer": "Best for shoppers who want a fluffable, conventional shape rather than fixed contours.",
+      "url": "https://uk.tempur.com/pillows/browse-by-collection/classic-pillows-UKI83400136.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.tempur.com/pillows/browse-by-collection/classic-pillows-UKI83400136.html",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "adjustable": 7,
+        "combination": 9,
+        "shapeable": 10,
+        "cooling": 9,
+        "soft": 7,
+        "premium": 8
+      }
+    },
+    {
+      "merchant": "Soak&Sleep",
+      "name": "Duck Feather & Down Pillow",
+      "monogram": "SF",
+      "note": "A traditional pillow range with soft, medium and firm choices.",
+      "offer": "Best for selecting a familiar natural fill while retaining a choice of support level.",
+      "url": "https://www.soakandsleep.com/products/duck-feather-down-pillows",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.soakandsleep.com/products/duck-feather-down-pillows",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "adjustable": 5,
+        "choice": 10,
+        "natural": 9,
+        "plumpable": 8,
+        "combination": 6,
+        "value": 6
+      }
+    }
+  ],
+  "cooling": [
+    {
+      "merchant": "TEMPUR",
+      "name": "Cloud SmartCool Pillow",
+      "monogram": "TC",
+      "note": "A soft or medium rectangular pillow with a cool-to-the-touch removable cover.",
+      "offer": "Best for someone who wants a premium cooling surface without a contoured shape.",
+      "url": "https://uk.tempur.com/pillows/browse-by-collection/classic-pillows-UKI83400136.html",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://uk.tempur.com/pillows/browse-by-collection/classic-pillows-UKI83400136.html",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "cooling": 10,
+        "soft": 8,
+        "medium_loft": 7,
+        "shapeable": 8,
+        "premium": 8,
+        "washable": 5
+      }
+    },
+    {
+      "merchant": "Panda London",
+      "name": "Hybrid Bamboo Pillow",
+      "monogram": "PH",
+      "note": "A hybrid pillow with a bamboo cover and airflow-focused micro-pod construction.",
+      "offer": "Best for breathable materials with a more structured hybrid feel.",
+      "url": "https://pandalondon.com/products/hybrid-bamboo-pillow",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://pandalondon.com/products/hybrid-bamboo-pillow",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "cooling": 10,
+        "bamboo": 10,
+        "medium_loft": 8,
+        "firm": 6,
+        "mid_budget": 8
+      }
+    },
+    {
+      "merchant": "Simba",
+      "name": "AeroDown Pillow",
+      "monogram": "SA",
+      "note": "A soft-to-medium down-like pillow with a cool-touch cover treatment.",
+      "offer": "Best for a softer cooling option at the lower end of Simba's pillow range.",
+      "url": "https://simbasleep.com/products/simba-pillow",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://simbasleep.com/products/simba-pillow",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "cooling": 9,
+        "soft": 9,
+        "low_loft": 6,
+        "washable": 8,
+        "mid_budget": 7
+      }
+    },
+    {
+      "merchant": "John Lewis",
+      "name": "Climate Control Pillow, Soft/Medium",
+      "monogram": "JC",
+      "note": "A washable synthetic pillow using moisture-management fabric and fibre.",
+      "offer": "Best value for front or back sleepers who want a softer cooling pillow.",
+      "url": "https://www.johnlewis.com/john-lewis-climate-control-standard-pillow-white/p113748863",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.johnlewis.com/john-lewis-climate-control-standard-pillow-white/p113748863",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "cooling": 10,
+        "soft": 8,
+        "front": 6,
+        "back": 6,
+        "washable": 9,
+        "value": 10
+      }
+    }
+  ],
+  "natural": [
+    {
+      "merchant": "John Lewis",
+      "name": "Natural Duck Down Pillow, Medium",
+      "monogram": "JM",
+      "note": "A medium three-chamber duck-down pillow designed for back and side sleeping.",
+      "offer": "Best for a balanced natural pillow with a soft surround and more supportive core.",
+      "url": "https://www.johnlewis.com/john-lewis-natural-duck-down-pillow-medium/p113649464",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.johnlewis.com/john-lewis-natural-duck-down-pillow-medium/p113649464",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "natural": 10,
+        "down": 10,
+        "back": 7,
+        "side": 7,
+        "medium_loft": 8,
+        "plumpable": 8
+      }
+    },
+    {
+      "merchant": "John Lewis",
+      "name": "Natural Duck Feather & Down Pillow, Medium/Firm",
+      "monogram": "JF",
+      "note": "A breathable feather-and-down pillow with a firmer, deeper feel.",
+      "offer": "Best value for natural-fill shoppers who want more structure.",
+      "url": "https://www.johnlewis.com/john-lewis-natural-duck-feather-and-down-standard-pillow-medium-firm/p113649466",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.johnlewis.com/john-lewis-natural-duck-feather-and-down-standard-pillow-medium-firm/p113649466",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "natural": 10,
+        "feather": 10,
+        "firm": 8,
+        "side": 7,
+        "back": 6,
+        "value": 9
+      }
+    },
+    {
+      "merchant": "Soak&Sleep",
+      "name": "New Zealand Wool Pillow",
+      "monogram": "SW",
+      "note": "A medium-firm, shallow-profile pillow filled with naturally springy wool.",
+      "offer": "Best for shoppers who prefer wool over feather, down or foam.",
+      "url": "https://www.soakandsleep.com/products/new-zealand-wool-pillow",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.soakandsleep.com/products/new-zealand-wool-pillow",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "natural": 10,
+        "wool": 10,
+        "medium_loft": 7,
+        "back": 7,
+        "cooling": 6,
+        "firm": 6
+      }
+    },
+    {
+      "merchant": "John Lewis",
+      "name": "Ultimate Down Alternative Pillow, Soft/Medium",
+      "monogram": "JA",
+      "note": "A vegan-friendly fibre-cluster pillow with a lofty down-like feel and TENCEL Lyocell cover.",
+      "offer": "Best for a natural-style feel without animal-derived filling.",
+      "url": "https://www.johnlewis.com/john-lewis-ultimate-down-alternative-pillow-containing-tencel-lyocell-soft-medium/p6360877?size=Standard+Pillow",
+      "img": "https://image.thum.io/get/width/900/crop/900/noanimate/https://www.johnlewis.com/john-lewis-ultimate-down-alternative-pillow-containing-tencel-lyocell-soft-medium/p6360877?size=Standard+Pillow",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "natural_style": 10,
+        "vegan": 10,
+        "soft": 8,
+        "plumpable": 7,
+        "washable": 8,
+        "mid_budget": 7
+      }
+    }
+  ]
+};
+
+const RESULTS = {
+  "side": {
+    "name": "Side-Sleeper Support",
+    "color": "#536D79",
+    "tag": "Higher, steadier and designed to fill the shoulder gap.",
+    "body": "You prefer a pillow with enough loft and structure to feel stable when you settle on your side. Firmer foam, shaped profiles and deeper natural-fill pillows belong at the top of your shortlist, with height chosen around your frame and mattress softness.",
+    "details": {
+      "Position": "Mostly side sleeping",
+      "Loft": "Medium-high to high",
+      "Feel": "Stable and supportive",
+      "Best formats": "Contour, layered or chambered"
+    }
+  },
+  "back": {
+    "name": "Back-Sleeper Balance",
+    "color": "#6C7181",
+    "tag": "Moderate loft, even support and a gently cradled feel.",
+    "body": "You want a pillow that supports without pushing your head too far forward. Medium loft, a balanced feel and either a classic foam shape or springy natural fill will suit the uncomplicated alignment you prefer.",
+    "details": {
+      "Position": "Mostly back sleeping",
+      "Loft": "Low-medium to medium",
+      "Feel": "Balanced",
+      "Best formats": "Classic or gently shaped"
+    }
+  },
+  "front": {
+    "name": "Low-Profile Front Sleeper",
+    "color": "#81706A",
+    "tag": "Slim, yielding and easy to hug.",
+    "body": "You dislike a pillow that feels tall or rigid. A flatter profile, softer fill or gently sloping shape will keep the bed feeling comfortable and unobtrusive, especially when you sleep on your front or partly hug the pillow.",
+    "details": {
+      "Position": "Mostly front sleeping",
+      "Loft": "Low",
+      "Feel": "Soft to medium",
+      "Best formats": "Flat, soft or huggable"
+    }
+  },
+  "adjustable": {
+    "name": "Combination Customiser",
+    "color": "#705E78",
+    "tag": "Adaptable, personal and made for changing positions.",
+    "body": "One fixed height rarely feels right for you. Adjustable fill, removable layers and shapeable interiors will let you fine-tune the pillow and accommodate nights when your position or comfort preference changes.",
+    "details": {
+      "Position": "Changes through the night",
+      "Loft": "Customisable",
+      "Feel": "Preference-led",
+      "Best formats": "Removable fill or layers"
+    }
+  },
+  "cooling": {
+    "name": "Cool & Breathable",
+    "color": "#397786",
+    "tag": "Fresh-feeling materials with airflow at the centre.",
+    "body": "Temperature is one of your strongest buying priorities. Cool-touch covers, breathable bamboo, moisture-management fibres and airflow-focused construction should carry more weight than decorative details when you compare pillows.",
+    "details": {
+      "Priority": "A cooler-feeling surface",
+      "Loft": "Matched to position",
+      "Feel": "Fresh and breathable",
+      "Best formats": "Cooling cover or bamboo hybrid"
+    }
+  },
+  "natural": {
+    "name": "Natural Softness",
+    "color": "#748068",
+    "tag": "Tactile, plumpable and rooted in natural-feeling materials.",
+    "body": "You enjoy a pillow that feels traditional and tactile. Down, feather and wool should be your starting points, with fibre alternatives worth considering when you want a similar plumpable character without animal-derived fill.",
+    "details": {
+      "Priority": "Natural-feeling materials",
+      "Loft": "Chosen by position",
+      "Feel": "Plumpable and tactile",
+      "Best formats": "Down, feather, wool or alternative"
+    }
+  }
+};
+
+const SIGNAL_LABELS = {
+  "side": "side sleeping",
+  "back": "back sleeping",
+  "front": "front sleeping",
+  "combination": "changing sleep positions",
+  "soft": "a softer pillow feel",
+  "firm": "a firmer pillow feel",
+  "low_loft": "a low profile",
+  "medium_loft": "medium loft",
+  "high_loft": "more pillow height",
+  "adjustable": "adjustable height or firmness",
+  "cooling": "cooler-feeling materials",
+  "natural": "natural filling",
+  "natural_style": "a down-like feel",
+  "down": "down filling",
+  "feather": "feather filling",
+  "wool": "wool filling",
+  "bamboo": "a bamboo cover",
+  "foam": "memory foam",
+  "contoured": "a contoured shape",
+  "shapeable": "a shapeable pillow",
+  "huggable": "a huggable shape",
+  "plumpable": "a plumpable pillow",
+  "washable": "easy-care washable covers",
+  "value": "a lower spend",
+  "mid_budget": "a mid-range budget",
+  "premium": "a premium pillow",
+  "choice": "a choice of support levels",
+  "vegan": "animal-free filling",
+  "broad_shoulders": "more shoulder space",
+  "narrow_shoulders": "a smaller frame",
+  "soft_mattress": "a softer mattress",
+  "firm_mattress": "a firmer mattress"
+};
+
+const QUESTIONS = [
+  {
+    "q": "Which position do you wake up in most often?",
+    "a": [
+      {
+        "label": "On my side",
+        "scores": {
+          "side": 5
+        },
+        "signals": [
+          "side",
+          "high_loft"
+        ]
+      },
+      {
+        "label": "On my back",
+        "scores": {
+          "back": 5
+        },
+        "signals": [
+          "back",
+          "medium_loft"
+        ]
+      },
+      {
+        "label": "On my front",
+        "scores": {
+          "front": 5
+        },
+        "signals": [
+          "front",
+          "low_loft"
+        ]
+      },
+      {
+        "label": "It changes through the night",
+        "scores": {
+          "adjustable": 5
+        },
+        "signals": [
+          "combination",
+          "adjustable"
+        ]
+      },
+      {
+        "label": "Any position, but I keep searching for a cool spot",
+        "scores": {
+          "cooling": 5
+        },
+        "signals": [
+          "cooling",
+          "combination"
+        ]
+      },
+      {
+        "label": "Any position, with a traditional plumpable pillow",
+        "scores": {
+          "natural": 5
+        },
+        "signals": [
+          "natural",
+          "plumpable"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How often do you change sleeping position?",
+    "a": [
+      {
+        "label": "Rarely. I stay on my side",
+        "scores": {
+          "side": 5
+        },
+        "signals": [
+          "side",
+          "firm"
+        ]
+      },
+      {
+        "label": "Rarely. I settle on my back",
+        "scores": {
+          "back": 5
+        },
+        "signals": [
+          "back",
+          "medium_loft"
+        ]
+      },
+      {
+        "label": "Rarely. I stay mostly on my front",
+        "scores": {
+          "front": 5
+        },
+        "signals": [
+          "front",
+          "low_loft"
+        ]
+      },
+      {
+        "label": "Frequently, sometimes several times",
+        "scores": {
+          "adjustable": 5
+        },
+        "signals": [
+          "combination",
+          "adjustable"
+        ]
+      },
+      {
+        "label": "Often because the pillow starts feeling warm",
+        "scores": {
+          "cooling": 5
+        },
+        "signals": [
+          "cooling",
+          "combination"
+        ]
+      },
+      {
+        "label": "A little, then I reshape or plump the pillow",
+        "scores": {
+          "natural": 5
+        },
+        "signals": [
+          "natural",
+          "plumpable"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How should the pillow feel when your head first settles?",
+    "a": [
+      {
+        "label": "Substantial and steady",
+        "scores": {
+          "side": 5
+        },
+        "signals": [
+          "firm",
+          "high_loft",
+          "side"
+        ]
+      },
+      {
+        "label": "Evenly supportive without feeling tall",
+        "scores": {
+          "back": 5
+        },
+        "signals": [
+          "medium_loft",
+          "back"
+        ]
+      },
+      {
+        "label": "Soft, slim and easy to sink into",
+        "scores": {
+          "front": 5
+        },
+        "signals": [
+          "soft",
+          "low_loft",
+          "front"
+        ]
+      },
+      {
+        "label": "Exactly as firm or soft as I choose",
+        "scores": {
+          "adjustable": 5
+        },
+        "signals": [
+          "adjustable",
+          "combination"
+        ]
+      },
+      {
+        "label": "Cool and fresh against my face",
+        "scores": {
+          "cooling": 5
+        },
+        "signals": [
+          "cooling"
+        ]
+      },
+      {
+        "label": "Plump, tactile and naturally cushioned",
+        "scores": {
+          "natural": 5
+        },
+        "signals": [
+          "natural",
+          "plumpable",
+          "soft"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Which pillow height sounds closest?",
+    "a": [
+      {
+        "label": "Higher, to fill the space above my shoulder",
+        "scores": {
+          "side": 5
+        },
+        "signals": [
+          "high_loft",
+          "side"
+        ]
+      },
+      {
+        "label": "Medium, with no dramatic slope",
+        "scores": {
+          "back": 5
+        },
+        "signals": [
+          "medium_loft",
+          "back"
+        ]
+      },
+      {
+        "label": "Low and unobtrusive",
+        "scores": {
+          "front": 5
+        },
+        "signals": [
+          "low_loft",
+          "front"
+        ]
+      },
+      {
+        "label": "Height I can increase or reduce myself",
+        "scores": {
+          "adjustable": 5
+        },
+        "signals": [
+          "adjustable"
+        ]
+      },
+      {
+        "label": "Whichever height stays coolest",
+        "scores": {
+          "cooling": 5
+        },
+        "signals": [
+          "cooling"
+        ]
+      },
+      {
+        "label": "A naturally plumped height I can reshape",
+        "scores": {
+          "natural": 5
+        },
+        "signals": [
+          "natural",
+          "plumpable"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How warm does the pillow area usually feel?",
+    "a": [
+      {
+        "label": "Temperature is secondary to firm support",
+        "scores": {
+          "side": 5
+        },
+        "signals": [
+          "firm",
+          "side"
+        ]
+      },
+      {
+        "label": "Usually comfortable",
+        "scores": {
+          "back": 5
+        },
+        "signals": [
+          "back",
+          "medium_loft"
+        ]
+      },
+      {
+        "label": "I prefer minimal material around my face",
+        "scores": {
+          "front": 5
+        },
+        "signals": [
+          "low_loft",
+          "front"
+        ]
+      },
+      {
+        "label": "It varies as I move around",
+        "scores": {
+          "adjustable": 5
+        },
+        "signals": [
+          "combination",
+          "adjustable"
+        ]
+      },
+      {
+        "label": "Frequently too warm",
+        "scores": {
+          "cooling": 5
+        },
+        "signals": [
+          "cooling"
+        ]
+      },
+      {
+        "label": "I prefer breathable cotton, down or wool",
+        "scores": {
+          "natural": 5
+        },
+        "signals": [
+          "natural",
+          "wool",
+          "down"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Which construction appeals most?",
+    "a": [
+      {
+        "label": "A firm contour or structured core",
+        "scores": {
+          "side": 5
+        },
+        "signals": [
+          "contoured",
+          "firm",
+          "foam"
+        ]
+      },
+      {
+        "label": "A classic medium pillow or gentle curve",
+        "scores": {
+          "back": 5
+        },
+        "signals": [
+          "medium_loft",
+          "foam",
+          "back"
+        ]
+      },
+      {
+        "label": "A soft, flat or gently sloping pillow",
+        "scores": {
+          "front": 5
+        },
+        "signals": [
+          "low_loft",
+          "soft",
+          "huggable"
+        ]
+      },
+      {
+        "label": "Removable fill or interchangeable layers",
+        "scores": {
+          "adjustable": 5
+        },
+        "signals": [
+          "adjustable",
+          "choice"
+        ]
+      },
+      {
+        "label": "Cooling cover, bamboo or airflow channels",
+        "scores": {
+          "cooling": 5
+        },
+        "signals": [
+          "cooling",
+          "bamboo"
+        ]
+      },
+      {
+        "label": "Down, feather, wool or a convincing alternative",
+        "scores": {
+          "natural": 5
+        },
+        "signals": [
+          "natural",
+          "plumpable"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How broad are your shoulders or upper frame?",
+    "a": [
+      {
+        "label": "Broad enough that low pillows collapse beneath me",
+        "scores": {
+          "side": 5
+        },
+        "signals": [
+          "broad_shoulders",
+          "high_loft",
+          "side"
+        ]
+      },
+      {
+        "label": "Average, and I prefer moderate height",
+        "scores": {
+          "back": 5
+        },
+        "signals": [
+          "medium_loft",
+          "back"
+        ]
+      },
+      {
+        "label": "Narrow or irrelevant because I sleep on my front",
+        "scores": {
+          "front": 5
+        },
+        "signals": [
+          "narrow_shoulders",
+          "low_loft",
+          "front"
+        ]
+      },
+      {
+        "label": "I am unsure, so adjustment feels safer",
+        "scores": {
+          "adjustable": 5
+        },
+        "signals": [
+          "adjustable",
+          "choice"
+        ]
+      },
+      {
+        "label": "My frame matters less than temperature",
+        "scores": {
+          "cooling": 5
+        },
+        "signals": [
+          "cooling"
+        ]
+      },
+      {
+        "label": "I choose by feel rather than body measurements",
+        "scores": {
+          "natural": 5
+        },
+        "signals": [
+          "natural",
+          "plumpable"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How does your mattress feel beneath you?",
+    "a": [
+      {
+        "label": "Firm, so I need more pillow height on my side",
+        "scores": {
+          "side": 5
+        },
+        "signals": [
+          "firm_mattress",
+          "high_loft",
+          "side"
+        ]
+      },
+      {
+        "label": "Medium, and I want balanced pillow height",
+        "scores": {
+          "back": 5
+        },
+        "signals": [
+          "medium_loft",
+          "back"
+        ]
+      },
+      {
+        "label": "Soft enough that I need very little loft",
+        "scores": {
+          "front": 5
+        },
+        "signals": [
+          "soft_mattress",
+          "low_loft",
+          "front"
+        ]
+      },
+      {
+        "label": "I change beds or positions, so flexibility matters",
+        "scores": {
+          "adjustable": 5
+        },
+        "signals": [
+          "adjustable",
+          "combination"
+        ]
+      },
+      {
+        "label": "Whatever the mattress, heat is the main concern",
+        "scores": {
+          "cooling": 5
+        },
+        "signals": [
+          "cooling"
+        ]
+      },
+      {
+        "label": "I prefer natural materials across the whole bed",
+        "scores": {
+          "natural": 5
+        },
+        "signals": [
+          "natural",
+          "wool",
+          "down"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What frustrates you most about your current pillow?",
+    "a": [
+      {
+        "label": "It collapses and leaves too little support",
+        "scores": {
+          "side": 5
+        },
+        "signals": [
+          "firm",
+          "high_loft",
+          "side"
+        ]
+      },
+      {
+        "label": "It is too high or pushes my head forward",
+        "scores": {
+          "back": 5
+        },
+        "signals": [
+          "medium_loft",
+          "back"
+        ]
+      },
+      {
+        "label": "It feels bulky when I lie on my front",
+        "scores": {
+          "front": 5
+        },
+        "signals": [
+          "low_loft",
+          "front"
+        ]
+      },
+      {
+        "label": "I can never get the height exactly right",
+        "scores": {
+          "adjustable": 5
+        },
+        "signals": [
+          "adjustable"
+        ]
+      },
+      {
+        "label": "It holds warmth",
+        "scores": {
+          "cooling": 5
+        },
+        "signals": [
+          "cooling"
+        ]
+      },
+      {
+        "label": "It feels synthetic or cannot be plumped",
+        "scores": {
+          "natural": 5
+        },
+        "signals": [
+          "natural",
+          "plumpable"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How much pillow care feels acceptable?",
+    "a": [
+      {
+        "label": "A removable cover is enough",
+        "scores": {
+          "side": 5
+        },
+        "signals": [
+          "washable",
+          "firm"
+        ]
+      },
+      {
+        "label": "Simple care and occasional airing",
+        "scores": {
+          "back": 5
+        },
+        "signals": [
+          "washable",
+          "back"
+        ]
+      },
+      {
+        "label": "The less maintenance, the better",
+        "scores": {
+          "front": 5
+        },
+        "signals": [
+          "low_loft",
+          "washable"
+        ]
+      },
+      {
+        "label": "I will adjust fill or layers when needed",
+        "scores": {
+          "adjustable": 5
+        },
+        "signals": [
+          "adjustable"
+        ]
+      },
+      {
+        "label": "Washable covers and breathable fabrics matter",
+        "scores": {
+          "cooling": 5
+        },
+        "signals": [
+          "washable",
+          "cooling"
+        ]
+      },
+      {
+        "label": "I am happy to plump and air natural fill",
+        "scores": {
+          "natural": 5
+        },
+        "signals": [
+          "plumpable",
+          "natural"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Which spending range feels comfortable for one pillow?",
+    "a": [
+      {
+        "label": "I will invest for deep side-sleeper support",
+        "scores": {
+          "side": 5
+        },
+        "signals": [
+          "premium",
+          "side",
+          "firm"
+        ]
+      },
+      {
+        "label": "Mid-range for a balanced everyday pillow",
+        "scores": {
+          "back": 5
+        },
+        "signals": [
+          "mid_budget",
+          "back"
+        ]
+      },
+      {
+        "label": "Value to mid-range for a simple low pillow",
+        "scores": {
+          "front": 5
+        },
+        "signals": [
+          "value",
+          "low_loft"
+        ]
+      },
+      {
+        "label": "I will pay more for real adjustability",
+        "scores": {
+          "adjustable": 5
+        },
+        "signals": [
+          "premium",
+          "adjustable"
+        ]
+      },
+      {
+        "label": "Mid to premium for credible cooling materials",
+        "scores": {
+          "cooling": 5
+        },
+        "signals": [
+          "mid_budget",
+          "premium",
+          "cooling"
+        ]
+      },
+      {
+        "label": "It depends on the quality of the natural fill",
+        "scores": {
+          "natural": 5
+        },
+        "signals": [
+          "natural",
+          "mid_budget",
+          "premium"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What matters most in the final recommendation?",
+    "a": [
+      {
+        "label": "Firm height for side sleeping",
+        "scores": {
+          "side": 5
+        },
+        "signals": [
+          "side",
+          "firm",
+          "high_loft"
+        ]
+      },
+      {
+        "label": "Balanced support for back sleeping",
+        "scores": {
+          "back": 5
+        },
+        "signals": [
+          "back",
+          "medium_loft"
+        ]
+      },
+      {
+        "label": "A genuinely low profile",
+        "scores": {
+          "front": 5
+        },
+        "signals": [
+          "front",
+          "low_loft"
+        ]
+      },
+      {
+        "label": "The ability to fine-tune it",
+        "scores": {
+          "adjustable": 5
+        },
+        "signals": [
+          "adjustable",
+          "combination"
+        ]
+      },
+      {
+        "label": "A cooler-feeling surface",
+        "scores": {
+          "cooling": 5
+        },
+        "signals": [
+          "cooling"
+        ]
+      },
+      {
+        "label": "Natural, tactile or animal-free down-like fill",
+        "scores": {
+          "natural": 5
+        },
+        "signals": [
+          "natural",
+          "natural_style",
+          "plumpable"
+        ]
+      }
+    ]
+  }
+];
+
+let step=0;
+let locked=false;
+const selectedAnswers=[];
+const preferenceSignals={};
+const totals=Object.keys(RESULTS).reduce((acc,key)=>{acc[key]=0;return acc;},{});
+const el=id=>document.getElementById(id);
+const screens={intro:el("intro"),quiz:el("quiz"),result:el("result")};
+
+function show(name){Object.values(screens).forEach(screen=>screen.classList.remove("active"));screens[name].classList.add("active");window.scrollTo({top:0,behavior:"smooth"});}
+function hexToRgba(hex,alpha){const clean=hex.replace("#","");const value=parseInt(clean,16);const red=value>>16&255;const green=value>>8&255;const blue=value&255;return `rgba(${red},${green},${blue},${alpha})`;}
+function escapeHtml(value){return String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");}
+function getProductRecommendations(key){return (PRODUCTS[key]||[]).map((product,originalIndex)=>{const matchScore=Object.entries(product.fit||{}).reduce((score,[signal,weight])=>score+(preferenceSignals[signal]||0)*weight,product.base||0);return {...product,matchScore,originalIndex};}).sort((a,b)=>b.matchScore-a.matchScore||(b.base||0)-(a.base||0)||a.originalIndex-b.originalIndex).slice(0,3);}
+function getPersonalMatch(product){const matches=Object.entries(product.fit||{}).filter(([signal])=>preferenceSignals[signal]).map(([signal,weight])=>({signal,value:weight*preferenceSignals[signal]})).sort((a,b)=>b.value-a.value).slice(0,2).map(item=>SIGNAL_LABELS[item.signal]).filter(Boolean);if(matches.length===0)return product.offer||"";if(matches.length===1)return `Matches your preference for ${matches[0]}.`;return `Matches your preference for ${matches[0]} and ${matches[1]}.`;}
+function getProductMonogram(product){if(product.monogram)return product.monogram;return product.name.split(/\s+/).filter(Boolean).slice(0,2).map(word=>word.charAt(0)).join("").toUpperCase();}
+function trackEvent(eventName,details={}){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:eventName,...details});if(typeof window.pintrk==="function"){try{window.pintrk("track","custom",{event_name:eventName,...details});}catch(error){console.warn("Pinterest tracking event was not sent.",error);}}}
+function renderQuestion(){const item=QUESTIONS[step];const totalQuestions=QUESTIONS.length;el("question").textContent=item.q;el("count").textContent=`${String(step+1).padStart(2,"0")} / ${String(totalQuestions).padStart(2,"0")}`;el("fill").style.width=`${step/totalQuestions*100}%`;const box=el("options");box.innerHTML="";locked=false;item.a.forEach((answer,index)=>{const button=document.createElement("button");button.className="option";button.type="button";button.textContent=answer.label;button.addEventListener("click",()=>chooseAnswer(button,answer,index));box.appendChild(button);});setTimeout(()=>el("question").focus({preventScroll:true}),50);}
+function chooseAnswer(button,answer,index){if(locked)return;locked=true;document.querySelectorAll(".option").forEach(option=>{option.disabled=true;});button.classList.add("chosen");selectedAnswers[step]=index;Object.entries(answer.scores).forEach(([key,value])=>{totals[key]+=value;});(answer.signals||[]).forEach(signal=>{preferenceSignals[signal]=(preferenceSignals[signal]||0)+1;});trackEvent("quiz_answer",{quiz:"perfect_pillow",question_number:step+1,answer:answer.label});setTimeout(()=>{step+=1;if(step<QUESTIONS.length){renderQuestion();}else{el("fill").style.width="100%";finishQuiz();}},340);}
+function finishQuiz(){const orderedKeys=Object.keys(RESULTS);let winningKey=orderedKeys[0];orderedKeys.forEach(key=>{if(totals[key]>totals[winningKey])winningKey=key;});const tiedKeys=orderedKeys.filter(key=>totals[key]===totals[winningKey]);if(tiedKeys.length>1){for(let questionIndex=selectedAnswers.length-1;questionIndex>=0;questionIndex-=1){const answer=QUESTIONS[questionIndex].a[selectedAnswers[questionIndex]];const rankedTie=tiedKeys.map(key=>({key,value:answer.scores[key]||0})).sort((a,b)=>b.value-a.value);if(rankedTie[0].value>rankedTie[1].value){winningKey=rankedTie[0].key;break;}}}showResult(winningKey);}
+function showResult(key){const result=RESULTS[key];window.LYS_RESULT=key;el("resultCard").style.setProperty("--fam",result.color);el("rName").textContent=result.name;el("rTag").textContent=result.tag;el("rBody").textContent=result.body;const details=el("rDetails");details.innerHTML="";Object.entries(result.details).forEach(([label,value])=>{const row=document.createElement("div");row.className="detail-row";const labelSpan=document.createElement("span");labelSpan.className="detail-label";labelSpan.textContent=label;const valueSpan=document.createElement("span");valueSpan.className="detail-val";valueSpan.textContent=value;row.append(labelSpan,valueSpan);details.appendChild(row);});el("recsTitle").textContent="Your three best-matched pillows";const recommendations=getProductRecommendations(key);const grid=el("recGrid");grid.innerHTML="";recommendations.forEach((product,index)=>{const card=document.createElement("article");card.className="rec";const fallbackHtml=`<div class="ph media media-fallback" style="background:${hexToRgba(result.color,.88)}"><span>${escapeHtml(getProductMonogram(product))}</span></div>`;const mediaHtml=product.img?`<div class="media-frame"><img class="media" src="${escapeHtml(product.img)}" alt="${escapeHtml(product.merchant)} ${escapeHtml(product.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${fallbackHtml}</div>`:fallbackHtml;const badgeHtml=index===0?'<span class="rec-badge">Best match</span>':"";const matchText=getPersonalMatch(product);const offerHtml=matchText?`<span class="offer">${escapeHtml(matchText)}</span>`:"";const linkIsAffiliate=Boolean(product.affiliate);const linkRel=linkIsAffiliate?"noopener sponsored":"noopener";const ctaHtml=product.url&&product.url!=="#"?`<a class="view" href="${escapeHtml(product.url)}" target="_blank" rel="${linkRel}" data-product-position="${index+1}">View product &rsaquo;</a>`:'<span class="view off">Product page unavailable</span>';card.innerHTML=`${badgeHtml}${mediaHtml}<div class="body"><span class="brand">${escapeHtml(product.merchant)}</span><span class="pname">${escapeHtml(product.name)}</span><span class="pnote">${escapeHtml(product.note)}</span>${offerHtml}${ctaHtml}</div>`;const productImage=card.querySelector("img.media");if(productImage){productImage.addEventListener("error",()=>{productImage.remove();const fallback=card.querySelector(".media-fallback");if(fallback)fallback.classList.add("show");},{once:true});}const productLink=card.querySelector("a[data-product-position]");if(productLink){productLink.addEventListener("click",()=>{trackEvent(linkIsAffiliate?"affiliate_click":"product_click",{quiz:"perfect_pillow",result:key,merchant:product.merchant,product:product.name,position:index+1,affiliate:linkIsAffiliate});});}grid.appendChild(card);});const disclosure=el("recommendationDisclosure");const containsAffiliateLinks=recommendations.some(product=>product.affiliate);if(containsAffiliateLinks){disclosure.innerHTML='Some links on this page are affiliate links. Love Your Senses may earn a commission from qualifying orders at no extra cost to you. <a href="/disclosure">Read the affiliate disclosure</a>.';}else{disclosure.textContent="These recommendations use direct brand or retailer links. Love Your Senses does not currently earn commission from them. Product availability and temporary imagery may change.";}const browseAll=el("browseAll");if(STORE_LINK&&STORE_LINK!=="#"){const storeRel=STORE_LINK_IS_AFFILIATE?"noopener sponsored":"noopener";browseAll.innerHTML=`<a class="btn-all" href="${escapeHtml(STORE_LINK)}" target="_blank" rel="${storeRel}">Browse all pillows</a>`;browseAll.querySelector("a").addEventListener("click",()=>{trackEvent(STORE_LINK_IS_AFFILIATE?"affiliate_click":"product_click",{quiz:"perfect_pillow",result:key,product:"browse_all",affiliate:STORE_LINK_IS_AFFILIATE});});}else{browseAll.innerHTML="";}trackEvent("quiz_complete",{quiz:"perfect_pillow",result:key,result_name:result.name});show("result");}
+async function submitEmail(){const emailInput=el("email");const email=emailInput.value.trim();const form=el("emailForm");const note=el("formNote");if(!/^\S+@\S+\.\S+$/.test(email)){emailInput.focus();note.textContent="Enter a valid email address.";return;}if(!EMAIL_FORM_ACTION){note.textContent="Email signup is not connected yet. Add your email platform form action in the JavaScript settings.";return;}const button=el("emailBtn");button.disabled=true;button.textContent="Sending";try{const payload=new URLSearchParams();payload.append(EMAIL_FIELD_NAME,email);payload.append("quiz_result",window.LYS_RESULT||"");payload.append("source","perfect_pillow_quiz");await fetch(EMAIL_FORM_ACTION,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:payload.toString()});form.innerHTML='<p class="done">Your pillow shortlist is on its way.</p>';note.textContent="";trackEvent("email_signup",{quiz:"perfect_pillow",result:window.LYS_RESULT||""});}catch(error){button.disabled=false;button.textContent="Send it";note.textContent="The signup did not complete. Please try again.";console.error("Email signup failed.",error);}}
+async function shareResult(){const result=RESULTS[window.LYS_RESULT];if(!result)return;const text=`My pillow profile is ${result.name}. Find yours:`;const shareData={title:"Find Your Perfect Pillow | Love Your Senses",text,url:QUIZ_URL||location.href};if(navigator.share){try{await navigator.share(shareData);trackEvent("share",{quiz:"perfect_pillow",result:window.LYS_RESULT,method:"native"});}catch(error){if(error.name!=="AbortError")console.error("Share failed.",error);}return;}try{await navigator.clipboard.writeText(`${text} ${shareData.url}`);el("share").textContent="Link copied";setTimeout(()=>el("share").textContent="Share your result",2000);trackEvent("share",{quiz:"perfect_pillow",result:window.LYS_RESULT,method:"clipboard"});}catch(error){console.error("Copy failed.",error);}}
+function resetQuiz(){step=0;locked=false;selectedAnswers.length=0;Object.keys(preferenceSignals).forEach(key=>delete preferenceSignals[key]);Object.keys(totals).forEach(key=>totals[key]=0);window.LYS_RESULT="";const form=el("emailForm");form.innerHTML='<input type="email" id="email" placeholder="Your email" aria-label="Your email" autocomplete="email"><button id="emailBtn" type="button">Send it</button>';el("emailBtn").addEventListener("click",submitEmail);el("formNote").textContent="Connect your email platform in the JavaScript settings before publishing.";show("intro");trackEvent("quiz_retake",{quiz:"perfect_pillow"});}
+el("start").addEventListener("click",()=>{show("quiz");renderQuestion();trackEvent("quiz_start",{quiz:"perfect_pillow"});});
+el("emailBtn").addEventListener("click",submitEmail);
+el("share").addEventListener("click",shareResult);
+el("retake").addEventListener("click",resetQuiz);
+
+
+</script>
+</body>
+</html>
