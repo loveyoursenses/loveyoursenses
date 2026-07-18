@@ -650,7 +650,7 @@
 
       <div class="hero-meta" aria-label="Website quiz statistics">
         <div class="stat">
-          <strong id="quizCount">19</strong>
+          <strong id="quizCount">20</strong>
           <span>Live quizzes</span>
         </div>
         <div class="stat">
@@ -658,8 +658,8 @@
           <span>Collections</span>
         </div>
         <div class="stat">
-          <strong>1 min</strong>
-          <span>Typical quiz</span>
+          <strong>Quick</strong>
+          <span>To complete</span>
         </div>
       </div>
 
@@ -697,8 +697,8 @@
       </div>
 
       <div class="results-bar" aria-live="polite">
-        <span id="resultsText"><strong>19</strong> quizzes available</span>
-        <span>Six questions each</span>
+        <span id="resultsText"><strong>20</strong> quizzes available</span>
+        <span>Personalised results</span>
       </div>
 
       <div class="quiz-grid" id="quizGrid"></div>
@@ -810,6 +810,18 @@ const QUIZZES = [
     badge:"New",
     status:"live",
     searchTerms:"room spray mist fragrance instant scent home"
+  },
+  {
+    id:"perfect-essential-oil-blend",
+    title:"Perfect Essential Oil Blend",
+    category:"Home Fragrance",
+    categoryKey:"home-fragrance",
+    description:"Match your mood, preferred notes, diffuser habits and fragrance strength to an essential-oil blend that suits your routine.",
+    href:"/perfect-essential-oil-blend-quiz/",
+    accent:"#6E7454",
+    badge:"New",
+    status:"live",
+    searchTerms:"essential oil blend aromatherapy diffuser lavender citrus calm focus sleep wellbeing"
   },
   {
     id:"perfect-sleep",
@@ -997,7 +1009,7 @@ const COLLECTIONS = [
   {
     key:"home-fragrance",
     name:"Home Fragrance",
-    description:"Candles, diffusers and room scents matched to your rooms, preferred strength and atmosphere.",
+    description:"Candles, diffusers, room sprays and essential oils matched to your rooms, preferred strength and atmosphere.",
     accent:"#7B4A5E"
   },
   {
@@ -1123,8 +1135,8 @@ function quizCardHtml(quiz,index){
         <h3 class="display">${escapeHtml(quiz.title)}</h3>
         <p>${escapeHtml(quiz.description)}</p>
         <div class="card-meta">
-          <span>Six questions</span>
-          <span>One minute</span>
+          <span>Quick quiz</span>
+          <span>Personalised result</span>
         </div>
         ${linkHtml}
       </div>
