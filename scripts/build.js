@@ -82,3 +82,38 @@ copySource(ROOT,DIST);
 const pages = walkHtml(DIST);
 pages.forEach(buildPage);
 console.log(`Built ${pages.length} HTML pages into ${path.relative(ROOT,DIST)}.`);
+
+function escapeXml(value){
+  return String(value)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&apos;");
+}
+
+function isIndexable(file){
+  const html = fs.readFileSync(file,"utf8");
+  return !/<meta[^>]+name=["']robots["'][^>]+content=["'][^"']*noindex/i.test(html)
+    && !/<meta[^>]+content=["'][^"']*noindex[^"']*["'][^>]+name=["']robots["']/i.test(html);
+}
+
+function generateSitemap(htmlFiles){
+  const routes = [...new Set(htmlFiles.filter(isIndexable).map(routeFor))]
+    .sort((a,b)=>a === "/" ? -1 : b === "/" ? 1 : a.localeCompare(b));
+  const urls = routes.map(route=>`  <url>\n    <loc>${escapeXml(`https://loveyoursenses.com${route}`)}</loc>\n  </url>`).join("\n");
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
+  fs.writeFileSync(path.join(DIST,"sitemap.xml"),xml,"utf8");
+  fs.writeFileSync(path.join(ROOT,"sitemap.xml"),xml,"utf8");
+  return routes.length;
+}
+
+function generateRobots(){
+  const text = "User-agent: *\nAllow: /\n\nSitemap: https://loveyoursenses.com/sitemap.xml\n";
+  fs.writeFileSync(path.join(DIST,"robots.txt"),text,"utf8");
+  fs.writeFileSync(path.join(ROOT,"robots.txt"),text,"utf8");
+}
+
+const sitemapCount = generateSitemap(pages);
+generateRobots();
+console.log(`Generated sitemap.xml with ${sitemapCount} URLs and robots.txt.`);
