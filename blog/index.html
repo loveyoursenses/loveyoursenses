@@ -12,9 +12,19 @@
      Deploy as: /blog/index.html  ->  loveyoursenses.com/blog/
 
      Adding a new post:
-     copy the whole <a class="post-card"> block below (marked
-     POST CARD TEMPLATE), paste it ABOVE the existing cards so
-     newest sits first, and edit the four lines inside it.
+     1. Copy the whole <a class="post-card"> block below (marked
+        POST CARD TEMPLATE), paste it ABOVE the existing cards so
+        newest sits first, and edit the five lines inside it,
+        including data-category.
+     2. data-category MUST exactly match one of the filter pill
+        values below (Scent, Sound, Taste, Touch, Sleep, Home,
+        Gifting). If a post introduces a genuinely new category,
+        add a matching <button class="filter-pill"> in the
+        filter-bar too, or it will never be filterable.
+
+     Filtering is vanilla JS, progressive enhancement only. Every
+     post stays a real link in the HTML regardless of JS, filtering
+     just toggles visibility client-side.
      ============================================================ -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,9 +85,30 @@
   h1{font-size:clamp(2.1rem,6vw,3rem);margin-bottom:16px}
   .page-head p{color:var(--ink-soft);font-size:1.08rem;line-height:1.7}
 
+  /* ---------- Filter bar ---------- */
+  .filter-bar{
+    max-width:880px;margin:0 auto;padding:30px 24px 6px;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  }
+  .filter-pill{
+    font-family:'Jost',sans-serif;font-size:.78rem;font-weight:500;
+    letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ink-soft);background:var(--card);
+    border:1px solid var(--line);border-radius:999px;
+    padding:9px 20px;cursor:pointer;
+    transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease);
+  }
+  .filter-pill:hover{border-color:var(--accent);color:var(--accent-deep)}
+  .filter-pill:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .filter-pill.is-active{background:var(--accent-deep);border-color:var(--accent-deep);color:#F2EEE8}
+  .filter-count{
+    max-width:880px;margin:0 auto;padding:14px 24px 0;text-align:center;
+    font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:500;
+  }
+
   /* ---------- Post grid ---------- */
   .post-grid{
-    max-width:880px;margin:0 auto;padding:36px 24px 20px;
+    max-width:880px;margin:0 auto;padding:24px 24px 20px;
     display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;
   }
   .post-card{
@@ -90,6 +121,13 @@
   .post-card h2{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:1.35rem;line-height:1.22;margin-bottom:12px}
   .post-card p{color:var(--ink-soft);font-size:.96rem;margin-bottom:16px}
   .post-card .meta{font-size:.8rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+  .post-card.is-hidden{display:none}
+
+  .no-results{
+    display:none;max-width:660px;margin:10px auto 30px;padding:0 24px;
+    text-align:center;color:var(--ink-soft);font-size:.95rem;
+  }
+  .no-results.is-visible{display:block}
 
   .coming{
     max-width:660px;margin:0 auto;padding:8px 24px 30px;text-align:center;
@@ -110,9 +148,11 @@
   @media (max-width:520px){
     .site-nav a{margin-left:16px;font-size:.78rem}
     .page-head{padding-top:44px}
+    .filter-pill{padding:8px 16px;font-size:.74rem}
   }
   @media (prefers-reduced-motion:reduce){
     .post-card{transition:none}
+    .filter-pill{transition:none}
   }
 </style>
 </head>
@@ -127,35 +167,131 @@
     <p>Plain-spoken reads on scent, sleep, sound, taste and touch. Each one pairs with a quiz, so you can go from reading about it to finding yours in a couple of minutes.</p>
   </div>
 
-  <div class="post-grid">
+  <!-- ============================================================
+       FILTER BAR
+       data-filter="all" always shows everything. Every other
+       button's data-filter must exactly match a post-card's
+       data-category, string for string, case included.
+       ============================================================ -->
+  <div class="filter-bar" role="group" aria-label="Filter posts by category">
+    <button type="button" class="filter-pill is-active" data-filter="all" aria-pressed="true">All</button>
+    <button type="button" class="filter-pill" data-filter="Scent" aria-pressed="false">Scent</button>
+    <button type="button" class="filter-pill" data-filter="Sound" aria-pressed="false">Sound</button>
+    <button type="button" class="filter-pill" data-filter="Taste" aria-pressed="false">Taste</button>
+    <button type="button" class="filter-pill" data-filter="Touch" aria-pressed="false">Touch</button>
+    <button type="button" class="filter-pill" data-filter="Sleep" aria-pressed="false">Sleep</button>
+    <button type="button" class="filter-pill" data-filter="Home" aria-pressed="false">Home</button>
+    <button type="button" class="filter-pill" data-filter="Gifting" aria-pressed="false">Gifting</button>
+  </div>
+  <p class="filter-count" id="filterCount"></p>
+
+  <div class="post-grid" id="postGrid">
 
     <!-- ============================================================
          POST CARD TEMPLATE — copy this whole <a> block for each new
          post and paste it above the others so newest sits first.
-         Edit: href, eyebrow (category), title, excerpt, meta.
+         Edit: href, data-category, eyebrow, title, excerpt, meta.
+         data-category and eyebrow should normally match exactly.
          ============================================================ -->
-    <a class="post-card" href="/blog/how-to-choose-a-pillow/">
+    <a class="post-card" href="/blog/reed-diffuser-vs-room-spray/" data-category="Home">
+      <p class="eyebrow">Home</p>
+      <h2>Reed Diffuser vs Room Spray: Which One Actually Suits Your Home?</h2>
+      <p>Constant versus instant. A deeper look at two formats people mix up most, plus how to troubleshoot a diffuser that has stopped throwing scent.</p>
+      <p class="meta">18 July 2026 &middot; 6 min read</p>
+    </a>
+
+    <a class="post-card" href="/blog/essential-oils-101/" data-category="Scent">
+      <p class="eyebrow">Scent</p>
+      <h2>Essential Oils 101: How to Blend Your Own Signature Scent</h2>
+      <p>Top, middle and base notes explained, a simple ratio to start from, and the safety basics worth knowing before your first blend.</p>
+      <p class="meta">18 July 2026 &middot; 7 min read</p>
+    </a>
+
+    <a class="post-card" href="/blog/sensory-gift-guide/" data-category="Gifting">
+      <p class="eyebrow">Gifting</p>
+      <h2>The Sensory Gift Guide: Thoughtful Presents for Every Sense</h2>
+      <p>Shop the sense, not the category. A gift guide for the person who has everything, organised around scent, sound, taste, touch and atmosphere.</p>
+      <p class="meta">18 July 2026 &middot; 6 min read</p>
+    </a>
+
+    <a class="post-card" href="/blog/designing-a-calming-bedroom/" data-category="Sleep">
+      <p class="eyebrow">Sleep</p>
+      <h2>How to Design a Calming Bedroom: Light, Scent, Sound and Colour</h2>
+      <p>The physical space version of a wind-down routine. A sense-by-sense guide to the room itself, and the mistakes that quietly undo it.</p>
+      <p class="meta">18 July 2026 &middot; 6 min read</p>
+    </a>
+
+    <a class="post-card" href="/blog/types-of-tea-explained/" data-category="Taste">
+      <p class="eyebrow">Taste</p>
+      <h2>Types of Tea Explained: Black, Green, White, Oolong and Herbal</h2>
+      <p>One plant, one variable. How oxidation turns the same leaf into five completely different teas, and which one suits which part of the day.</p>
+      <p class="meta">18 July 2026 &middot; 6 min read</p>
+    </a>
+
+    <a class="post-card" href="/blog/haircare-rituals-by-hair-type/" data-category="Touch">
+      <p class="eyebrow">Touch</p>
+      <h2>Hair Care Rituals by Hair Type: Fine, Curly, Thick and Colour-Treated</h2>
+      <p>Why one washing schedule was never going to suit everyone, and how to build a routine around the hair you actually have.</p>
+      <p class="meta">18 July 2026 &middot; 6 min read</p>
+    </a>
+
+    <a class="post-card" href="/blog/body-care-routine/" data-category="Touch">
+      <p class="eyebrow">Touch</p>
+      <h2>How to Build a Body Care Routine: The Steps Most People Skip</h2>
+      <p>The face gets a routine, the body gets ninety seconds in the shower. A simple three-step fix, plus the extras worth adding.</p>
+      <p class="meta">18 July 2026 &middot; 6 min read</p>
+    </a>
+
+    <a class="post-card" href="/blog/minimalist-vs-maximalist-skincare/" data-category="Touch">
+      <p class="eyebrow">Touch</p>
+      <h2>Minimalist vs Maximalist Skincare: How Many Steps Do You Actually Need?</h2>
+      <p>Two philosophies, both right for different people. How to tell which suits your skin, your time and your patience.</p>
+      <p class="meta">18 July 2026 &middot; 6 min read</p>
+    </a>
+
+    <a class="post-card" href="/blog/bluetooth-speaker-buying-guide/" data-category="Sound">
+      <p class="eyebrow">Sound</p>
+      <h2>How to Choose a Bluetooth Speaker: Sound, Battery Life and Waterproofing Explained</h2>
+      <p>Size is a trade, not just a spec. A use-case guide plus what IPX ratings and battery claims actually mean.</p>
+      <p class="meta">18 July 2026 &middot; 6 min read</p>
+    </a>
+
+    <a class="post-card" href="/blog/headphones-buying-guide/" data-category="Sound">
+      <p class="eyebrow">Sound</p>
+      <h2>How to Choose Headphones: Over-Ear, On-Ear, In-Ear and Noise Cancelling Explained</h2>
+      <p>Shape decides comfort and sound before anything else does. Plus an honest answer on whether noise cancelling is worth the extra cost.</p>
+      <p class="meta">18 July 2026 &middot; 6 min read</p>
+    </a>
+
+    <a class="post-card" href="/blog/coffee-machine-buying-guide/" data-category="Taste">
+      <p class="eyebrow">Taste</p>
+      <h2>Pod vs Bean-to-Cup vs Espresso vs Filter: Which Coffee Machine Should You Buy?</h2>
+      <p>Four formats, four different trades between cost, effort and taste. An honest comparison to match the machine to your actual morning rather than the marketing.</p>
+      <p class="meta">18 July 2026 &middot; 7 min read</p>
+    </a>
+
+    <a class="post-card" href="/blog/how-to-choose-a-pillow/" data-category="Sleep">
       <p class="eyebrow">Sleep</p>
       <h2>How to Choose a Pillow: A Guide by Sleep Position, Fill and Firmness</h2>
       <p>The right pillow is decided by how you sleep, not how it looks on a shelf. A guide to loft, fill materials, firmness and the fold test that tells you when to replace it.</p>
       <p class="meta">18 July 2026 &middot; 7 min read</p>
     </a>
        
-    <a class="post-card" href="/blog/wind-down-routine/">
+    <a class="post-card" href="/blog/wind-down-routine/" data-category="Sleep">
       <p class="eyebrow">Sleep</p>
       <h2>How to Build a Wind-Down Routine That Actually Sends You to Sleep</h2>
       <p>A sense-by-sense way to end the day, covering light, sound, scent, touch and taste, with a sample hour and honest fixes for racing minds.</p>
       <p class="meta">18 July 2026 &middot; 6 min read</p>
     </a>
 
-    <a class="post-card" href="/blog/candles-vs-diffusers/">
+    <a class="post-card" href="/blog/candles-vs-diffusers/" data-category="Home">
       <p class="eyebrow">Home</p>
       <h2>Candles vs Diffusers vs Room Sprays: Which Home Fragrance Works Best?</h2>
       <p>Three tools doing three different jobs. An honest look at cost, scent throw and safety, with a room-by-room guide to what belongs where.</p>
       <p class="meta">18 July 2026 &middot; 6 min read</p>
     </a>
 
-    <a class="post-card" href="/blog/fragrance-families/">
+    <a class="post-card" href="/blog/fragrance-families/" data-category="Scent">
       <p class="eyebrow">Scent</p>
       <h2>Fragrance Families Explained: How to Find the Scent Family You Actually Love</h2>
       <p>The six families every perfume belongs to, how to spot yours from the bottles you already own, and the mistakes that sabotage most purchases.</p>
@@ -164,10 +300,48 @@
 
   </div>
 
+  <p class="no-results" id="noResults">Nothing in this category yet. Try another filter, or see everything above.</p>
+
   <p class="coming">New posts land regularly. In the meantime, the <a href="/">quizzes</a> are the fastest way in.</p>
 </main>
 
 <!-- FOOTER_INCLUDE -->
+
+<script>
+(function(){
+  var pills = document.querySelectorAll('.filter-pill');
+  var cards = document.querySelectorAll('.post-card');
+  var noResults = document.getElementById('noResults');
+  var countLabel = document.getElementById('filterCount');
+
+  function pluralise(n){ return n === 1 ? 'post' : 'posts'; }
+
+  function applyFilter(filter){
+    var visible = 0;
+    cards.forEach(function(card){
+      var match = filter === 'all' || card.getAttribute('data-category') === filter;
+      card.classList.toggle('is-hidden', !match);
+      if(match) visible++;
+    });
+    noResults.classList.toggle('is-visible', visible === 0);
+    countLabel.textContent = filter === 'all'
+      ? ''
+      : visible + ' ' + pluralise(visible) + ' in ' + filter;
+  }
+
+  pills.forEach(function(pill){
+    pill.addEventListener('click', function(){
+      pills.forEach(function(p){
+        p.classList.remove('is-active');
+        p.setAttribute('aria-pressed', 'false');
+      });
+      pill.classList.add('is-active');
+      pill.setAttribute('aria-pressed', 'true');
+      applyFilter(pill.getAttribute('data-filter'));
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
