@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Which Sunrise Alarm Clock Fits Your Routine? | Love Your Senses</title>
+<meta name="description" content="Answer ten questions to match wake-up difficulty, sunrise timing, sounds, controls, bedtime features and budget to a sunrise alarm clock.">
+<link rel="canonical" href="https://loveyoursenses.com/sunrise-alarm-clock-quiz/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Which Sunrise Alarm Clock Fits Your Routine? | Love Your Senses">
+<meta property="og:description" content="Match light intensity, wake sounds, sunset routines, smart controls and budget to a personalised sunrise alarm clock shortlist.">
+<meta property="og:url" content="https://loveyoursenses.com/sunrise-alarm-clock-quiz/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#E7E3DD;
+    --card:#F2EEE8;
+    --ink:#2A2130;
+    --ink-soft:#6E6574;
+    --accent:#7B4A5E;
+    --accent-deep:#5E3547;
+    --line:#CDC3B6;
+    --gold:#B8A78C;
+    --cream:#F7F1EC;
+    --radius:18px;
+    --ease:cubic-bezier(.4,.14,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Jost',system-ui,sans-serif;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+  button,input{font:inherit}
+  .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+  button{touch-action:manipulation}
+  .display{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  .wrap{width:100%;max-width:1000px;margin:0 auto;padding-left:24px;padding-right:24px}
+  .site-head{padding:24px 0}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .mark{font-family:'Fraunces',serif;font-weight:500;font-size:1.24rem;text-decoration:none;color:var(--ink)}
+  .mark span{color:var(--accent)}
+  .head-link{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none}
+  .head-link:hover{color:var(--accent)}
+  .stage{width:100%;max-width:680px;margin:0 auto;padding:36px 20px 72px}
+  .screen{display:none;animation:rise .6s var(--ease) both}
+  .screen.active{display:block}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  #intro{text-align:center;padding:14px 0 24px}
+  .ring{margin:0 auto 30px;display:block}
+  #intro h1{font-size:clamp(2.55rem,9vw,4rem);margin-bottom:18px}
+  #intro h1 em{font-style:italic;font-weight:400}
+  .lede{color:var(--ink-soft);font-size:1.06rem;max-width:45ch;margin:0 auto 24px}
+  .wellbeing-note{font-size:.79rem;color:var(--ink-soft);line-height:1.55;max-width:56ch;margin:0 auto 30px}
+  .meta{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:26px}
+  .btn{display:inline-block;font-family:'Jost',sans-serif;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:17px 40px;background:var(--ink);color:var(--bg);transition:transform .35s var(--ease),background .35s var(--ease)}
+  .btn:hover{background:var(--accent-deep);transform:translateY(-2px)}
+  .progress-wrap{display:flex;align-items:center;gap:16px;margin-bottom:38px}
+  .track{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
+  .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);transition:width .5s var(--ease)}
+  .count{font-size:.72rem;letter-spacing:.2em;color:var(--ink-soft);white-space:nowrap}
+  .question{font-size:clamp(1.75rem,6vw,2.45rem);margin-bottom:32px;min-height:2.2em}
+  .options{display:flex;flex-direction:column;gap:12px}
+  .option{font-family:'Jost',sans-serif;font-size:1.01rem;color:var(--ink);text-align:left;background:var(--card);border:1px solid transparent;border-radius:var(--radius);padding:19px 22px;cursor:pointer;width:100%;transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);display:flex;align-items:center;gap:14px}
+  .option:before{content:"";width:9px;height:9px;border-radius:50%;border:1.5px solid var(--line);flex:none;transition:all .3s var(--ease)}
+  .option:hover{border-color:var(--gold);transform:translateX(4px)}
+  .option.chosen{background:var(--accent);color:var(--cream);border-color:var(--accent)}
+  .option.chosen:before{background:var(--cream);border-color:var(--cream)}
+  .option:disabled{cursor:default}
+  .result-card{background:var(--fam,#7B4A5E);color:var(--cream);border-radius:26px;padding:44px 32px 40px;text-align:center;box-shadow:0 30px 60px -30px rgba(42,33,48,.55)}
+  .result-card .eyebrow{color:rgba(247,241,236,.72)}
+  .result-name{font-size:clamp(2.55rem,10vw,3.65rem);margin-bottom:10px}
+  .result-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:1.2rem;opacity:.94;margin-bottom:24px}
+  .result-body{font-size:1.02rem;line-height:1.72;opacity:.95;max-width:44ch;margin:0 auto 30px}
+  .details{border-top:1px solid rgba(247,241,236,.28);border-bottom:1px solid rgba(247,241,236,.28);padding:22px 0;text-align:left;display:flex;flex-direction:column;gap:14px}
+  .detail-row{display:flex;gap:18px;align-items:baseline}
+  .detail-label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;opacity:.72;width:104px;flex:none}
+  .detail-val{font-family:'Fraunces',serif;font-size:1.04rem}
+  .recs{margin-top:36px}
+  .recs-head{text-align:center;margin-bottom:22px}
+  .recs-head .eyebrow{display:block;margin-bottom:10px}
+  .recs-head h3{font-size:clamp(1.55rem,5vw,2.05rem)}
+  .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .rec{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+  .rec-badge{display:inline-flex;align-self:flex-start;background:var(--cream);color:var(--accent-deep);border:1px solid var(--line);border-radius:100px;padding:6px 10px;margin-bottom:4px;font-size:.61rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+  
+  
+  
+  
+  
+  
+  
+  
+  .rec .body{padding:16px 15px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .rec .brand{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .rec .pname{font-family:'Fraunces',serif;font-size:1.04rem;line-height:1.22}
+  .rec .pnote{font-size:.8rem;color:var(--ink-soft);line-height:1.45}
+  .rec .offer{font-size:.76rem;color:var(--accent);font-weight:500}
+  .rec .view{margin-top:auto;padding-top:11px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;text-decoration:none;color:var(--accent)}
+  .rec .view.off{color:var(--ink-soft);opacity:.58}
+  .rec .view:hover{text-decoration:underline;text-underline-offset:4px}
+  .affiliate-note{font-size:.78rem;color:var(--ink-soft);line-height:1.55;text-align:center;max-width:58ch;margin:18px auto 0}
+  .affiliate-note a{color:var(--accent);text-underline-offset:3px}
+  .browse-all{text-align:center;margin-top:22px}
+  .btn-all{display:inline-block;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;text-decoration:none;border:1px solid var(--accent);color:var(--accent);border-radius:100px;padding:14px 34px;transition:background .3s var(--ease),color .3s var(--ease)}
+  .btn-all:hover{background:var(--accent);color:var(--cream)}
+  .capture{background:var(--card);border-radius:var(--radius);padding:32px 28px;margin-top:28px;text-align:center}
+  .capture h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;margin-bottom:8px}
+  .capture p{color:var(--ink-soft);font-size:.96rem;margin:0 auto 22px;max-width:39ch}
+  .field{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .field input{font-family:'Jost',sans-serif;font-size:1rem;flex:1;min-width:210px;padding:15px 18px;border:1px solid var(--line);border-radius:100px;background:#fff;color:var(--ink)}
+  .field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+  .field button{font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:15px 28px;background:var(--accent);color:var(--cream)}
+  .field button:hover{background:var(--accent-deep)}
+  .capture .done{color:var(--accent);font-family:'Fraunces',serif;font-size:1.1rem;padding:6px 0}
+  .capture .form-note{font-size:.74rem;margin-top:12px;margin-bottom:0}
+  .next-quiz{border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;margin-top:18px;text-align:center}
+  .next-quiz .eyebrow{display:block;margin-bottom:9px}
+  .next-quiz h3{font-size:1.45rem;margin-bottom:8px}
+  .next-quiz p{color:var(--ink-soft);font-size:.94rem;max-width:40ch;margin:0 auto 18px}
+  .next-link{font-size:.74rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;color:var(--accent);text-underline-offset:4px}
+  .next-link:hover{color:var(--accent-deep)}
+  .after{display:flex;gap:22px;justify-content:center;align-items:center;margin-top:26px;flex-wrap:wrap}
+  .linkish{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px}
+  .linkish:hover{color:var(--accent)}
+  .site-foot{border-top:1px solid var(--line);padding:34px 0 48px}
+  .foot{display:flex;flex-direction:column;align-items:center;gap:11px;text-align:center}
+  .foot-nav a{color:var(--ink-soft);text-decoration:none;font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;margin:0 10px}
+  .foot-nav a:hover{color:var(--accent)}
+  .foot .disc{font-size:.82rem;color:var(--ink-soft);max-width:54ch}
+  .foot .cr{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  @media(max-width:600px){.site-head{padding:20px 0}.stage{padding-top:28px}.rec-grid{grid-template-columns:1fr 1fr}.detail-label{width:88px}}
+  @media(max-width:420px){.rec-grid{grid-template-columns:1fr}.result-card{padding:40px 24px 36px}.field{flex-direction:column}.field input,.field button{width:100%}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<!-- HEADER_INCLUDE -->
+
+<main class="stage">
+  <section id="intro" class="screen active">
+    <svg class="ring" width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
+      <circle cx="29" cy="29" r="27" fill="none" stroke="#B8A78C" stroke-width="1"/>
+      <circle cx="29" cy="29" r="19" fill="none" stroke="#CDC3B6" stroke-width="1"/>
+      <g stroke="#7B4A5E" stroke-width="1.4">
+        <line x1="29" y1="2" x2="29" y2="9"/>
+        <line x1="52.4" y1="42.5" x2="46.4" y2="39"/>
+        <line x1="5.6" y1="42.5" x2="11.6" y2="39"/>
+        <line x1="52.4" y1="15.5" x2="46.4" y2="19"/>
+        <line x1="5.6" y1="15.5" x2="11.6" y2="19"/>
+        <line x1="29" y1="56" x2="29" y2="49"/>
+      </g>
+      <circle cx="29" cy="29" r="3" fill="#7B4A5E"/>
+    </svg>
+    <p class="eyebrow">A gentler morning discovery</p>
+    <h1 class="display">Which <em>sunrise alarm clock</em> fits your routine?</h1>
+    <p class="lede">Answer ten questions about light, sound, bedtime habits, controls and budget to find your morning profile and three sunrise alarm clocks to consider.</p>
+    <p class="wellbeing-note">A sunrise alarm is a lifestyle device, not a substitute for medical advice or treatment. Follow the manufacturer’s electrical and brightness instructions, keep cables secure and dry, and speak with a qualified professional about persistent sleep problems or light sensitivity.</p>
+    <button class="btn" id="start" type="button">Begin the discovery</button>
+    <p class="meta">10 questions &nbsp;·&nbsp; about two minutes</p>
+  </section>
+
+  <section id="quiz" class="screen" aria-live="polite">
+    <div class="progress-wrap">
+      <div class="track" aria-hidden="true"><div class="fill" id="fill"></div></div>
+      <span class="count" id="count">01 / 10</span>
+    </div>
+    <h2 class="question display" id="question" tabindex="-1"></h2>
+    <div class="options" id="options" role="group" aria-labelledby="question"></div>
+  </section>
+
+  <section id="result" class="screen" aria-live="polite">
+    <div class="result-card" id="resultCard">
+      <p class="eyebrow">Your result profile</p>
+      <h2 class="result-name display" id="rName"></h2>
+      <p class="result-tag" id="rTag"></p>
+      <p class="result-body" id="rBody"></p>
+      <div class="details" id="rDetails"></div>
+    </div>
+
+    <div class="recs">
+      <div class="recs-head">
+        <span class="eyebrow">Chosen from all ten answers</span>
+        <h3 class="display" id="recsTitle">Your three best-matched sunrise alarm clocks</h3>
+      </div>
+      <div class="rec-grid" id="recGrid"></div>
+      <p class="affiliate-note" id="recommendationDisclosure">These recommendations use direct brand or retailer links. Love Your Senses does not currently earn commission from them. Product availability and specifications may change.</p>
+      <div class="browse-all" id="browseAll"></div>
+      <p class="wellbeing-note"><strong>Wake-up light safety:</strong> Follow the manufacturer’s setup, electrical and brightness guidance. Place the clock securely, keep cables and power connections dry, avoid staring directly into very bright LEDs, and seek professional advice for persistent sleep problems, eye conditions, photosensitivity or medicines that increase light sensitivity.</p>
+    </div>
+
+    <div class="capture">
+      <h3>Save your sunrise alarm shortlist</h3>
+      <p>Get your result, morning priorities and sunrise alarm shortlist by email.</p>
+      <div class="field" id="emailForm">
+        <label class="sr-only" for="email">Your email address</label>
+        <input type="email" id="email" name="email" placeholder="Your email" aria-describedby="formNote" autocomplete="email" inputmode="email">
+        <button id="emailBtn" type="button">Send it</button>
+      </div>
+      <p class="form-note" id="formNote">Connect your email platform in the JavaScript settings before publishing.</p>
+    </div>
+
+    <div class="next-quiz">
+      <span class="eyebrow">Continue your discovery</span>
+      <h3 class="display">Build a calmer sleep setup</h3>
+      <p>Explore more quizzes for pillows, weighted blankets, bedroom atmosphere and wind-down routines.</p>
+      <a class="next-link" href="/quiz/">Explore all quizzes</a>
+    </div>
+
+    <div class="after">
+      <button class="linkish" id="share" type="button">Share your result</button>
+      <button class="linkish" id="retake" type="button">Retake the quiz</button>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER_INCLUDE -->
+
+<script>
+/* Product links are direct and non-affiliate. Replace URLs and images with approved affiliate assets when partnerships are active, then change affiliate:false to affiliate:true. */
+const QUIZ_URL = "https://loveyoursenses.com/sunrise-alarm-clock-quiz/";
+const STORE_LINK = "";
+const STORE_LINK_IS_AFFILIATE = false;
+const EMAIL_FORM_ACTION = "";
+const EMAIL_FIELD_NAME = "email";
+
+const PRODUCTS = {
+  "gentle": [
+    {
+      "merchant": "Lumie",
+      "name": "Sunrise Alarm",
+      "note": "A straightforward 30-minute sunrise and sunset clock with optional nature sounds and coloured mood lighting.",
+      "offer": "Best for a gentle introduction to sunrise alarms without complex menus.",
+      "url": "https://www.lumie.com/products/sunrise-alarm",
+      "img": "",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "gentle": 10,
+        "simple": 10,
+        "budget": 9,
+        "nature": 7,
+        "colours": 8
+      }
+    },
+    {
+      "merchant": "Philips",
+      "name": "Wake-up Light HF3500/01",
+      "note": "A simple wake-up light with gradual brightness, a gentle beep and bedside-lamp function.",
+      "offer": "Best for someone who wants light first and very few extra features.",
+      "url": "https://www.philips.co.uk/c-p/HF3500_01/wake-up-light",
+      "img": "",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "gentle": 9,
+        "simple": 10,
+        "budget": 8,
+        "beep": 8,
+        "compact": 7
+      }
+    },
+    {
+      "merchant": "Lumie",
+      "name": "Bodyclock Rise 100",
+      "note": "A minimalist Bodyclock with a 30-minute sunrise, sunset, optional beep and dimmable bedside light.",
+      "offer": "Best for a clean, phone-free morning routine with adjustable light intensity.",
+      "url": "https://www.lumie.com/products/bodyclock-rise-100",
+      "img": "",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "gentle": 10,
+        "simple": 9,
+        "phone_free": 9,
+        "sunset": 8,
+        "mid_budget": 8
+      }
+    },
+    {
+      "merchant": "Beurer",
+      "name": "WL 50 Wake Up Light",
+      "note": "A compact sunrise and sunset clock with radio, Bluetooth audio, mood lighting and touch controls.",
+      "offer": "Best when a modest budget still needs audio and colour options.",
+      "url": "https://www.beurer.com/uk/p/58921/",
+      "img": "",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "gentle": 7,
+        "radio": 8,
+        "bluetooth": 9,
+        "colours": 9,
+        "mid_budget": 9
+      }
+    }
+  ],
+  "sound": [
+    {
+      "merchant": "Lumie",
+      "name": "Bodyclock Glow 150",
+      "note": "A colour-changing sunrise clock with adjustable duration and ten sleep or wake sounds, including white noise.",
+      "offer": "Best overall for varied natural sounds without app dependence.",
+      "url": "https://www.lumie.com/products/bodyclock-glow-150",
+      "img": "",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "sound_rich": 10,
+        "nature": 10,
+        "white_noise": 9,
+        "sunset": 9,
+        "mid_budget": 8
+      }
+    },
+    {
+      "merchant": "Philips",
+      "name": "SmartSleep Wake-up Light HF3531/01",
+      "note": "A coloured sunrise alarm with seven natural sounds, FM radio, reading light and midnight-light function.",
+      "offer": "Best for a broad sound choice with radio and practical night-time lighting.",
+      "url": "https://www.philips.co.uk/c-p/HF3531_01/smartsleep-wake-up-light",
+      "img": "",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "sound_rich": 10,
+        "nature": 9,
+        "radio": 9,
+        "nightlight": 9,
+        "premium": 7
+      }
+    },
+    {
+      "merchant": "Lumie",
+      "name": "Bodyclock Shine 300",
+      "note": "An adjustable 15 to 90-minute sunrise and sunset clock with FM radio and fifteen sleep or wake sounds.",
+      "offer": "Best for users who want fine control over both light timing and audio.",
+      "url": "https://www.lumie.com/products/bodyclock-shine-300",
+      "img": "",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "sound_rich": 10,
+        "radio": 10,
+        "custom_duration": 10,
+        "sunset": 9,
+        "premium": 8
+      }
+    },
+    {
+      "merchant": "Pure",
+      "name": "Moment Ambient Sleep Companion",
+      "note": "A DAB and FM bedside radio with natural sounds, dimmable lighting, programmable sunrise and multiple alarms.",
+      "offer": "Best for radio listeners who want sunrise lighting as part of a broader audio routine.",
+      "url": "https://www.pure-audio.com/en-GB/audio-hifi/radios/alarm-radios/moment/p/252448",
+      "img": "",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "sound_rich": 9,
+        "radio": 10,
+        "bluetooth": 8,
+        "dual_alarm": 10,
+        "mid_budget": 8
+      }
+    }
+  ],
+  "simple": [
+    {
+      "merchant": "Lumie",
+      "name": "Bodyclock Spark 100",
+      "note": "A focused 30-minute sunrise and sunset clock with an optional beep, tap snooze and nightlight mode.",
+      "offer": "Best overall for a simple physical-control clock with no app or radio distractions.",
+      "url": "https://www.lumie.com/products/bodyclock-spark-100",
+      "img": "",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "simple": 10,
+        "phone_free": 10,
+        "beep": 9,
+        "sunset": 8,
+        "mid_budget": 9
+      }
+    },
+    {
+      "merchant": "Lumie",
+      "name": "Bodyclock Rise 100",
+      "note": "A stripped-back sunrise alarm with adjustable intensity, optional beep and dimmable bedside light.",
+      "offer": "Best for light-sensitive sleepers who want uncomplicated controls.",
+      "url": "https://www.lumie.com/products/bodyclock-rise-100",
+      "img": "",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "simple": 10,
+        "phone_free": 10,
+        "blackout_display": 8,
+        "gentle": 8
+      }
+    },
+    {
+      "merchant": "Philips",
+      "name": "Wake-up Light HF3500/01",
+      "note": "A compact light alarm with ten brightness levels, a gentle beep and bedside lamp.",
+      "offer": "Best budget-friendly choice when a basic sunrise is enough.",
+      "url": "https://www.philips.co.uk/c-p/HF3500_01/wake-up-light",
+      "img": "",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "simple": 10,
+        "budget": 10,
+        "compact": 9,
+        "beep": 8
+      }
+    },
+    {
+      "merchant": "Lumie",
+      "name": "Sunrise Alarm",
+      "note": "A value-focused clock with a 30-minute light cycle, six wake sounds, snooze and dimmable display.",
+      "offer": "Best for simple operation with a little more sound choice.",
+      "url": "https://www.lumie.com/products/sunrise-alarm",
+      "img": "",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "simple": 9,
+        "budget": 10,
+        "nature": 7,
+        "colours": 7
+      }
+    }
+  ],
+  "smart": [
+    {
+      "merchant": "Pure",
+      "name": "Moment Ambient Sleep Companion",
+      "note": "A bedside sleep companion combining a sunrise alarm, Bluetooth audio, radio, ambient light and dual alarms.",
+      "offer": "Best for a connected-feeling bedside routine without relying on an app.",
+      "url": "https://www.pure-audio.com/en-GB/audio-hifi/radios/alarm-radios/moment/p/252448",
+      "img": "",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "smart": 9,
+        "radio": 10,
+        "bluetooth": 9,
+        "dual_alarm": 10,
+        "premium": 8
+      }
+    },
+    {
+      "merchant": "Philips",
+      "name": "SmartSleep Sleep and Wake-Up Light HF3651/01",
+      "note": "A premium sunrise and sunset device with RelaxBreathe guidance, multiple sounds and a midnight light.",
+      "offer": "Best for a structured wind-down routine without requiring the connected model.",
+      "url": "https://www.philips.co.uk/c-p/HF3651_01/somneo-sleep-and-wake-up-light-with-relaxbreath-for-sleep",
+      "img": "",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "smart": 8,
+        "breathing": 10,
+        "sound_rich": 9,
+        "nightlight": 9,
+        "premium": 9
+      }
+    },
+    {
+      "merchant": "Beurer",
+      "name": "WL 75 Wake Up Light",
+      "note": "An app-connected wake-up light with colour selection, radio, smartphone charging and adjustable sunrise settings.",
+      "offer": "Best for app control with practical radio and charging functions.",
+      "url": "https://www.beurer.com/global/p/58928/",
+      "img": "",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "smart": 10,
+        "app": 10,
+        "radio": 8,
+        "usb": 9,
+        "colours": 10
+      }
+    },
+    {
+      "merchant": "Beurer",
+      "name": "WL 65 Wake Up+Charge",
+      "note": "A three-in-one wake-up light, reading lamp and 10W wireless phone charger with sleep sounds.",
+      "offer": "Best for reducing bedside clutter while keeping smart charging close by.",
+      "url": "https://www.beurer.com/uk/p/10423/",
+      "img": "",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "smart": 8,
+        "wireless_charge": 10,
+        "nightlight": 9,
+        "sound_rich": 7,
+        "mid_budget": 9
+      }
+    }
+  ],
+  "winter": [
+    {
+      "merchant": "Lumie",
+      "name": "Bodyclock Shine 300",
+      "note": "A medically certified wake-up light with adjustable sunrise intensity, long timing range and radio.",
+      "offer": "Best overall for dark mornings when brightness and timing control matter most.",
+      "url": "https://www.lumie.com/products/bodyclock-shine-300",
+      "img": "",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "bright": 10,
+        "custom_duration": 10,
+        "winter": 10,
+        "radio": 8,
+        "premium": 8
+      }
+    },
+    {
+      "merchant": "Philips",
+      "name": "SmartSleep Wake-up Light HF3519/01",
+      "note": "A 300-lux coloured sunrise clock with adjustable 20 to 40-minute timing, five natural sounds and FM radio.",
+      "offer": "Best for a vivid red-to-yellow sunrise with familiar controls.",
+      "url": "https://www.philips.co.uk/c-p/HF3519_01/smartsleep-wake-up-light",
+      "img": "",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "bright": 10,
+        "winter": 9,
+        "nature": 8,
+        "radio": 8,
+        "custom_duration": 8
+      }
+    },
+    {
+      "merchant": "Philips",
+      "name": "Wake-up Light HF3520/01",
+      "note": "A coloured sunrise model with five natural sounds, FM radio, tap snooze and reading-light use.",
+      "offer": "Best for strong morning light paired with classic wake-up features.",
+      "url": "https://www.philips.co.uk/c-p/HF3520_01/wake-up-light",
+      "img": "",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "bright": 9,
+        "winter": 9,
+        "radio": 8,
+        "nature": 8,
+        "premium": 7
+      }
+    },
+    {
+      "merchant": "Lumie",
+      "name": "Bodyclock Glow 150",
+      "note": "A warm red-to-white sunrise with adjustable intensity and 20, 30 or 45-minute durations.",
+      "offer": "Best for dark seasons when a gentler but still colourful sunrise is preferred.",
+      "url": "https://www.lumie.com/products/bodyclock-glow-150",
+      "img": "",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "bright": 8,
+        "winter": 9,
+        "custom_duration": 8,
+        "sound_rich": 8,
+        "mid_budget": 8
+      }
+    }
+  ],
+  "luxury": [
+    {
+      "merchant": "Lumie",
+      "name": "Bodyclock Luxe 750DAB",
+      "note": "A top-tier Bodyclock with DAB radio, Bluetooth speakers, USB charging and more than thirty sounds.",
+      "offer": "Best overall for premium light, audio and bedside functionality.",
+      "url": "https://www.lumie.com/products/bodyclock-luxe-750dab",
+      "img": "",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "premium": 10,
+        "radio": 10,
+        "bluetooth": 10,
+        "usb": 9,
+        "sound_rich": 10
+      }
+    },
+    {
+      "merchant": "Lumie",
+      "name": "Bodyclock Luxe 700FM",
+      "note": "A premium sunrise clock with FM radio, Bluetooth speakers, USB charging and more than twenty-five sounds.",
+      "offer": "Best for rich audio without needing DAB radio.",
+      "url": "https://www.lumie.com/products/bodyclock-luxe-700fm",
+      "img": "",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "premium": 10,
+        "radio": 9,
+        "bluetooth": 10,
+        "usb": 9,
+        "sound_rich": 9
+      }
+    },
+    {
+      "merchant": "Pure",
+      "name": "Moment Ambient Sleep Companion",
+      "note": "A premium bedside clock with sunrise lighting, Bluetooth audio, radio, ambient scenes and dual alarms.",
+      "offer": "Best for a polished all-in-one bedside hub with strong audio features.",
+      "url": "https://www.pure-audio.com/en-GB/audio-hifi/radios/alarm-radios/moment/p/252448",
+      "img": "",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "premium": 9,
+        "radio": 10,
+        "bluetooth": 9,
+        "sound_rich": 9,
+        "dual_alarm": 10
+      }
+    },
+    {
+      "merchant": "Philips",
+      "name": "SmartSleep Sleep and Wake-Up Light HF3651/01",
+      "note": "A sculptural sleep and wake light with guided breathing, sunset, midnight light and layered sound options.",
+      "offer": "Best for a polished bedside centrepiece focused on both evenings and mornings.",
+      "url": "https://www.philips.co.uk/c-p/HF3651_01/somneo-sleep-and-wake-up-light-with-relaxbreath-for-sleep",
+      "img": "",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "premium": 10,
+        "breathing": 10,
+        "sunset": 10,
+        "nightlight": 9
+      }
+    }
+  ]
+};
+
+const RESULTS = {
+  "gentle": {
+    "name": "Gentle Dawn",
+    "color": "#A9784D",
+    "tag": "A softer start with only the features you need.",
+    "body": "You want morning light to arrive gradually without turning your bedside table into a control centre. A clear sunrise, optional gentle sound and restrained lighting will suit your routine best.",
+    "details": {
+      "Wake style": "Gradual and low-pressure",
+      "Best controls": "Simple physical buttons",
+      "Useful extras": "Optional sounds and sunset",
+      "Budget direction": "Accessible to mid-range"
+    }
+  },
+  "sound": {
+    "name": "Sound-Rich Morning",
+    "color": "#7B6475",
+    "tag": "Light, nature sounds and radio working together.",
+    "body": "Your wake-up routine needs more than brightness alone. You will get more value from a clock with natural sounds, radio or white noise, plus enough control to vary mornings and evenings.",
+    "details": {
+      "Wake style": "Sunrise plus layered audio",
+      "Best controls": "On-device presets",
+      "Useful extras": "Radio, nature sounds, white noise",
+      "Budget direction": "Mid-range to premium"
+    }
+  },
+  "simple": {
+    "name": "Phone-Free Simplicity",
+    "color": "#65727A",
+    "tag": "Set it once, then leave the phone outside the routine.",
+    "body": "You prefer dependable physical controls and minimal setup. A focused sunrise clock with a dim display, optional beep and straightforward snooze will suit you better than an app-heavy sleep hub.",
+    "details": {
+      "Wake style": "Reliable and uncomplicated",
+      "Best controls": "Buttons and tap snooze",
+      "Useful extras": "Dim display and bedside light",
+      "Budget direction": "Budget to mid-range"
+    }
+  },
+  "smart": {
+    "name": "Connected Routine",
+    "color": "#59647C",
+    "tag": "Custom timings, app control and useful bedside technology.",
+    "body": "You enjoy tailoring routines and linking several functions together. App scheduling, adjustable sunrise duration, charging and personalised light or sound combinations will earn their place on your bedside table.",
+    "details": {
+      "Wake style": "Highly customised",
+      "Best controls": "App plus device controls",
+      "Useful extras": "Charging, schedules and sensors",
+      "Budget direction": "Mid-range to premium"
+    }
+  },
+  "winter": {
+    "name": "Deep-Winter Brightness",
+    "color": "#9A6B3E",
+    "tag": "A stronger sunrise for the darkest mornings.",
+    "body": "Light intensity and a convincing colour transition matter more to you than decorative extras. Look for adjustable brightness and longer sunrise timing so the room changes clearly before your alarm sounds.",
+    "details": {
+      "Wake style": "Bright and progressive",
+      "Best controls": "Intensity and duration settings",
+      "Useful extras": "Coloured sunrise and radio",
+      "Budget direction": "Mid-range to premium"
+    }
+  },
+  "luxury": {
+    "name": "Bedside Luxury",
+    "color": "#6A5263",
+    "tag": "Premium light, polished sound and an uncluttered centrepiece.",
+    "body": "You want one device to handle sunrise, sunset, audio and bedside convenience with a refined finish. Strong speakers, broad sound libraries, radio and charging features justify a higher spend for your routine.",
+    "details": {
+      "Wake style": "Immersive and feature-rich",
+      "Best controls": "Flexible device controls",
+      "Useful extras": "Premium audio, radio and charging",
+      "Budget direction": "Premium"
+    }
+  }
+};
+
+const SIGNAL_LABELS = {
+  "gentle": "a gentle wake-up",
+  "simple": "simple controls",
+  "budget": "a lower budget",
+  "nature": "natural wake sounds",
+  "colours": "coloured light",
+  "beep": "an optional beep",
+  "compact": "a compact clock",
+  "phone_free": "a phone-free routine",
+  "sunset": "a sunset function",
+  "mid_budget": "a mid-range budget",
+  "radio": "radio",
+  "bluetooth": "Bluetooth audio",
+  "sound_rich": "a broad sound library",
+  "white_noise": "white noise",
+  "nightlight": "a night light",
+  "custom_duration": "adjustable sunrise timing",
+  "dual_alarm": "multiple alarms",
+  "smart": "smart bedside features",
+  "app": "app control",
+  "breathing": "guided wind-down tools",
+  "usb": "device charging",
+  "wireless_charge": "wireless charging",
+  "bright": "stronger morning light",
+  "winter": "dark-season use",
+  "premium": "a premium feature set",
+  "blackout_display": "a very dim display"
+};
+
+const QUESTIONS = [
+  {
+    "q": "What makes waking up difficult for you?",
+    "a": [
+      {
+        "label": "I need a gentle nudge, not a shock",
+        "scores": {
+          "gentle": 5
+        },
+        "signals": [
+          "gentle"
+        ]
+      },
+      {
+        "label": "Light alone is not enough",
+        "scores": {
+          "sound": 5
+        },
+        "signals": [
+          "sound_rich"
+        ]
+      },
+      {
+        "label": "My phone pulls me into scrolling",
+        "scores": {
+          "simple": 5
+        },
+        "signals": [
+          "phone_free",
+          "simple"
+        ]
+      },
+      {
+        "label": "My schedule changes through the week",
+        "scores": {
+          "smart": 5
+        },
+        "signals": [
+          "smart",
+          "app",
+          "dual_alarm"
+        ]
+      },
+      {
+        "label": "Dark mornings make everything harder",
+        "scores": {
+          "winter": 5
+        },
+        "signals": [
+          "bright",
+          "winter"
+        ]
+      },
+      {
+        "label": "I want the whole bedside routine upgraded",
+        "scores": {
+          "luxury": 5
+        },
+        "signals": [
+          "premium"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How long should the sunrise build?",
+    "a": [
+      {
+        "label": "Around 30 minutes is plenty",
+        "scores": {
+          "gentle": 5
+        },
+        "signals": [
+          "gentle"
+        ]
+      },
+      {
+        "label": "I want a few timing choices",
+        "scores": {
+          "sound": 5
+        },
+        "signals": [
+          "custom_duration"
+        ]
+      },
+      {
+        "label": "One fixed setting keeps things easy",
+        "scores": {
+          "simple": 5
+        },
+        "signals": [
+          "simple"
+        ]
+      },
+      {
+        "label": "I want to set it precisely in an app",
+        "scores": {
+          "smart": 5
+        },
+        "signals": [
+          "app",
+          "custom_duration"
+        ]
+      },
+      {
+        "label": "Long enough to brighten the whole room",
+        "scores": {
+          "winter": 5
+        },
+        "signals": [
+          "bright",
+          "custom_duration"
+        ]
+      },
+      {
+        "label": "Anything from a quick rise to a long ritual",
+        "scores": {
+          "luxury": 5
+        },
+        "signals": [
+          "premium",
+          "custom_duration"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What should finish the wake-up?",
+    "a": [
+      {
+        "label": "A soft optional beep",
+        "scores": {
+          "gentle": 5
+        },
+        "signals": [
+          "beep"
+        ]
+      },
+      {
+        "label": "Nature sounds, white noise or radio",
+        "scores": {
+          "sound": 5
+        },
+        "signals": [
+          "nature",
+          "white_noise",
+          "radio"
+        ]
+      },
+      {
+        "label": "Light first, with a basic backup sound",
+        "scores": {
+          "simple": 5
+        },
+        "signals": [
+          "simple",
+          "beep"
+        ]
+      },
+      {
+        "label": "A personalised light-and-sound combination",
+        "scores": {
+          "smart": 5
+        },
+        "signals": [
+          "app",
+          "sound_rich"
+        ]
+      },
+      {
+        "label": "A clear sound after a strong sunrise",
+        "scores": {
+          "winter": 5
+        },
+        "signals": [
+          "bright",
+          "nature"
+        ]
+      },
+      {
+        "label": "High-quality audio or DAB radio",
+        "scores": {
+          "luxury": 5
+        },
+        "signals": [
+          "radio",
+          "sound_rich",
+          "premium"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How do you feel about using an app?",
+    "a": [
+      {
+        "label": "I do not mind, but it is not essential",
+        "scores": {
+          "gentle": 5
+        },
+        "signals": [
+          "gentle"
+        ]
+      },
+      {
+        "label": "I prefer presets on the clock",
+        "scores": {
+          "sound": 5
+        },
+        "signals": [
+          "sound_rich"
+        ]
+      },
+      {
+        "label": "I want no app at all",
+        "scores": {
+          "simple": 5
+        },
+        "signals": [
+          "phone_free",
+          "simple"
+        ]
+      },
+      {
+        "label": "I want detailed app control",
+        "scores": {
+          "smart": 5
+        },
+        "signals": [
+          "app",
+          "smart"
+        ]
+      },
+      {
+        "label": "Brightness matters more than connectivity",
+        "scores": {
+          "winter": 5
+        },
+        "signals": [
+          "bright"
+        ]
+      },
+      {
+        "label": "I will use an app if the experience feels premium",
+        "scores": {
+          "luxury": 5
+        },
+        "signals": [
+          "app",
+          "premium"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What would help at bedtime too?",
+    "a": [
+      {
+        "label": "A simple fading sunset",
+        "scores": {
+          "gentle": 5
+        },
+        "signals": [
+          "sunset"
+        ]
+      },
+      {
+        "label": "Sleep sounds or white noise",
+        "scores": {
+          "sound": 5
+        },
+        "signals": [
+          "white_noise",
+          "sound_rich"
+        ]
+      },
+      {
+        "label": "A dim bedside or night light",
+        "scores": {
+          "simple": 5
+        },
+        "signals": [
+          "nightlight",
+          "blackout_display"
+        ]
+      },
+      {
+        "label": "A scheduled wind-down routine",
+        "scores": {
+          "smart": 5
+        },
+        "signals": [
+          "app",
+          "breathing"
+        ]
+      },
+      {
+        "label": "A long, warm sunset before dark mornings",
+        "scores": {
+          "winter": 5
+        },
+        "signals": [
+          "sunset",
+          "winter"
+        ]
+      },
+      {
+        "label": "Guided breathing, audio and premium lighting",
+        "scores": {
+          "luxury": 5
+        },
+        "signals": [
+          "breathing",
+          "premium",
+          "sunset"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How important is radio or Bluetooth audio?",
+    "a": [
+      {
+        "label": "Not important",
+        "scores": {
+          "gentle": 5
+        },
+        "signals": [
+          "simple"
+        ]
+      },
+      {
+        "label": "Radio is one of the main reasons I want it",
+        "scores": {
+          "sound": 5
+        },
+        "signals": [
+          "radio"
+        ]
+      },
+      {
+        "label": "I would rather keep the clock distraction-free",
+        "scores": {
+          "simple": 5
+        },
+        "signals": [
+          "phone_free"
+        ]
+      },
+      {
+        "label": "Bluetooth or connected audio would be useful",
+        "scores": {
+          "smart": 5
+        },
+        "signals": [
+          "bluetooth",
+          "smart"
+        ]
+      },
+      {
+        "label": "Radio is useful, but brightness comes first",
+        "scores": {
+          "winter": 5
+        },
+        "signals": [
+          "radio",
+          "bright"
+        ]
+      },
+      {
+        "label": "Strong speakers and several audio sources matter",
+        "scores": {
+          "luxury": 5
+        },
+        "signals": [
+          "bluetooth",
+          "radio",
+          "premium"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How dark should the bedroom stay overnight?",
+    "a": [
+      {
+        "label": "A low glow is fine",
+        "scores": {
+          "gentle": 5
+        },
+        "signals": [
+          "nightlight"
+        ]
+      },
+      {
+        "label": "I want an auto-dimming display",
+        "scores": {
+          "sound": 5
+        },
+        "signals": [
+          "blackout_display"
+        ]
+      },
+      {
+        "label": "As dark as possible",
+        "scores": {
+          "simple": 5
+        },
+        "signals": [
+          "blackout_display",
+          "simple"
+        ]
+      },
+      {
+        "label": "I want display brightness scheduled",
+        "scores": {
+          "smart": 5
+        },
+        "signals": [
+          "app",
+          "blackout_display"
+        ]
+      },
+      {
+        "label": "Dark overnight, then clearly bright by morning",
+        "scores": {
+          "winter": 5
+        },
+        "signals": [
+          "blackout_display",
+          "bright"
+        ]
+      },
+      {
+        "label": "A polished display that dims itself",
+        "scores": {
+          "luxury": 5
+        },
+        "signals": [
+          "blackout_display",
+          "premium"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Which controls feel most natural?",
+    "a": [
+      {
+        "label": "A few clear buttons",
+        "scores": {
+          "gentle": 5
+        },
+        "signals": [
+          "simple"
+        ]
+      },
+      {
+        "label": "Buttons plus plenty of presets",
+        "scores": {
+          "sound": 5
+        },
+        "signals": [
+          "sound_rich"
+        ]
+      },
+      {
+        "label": "Physical controls I can use half-asleep",
+        "scores": {
+          "simple": 5
+        },
+        "signals": [
+          "phone_free",
+          "simple"
+        ]
+      },
+      {
+        "label": "App setup with useful device shortcuts",
+        "scores": {
+          "smart": 5
+        },
+        "signals": [
+          "app",
+          "smart"
+        ]
+      },
+      {
+        "label": "Direct brightness and duration controls",
+        "scores": {
+          "winter": 5
+        },
+        "signals": [
+          "bright",
+          "custom_duration"
+        ]
+      },
+      {
+        "label": "Flexible controls with tap snooze and audio settings",
+        "scores": {
+          "luxury": 5
+        },
+        "signals": [
+          "premium",
+          "sound_rich"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Which extra would you genuinely use?",
+    "a": [
+      {
+        "label": "Coloured mood lighting",
+        "scores": {
+          "gentle": 5
+        },
+        "signals": [
+          "colours"
+        ]
+      },
+      {
+        "label": "A larger sound library",
+        "scores": {
+          "sound": 5
+        },
+        "signals": [
+          "sound_rich",
+          "nature"
+        ]
+      },
+      {
+        "label": "A compact footprint",
+        "scores": {
+          "simple": 5
+        },
+        "signals": [
+          "compact"
+        ]
+      },
+      {
+        "label": "Wireless or USB phone charging",
+        "scores": {
+          "smart": 5
+        },
+        "signals": [
+          "wireless_charge",
+          "usb"
+        ]
+      },
+      {
+        "label": "Adjustable sunrise intensity",
+        "scores": {
+          "winter": 5
+        },
+        "signals": [
+          "bright"
+        ]
+      },
+      {
+        "label": "DAB radio and premium speakers",
+        "scores": {
+          "luxury": 5
+        },
+        "signals": [
+          "radio",
+          "bluetooth",
+          "premium"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What budget feels comfortable?",
+    "a": [
+      {
+        "label": "Under £60",
+        "scores": {
+          "gentle": 5
+        },
+        "signals": [
+          "budget"
+        ]
+      },
+      {
+        "label": "Around £100 to £150 for useful audio",
+        "scores": {
+          "sound": 5
+        },
+        "signals": [
+          "mid_budget",
+          "sound_rich"
+        ]
+      },
+      {
+        "label": "Under £100 for something dependable",
+        "scores": {
+          "simple": 5
+        },
+        "signals": [
+          "budget",
+          "simple"
+        ]
+      },
+      {
+        "label": "Up to £200 for smart functionality",
+        "scores": {
+          "smart": 5
+        },
+        "signals": [
+          "premium",
+          "app"
+        ]
+      },
+      {
+        "label": "Up to £150 for convincing brightness",
+        "scores": {
+          "winter": 5
+        },
+        "signals": [
+          "mid_budget",
+          "bright"
+        ]
+      },
+      {
+        "label": "Over £180 for a premium all-in-one device",
+        "scores": {
+          "luxury": 5
+        },
+        "signals": [
+          "premium"
+        ]
+      }
+    ]
+  }
+];
+
+let step=0;
+let locked=false;
+const selectedAnswers=[];
+const preferenceSignals={};
+const totals=Object.keys(RESULTS).reduce((acc,key)=>{acc[key]=0;return acc;},{});
+const el=id=>document.getElementById(id);
+const screens={intro:el("intro"),quiz:el("quiz"),result:el("result")};
+const prefersReducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function show(name){Object.values(screens).forEach(screen=>screen.classList.remove("active"));screens[name].classList.add("active");window.scrollTo({top:0,behavior:prefersReducedMotion?"auto":"smooth"});}
+function escapeHtml(value){return String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");}
+function getProductRecommendations(key){return (PRODUCTS[key]||[]).map((product,originalIndex)=>{const matchScore=Object.entries(product.fit||{}).reduce((score,[signal,weight])=>score+(preferenceSignals[signal]||0)*weight,product.base||0);return {...product,matchScore,originalIndex};}).sort((a,b)=>b.matchScore-a.matchScore||(b.base||0)-(a.base||0)||a.originalIndex-b.originalIndex).slice(0,3);}
+function getPersonalMatch(product){const matches=Object.entries(product.fit||{}).filter(([signal])=>preferenceSignals[signal]).map(([signal,weight])=>({signal,value:weight*preferenceSignals[signal]})).sort((a,b)=>b.value-a.value).slice(0,2).map(item=>SIGNAL_LABELS[item.signal]).filter(Boolean);if(matches.length===0)return product.offer||"";if(matches.length===1)return `Matches your preference for ${matches[0]}.`;return `Matches your preference for ${matches[0]} and ${matches[1]}.`;}
+function trackEvent(eventName,details={}){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:eventName,...details});if(typeof window.pintrk==="function"){try{window.pintrk("track","custom",{event_name:eventName,...details});}catch(error){console.warn("Pinterest tracking event was not sent.",error);}}}
+function renderQuestion(){const item=QUESTIONS[step];const totalQuestions=QUESTIONS.length;el("question").textContent=item.q;el("count").textContent=`${String(step+1).padStart(2,"0")} / ${String(totalQuestions).padStart(2,"0")}`;el("fill").style.width=`${step/totalQuestions*100}%`;const box=el("options");box.innerHTML="";locked=false;item.a.forEach((answer,index)=>{const button=document.createElement("button");button.className="option";button.type="button";button.textContent=answer.label;button.addEventListener("click",()=>chooseAnswer(button,answer,index));box.appendChild(button);});setTimeout(()=>el("question").focus({preventScroll:true}),50);}
+function chooseAnswer(button,answer,index){if(locked)return;locked=true;document.querySelectorAll(".option").forEach(option=>{option.disabled=true;});button.classList.add("chosen");selectedAnswers[step]=index;Object.entries(answer.scores).forEach(([key,value])=>{totals[key]+=value;});(answer.signals||[]).forEach(signal=>{preferenceSignals[signal]=(preferenceSignals[signal]||0)+1;});trackEvent("quiz_answer",{quiz:"sunrise_alarm_clock",question_number:step+1,answer:answer.label});setTimeout(()=>{step+=1;if(step<QUESTIONS.length){renderQuestion();}else{el("fill").style.width="100%";finishQuiz();}},340);}
+function finishQuiz(){const orderedKeys=Object.keys(RESULTS);let winningKey=orderedKeys[0];orderedKeys.forEach(key=>{if(totals[key]>totals[winningKey])winningKey=key;});const tiedKeys=orderedKeys.filter(key=>totals[key]===totals[winningKey]);if(tiedKeys.length>1){const priorityOrder=[0,...Array.from({length:selectedAnswers.length-1},(_,index)=>selectedAnswers.length-1-index)];for(const questionIndex of priorityOrder){const answer=QUESTIONS[questionIndex].a[selectedAnswers[questionIndex]];const rankedTie=tiedKeys.map(key=>({key,value:answer.scores[key]||0,routeIndex:orderedKeys.indexOf(key)})).sort((a,b)=>b.value-a.value||a.routeIndex-b.routeIndex);if(rankedTie[0].value>rankedTie[1].value){winningKey=rankedTie[0].key;break;}}}showResult(winningKey);}
+function showResult(key){const result=RESULTS[key];window.LYS_RESULT=key;el("resultCard").style.setProperty("--fam",result.color);el("rName").textContent=result.name;el("rTag").textContent=result.tag;el("rBody").textContent=result.body;const details=el("rDetails");details.innerHTML="";Object.entries(result.details).forEach(([label,value])=>{const row=document.createElement("div");row.className="detail-row";const labelSpan=document.createElement("span");labelSpan.className="detail-label";labelSpan.textContent=label;const valueSpan=document.createElement("span");valueSpan.className="detail-val";valueSpan.textContent=value;row.append(labelSpan,valueSpan);details.appendChild(row);});el("recsTitle").textContent="Your three best-matched sunrise alarm clocks";const recommendations=getProductRecommendations(key);const grid=el("recGrid");grid.innerHTML="";recommendations.forEach((product,index)=>{const card=document.createElement("article");card.className="rec";const badgeHtml=index===0?'<span class="rec-badge">Best match</span>':"";const matchText=getPersonalMatch(product);const offerHtml=matchText?`<span class="offer">${escapeHtml(matchText)}</span>`:"";const linkIsAffiliate=Boolean(product.affiliate);const linkRel=linkIsAffiliate?"noopener sponsored":"noopener";const ctaHtml=product.url&&product.url!=="#"?`<a class="view" href="${escapeHtml(product.url)}" target="_blank" rel="${linkRel}" data-product-position="${index+1}">View product &rsaquo;</a>`:'<span class="view off">Product page unavailable</span>';card.innerHTML=`<div class="body">${badgeHtml}<span class="brand">${escapeHtml(product.merchant)}</span><span class="pname">${escapeHtml(product.name)}</span><span class="pnote">${escapeHtml(product.note)}</span>${offerHtml}${ctaHtml}</div>`;const productLink=card.querySelector("a[data-product-position]");if(productLink){productLink.addEventListener("click",()=>{const trackingDetails={quiz:"sunrise_alarm_clock",result:key,merchant:product.merchant,product:product.name,position:index+1,affiliate:linkIsAffiliate};trackEvent("product_click",trackingDetails);if(linkIsAffiliate)trackEvent("affiliate_click",trackingDetails);});}grid.appendChild(card);});const disclosure=el("recommendationDisclosure");const containsAffiliateLinks=recommendations.some(product=>product.affiliate);if(containsAffiliateLinks){disclosure.innerHTML='Some links on this page are affiliate links. Love Your Senses may earn a commission from qualifying orders at no extra cost to you. <a href="/disclosure">Read the affiliate disclosure</a>.';}else{disclosure.textContent="These recommendations use direct brand or retailer links. Love Your Senses does not currently earn commission from them. Product availability and specifications may change.";}const browseAll=el("browseAll");if(STORE_LINK&&STORE_LINK!=="#"){const storeRel=STORE_LINK_IS_AFFILIATE?"noopener sponsored":"noopener";browseAll.innerHTML=`<a class="btn-all" href="${escapeHtml(STORE_LINK)}" target="_blank" rel="${storeRel}">Browse all sunrise alarms</a>`;browseAll.querySelector("a").addEventListener("click",()=>{const trackingDetails={quiz:"sunrise_alarm_clock",result:key,product:"browse_all",affiliate:STORE_LINK_IS_AFFILIATE};trackEvent("product_click",trackingDetails);if(STORE_LINK_IS_AFFILIATE)trackEvent("affiliate_click",trackingDetails);});}else{browseAll.innerHTML="";}trackEvent("quiz_complete",{quiz:"sunrise_alarm_clock",result:key,result_name:result.name});show("result");}
+async function submitEmail(){const emailInput=el("email");const email=emailInput.value.trim();const form=el("emailForm");const note=el("formNote");if(!/^\S+@\S+\.\S+$/.test(email)){emailInput.focus();note.textContent="Enter a valid email address.";return;}if(!EMAIL_FORM_ACTION){note.textContent="Email signup is not connected yet. Add your email platform form action in the JavaScript settings.";return;}const button=el("emailBtn");button.disabled=true;button.textContent="Sending";try{const payload=new URLSearchParams();payload.append(EMAIL_FIELD_NAME,email);payload.append("quiz_result",window.LYS_RESULT||"");payload.append("source","sunrise_alarm_clock_quiz");await fetch(EMAIL_FORM_ACTION,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:payload.toString()});form.innerHTML='<p class="done">Your sunrise alarm shortlist is on its way.</p>';note.textContent="";trackEvent("email_signup",{quiz:"sunrise_alarm_clock",result:window.LYS_RESULT||""});}catch(error){button.disabled=false;button.textContent="Send it";note.textContent="The signup did not complete. Please try again.";console.error("Email signup failed.",error);}}
+async function shareResult(){const result=RESULTS[window.LYS_RESULT];if(!result)return;const text=`My sunrise alarm profile is ${result.name}. Find yours:`;const shareData={title:"Which Sunrise Alarm Clock Fits Your Routine? | Love Your Senses",text,url:QUIZ_URL||location.href};if(navigator.share){try{await navigator.share(shareData);trackEvent("share",{quiz:"sunrise_alarm_clock",result:window.LYS_RESULT,method:"native"});}catch(error){if(error.name!=="AbortError")console.error("Share failed.",error);}return;}try{await navigator.clipboard.writeText(`${text} ${shareData.url}`);el("share").textContent="Link copied";setTimeout(()=>el("share").textContent="Share your result",2000);trackEvent("share",{quiz:"sunrise_alarm_clock",result:window.LYS_RESULT,method:"clipboard"});}catch(error){console.error("Copy failed.",error);}}
+function resetQuiz(){step=0;locked=false;selectedAnswers.length=0;Object.keys(preferenceSignals).forEach(key=>delete preferenceSignals[key]);Object.keys(totals).forEach(key=>totals[key]=0);window.LYS_RESULT="";const form=el("emailForm");form.innerHTML='<label class="sr-only" for="email">Your email address</label><input type="email" id="email" name="email" placeholder="Your email" aria-describedby="formNote" autocomplete="email" inputmode="email"><button id="emailBtn" type="button">Send it</button>';el("emailBtn").addEventListener("click",submitEmail);el("email").addEventListener("keydown",event=>{if(event.key==="Enter"){event.preventDefault();submitEmail();}});el("formNote").textContent="Connect your email platform in the JavaScript settings before publishing.";show("intro");trackEvent("quiz_retake",{quiz:"sunrise_alarm_clock"});}
+el("start").addEventListener("click",()=>{show("quiz");renderQuestion();trackEvent("quiz_start",{quiz:"sunrise_alarm_clock"});});
+el("emailBtn").addEventListener("click",submitEmail);
+el("email").addEventListener("keydown",event=>{if(event.key==="Enter"){event.preventDefault();submitEmail();}});
+el("share").addEventListener("click",shareResult);
+el("retake").addEventListener("click",resetQuiz);
+
+
+
+
+
+
+
+window.LYS_TEST={
+  PRODUCTS,
+  RESULTS,
+  QUESTIONS,
+  getProductRecommendations,
+  showResult,
+  resetSignals(){Object.keys(preferenceSignals).forEach(key=>delete preferenceSignals[key]);},
+  setSignals(signals){this.resetSignals();Object.entries(signals||{}).forEach(([key,value])=>{preferenceSignals[key]=value;});}
+};
+
+</script>
+</body>
+</html>
