@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Which Shower Filter Suits Your Home? | Love Your Senses</title>
+<meta name="description" content="Answer ten questions to match your shower type, fitting space, spray preferences, maintenance tolerance and budget to a suitable shower-filter format.">
+<link rel="canonical" href="https://loveyoursenses.com/shower-filter-quiz/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Which Shower Filter Suits Your Home? | Love Your Senses">
+<meta property="og:description" content="Match shower type, connection, spray preferences, maintenance and budget to a personalised shower-filter shortlist.">
+<meta property="og:url" content="https://loveyoursenses.com/shower-filter-quiz/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#E7E3DD;
+    --card:#F2EEE8;
+    --ink:#2A2130;
+    --ink-soft:#6E6574;
+    --accent:#7B4A5E;
+    --accent-deep:#5E3547;
+    --line:#CDC3B6;
+    --gold:#B8A78C;
+    --cream:#F7F1EC;
+    --radius:18px;
+    --ease:cubic-bezier(.4,.14,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Jost',system-ui,sans-serif;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+  button,input{font:inherit}
+  .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+  button{touch-action:manipulation}
+  .display{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  .wrap{width:100%;max-width:1000px;margin:0 auto;padding-left:24px;padding-right:24px}
+  .site-head{padding:24px 0}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .mark{font-family:'Fraunces',serif;font-weight:500;font-size:1.24rem;text-decoration:none;color:var(--ink)}
+  .mark span{color:var(--accent)}
+  .head-link{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none}
+  .head-link:hover{color:var(--accent)}
+  .stage{width:100%;max-width:680px;margin:0 auto;padding:36px 20px 72px}
+  .screen{display:none;animation:rise .6s var(--ease) both}
+  .screen.active{display:block}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  #intro{text-align:center;padding:14px 0 24px}
+  .ring{margin:0 auto 30px;display:block}
+  #intro h1{font-size:clamp(2.55rem,9vw,4rem);margin-bottom:18px}
+  #intro h1 em{font-style:italic;font-weight:400}
+  .lede{color:var(--ink-soft);font-size:1.06rem;max-width:45ch;margin:0 auto 24px}
+  .wellbeing-note{font-size:.79rem;color:var(--ink-soft);line-height:1.55;max-width:56ch;margin:0 auto 30px}
+  .meta{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:26px}
+  .btn{display:inline-block;font-family:'Jost',sans-serif;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:17px 40px;background:var(--ink);color:var(--bg);transition:transform .35s var(--ease),background .35s var(--ease)}
+  .btn:hover{background:var(--accent-deep);transform:translateY(-2px)}
+  .progress-wrap{display:flex;align-items:center;gap:16px;margin-bottom:38px}
+  .track{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
+  .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);transition:width .5s var(--ease)}
+  .count{font-size:.72rem;letter-spacing:.2em;color:var(--ink-soft);white-space:nowrap}
+  .question{font-size:clamp(1.75rem,6vw,2.45rem);margin-bottom:32px;min-height:2.2em}
+  .options{display:flex;flex-direction:column;gap:12px}
+  .option{font-family:'Jost',sans-serif;font-size:1.01rem;color:var(--ink);text-align:left;background:var(--card);border:1px solid transparent;border-radius:var(--radius);padding:19px 22px;cursor:pointer;width:100%;transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);display:flex;align-items:center;gap:14px}
+  .option:before{content:"";width:9px;height:9px;border-radius:50%;border:1.5px solid var(--line);flex:none;transition:all .3s var(--ease)}
+  .option:hover{border-color:var(--gold);transform:translateX(4px)}
+  .option.chosen{background:var(--accent);color:var(--cream);border-color:var(--accent)}
+  .option.chosen:before{background:var(--cream);border-color:var(--cream)}
+  .option:disabled{cursor:default}
+  .result-card{background:var(--fam,#7B4A5E);color:var(--cream);border-radius:26px;padding:44px 32px 40px;text-align:center;box-shadow:0 30px 60px -30px rgba(42,33,48,.55)}
+  .result-card .eyebrow{color:rgba(247,241,236,.72)}
+  .result-name{font-size:clamp(2.55rem,10vw,3.65rem);margin-bottom:10px}
+  .result-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:1.2rem;opacity:.94;margin-bottom:24px}
+  .result-body{font-size:1.02rem;line-height:1.72;opacity:.95;max-width:44ch;margin:0 auto 30px}
+  .details{border-top:1px solid rgba(247,241,236,.28);border-bottom:1px solid rgba(247,241,236,.28);padding:22px 0;text-align:left;display:flex;flex-direction:column;gap:14px}
+  .detail-row{display:flex;gap:18px;align-items:baseline}
+  .detail-label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;opacity:.72;width:104px;flex:none}
+  .detail-val{font-family:'Fraunces',serif;font-size:1.04rem}
+  .recs{margin-top:36px}
+  .recs-head{text-align:center;margin-bottom:22px}
+  .recs-head .eyebrow{display:block;margin-bottom:10px}
+  .recs-head h3{font-size:clamp(1.55rem,5vw,2.05rem)}
+  .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .rec{background:var(--card);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative}
+  .rec-badge{display:inline-flex;align-self:flex-start;background:var(--cream);color:var(--accent-deep);border:1px solid var(--line);border-radius:100px;padding:6px 10px;margin-bottom:4px;font-size:.61rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+  
+  
+  
+  
+  
+  
+  
+  
+  .rec .body{padding:16px 15px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .rec .brand{font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .rec .pname{font-family:'Fraunces',serif;font-size:1.04rem;line-height:1.22}
+  .rec .pnote{font-size:.8rem;color:var(--ink-soft);line-height:1.45}
+  .rec .offer{font-size:.76rem;color:var(--accent);font-weight:500}
+  .rec .view{margin-top:auto;padding-top:11px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;text-decoration:none;color:var(--accent)}
+  .rec .view.off{color:var(--ink-soft);opacity:.58}
+  .rec .view:hover{text-decoration:underline;text-underline-offset:4px}
+  .affiliate-note{font-size:.78rem;color:var(--ink-soft);line-height:1.55;text-align:center;max-width:58ch;margin:18px auto 0}
+  .affiliate-note a{color:var(--accent);text-underline-offset:3px}
+  .browse-all{text-align:center;margin-top:22px}
+  .btn-all{display:inline-block;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;text-decoration:none;border:1px solid var(--accent);color:var(--accent);border-radius:100px;padding:14px 34px;transition:background .3s var(--ease),color .3s var(--ease)}
+  .btn-all:hover{background:var(--accent);color:var(--cream)}
+  .capture{background:var(--card);border-radius:var(--radius);padding:32px 28px;margin-top:28px;text-align:center}
+  .capture h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;margin-bottom:8px}
+  .capture p{color:var(--ink-soft);font-size:.96rem;margin:0 auto 22px;max-width:39ch}
+  .field{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .field input{font-family:'Jost',sans-serif;font-size:1rem;flex:1;min-width:210px;padding:15px 18px;border:1px solid var(--line);border-radius:100px;background:#fff;color:var(--ink)}
+  .field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+  .field button{font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;border-radius:100px;padding:15px 28px;background:var(--accent);color:var(--cream)}
+  .field button:hover{background:var(--accent-deep)}
+  .capture .done{color:var(--accent);font-family:'Fraunces',serif;font-size:1.1rem;padding:6px 0}
+  .capture .form-note{font-size:.74rem;margin-top:12px;margin-bottom:0}
+  .next-quiz{border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;margin-top:18px;text-align:center}
+  .next-quiz .eyebrow{display:block;margin-bottom:9px}
+  .next-quiz h3{font-size:1.45rem;margin-bottom:8px}
+  .next-quiz p{color:var(--ink-soft);font-size:.94rem;max-width:40ch;margin:0 auto 18px}
+  .next-link{font-size:.74rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;color:var(--accent);text-underline-offset:4px}
+  .next-link:hover{color:var(--accent-deep)}
+  .after{display:flex;gap:22px;justify-content:center;align-items:center;margin-top:26px;flex-wrap:wrap}
+  .linkish{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px}
+  .linkish:hover{color:var(--accent)}
+  .site-foot{border-top:1px solid var(--line);padding:34px 0 48px}
+  .foot{display:flex;flex-direction:column;align-items:center;gap:11px;text-align:center}
+  .foot-nav a{color:var(--ink-soft);text-decoration:none;font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;margin:0 10px}
+  .foot-nav a:hover{color:var(--accent)}
+  .foot .disc{font-size:.82rem;color:var(--ink-soft);max-width:54ch}
+  .foot .cr{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  @media(max-width:600px){.site-head{padding:20px 0}.stage{padding-top:28px}.rec-grid{grid-template-columns:1fr 1fr}.detail-label{width:88px}}
+  @media(max-width:420px){.rec-grid{grid-template-columns:1fr}.result-card{padding:40px 24px 36px}.field{flex-direction:column}.field input,.field button{width:100%}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<!-- HEADER_INCLUDE -->
+
+<main class="stage">
+  <section id="intro" class="screen active">
+    <svg class="ring" width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
+      <circle cx="29" cy="29" r="27" fill="none" stroke="#B8A78C" stroke-width="1"/>
+      <circle cx="29" cy="29" r="19" fill="none" stroke="#CDC3B6" stroke-width="1"/>
+      <g stroke="#7B4A5E" stroke-width="1.4">
+        <line x1="29" y1="2" x2="29" y2="9"/>
+        <line x1="52.4" y1="42.5" x2="46.4" y2="39"/>
+        <line x1="5.6" y1="42.5" x2="11.6" y2="39"/>
+        <line x1="52.4" y1="15.5" x2="46.4" y2="19"/>
+        <line x1="5.6" y1="15.5" x2="11.6" y2="19"/>
+        <line x1="29" y1="56" x2="29" y2="49"/>
+      </g>
+      <circle cx="29" cy="29" r="3" fill="#7B4A5E"/>
+    </svg>
+    <p class="eyebrow">A clearer shower-fit discovery</p>
+    <h1 class="display">Which <em>shower filter</em> suits your home?</h1>
+    <p class="lede">Answer ten questions about your shower setup, spray preferences, installation space and maintenance habits to find your filter profile and three products to consider.</p>
+    <p class="wellbeing-note">A shower filter is not a whole-home water softener and product performance varies by water supply and filter media. Check connection compatibility, electric-shower suitability and manufacturer instructions before installation, and stop using any fitting that leaks or cracks.</p>
+    <button class="btn" id="start" type="button">Begin the discovery</button>
+    <p class="meta">10 questions &nbsp;·&nbsp; about two minutes</p>
+  </section>
+
+  <section id="quiz" class="screen" aria-live="polite">
+    <div class="progress-wrap">
+      <div class="track" aria-hidden="true"><div class="fill" id="fill"></div></div>
+      <span class="count" id="count">01 / 10</span>
+    </div>
+    <h2 class="question display" id="question" tabindex="-1"></h2>
+    <div class="options" id="options" role="group" aria-labelledby="question"></div>
+  </section>
+
+  <section id="result" class="screen" aria-live="polite">
+    <div class="result-card" id="resultCard">
+      <p class="eyebrow">Your result profile</p>
+      <h2 class="result-name display" id="rName"></h2>
+      <p class="result-tag" id="rTag"></p>
+      <p class="result-body" id="rBody"></p>
+      <div class="details" id="rDetails"></div>
+    </div>
+
+    <div class="recs">
+      <div class="recs-head">
+        <span class="eyebrow">Chosen from all ten answers</span>
+        <h3 class="display" id="recsTitle">Your three best-matched shower filters</h3>
+      </div>
+      <div class="rec-grid" id="recGrid"></div>
+      <p class="affiliate-note" id="recommendationDisclosure">These recommendations use direct brand or retailer links. Love Your Senses does not currently earn commission from them. Product availability and specifications may change.</p>
+      <div class="browse-all" id="browseAll"></div>
+      <p class="wellbeing-note"><strong>Shower-filter safety:</strong> Confirm thread size, hose or fixed-head compatibility and electric-shower suitability before ordering. Follow installation and cartridge instructions, check regularly for leaks or cracks, and do not treat product filtration claims as medical advice or as a substitute for a whole-home water treatment system.</p>
+    </div>
+
+    <div class="capture">
+      <h3>Save your shower-filter shortlist</h3>
+      <p>Get your result, installation priorities and shower-filter shortlist by email.</p>
+      <div class="field" id="emailForm">
+        <label class="sr-only" for="email">Your email address</label>
+        <input type="email" id="email" name="email" placeholder="Your email" aria-describedby="formNote" autocomplete="email" inputmode="email">
+        <button id="emailBtn" type="button">Send it</button>
+      </div>
+      <p class="form-note" id="formNote">Connect your email platform in the JavaScript settings before publishing.</p>
+    </div>
+
+    <div class="next-quiz">
+      <span class="eyebrow">Continue your discovery</span>
+      <h3 class="display">Explore more bathroom routines</h3>
+      <p>Compare body care, haircare and shower-routine discoveries across the full quiz library.</p>
+      <a class="next-link" href="/quiz/">Explore all quizzes</a>
+    </div>
+
+    <div class="after">
+      <button class="linkish" id="share" type="button">Share your result</button>
+      <button class="linkish" id="retake" type="button">Retake the quiz</button>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER_INCLUDE -->
+
+<script>
+/* Product links are direct and non-affiliate. Replace URLs and images with approved affiliate assets when partnerships are active, then change affiliate:false to affiliate:true. */
+const QUIZ_URL = "https://loveyoursenses.com/shower-filter-quiz/";
+const STORE_LINK = "";
+const STORE_LINK_IS_AFFILIATE = false;
+const EMAIL_FORM_ACTION = "";
+const EMAIL_FIELD_NAME = "email";
+
+const PRODUCTS = {
+  "inline": [
+    {
+      "merchant": "Philips",
+      "name": "Shower Filter AWP1775/10",
+      "note": "An inline filter that sits between the outlet and your existing hose or shower head, so the familiar spray setup stays in place.",
+      "offer": "Best overall when you want filtration without replacing a shower head you already like.",
+      "url": "https://www.philips.co.uk/c-p/AWP1775_10/shower-filter",
+      "img": "",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "inline": 10,
+        "keep_head": 10,
+        "compact": 8,
+        "simple_care": 8,
+        "mid_budget": 9
+      }
+    },
+    {
+      "merchant": "PureShowers",
+      "name": "8 Stage Luxury Inline Shower Filter",
+      "note": "A multi-stage inline unit designed to connect to a standard shower fitting while retaining the existing head or hose.",
+      "offer": "Best for a more substantial inline cartridge and a conventional chrome bathroom look.",
+      "url": "https://www.pureshowers.co.uk/8-stage-luxury-shower-filter.html",
+      "img": "",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "inline": 10,
+        "keep_head": 10,
+        "multi_stage": 10,
+        "chrome": 8,
+        "family": 8
+      }
+    },
+    {
+      "merchant": "Tappwater",
+      "name": "ShowerPro Diamond",
+      "note": "A compact inline shower filter with a replaceable cartridge and a design intended for straightforward installation.",
+      "offer": "Best for a neat inline fit when maintenance needs to stay uncomplicated.",
+      "url": "https://tappwater.co/en-gb/products/water-filter-showerpro-diamond-shower-filter",
+      "img": "",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "inline": 10,
+        "compact": 10,
+        "simple_care": 9,
+        "renter": 8,
+        "modern": 8
+      }
+    },
+    {
+      "merchant": "Hello Klean",
+      "name": "Shower Filter 2.0",
+      "note": "A slim inline shower filter designed to work with an existing shower head and a replaceable filter capsule.",
+      "offer": "Best for design-conscious bathrooms where keeping the current shower head matters.",
+      "url": "https://helloklean.com/pages/shower-filter",
+      "img": "",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "inline": 10,
+        "keep_head": 10,
+        "modern": 10,
+        "compact": 8,
+        "premium": 7
+      }
+    }
+  ],
+  "handheld": [
+    {
+      "merchant": "PureShowers",
+      "name": "7 Spray 8 Stage Hand Held Shower Filter",
+      "note": "A replacement handheld shower head with seven spray choices and a built-in multi-stage filter.",
+      "offer": "Best overall for households that want both filtration and noticeably more spray choice.",
+      "url": "https://www.pureshowers.co.uk/pureshowers-7-spray-8-stage-hand-held-shower-filter.html",
+      "img": "",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "handheld": 10,
+        "spray_modes": 10,
+        "multi_stage": 10,
+        "family": 8,
+        "mid_budget": 9
+      }
+    },
+    {
+      "merchant": "StoneStream",
+      "name": "EcoPower Shower Head",
+      "note": "A filtered handheld head with mineral-stone filtration and selectable spray settings.",
+      "offer": "Best for replacing a basic handheld head with a pressure-focused filtered format.",
+      "url": "https://uk.stone-stream.com/products/stonestream-ecopower-showerhead",
+      "img": "",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "handheld": 10,
+        "pressure": 10,
+        "spray_modes": 8,
+        "budget": 8,
+        "compact": 7
+      }
+    },
+    {
+      "merchant": "Hello Klean",
+      "name": "Shower Head 2.0",
+      "note": "A filtered handheld shower head with a contemporary shape and replaceable filter components.",
+      "offer": "Best for a streamlined shower-head replacement with a polished, modern appearance.",
+      "url": "https://helloklean.com/products/hello-klean-shower-head",
+      "img": "",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "handheld": 10,
+        "modern": 10,
+        "gentle": 8,
+        "simple_care": 8,
+        "premium": 7
+      }
+    },
+    {
+      "merchant": "PureShowers",
+      "name": "Ionic Hand Held 3 Spray Shower Filter",
+      "note": "A lightweight handheld replacement with three spray modes and filtration media in the handle.",
+      "offer": "Best budget choice for a low-pressure shower that needs a straightforward head replacement.",
+      "url": "https://www.pureshowers.co.uk/ionic-hand-held-shower-filter.html",
+      "img": "",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "handheld": 10,
+        "pressure": 10,
+        "budget": 10,
+        "spray_modes": 7,
+        "renter": 8
+      }
+    }
+  ],
+  "gentle": [
+    {
+      "merchant": "Hello Klean",
+      "name": "Shower Head+",
+      "note": "A filtered shower head designed around a broad, even spray and a premium bathroom finish.",
+      "offer": "Best overall for a gentler-feeling daily shower and a refined replacement head.",
+      "url": "https://helloklean.com/products/hello-klean-shower-head-plus?variant=55493433262465",
+      "img": "",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "gentle": 10,
+        "modern": 10,
+        "premium": 9,
+        "handheld": 8,
+        "personal": 8
+      }
+    },
+    {
+      "merchant": "Philips",
+      "name": "Shower Filter AWP1775/10",
+      "note": "An inline filter that keeps the current shower head while adding a replaceable filtration cartridge.",
+      "offer": "Best when a favourite gentle-flow head should remain unchanged.",
+      "url": "https://www.philips.co.uk/c-p/AWP1775_10/shower-filter",
+      "img": "",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "gentle": 9,
+        "inline": 10,
+        "keep_head": 10,
+        "simple_care": 9,
+        "mid_budget": 9
+      }
+    },
+    {
+      "merchant": "Tappwater",
+      "name": "ShowerPro Diamond",
+      "note": "A compact inline filter suited to users who prefer minimal fittings and routine cartridge changes.",
+      "offer": "Best for a restrained, low-clutter setup with no need to change spray style.",
+      "url": "https://tappwater.co/en-gb/products/water-filter-showerpro-diamond-shower-filter",
+      "img": "",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "gentle": 9,
+        "inline": 9,
+        "compact": 10,
+        "renter": 8,
+        "modern": 8
+      }
+    },
+    {
+      "merchant": "PureShowers",
+      "name": "Vitamin C Ionic Hand Held Shower Filter",
+      "note": "A handheld filtered head that combines cartridge media with a vitamin C format and multiple spray settings.",
+      "offer": "Best for someone who wants a softer ritual feel and an all-in-one handheld replacement.",
+      "url": "https://www.pureshowers.co.uk/vitamin-c-ionic-hand-held-shower-filter.html",
+      "img": "",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "gentle": 10,
+        "handheld": 9,
+        "spray_modes": 7,
+        "personal": 9,
+        "mid_budget": 8
+      }
+    }
+  ],
+  "rainfall": [
+    {
+      "merchant": "Hello Klean",
+      "name": "Rain Shower",
+      "note": "A large overhead filtered shower head created for a broad rainfall-style spray.",
+      "offer": "Best overall for turning a fixed overhead shower into a design-led filtered rainfall experience.",
+      "url": "https://helloklean.com/en-int/products/hello-klean-rain-shower",
+      "img": "",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "rainfall": 10,
+        "fixed": 10,
+        "premium": 9,
+        "modern": 10,
+        "large_space": 9
+      }
+    },
+    {
+      "merchant": "Tappwater",
+      "name": "ShowerPro Rain",
+      "note": "A rainfall shower filter designed as a complete overhead replacement rather than an inline add-on.",
+      "offer": "Best for a wide overhead spray with a relatively straightforward replacement format.",
+      "url": "https://tappwater.co/en-gb/products/showerpro-rain",
+      "img": "",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "rainfall": 10,
+        "fixed": 10,
+        "modern": 8,
+        "mid_budget": 9,
+        "large_space": 8
+      }
+    },
+    {
+      "merchant": "StoneStream",
+      "name": "Filtered Rainfall Shower Head",
+      "note": "A filtered overhead head with a wide spray face and mineral-stone filtration.",
+      "offer": "Best for a rainfall upgrade where pressure and broad coverage both matter.",
+      "url": "https://uk.stone-stream.com/products/filtered-shower-head-with-rainfall-spray",
+      "img": "",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "rainfall": 10,
+        "pressure": 9,
+        "fixed": 9,
+        "spray_modes": 6,
+        "mid_budget": 8
+      }
+    },
+    {
+      "merchant": "PureShowers",
+      "name": "Fixed 5 Spray Shower Filter",
+      "note": "A fixed filtered head with five selectable spray patterns and replaceable filtration media.",
+      "offer": "Best for a fixed fitting that offers more spray variety than a single rainfall mode.",
+      "url": "https://www.pureshowers.co.uk/pureshowers-fixed-shower-head-5-spray-multistage-shower-filter.html",
+      "img": "",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "rainfall": 8,
+        "fixed": 10,
+        "spray_modes": 10,
+        "multi_stage": 9,
+        "family": 7
+      }
+    }
+  ],
+  "compact": [
+    {
+      "merchant": "PureShowers",
+      "name": "Slim Line Shower Filter",
+      "note": "A narrow inline filter designed for bathrooms where clearance around the outlet is limited.",
+      "offer": "Best overall for a compact installation that leaves the existing shower head untouched.",
+      "url": "https://www.pureshowers.co.uk/catalog/product/view/id/8/s/compact-shower-filter.html",
+      "img": "",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "compact": 10,
+        "inline": 10,
+        "keep_head": 10,
+        "renter": 9,
+        "budget": 8
+      }
+    },
+    {
+      "merchant": "PureShowers",
+      "name": "Compact Shower Filter",
+      "note": "A small inline filter intended for standard shower connections and simple cartridge replacement.",
+      "offer": "Best for a small bathroom or rental where a discreet reversible fitting is preferred.",
+      "url": "https://www.pureshowers.co.uk/compact-shower-filter.html",
+      "img": "",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "compact": 10,
+        "inline": 10,
+        "renter": 10,
+        "simple_care": 9,
+        "budget": 9
+      }
+    },
+    {
+      "merchant": "Hello Klean",
+      "name": "Shower Filter 2.0",
+      "note": "A slimline inline filter with a modern casing and replaceable capsule.",
+      "offer": "Best for compact bathrooms where appearance matters as much as a tidy fit.",
+      "url": "https://helloklean.com/pages/shower-filter",
+      "img": "",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "compact": 9,
+        "inline": 10,
+        "modern": 10,
+        "renter": 8,
+        "premium": 7
+      }
+    },
+    {
+      "merchant": "Philips",
+      "name": "Shower Filter AWP1775/10",
+      "note": "A compact inline unit that retains the existing head or hose and uses a replaceable cartridge.",
+      "offer": "Best widely available option for a simple standard-connection installation.",
+      "url": "https://www.philips.co.uk/c-p/AWP1775_10/shower-filter",
+      "img": "",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "compact": 9,
+        "inline": 10,
+        "simple_care": 10,
+        "budget": 8,
+        "keep_head": 9
+      }
+    }
+  ],
+  "premium": [
+    {
+      "merchant": "Hello Klean",
+      "name": "Shower Head+",
+      "note": "A premium filtered shower head with a broad spray and a deliberately minimal design.",
+      "offer": "Best overall for a polished head replacement that becomes part of the bathroom design.",
+      "url": "https://helloklean.com/products/hello-klean-shower-head-plus?variant=55493433262465",
+      "img": "",
+      "affiliate": false,
+      "base": 13,
+      "fit": {
+        "premium": 10,
+        "modern": 10,
+        "gentle": 9,
+        "handheld": 8,
+        "giftable": 8
+      }
+    },
+    {
+      "merchant": "StoneStream",
+      "name": "EcoLux 9-Mode Filtered Shower Head",
+      "note": "A stainless-steel filtered handheld head with nine spray modes and a statement finish.",
+      "offer": "Best for maximum spray choice and a more substantial premium handheld format.",
+      "url": "https://uk.stone-stream.com/products/high-pressure-filtered-showerhead-9mode-luxury-stainless-steel-ecolux?variant=41518045593648",
+      "img": "",
+      "affiliate": false,
+      "base": 12,
+      "fit": {
+        "premium": 10,
+        "spray_modes": 10,
+        "pressure": 9,
+        "handheld": 10,
+        "modern": 8
+      }
+    },
+    {
+      "merchant": "Hello Klean",
+      "name": "Rain Shower",
+      "note": "A large filtered rainfall head designed to make the overhead shower the visual focus of the space.",
+      "offer": "Best for a premium fixed installation and a broad spa-style spray.",
+      "url": "https://helloklean.com/en-int/products/hello-klean-rain-shower",
+      "img": "",
+      "affiliate": false,
+      "base": 11,
+      "fit": {
+        "premium": 10,
+        "rainfall": 10,
+        "fixed": 10,
+        "large_space": 10,
+        "modern": 9
+      }
+    },
+    {
+      "merchant": "PureShowers",
+      "name": "7 Spray 8 Stage Hand Held Shower Filter",
+      "note": "A multi-stage filtered handheld head with seven spray settings and a replacement indicator.",
+      "offer": "Best feature-rich choice when practicality and spray flexibility matter more than minimalism.",
+      "url": "https://www.pureshowers.co.uk/pureshowers-7-spray-8-stage-hand-held-shower-filter.html",
+      "img": "",
+      "affiliate": false,
+      "base": 10,
+      "fit": {
+        "premium": 7,
+        "spray_modes": 10,
+        "multi_stage": 10,
+        "family": 9,
+        "handheld": 10
+      }
+    }
+  ]
+};
+
+const RESULTS = {
+  "inline": {
+    "name": "Keep-Your-Head Filter",
+    "color": "#4F7881",
+    "tag": "Filtration added without changing the shower you already like.",
+    "body": "Your best route is an inline filter fitted between the water outlet and the existing hose or shower head. It keeps the familiar spray pattern while making cartridge replacement and future removal relatively straightforward.",
+    "details": {
+      "Best format": "Inline cartridge housing",
+      "Installation aim": "Retain the existing head",
+      "Space need": "Compact to moderate",
+      "Budget direction": "Accessible to mid-range"
+    }
+  },
+  "handheld": {
+    "name": "Pressure-Ready Handheld",
+    "color": "#586F7A",
+    "tag": "A replacement head with stronger spray choice and everyday flexibility.",
+    "body": "You will get more value from a filtered handheld head than a separate inline unit. Look for a secure hose connection, useful spray modes and a design that suits the pressure available from your shower.",
+    "details": {
+      "Best format": "Filtered handheld head",
+      "Installation aim": "Replace the existing head",
+      "Key feature": "Pressure and spray options",
+      "Budget direction": "Budget to mid-range"
+    }
+  },
+  "gentle": {
+    "name": "Gentle Daily Flow",
+    "color": "#8A6C78",
+    "tag": "A calmer shower feel with a clean, uncomplicated setup.",
+    "body": "You prioritise a broad, comfortable spray and a tidy daily routine. A refined replacement head or compact inline filter will suit you, with easy cartridge care and no need for aggressive pressure or numerous modes.",
+    "details": {
+      "Best format": "Even-spray head or inline filter",
+      "Installation aim": "Low-clutter upgrade",
+      "Key feature": "Gentler-feeling coverage",
+      "Budget direction": "Mid-range to premium"
+    }
+  },
+  "rainfall": {
+    "name": "Filtered Rainfall Upgrade",
+    "color": "#57716B",
+    "tag": "Wide overhead coverage with the filter built into the experience.",
+    "body": "Your ideal upgrade is a fixed rainfall-style head rather than a small inline attachment. Check the arm, thread, clearance and water pressure carefully so the larger head performs properly in your bathroom.",
+    "details": {
+      "Best format": "Fixed overhead rainfall head",
+      "Installation aim": "Replace the overhead head",
+      "Space need": "Moderate to generous",
+      "Budget direction": "Mid-range to premium"
+    }
+  },
+  "compact": {
+    "name": "Compact Renter Fit",
+    "color": "#7A7466",
+    "tag": "Small, reversible and easier to take with you.",
+    "body": "A discreet inline filter is the strongest fit for your space and maintenance preferences. Prioritise standard connections, modest dimensions and a cartridge that is easy to source and change.",
+    "details": {
+      "Best format": "Compact inline filter",
+      "Installation aim": "Reversible fitting",
+      "Space need": "Small bathroom friendly",
+      "Budget direction": "Budget to mid-range"
+    }
+  },
+  "premium": {
+    "name": "Design-Led Shower Upgrade",
+    "color": "#6E5867",
+    "tag": "Filtration, finish and shower experience considered together.",
+    "body": "You are prepared to replace more of the shower setup for a better-looking and more feature-rich result. Premium handheld or rainfall formats suit you, provided the connection, pressure and replacement-filter costs are checked first.",
+    "details": {
+      "Best format": "Premium head or rainfall system",
+      "Installation aim": "Visible bathroom upgrade",
+      "Key feature": "Finish and spray choice",
+      "Budget direction": "Premium"
+    }
+  }
+};
+
+const SIGNAL_LABELS = {
+  "inline": "an inline fitting",
+  "keep_head": "keeping your current shower head",
+  "compact": "a compact installation",
+  "simple_care": "simple cartridge care",
+  "mid_budget": "a mid-range budget",
+  "multi_stage": "multi-stage filtration",
+  "chrome": "a classic chrome finish",
+  "family": "shared household use",
+  "renter": "a reversible renter-friendly fit",
+  "modern": "a modern bathroom finish",
+  "handheld": "a handheld replacement",
+  "spray_modes": "multiple spray modes",
+  "pressure": "pressure-focused performance",
+  "budget": "a lower budget",
+  "gentle": "a gentler shower feel",
+  "personal": "personal daily use",
+  "premium": "a premium upgrade",
+  "rainfall": "rainfall-style coverage",
+  "fixed": "a fixed overhead fitting",
+  "large_space": "a larger shower space",
+  "giftable": "gift-ready presentation"
+};
+
+const QUESTIONS = [
+  {
+    "q": "What kind of shower setup do you have now?",
+    "a": [
+      {
+        "label": "A fixed head I want to keep",
+        "scores": {
+          "inline": 5
+        },
+        "signals": [
+          "inline",
+          "keep_head"
+        ]
+      },
+      {
+        "label": "A handheld head on a hose",
+        "scores": {
+          "handheld": 5
+        },
+        "signals": [
+          "handheld"
+        ]
+      },
+      {
+        "label": "A standard setup where comfort matters most",
+        "scores": {
+          "gentle": 5
+        },
+        "signals": [
+          "gentle"
+        ]
+      },
+      {
+        "label": "A fixed overhead or rainfall head",
+        "scores": {
+          "rainfall": 5
+        },
+        "signals": [
+          "rainfall",
+          "fixed"
+        ]
+      },
+      {
+        "label": "A compact or rental bathroom",
+        "scores": {
+          "compact": 5
+        },
+        "signals": [
+          "compact",
+          "renter"
+        ]
+      },
+      {
+        "label": "A bathroom ready for a visible upgrade",
+        "scores": {
+          "premium": 5
+        },
+        "signals": [
+          "premium",
+          "modern"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How much of the existing shower should change?",
+    "a": [
+      {
+        "label": "Only add a filter between the fittings",
+        "scores": {
+          "inline": 5
+        },
+        "signals": [
+          "inline",
+          "keep_head"
+        ]
+      },
+      {
+        "label": "Replace the handheld shower head",
+        "scores": {
+          "handheld": 5
+        },
+        "signals": [
+          "handheld",
+          "spray_modes"
+        ]
+      },
+      {
+        "label": "Make the smallest change that improves the feel",
+        "scores": {
+          "gentle": 5
+        },
+        "signals": [
+          "gentle",
+          "simple_care"
+        ]
+      },
+      {
+        "label": "Replace the fixed overhead head",
+        "scores": {
+          "rainfall": 5
+        },
+        "signals": [
+          "rainfall",
+          "fixed"
+        ]
+      },
+      {
+        "label": "Use something easy to remove later",
+        "scores": {
+          "compact": 5
+        },
+        "signals": [
+          "compact",
+          "renter"
+        ]
+      },
+      {
+        "label": "Replace the head with a statement model",
+        "scores": {
+          "premium": 5
+        },
+        "signals": [
+          "premium",
+          "modern"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What matters most about the spray?",
+    "a": [
+      {
+        "label": "Keep exactly the spray pattern I already have",
+        "scores": {
+          "inline": 5
+        },
+        "signals": [
+          "keep_head",
+          "inline"
+        ]
+      },
+      {
+        "label": "More pressure and several spray modes",
+        "scores": {
+          "handheld": 5
+        },
+        "signals": [
+          "pressure",
+          "spray_modes"
+        ]
+      },
+      {
+        "label": "Broad, even and not too forceful",
+        "scores": {
+          "gentle": 5
+        },
+        "signals": [
+          "gentle"
+        ]
+      },
+      {
+        "label": "Wide overhead rainfall coverage",
+        "scores": {
+          "rainfall": 5
+        },
+        "signals": [
+          "rainfall",
+          "large_space"
+        ]
+      },
+      {
+        "label": "Reliable performance from a small fitting",
+        "scores": {
+          "compact": 5
+        },
+        "signals": [
+          "compact"
+        ]
+      },
+      {
+        "label": "A premium spray with plenty of adjustment",
+        "scores": {
+          "premium": 5
+        },
+        "signals": [
+          "premium",
+          "spray_modes"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How much installation space is available?",
+    "a": [
+      {
+        "label": "Enough for a small inline cartridge",
+        "scores": {
+          "inline": 5
+        },
+        "signals": [
+          "inline",
+          "compact"
+        ]
+      },
+      {
+        "label": "The head can be replaced without space concerns",
+        "scores": {
+          "handheld": 5
+        },
+        "signals": [
+          "handheld"
+        ]
+      },
+      {
+        "label": "I want the fitting to stay visually quiet",
+        "scores": {
+          "gentle": 5
+        },
+        "signals": [
+          "gentle",
+          "compact"
+        ]
+      },
+      {
+        "label": "There is generous overhead clearance",
+        "scores": {
+          "rainfall": 5
+        },
+        "signals": [
+          "rainfall",
+          "large_space"
+        ]
+      },
+      {
+        "label": "Very little space around the outlet",
+        "scores": {
+          "compact": 5
+        },
+        "signals": [
+          "compact",
+          "renter"
+        ]
+      },
+      {
+        "label": "Space is available for a larger design",
+        "scores": {
+          "premium": 5
+        },
+        "signals": [
+          "premium",
+          "large_space"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Which filtration format feels most practical?",
+    "a": [
+      {
+        "label": "A replaceable inline cartridge",
+        "scores": {
+          "inline": 5
+        },
+        "signals": [
+          "inline",
+          "simple_care"
+        ]
+      },
+      {
+        "label": "Filtration built into the handheld head",
+        "scores": {
+          "handheld": 5
+        },
+        "signals": [
+          "handheld",
+          "multi_stage"
+        ]
+      },
+      {
+        "label": "A simple, low-clutter filter system",
+        "scores": {
+          "gentle": 5
+        },
+        "signals": [
+          "gentle",
+          "simple_care"
+        ]
+      },
+      {
+        "label": "Filtration built into a rainfall head",
+        "scores": {
+          "rainfall": 5
+        },
+        "signals": [
+          "rainfall",
+          "fixed"
+        ]
+      },
+      {
+        "label": "The smallest standard-connection unit",
+        "scores": {
+          "compact": 5
+        },
+        "signals": [
+          "compact"
+        ]
+      },
+      {
+        "label": "A more substantial multi-feature system",
+        "scores": {
+          "premium": 5
+        },
+        "signals": [
+          "premium",
+          "multi_stage"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How would you describe your water pressure?",
+    "a": [
+      {
+        "label": "It is fine, and I do not want to alter it",
+        "scores": {
+          "inline": 5
+        },
+        "signals": [
+          "inline",
+          "keep_head"
+        ]
+      },
+      {
+        "label": "It feels weak and needs a pressure-focused head",
+        "scores": {
+          "handheld": 5
+        },
+        "signals": [
+          "handheld",
+          "pressure"
+        ]
+      },
+      {
+        "label": "Moderate, and a gentle spray suits me",
+        "scores": {
+          "gentle": 5
+        },
+        "signals": [
+          "gentle"
+        ]
+      },
+      {
+        "label": "Strong enough to support a wide rainfall head",
+        "scores": {
+          "rainfall": 5
+        },
+        "signals": [
+          "rainfall",
+          "large_space"
+        ]
+      },
+      {
+        "label": "Uncertain, so I want a compact low-risk choice",
+        "scores": {
+          "compact": 5
+        },
+        "signals": [
+          "compact"
+        ]
+      },
+      {
+        "label": "Strong, and I want a more luxurious spray",
+        "scores": {
+          "premium": 5
+        },
+        "signals": [
+          "premium",
+          "pressure"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "How much maintenance suits you?",
+    "a": [
+      {
+        "label": "A routine cartridge change is fine",
+        "scores": {
+          "inline": 5
+        },
+        "signals": [
+          "inline",
+          "simple_care"
+        ]
+      },
+      {
+        "label": "I will clean nozzles and change head filters",
+        "scores": {
+          "handheld": 5
+        },
+        "signals": [
+          "handheld",
+          "spray_modes"
+        ]
+      },
+      {
+        "label": "The fewest steps possible",
+        "scores": {
+          "gentle": 5
+        },
+        "signals": [
+          "gentle",
+          "simple_care"
+        ]
+      },
+      {
+        "label": "I will maintain a larger fixed head",
+        "scores": {
+          "rainfall": 5
+        },
+        "signals": [
+          "rainfall",
+          "fixed"
+        ]
+      },
+      {
+        "label": "Quick changes and easy removal",
+        "scores": {
+          "compact": 5
+        },
+        "signals": [
+          "compact",
+          "renter"
+        ]
+      },
+      {
+        "label": "I accept more upkeep for more features",
+        "scores": {
+          "premium": 5
+        },
+        "signals": [
+          "premium",
+          "multi_stage"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What should the filter look like?",
+    "a": [
+      {
+        "label": "Discreet and close to the existing fittings",
+        "scores": {
+          "inline": 5
+        },
+        "signals": [
+          "inline",
+          "chrome"
+        ]
+      },
+      {
+        "label": "Functional with visible spray controls",
+        "scores": {
+          "handheld": 5
+        },
+        "signals": [
+          "handheld",
+          "spray_modes"
+        ]
+      },
+      {
+        "label": "Soft, minimal and unobtrusive",
+        "scores": {
+          "gentle": 5
+        },
+        "signals": [
+          "gentle",
+          "modern"
+        ]
+      },
+      {
+        "label": "Wide and architectural overhead",
+        "scores": {
+          "rainfall": 5
+        },
+        "signals": [
+          "rainfall",
+          "modern"
+        ]
+      },
+      {
+        "label": "Small enough to disappear into the setup",
+        "scores": {
+          "compact": 5
+        },
+        "signals": [
+          "compact"
+        ]
+      },
+      {
+        "label": "Polished and intentionally design-led",
+        "scores": {
+          "premium": 5
+        },
+        "signals": [
+          "premium",
+          "modern"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "Who will use the shower most?",
+    "a": [
+      {
+        "label": "A shared household that likes the current head",
+        "scores": {
+          "inline": 5
+        },
+        "signals": [
+          "family",
+          "inline"
+        ]
+      },
+      {
+        "label": "Several people who want different spray modes",
+        "scores": {
+          "handheld": 5
+        },
+        "signals": [
+          "family",
+          "handheld",
+          "spray_modes"
+        ]
+      },
+      {
+        "label": "Mostly me, for a calm daily routine",
+        "scores": {
+          "gentle": 5
+        },
+        "signals": [
+          "personal",
+          "gentle"
+        ]
+      },
+      {
+        "label": "A household using one main rainfall shower",
+        "scores": {
+          "rainfall": 5
+        },
+        "signals": [
+          "family",
+          "rainfall"
+        ]
+      },
+      {
+        "label": "A renter or one-person household",
+        "scores": {
+          "compact": 5
+        },
+        "signals": [
+          "renter",
+          "compact"
+        ]
+      },
+      {
+        "label": "A main bathroom or a thoughtful home gift",
+        "scores": {
+          "premium": 5
+        },
+        "signals": [
+          "premium",
+          "giftable"
+        ]
+      }
+    ]
+  },
+  {
+    "q": "What budget direction feels right?",
+    "a": [
+      {
+        "label": "Practical mid-range for a reliable inline filter",
+        "scores": {
+          "inline": 5
+        },
+        "signals": [
+          "mid_budget",
+          "inline"
+        ]
+      },
+      {
+        "label": "Good value with pressure and spray choice",
+        "scores": {
+          "handheld": 5
+        },
+        "signals": [
+          "budget",
+          "handheld"
+        ]
+      },
+      {
+        "label": "Mid-range for a gentler everyday upgrade",
+        "scores": {
+          "gentle": 5
+        },
+        "signals": [
+          "mid_budget",
+          "gentle"
+        ]
+      },
+      {
+        "label": "Mid-range to premium for rainfall coverage",
+        "scores": {
+          "rainfall": 5
+        },
+        "signals": [
+          "rainfall",
+          "premium"
+        ]
+      },
+      {
+        "label": "Keep the initial and refill costs low",
+        "scores": {
+          "compact": 5
+        },
+        "signals": [
+          "budget",
+          "compact"
+        ]
+      },
+      {
+        "label": "Premium, provided the finish and features justify it",
+        "scores": {
+          "premium": 5
+        },
+        "signals": [
+          "premium"
+        ]
+      }
+    ]
+  }
+];
+
+let step=0;
+let locked=false;
+const selectedAnswers=[];
+const preferenceSignals={};
+const totals=Object.keys(RESULTS).reduce((acc,key)=>{acc[key]=0;return acc;},{});
+const el=id=>document.getElementById(id);
+const screens={intro:el("intro"),quiz:el("quiz"),result:el("result")};
+const prefersReducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function show(name){Object.values(screens).forEach(screen=>screen.classList.remove("active"));screens[name].classList.add("active");window.scrollTo({top:0,behavior:prefersReducedMotion?"auto":"smooth"});}
+function escapeHtml(value){return String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");}
+function getProductRecommendations(key){return (PRODUCTS[key]||[]).map((product,originalIndex)=>{const matchScore=Object.entries(product.fit||{}).reduce((score,[signal,weight])=>score+(preferenceSignals[signal]||0)*weight,product.base||0);return {...product,matchScore,originalIndex};}).sort((a,b)=>b.matchScore-a.matchScore||(b.base||0)-(a.base||0)||a.originalIndex-b.originalIndex).slice(0,3);}
+function getPersonalMatch(product){const matches=Object.entries(product.fit||{}).filter(([signal])=>preferenceSignals[signal]).map(([signal,weight])=>({signal,value:weight*preferenceSignals[signal]})).sort((a,b)=>b.value-a.value).slice(0,2).map(item=>SIGNAL_LABELS[item.signal]).filter(Boolean);if(matches.length===0)return product.offer||"";if(matches.length===1)return `Matches your preference for ${matches[0]}.`;return `Matches your preference for ${matches[0]} and ${matches[1]}.`;}
+function trackEvent(eventName,details={}){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:eventName,...details});if(typeof window.pintrk==="function"){try{window.pintrk("track","custom",{event_name:eventName,...details});}catch(error){console.warn("Pinterest tracking event was not sent.",error);}}}
+function renderQuestion(){const item=QUESTIONS[step];const totalQuestions=QUESTIONS.length;el("question").textContent=item.q;el("count").textContent=`${String(step+1).padStart(2,"0")} / ${String(totalQuestions).padStart(2,"0")}`;el("fill").style.width=`${step/totalQuestions*100}%`;const box=el("options");box.innerHTML="";locked=false;item.a.forEach((answer,index)=>{const button=document.createElement("button");button.className="option";button.type="button";button.textContent=answer.label;button.addEventListener("click",()=>chooseAnswer(button,answer,index));box.appendChild(button);});setTimeout(()=>el("question").focus({preventScroll:true}),50);}
+function chooseAnswer(button,answer,index){if(locked)return;locked=true;document.querySelectorAll(".option").forEach(option=>{option.disabled=true;});button.classList.add("chosen");selectedAnswers[step]=index;Object.entries(answer.scores).forEach(([key,value])=>{totals[key]+=value;});(answer.signals||[]).forEach(signal=>{preferenceSignals[signal]=(preferenceSignals[signal]||0)+1;});trackEvent("quiz_answer",{quiz:"shower_filter",question_number:step+1,answer:answer.label});setTimeout(()=>{step+=1;if(step<QUESTIONS.length){renderQuestion();}else{el("fill").style.width="100%";finishQuiz();}},340);}
+function finishQuiz(){const orderedKeys=Object.keys(RESULTS);let winningKey=orderedKeys[0];orderedKeys.forEach(key=>{if(totals[key]>totals[winningKey])winningKey=key;});const tiedKeys=orderedKeys.filter(key=>totals[key]===totals[winningKey]);if(tiedKeys.length>1){const priorityOrder=[0,...Array.from({length:selectedAnswers.length-1},(_,index)=>selectedAnswers.length-1-index)];for(const questionIndex of priorityOrder){const answer=QUESTIONS[questionIndex].a[selectedAnswers[questionIndex]];const rankedTie=tiedKeys.map(key=>({key,value:answer.scores[key]||0,routeIndex:orderedKeys.indexOf(key)})).sort((a,b)=>b.value-a.value||a.routeIndex-b.routeIndex);if(rankedTie[0].value>rankedTie[1].value){winningKey=rankedTie[0].key;break;}}}showResult(winningKey);}
+function showResult(key){const result=RESULTS[key];window.LYS_RESULT=key;el("resultCard").style.setProperty("--fam",result.color);el("rName").textContent=result.name;el("rTag").textContent=result.tag;el("rBody").textContent=result.body;const details=el("rDetails");details.innerHTML="";Object.entries(result.details).forEach(([label,value])=>{const row=document.createElement("div");row.className="detail-row";const labelSpan=document.createElement("span");labelSpan.className="detail-label";labelSpan.textContent=label;const valueSpan=document.createElement("span");valueSpan.className="detail-val";valueSpan.textContent=value;row.append(labelSpan,valueSpan);details.appendChild(row);});el("recsTitle").textContent="Your three best-matched shower filters";const recommendations=getProductRecommendations(key);const grid=el("recGrid");grid.innerHTML="";recommendations.forEach((product,index)=>{const card=document.createElement("article");card.className="rec";const badgeHtml=index===0?'<span class="rec-badge">Best match</span>':"";const matchText=getPersonalMatch(product);const offerHtml=matchText?`<span class="offer">${escapeHtml(matchText)}</span>`:"";const linkIsAffiliate=Boolean(product.affiliate);const linkRel=linkIsAffiliate?"noopener sponsored":"noopener";const ctaHtml=product.url&&product.url!=="#"?`<a class="view" href="${escapeHtml(product.url)}" target="_blank" rel="${linkRel}" data-product-position="${index+1}">View product &rsaquo;</a>`:'<span class="view off">Product page unavailable</span>';card.innerHTML=`<div class="body">${badgeHtml}<span class="brand">${escapeHtml(product.merchant)}</span><span class="pname">${escapeHtml(product.name)}</span><span class="pnote">${escapeHtml(product.note)}</span>${offerHtml}${ctaHtml}</div>`;const productLink=card.querySelector("a[data-product-position]");if(productLink){productLink.addEventListener("click",()=>{const trackingDetails={quiz:"shower_filter",result:key,merchant:product.merchant,product:product.name,position:index+1,affiliate:linkIsAffiliate};trackEvent("product_click",trackingDetails);if(linkIsAffiliate)trackEvent("affiliate_click",trackingDetails);});}grid.appendChild(card);});const disclosure=el("recommendationDisclosure");const containsAffiliateLinks=recommendations.some(product=>product.affiliate);if(containsAffiliateLinks){disclosure.innerHTML='Some links on this page are affiliate links. Love Your Senses may earn a commission from qualifying orders at no extra cost to you. <a href="/disclosure">Read the affiliate disclosure</a>.';}else{disclosure.textContent="These recommendations use direct brand or retailer links. Love Your Senses does not currently earn commission from them. Product availability and specifications may change.";}const browseAll=el("browseAll");if(STORE_LINK&&STORE_LINK!=="#"){const storeRel=STORE_LINK_IS_AFFILIATE?"noopener sponsored":"noopener";browseAll.innerHTML=`<a class="btn-all" href="${escapeHtml(STORE_LINK)}" target="_blank" rel="${storeRel}">Browse all shower filters</a>`;browseAll.querySelector("a").addEventListener("click",()=>{const trackingDetails={quiz:"shower_filter",result:key,product:"browse_all",affiliate:STORE_LINK_IS_AFFILIATE};trackEvent("product_click",trackingDetails);if(STORE_LINK_IS_AFFILIATE)trackEvent("affiliate_click",trackingDetails);});}else{browseAll.innerHTML="";}trackEvent("quiz_complete",{quiz:"shower_filter",result:key,result_name:result.name});show("result");}
+async function submitEmail(){const emailInput=el("email");const email=emailInput.value.trim();const form=el("emailForm");const note=el("formNote");if(!/^\S+@\S+\.\S+$/.test(email)){emailInput.focus();note.textContent="Enter a valid email address.";return;}if(!EMAIL_FORM_ACTION){note.textContent="Email signup is not connected yet. Add your email platform form action in the JavaScript settings.";return;}const button=el("emailBtn");button.disabled=true;button.textContent="Sending";try{const payload=new URLSearchParams();payload.append(EMAIL_FIELD_NAME,email);payload.append("quiz_result",window.LYS_RESULT||"");payload.append("source","shower_filter_quiz");await fetch(EMAIL_FORM_ACTION,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:payload.toString()});form.innerHTML='<p class="done">Your shower-filter shortlist is on its way.</p>';note.textContent="";trackEvent("email_signup",{quiz:"shower_filter",result:window.LYS_RESULT||""});}catch(error){button.disabled=false;button.textContent="Send it";note.textContent="The signup did not complete. Please try again.";console.error("Email signup failed.",error);}}
+async function shareResult(){const result=RESULTS[window.LYS_RESULT];if(!result)return;const text=`My shower-filter profile is ${result.name}. Find yours:`;const shareData={title:"Which Shower Filter Suits Your Home? | Love Your Senses",text,url:QUIZ_URL||location.href};if(navigator.share){try{await navigator.share(shareData);trackEvent("share",{quiz:"shower_filter",result:window.LYS_RESULT,method:"native"});}catch(error){if(error.name!=="AbortError")console.error("Share failed.",error);}return;}try{await navigator.clipboard.writeText(`${text} ${shareData.url}`);el("share").textContent="Link copied";setTimeout(()=>el("share").textContent="Share your result",2000);trackEvent("share",{quiz:"shower_filter",result:window.LYS_RESULT,method:"clipboard"});}catch(error){console.error("Copy failed.",error);}}
+function resetQuiz(){step=0;locked=false;selectedAnswers.length=0;Object.keys(preferenceSignals).forEach(key=>delete preferenceSignals[key]);Object.keys(totals).forEach(key=>totals[key]=0);window.LYS_RESULT="";const form=el("emailForm");form.innerHTML='<label class="sr-only" for="email">Your email address</label><input type="email" id="email" name="email" placeholder="Your email" aria-describedby="formNote" autocomplete="email" inputmode="email"><button id="emailBtn" type="button">Send it</button>';el("emailBtn").addEventListener("click",submitEmail);el("email").addEventListener("keydown",event=>{if(event.key==="Enter"){event.preventDefault();submitEmail();}});el("formNote").textContent="Connect your email platform in the JavaScript settings before publishing.";show("intro");trackEvent("quiz_retake",{quiz:"shower_filter"});}
+el("start").addEventListener("click",()=>{show("quiz");renderQuestion();trackEvent("quiz_start",{quiz:"shower_filter"});});
+el("emailBtn").addEventListener("click",submitEmail);
+el("email").addEventListener("keydown",event=>{if(event.key==="Enter"){event.preventDefault();submitEmail();}});
+el("share").addEventListener("click",shareResult);
+el("retake").addEventListener("click",resetQuiz);
+
+
+
+
+
+
+
+window.LYS_TEST={
+  PRODUCTS,
+  RESULTS,
+  QUESTIONS,
+  getProductRecommendations,
+  showResult,
+  resetSignals(){Object.keys(preferenceSignals).forEach(key=>delete preferenceSignals[key]);},
+  setSignals(signals){this.resetSignals();Object.entries(signals||{}).forEach(([key,value])=>{preferenceSignals[key]=value;});}
+};
+
+</script>
+</body>
+</html>
